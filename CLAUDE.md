@@ -118,5 +118,16 @@ The full design is in [docs/architecture.md](docs/architecture.md). The dataset 
 **Environment:** the maintainer works on Windows, and commands are run in PowerShell. Git, Node.js
 LTS, and the GitHub CLI are installed.
 
-**Commands:** none yet. Phase 1 adds `npm install`, `npm run dev`, `npm test`,
-`npm run validate`, and `npm run build-data`.
+**Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
+`npm run build`, `npm run preview`, `npm run typecheck`, `npm run import:natural-earth`. Still to
+come in Phase 1: `npm test`, `npm run validate`, and `npm run build-data`.
+
+**Implementation notes**
+
+- `scripts/*.ts` run directly in Node 24, which strips the types. Keep them to "erasable" syntax
+  only: no `enum` and no `namespace`. This is enforced by the `erasableSyntaxOnly` setting.
+- MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
+  `src/main.ts`. Without that, the worker fails to load in both dev and production.
+- In dev mode the map is exposed as `window.map`, for debugging in the browser console.
+- MapLibre waits for the browser's animation frames, which don't run while the page is hidden.
+  A map that "never loads" in a background tab may just be paused.

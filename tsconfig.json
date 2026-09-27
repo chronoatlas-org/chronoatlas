@@ -1,0 +1,22 @@
+{
+  // TypeScript settings. `tsc --noEmit` only type-checks; Vite does the actual building.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "node"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    // Scripts in scripts/ run directly in Node, which strips types but can't compile TS-only
+    // features like enums. These two settings keep the code compatible with that.
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", "scripts", "vite.config.ts"]
+}

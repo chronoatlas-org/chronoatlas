@@ -4,8 +4,9 @@ An open-source interactive map of how the world's borders changed through histor
 timeline or press play, and every state, empire, colony, city-state, and everything in between
 redraws for that date. Every border and event on the map is traced to a named source.
 
-> **Status: early development (Phase 0, project setup).** There is nothing to run yet. The first
-> working map arrives in Phase 1. See the [roadmap](docs/architecture.md#roadmap).
+> **Status: early development (Phase 1).** So far there is a physical base map (land, lakes, and
+> rivers). The timeline and historical borders are next. See the
+> [roadmap](docs/architecture.md#roadmap).
 
 ## What it will do
 
@@ -45,9 +46,21 @@ You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) (the LTS
 ```bash
 git clone https://github.com/chronoatlas-project/chronoatlas.git
 cd chronoatlas
+npm install
+npm run dev
 ```
 
-Phase 1 will add `npm install` and `npm run dev`, which start a local copy of the site.
+Then open http://localhost:5173 in your browser. The page reloads automatically when you edit a
+file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+
+| Command | What it does |
+|---|---|
+| `npm install` | Downloads the libraries the project uses into `node_modules/`. Run it once, and again after the dependencies change. |
+| `npm run dev` | Starts a local development server with automatic reload |
+| `npm run build` | Checks the code for type errors, then builds the published site into `dist/` |
+| `npm run preview` | Serves the built `dist/` folder locally, exactly as it will be published |
+| `npm run typecheck` | Only checks the code for type errors |
+| `npm run import:natural-earth` | Re-downloads the Natural Earth base map from its pinned release (see [data/imports/natural-earth](data/imports/natural-earth/README.md)) |
 
 ## Contributing
 
