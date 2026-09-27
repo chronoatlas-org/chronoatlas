@@ -1,0 +1,121 @@
+# Contributing to chronoatlas
+
+Thank you for helping. Borders are politically sensitive, and people care deeply about how their
+history is shown. This project handles that by being transparent: every border and event is
+traced to a source, every change is reviewed in public, and disputes are shown as disputes rather
+than settled by us.
+
+Everyone taking part follows our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Ground rules
+
+1. **Sources, never memory.** Every border, every date, and every event (including its summary)
+   must come from a named source recorded in the data. "Everyone knows" is not a source. Where
+   there is no source, we leave a visible gap. An honest gap beats a confident guess.
+2. **Control, recognition, and claims are different things.** We record separately who actually
+   controlled an area (de facto), who was legally recognized as its owner (de jure, and by whom),
+   and what each source claims.
+3. **Precision is part of the data.** Record how precise each date is (exact day, month, year,
+   approximate, century) and how precise each border is (treaty or surveyed line, approximate
+   line, frontier zone). Don't make anything look more precise than the source is.
+4. **Describe and attribute; don't adjudicate.** Write "Source X shows…", not "The border was…"
+   when sources disagree. If two good sources disagree, we add both. We don't pick one.
+5. **Respect licenses.** Only contribute material you have the right to contribute (see
+   [Copyright and tracing](#copyright-and-tracing)).
+
+## Ways to contribute
+
+### Report a problem
+
+Open an issue on GitHub. Issue forms for border corrections, missing events, and bugs are coming
+in Phase 1. Until then, please include:
+
+- **the place** (a name, and ideally a link to the map view);
+- **the date or date range** affected;
+- **what's wrong**;
+- **a source** that supports the correction (see below).
+
+Later, every territory on the map will have a "Report a problem with this border" button that
+fills most of this in for you.
+
+### Propose a change yourself
+
+Edit the data files and open a pull request (PR). Every PR is reviewed in public before it's
+merged, and automatic checks confirm that dates are well-formed, geometry is valid, and sources
+are present. Those checks arrive in Phase 1.
+
+### Help with code
+
+The development setup arrives in Phase 1. Until then, discussion on issues is very welcome.
+
+## What counts as a source
+
+Every citation needs **enough detail to find it** (author, title, year, and a publisher, URL, DOI,
+or ISBN) and **a locator** (page, map sheet, figure, or feature ID).
+
+**Good sources**
+
+- Peer-reviewed scholarship, and academic atlases or historical GIS datasets with documented
+  methods.
+- Treaties, laws, and other official documents (primary sources).
+- Maps made at the time, as evidence of what their maker depicted or claimed.
+- Reputable reference works with editorial oversight, for events.
+
+**Use with care, and attribute clearly**
+
+- **Government and wartime maps** show that government's view or claims. Cite them as such
+  ("Map published by X in 1938 shows…"), not as neutral fact.
+- **Wikipedia and Wikidata** are good leads, not sources. Follow them to what they cite and cite
+  that. Wikidata IDs are welcome as identifiers.
+
+**Not accepted**
+
+- Personal knowledge or memory, however confident.
+- Maps or claims with no traceable origin.
+- AI-generated text, maps, or "facts".
+
+## Copyright and tracing
+
+- **Facts** (such as a treaty's date) may come from any source, with a citation.
+- **Geometry may only be traced from maps that are public domain or openly licensed** in a way
+  compatible with CC0, such as many works of the US federal government. Tracing a copyrighted
+  map, even an old-looking one, is not allowed. Record the map's license or copyright status in
+  its source entry.
+- **Write summaries in your own words.** Don't paste text from Wikipedia (CC BY-SA) or other
+  sources. A short, attributed quotation is fine.
+
+## Licensing of contributions
+
+By submitting a contribution, you confirm you have the right to submit it, and you agree that:
+
+- **code** you contribute is licensed under the [MIT License](LICENSE);
+- **data** you contribute (outside `data/imports/`) is dedicated to the public domain under
+  [CC0 1.0](data/LICENSE).
+
+Third-party datasets enter only through the import process, which keeps them in their own
+`data/imports/<dataset>/` folder under their own license.
+
+## How review works
+
+- Every change is a pull request, and the discussion stays public.
+- Reviewers check:
+  - that each change is sourced, with a locator;
+  - that the license is compatible;
+  - that de facto, de jure, and claims are kept distinct;
+  - that precision isn't overstated;
+  - that the wording is attributed rather than asserted.
+- Reviewers may ask for more or better sources. Being asked is normal and not a rejection.
+- When good sources disagree, the resolution is to represent the disagreement, not to choose a
+  winner.
+
+## Should my correction go to OpenHistoricalMap instead?
+
+Some of our geometry comes from [OpenHistoricalMap](https://www.openhistoricalmap.org) (OHM), a
+public-domain historical map that anyone can edit.
+
+- **Plain geometry and dates**, traced from public-domain or permissively licensed sources, often
+  belong upstream in OHM, so the whole community benefits. We then re-import them.
+- **Interpretation** belongs here: claims, recognition, contested status, comparisons between
+  sources, events, and summaries.
+
+A step-by-step guide for this will be added in Phase 4. If you're unsure, open an issue and ask.

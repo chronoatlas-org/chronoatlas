@@ -1,0 +1,15 @@
+# Store all text files with Unix (LF) line endings, whatever system they were edited on.
+# Without this, Windows (CRLF) and Mac/Linux (LF) editors would make every line look
+# "changed" in pull requests, hiding the real edits.
+* text=auto eol=lf
+
+# Binary files: never touch their bytes.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.pbf binary
+*.pmtiles binary
