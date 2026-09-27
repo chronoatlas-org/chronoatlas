@@ -182,16 +182,126 @@ body {
   fill: currentColor;
 }
 
-.panel-borders {
-  margin: 12px 0 0;
+.panel-section {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #d0d7de;
+}
+
+.panel h3,
+.panel summary {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #57606a;
+}
+
+.panel summary {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.panel summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A turning triangle, so it's clear the section opens. */
+.panel summary::before {
+  content: '';
+  border: 5px solid transparent;
+  border-left-color: currentColor;
+  border-right-width: 0;
+  transition: transform 0.15s;
+}
+
+.panel details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.panel summary:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+.panel-records,
+.panel-history,
+.panel-names {
+  margin: 8px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.panel-border + .panel-border {
+.panel-record + .panel-record,
+.panel-history > li + li {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid #eaeef2;
+}
+
+/* Records in effect on the selected date: a bar at the side and a text tag, not only color. */
+.panel-history > li.is-current {
+  padding-left: 8px;
+  border-left: 3px solid #1f2328;
+}
+
+.panel-current-tag {
+  font-weight: 600;
+}
+
+.panel-goto {
+  margin-top: 6px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: #1f2328;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.panel-goto:hover {
+  background: #eaeef2;
+}
+
+.panel-goto:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+.panel-missing {
+  font-style: italic;
+  color: #57606a;
+  font-size: 0.82rem;
+}
+
+.panel-name-group + .panel-name-group {
+  margin-top: 10px;
+}
+
+.panel-names li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  padding: 2px 0;
+}
+
+.panel-name {
+  font-size: 0.95rem;
+}
+
+.panel-name-language,
+.panel-name-period {
+  color: #57606a;
+  font-size: 0.78rem;
 }
 
 .panel p {

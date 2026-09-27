@@ -75,13 +75,10 @@ let urlTimer: number | undefined;
 let selected: string | null = null;
 
 const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, {
-  bordersOf: (polity) => historical.bordersOf(polity),
   onClose: () => select(null),
+  onGoToDay: (day) => timeline.setDay(clampDay(day)),
 });
-const historical = new HistoricalLayers(map, initialDay, {
-  onSelect: (polity) => select(polity),
-  onDataChange: () => panel.refresh(),
-});
+const historical = new HistoricalLayers(map, initialDay, { onSelect: (polity) => select(polity) });
 
 function select(polity: string | null): void {
   selected = polity;

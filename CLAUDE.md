@@ -165,10 +165,14 @@ the last download), `npm run import:natural-earth`.
   loads:
   - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
   - `tiles.json`: version, bounds, zooms, and the change index;
-  - `atlas.json`: polity names and sources, for the territory panel.
+  - `sources.json`: every source's title and address;
+  - `polities/<id>.json`: one polity's names and every record that mentions it, for the
+    territory panel. A visitor downloads only the ones they open, which is what lets this scale
+    worldwide.
 
-  The build deletes `public/data/` first. Keep tile properties minimal, because they're repeated
-  in every tile.
+  The build deletes `public/data/` first. Keep tile properties minimal (only what the map draws
+  or filters on), because they're repeated in every tile. Text for the panel belongs in the
+  polity files.
 - **Performance:** the map only updates when the day crosses a change day
   (`src/map/changes.ts`). Filtering by date uses `filter` with global state, not opacity (we
   measured opacity at 4–5 times slower). Measurements are in
@@ -219,12 +223,13 @@ the last download), `npm run import:natural-earth`.
   - `model.ts` works out what the panel says, as plain data. It's pure and tested, so put logic
     here.
   - `panel.tsx` only lays that out with Preact, plus a small `TerritoryPanel` class that
-    `main.ts` drives (`select`, `setDay`, `refresh`).
+    `main.ts` drives (`select`, `setDay`). It loads `polities/<id>.json` on selection. A 404
+    means the ID isn't in our data, so the panel closes and `sel` drops out of the address.
   - JSX works through `jsx`/`jsxImportSource` in `tsconfig.json`, which Vite also reads; there's
     no Preact build plugin. Never use `dangerouslySetInnerHTML`: names come from outside data.
-  - Until Phase 2 step 2, the panel's records come from `HistoricalLayers.bordersOf()`, which
-    only sees tiles the map has downloaded. So the panel must never say "no record"; it says the
-    border isn't in the loaded area.
+  - The panel keeps control, sovereignty, and claims apart. For each date it names the kinds with
+    no record ("Not in our data yet for this date: …"), so silence isn't read as "there was none".
+    Names get a `lang` attribute, so Chinese and Japanese text use the right glyphs.
 - **Testing in the Claude app's browser pane:**
   - A hidden pane has zero size, and pauses both animation frames and resize notifications. Set
     a viewport with `resize_window` before judging layout or drawing, and reset it afterwards.

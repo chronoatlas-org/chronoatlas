@@ -21,8 +21,33 @@ export const en = {
   'relation.occupies': 'Occupied',
   'relation.sovereign': 'Sovereign (de jure)',
   'relation.claims': 'Claimed',
+  // Links between polities. The subject is the dependent side; "puppet state" is a contested
+  // label, so it's worded as a description by the cited source.
+  'relation.leased-to': 'Leased to {name}',
+  'relation.protectorate-of': 'Protectorate of {name}',
+  'relation.puppet-of': 'Described as a puppet state of {name}',
+  // The same links, seen from the other polity.
+  'relation.inverse.leased-to': 'Leased {name}',
+  'relation.inverse.protectorate-of': 'Protectorate: {name}',
+  'relation.inverse.puppet-of': '{name} described as its puppet state',
 
   'panel.close': 'Close territory details',
+  'panel.loading': 'Loading…',
+  'panel.loadFailedTitle': 'Details unavailable',
+  'panel.loadFailed': "Couldn't load the details. Check your connection, then select the territory again.",
+  'panel.onThisDate': 'On this date',
+  'panel.noTerritory': 'No territory recorded for {name} on this date.',
+  'panel.missing': 'Not in our data yet for this date: {list}.',
+  'panel.category.control': 'control (de facto)',
+  'panel.category.sovereignty': 'sovereignty (de jure)',
+  'panel.category.claims': 'claims',
+  'panel.recognizedBy': 'Recognized by {list}, according to the source.',
+  'panel.history': 'All records ({count})',
+  'panel.inEffect': 'in effect on this date',
+  'panel.goTo': 'Go to its start',
+  'panel.names': 'Names ({count})',
+  'panel.nameLocal': 'local name',
+  'panel.period': '{start} – {end}',
   'panel.began': 'Began',
   'panel.ended': 'Ended',
   'panel.endOngoing': 'Not ended',
@@ -34,8 +59,6 @@ export const en = {
   'panel.administersNote':
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
   'panel.sourceLabel': 'Source:',
-  'panel.noneInView':
-    'No border for {name} on this date in the part of the map loaded so far. Move the map or change the date to find it.',
 
   'timeline.label': 'Timeline',
   'timeline.help':

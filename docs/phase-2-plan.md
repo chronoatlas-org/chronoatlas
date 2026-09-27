@@ -412,8 +412,17 @@ Small steps, each committed, explained, and viewable locally and online, as in P
    carry and which we add in `src/panel/panel.tsx` so it's kept in the published code. Until step 2, the panel reads its facts from the border
    tiles the map has downloaded, so it says when a territory's border isn't in the loaded
    area rather than claiming there's no record.
-2. **Per-polity data.** The build writes `public/data/polities/<id>.json`. The panel shows names
+2. ✅ **Per-polity data.** The build writes `public/data/polities/<id>.json`. The panel shows names
    over time, all relations kept separate, dates with precision, and sources with locators.
+   *Done 2026-09-27.*
+   - `atlas.json` (235 KB, loaded up front) became `sources.json` plus 62 polity files
+     (744 KB in total, loaded one at a time; the largest compresses to about 3 KB).
+   - The tiles no longer carry the panel's text, which took them from 6.1 to 5.2 MB.
+   - The panel has three parts:
+     - **On this date:** each record with its dates, notes, and sources, plus which kinds of
+       statement (control, sovereignty, claims) have no record for that date.
+     - **All records:** each with a "Go to its start" button.
+     - **Names:** grouped by source, each with its language.
 3. **Phone bottom sheet** and panel accessibility (focus, Escape, Back button).
 4. **"Report a problem with this border"** button, with a tested URL builder.
 5. **Events pipeline.** The build writes the events and their effects. Timeline markers by

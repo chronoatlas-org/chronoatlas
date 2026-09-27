@@ -2,87 +2,151 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import type { BorderRecord } from '../map/historical.ts';
-import { describeDate, describeTerritory, sourceLink } from './model.ts';
-import type { Atlas } from './model.ts';
+import { describeDate, describePeriod, describeTerritory, languageName, sourceLink } from './model.ts';
+import type { PolityFile, PolityRecord, SourcesFile } from './model.ts';
 
-const atlas: Atlas = {
-  polities: {
-    testland: {
-      names: [
-        { text: 'Testland', lang: 'en', s0: null, e0: null },
-        { text: 'Tɛstlɑnd', lang: 'und', s0: null, e0: null },
-      ],
-    },
-    otherland: { names: [{ text: 'Otherland', lang: 'en', s0: null, e0: null }] },
-  },
-  sources: { 'test-source': { title: 'Test Source' }, openhistoricalmap: { title: 'OpenHistoricalMap' } },
+const sources: SourcesFile['sources'] = {
+  'test-source': { title: 'Test Source' },
+  'other-test-source': { title: 'Other Test Source' },
+  openhistoricalmap: { title: 'OpenHistoricalMap' },
 };
 
-function record(id: string, start: string, end: string, s0: number, s1: number, e0: number, extra: Partial<BorderRecord> = {}): BorderRecord {
-  return { id, polity: 'testland', relation: 'controls', start, end, s0, s1, e0, source: 'test-source', locator: 'map 1', ...extra };
+const FAR_FUTURE = 99_999_999;
+const day = (y: number, m: number, d: number) => civilToJdn(y, m, d);
+
+function record(id: string, relation: string, start: string, end: string, extra: Partial<PolityRecord> = {}): PolityRecord {
+  const s0 = /^\d{4}$/.test(start) ? day(Number(start), 1, 1) : day(...(start.split('-').map(Number) as [number, number, number]));
+  const s1 = /^\d{4}$/.test(start) ? day(Number(start), 12, 31) : s0;
+  const e0 = end === 'ongoing' ? FAR_FUTURE : /^\d{4}$/.test(end) ? day(Number(end), 1, 1) : day(...(end.split('-').map(Number) as [number, number, number]));
+  return { id, relation, subject: 'testland', start, end, s0, s1, e0, sources: [{ source: 'test-source', locator: 'map 1' }], ...extra };
 }
 
-const y1901 = civilToJdn(1901, 1, 1);
-const y1901end = civilToJdn(1901, 12, 31);
-const may1905 = civilToJdn(1905, 5, 12);
-const records = [
-  record('a', '1901', '1905-05-12', y1901, y1901end, may1905),
-  record('a', '1901', '1905-05-12', y1901, y1901end, may1905), // the same border from another tile
-  record('b', '1905-05-12', 'ongoing', may1905, may1905, 99_999_999, { relation: 'administers' }),
-  record('c', '1901', 'ongoing', y1901, y1901end, 99_999_999, { polity: 'otherland' }),
-];
+const testland: PolityFile = {
+  id: 'testland',
+  names: [
+    { text: 'Testland', lang: 'en', s0: null, e0: null, sources: [{ source: 'test-source', locator: 'p. 1' }] },
+    { text: 'Tɛstlɑnd', lang: 'und', s0: null, e0: null, sources: [{ source: 'test-source', locator: 'p. 1' }] },
+    {
+      text: 'Testlande',
+      lang: 'fr',
+      start: '1901',
+      end: '1905-05-12',
+      s0: day(1901, 1, 1),
+      e0: day(1905, 5, 12),
+      sources: [{ source: 'other-test-source', locator: 'p. 2' }],
+    },
+  ],
+  records: [
+    record('a', 'controls', '1901', '1905-05-12'),
+    record('c', 'sovereign', '1901', 'ongoing', {
+      recognized_by: ['otherland'],
+      sources: [{ source: 'test-source', locator: 'p. 3', note: 'A made-up citation note.' }],
+    }),
+    record('b', 'administers', '1905-05-12', 'ongoing', { sources: [{ source: 'openhistoricalmap', locator: 'relation 1, version 2' }] }),
+    record('d', 'puppet-of', '1906', '1910', { subject: 'otherland', object: 'testland' }),
+  ],
+  related: { otherland: [{ text: 'Otherland', lang: 'en', s0: null, e0: null }] },
+};
 
-describe('describeTerritory', () => {
-  it('returns null for an ID that is not in our data', () => {
-    expect(describeTerritory(atlas, 'nowhere', records, y1901, 'en')).toBeNull();
+const view = (y: number, m: number, d: number, locale = 'en') => describeTerritory(testland, sources, day(y, m, d), locale);
+
+describe('describeTerritory: on this date', () => {
+  it('lists the records in effect, and names the kinds of statement we have no source for', () => {
+    const v = view(1903, 1, 1);
+    expect(v.hasTerritory).toBe(true);
+    expect(v.current.map((e) => [e.id, e.label])).toEqual([
+      ['a', 'Controlled (de facto)'],
+      ['c', 'Sovereign (de jure)'],
+    ]);
+    expect(v.missing).toBe('Not in our data yet for this date: claims.');
   });
 
-  it('lists only this polity’s borders in effect on the day, once each', () => {
-    const view = describeTerritory(atlas, 'testland', records, civilToJdn(1903, 1, 1), 'en')!;
-    expect(view.name).toBe('Testland');
-    expect(view.localName).toBe('Tɛstlɑnd');
-    expect(view.borders.map((b) => b.id)).toEqual(['a']);
+  it('says so when there is no territory, without listing missing kinds', () => {
+    const v = view(1900, 6, 1);
+    expect(v.hasTerritory).toBe(false);
+    expect(v.current).toEqual([]);
+    expect(v.missing).toBeUndefined();
   });
 
-  it('treats the end as the first day the border no longer applied', () => {
-    expect(describeTerritory(atlas, 'testland', records, may1905 - 1, 'en')!.borders.map((b) => b.id)).toEqual(['a']);
-    expect(describeTerritory(atlas, 'testland', records, may1905, 'en')!.borders.map((b) => b.id)).toEqual(['b']);
+  it('treats the end as the first day a record no longer applied', () => {
+    expect(view(1905, 5, 11).current.map((e) => e.id)).toEqual(['a', 'c']);
+    expect(view(1905, 5, 12).current.map((e) => e.id)).toEqual(['c', 'b']);
   });
 
   it('says how precise each date is, and explains an uncertain start', () => {
-    const during = describeTerritory(atlas, 'testland', records, civilToJdn(1901, 6, 1), 'en')!.borders[0];
+    const during = view(1901, 6, 1).current[0];
     expect(during.began).toBe('1901 (year only)');
     expect(during.ended).toBe('12 May 1905');
-    expect(during.uncertainStart).toContain('1901');
-    const after = describeTerritory(atlas, 'testland', records, civilToJdn(1902, 1, 1), 'en')!.borders[0];
-    expect(after.uncertainStart).toBeUndefined();
+    expect(during.notes.join(' ')).toMatch(/only as 1901/);
+    expect(view(1902, 1, 1).current[0].notes).toEqual([]);
   });
 
-  it('adds the "administered" caveat and the source with its locator', () => {
-    const [border] = describeTerritory(atlas, 'testland', records, may1905, 'en')!.borders;
-    expect(border.relation).toBe('Administered (de facto)');
-    expect(border.ended).toBe('Not ended');
-    expect(border.note).toMatch(/administered/);
-    expect(border.source).toEqual({ text: 'Test Source, map 1' });
-  });
-
-  it('returns an empty list, not null, when no border is loaded for the day', () => {
-    const view = describeTerritory(atlas, 'testland', [], y1901, 'en')!;
-    expect(view.borders).toEqual([]);
-    expect(view.name).toBe('Testland');
+  it('adds caveats, recognition, and citation notes, with each source and its locator', () => {
+    const [c, b] = view(1906, 1, 1).current;
+    expect(c.notes).toEqual(['Recognized by Otherland, according to the source.', 'A made-up citation note.']);
+    expect(c.sources).toEqual([{ text: 'Test Source, p. 3' }]);
+    expect(b.ended).toBe('Not ended');
+    expect(b.notes[0]).toMatch(/administered/);
+    expect(b.sources).toEqual([
+      { text: 'OpenHistoricalMap, relation 1, version 2', url: 'https://www.openhistoricalmap.org/relation/1' },
+    ]);
   });
 });
 
-describe('describeDate', () => {
+describe('describeTerritory: history and names', () => {
+  it('lists every record in order, marking those in effect, with the day to jump to', () => {
+    const v = view(1907, 1, 1);
+    expect(v.history.map((e) => [e.id, e.current])).toEqual([
+      ['a', false],
+      ['c', true],
+      ['b', true],
+      ['d', true],
+    ]);
+    expect(v.history[2].period).toBe('12 May 1905 onwards');
+    expect(v.history[2].day).toBe(day(1905, 5, 12));
+  });
+
+  it('words relations seen from the other polity, naming it', () => {
+    expect(view(1907, 1, 1).history[3].label).toBe('Otherland described as its puppet state');
+  });
+
+  it('lists the reader’s language, English, and the local name first, grouped by source', () => {
+    const v = view(1903, 1, 1);
+    expect(v.nameCount).toBe(3);
+    expect(v.names.map((g) => g.names.map((n) => n.text))).toEqual([['Testland', 'Tɛstlɑnd'], ['Testlande']]);
+    expect(v.names[0].names[1]).toEqual({ text: 'Tɛstlɑnd', language: 'local name' }); // no lang attribute
+    expect(v.names[1]).toEqual({
+      names: [{ text: 'Testlande', lang: 'fr', language: 'French', period: '1901 (year only) – 12 May 1905' }],
+      sources: [{ text: 'Other Test Source, p. 2' }],
+    });
+  });
+
+  it('titles the panel with the name in the reader’s language for that day', () => {
+    expect(view(1903, 1, 1, 'fr').name).toBe('Testlande');
+    expect(view(1907, 1, 1, 'fr').name).toBe('Testland'); // the French name ended in 1905
+    expect(view(1903, 1, 1).localName).toBe('Tɛstlɑnd');
+  });
+});
+
+describe('wording helpers', () => {
   it('spells out month and year precision, and unknown ends', () => {
     expect(describeDate('1901-05')).toBe('May 1901 (month only)');
     expect(describeDate('1901-05-12')).toBe('12 May 1901');
     expect(describeDate('unknown')).toBe('Unknown');
   });
-});
 
-describe('sourceLink', () => {
+  it('words periods with missing or open ends', () => {
+    expect(describePeriod(undefined, undefined)).toBeUndefined();
+    expect(describePeriod(undefined, '1905')).toBe('until 1905 (year only)');
+    expect(describePeriod('1901', 'unknown')).toBe('1901 (year only) – unknown');
+  });
+
+  it('names languages, and falls back to the tag for odd ones', () => {
+    expect(languageName('ja', 'en')).toBe('Japanese');
+    expect(languageName('und', 'en')).toBe('local name');
+    expect(languageName('not a tag', 'en')).toBe('not a tag');
+  });
+
   it('links OpenHistoricalMap relations, and nothing else', () => {
     expect(sourceLink('openhistoricalmap', 'relation 123, version 4')).toBe('https://www.openhistoricalmap.org/relation/123');
     expect(sourceLink('openhistoricalmap', 'name tags')).toBeUndefined();

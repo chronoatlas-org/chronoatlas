@@ -6,7 +6,9 @@
 //                          tiles from two different builds.
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
-//   public/data/atlas.json polity names (with their dates) and source details, for the panel
+//   public/data/sources.json         each source's title and address
+//   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
+//                          the territory panel (a visitor downloads only the ones they open)
 //
 // Run with: npm run build-data (it also runs automatically before `npm run dev` and the build).
 // It validates the data first and refuses to build from invalid data.
@@ -21,7 +23,8 @@ import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
-import type { Assertion, ShapeFeature } from './lib/types.ts';
+import type { Assertion, PolityName, ShapeFeature } from './lib/types.ts';
+import type { PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 
 const OUT_DIR = join(ROOT, 'public', 'data');
 const TILE_LAYER = 'borders';
@@ -104,7 +107,8 @@ export function buildBorders(ds: Dataset) {
   });
   const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e0 })));
 
-  // Only what the map and the territory panel use goes into the tiles, to keep them small.
+  // Only what the map itself uses goes into the tiles, because it's repeated in every tile. The
+  // territory panel gets the rest (dates as written, sources) from the polity files.
   const collection: GeoJSON.FeatureCollection = {
     type: 'FeatureCollection',
     features: items.map(({ assertion: a, shape, s0, s1, e0, endUnknown }) => ({
@@ -113,14 +117,10 @@ export function buildBorders(ds: Dataset) {
         id: a.id,
         polity: a.subject,
         relation: a.relation,
-        start: a.start,
-        end: a.end,
         s0,
         s1,
         e0,
         ...(endUnknown ? { endUnknown: true } : {}),
-        source: a.sources[0].source,
-        locator: a.sources[0].locator,
         color: colors.get(a.subject) ?? 0,
       },
       geometry: shape.geometry as GeoJSON.Geometry,
@@ -149,28 +149,83 @@ export function changeDays(collection: GeoJSON.FeatureCollection): number[] {
   return [...days].sort((a, b) => a - b);
 }
 
-export function buildAtlas(ds: Dataset) {
-  const polities = Object.fromEntries(
-    ds.polities.map(({ value: p }) => [
-      p.id,
-      {
-        ...(p.wikidata ? { wikidata: p.wikidata } : {}),
-        names: p.names.map((n) => ({
-          text: n.text,
-          lang: n.lang,
-          s0: n.start ? parseEdtfDate(n.start).earliest : null,
-          e0: n.end && n.end !== 'ongoing' && n.end !== 'unknown' ? parseEdtfDate(n.end).earliest : null,
-        })),
-      },
-    ]),
-  );
+/** public/data/sources.json: each source's title and address, shared by all polity files. */
+export function buildSources(ds: Dataset): SourcesFile {
   const sources = Object.fromEntries(
     ds.sources.map(({ value: s }) => [
       s.id,
       { title: s.title, ...(s.url ? { url: s.url } : {}), ...(s.attribution ? { attribution: s.attribution } : {}) },
     ]),
   );
-  return { polities, sources };
+  return { sources };
+}
+
+/** A name's day range, for choosing which name applies on a day (see src/map/names.ts). */
+function nameDays(n: PolityName) {
+  return {
+    s0: n.start ? parseEdtfDate(n.start).earliest : null,
+    e0: n.end && n.end !== 'ongoing' && n.end !== 'unknown' ? parseEdtfDate(n.end).earliest : null,
+  };
+}
+
+/**
+ * public/data/polities/<id>.json: everything the territory panel shows about one polity, so a
+ * visitor downloads only the polities they open. Each file has all the polity's names and every
+ * assertion that mentions it (as subject, or as the other polity in a relation).
+ */
+export function buildPolityFiles(ds: Dataset): PolityFile[] {
+  const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
+  const mentions = new Map<string, Assertion[]>();
+  for (const a of ds.assertions.flatMap(({ value }) => value)) {
+    for (const id of new Set([a.subject, ...(a.object ? [a.object] : [])])) {
+      mentions.set(id, [...(mentions.get(id) ?? []), a]);
+    }
+  }
+
+  return ds.polities.map(({ value: p }) => {
+    const records = (mentions.get(p.id) ?? [])
+      .map((a): PolityRecord => {
+        const { s0, s1, e0 } = dayRanges(a.start, a.end);
+        return {
+          id: a.id,
+          relation: a.relation,
+          subject: a.subject,
+          ...(a.object ? { object: a.object } : {}),
+          ...(a.recognized_by ? { recognized_by: a.recognized_by } : {}),
+          start: a.start,
+          end: a.end,
+          s0,
+          s1,
+          e0,
+          sources: a.sources,
+          ...(a.notes ? { notes: a.notes } : {}),
+        };
+      })
+      .sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
+
+    // Other polities the records mention, with just enough to name them.
+    const others = new Set(records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? [])]));
+    others.delete(p.id);
+    others.delete('');
+    const related = Object.fromEntries(
+      [...others].map((id) => [id, (polities.get(id)?.names ?? []).map((n) => ({ text: n.text, lang: n.lang, ...nameDays(n) }))]),
+    );
+
+    return {
+      id: p.id,
+      ...(p.wikidata ? { wikidata: p.wikidata } : {}),
+      names: p.names.map((n) => ({
+        text: n.text,
+        lang: n.lang,
+        ...(n.start ? { start: n.start } : {}),
+        ...(n.end ? { end: n.end } : {}),
+        ...nameDays(n),
+        sources: n.sources,
+      })),
+      records,
+      ...(others.size > 0 ? { related } : {}),
+    };
+  });
 }
 
 function main(): void {
@@ -200,11 +255,18 @@ function main(): void {
     join(OUT_DIR, 'tiles.json'),
     JSON.stringify({ version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes }),
   );
-  writeFileSync(join(OUT_DIR, 'atlas.json'), JSON.stringify(buildAtlas(ds)));
+  writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
+  mkdirSync(join(OUT_DIR, 'polities'));
+  let polityBytes = 0;
+  for (const file of buildPolityFiles(ds)) {
+    const json = JSON.stringify(file);
+    writeFileSync(join(OUT_DIR, 'polities', `${file.id}.json`), json);
+    polityBytes += json.length;
+  }
   console.log(
     `Built public/data: ${collection.features.length} border features in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}), ${changes.length} change days, ` +
-      `${ds.polities.length} polities.`,
+      `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB).`,
   );
 }
 

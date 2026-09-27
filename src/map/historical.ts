@@ -24,28 +24,9 @@ interface TileIndex {
   changes: number[];
 }
 
-/** The properties of one border in the tiles (see buildBorders in scripts/build-data.ts). */
-export interface BorderRecord {
-  /** The assertion's ID. */
-  id: string;
-  polity: string;
-  relation: string;
-  /** EDTF, as in the data. `end` is the first day it no longer applied, or ongoing/unknown. */
-  start: string;
-  end: string;
-  /** Day numbers: may have started from s0, had certainly started by s1, ended on e0. */
-  s0: number;
-  s1: number;
-  e0: number;
-  source: string;
-  locator: string;
-}
-
 export interface HistoricalOptions {
   /** Called with a polity ID when someone clicks a territory. */
   onSelect: (polity: string) => void;
-  /** Called when newly downloaded tiles may have changed what `bordersOf` returns. */
-  onDataChange: () => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -81,7 +62,6 @@ export class HistoricalLayers {
   private day: number;
   private selected = '';
   private ready = false;
-  private sourceLayer = '';
   private changes: number[] = [];
   /** The stretch between change days currently shown on the map (see src/map/changes.ts). */
   private shownSegment = -1;
@@ -108,17 +88,6 @@ export class HistoricalLayers {
     if (this.ready) this.map.setGlobalStateProperty('selected', this.selected);
   }
 
-  /**
-   * The border records for a polity in the tiles downloaded so far, for every date (the panel
-   * picks the ones for the selected day). A border that crosses tiles appears once per tile.
-   */
-  bordersOf(polity: string): BorderRecord[] {
-    if (!this.ready) return [];
-    return this.map
-      .querySourceFeatures('borders', { sourceLayer: this.sourceLayer, filter: ['==', ['get', 'polity'], polity] })
-      .map((feature) => feature.properties as BorderRecord);
-  }
-
   /** Updates the map, but only when the day has crossed into a different change segment. */
   private showDay(): void {
     if (!this.ready) return;
@@ -131,7 +100,6 @@ export class HistoricalLayers {
   private addLayers(index: TileIndex): void {
     const map = this.map;
     this.changes = index.changes;
-    this.sourceLayer = index.layer;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });
 
     // Hatch all land; borders drawn on top cover it wherever we have data.
@@ -201,7 +169,5 @@ export class HistoricalLayers {
     });
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));
-    // "idle" fires once the map has finished downloading tiles and drawing.
-    map.on('idle', () => this.options.onDataChange());
   }
 }

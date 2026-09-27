@@ -361,7 +361,8 @@ and 100 GB/month bandwidth as a soft limit):
 - **Phase 2, panel, events and transitions (the showcase begins).** The detailed plan is
   [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27), which lists the steps. Done so far:
   step 1 ✅ (panel foundation: Preact, a side panel replacing the popup, and `sel` in the
-  address). The goals:
+  address) and step 2 ✅ (one data file per polity; the panel shows names over time and every
+  record, keeping control, sovereignty, and claims apart). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

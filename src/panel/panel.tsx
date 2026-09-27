@@ -38,46 +38,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { render } from 'preact';
+import { Fragment, render } from 'preact';
+import type { ComponentChildren } from 'preact';
 import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
-import type { BorderRecord } from '../map/historical.ts';
 import { describeTerritory } from './model.ts';
-import type { Atlas, BorderEntry, TerritoryView } from './model.ts';
+import type { CurrentEntry, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
 
-function Border({ border }: { border: BorderEntry }) {
+// --- Components ----------------------------------------------------------------------------------
+
+function Sources({ lines }: { lines: SourceLine[] }) {
   return (
-    <li class="panel-border">
-      <p class="panel-relation">{border.relation}</p>
-      <dl class="panel-dates">
-        <dt>{t('panel.began')}</dt>
-        <dd>{border.began}</dd>
-        <dt>{t('panel.ended')}</dt>
-        <dd>{border.ended}</dd>
-      </dl>
-      {border.uncertainStart && <p class="panel-note">{border.uncertainStart}</p>}
-      {border.note && <p class="panel-note">{border.note}</p>}
-      <p class="panel-source">
-        {t('panel.sourceLabel')}{' '}
-        {border.source.url ? (
-          <a href={border.source.url} target="_blank" rel="noopener">
-            {border.source.text}
-          </a>
-        ) : (
-          border.source.text
-        )}
-      </p>
-    </li>
+    <p class="panel-source">
+      {t('panel.sourceLabel')}{' '}
+      {lines.map((line, i) => (
+        <Fragment key={i}>
+          {i > 0 && '; '}
+          {line.url ? (
+            <a href={line.url} target="_blank" rel="noopener">
+              {line.text}
+            </a>
+          ) : (
+            line.text
+          )}
+        </Fragment>
+      ))}
+    </p>
   );
 }
 
-function Territory({ view, onClose }: { view: TerritoryView; onClose: () => void }) {
+function Shell({ title, subtitle, onClose, children }: { title: string; subtitle?: string; onClose: () => void; children: ComponentChildren }) {
   return (
     <>
       <header class="panel-header">
         <div>
-          <h2 id="panel-title">{view.name}</h2>
-          {view.localName && <p class="panel-local">{view.localName}</p>}
+          <h2 id="panel-title">{title}</h2>
+          {subtitle && <p class="panel-local">{subtitle}</p>}
         </div>
         <button type="button" class="panel-close" onClick={onClose} aria-label={t('panel.close')} title={t('panel.close')}>
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -85,34 +81,110 @@ function Territory({ view, onClose }: { view: TerritoryView; onClose: () => void
           </svg>
         </button>
       </header>
-      {view.borders.length > 0 ? (
-        <ul class="panel-borders">
-          {view.borders.map((border) => (
-            <Border key={border.id} border={border} />
-          ))}
-        </ul>
-      ) : (
-        <p class="panel-empty">{t('panel.noneInView', { name: view.name })}</p>
-      )}
+      {children}
     </>
   );
 }
 
-export interface PanelOptions {
-  /** The border records for a polity that the map has downloaded (HistoricalLayers.bordersOf). */
-  bordersOf: (polity: string) => BorderRecord[];
-  /** Called when the reader closes the panel, or when the selected ID isn't in our data. */
-  onClose: () => void;
+function Current({ entry }: { entry: CurrentEntry }) {
+  return (
+    <li class="panel-record">
+      <p class="panel-relation">{entry.label}</p>
+      <dl class="panel-dates">
+        <dt>{t('panel.began')}</dt>
+        <dd>{entry.began}</dd>
+        <dt>{t('panel.ended')}</dt>
+        <dd>{entry.ended}</dd>
+      </dl>
+      {entry.notes.map((note, i) => (
+        <p key={i} class="panel-note">
+          {note}
+        </p>
+      ))}
+      <Sources lines={entry.sources} />
+    </li>
+  );
 }
 
-/** Puts the panel on the page and redraws it when the selection, the day, or the data changes. */
+function Territory({ view, onGoToDay }: { view: TerritoryView; onGoToDay: (day: number) => void }) {
+  return (
+    <>
+      <section class="panel-section" aria-labelledby="panel-now">
+        <h3 id="panel-now">{t('panel.onThisDate')}</h3>
+        {!view.hasTerritory && <p class="panel-empty">{t('panel.noTerritory', { name: view.name })}</p>}
+        {view.current.length > 0 && (
+          <ul class="panel-records">
+            {view.current.map((entry) => (
+              <Current key={entry.id} entry={entry} />
+            ))}
+          </ul>
+        )}
+        {view.missing && <p class="panel-missing">{view.missing}</p>}
+      </section>
+
+      {view.history.length > 0 && (
+        <details class="panel-section">
+          <summary>{t('panel.history', { count: view.history.length })}</summary>
+          <ol class="panel-history">
+            {view.history.map((entry) => (
+              <li key={entry.id} class={entry.current ? 'is-current' : undefined}>
+                <p class="panel-relation">{entry.label}</p>
+                <p>
+                  {entry.period}
+                  {entry.current && <strong class="panel-current-tag"> · {t('panel.inEffect')}</strong>}
+                </p>
+                <Sources lines={entry.sources} />
+                <button type="button" class="panel-goto" onClick={() => onGoToDay(entry.day)}>
+                  {t('panel.goTo')}
+                </button>
+              </li>
+            ))}
+          </ol>
+        </details>
+      )}
+
+      <details class="panel-section">
+        <summary>{t('panel.names', { count: view.nameCount })}</summary>
+        {view.names.map((group, i) => (
+          <div key={i} class="panel-name-group">
+            <ul class="panel-names">
+              {group.names.map((name, j) => (
+                <li key={j}>
+                  <span class="panel-name" lang={name.lang}>
+                    {name.text}
+                  </span>{' '}
+                  <span class="panel-name-language">{name.language}</span>
+                  {name.period && <span class="panel-name-period">{name.period}</span>}
+                </li>
+              ))}
+            </ul>
+            <Sources lines={group.sources} />
+          </div>
+        ))}
+      </details>
+    </>
+  );
+}
+
+// --- The panel on the page -----------------------------------------------------------------------
+
+export interface PanelOptions {
+  /** Called when the reader closes the panel, or when the selected ID isn't in our data. */
+  onClose: () => void;
+  /** Called when the reader asks to see a record on the map (moves the timeline to `day`). */
+  onGoToDay: (day: number) => void;
+}
+
+type FileState = PolityFile | 'loading' | 'failed';
+
+/** Puts the panel on the page, loads polity files, and redraws when anything changes. */
 export class TerritoryPanel {
   private readonly container: HTMLElement;
   private readonly options: PanelOptions;
-  private atlas: Atlas | null = null;
+  private sources: SourcesFile['sources'] | null = null;
+  private readonly files = new Map<string, FileState>();
   private polity: string | null = null;
   private day: number;
-  private records: BorderRecord[] = [];
   /** What was last drawn, to skip redrawing when nothing changed (e.g. during playback). */
   private drawn = '';
 
@@ -120,19 +192,21 @@ export class TerritoryPanel {
     this.container = container;
     this.day = initialDay;
     this.options = options;
-    fetch(dataUrl('atlas.json'))
-      .then((r) => r.json())
-      .then((atlas: Atlas) => {
-        this.atlas = atlas;
+    fetch(dataUrl('sources.json'))
+      .then((r) => r.json() as Promise<SourcesFile>)
+      .then((file) => {
+        this.sources = file.sources;
         this.draw();
       })
-      .catch((error) => console.error('Could not load atlas.json', error));
+      .catch((error) => console.error('Could not load sources.json', error));
   }
 
   /** Shows a polity (by ID), or closes the panel (null). */
   select(polity: string | null): void {
+    if (polity !== this.polity) this.container.scrollTop = 0;
     this.polity = polity;
-    this.refresh();
+    if (polity && (!this.files.has(polity) || this.files.get(polity) === 'failed')) this.load(polity);
+    this.draw();
   }
 
   setDay(day: number): void {
@@ -140,27 +214,69 @@ export class TerritoryPanel {
     this.draw();
   }
 
-  /** Re-reads the selected polity's borders from the map, e.g. after more tiles have loaded. */
-  refresh(): void {
-    this.records = this.polity ? this.options.bordersOf(this.polity) : [];
-    this.draw();
+  private load(id: string): void {
+    this.files.set(id, 'loading');
+    fetch(dataUrl(`polities/${id}.json`))
+      .then(async (response) => {
+        if (response.status === 404) return null;
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        try {
+          return (await response.json()) as PolityFile;
+        } catch {
+          return null; // not JSON: some servers answer a missing file with an HTML page
+        }
+      })
+      .then((file) => {
+        if (file && file.id === id) {
+          this.files.set(id, file);
+          this.draw();
+          return;
+        }
+        // Not in our data (for example a mistyped link): close, as if the link had no selection.
+        this.files.delete(id);
+        if (this.polity === id) {
+          this.polity = null;
+          this.draw();
+          this.options.onClose();
+        }
+      })
+      .catch((error) => {
+        console.error(`Could not load the details for ${id}`, error);
+        this.files.set(id, 'failed'); // selecting it again retries
+        this.draw();
+      });
   }
 
   private draw(): void {
-    if (!this.polity || !this.atlas) return this.hide();
-    const view = describeTerritory(this.atlas, this.polity, this.records, this.day, getLocale());
-    if (!view) {
-      // Not in our data (for example a mistyped link): close, as if the link had no selection.
-      this.polity = null;
-      this.hide();
-      this.options.onClose();
-      return;
+    if (!this.polity) return this.hide();
+    const state = this.files.get(this.polity);
+    const onClose = this.options.onClose;
+
+    if (state === undefined || state === 'loading' || !this.sources) {
+      return this.show('loading', <Shell title={t('panel.loading')} onClose={onClose}>{null}</Shell>);
     }
-    const key = JSON.stringify(view);
+    if (state === 'failed') {
+      return this.show(
+        'failed',
+        <Shell title={t('panel.loadFailedTitle')} onClose={onClose}>
+          <p class="panel-empty">{t('panel.loadFailed')}</p>
+        </Shell>,
+      );
+    }
+    const view = describeTerritory(state, this.sources, this.day, getLocale());
+    this.show(
+      JSON.stringify(view),
+      <Shell title={view.name} subtitle={view.localName} onClose={onClose}>
+        <Territory view={view} onGoToDay={this.options.onGoToDay} />
+      </Shell>,
+    );
+  }
+
+  private show(key: string, content: preact.JSX.Element): void {
     if (key === this.drawn) return;
     this.drawn = key;
     this.container.hidden = false;
-    render(<Territory view={view} onClose={this.options.onClose} />, this.container);
+    render(content, this.container);
   }
 
   private hide(): void {
