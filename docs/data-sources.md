@@ -117,6 +117,109 @@ description. Re-check before relying on anything here, because datasets change.
   - Every feature here is marked `BORDERPRECISION` 3 ("determined by international law"), so the
     precision flag isn't reliable for this region.
 
+## Statistics (Figures) datasets
+
+Evaluated **2026-09-27** for the Figures part of the data model (see
+[architecture](architecture.md#data-model)). Licenses were read on each project's own website.
+Where the website blocked automated access, we used the dataset's DOI record at DataCite, which
+the publisher supplies. **Nothing has been imported.** The recommendation is in
+[phase-2-plan.md](phase-2-plan.md#5-statistics-figures).
+
+The key question for each is its **basis**: does a number describe a historical polity's own
+territory, or a present-day country's? Present-day-border numbers must never be attached to a
+historical polity as if they described its territory.
+
+| Dataset | Coverage | Basis | Format | License | Decision |
+|---|---|---|---|---|---|
+| Maddison Project Database 2023 | 169 countries, 1 CE–2022, sparse before 1820 | Not stated on the project's pages; other sources say present-day borders (unconfirmed) | Excel (4.9 MB), Stata | CC BY 4.0 | Not now; confirm basis first |
+| Gapminder population, v8 | Countries 1800–2100 (later years are UN projections); world total from 10,000 BCE | **Present-day borders** (stated) | Excel, online spreadsheets | CC BY 4.0 | Not now |
+| HYDE 3.3 | Global grid, 5 arc-minutes (~85 km²), 10,000 BCE–2023 CE | A grid: can be summed inside any shape (`computed-from-shape`) | ESRI ASCII grids | **CC BY-NC-SA 4.0** (DOI record) | Candidate; maintainer to decide |
+| Seshat Databank | 864 polities in 10 macro-regions (a sample) | **Historical polity** | Web database and downloads (registered users) | **CC BY-SA 4.0** | Candidate; maintainer to decide |
+| COW National Material Capabilities v7.0 | Members of the state system, 1816–2022 | State-system members (historical states) | ZIP of CSV, Stata, text | Custom terms: **no redistribution** without written permission; no commercial use | **Not usable** without permission |
+
+### Maddison Project Database 2023
+
+- **Site:** https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023
+  (DOI [10.34894/INZBF2](https://doi.org/10.34894/INZBF2)).
+- **License (quoted from the site):** "Maddison Project Database, version 2023 by Jutta Bolt and
+  Jan Luiten van Zanden is licensed under a Creative Commons Attribution 4.0 International
+  License." The DOI record also gives `cc-by-4.0`.
+- **Citation:** Bolt, Jutta and Jan Luiten van Zanden (2024), "Maddison style estimates of the
+  evolution of the world economy: A new 2023 update", *Journal of Economic Surveys*, 1–41,
+  DOI 10.1111/joes.12618.
+- **Extra citation rule:** the original papers (listed in the workbook's source sheet) must be
+  cited when "the data is shown in any graphical form", or when a subset of fewer than 12
+  countries is used. A panel showing a figure would need the original paper, not just the MPD.
+- **Coverage and format:** GDP per capita and population, "for 169 countries and aggregate
+  regions from 1 AD up to 2022" (DOI record); Excel and Stata.
+- **Basis: not confirmed.** The project's page and DOI record don't say whether countries are
+  measured within present-day borders. The data file (on DataverseNL) and the article (Wiley) both
+  refused automated access, so this must be checked by hand before any use.
+
+### Gapminder population (version 8)
+
+- **Documentation:** https://www.gapminder.org/data/documentation/gd003/
+- **License:** Gapminder's [free material page](https://www.gapminder.org/free-material/) says:
+  "All Gapminder material linking here are freely available under the Creative Commons
+  Attribution 4.0 International license." The dataset's page doesn't state a license itself.
+  Gapminder builds on Clio Infra, Maddison, and the UN World Population Prospects, whose own terms
+  we'd also check before any import.
+- **Coverage:** a world total from 10,000 BCE, and country estimates "from 1800 to 2100". From 1950
+  it uses UN World Population Prospects 2024, with the medium-fertility forecast after the
+  estimates end. Projections are never historical data and would never be imported.
+- **Basis: present-day borders, stated plainly.** Gapminder's
+  [changing country borders](https://www.gapminder.org/data/geo/changes/) page says it treats
+  countries "as if they always had the borders they have today".
+- **Format:** Excel and online spreadsheets.
+
+### HYDE 3.3 (History Database of the Global Environment)
+
+- **Dataset:** DOI [10.24416/UU01-AEZZIT](https://doi.org/10.24416/UU01-AEZZIT), Utrecht
+  University, issued 2023-11-30, updated 2024-07-12. Landing page:
+  https://public.yoda.uu.nl/geo/UU01/AEZZIT.html (it blocked automated access).
+- **License: CC BY-NC-SA 4.0.** The DOI record's rights statement is "Creative Commons Attribution
+  Non Commercial Share Alike 4.0 International" (SPDX `cc-by-nc-sa-4.0`). **Caution:** a web
+  search summary claimed CC BY 4.0. Treat the dataset as NC-SA unless the landing page, checked
+  by hand, says otherwise. NC-SA would mean the same isolation as CShapes.
+- **Coverage and format (DOI record):** "The period covered is 10 000 BCE to 2023 CE. Spatial
+  resolution is 5 arc minutes (approx. 85 km2 at the equator), the files are in ESRI ASCII grid
+  format." Population comes as total, urban, and rural grids, plus density.
+- **Basis:** a grid, not countries, so the population inside any of our shapes can be summed
+  (`basis: computed-from-shape`). The grids are modelled, though, by spreading country-level
+  estimates over the map, so any figure computed from them is an estimate and must say so, with
+  its method.
+
+### Seshat Databank
+
+- **Site:** https://seshat-db.com/, terms at https://seshat-db.com/terms/current/
+- **License (quoted from the terms):** "Public Data: Can be viewed by anyone and downloaded by
+  registered users who have accepted the Terms. Licensed under the Creative Commons
+  Attribution–ShareAlike 4.0 International License (CC BY-SA 4.0)." Share-alike means anything
+  derived must stay under CC BY-SA, so it would be isolated in its own import folder.
+- **Access:** downloading needs a registered account that has accepted the terms. The maintainers
+  would have to create one, and the import couldn't run without it.
+- **Coverage:** the home page lists 864 polities in 10 macro-regions, with 77 social-complexity
+  variables (including population) coded for 544 polities. It's a sample, not a complete list.
+- **Basis: historical polity.** Seshat codes each polity, not a modern country, so it's the only
+  candidate whose numbers could carry `basis: polity-territory`.
+- **Not the same as Cliopatria:** Cliopatria (the shapes) is CC BY 4.0. The Databank's variables
+  are CC BY-SA 4.0.
+
+### Correlates of War: National Material Capabilities (v7.0)
+
+- **Site:** https://correlatesofwar.org/data-sets/national-material-capabilities/
+- **Coverage:** "total population, urban population, iron and steel production, energy
+  consumption, military personnel, and military expenditure of all state members, currently from
+  1816-2022". It's a ZIP of CSV, Stata, and text files.
+- **Terms** (https://correlatesofwar.org/data-sets/): downloading means agreeing to terms that
+  forbid commercial use and say: "Users agree not to distribute the dataset to any third party
+  without written permission of the COW director and data host."
+- **Decision: not usable.** Putting any of it in a public repository or on the site would be
+  redistribution, which needs written permission. Asking for it would be an outward-facing step
+  for the maintainer to decide.
+- **Basis:** members of the state system. Whether a member's population includes its colonies
+  wasn't checked.
+
 ## Gap: front lines in China, 1937–45
 
 No open vector dataset of Japanese-controlled areas in China proper was found. The candidate path

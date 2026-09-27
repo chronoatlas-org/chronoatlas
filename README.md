@@ -100,4 +100,6 @@ what counts as a source. Everyone taking part follows our [Code of Conduct](CODE
 - [docs/architecture.md](docs/architecture.md): how the site and data fit together, plus the
   roadmap and showcase plan.
 - [docs/data-sources.md](docs/data-sources.md): the evaluation of each dataset (coverage,
-  precision, format, license).
+  precision, format, license), including statistics datasets.
+- [docs/phase-2-plan.md](docs/phase-2-plan.md): the proposed plan for Phase 2 (awaiting
+  approval).
