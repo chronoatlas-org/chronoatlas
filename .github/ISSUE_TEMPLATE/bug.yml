@@ -1,0 +1,43 @@
+# Issue form for problems with the website itself (not with the data).
+# Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# The field ids are stable (they can be pre-filled from the address); don't rename them.
+name: Bug report
+description: Something on the website doesn't work as it should.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a wrong border, date, or name, please use the **Border correction** form instead.
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce (optional)
+      placeholder: |
+        1. Open the site
+        2. Drag the timeline to ...
+        3. ...
+  - type: input
+    id: view_link
+    attributes:
+      label: Link to the map view (optional)
+      description: Copy the address from the site, or use its "Copy link" button.
+      placeholder: https://chronoatlas-org.github.io/chronoatlas/#d=...
+  - type: input
+    id: device_browser
+    attributes:
+      label: Device and browser (optional)
+      placeholder: e.g. Android phone, Chrome; or Windows laptop, Firefox

@@ -6,11 +6,12 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: early development (Phase 1).** Country borders for East Asia, 1900–1950, imported
-> from OpenHistoricalMap, change as you move the timeline; click a territory for its name, dates,
-> and source. Everywhere else shows "no data yet". The address bar always links to the exact
-> date and view you're looking at, so you can share it. See the
-> [roadmap](docs/architecture.md#roadmap).
+> **Status: Phase 1 complete; Phase 2 is being planned.** Country borders for East Asia,
+> 1900–1950, imported from OpenHistoricalMap, change as you move the timeline; click a territory
+> for its name, dates, and source. Everywhere else shows "no data yet". The address bar always
+> links to the exact date and view you're looking at, so you can share it. Problems can be
+> reported with the [issue forms](https://github.com/chronoatlas-org/chronoatlas/issues/new/choose).
+> See the [roadmap](docs/architecture.md#roadmap).
 
 ## What it will do
 

@@ -212,3 +212,13 @@ the last download), `npm run import:natural-earth`.
   Actions", so no Jekyll processing and no `gh-pages` branch. Actions are pinned to full commit
   SHAs with a version comment. To update one, look up the new release's commit, and keep the
   permissions minimal.
+- **Issue forms** are in `.github/ISSUE_TEMPLATE/`. Their field `id`s are **stable**, because
+  links pre-fill them through query parameters (`issues/new?template=border-correction.yml&territory=…`).
+  Never rename or remove one; `scripts/issue-forms.test.ts` checks them.
+  - `border-correction.yml`: `territory`, `date_range`, `problem`, `sources`, `view_link`,
+    `suggested_fix`, `confirmations`.
+  - `missing-event.yml`: `title`, `date`, `location`, `why_it_matters`, `sources`,
+    `related_territories`. (`title` is also GitHub's own query parameter for the issue title,
+    so pre-filling this field by URL may not work; untested.)
+  - `bug.yml`: `what_happened`, `expected`, `steps`, `view_link`, `device_browser`.
+  - `config.yml` contact links must be `https://`; GitHub rejects `mailto:`.

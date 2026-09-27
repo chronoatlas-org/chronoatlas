@@ -1,0 +1,64 @@
+# Issue form for suggesting an event that should appear on the timeline.
+# Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# The field ids are stable (they can be pre-filled from the address); don't rename them.
+name: Missing event
+description: Suggest an event for the timeline, with sources.
+title: "[Event] "
+labels: [missing-event]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Events appear on the timeline and can be linked to the border changes that followed them.
+        Every event needs **sources with locators**; see
+        [what counts as a source](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#what-counts-as-a-source).
+
+        The event's summary will be **written in the project's own words from the sources you
+        cite**. Please **don't paste text from Wikipedia** (it is CC BY-SA and can't go into our
+        public-domain data) or from other sources. A short, attributed quotation is fine.
+  - type: input
+    id: title
+    attributes:
+      label: Event
+      description: A short name for the event.
+      placeholder: e.g. Treaty of Testland
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: >-
+        As an EDTF date: a day (`1901-05-12`), month (`1901-05`), year (`1901`), approximate
+        (`1901~`), or a range (`1901-05/1901-09`). Don't make it more precise than your source.
+        See the [data format guide](https://github.com/chronoatlas-org/chronoatlas/blob/main/docs/data-format.md#conventions).
+      placeholder: e.g. 1901-05-12
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location (optional)
+      description: A place name, or coordinates, and how precise they are.
+  - type: textarea
+    id: why_it_matters
+    attributes:
+      label: Why it matters
+      description: How it relates to borders, control, recognition, or claims, as your sources describe it.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: >-
+        Full citations (author, title, year, and publisher, URL, DOI, or ISBN), each **with a
+        locator** (page, section, document number). Wikipedia and Wikidata are leads, not
+        sources; cite what they cite. A Wikidata ID is welcome as an identifier.
+    validations:
+      required: true
+  - type: textarea
+    id: related_territories
+    attributes:
+      label: Related territories (optional)
+      description: Territories on the map whose borders or status this event affected, with dates if your sources give them.

@@ -27,26 +27,34 @@ Everyone taking part follows our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Report a problem
 
-Open an issue on GitHub. Issue forms for border corrections, missing events, and bugs are coming
-in Phase 1. Until then, please include:
+[Open an issue](https://github.com/chronoatlas-org/chronoatlas/issues/new/choose) on GitHub and
+pick a form:
 
-- **the place** (a name, and ideally a link to the map view);
-- **the date or date range** affected;
-- **what's wrong**;
-- **a source** that supports the correction (see below).
+- **Border correction:** a border, date, or name that looks wrong.
+- **Missing event:** an event the timeline should show.
+- **Bug report:** something on the website that doesn't work.
+
+The forms ask for the place, the date or date range (as an [EDTF date](docs/data-format.md#conventions)),
+what's wrong, and **a source** that supports the correction (see below). A link to the map view
+helps too: copy it from the address bar or with the site's "Copy link" button.
 
 Later, every territory on the map will have a "Report a problem with this border" button that
 fills most of this in for you.
 
+Conduct problems are reported privately, never in a public issue: see the
+[Code of Conduct](CODE_OF_CONDUCT.md#reporting-an-issue).
+
 ### Propose a change yourself
 
-Edit the data files and open a pull request (PR). Every PR is reviewed in public before it's
-merged, and automatic checks confirm that dates are well-formed, geometry is valid, and sources
-are present. Those checks arrive in Phase 1.
+Edit the data files and open a pull request (PR). The PR description includes a short review
+checklist. Every PR is reviewed in public before it's merged, and automatic checks
+(`npm run validate` and `npm test`) confirm that dates are well-formed, geometry is valid, and
+sources are present. The data format is described in [docs/data-format.md](docs/data-format.md).
 
 ### Help with code
 
-The development setup arrives in Phase 1. Until then, discussion on issues is very welcome.
+The [README](README.md#running-it-on-your-computer) explains how to run the site on your computer.
+Discussion on issues is very welcome too.
 
 ## What counts as a source
 

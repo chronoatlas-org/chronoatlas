@@ -354,7 +354,9 @@ and 100 GB/month bandwidth as a soft limit):
      landscape layout.
   7. ✅ Performance: vector tiles instead of one large file, and the change index, with before
      and after measurements (see [Measured](#measured-phase-1-step-7-2026-09-27)).
-  8. Data checks in CI; basic issue forms.
+  8. ✅ Data checks in CI (`npm run validate` and `npm test` run on every push and pull
+     request), issue forms for border corrections, missing events, and bugs
+     (`.github/ISSUE_TEMPLATE/`), and a pull request template with the review checklist.
 - **Phase 2, panel, events and transitions (the showcase begins):**
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
@@ -367,7 +369,7 @@ and 100 GB/month bandwidth as a soft limit):
   compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
   example population), keeping "no data" visually distinct.
 - **Phase 4, contribution pipeline:**
-  - Complete issue forms and a pull request template.
+  - Refine the issue forms and pull request template from experience.
   - A bot comment summarizing each data change.
   - A reviewer guide, and an upstream-to-OHM guide.
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,

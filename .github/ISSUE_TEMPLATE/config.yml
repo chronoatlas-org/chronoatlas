@@ -1,0 +1,12 @@
+# Settings for the "New issue" chooser.
+# Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+blank_issues_enabled: true
+contact_links:
+  # GitHub only accepts http(s) links here, not mailto:, so this points to the Code of Conduct's
+  # reporting section, which gives the private email address.
+  - name: Report a Code of Conduct problem privately
+    url: https://github.com/chronoatlas-org/chronoatlas/blob/main/CODE_OF_CONDUCT.md#reporting-an-issue
+    about: Please don't report conduct problems in public issues. Email the moderators at chronoatlas.conduct@gmail.com.
+  - name: Contributing guide
+    url: https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md
+    about: How to report a problem or propose a change, and what counts as a source.

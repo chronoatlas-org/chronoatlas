@@ -1,0 +1,83 @@
+# Issue form for reporting a problem with a border or its dates.
+# Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+#
+# The field ids below are STABLE. The site's planned "Report a problem with this border" button
+# pre-fills them through the address, for example:
+#   issues/new?template=border-correction.yml&territory=Testland&date_range=1901-05/1901-09
+# Don't rename or remove an id without updating that button.
+name: Border correction
+description: Report a border, date, or name that looks wrong, with a source that supports the fix.
+title: "[Border] "
+labels: [border-correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping. Every correction needs a **source**, not personal knowledge: see
+        [what counts as a source](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#what-counts-as-a-source).
+
+        **Border lines themselves are fixed upstream in [OpenHistoricalMap](https://www.openhistoricalmap.org)**
+        (OHM) and then re-imported; we never hand-edit imported lines here. If you have already
+        fixed a line in OHM, put a link to your OHM change under "Sources". Claims, recognition,
+        contested status, and events are fixed in this repository. See
+        [Drawing or fixing a border line](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#drawing-or-fixing-a-border-line).
+  - type: input
+    id: territory
+    attributes:
+      label: Territory
+      description: The name shown on the map, or the place you mean.
+      placeholder: e.g. Testland
+    validations:
+      required: true
+  - type: input
+    id: date_range
+    attributes:
+      label: Date or date range
+      description: >-
+        When the problem applies, written as an EDTF date: a day (`1901-05-12`), a month
+        (`1901-05`), a year (`1901`), or a range (`1901-05/1901-09`). See the
+        [data format guide](https://github.com/chronoatlas-org/chronoatlas/blob/main/docs/data-format.md#conventions).
+      placeholder: e.g. 1901-05/1901-09
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: >-
+        Describe what the map shows and what your source says instead. If sources disagree,
+        say so: disputed areas are shown as disputed, not settled.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: >-
+        A full citation (author, title, year, and publisher, URL, DOI, or ISBN) **and a locator**
+        (page, map sheet, figure, or feature ID). If the source is a map to trace a line from,
+        also give its license or copyright status: only public-domain or openly licensed maps can
+        be traced. Wikipedia is a lead, not a source; cite what it cites.
+      placeholder: "e.g. Author, Title (Publisher, 1900), p. 12, map sheet 4. Public domain."
+    validations:
+      required: true
+  - type: input
+    id: view_link
+    attributes:
+      label: Link to the map view (optional)
+      description: Copy the address from the site, or use its "Copy link" button. It records the date and the view.
+      placeholder: https://chronoatlas-org.github.io/chronoatlas/#d=...
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested fix (optional)
+      description: What you think the data should say, if you know.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before you submit
+      options:
+        - label: I cited a source, not personal knowledge.
+          required: true
+        - label: I understand disputed areas are shown as disputed, with each source attributed.
+          required: true
