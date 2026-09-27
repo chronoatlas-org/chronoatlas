@@ -134,6 +134,21 @@ The full design is in [docs/architecture.md](docs/architecture.md). The dataset 
 - **IDs are permanent** once published: never renamed or reused. Wikidata IDs are
   cross-references only.
 
+**Phase 2 plan approved (2026-09-27)**, with all its recommendations. The plan and the full
+list of decisions are in [docs/phase-2-plan.md](docs/phase-2-plan.md#7-decisions-2026-09-27).
+The ones that affect everyday work:
+
+- **Preact for the panels only** (JSX in `.tsx` files). The map and timeline stay plain
+  TypeScript.
+- **CShapes:** independent → `sovereign`; dependency → `sovereign` by the owner, with the status
+  in a note. Dates are kept as given, with a note when they fall on the 1st of a month.
+- **Cliopatria:** pinned to commit `ad28a691b7c07c1fca89d0e0636d324667d2a258`. Rows become
+  `controls`, and `RELATION` rows are skipped at first.
+- **Polity records inside an import folder** are allowed for units that aren't in our CC0 list,
+  referred to only by that folder's assertions.
+- **No population dataset for now.** The first Figure is `area-km2`, computed from our shapes.
+  Correlates of War is left out.
+
 **Environment:** the maintainer works on Windows, and commands are run in PowerShell. Git, Node.js
 LTS, and the GitHub CLI are installed.
 
@@ -217,8 +232,8 @@ the last download), `npm run import:natural-earth`.
   Never rename or remove one; `scripts/issue-forms.test.ts` checks them.
   - `border-correction.yml`: `territory`, `date_range`, `problem`, `sources`, `view_link`,
     `suggested_fix`, `confirmations`.
-  - `missing-event.yml`: `title`, `date`, `location`, `why_it_matters`, `sources`,
-    `related_territories`. (`title` is also GitHub's own query parameter for the issue title,
-    so pre-filling this field by URL may not work; untested.)
+  - `missing-event.yml`: `event_name`, `date`, `location`, `why_it_matters`, `sources`,
+    `related_territories`. (`event_name` was `title` until 2026-09-27, renamed before any link
+    used it because `title` is GitHub's own parameter for the issue title.)
   - `bug.yml`: `what_happened`, `expected`, `steps`, `view_link`, `device_browser`.
   - `config.yml` contact links must be `https://`; GitHub rejects `mailto:`.

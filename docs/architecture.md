@@ -358,7 +358,7 @@ and 100 GB/month bandwidth as a soft limit):
      request), issue forms for border corrections, missing events, and bugs
      (`.github/ISSUE_TEMPLATE/`), and a pull request template with the review checklist.
 - **Phase 2, panel, events and transitions (the showcase begins).** The detailed plan is
-  [phase-2-plan.md](phase-2-plan.md) (a proposal awaiting approval):
+  [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27):
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

@@ -17,7 +17,7 @@ body:
         cite**. Please **don't paste text from Wikipedia** (it is CC BY-SA and can't go into our
         public-domain data) or from other sources. A short, attributed quotation is fine.
   - type: input
-    id: title
+    id: event_name
     attributes:
       label: Event
       description: A short name for the event.

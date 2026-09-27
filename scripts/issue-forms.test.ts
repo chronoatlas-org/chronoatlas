@@ -11,8 +11,8 @@ const forms = readdirSync(dir).filter((f) => f.endsWith('.yml') && f !== 'config
 
 // Field ids that the site (or docs) pre-fill through the address. Renaming one breaks those links.
 const STABLE_IDS: Record<string, string[]> = {
-  'border-correction.yml': ['territory', 'date_range', 'problem', 'sources', 'view_link', 'suggested_fix'],
-  'missing-event.yml': ['title', 'date', 'location', 'why_it_matters', 'sources', 'related_territories'],
+  'border-correction.yml': ['territory', 'date_range', 'problem', 'sources', 'view_link', 'suggested_fix', 'confirmations'],
+  'missing-event.yml': ['event_name', 'date', 'location', 'why_it_matters', 'sources', 'related_territories'],
   'bug.yml': ['what_happened', 'expected', 'steps', 'view_link', 'device_browser'],
 };
 

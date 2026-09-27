@@ -1,7 +1,8 @@
 # Phase 2 plan: panel, events, and transitions
 
-> **Status: proposal awaiting maintainer approval.** Nothing here is built yet. Per CLAUDE.md, no
-> Phase 2 code is written until the maintainer approves this plan. Drafted 2026-09-27.
+> **Status: approved by the maintainer on 2026-09-27**, with the recommended answer to every
+> question. The decisions are recorded in [section 7](#7-decisions-2026-09-27). Drafted and
+> approved 2026-09-27.
 
 Phase 1 put borders on a map with a timeline. Phase 2 makes the map **explain itself**: clicking a
 territory opens a panel with everything we know about it and where each fact comes from, events
@@ -16,7 +17,7 @@ Sections:
 4. [Cliopatria import (second opinion)](#4-cliopatria-import-second-opinion)
 5. [Statistics (Figures)](#5-statistics-figures)
 6. [Order of work](#6-order-of-work)
-7. [Questions for the maintainer](#7-questions-for-the-maintainer)
+7. [Decisions (2026-09-27)](#7-decisions-2026-09-27)
 
 ---
 
@@ -37,8 +38,11 @@ For the territory you clicked, on the selected day:
   - **Sovereign** (de jure), per a named source, with `recognized_by` when the source gives it;
   - **Claimed by**, per a named source.
 
-  For example, in 1937 over Manchuria: "Administered by Manchukuo (per OpenHistoricalMap)" and
-  "Sovereign: China (per CShapes)". When those differ, the panel says in words that the area is
+  For example, in 1937 over Manchuria: "Administered by Manchukuo (per OpenHistoricalMap)" and,
+  once CShapes is imported, "Sovereign: China (per CShapes)". (The OHM half is in our data now:
+  relation 2885965. The CShapes half is what the
+  [CShapes evaluation](data-sources.md#cshapes-20) leads us to expect; it's confirmed against
+  the imported data, not assumed.) When those differ, the panel says in words that the area is
   contested, which matches the hatching on the map.
 - **Dates with their precision.** "From 1932 (year only) until 17 August 1945", worded by
   `src/dates/format.ts`, so an approximate or year-only date never looks exact.
@@ -90,12 +94,12 @@ https://github.com/chronoatlas-org/chronoatlas/issues/new?template=border-correc
   invalid parameter gives the visitor a 404 page. The form adds its own label.
 - **`territory`** gets the displayed name plus the ID in brackets, so reviewers can find the exact
   record.
-- **`date_range`** gets the selected day (see [question 3](#7-questions-for-the-maintainer)).
+- **`date_range`** gets the selected day (decision 3).
 - **`view_link`** gets the full share link, including `sel`.
 - Values are encoded with `encodeURIComponent`. GitHub answers "414 URI Too Long" for very long
   addresses; ours stay short.
 - The URL builder is a small pure function with tests.
-- **Note:** filing an issue needs a GitHub account. See [question 4](#7-questions-for-the-maintainer).
+- **Note:** filing an issue needs a GitHub account. That's accepted for now (decision 4).
 
 ### On phones: a bottom sheet
 
@@ -267,9 +271,9 @@ Its evaluation is in [data-sources.md](data-sources.md#cshapes-20).
   JavaScript `Date`). Example: a `gwedate` of 1945-08-14 becomes `end: 1945-08-15`.
 - **Precision caveat:** the codebook says that when the exact date was unknown, the authors used 1
   January or the first of the month, so some dates that look exact aren't. We can't tell which
-  from the data. Proposal: record the dates as given, and add a note to every assertion whose
+  from the data. Decided: record the dates as given, and add a note to every assertion whose
   start or end falls on the 1st of a month, which the panel shows ("CShapes may use the first of
-  the month when the exact day is unknown"). See [question 7](#7-questions-for-the-maintainer).
+  the month when the exact day is unknown"). See decision 7.
 
 ### Matching CShapes units to our polity IDs
 
@@ -287,7 +291,7 @@ our IDs.
 - **Our IDs never change** (see architecture: permanent IDs). If a CShapes unit turns out to be the
   same as an OHM polity, the crosswalk is corrected, and no ID is renamed.
 
-### Interpretation (proposed; the maintainer decides)
+### Interpretation (approved, decision 5)
 
 | CShapes row | Becomes |
 |---|---|
@@ -309,8 +313,12 @@ Every decision goes into the manifest, as the OHM import does.
 - These computed areas combine CShapes (NC-SA) with OHM (CC0), so they're also NC-SA. They live
   only in the build output (`public/data/`, not committed), are credited on the site, and are
   never written into `data/`.
-- **Reference test:** Manchuria in 1937 must show as contested. A synthetic "Testland" fixture
-  tests the geometry code.
+- **Reference test:** Manchuria in 1937 is expected to show as contested. The basis for that
+  expectation is the [CShapes evaluation](data-sources.md#cshapes-20): CShapes has China as one
+  unchanged polygon from 1921-03-13 to 1945-08-14, and its codebook excludes Japan's occupation
+  of Manchuria. The test is written only after checking the pinned import confirms it; if the
+  data says otherwise, the test follows the data. A synthetic "Testland" fixture tests the
+  geometry code.
 - A risk to watch: a crosswalk mistake (for example, matching a colony to the wrong owner) would
   create false "contested" areas. The crosswalk is reviewed like any other data change, and the
   build lists how many contested areas each polity pair produces, so surprises stand out.
@@ -327,8 +335,10 @@ Cliopatria, from the Seshat Global History Databank, has worldwide polity shapes
   it still lives only in `data/imports/cliopatria/` (it isn't CC0, so it doesn't go in
   `data/polities/`). Note that Cliopatria's license differs from the Seshat Databank's own
   (CC BY-SA 4.0, see [section 5](#5-statistics-figures)).
-- **Getting it:** the latest release is `v0.2.0` (tagged 2026-05-16; a `v0.2.0-duplicate` tag
-  followed on 2026-05-24, which we'd ask about or avoid). The data is one zipped GeoJSON in the
+- **Getting it:** the latest release is `v0.2.0` (tagged 2026-05-16). A `v0.2.0-duplicate` tag
+  followed on 2026-05-24, but both tags point to the same commit,
+  `ad28a691b7c07c1fca89d0e0636d324667d2a258` (checked with the GitHub API on 2026-09-27), so
+  there's nothing to ask about: **we pin that commit** (decision 9). The data is one zipped GeoJSON in the
   repository (158 MB unzipped), also on Zenodo. **It's too large to commit** (GitHub's limit is
   100 MB per file), so the import script downloads a pinned version, checks its checksum, filters
   it to East Asia 1900–1950, and commits only the filtered, converted result. We'll measure that
@@ -342,7 +352,7 @@ Cliopatria, from the Seshat Global History Databank, has worldwide polity shapes
     where `0000` is 1 BCE) or not. That doesn't affect 1900–1950, but it must be settled before a
     worldwide import.
 - **What it means:** Cliopatria maps "territory held" and doesn't separate control from
-  sovereignty. Proposal: import its rows as `controls` assertions, with a manifest note saying the
+  sovereignty. Decided: import its rows as `controls` assertions, with a manifest note saying the
   source doesn't make that distinction. Rows of `Type` `RELATION` (rather than `POLITY`) are
   skipped at first, and the count of skipped rows is recorded.
 - **Puppet states are merged into their patron.** For example, there's no separate Manchukuo; its
@@ -378,7 +388,7 @@ quotations, and links are in
 2. **First Figure: `area-km2` computed from our own shapes** (`basis: computed-from-shape`). The
    inputs are CC0 (OHM), so there's no license problem, and it demonstrates the whole Figures
    pipeline (panel, source, method, date, precision).
-3. **Then, for population, the maintainer chooses** between:
+3. **Population: neither for now** (decision 10). The two options, for when it's revisited:
    - **HYDE 3.3**, summed inside each of our shapes (`computed-from-shape`), isolated under
      NC-SA like CShapes. It's consistent everywhere and fits "computed from a specific shape"
      exactly, but it's modelled (country totals spread over a grid), so it would be shown as an
@@ -395,8 +405,7 @@ quotations, and links are in
 
 Small steps, each committed, explained, and viewable locally and online, as in Phase 1.
 
-1. **Panel foundation.** Add Preact (if approved) and confirm that type-checking and the build
-   work. Move the popup's content into a side panel. Add `sel` to the URL, with tests.
+1. **Panel foundation.** Add Preact and confirm that type-checking and the build work. Move the popup's content into a side panel. Add `sel` to the URL, with tests.
 2. **Per-polity data.** The build writes `public/data/polities/<id>.json`. The panel shows names
    over time, all relations kept separate, dates with precision, and sources with locators.
 3. **Phone bottom sheet** and panel accessibility (focus, Escape, Back button).
@@ -422,31 +431,31 @@ licensing before its data is committed.
 
 ---
 
-## 7. Questions for the maintainer
+## 7. Decisions (2026-09-27)
 
-1. **Approve this plan?** In whole, or with changes.
-2. **UI framework:** Preact for the panels (recommended), none, Svelte, or React?
-3. **Report button, `date_range`:** pre-fill the **selected day** (recommended: simple, and it's
-   what the reporter is looking at), or the **border's whole date range**?
-4. **Reporting without a GitHub account:** filing an issue needs a GitHub account. Is that
-   acceptable for now? (Any alternative would need a free service that doesn't expose
-   maintainers; none is proposed yet.)
-5. **CShapes interpretation:** approve the proposed mapping (independent → `sovereign`;
-   dependency → `sovereign` by the owner, with the status in a note)?
-6. **Polity records inside import folders** (for units that aren't in our CC0 polity list): OK?
-7. **CShapes first-of-the-month dates:** keep them as given, with a note (recommended), or lower
-   their precision?
-8. **Cliopatria interpretation:** import as `controls` (de facto), and skip `RELATION` rows at
-   first?
-9. **Cliopatria version:** pin `v0.2.0`, and ask the Cliopatria maintainers what the
-   `v0.2.0-duplicate` tag means?
-10. **Population source:** HYDE 3.3 (NC-SA, computed from our shapes), Seshat (CC BY-SA, needs an
-    account), or neither for now?
-11. **Correlates of War:** leave it out (recommended), or ask COW for written permission? Asking
-    would be an outward-facing step.
-12. **Labels:** create the issue labels `border-correction`, `missing-event`, `bug`, and
-    `needs-source`? The forms already name the first three, but GitHub only applies labels that
-    exist.
-13. **Missing-event form:** its field `title` shares its name with GitHub's own `title` address
-    parameter (the issue's title), so pre-filling that field from a link may not work. Rename it
-    before any link depends on it (for example to `event_name`), or keep it?
+The maintainer approved the plan with the recommended answer to each question.
+
+1. **The plan is approved**, with one wording fix: the Manchuria example and reference test now
+   say what their CShapes expectation is based on, and that it's confirmed against the imported
+   data rather than assumed.
+2. **UI framework: Preact, for the panels only.** Step 1 confirms that TypeScript 7 and Vite 8
+   check and build it; if not, we fall back to plain TypeScript.
+3. **Report button:** `date_range` is pre-filled with the **selected day**.
+4. **Reporting needs a GitHub account**, which is acceptable for now.
+5. **CShapes mapping:** independent state → `sovereign`; dependency → `sovereign` by the owner,
+   with the CShapes status in a note.
+6. **Polity records inside import folders** are allowed for units that aren't in our CC0 polity
+   list. They can only be referred to by that folder's own assertions.
+7. **CShapes first-of-the-month dates** are kept as given, with a note shown in the panel.
+8. **Cliopatria** is imported as `controls` (de facto), and `RELATION` rows are skipped at first
+   (with the count recorded).
+9. **Cliopatria version:** pinned to commit `ad28a691b7c07c1fca89d0e0636d324667d2a258`, which
+   both `v0.2.0` tags point to, so there's no need to ask its maintainers.
+10. **Population: neither dataset for now.** If Seshat is chosen later, its account must be
+    registered under the project identity, never a maintainer's personal one.
+11. **Correlates of War** is left out, and COW is not contacted.
+12. **Labels:** `border-correction`, `missing-event`, and `needs-source` are created (`bug`
+    already existed as a GitHub default).
+13. **Missing-event form:** the field `title` is renamed to `event_name` now, before any link
+    depends on it, because `title` is also GitHub's own address parameter for the issue title.
+    This is the only rename allowed; from now on the ids are fixed.
