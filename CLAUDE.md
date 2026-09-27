@@ -169,6 +169,8 @@ the last download), `npm run import:natural-earth`.
   - `events.json`: every event's day range, importance, title, and place, for the timeline's
     markers and the map's pulse;
   - `events/<id>.json`: one event in full (summary, sources, place, effects), for the panel;
+  - `changes.json`: every day a territorial record starts or ends, with its polity and source,
+    for "Around this date" (it will need splitting by period for the worldwide map);
   - `polities/<id>.json`: one polity's names and every record that mentions it, for the
     territory panel. A visitor downloads only the ones they open, which is what lets this scale
     worldwide.
@@ -240,7 +242,9 @@ the last download), `npm run import:natural-earth`.
     may be unreachable.
   - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
     replaces the address.
-  - The panel shows a `Selection`: `{ kind: 'polity' | 'event', id }`. When an event's file
+  - The panel shows a `Selection`: `{ kind: 'polity' | 'event' | 'nearby', id }`. 'nearby'
+    ("Around this date") lists what's in the timeline's visible range, so the panel redraws
+    when the timeline zooms (`onZoom`). When an event's file
     loads, `onEventShown` lets `main.ts` outline its effects (`HistoricalLayers.setEffects`,
     dashed, whatever the date) and pulse its place (`HistoricalLayers.pulse`).
   - The Vite dev server can miss a second quick save of the same file and keep serving the

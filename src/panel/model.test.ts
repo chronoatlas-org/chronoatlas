@@ -2,8 +2,8 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describeEvent, describeEventDate, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
-import type { EventFile, PolityFile, PolityRecord, SourcesFile } from './model.ts';
+import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
+import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
   'test-source': { title: 'Test Source' },
@@ -213,5 +213,38 @@ describe('describeEvent', () => {
     expect(describeEventDate('1901-05/1901-09')).toBe('May 1901 (month only) – September 1901 (month only)');
     expect(describeEventDate('1901/..')).toBe('1901 (year only) onwards');
     expect(describeEventDate('/1901')).toBe('until 1901 (year only)');
+  });
+});
+
+describe('describeNearby', () => {
+  const change = (d: number, kind: 'start' | 'end', date: string, polity = 'testland'): BorderChange => ({
+    day: d, kind, date, polity, record: `r-${polity}-${d}`, relation: 'administers', source: { source: 'test-source', locator: 'map 1' },
+  });
+  const changes = [
+    change(day(1901, 1, 1), 'start', '1901'),
+    change(day(1905, 5, 12), 'end', '1905-05-12'),
+    change(day(1905, 5, 12), 'start', '1905-05-12', 'otherland'),
+    change(day(1950, 1, 1), 'start', '1950'), // outside the window
+  ];
+  const events = [
+    { id: 'near', title: 'Near event', date: '1905-06', s0: day(1905, 6, 1), s1: day(1905, 6, 30), importance: 1 },
+    { id: 'far', title: 'Far event', s0: day(1960, 1, 1), s1: day(1960, 1, 1), importance: 5 },
+  ];
+  const namesOf = (id: string) => (id === 'testland' ? testland.names : undefined);
+  const v = describeNearby(day(1905, 1, 1), [day(1900, 1, 1), day(1910, 1, 1)], events, changes, sources, namesOf, 'en');
+
+  it('lists events and border changes in the window, nearest first', () => {
+    expect(v.events).toEqual([{ id: 'near', title: 'Near event', date: 'June 1905 (month only)' }]);
+    expect(v.changes.map((c) => [c.name, c.label, c.date])).toEqual([
+      ['Testland', 'Ends: Administered (de facto)', '12 May 1905'],
+      ['otherland', 'Begins: Administered (de facto)', '12 May 1905'], // name not loaded yet
+      ['Testland', 'Begins: Administered (de facto)', '1901 (year only)'],
+    ]);
+    expect(v.changes[0].sources).toEqual([{ text: 'Test Source, map 1' }]);
+  });
+
+  it('says which date and period it covers', () => {
+    expect(v.title).toBe('Around 1 January 1905');
+    expect(v.window).toBe('From 1 January 1900 to 1 January 1910 (the part of the timeline in view), nearest first.');
   });
 });

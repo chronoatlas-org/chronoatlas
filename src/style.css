@@ -54,6 +54,17 @@ body {
   font-size: 1.1rem;
 }
 
+.app-header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* "Around this date" while its list is open. */
+.share-button[aria-expanded='true'] {
+  border-color: #0969da;
+  background: #ddf4ff;
+}
+
 .share-button {
   display: inline-flex;
   align-items: center;
@@ -423,6 +434,16 @@ body {
 
   .share-button {
     min-height: 44px;
+  }
+
+  /* Phones: icon only for "Around this date" (its accessible label still names it). */
+  .share-button .optional-label {
+    display: none;
+  }
+
+  #nearby-button {
+    min-width: 44px;
+    justify-content: center;
   }
 
   /* The panel becomes a "bottom sheet" between the map and the timeline, full width, with three

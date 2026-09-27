@@ -17,6 +17,8 @@ export interface TimelineEvent {
   inexact?: boolean;
   /** Where it happened, if the data says: [longitude, latitude, precision in km]. */
   at?: [number, number, number];
+  /** The date as written in the data (EDTF), for showing it with its precision. */
+  date?: string;
 }
 
 /** Events without an importance count as middling. */

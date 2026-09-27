@@ -380,7 +380,8 @@ and 100 GB/month bandwidth as a soft limit):
   focus, Escape, and Back; every overlapping record reachable), and step 4 ✅ (the "Report a
   problem with this border" button), and step 5 ✅ (the events pipeline and timeline markers,
   tested with made-up events; there are no real events yet), and step 6 ✅ (the event panel, the
-  pulse on the map, and dashed outlines of an event's effects). The goals:
+  pulse on the map, and dashed outlines of an event's effects), and step 7 ✅ ("Around this date":
+  the events and border changes in the part of the timeline in view). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

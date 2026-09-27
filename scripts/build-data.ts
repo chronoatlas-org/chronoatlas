@@ -10,6 +10,7 @@
 //   public/data/events.json          every event's dates, importance, title, and place, for the
 //                          timeline's markers and the map's pulse
 //   public/data/events/<id>.json     one event in full (summary, sources, effects), for the panel
+//   public/data/changes.json         every day a border starts or ends, with its polity and source
 //   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
 //                          the territory panel (a visitor downloads only the ones they open)
 //
@@ -28,7 +29,7 @@ import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
 import type { Assertion, Polity, PolityName, ShapeFeature } from './lib/types.ts';
 import type { AtlasName } from '../src/map/names.ts';
-import type { EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
 import type { TimelineEvent } from '../src/timeline/events.ts';
 
@@ -166,6 +167,7 @@ export function buildEvents(ds: Dataset): { events: TimelineEvent[] } {
       return {
         id: e.id,
         title: e.title,
+        date: e.date,
         s0,
         s1,
         importance: e.importance ?? DEFAULT_IMPORTANCE,
@@ -202,6 +204,24 @@ export function buildEventFiles(ds: Dataset): EventFile[] {
       ...(mentioned.size ? { related: namesFor(mentioned, polities) } : {}),
     };
   });
+}
+
+/**
+ * public/data/changes.json: every day a territorial record starts or ends, with its polity, the
+ * date as written, and its source, sorted by day. The "around this date" list reads it. (The
+ * change index in tiles.json has the days only.)
+ */
+export function buildChanges(ds: Dataset): { changes: BorderChange[] } {
+  const changes: BorderChange[] = [];
+  for (const a of ds.assertions.flatMap(({ value }) => value)) {
+    if (!TERRITORIAL_RELATIONS.includes(a.relation)) continue;
+    const { s0, e0 } = dayRanges(a.start, a.end);
+    const common = { polity: a.subject, record: a.id, relation: a.relation, source: a.sources[0] };
+    changes.push({ day: s0, kind: 'start', date: a.start, ...common });
+    if (e0 < FAR_FUTURE) changes.push({ day: e0, kind: 'end', date: a.end, ...common });
+  }
+  changes.sort((x, y) => x.day - y.day || x.polity.localeCompare(y.polity) || x.record.localeCompare(y.record));
+  return { changes };
 }
 
 /** public/data/sources.json: each source's title and address, shared by all polity files. */
@@ -317,6 +337,7 @@ function main(): void {
     JSON.stringify({ version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes }),
   );
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
+  writeFileSync(join(OUT_DIR, 'changes.json'), JSON.stringify(buildChanges(ds)));
   writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
   mkdirSync(join(OUT_DIR, 'events'));
   for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));

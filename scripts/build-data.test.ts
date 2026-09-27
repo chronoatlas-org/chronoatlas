@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
+import { assignColors, buildChanges, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -71,6 +71,16 @@ describe('buildPolityFiles', () => {
     expect(Object.keys(file.related!).sort()).toEqual(['quietland', 'testland']);
   });
 
+  it('lists every territorial start and end by day, skipping open ends and non-territorial links', () => {
+    const { changes } = buildChanges(ds);
+    expect(changes.map((c) => [c.record, c.kind, c.date])).toEqual([
+      ['early', 'start', '1901-05-12'],
+      ['early', 'end', '1910'],
+      ['late', 'start', '1910'],
+    ]);
+    expect(changes[0]).toMatchObject({ day: civilToJdn(1901, 5, 12), polity: 'testland', relation: 'controls', source: cite[0] });
+  });
+
   it('includes the names of the other polities its records mention, and only those', () => {
     expect(Object.keys(files.get('testland')!.related!)).toEqual(['otherland']);
     expect(files.get('quietland')!.related).toBeUndefined();
@@ -90,8 +100,8 @@ describe('buildEvents', () => {
       events: [event('later', '1902-03~', 5), event('earlier', '1901-05-12/1901-05-20')],
     });
     expect(events).toEqual([
-      { id: 'earlier', title: 'Test event earlier', s0: civilToJdn(1901, 5, 12), s1: civilToJdn(1901, 5, 20), importance: 3 },
-      { id: 'later', title: 'Test event later', s0: civilToJdn(1902, 3, 1), s1: civilToJdn(1902, 3, 31), importance: 5, inexact: true },
+      { id: 'earlier', title: 'Test event earlier', date: '1901-05-12/1901-05-20', s0: civilToJdn(1901, 5, 12), s1: civilToJdn(1901, 5, 20), importance: 3 },
+      { id: 'later', title: 'Test event later', date: '1902-03~', s0: civilToJdn(1902, 3, 1), s1: civilToJdn(1902, 3, 31), importance: 5, inexact: true },
     ]);
   });
 });

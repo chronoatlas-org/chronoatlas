@@ -17,12 +17,27 @@
     <header class="app-header">
       <div class="app-header-top">
         <h1>chronoatlas</h1>
-        <button type="button" id="share-button" class="share-button" data-i18n-label="share.label">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 1 1 4.2 4.2l-2 2-1.4-1.4 2-2a1 1 0 1 0-1.4-1.4L12 13.4a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 1 1-4.2-4.2l2-2 1.4 1.4-2 2a1 1 0 1 0 1.4 1.4L12 10.6a1 1 0 0 1 1.4 0z" />
-          </svg>
-          <span data-i18n="share.button"></span>
-        </button>
+        <div class="app-header-actions">
+          <button
+            type="button"
+            id="nearby-button"
+            class="share-button"
+            data-i18n-label="nearby.label"
+            aria-controls="panel"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h2v2H4zm4 0h12v2H8zm-4 5h2v2H4zm4 0h12v2H8zm-4 5h2v2H4zm4 0h12v2H8z" />
+            </svg>
+            <span class="optional-label" data-i18n="nearby.button"></span>
+          </button>
+          <button type="button" id="share-button" class="share-button" data-i18n-label="share.label">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 1 1 4.2 4.2l-2 2-1.4-1.4 2-2a1 1 0 1 0-1.4-1.4L12 13.4a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 1 1-4.2-4.2l2-2 1.4 1.4-2 2a1 1 0 1 0 1.4 1.4L12 10.6a1 1 0 0 1 1.4 0z" />
+            </svg>
+            <span data-i18n="share.button"></span>
+          </button>
+        </div>
       </div>
       <p class="app-notice" data-i18n="app.previewNotice"></p>
       <p class="legend"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></p>

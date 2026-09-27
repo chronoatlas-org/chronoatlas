@@ -33,6 +33,8 @@ export interface TimelineOptions {
   onEventSelect?: (id: string) => void;
   /** Called with events that have a place, whose start the playhead just passed going forward. */
   onEventsPassed?: (events: TimelineEvent[]) => void;
+  /** Called when the zoom changes (which changes the visible range). */
+  onZoom?: () => void;
 }
 
 const DAYS_PER_YEAR = 365.2425;
@@ -184,6 +186,12 @@ export class Timeline {
     this.requestDraw();
   }
 
+  /** The days at the bar's left and right edges, within the selectable range. */
+  visibleRange(): [number, number] {
+    const half = (Math.max(1, this.width) / 2) * this.daysPerPixel;
+    return [Math.max(this.options.minJdn, this.position - half), Math.min(this.options.maxJdn, this.position + half)];
+  }
+
   /** The least important events shown at the current zoom. */
   private minImportance(): number {
     return minImportance(Math.max(1, this.width) * this.daysPerPixel);
@@ -206,6 +214,7 @@ export class Timeline {
   private zoomBy(factor: number): void {
     this.daysPerPixel = clamp(this.daysPerPixel * factor, 1 / MAX_PIXELS_PER_DAY, this.maxDaysPerPixel());
     this.requestDraw();
+    this.options.onZoom?.();
   }
 
   /** Fully zoomed out, the whole selectable range fits in 80% of the bar. */

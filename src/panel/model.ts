@@ -6,12 +6,13 @@
 //   public/data/polities/<id>.json   one polity: all its names and all its records
 // A visitor only downloads the polities they open, so this scales to a worldwide map.
 
-import { formatDate, parseEdtfDate } from '../dates/index.ts';
+import { formatDate, formatDay, parseEdtfDate } from '../dates/index.ts';
 import type { DatePrecision } from '../dates/index.ts';
 import { t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
 import { pickNames } from '../map/names.ts';
 import { eventDays } from '../timeline/events.ts';
+import type { TimelineEvent } from '../timeline/events.ts';
 import type { AtlasName } from '../map/names.ts';
 
 // --- The files -----------------------------------------------------------------------------------
@@ -80,6 +81,19 @@ export interface EventFile {
   sources: Citation[];
   /** Names of the polities it mentions. */
   related?: Record<string, AtlasName[]>;
+}
+
+/** One entry of public/data/changes.json: a territorial record starting or ending. */
+export interface BorderChange {
+  /** The first day it applied (start), or the first day it no longer applied (end). */
+  day: number;
+  kind: 'start' | 'end';
+  /** The date as written in the data (EDTF), for its precision. */
+  date: string;
+  polity: string;
+  record: string;
+  relation: string;
+  source: Citation;
 }
 
 // --- What the panel shows ------------------------------------------------------------------------
@@ -392,5 +406,64 @@ export function describeEvent(file: EventFile, sources: SourcesFile['sources'], 
     polities: (file.polities ?? []).map((id) => ({ id, name: nameOf(id) })),
     effects,
     sources: sourceLines(file.sources, sources),
+  };
+}
+
+// --- Around this date ----------------------------------------------------------------------------
+
+export interface NearbyView {
+  /** "Around 1 July 1937" */
+  title: string;
+  /** The period covered: the part of the timeline in view. */
+  window: string;
+  events: { id: string; title: string; date: string }[];
+  changes: { key: string; polity: string; name: string; label: string; date: string; day: number; sources: SourceLine[] }[];
+}
+
+/**
+ * What happened near a day: events and border changes between `left` and `right` (the part of
+ * the timeline in view, so the window grows as you zoom out), nearest first, at most `limit` of
+ * each. Names not loaded yet show as their ID until they arrive.
+ */
+export function describeNearby(
+  day: number,
+  [left, right]: [number, number],
+  events: readonly TimelineEvent[],
+  changes: readonly BorderChange[],
+  sources: SourcesFile['sources'],
+  namesOf: (id: string) => readonly AtlasName[] | undefined,
+  locale: string,
+  limit = 25,
+): NearbyView {
+  const distance = (d: number) => Math.abs(d - day);
+
+  const nearEvents = events
+    .filter((e) => e.s1 + 1 >= left && e.s0 <= right)
+    .sort((a, b) => distance(a.s0) - distance(b.s0) || a.s0 - b.s0)
+    .slice(0, limit)
+    .map((e) => ({ id: e.id, title: e.title, date: e.date ? describeEventDate(e.date) : formatDay(e.s0) }));
+
+  const nearChanges = changes
+    .filter((c) => c.day >= left && c.day <= right)
+    .sort((a, b) => distance(a.day) - distance(b.day) || a.day - b.day)
+    .slice(0, limit)
+    .map((c) => {
+      const relation = RELATION_KEYS[c.relation] ? t(RELATION_KEYS[c.relation]) : c.relation;
+      return {
+        key: `${c.record}-${c.kind}`,
+        polity: c.polity,
+        name: pickNames(namesOf(c.polity) ?? [], c.day, locale)?.primary ?? c.polity,
+        label: t(c.kind === 'start' ? 'nearby.recordStarts' : 'nearby.recordEnds', { relation }),
+        date: describeDate(c.date),
+        day: c.day,
+        sources: sourceLines([c.source], sources),
+      };
+    });
+
+  return {
+    title: t('nearby.title', { date: formatDay(day) }),
+    window: t('nearby.window', { start: formatDay(Math.ceil(left)), end: formatDay(Math.floor(right)) }),
+    events: nearEvents,
+    changes: nearChanges,
   };
 }

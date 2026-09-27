@@ -474,7 +474,19 @@ Small steps, each committed, explained, and viewable locally and online, as in P
      event can be shared. This was a small addition to the plan.
    - **Checked:** in the browser with one made-up event file written to the local build output
      only, then deleted.
-7. **"The world around this date"**: nearby events and border changes from the change index.
+7. ✅ **"The world around this date"**: nearby events and border changes from the change index.
+   *Done 2026-09-27.*
+   - An "Around this date" button in the header (an icon on phones) opens the panel with the
+     events and border changes in the part of the timeline in view, nearest first. So the
+     window is days when zoomed in and decades when zoomed out.
+   - Each change names the polity (a button that opens it), says what began or ended with its
+     precision, has a "Go to" button, and cites its source.
+   - The list follows the timeline as it moves and zooms. It isn't recorded in the address,
+     because it's a view of the date, which the address already has.
+   - **Border changes read `public/data/changes.json`**, which the build writes. The change
+     index in `tiles.json` has only the days, and naming the polities needs more.
+   - **Growth note:** at 67 KB it's fine for East Asia. For the worldwide map it will need
+     splitting by period, as the tiles are.
 8. **CShapes import**: script, license, manifest, crosswalk, polity records inside import
    folders (a validator change), and East Asia 1900–1950.
 9. **De jure view and contested hatching**, computed at build time, with the 1937 Manchuria test.

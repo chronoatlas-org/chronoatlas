@@ -93,6 +93,8 @@ const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, 
     if (file.location) historical.pulse([...file.location.coordinates, file.location.precision_km]);
   },
   viewLink: () => `${location.origin}${location.pathname}${currentHash()}`,
+  onSelectEvent: (id) => select(eventSelection(id), 'click'),
+  visibleRange: () => timeline.visibleRange(),
 });
 const historical = new HistoricalLayers(map, initialDay, {
   onSelect: (polities) => {
@@ -119,7 +121,15 @@ function select(next: Selection | null, how: 'click' | 'close' | 'link'): void {
   if (how === 'click') writeUrlNow({ push: true });
   else scheduleUrlUpdate();
   if (next === null && focusWasInPanel) map.getCanvas().focus();
+  nearbyButton.setAttribute('aria-expanded', String(next?.kind === 'nearby'));
 }
+
+// "Around this date" opens (or closes) the list of what changed near the selected day. It isn't
+// recorded in the address: it's a view of the date, which the address already has.
+const nearbyButton = document.getElementById('nearby-button')!;
+nearbyButton.addEventListener('click', () =>
+  select(selected?.kind === 'nearby' ? null : { kind: 'nearby', id: '' }, 'click'),
+);
 
 // --- Timeline -----------------------------------------------------------------------------------
 
@@ -135,6 +145,7 @@ const timeline = new Timeline({
     scheduleUrlUpdate();
   },
   onEventSelect: (id) => select(eventSelection(id), 'click'),
+  onZoom: () => panel.refresh(),
   // A ring on the map where each event the playhead passes happened.
   onEventsPassed: (events) => events.forEach((e) => e.at && historical.pulse(e.at)),
 });
@@ -142,7 +153,10 @@ const timeline = new Timeline({
 // Event markers on the timeline. (Events need citable sources, so there may be none yet.)
 fetch(new URL('data/events.json', document.baseURI))
   .then((r) => r.json() as Promise<{ events: TimelineEvent[] }>)
-  .then(({ events }) => timeline.setEvents(events))
+  .then(({ events }) => {
+    timeline.setEvents(events);
+    panel.setEvents(events);
+  })
   .catch((error) => console.error('Could not load events.json', error));
 
 // Open the territory or event from the link, if any. (An ID that isn't in our data closes the

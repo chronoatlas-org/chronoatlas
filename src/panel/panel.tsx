@@ -43,8 +43,9 @@ import type { ComponentChildren } from 'preact';
 import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
 import { borderReportUrl } from '../url/report.ts';
-import { describeEvent, describeTerritory, otherPolitiesAtSpot } from './model.ts';
-import type { CurrentEntry, EventFile, EventView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
+import type { TimelineEvent } from '../timeline/events.ts';
+import { describeEvent, describeNearby, describeTerritory, otherPolitiesAtSpot } from './model.ts';
+import type { BorderChange, CurrentEntry, EventFile, EventView, NearbyView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
 import { attachSheetHandle } from './sheet.ts';
 import type { SheetHeight } from './sheet.ts';
 
@@ -274,11 +275,67 @@ function EventDetails({ view, onSelectPolity }: EventDetailsProps) {
   );
 }
 
+interface NearbyProps {
+  view: NearbyView;
+  onSelectEvent: (id: string) => void;
+  onSelectPolity: (polity: string) => void;
+  onGoToDay: (day: number) => void;
+}
+
+function Nearby({ view, onSelectEvent, onSelectPolity, onGoToDay }: NearbyProps) {
+  return (
+    <>
+      <p class="panel-note">{view.window}</p>
+      <section class="panel-section" aria-labelledby="nearby-events">
+        <h3 id="nearby-events">{t('nearby.events')}</h3>
+        {view.events.length > 0 ? (
+          <ul class="panel-plain-list">
+            {view.events.map((event) => (
+              <li key={event.id}>
+                <button type="button" class="panel-link-button" onClick={() => onSelectEvent(event.id)}>
+                  {event.title}
+                </button>{' '}
+                <span class="panel-name-period">{event.date}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="panel-empty">{t('nearby.noEvents')}</p>
+        )}
+      </section>
+      <section class="panel-section" aria-labelledby="nearby-changes">
+        <h3 id="nearby-changes">{t('nearby.changes')}</h3>
+        {view.changes.length > 0 ? (
+          <ul class="panel-records">
+            {view.changes.map((change) => (
+              <li key={change.key} class="panel-record">
+                <button type="button" class="panel-link-button" onClick={() => onSelectPolity(change.polity)}>
+                  {change.name}
+                </button>
+                <p class="panel-relation">{change.label}</p>
+                <button type="button" class="panel-goto" onClick={() => onGoToDay(change.day)}>
+                  {t('nearby.goTo', { date: change.date })}
+                </button>
+                <Sources lines={change.sources} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="panel-empty">{t('nearby.noChanges')}</p>
+        )}
+      </section>
+    </>
+  );
+}
+
 // --- The panel on the page -----------------------------------------------------------------------
 
-/** What the panel shows: a territory (by polity ID) or an event (by event ID). */
+/**
+ * What the panel shows: a territory (by polity ID), an event (by event ID), or what changed
+ * around the selected date ('nearby', which has no ID).
+ */
 export interface Selection {
-  kind: 'polity' | 'event';
+  kind: 'polity' | 'event' | 'nearby';
   id: string;
 }
 
@@ -293,6 +350,10 @@ export interface PanelOptions {
   onEventShown: (file: EventFile) => void;
   /** The full shareable link to the current view (for "Report a problem"). */
   viewLink: () => string;
+  /** Called when the reader picks an event in the panel. */
+  onSelectEvent: (id: string) => void;
+  /** The days at the timeline's left and right edges (the "around this date" window). */
+  visibleRange: () => [number, number];
 }
 
 type FileState = PolityFile | EventFile | 'loading' | 'failed';
@@ -305,6 +366,10 @@ export class TerritoryPanel {
   private readonly container: HTMLElement;
   private readonly options: PanelOptions;
   private sources: SourcesFile['sources'] | null = null;
+  /** public/data/changes.json, loaded the first time "around this date" opens. */
+  private changes: BorderChange[] | 'loading' | null = null;
+  /** The timeline's events (from main.ts), for "around this date". */
+  private events: TimelineEvent[] = [];
   /** Loaded files by path (see pathOf). */
   private readonly files = new Map<string, FileState>();
   private selection: Selection | null = null;
@@ -359,8 +424,35 @@ export class TerritoryPanel {
     }
     this.selection = selection;
     this.focusPending = focus && selection !== null;
-    if (selection) this.loadIfNeeded(pathOf(selection));
+    if (selection?.kind === 'nearby') this.loadChanges();
+    else if (selection) this.loadIfNeeded(pathOf(selection));
     this.draw();
+  }
+
+  /** The timeline's events, for "around this date". */
+  setEvents(events: TimelineEvent[]): void {
+    this.events = events;
+    this.draw();
+  }
+
+  /** Redraws, for example when the timeline zooms (which changes the "around this date" window). */
+  refresh(): void {
+    this.draw();
+  }
+
+  private loadChanges(): void {
+    if (this.changes !== null) return;
+    this.changes = 'loading';
+    fetch(dataUrl('changes.json'))
+      .then((r) => r.json() as Promise<{ changes: BorderChange[] }>)
+      .then((file) => {
+        this.changes = file.changes;
+        this.draw();
+      })
+      .catch((error) => {
+        console.error('Could not load changes.json', error);
+        this.changes = null; // opening it again retries
+      });
   }
 
   setDay(day: number): void {
@@ -421,10 +513,35 @@ export class TerritoryPanel {
   private draw(): void {
     const selection = this.selection;
     if (!selection) return this.hide();
-    const state = this.files.get(pathOf(selection));
     const shell = { sheet: this.sheet, onClose: this.options.onClose };
     const locale = getLocale();
+    const polityNames = (id: string) => {
+      const file = this.files.get(`polities/${id}`);
+      return typeof file === 'object' ? (file as PolityFile).names : undefined;
+    };
 
+    if (selection.kind === 'nearby') {
+      if (!Array.isArray(this.changes) || !this.sources) {
+        this.show(`loading ${this.sheet}`, <Shell title={t('panel.loading')} {...shell}>{null}</Shell>);
+      } else {
+        const view = describeNearby(this.day, this.options.visibleRange(), this.events, this.changes, this.sources, polityNames, locale);
+        for (const change of view.changes) this.loadIfNeeded(`polities/${change.polity}`); // for their names
+        this.show(
+          `${this.sheet} ${JSON.stringify(view)}`,
+          <Shell title={view.title} summary={view.window} {...shell}>
+            <Nearby
+              view={view}
+              onSelectEvent={this.options.onSelectEvent}
+              onSelectPolity={this.options.onSelectPolity}
+              onGoToDay={this.options.onGoToDay}
+            />
+          </Shell>,
+        );
+      }
+      return this.focusIfPending();
+    }
+
+    const state = this.files.get(pathOf(selection));
     if (state === undefined || state === 'loading' || !this.sources) {
       this.show(`loading ${this.sheet}`, <Shell title={t('panel.loading')} {...shell}>{null}</Shell>);
     } else if (state === 'failed') {
@@ -450,11 +567,7 @@ export class TerritoryPanel {
     } else {
       const polity = selection.id;
       const view = describeTerritory(state as PolityFile, this.sources, this.day, locale);
-      const namesOf = (id: string) => {
-        const file = this.files.get(`polities/${id}`);
-        return typeof file === 'object' ? (file as PolityFile).names : undefined;
-      };
-      const alsoHere = otherPolitiesAtSpot(this.spot, polity, namesOf, this.day, locale);
+      const alsoHere = otherPolitiesAtSpot(this.spot, polity, polityNames, this.day, locale);
       const reportUrl = () => borderReportUrl({ name: view.name, polity, day: this.day, viewLink: this.options.viewLink() });
       this.show(
         `${this.sheet} ${JSON.stringify(alsoHere)} ${JSON.stringify(view)}`,
@@ -469,10 +582,13 @@ export class TerritoryPanel {
         </Shell>,
       );
     }
-    if (this.focusPending) {
-      this.focusPending = false;
-      this.container.querySelector<HTMLElement>('#panel-title')?.focus({ preventScroll: true });
-    }
+    this.focusIfPending();
+  }
+
+  private focusIfPending(): void {
+    if (!this.focusPending) return;
+    this.focusPending = false;
+    this.container.querySelector<HTMLElement>('#panel-title')?.focus({ preventScroll: true });
   }
 
   private show(key: string, content: preact.JSX.Element): void {
