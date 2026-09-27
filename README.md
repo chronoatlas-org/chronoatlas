@@ -6,11 +6,18 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: Phase 1 complete; Phase 2 is being planned.** Country borders for East Asia,
-> 1900–1950, imported from OpenHistoricalMap, change as you move the timeline; click a territory
-> for its name, dates, and source. Everywhere else shows "no data yet". The address bar always
-> links to the exact date and view you're looking at, so you can share it. Problems can be
-> reported with the [issue forms](https://github.com/chronoatlas-org/chronoatlas/issues/new/choose).
+> **Status: Phase 2 in progress** ([plan](docs/phase-2-plan.md)). Country borders for East Asia,
+> 1900–1950, imported from OpenHistoricalMap, change as you move the timeline. Everywhere else
+> shows "no data yet".
+>
+> - Click a territory to open a panel with its names over time, every record with its dates and
+>   sources, and what isn't in our data yet. The panel has a button to report a problem with that
+>   border.
+> - "Around this date" lists the border changes near the selected date.
+> - Event markers, event details, and map pulses are built and waiting for the first sourced
+>   events.
+> - The address bar always links to the exact date, view, and selection, so you can share it.
+>
 > See the [roadmap](docs/architecture.md#roadmap).
 
 ## What it will do
@@ -101,5 +108,5 @@ what counts as a source. Everyone taking part follows our [Code of Conduct](CODE
   roadmap and showcase plan.
 - [docs/data-sources.md](docs/data-sources.md): the evaluation of each dataset (coverage,
   precision, format, license), including statistics datasets.
-- [docs/phase-2-plan.md](docs/phase-2-plan.md): the proposed plan for Phase 2 (awaiting
-  approval).
+- [docs/phase-2-plan.md](docs/phase-2-plan.md): the plan for Phase 2 (approved 2026-09-27),
+  with progress and open questions.
