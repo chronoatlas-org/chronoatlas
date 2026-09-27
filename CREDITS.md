@@ -49,6 +49,7 @@ notices are kept in the bundle):
 |---|---|---|
 | [Vite](https://vite.dev/) | 8.3.1 | MIT |
 | [TypeScript](https://www.typescriptlang.org/) | 7.0.2 | Apache-2.0 |
+| [Vitest](https://vitest.dev/) | 5.0.2 | MIT |
 | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped) | 26.6.3 | MIT |
 
 Exact versions of every package, including indirect ones, are recorded in `package-lock.json`.

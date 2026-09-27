@@ -119,13 +119,21 @@ The full design is in [docs/architecture.md](docs/architecture.md). The dataset 
 LTS, and the GitHub CLI are installed.
 
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
-`npm run build`, `npm run preview`, `npm run typecheck`, `npm run import:natural-earth`. Still to
-come in Phase 1: `npm test`, `npm run validate`, and `npm run build-data`.
+`npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
+`npm run import:natural-earth`. Still to come in Phase 1: `npm run validate` and
+`npm run build-data`.
 
 **Implementation notes**
 
 - `scripts/*.ts` run directly in Node 24, which strips the types. Keep them to "erasable" syntax
   only: no `enum` and no `namespace`. This is enforced by the `erasableSyntaxOnly` setting.
+- Modules shared between the site and Node scripts (for example `src/dates/`) must import each
+  other with explicit `.ts` extensions (`from './jdn.ts'`), because Node requires them.
+- **Dates:** use `src/dates` for everything: `parseEdtf`, `civilToJdn`/`jdnToCivil`,
+  `formatDate`. Every date is a JDN range `[earliest, latest]`. "Approximate" and "uncertain"
+  are flags that never widen the range. Seasons (`2001-21`) are rejected until we define their
+  months. Tests cross-check against documented reference days and against JavaScript `Date`,
+  which is allowed in tests only.
 - MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
   `src/main.ts`. Without that, the worker fails to load in both dev and production.
 - In dev mode the map is exposed as `window.map`, for debugging in the browser console.

@@ -138,9 +138,15 @@ panel shows "administered by Manchukuo (per OHM) / sovereign: Republic of China 
   | `1937-07/1937-09` | range |
   | `-0220` | 221 BCE (astronomical year numbering: year 0 = 1 BCE) |
 
-- **Internally:** the build converts every date into a range of whole day numbers (Julian Day
-  Numbers), from its earliest to its latest possible day. BCE dates and mixed precision become
-  plain integers. We never use JavaScript's `Date` for historical dates.
+- **Also supported:** unspecified digits (`193X` = the 1930s, `19XX`, `1985-04-XX`) and years
+  beyond four digits (`Y-12000`). **Not supported yet:** seasons (`2001-21`), because EDTF level
+  1 doesn't say which months or hemisphere a season means; use a month range such as
+  `1938-03/1938-05` instead. Times of day aren't supported either.
+- **Approximate (`~`) and uncertain (`?`)** are flags. They don't widen a date's range, because
+  EDTF doesn't say by how much; the map shows them through styling instead.
+- **Internally:** the date library (`src/dates/`) converts every date into a range of whole day
+  numbers (Julian Day Numbers), from its earliest to its latest possible day. BCE dates and mixed
+  precision become plain integers. We never use JavaScript's `Date` for historical dates.
 - **Calendars:** dates are stored in the proleptic Gregorian calendar (the Gregorian calendar
   extended backwards). When a source gives a date in another calendar (Julian, Chinese lunar, a
   Japanese era year), the original wording is kept in the citation.
@@ -199,7 +205,7 @@ Chinese, Japanese, and Korean) are shown alongside English from the start.
   1. ✅ Vite + TypeScript + MapLibre with a Natural Earth base map.
   2. ✅ Automatic deployment to GitHub Pages, plus a build check on pull requests. This was moved
      up from step 7 so that every later step is visible online.
-  3. A date library (EDTF → day numbers, BCE, precision) with tests.
+  3. ✅ A date library (EDTF → day numbers, BCE, precision) with tests, in `src/dates/`.
   4. The timeline: zoom from millennia to days, drag, play/pause, speed, keyboard control.
   5. Data schema, validator, and a pinned import of OHM for East Asia 1900–1950. Everywhere else
      shows "no data".

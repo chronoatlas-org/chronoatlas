@@ -62,6 +62,8 @@ file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 | `npm run build` | Checks the code for type errors, then builds the published site into `dist/` |
 | `npm run preview` | Serves the built `dist/` folder locally, exactly as it will be published |
 | `npm run typecheck` | Only checks the code for type errors |
+| `npm test` | Runs the automated tests once |
+| `npm run test:watch` | Re-runs the tests every time you save a file |
 | `npm run import:natural-earth` | Re-downloads the Natural Earth base map from its pinned release (see [data/imports/natural-earth](data/imports/natural-earth/README.md)) |
 
 **Publishing** is automatic. Every push to `main` runs
