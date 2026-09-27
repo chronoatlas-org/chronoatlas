@@ -75,16 +75,34 @@ let urlTimer: number | undefined;
 let selected: string | null = null;
 
 const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, {
-  onClose: () => select(null),
+  onClose: () => select(null, 'close'),
   onGoToDay: (day) => timeline.setDay(clampDay(day)),
+  onSelectOther: (polity) => select(polity, 'click'),
 });
-const historical = new HistoricalLayers(map, initialDay, { onSelect: (polity) => select(polity) });
+const historical = new HistoricalLayers(map, initialDay, {
+  onSelect: (polities) => {
+    panel.setSpot(polities);
+    select(polities[0], 'click');
+  },
+});
 
-function select(polity: string | null): void {
+/**
+ * Selects a territory, or none (null). `how` says where the change came from:
+ * - 'click': picked on the map. It becomes a Back-button step, and keyboard focus moves to the
+ *   panel's heading.
+ * - 'close': the close button or Escape (or an ID that isn't in our data). If focus was in the
+ *   panel, it returns to the map.
+ * - 'link': the address changed (a shared link, or Back/Forward).
+ */
+function select(polity: string | null, how: 'click' | 'close' | 'link'): void {
+  if (polity === selected) return;
+  const focusWasInPanel = panel.hasFocus();
   selected = polity;
   historical.setSelected(polity);
-  panel.select(polity);
-  scheduleUrlUpdate();
+  panel.select(polity, how === 'click');
+  if (how === 'click') writeUrlNow({ push: true });
+  else scheduleUrlUpdate();
+  if (polity === null && focusWasInPanel) map.getCanvas().focus();
 }
 
 // --- Timeline -----------------------------------------------------------------------------------
@@ -103,13 +121,21 @@ const timeline = new Timeline({
 });
 
 // Open the territory from the link, if any. (An ID that isn't in our data closes the panel again.)
-if (fromUrl.sel) select(fromUrl.sel);
+if (fromUrl.sel) select(fromUrl.sel, 'link');
+
+// Escape closes the panel, unless it's closing something else first (such as an open drop-down).
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || selected === null || event.defaultPrevented) return;
+  if (event.target instanceof HTMLSelectElement) return;
+  select(null, 'close');
+});
 
 // --- Shareable URL ------------------------------------------------------------------------------
 
 // The URL is updated a moment after the view stops changing. `replaceState` changes the address
 // without adding a Back-button step for every move (and browsers limit how often it may be called).
-function writeUrlNow(): void {
+// Selecting a territory is the exception (`push`): it adds a step, so Back closes the panel.
+function writeUrlNow({ push = false } = {}): void {
   window.clearTimeout(urlTimer);
   const center = map.getCenter();
   const hash = formatHash({
@@ -120,7 +146,10 @@ function writeUrlNow(): void {
     sel: selected ?? undefined,
     lang: fromUrl.lang,
   });
-  if (hash !== location.hash) history.replaceState(null, '', hash);
+  if (hash !== location.hash) {
+    if (push) history.pushState(null, '', hash);
+    else history.replaceState(null, '', hash);
+  }
   document.title = t('app.title', { date: formatDay(timeline.day) });
 }
 
@@ -138,7 +167,7 @@ window.addEventListener('hashchange', () => {
   if (next.zoom !== undefined && next.lat !== undefined && next.lng !== undefined) {
     map.jumpTo({ center: [next.lng, next.lat], zoom: next.zoom });
   }
-  if ((next.sel ?? null) !== selected) select(next.sel ?? null);
+  select(next.sel ?? null, 'link');
 });
 
 // "Copy link": on phones, open the system share sheet; elsewhere, copy to the clipboard.

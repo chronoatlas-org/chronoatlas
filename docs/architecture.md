@@ -282,8 +282,10 @@ hosting with no server. The logic is in `src/url/state.ts` and is covered by tes
 - **Damaged links:** anything unreadable is ignored and the rest still applies.
 - **Copy link:** the button opens the system share sheet on touch devices, and copies to the
   clipboard elsewhere. If copying isn't allowed, it says the link is in the address bar.
-- **Selecting a territory** (by clicking it, or closing the panel) also uses `replaceState` for
-  now. Phase 2, step 3 makes selection a Back-button step, so Back closes the panel.
+- **Selecting a territory** by clicking it adds a Back-button step (`pushState`), so Back closes
+  the panel, or returns to the territory selected before. Closing the panel (its button or
+  Escape) replaces the address instead, so it never sends a visitor who arrived by a shared link
+  off the site.
 
 ## Names
 
@@ -362,7 +364,8 @@ and 100 GB/month bandwidth as a soft limit):
   [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27), which lists the steps. Done so far:
   step 1 ✅ (panel foundation: Preact, a side panel replacing the popup, and `sel` in the
   address) and step 2 ✅ (one data file per polity; the panel shows names over time and every
-  record, keeping control, sovereignty, and claims apart). The goals:
+  record, keeping control, sovereignty, and claims apart), and step 3 ✅ (phone bottom sheet;
+  focus, Escape, and Back; every overlapping record reachable). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

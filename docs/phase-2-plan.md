@@ -423,7 +423,22 @@ Small steps, each committed, explained, and viewable locally and online, as in P
        statement (control, sovereignty, claims) have no record for that date.
      - **All records:** each with a "Go to its start" button.
      - **Names:** grouped by source, each with its language.
-3. **Phone bottom sheet** and panel accessibility (focus, Escape, Back button).
+3. ✅ **Phone bottom sheet** and panel accessibility (focus, Escape, Back button).
+   *Done 2026-09-27.*
+   - On phones the panel has three heights (small, half, large). You drag the handle, tap it
+     to cycle, or use the arrow keys on it. At the small height it shows the name and one line
+     saying what's in effect.
+   - Clicking a territory moves keyboard focus to the panel's heading. Closing it returns focus
+     to the map.
+   - Escape closes the panel, and Back undoes a selection.
+   - **Added while testing: overlapping records.** Clicking in Manchuria in 1937 hits two
+     records, Manchukuo's and China's. OpenHistoricalMap's China boundary for 1935–38
+     (relation 2694471) includes Manchuria. The map drew one on top of the other, and only the
+     top one could be clicked. The panel now lists every other polity recorded at the clicked
+     spot ("Also recorded at the spot you clicked: China"), so none is unreachable. How such
+     overlaps should be *drawn* belongs to the contested-areas work (step 9, and Phase 3). How
+     to *interpret* OHM boundaries like this one is a question for the maintainer (see
+     [open questions](#open-questions-found-during-the-work)).
 4. **"Report a problem with this border"** button, with a tested URL builder.
 5. **Events pipeline.** The build writes the events and their effects. Timeline markers by
    importance and zoom, and keyboard access. Tested with synthetic "Testland" events only.
@@ -445,6 +460,30 @@ Steps 1–7 need no new data licenses. Steps 8–11 each add a data source, and 
 licensing before its data is committed.
 
 ---
+
+## Open questions found during the work
+
+These came up while building. None blocks the current steps; each needs the maintainer.
+
+1. **Overlapping OHM boundaries: administered, or claimed?**
+   - **What overlaps:** in mid-1937, OpenHistoricalMap has the Republic of China's boundary
+     (relation 2694471, 1935 to 1938-07-03) covering Manchuria, which Manchukuo's boundary
+     (relation 2885965) also covers. We import every OHM national boundary as `administers`,
+     so our data currently says both administered Manchuria.
+   - **What OHM's own tags say:** the relation's tags describe it as the Republic of China
+     (`official_name` 中華民國). Its `start_event` is a map published in April 1935 that set
+     out South China Sea territory, and its `end_event` is French forces occupying the Paracel
+     Islands. That suggests this boundary shows claimed extent rather than day-to-day
+     administration.
+   - **What it affects:** that is exactly the de facto / claim distinction of ground rule 2, and
+     it touches disputed areas. The OHM import decisions are the maintainer's call (see
+     `data/imports/openhistoricalmap/manifest.json`).
+   - **Options:**
+     1. Keep `administers` (no change, with the panel's existing caveat).
+     2. Import OHM boundaries that overlap another polity's boundary as `claims`. That's a
+        rule, and it needs care to avoid mislabelling real administration.
+     3. Keep the import as it is, and raise the question with OHM's community, which would be
+        an outward-facing step.
 
 ## 7. Decisions (2026-09-27)
 

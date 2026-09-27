@@ -134,6 +134,30 @@ body {
   display: none;
 }
 
+/* The resize handle and the one-line summary are for the phone layout only (see below). */
+.panel-handle,
+.panel-summary {
+  display: none;
+}
+
+.panel-summary {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #424a53;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel h2:focus {
+  outline: none;
+}
+
+.panel h2:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
 .panel-header {
   display: flex;
   align-items: flex-start;
@@ -276,6 +300,30 @@ body {
   outline-offset: 2px;
 }
 
+/* Other territories recorded at the clicked spot: overlapping records must all be reachable. */
+.panel-also {
+  padding: 6px 8px;
+  border: 1px dashed #8c959f;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.panel-link-button {
+  min-height: 32px;
+  padding: 0 2px;
+  border: none;
+  background: none;
+  color: #0969da;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.panel-link-button:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 1px;
+}
+
 .panel-missing {
   font-style: italic;
   color: #57606a;
@@ -358,8 +406,9 @@ body {
     min-height: 44px;
   }
 
-  /* The panel goes between the map and the timeline, full width. (Phase 2, step 3 replaces this
-     with a bottom sheet that can be dragged between heights.) */
+  /* The panel becomes a "bottom sheet" between the map and the timeline, full width, with three
+     heights (src/panel/sheet.ts; keep the numbers in step with sheetHeights there). The map
+     shrinks to fit above it, so it stays usable. */
   body {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto auto;
@@ -369,10 +418,65 @@ body {
     grid-column: 1;
     grid-row: 2;
     width: auto;
-    max-height: 40dvh;
-    padding: 8px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left));
+    height: 45dvh;
+    padding: 0 max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left));
     border-left: none;
     border-top: 1px solid #d0d7de;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -2px 8px rgb(0 0 0 / 12%);
+    transition: height 0.2s ease-out;
+  }
+
+  .panel[data-sheet='peek'] {
+    height: 112px;
+    overflow: hidden;
+  }
+
+  .panel[data-sheet='full'] {
+    height: 72dvh;
+  }
+
+  /* While dragging, the height follows the finger with no easing. */
+  .panel.is-dragging {
+    transition: none;
+  }
+
+  /* At the smallest height there's only room for the name and one line. */
+  .panel[data-sheet='peek'] .panel-summary {
+    display: block;
+  }
+
+  .panel[data-sheet='peek'] .panel-local {
+    display: none;
+  }
+
+  .panel-handle {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 32px);
+    height: 28px;
+    margin: 0 -16px;
+    padding: 0;
+    border: none;
+    background: #ffffff;
+    cursor: grab;
+    touch-action: none; /* a drag resizes the panel instead of scrolling the page */
+  }
+
+  .panel-handle span {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background: #8c959f;
+  }
+
+  .panel-handle:focus-visible {
+    outline: 2px solid #0969da;
+    outline-offset: -2px;
   }
 
   .panel-close {
@@ -403,4 +507,12 @@ body {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* Respect the reduced-motion setting: sizes change at once instead of sliding. */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .panel summary::before {
+    transition: none;
+  }
 }

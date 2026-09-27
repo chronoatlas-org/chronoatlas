@@ -2,7 +2,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describePeriod, describeTerritory, languageName, sourceLink } from './model.ts';
+import { describeDate, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
 import type { PolityFile, PolityRecord, SourcesFile } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
@@ -59,6 +59,7 @@ describe('describeTerritory: on this date', () => {
       ['c', 'Sovereign (de jure)'],
     ]);
     expect(v.missing).toBe('Not in our data yet for this date: claims.');
+    expect(v.summary).toBe('Controlled (de facto) · Sovereign (de jure)');
   });
 
   it('says so when there is no territory, without listing missing kinds', () => {
@@ -66,6 +67,7 @@ describe('describeTerritory: on this date', () => {
     expect(v.hasTerritory).toBe(false);
     expect(v.current).toEqual([]);
     expect(v.missing).toBeUndefined();
+    expect(v.summary).toBe('No territory recorded for Testland on this date.');
   });
 
   it('treats the end as the first day a record no longer applied', () => {
@@ -125,6 +127,21 @@ describe('describeTerritory: history and names', () => {
     expect(view(1903, 1, 1, 'fr').name).toBe('Testlande');
     expect(view(1907, 1, 1, 'fr').name).toBe('Testland'); // the French name ended in 1905
     expect(view(1903, 1, 1).localName).toBe('Tɛstlɑnd');
+  });
+});
+
+describe('otherPolitiesAtSpot', () => {
+  const names = (id: string) => (id === 'otherland' ? [{ text: 'Otherland', lang: 'en', s0: null, e0: null }] : undefined);
+
+  it('offers the other polities recorded where the reader clicked, by name or by ID until loaded', () => {
+    expect(otherPolitiesAtSpot(['testland', 'otherland', 'thirdland'], 'testland', names, day(1903, 1, 1), 'en')).toEqual([
+      { id: 'otherland', name: 'Otherland' },
+      { id: 'thirdland', name: 'thirdland' },
+    ]);
+  });
+
+  it('offers nothing once the selection is no longer one from that spot', () => {
+    expect(otherPolitiesAtSpot(['otherland'], 'testland', names, day(1903, 1, 1), 'en')).toEqual([]);
   });
 });
 

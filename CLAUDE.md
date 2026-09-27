@@ -227,6 +227,13 @@ the last download), `npm run import:natural-earth`.
     means the ID isn't in our data, so the panel closes and `sel` drops out of the address.
   - JSX works through `jsx`/`jsxImportSource` in `tsconfig.json`, which Vite also reads; there's
     no Preact build plugin. Never use `dangerouslySetInnerHTML`: names come from outside data.
+  - `sheet.ts` holds the phone bottom sheet's heights and handle (drag, tap, arrow keys). Its
+    heights must match `.panel[data-sheet=…]` in `src/style.css`.
+  - A map click passes every polity at that spot (`onSelect(polities)`), and the panel offers
+    the others ("Also recorded at the spot you clicked"), because records can overlap and none
+    may be unreachable.
+  - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
+    replaces the address.
   - The panel keeps control, sovereignty, and claims apart. For each date it names the kinds with
     no record ("Not in our data yet for this date: …"), so silence isn't read as "there was none".
     Names get a `lang` attribute, so Chinese and Japanese text use the right glyphs.
@@ -236,6 +243,10 @@ the last download), `npm run import:natural-earth`.
   - Screenshots can time out when the app window is covered; check state with JavaScript
     instead.
   - Clipboard writes are denied in the pane, so the Copy link fallback message is expected.
+  - `history.back()` from a script does nothing in the pane. To test the Back button, use the
+    browser tool's navigate with "back".
+  - CSS transitions don't advance in a hidden pane, so measured heights lag. Set
+    `style.transition = 'none'` before measuring.
 - MapLibre waits for the browser's animation frames, which don't run while the page is hidden.
   A map that "never loads" in a background tab may just be paused.
 - **Deployment:** `.github/workflows/deploy.yml` builds pull requests and deploys `main` to

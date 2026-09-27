@@ -25,8 +25,11 @@ interface TileIndex {
 }
 
 export interface HistoricalOptions {
-  /** Called with a polity ID when someone clicks a territory. */
-  onSelect: (polity: string) => void;
+  /**
+   * Called when someone clicks a territory, with every polity recorded at that spot (the one
+   * drawn on top first). Records can overlap, and none should be unreachable.
+   */
+  onSelect: (polities: string[]) => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -164,8 +167,8 @@ export class HistoricalLayers {
     });
 
     map.on('click', 'borders-fill', (event) => {
-      const polity = event.features?.[0]?.properties.polity;
-      if (polity) this.options.onSelect(String(polity));
+      const polities = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];
+      if (polities.length > 0) this.options.onSelect(polities);
     });
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));

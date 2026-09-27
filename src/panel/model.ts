@@ -112,6 +112,8 @@ export interface TerritoryView {
   localName?: string;
   /** Whether any source gives this polity territory on the selected day. */
   hasTerritory: boolean;
+  /** One line for the phone panel at its smallest height: what's in effect on this date. */
+  summary: string;
   current: CurrentEntry[];
   /** Names the kinds of statement with no record for this date, e.g. sovereignty (de jure). */
   missing?: string;
@@ -213,6 +215,24 @@ function listOf(items: string[], locale: string): string {
 
 // --- Putting it together -------------------------------------------------------------------------
 
+/**
+ * The other polities recorded at the spot the reader clicked, so none is hidden under another
+ * (overlapping records are exactly what the ground rules say not to flatten). `spot` lists them
+ * top one first; names not loaded yet show as their ID until they arrive.
+ */
+export function otherPolitiesAtSpot(
+  spot: readonly string[],
+  selected: string,
+  namesOf: (id: string) => readonly AtlasName[] | undefined,
+  day: number,
+  locale: string,
+): { id: string; name: string }[] {
+  if (!spot.includes(selected)) return [];
+  return spot
+    .filter((id) => id !== selected)
+    .map((id) => ({ id, name: pickNames(namesOf(id) ?? [], day, locale)?.primary ?? id }));
+}
+
 /** Describes a polity on a given day, from its polity file. */
 export function describeTerritory(
   file: PolityFile,
@@ -282,11 +302,13 @@ export function describeTerritory(
   }
 
   const names = pickNames(file.names, day, locale);
+  const name = names?.primary ?? file.id;
   return {
     polity: file.id,
-    name: names?.primary ?? file.id,
+    name,
     ...(names?.local ? { localName: names.local } : {}),
     hasTerritory: own.length > 0,
+    summary: current.length > 0 ? [...new Set(current.map((e) => e.label))].join(' · ') : t('panel.noTerritory', { name }),
     current,
     ...(missing ? { missing } : {}),
     history,
