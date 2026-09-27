@@ -439,7 +439,15 @@ Small steps, each committed, explained, and viewable locally and online, as in P
      overlaps should be *drawn* belongs to the contested-areas work (step 9, and Phase 3). How
      to *interpret* OHM boundaries like this one is a question for the maintainer (see
      [open questions](#open-questions-found-during-the-work)).
-4. **"Report a problem with this border"** button, with a tested URL builder.
+4. ✅ **"Report a problem with this border"** button, with a tested URL builder.
+   *Done 2026-09-27.*
+   - The link opens GitHub's border correction form with the territory ("Manchukuo
+     (manchukuo)"), the selected day, and the full view link filled in.
+   - It's rebuilt at the moment it's pressed, so it carries the current map position.
+   - A note under it says GitHub needs an account (decision 4).
+   - `scripts/issue-forms.test.ts` fails if the form loses any field the button fills in.
+   - Not yet checked on github.com itself: whether GitHub fills the fields in. That needs a
+     signed-in visit, which the maintainer can do by pressing the button.
 5. **Events pipeline.** The build writes the events and their effects. Timeline markers by
    importance and zoom, and keyboard access. Tested with synthetic "Testland" events only.
 6. **Event panel, map pulse (reduced-motion aware), and effect highlighting.**

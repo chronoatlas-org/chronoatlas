@@ -365,7 +365,8 @@ and 100 GB/month bandwidth as a soft limit):
   step 1 ✅ (panel foundation: Preact, a side panel replacing the popup, and `sel` in the
   address) and step 2 ✅ (one data file per polity; the panel shows names over time and every
   record, keeping control, sovereignty, and claims apart), and step 3 ✅ (phone bottom sheet;
-  focus, Escape, and Back; every overlapping record reachable). The goals:
+  focus, Escape, and Back; every overlapping record reachable), and step 4 ✅ (the "Report a
+  problem with this border" button). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

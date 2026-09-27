@@ -300,6 +300,25 @@ body {
   outline-offset: 2px;
 }
 
+.panel-report {
+  margin-top: 10px !important;
+  font-size: 0.85rem;
+}
+
+.panel-report a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: #0969da;
+  font-weight: 600;
+}
+
+.panel-report-note {
+  display: block;
+  color: #57606a;
+  font-size: 0.78rem;
+}
+
 /* Other territories recorded at the clicked spot: overlapping records must all be reachable. */
 .panel-also {
   padding: 6px 8px;

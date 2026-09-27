@@ -47,6 +47,8 @@ export const en = {
   'panel.category.sovereignty': 'sovereignty (de jure)',
   'panel.category.claims': 'claims',
   'panel.recognizedBy': 'Recognized by {list}, according to the source.',
+  'panel.report': 'Report a problem with this border',
+  'panel.reportNote': 'Opens a form on GitHub, which needs a free GitHub account.',
   'panel.history': 'All records ({count})',
   'panel.inEffect': 'in effect on this date',
   'panel.goTo': 'Go to its start',

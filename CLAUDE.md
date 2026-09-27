@@ -263,4 +263,7 @@ the last download), `npm run import:natural-earth`.
     `related_territories`. (`event_name` was `title` until 2026-09-27, renamed before any link
     used it because `title` is GitHub's own parameter for the issue title.)
   - `bug.yml`: `what_happened`, `expected`, `steps`, `view_link`, `device_browser`.
+  - The panel's "Report a problem with this border" link is built by `src/url/report.ts`
+    (`REPORT_FORM` lists the fields it fills). Never add a `labels` parameter: without
+    permission GitHub answers 404.
   - `config.yml` contact links must be `https://`; GitHub rejects `mailto:`.

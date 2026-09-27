@@ -78,6 +78,7 @@ const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, 
   onClose: () => select(null, 'close'),
   onGoToDay: (day) => timeline.setDay(clampDay(day)),
   onSelectOther: (polity) => select(polity, 'click'),
+  viewLink: () => `${location.origin}${location.pathname}${currentHash()}`,
 });
 const historical = new HistoricalLayers(map, initialDay, {
   onSelect: (polities) => {
@@ -137,8 +138,18 @@ document.addEventListener('keydown', (event) => {
 // Selecting a territory is the exception (`push`): it adds a step, so Back closes the panel.
 function writeUrlNow({ push = false } = {}): void {
   window.clearTimeout(urlTimer);
+  const hash = currentHash();
+  if (hash !== location.hash) {
+    if (push) history.pushState(null, '', hash);
+    else history.replaceState(null, '', hash);
+  }
+  document.title = t('app.title', { date: formatDay(timeline.day) });
+}
+
+/** The hash for the current view: date, map position, selection, and language. */
+function currentHash(): string {
   const center = map.getCenter();
-  const hash = formatHash({
+  return formatHash({
     day: timeline.day,
     zoom: map.getZoom(),
     lat: center.lat,
@@ -146,11 +157,6 @@ function writeUrlNow({ push = false } = {}): void {
     sel: selected ?? undefined,
     lang: fromUrl.lang,
   });
-  if (hash !== location.hash) {
-    if (push) history.pushState(null, '', hash);
-    else history.replaceState(null, '', hash);
-  }
-  document.title = t('app.title', { date: formatDay(timeline.day) });
 }
 
 function scheduleUrlUpdate(): void {

@@ -5,6 +5,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { parse } from 'yaml';
+import { REPORT_FORM } from '../src/url/report.ts';
 
 const dir = join(import.meta.dirname, '..', '.github', 'ISSUE_TEMPLATE');
 const forms = readdirSync(dir).filter((f) => f.endsWith('.yml') && f !== 'config.yml');
@@ -70,6 +71,17 @@ describe('issue forms', () => {
       });
     });
   }
+
+  it('still has every field the site\'s "Report a problem" button fills in', () => {
+    expect(forms).toContain(REPORT_FORM.template);
+    const form = parse(readFileSync(join(dir, REPORT_FORM.template), 'utf8')) as { body: Item[] };
+    const ids = form.body.map((i) => i.id);
+    for (const field of REPORT_FORM.fields) expect(ids).toContain(field);
+    // Pre-filling only works for text fields.
+    for (const field of REPORT_FORM.fields) {
+      expect(['input', 'textarea']).toContain(form.body.find((i) => i.id === field)!.type);
+    }
+  });
 
   it('has a valid chooser config', () => {
     const config = parse(readFileSync(join(dir, 'config.yml'), 'utf8')) as {

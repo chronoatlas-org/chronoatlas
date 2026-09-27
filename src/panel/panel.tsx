@@ -42,6 +42,7 @@ import { Fragment, render } from 'preact';
 import type { ComponentChildren } from 'preact';
 import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
+import { borderReportUrl } from '../url/report.ts';
 import { describeTerritory, otherPolitiesAtSpot } from './model.ts';
 import type { CurrentEntry, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
 import { attachSheetHandle } from './sheet.ts';
@@ -129,11 +130,15 @@ function Current({ entry }: { entry: CurrentEntry }) {
 interface TerritoryProps {
   view: TerritoryView;
   alsoHere: { id: string; name: string }[];
+  /** The "Report a problem" address for the current view (built when used, so it's never stale). */
+  reportUrl: () => string;
   onGoToDay: (day: number) => void;
   onSelectOther: (polity: string) => void;
 }
 
-function Territory({ view, alsoHere, onGoToDay, onSelectOther }: TerritoryProps) {
+function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: TerritoryProps) {
+  // Refresh the link just before it's used: the map may have moved since the panel was drawn.
+  const refreshReportLink = (event: Event) => ((event.currentTarget as HTMLAnchorElement).href = reportUrl());
   return (
     <>
       {alsoHere.length > 0 && (
@@ -161,6 +166,12 @@ function Territory({ view, alsoHere, onGoToDay, onSelectOther }: TerritoryProps)
           </ul>
         )}
         {view.missing && <p class="panel-missing">{view.missing}</p>}
+        <p class="panel-report">
+          <a href={reportUrl()} target="_blank" rel="noopener" onPointerDown={refreshReportLink} onFocus={refreshReportLink}>
+            {t('panel.report')}
+          </a>{' '}
+          <span class="panel-report-note">{t('panel.reportNote')}</span>
+        </p>
       </section>
 
       {view.history.length > 0 && (
@@ -216,6 +227,8 @@ export interface PanelOptions {
   onGoToDay: (day: number) => void;
   /** Called when the reader picks another polity recorded at the spot they clicked. */
   onSelectOther: (polity: string) => void;
+  /** The full shareable link to the current view (for "Report a problem"). */
+  viewLink: () => string;
 }
 
 type FileState = PolityFile | 'loading' | 'failed';
@@ -348,10 +361,18 @@ export class TerritoryPanel {
         return typeof file === 'object' ? file.names : undefined;
       };
       const alsoHere = otherPolitiesAtSpot(this.spot, this.polity, namesOf, this.day, getLocale());
+      const polity = this.polity;
+      const reportUrl = () => borderReportUrl({ name: view.name, polity, day: this.day, viewLink: this.options.viewLink() });
       this.show(
         `${this.sheet} ${JSON.stringify(alsoHere)} ${JSON.stringify(view)}`,
         <Shell title={view.name} subtitle={view.localName} summary={view.summary} {...shell}>
-          <Territory view={view} alsoHere={alsoHere} onGoToDay={this.options.onGoToDay} onSelectOther={this.options.onSelectOther} />
+          <Territory
+            view={view}
+            alsoHere={alsoHere}
+            reportUrl={reportUrl}
+            onGoToDay={this.options.onGoToDay}
+            onSelectOther={this.options.onSelectOther}
+          />
         </Shell>,
       );
     }
