@@ -7,7 +7,9 @@
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
 //   public/data/sources.json         each source's title and address
-//   public/data/events.json          every event's dates, importance, and title, for the timeline
+//   public/data/events.json          every event's dates, importance, title, and place, for the
+//                          timeline's markers and the map's pulse
+//   public/data/events/<id>.json     one event in full (summary, sources, effects), for the panel
 //   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
 //                          the territory panel (a visitor downloads only the ones they open)
 //
@@ -24,8 +26,9 @@ import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
-import type { Assertion, PolityName, ShapeFeature } from './lib/types.ts';
-import type { PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import type { Assertion, Polity, PolityName, ShapeFeature } from './lib/types.ts';
+import type { AtlasName } from '../src/map/names.ts';
+import type { EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
 import type { TimelineEvent } from '../src/timeline/events.ts';
 
@@ -160,10 +163,45 @@ export function buildEvents(ds: Dataset): { events: TimelineEvent[] } {
   const events = ds.events
     .map(({ value: e }): TimelineEvent => {
       const { s0, s1, inexact } = eventDays(e.date);
-      return { id: e.id, title: e.title, s0, s1, importance: e.importance ?? DEFAULT_IMPORTANCE, ...(inexact ? { inexact } : {}) };
+      return {
+        id: e.id,
+        title: e.title,
+        s0,
+        s1,
+        importance: e.importance ?? DEFAULT_IMPORTANCE,
+        ...(inexact ? { inexact } : {}),
+        ...(e.location ? { at: [...e.location.coordinates, e.location.precision_km] as [number, number, number] } : {}),
+      };
     })
     .sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
   return { events };
+}
+
+/**
+ * public/data/events/<id>.json: everything the panel shows about one event, with the records it
+ * started or ended ("effects") written out in full, and names for the polities it mentions.
+ */
+export function buildEventFiles(ds: Dataset): EventFile[] {
+  const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
+  const assertions = new Map(ds.assertions.flatMap(({ value }) => value).map((a) => [a.id, a]));
+  return ds.events.map(({ value: e }) => {
+    // The validator guarantees every effect names an existing assertion.
+    const effects = (e.effects ?? []).map((id) => assertionRecord(assertions.get(id)!));
+    const mentioned = new Set([...(e.polities ?? []), ...effects.flatMap((r) => [r.subject, ...(r.object ? [r.object] : [])])]);
+    return {
+      id: e.id,
+      ...(e.wikidata ? { wikidata: e.wikidata } : {}),
+      title: e.title,
+      date: e.date,
+      importance: e.importance ?? DEFAULT_IMPORTANCE,
+      ...(e.location ? { location: e.location } : {}),
+      summary: e.summary,
+      ...(e.polities?.length ? { polities: e.polities } : {}),
+      ...(effects.length ? { effects } : {}),
+      sources: e.sources,
+      ...(mentioned.size ? { related: namesFor(mentioned, polities) } : {}),
+    };
+  });
 }
 
 /** public/data/sources.json: each source's title and address, shared by all polity files. */
@@ -185,6 +223,32 @@ function nameDays(n: PolityName) {
   };
 }
 
+/** An assertion as the panel shows it: dates as written plus day numbers. */
+function assertionRecord(a: Assertion): PolityRecord {
+  const { s0, s1, e0 } = dayRanges(a.start, a.end);
+  return {
+    id: a.id,
+    relation: a.relation,
+    subject: a.subject,
+    ...(a.object ? { object: a.object } : {}),
+    ...(a.recognized_by ? { recognized_by: a.recognized_by } : {}),
+    start: a.start,
+    end: a.end,
+    s0,
+    s1,
+    e0,
+    sources: a.sources,
+    ...(a.notes ? { notes: a.notes } : {}),
+  };
+}
+
+/** Just enough about each of some polities to name them: their names with day ranges. */
+function namesFor(ids: Iterable<string>, polities: Map<string, Polity>): Record<string, AtlasName[]> {
+  return Object.fromEntries(
+    [...ids].map((id) => [id, (polities.get(id)?.names ?? []).map((n) => ({ text: n.text, lang: n.lang, ...nameDays(n) }))]),
+  );
+}
+
 /**
  * public/data/polities/<id>.json: everything the territory panel shows about one polity, so a
  * visitor downloads only the polities they open. Each file has all the polity's names and every
@@ -200,33 +264,13 @@ export function buildPolityFiles(ds: Dataset): PolityFile[] {
   }
 
   return ds.polities.map(({ value: p }) => {
-    const records = (mentions.get(p.id) ?? [])
-      .map((a): PolityRecord => {
-        const { s0, s1, e0 } = dayRanges(a.start, a.end);
-        return {
-          id: a.id,
-          relation: a.relation,
-          subject: a.subject,
-          ...(a.object ? { object: a.object } : {}),
-          ...(a.recognized_by ? { recognized_by: a.recognized_by } : {}),
-          start: a.start,
-          end: a.end,
-          s0,
-          s1,
-          e0,
-          sources: a.sources,
-          ...(a.notes ? { notes: a.notes } : {}),
-        };
-      })
-      .sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
+    const records = (mentions.get(p.id) ?? []).map(assertionRecord).sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
 
     // Other polities the records mention, with just enough to name them.
     const others = new Set(records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? [])]));
     others.delete(p.id);
     others.delete('');
-    const related = Object.fromEntries(
-      [...others].map((id) => [id, (polities.get(id)?.names ?? []).map((n) => ({ text: n.text, lang: n.lang, ...nameDays(n) }))]),
-    );
+    const related = namesFor(others, polities);
 
     return {
       id: p.id,
@@ -274,6 +318,8 @@ function main(): void {
   );
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
   writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
+  mkdirSync(join(OUT_DIR, 'events'));
+  for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
   for (const file of buildPolityFiles(ds)) {

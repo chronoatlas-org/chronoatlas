@@ -15,6 +15,8 @@ export interface TimelineEvent {
   importance: number;
   /** The date is approximate or uncertain, or an end is open: drawn hollow, never as exact. */
   inexact?: boolean;
+  /** Where it happened, if the data says: [longitude, latitude, precision in km]. */
+  at?: [number, number, number];
 }
 
 /** Events without an importance count as middling. */
@@ -88,4 +90,23 @@ export function eventNear(
 /** Events that cover a day, most important first, for the timeline's screen-reader text. */
 export function eventsOnDay(events: readonly TimelineEvent[], day: number, min: number): TimelineEvent[] {
   return events.filter((e) => e.importance >= min && e.s0 <= day && day <= e.s1).sort((a, b) => b.importance - a.importance);
+}
+
+/**
+ * Events with a place whose start the playhead just passed, moving forward from `fromDay` to
+ * `toDay`: these get a pulse on the map. Most important first, at most `limit`, so a fast jump
+ * across decades doesn't set off dozens at once.
+ */
+export function crossedEvents(
+  events: readonly TimelineEvent[],
+  fromDay: number,
+  toDay: number,
+  min: number,
+  limit = 3,
+): TimelineEvent[] {
+  if (toDay <= fromDay) return [];
+  return events
+    .filter((e) => e.at && e.importance >= min && e.s0 > fromDay && e.s0 <= toDay)
+    .sort((a, b) => b.importance - a.importance)
+    .slice(0, limit);
 }

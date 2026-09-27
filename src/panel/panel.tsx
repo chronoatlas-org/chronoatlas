@@ -43,8 +43,8 @@ import type { ComponentChildren } from 'preact';
 import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
 import { borderReportUrl } from '../url/report.ts';
-import { describeTerritory, otherPolitiesAtSpot } from './model.ts';
-import type { CurrentEntry, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
+import { describeEvent, describeTerritory, otherPolitiesAtSpot } from './model.ts';
+import type { CurrentEntry, EventFile, EventView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
 import { attachSheetHandle } from './sheet.ts';
 import type { SheetHeight } from './sheet.ts';
 
@@ -218,28 +218,98 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
   );
 }
 
+interface EventDetailsProps {
+  view: EventView;
+  onSelectPolity: (polity: string) => void;
+}
+
+function EventDetails({ view, onSelectPolity }: EventDetailsProps) {
+  return (
+    <>
+      <section class="panel-section" aria-labelledby="panel-event-date">
+        <h3 id="panel-event-date">{t('panel.date')}</h3>
+        <p>{view.date}</p>
+        <p class="panel-event-summary">{view.summary}</p>
+        <p class="panel-note">{t('panel.summaryNote')}</p>
+        <Sources lines={view.sources} />
+        {view.location && (
+          <>
+            <p>{view.location.text}</p>
+            <Sources lines={view.location.sources} />
+          </>
+        )}
+      </section>
+
+      {view.polities.length > 0 && (
+        <section class="panel-section" aria-labelledby="panel-event-polities">
+          <h3 id="panel-event-polities">{t('panel.eventPolities')}</h3>
+          <ul class="panel-plain-list">
+            {view.polities.map((polity) => (
+              <li key={polity.id}>
+                <button type="button" class="panel-link-button" onClick={() => onSelectPolity(polity.id)}>
+                  {polity.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {view.effects.length > 0 && (
+        <section class="panel-section" aria-labelledby="panel-event-effects">
+          <h3 id="panel-event-effects">{t('panel.effects')}</h3>
+          <p class="panel-note">{t('panel.effectsNote')}</p>
+          <ul class="panel-records">
+            {view.effects.map((effect) => (
+              <li key={effect.id} class="panel-record">
+                <p class="panel-relation">{effect.label}</p>
+                <p>{effect.period}</p>
+                <Sources lines={effect.sources} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </>
+  );
+}
+
 // --- The panel on the page -----------------------------------------------------------------------
+
+/** What the panel shows: a territory (by polity ID) or an event (by event ID). */
+export interface Selection {
+  kind: 'polity' | 'event';
+  id: string;
+}
 
 export interface PanelOptions {
   /** Called when the reader closes the panel, or when the selected ID isn't in our data. */
   onClose: () => void;
   /** Called when the reader asks to see a record on the map (moves the timeline to `day`). */
   onGoToDay: (day: number) => void;
-  /** Called when the reader picks another polity recorded at the spot they clicked. */
-  onSelectOther: (polity: string) => void;
+  /** Called when the reader picks a territory in the panel (at the clicked spot, or in an event). */
+  onSelectPolity: (polity: string) => void;
+  /** Called once each time an event's details appear, for the map's outlines and pulse. */
+  onEventShown: (file: EventFile) => void;
   /** The full shareable link to the current view (for "Report a problem"). */
   viewLink: () => string;
 }
 
-type FileState = PolityFile | 'loading' | 'failed';
+type FileState = PolityFile | EventFile | 'loading' | 'failed';
 
-/** Puts the panel on the page, loads polity files, and redraws when anything changes. */
+/** Where a selection's file is, under public/data/ (without ".json"). */
+const pathOf = (selection: Selection) => `${selection.kind === 'polity' ? 'polities' : 'events'}/${selection.id}`;
+
+/** Puts the panel on the page, loads the files it needs, and redraws when anything changes. */
 export class TerritoryPanel {
   private readonly container: HTMLElement;
   private readonly options: PanelOptions;
   private sources: SourcesFile['sources'] | null = null;
+  /** Loaded files by path (see pathOf). */
   private readonly files = new Map<string, FileState>();
-  private polity: string | null = null;
+  private selection: Selection | null = null;
+  /** The event whose details were last reported with onEventShown. */
+  private shownEvent: string | null = null;
   /** The polities recorded where the reader last clicked, top one first. */
   private spot: string[] = [];
   private day: number;
@@ -274,20 +344,22 @@ export class TerritoryPanel {
   }
 
   /**
-   * Shows a polity (by ID), or closes the panel (null). With `focus`, keyboard focus moves to the
-   * panel's heading, so keyboard and screen-reader users land on what they just opened.
+   * Shows a territory or an event, or closes the panel (null). With `focus`, keyboard focus moves
+   * to the panel's heading, so keyboard and screen-reader users land on what they just opened.
    */
-  select(polity: string | null, focus = false): void {
-    if (polity !== this.polity) {
+  select(selection: Selection | null, focus = false): void {
+    const changed = (selection && pathOf(selection)) !== (this.selection && pathOf(this.selection));
+    if (changed) {
       this.container.scrollTop = 0;
-      if (this.polity === null) {
+      this.shownEvent = null;
+      if (this.selection === null) {
         this.sheet = 'half'; // opening from closed starts at half height
         this.container.dataset.sheet = this.sheet;
       }
     }
-    this.polity = polity;
-    this.focusPending = focus && polity !== null;
-    if (polity && (!this.files.has(polity) || this.files.get(polity) === 'failed')) this.load(polity);
+    this.selection = selection;
+    this.focusPending = focus && selection !== null;
+    if (selection) this.loadIfNeeded(pathOf(selection));
     this.draw();
   }
 
@@ -299,7 +371,7 @@ export class TerritoryPanel {
   /** Records which polities are at the spot the reader clicked, so the panel can offer the others. */
   setSpot(polities: string[]): void {
     this.spot = polities;
-    for (const id of polities) if (!this.files.has(id)) this.load(id); // for their names
+    for (const id of polities) this.loadIfNeeded(`polities/${id}`); // for their names
   }
 
   /** Whether keyboard focus is inside the panel (so closing it should move focus elsewhere). */
@@ -307,43 +379,51 @@ export class TerritoryPanel {
     return this.container.contains(document.activeElement);
   }
 
-  private load(id: string): void {
-    this.files.set(id, 'loading');
-    fetch(dataUrl(`polities/${id}.json`))
+  private loadIfNeeded(path: string): void {
+    const state = this.files.get(path);
+    if (state === undefined || state === 'failed') this.load(path); // a failed load is retried
+  }
+
+  private load(path: string): void {
+    this.files.set(path, 'loading');
+    const id = path.slice(path.indexOf('/') + 1);
+    fetch(dataUrl(`${path}.json`))
       .then(async (response) => {
         if (response.status === 404) return null;
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         try {
-          return (await response.json()) as PolityFile;
+          return (await response.json()) as PolityFile | EventFile;
         } catch {
           return null; // not JSON: some servers answer a missing file with an HTML page
         }
       })
       .then((file) => {
         if (file && file.id === id) {
-          this.files.set(id, file);
+          this.files.set(path, file);
           this.draw();
           return;
         }
         // Not in our data (for example a mistyped link): close, as if the link had no selection.
-        this.files.delete(id);
-        if (this.polity === id) {
-          this.polity = null;
+        this.files.delete(path);
+        if (this.selection && pathOf(this.selection) === path) {
+          this.selection = null;
           this.draw();
           this.options.onClose();
         }
       })
       .catch((error) => {
-        console.error(`Could not load the details for ${id}`, error);
-        this.files.set(id, 'failed'); // selecting it again retries
+        console.error(`Could not load ${path}`, error);
+        this.files.set(path, 'failed');
         this.draw();
       });
   }
 
   private draw(): void {
-    if (!this.polity) return this.hide();
-    const state = this.files.get(this.polity);
+    const selection = this.selection;
+    if (!selection) return this.hide();
+    const state = this.files.get(pathOf(selection));
     const shell = { sheet: this.sheet, onClose: this.options.onClose };
+    const locale = getLocale();
 
     if (state === undefined || state === 'loading' || !this.sources) {
       this.show(`loading ${this.sheet}`, <Shell title={t('panel.loading')} {...shell}>{null}</Shell>);
@@ -354,14 +434,27 @@ export class TerritoryPanel {
           <p class="panel-empty">{t('panel.loadFailed')}</p>
         </Shell>,
       );
+    } else if (selection.kind === 'event') {
+      const file = state as EventFile;
+      const view = describeEvent(file, this.sources, this.day, locale);
+      this.show(
+        `${this.sheet} ${JSON.stringify(view)}`,
+        <Shell title={view.title} subtitle={t('panel.eventLabel')} summary={view.date} {...shell}>
+          <EventDetails view={view} onSelectPolity={this.options.onSelectPolity} />
+        </Shell>,
+      );
+      if (this.shownEvent !== file.id) {
+        this.shownEvent = file.id;
+        this.options.onEventShown(file);
+      }
     } else {
-      const view = describeTerritory(state, this.sources, this.day, getLocale());
+      const polity = selection.id;
+      const view = describeTerritory(state as PolityFile, this.sources, this.day, locale);
       const namesOf = (id: string) => {
-        const file = this.files.get(id);
-        return typeof file === 'object' ? file.names : undefined;
+        const file = this.files.get(`polities/${id}`);
+        return typeof file === 'object' ? (file as PolityFile).names : undefined;
       };
-      const alsoHere = otherPolitiesAtSpot(this.spot, this.polity, namesOf, this.day, getLocale());
-      const polity = this.polity;
+      const alsoHere = otherPolitiesAtSpot(this.spot, polity, namesOf, this.day, locale);
       const reportUrl = () => borderReportUrl({ name: view.name, polity, day: this.day, viewLink: this.options.viewLink() });
       this.show(
         `${this.sheet} ${JSON.stringify(alsoHere)} ${JSON.stringify(view)}`,
@@ -371,7 +464,7 @@ export class TerritoryPanel {
             alsoHere={alsoHere}
             reportUrl={reportUrl}
             onGoToDay={this.options.onGoToDay}
-            onSelectOther={this.options.onSelectOther}
+            onSelectOther={this.options.onSelectPolity}
           />
         </Shell>,
       );

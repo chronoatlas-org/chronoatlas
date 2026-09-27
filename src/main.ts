@@ -15,9 +15,11 @@ import { getLocale, pickLocale, setLocale, t } from './i18n/index.ts';
 import type { MessageKey } from './i18n/index.ts';
 import { HistoricalLayers } from './map/historical';
 import { TerritoryPanel } from './panel/panel';
+import type { Selection } from './panel/panel';
 import type { TimelineEvent } from './timeline/events.ts';
 import { Timeline } from './timeline/timeline';
 import { formatHash, parseHash } from './url/state.ts';
+import type { ViewState } from './url/state.ts';
 
 // --- The view to open ---------------------------------------------------------------------------
 
@@ -72,39 +74,51 @@ const initialDay = clampDay(fromUrl.day ?? DEFAULT_VIEW.day);
 // Declared before the timeline, because the timeline reports its first day (which updates the
 // panel and schedules a URL update) while it's being created.
 let urlTimer: number | undefined;
-/** The selected polity's ID, or null. */
-let selected: string | null = null;
+/** What the panel shows: a territory or an event, or nothing (null). */
+let selected: Selection | null = null;
+
+const territorySelection = (id: string): Selection => ({ kind: 'polity', id });
+const eventSelection = (id: string): Selection => ({ kind: 'event', id });
+/** The selection a link describes: an event (`ev`) or a territory (`sel`). */
+const selectionFrom = (state: ViewState): Selection | null =>
+  state.ev ? eventSelection(state.ev) : state.sel ? territorySelection(state.sel) : null;
 
 const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, {
   onClose: () => select(null, 'close'),
   onGoToDay: (day) => timeline.setDay(clampDay(day)),
-  onSelectOther: (polity) => select(polity, 'click'),
+  onSelectPolity: (polity) => select(territorySelection(polity), 'click'),
+  onEventShown: (file) => {
+    // Outline the records the event started or ended, and pulse where it happened.
+    historical.setEffects((file.effects ?? []).map((r) => r.id));
+    if (file.location) historical.pulse([...file.location.coordinates, file.location.precision_km]);
+  },
   viewLink: () => `${location.origin}${location.pathname}${currentHash()}`,
 });
 const historical = new HistoricalLayers(map, initialDay, {
   onSelect: (polities) => {
     panel.setSpot(polities);
-    select(polities[0], 'click');
+    select(territorySelection(polities[0]), 'click');
   },
 });
 
 /**
- * Selects a territory, or none (null). `how` says where the change came from:
- * - 'click': picked on the map. It becomes a Back-button step, and keyboard focus moves to the
- *   panel's heading.
+ * Selects a territory or an event, or nothing (null). `how` says where the change came from:
+ * - 'click': picked on the map, the timeline, or in the panel. It becomes a Back-button step, and
+ *   keyboard focus moves to the panel's heading.
  * - 'close': the close button or Escape (or an ID that isn't in our data). If focus was in the
  *   panel, it returns to the map.
  * - 'link': the address changed (a shared link, or Back/Forward).
  */
-function select(polity: string | null, how: 'click' | 'close' | 'link'): void {
-  if (polity === selected) return;
+function select(next: Selection | null, how: 'click' | 'close' | 'link'): void {
+  if (next?.kind === selected?.kind && next?.id === selected?.id) return;
   const focusWasInPanel = panel.hasFocus();
-  selected = polity;
-  historical.setSelected(polity);
-  panel.select(polity, how === 'click');
+  selected = next;
+  historical.setSelected(next?.kind === 'polity' ? next.id : null);
+  if (next?.kind !== 'event') historical.setEffects([]); // an event's outlines appear once it loads
+  panel.select(next, how === 'click');
   if (how === 'click') writeUrlNow({ push: true });
   else scheduleUrlUpdate();
-  if (polity === null && focusWasInPanel) map.getCanvas().focus();
+  if (next === null && focusWasInPanel) map.getCanvas().focus();
 }
 
 // --- Timeline -----------------------------------------------------------------------------------
@@ -120,6 +134,9 @@ const timeline = new Timeline({
     panel.setDay(day);
     scheduleUrlUpdate();
   },
+  onEventSelect: (id) => select(eventSelection(id), 'click'),
+  // A ring on the map where each event the playhead passes happened.
+  onEventsPassed: (events) => events.forEach((e) => e.at && historical.pulse(e.at)),
 });
 
 // Event markers on the timeline. (Events need citable sources, so there may be none yet.)
@@ -128,8 +145,9 @@ fetch(new URL('data/events.json', document.baseURI))
   .then(({ events }) => timeline.setEvents(events))
   .catch((error) => console.error('Could not load events.json', error));
 
-// Open the territory from the link, if any. (An ID that isn't in our data closes the panel again.)
-if (fromUrl.sel) select(fromUrl.sel, 'link');
+// Open the territory or event from the link, if any. (An ID that isn't in our data closes the
+// panel again.)
+select(selectionFrom(fromUrl), 'link');
 
 // Escape closes the panel, unless it's closing something else first (such as an open drop-down).
 document.addEventListener('keydown', (event) => {
@@ -161,7 +179,8 @@ function currentHash(): string {
     zoom: map.getZoom(),
     lat: center.lat,
     lng: center.lng,
-    sel: selected ?? undefined,
+    sel: selected?.kind === 'polity' ? selected.id : undefined,
+    ev: selected?.kind === 'event' ? selected.id : undefined,
     lang: fromUrl.lang,
   });
 }
@@ -180,7 +199,7 @@ window.addEventListener('hashchange', () => {
   if (next.zoom !== undefined && next.lat !== undefined && next.lng !== undefined) {
     map.jumpTo({ center: [next.lng, next.lat], zoom: next.zoom });
   }
-  select(next.sel ?? null, 'link');
+  select(selectionFrom(next), 'link');
 });
 
 // "Copy link": on phones, open the system share sheet; elsewhere, copy to the clipboard.

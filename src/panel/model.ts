@@ -11,6 +11,7 @@ import type { DatePrecision } from '../dates/index.ts';
 import { t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
 import { pickNames } from '../map/names.ts';
+import { eventDays } from '../timeline/events.ts';
 import type { AtlasName } from '../map/names.ts';
 
 // --- The files -----------------------------------------------------------------------------------
@@ -59,6 +60,25 @@ export interface PolityFile {
   /** Sorted by start. */
   records: PolityRecord[];
   /** Names of the other polities the records mention (for "Protectorate of …" and so on). */
+  related?: Record<string, AtlasName[]>;
+}
+
+/** public/data/events/<id>.json */
+export interface EventFile {
+  id: string;
+  wikidata?: string;
+  title: string;
+  /** EDTF: a date or an interval. */
+  date: string;
+  importance: number;
+  location?: { coordinates: [number, number]; precision_km: number; sources: Citation[] };
+  /** Written in the project's own words from the cited sources. */
+  summary: string;
+  polities?: string[];
+  /** The records this event started or ended, written out in full. */
+  effects?: PolityRecord[];
+  sources: Citation[];
+  /** Names of the polities it mentions. */
   related?: Record<string, AtlasName[]>;
 }
 
@@ -314,5 +334,63 @@ export function describeTerritory(
     history,
     names: [...groups.values()],
     nameCount: file.names.length,
+  };
+}
+
+// --- Events --------------------------------------------------------------------------------------
+
+export interface EventView {
+  id: string;
+  title: string;
+  /** The date in words, with its precision ("May 1901 (month only)", or a range). */
+  date: string;
+  summary: string;
+  /** Where it happened, in words, with the location's own sources. */
+  location?: { text: string; sources: SourceLine[] };
+  polities: { id: string; name: string }[];
+  /** The records the event started or ended (outlined on the map while it's selected). */
+  effects: { id: string; label: string; period: string; sources: SourceLine[] }[];
+  sources: SourceLine[];
+}
+
+/** An event date in words: a single date, or a range with either end open or unknown. */
+export function describeEventDate(edtf: string): string {
+  if (!edtf.includes('/')) return describeDate(edtf);
+  const [start, end] = edtf.split('/');
+  return describePeriod(start && start !== '..' ? start : undefined, end === '..' ? 'ongoing' : end || 'unknown')!;
+}
+
+/** Describes an event from its event file. */
+export function describeEvent(file: EventFile, sources: SourcesFile['sources'], day: number, locale: string): EventView {
+  const nameOf = (id: string) => pickNames(file.related?.[id] ?? [], day, locale)?.primary ?? id;
+  const { s0, s1 } = eventDays(file.date);
+  const within = (d: number) => d >= s0 && d <= s1 + 1;
+
+  const effects = (file.effects ?? []).map((r) => {
+    const key = RELATION_KEYS[r.relation];
+    const relation = key ? (r.object ? t(key, { name: nameOf(r.object) }) : t(key)) : r.relation;
+    const record = t('panel.effectRecord', { relation, name: nameOf(r.subject) });
+    // Whether the event's dates match the record's start or end, as the effects list implies.
+    const label = within(r.s0) ? t('panel.effectStarted', { record }) : within(r.e0) ? t('panel.effectEnded', { record }) : record;
+    return { id: r.id, label, period: describePeriod(r.start, r.end)!, sources: sourceLines(r.sources, sources) };
+  });
+
+  const location = file.location && {
+    text:
+      file.location.precision_km > 0
+        ? t('panel.locationWithin', { km: file.location.precision_km })
+        : t('panel.locationExact'),
+    sources: sourceLines(file.location.sources, sources),
+  };
+
+  return {
+    id: file.id,
+    title: file.title,
+    date: describeEventDate(file.date),
+    summary: file.summary,
+    ...(location ? { location } : {}),
+    polities: (file.polities ?? []).map((id) => ({ id, name: nameOf(id) })),
+    effects,
+    sources: sourceLines(file.sources, sources),
   };
 }

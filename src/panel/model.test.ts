@@ -2,8 +2,8 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
-import type { PolityFile, PolityRecord, SourcesFile } from './model.ts';
+import { describeDate, describeEvent, describeEventDate, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
+import type { EventFile, PolityFile, PolityRecord, SourcesFile } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
   'test-source': { title: 'Test Source' },
@@ -168,5 +168,50 @@ describe('wording helpers', () => {
     expect(sourceLink('openhistoricalmap', 'relation 123, version 4')).toBe('https://www.openhistoricalmap.org/relation/123');
     expect(sourceLink('openhistoricalmap', 'name tags')).toBeUndefined();
     expect(sourceLink('test-source', 'relation 123')).toBeUndefined();
+  });
+});
+
+describe('describeEvent', () => {
+  const treaty: EventFile = {
+    id: 'testland-treaty',
+    title: 'Treaty of Testland',
+    date: '1905-05-12',
+    importance: 4,
+    location: { coordinates: [10, 20], precision_km: 5, sources: [{ source: 'test-source', locator: 'p. 9' }] },
+    summary: 'A made-up treaty between made-up countries.',
+    polities: ['testland', 'otherland'],
+    effects: [record('a', 'controls', '1901', '1905-05-12'), record('b', 'administers', '1905-05-12', 'ongoing')],
+    sources: [{ source: 'test-source', locator: 'pp. 1–2' }],
+    related: { testland: testland.names, otherland: [{ text: 'Otherland', lang: 'en', s0: null, e0: null }] },
+  };
+
+  it('describes the event with its date, place, polities, and sources', () => {
+    const v = describeEvent(treaty, sources, day(1905, 5, 12), 'en');
+    expect(v.date).toBe('12 May 1905');
+    expect(v.location).toEqual({
+      text: 'Place: within about 5 km of the point marked on the map.',
+      sources: [{ text: 'Test Source, p. 9' }],
+    });
+    expect(v.polities).toEqual([
+      { id: 'testland', name: 'Testland' },
+      { id: 'otherland', name: 'Otherland' },
+    ]);
+    expect(v.sources).toEqual([{ text: 'Test Source, pp. 1–2' }]);
+  });
+
+  it('says which records the event ended and which it started', () => {
+    const v = describeEvent(treaty, sources, day(1905, 5, 12), 'en');
+    expect(v.effects.map((e) => e.label)).toEqual([
+      'Ended: Controlled (de facto): Testland',
+      'Started: Administered (de facto): Testland',
+    ]);
+    expect(v.effects[0].period).toBe('1901 (year only) – 12 May 1905');
+  });
+
+  it('words dates and ranges with their precision, including open ends', () => {
+    expect(describeEventDate('1901-05')).toBe('May 1901 (month only)');
+    expect(describeEventDate('1901-05/1901-09')).toBe('May 1901 (month only) – September 1901 (month only)');
+    expect(describeEventDate('1901/..')).toBe('1901 (year only) onwards');
+    expect(describeEventDate('/1901')).toBe('until 1901 (year only)');
   });
 });

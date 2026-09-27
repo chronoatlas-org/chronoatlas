@@ -10,6 +10,7 @@
 import * as maplibregl from 'maplibre-gl';
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { segmentOf } from './changes.ts';
+import { pulseRadiusPx } from './pulse-size.ts';
 
 /** Fill colors, indexed by the `color` the build assigns so that neighbours differ. */
 const PALETTE = ['#e9c9a5', '#b9d3a8', '#d7bfe0', '#f2b8a8', '#e6db9a', '#a8d0c8', '#d9b3c2', '#c8c29a'];
@@ -64,6 +65,8 @@ export class HistoricalLayers {
   private readonly options: HistoricalOptions;
   private day: number;
   private selected = '';
+  /** Assertion IDs outlined as a selected event's effects. */
+  private effects: string[] = [];
   private ready = false;
   private changes: number[] = [];
   /** The stretch between change days currently shown on the map (see src/map/changes.ts). */
@@ -89,6 +92,36 @@ export class HistoricalLayers {
   setSelected(polity: string | null): void {
     this.selected = polity ?? '';
     if (this.ready) this.map.setGlobalStateProperty('selected', this.selected);
+  }
+
+  /**
+   * Outlines the borders of these assertions (a selected event's effects) with a dashed line,
+   * whatever the date: an event ends some records and starts others, so both are shown. [] clears.
+   */
+  setEffects(ids: string[]): void {
+    this.effects = ids;
+    if (this.ready) this.map.setFilter('borders-effects', this.effectsFilter());
+  }
+
+  private effectsFilter(): ExpressionSpecification {
+    return ['in', ['get', 'id'], ['literal', this.effects]];
+  }
+
+  /**
+   * A brief ring where an event happened, sized by how precisely the place is known
+   * ([longitude, latitude, precision in km]). With reduced motion on, the ring appears still.
+   */
+  pulse([lng, lat, km]: [number, number, number]): void {
+    const radius = pulseRadiusPx(km, lat, this.map.getZoom());
+    const element = document.createElement('div');
+    element.className = 'event-pulse';
+    element.style.width = element.style.height = `${Math.round(radius * 2)}px`;
+    element.setAttribute('aria-hidden', 'true');
+    // MapLibre positions the element with a transform, so the animation runs on an inner ring.
+    element.append(document.createElement('span'));
+    const marker = new maplibregl.Marker({ element }).setLngLat([lng, lat]).addTo(this.map);
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.setTimeout(() => marker.remove(), still ? 3000 : 1600);
   }
 
   /** Updates the map, but only when the day has crossed into a different change segment. */
@@ -163,6 +196,20 @@ export class HistoricalLayers {
       paint: {
         'line-color': '#1f2328',
         'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4.5],
+      },
+    });
+
+    // A selected event's effects: dashed (not only a different color), whatever the date.
+    map.addLayer({
+      id: 'borders-effects',
+      type: 'line',
+      source: 'borders',
+      'source-layer': index.layer,
+      filter: this.effectsFilter(),
+      paint: {
+        'line-color': '#0550ae',
+        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4],
+        'line-dasharray': [2, 1.5],
       },
     });
 

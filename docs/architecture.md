@@ -283,6 +283,7 @@ hosting with no server. The logic is in `src/url/state.ts` and is covered by tes
 | `d` | Selected day, as EDTF (`-0220-03-15` for BCE). A month or year opens on its first day. Clamped to the timeline's range. |
 | `m` | Map view: zoom/latitude/longitude (OpenStreetMap order). 2 decimals for zoom, 4 for coordinates. |
 | `sel` | Selected territory, as a polity ID (permanent, so old links keep working). Opens the territory panel. Anything not shaped like an ID is ignored, and an ID that isn't in our data closes the panel and drops out of the address. |
+| `ev` | Selected event, as an event ID, instead of `sel` (the panel shows one or the other). It opens the event in the panel, outlines its effects, and pulses its place. |
 | `lang` | Interface language. Only present if chosen explicitly; otherwise the browser's languages are used. |
 
 - **Updating the address:** it updates 300 ms after the view stops changing, with
@@ -378,7 +379,8 @@ and 100 GB/month bandwidth as a soft limit):
   record, keeping control, sovereignty, and claims apart), and step 3 ✅ (phone bottom sheet;
   focus, Escape, and Back; every overlapping record reachable), and step 4 ✅ (the "Report a
   problem with this border" button), and step 5 ✅ (the events pipeline and timeline markers,
-  tested with made-up events; there are no real events yet). The goals:
+  tested with made-up events; there are no real events yet), and step 6 ✅ (the event panel, the
+  pulse on the map, and dashed outlines of an event's effects). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

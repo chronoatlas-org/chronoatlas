@@ -166,7 +166,9 @@ the last download), `npm run import:natural-earth`.
   - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
   - `tiles.json`: version, bounds, zooms, and the change index;
   - `sources.json`: every source's title and address;
-  - `events.json`: every event's day range, importance, and title, for the timeline's markers;
+  - `events.json`: every event's day range, importance, title, and place, for the timeline's
+    markers and the map's pulse;
+  - `events/<id>.json`: one event in full (summary, sources, place, effects), for the panel;
   - `polities/<id>.json`: one polity's names and every record that mentions it, for the
     territory panel. A visitor downloads only the ones they open, which is what lets this scale
     worldwide.
@@ -219,7 +221,7 @@ the last download), `npm run import:natural-earth`.
   at a zoom, next/previous, click hit-testing) is in `src/timeline/events.ts`.
   - To see markers before real events exist, inject made-up ones from the dev console
     (`timeline.setEvents([...])`). Never add fake events to `data/`.
-- **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `sel`, `lang`), and
+- **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `sel` or `ev`, `lang`), and
   `src/main.ts` syncs it. Anything the timeline calls during its constructor, such as `onChange`,
   must not touch `let`/`const` variables declared after `new Timeline(...)`. A real bug came from
   this. That's why the panel and historical layers are created before the timeline.
@@ -238,6 +240,11 @@ the last download), `npm run import:natural-earth`.
     may be unreachable.
   - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
     replaces the address.
+  - The panel shows a `Selection`: `{ kind: 'polity' | 'event', id }`. When an event's file
+    loads, `onEventShown` lets `main.ts` outline its effects (`HistoricalLayers.setEffects`,
+    dashed, whatever the date) and pulse its place (`HistoricalLayers.pulse`).
+  - The Vite dev server can miss a second quick save of the same file and keep serving the
+    older version. If the browser runs code that doesn't match the file, restart the dev server.
   - The panel keeps control, sovereignty, and claims apart. For each date it names the kinds with
     no record ("Not in our data yet for this date: …"), so silence isn't read as "there was none".
     Names get a `lang` attribute, so Chinese and Japanese text use the right glyphs.

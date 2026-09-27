@@ -458,7 +458,22 @@ Small steps, each committed, explained, and viewable locally and online, as in P
      `[`/`]` jumps to it, and screen readers hear event titles with the date.
    - Checked in the browser with made-up events injected from the console only; none went into
      the data. Effects are for step 6, where selecting an event highlights them.
-6. **Event panel, map pulse (reduced-motion aware), and effect highlighting.**
+6. ✅ **Event panel, map pulse (reduced-motion aware), and effect highlighting.**
+   *Done 2026-09-27.*
+   - **Event files:** the build writes `public/data/events/<id>.json` (summary, sources, place,
+     the polities involved, and the records the event started or ended, in full).
+   - **The event view:** selecting an event opens it in the panel, with its date and precision,
+     our summary and its sources, and its place with its precision. The polities involved are
+     buttons that open them. The effects are labelled "Started" or "Ended" when their dates match
+     the event's.
+   - **On the map:** those records are outlined with a dashed line whatever the date, so both
+     what ended and what began are visible. A ring pulses at the event's place, sized by its
+     precision (still, and removed after 3 seconds, with reduced motion on). Playback also pulses
+     events with a place as it passes them, at most three at a time.
+   - **Links:** the address records a selected event as `ev=<id>` (instead of `sel`), so an
+     event can be shared. This was a small addition to the plan.
+   - **Checked:** in the browser with one made-up event file written to the local build output
+     only, then deleted.
 7. **"The world around this date"**: nearby events and border changes from the change index.
 8. **CShapes import**: script, license, manifest, crosswalk, polity records inside import
    folders (a validator change), and East Asia 1900–1950.

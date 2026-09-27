@@ -12,7 +12,7 @@
 import { formatDay, formatYear, monthShortName } from '../dates/index.ts';
 import { t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
-import { adjacentEvent, eventNear, eventsInView, eventsOnDay, minImportance } from './events.ts';
+import { adjacentEvent, crossedEvents, eventNear, eventsInView, eventsOnDay, minImportance } from './events.ts';
 import type { TimelineEvent } from './events.ts';
 import { chooseTickUnit, clamp, generateTicks, stepDay } from './scale.ts';
 import type { Tick, TickUnit } from './scale.ts';
@@ -31,6 +31,8 @@ export interface TimelineOptions {
   onChange?: (jdn: number) => void;
   /** Called when someone picks an event marker (by clicking it, or with [ and ]). */
   onEventSelect?: (id: string) => void;
+  /** Called with events that have a place, whose start the playhead just passed going forward. */
+  onEventsPassed?: (events: TimelineEvent[]) => void;
 }
 
 const DAYS_PER_YEAR = 365.2425;
@@ -214,6 +216,7 @@ export class Timeline {
   private reportChange(): void {
     const day = this.day;
     if (day === this.lastReportedDay) return;
+    const previous = this.lastReportedDay;
     this.lastReportedDay = day;
     const text = formatDay(day);
     this.dateLabel.textContent = text;
@@ -222,6 +225,10 @@ export class Timeline {
     const titles = eventsOnDay(this.events, day, this.minImportance()).slice(0, 3).map((e) => e.title);
     this.track.setAttribute('aria-valuetext', [text, ...titles].join(' · '));
     this.options.onChange?.(day);
+    if (!Number.isNaN(previous)) {
+      const passed = crossedEvents(this.events, previous, day, this.minImportance());
+      if (passed.length > 0) this.options.onEventsPassed?.(passed);
+    }
   }
 
   private currentUnit(): TickUnit {

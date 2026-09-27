@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
+import { assignColors, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -43,6 +43,32 @@ describe('buildPolityFiles', () => {
     const early = files.get('testland')!.records[0];
     expect(early).toMatchObject({ start: '1901-05-12', end: '1910', s0: civilToJdn(1901, 5, 12), e0: civilToJdn(1910, 1, 1) });
     expect(files.get('testland')!.names[0]).toMatchObject({ start: '1901', s0: civilToJdn(1901, 1, 1), e0: null, sources: cite });
+  });
+
+  it('writes event files with their effects in full and the names they need', () => {
+    const [file] = buildEventFiles({
+      ...ds,
+      events: [
+        {
+          file: 'e',
+          value: {
+            id: 'testland-event',
+            title: 'Made-up event',
+            date: '1910',
+            summary: 'A made-up event.',
+            polities: ['quietland'],
+            effects: ['early', 'late'],
+            sources: cite,
+          },
+        },
+      ],
+    });
+    expect(file.importance).toBe(3);
+    expect(file.effects!.map((r) => [r.id, r.end])).toEqual([
+      ['early', '1910'],
+      ['late', 'ongoing'],
+    ]);
+    expect(Object.keys(file.related!).sort()).toEqual(['quietland', 'testland']);
   });
 
   it('includes the names of the other polities its records mention, and only those', () => {

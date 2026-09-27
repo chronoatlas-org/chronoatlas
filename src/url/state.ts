@@ -4,6 +4,7 @@
 //     d     the selected day, as an EDTF date (BCE years are negative: d=-0220-03-15)
 //     m     the map view: zoom/latitude/longitude (the same order OpenStreetMap uses)
 //     sel   the selected territory, as a polity ID (IDs are permanent, so old links keep working)
+//     ev    the selected event, as an event ID (instead of sel: the panel shows one or the other)
 //     lang  the interface language, only present if someone chose it explicitly
 //
 // Everything is optional and checked: a damaged or hand-edited link falls back to defaults for
@@ -18,6 +19,8 @@ export interface ViewState {
   lng?: number;
   /** The selected polity's ID. */
   sel?: string;
+  /** The selected event's ID. */
+  ev?: string;
   lang?: string;
 }
 
@@ -51,8 +54,11 @@ export function parseHash(hash: string): ViewState {
   }
 
   // Only the form is checked here. An ID that isn't in our data is dropped once the data loads.
+  const isId = (value: string | null): value is string => !!value && value.length <= 100 && ID_PATTERN.test(value);
   const sel = params.get('sel');
-  if (sel && sel.length <= 100 && ID_PATTERN.test(sel)) state.sel = sel;
+  if (isId(sel)) state.sel = sel;
+  const ev = params.get('ev');
+  if (isId(ev)) state.ev = ev;
 
   const lang = params.get('lang');
   if (lang && LANG_PATTERN.test(lang)) state.lang = lang;
@@ -74,9 +80,10 @@ function short(value: number, decimals: number): string {
 }
 
 /** Builds the hash for a view. Zoom keeps 2 decimals, coordinates 4 (about 11 m). */
-export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & Pick<ViewState, 'sel' | 'lang'>): string {
+export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & Pick<ViewState, 'sel' | 'ev' | 'lang'>): string {
   let hash = `#d=${formatDayForUrl(state.day)}&m=${short(state.zoom, 2)}/${short(state.lat, 4)}/${short(state.lng, 4)}`;
   if (state.sel) hash += `&sel=${state.sel}`;
+  if (state.ev) hash += `&ev=${state.ev}`;
   if (state.lang) hash += `&lang=${state.lang}`;
   return hash;
 }

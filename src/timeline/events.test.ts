@@ -2,7 +2,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { adjacentEvent, eventDays, eventNear, eventsInView, eventsOnDay, minImportance } from './events.ts';
+import { adjacentEvent, crossedEvents, eventDays, eventNear, eventsInView, eventsOnDay, minImportance } from './events.ts';
 import type { TimelineEvent } from './events.ts';
 
 const day = (y: number, m: number, d: number) => civilToJdn(y, m, d);
@@ -58,5 +58,24 @@ describe('moving between events', () => {
   it('lists the events covering a day, most important first', () => {
     expect(eventsOnDay(events, day(1903, 5, 1), 1).map((e) => e.id)).toEqual(['testland-treaty']);
     expect(eventsOnDay(events, day(1901, 5, 12), 1).map((e) => e.id)).toEqual(['founding-of-testland']);
+  });
+});
+
+describe('crossedEvents', () => {
+  const placed: TimelineEvent[] = [
+    { id: 'a', title: 'A', s0: 100, s1: 100, importance: 2, at: [10, 20, 5] },
+    { id: 'b', title: 'B', s0: 105, s1: 105, importance: 5, at: [10, 20, 5] },
+    { id: 'c', title: 'C', s0: 106, s1: 106, importance: 5 }, // no place: no pulse
+  ];
+
+  it('lists events with a place that the playhead passed going forward, most important first', () => {
+    expect(crossedEvents(placed, 99, 110, 1).map((e) => e.id)).toEqual(['b', 'a']);
+    expect(crossedEvents(placed, 100, 110, 1).map((e) => e.id)).toEqual(['b']); // a started on the day we left
+  });
+
+  it('ignores backward moves, minor events when zoomed out, and caps the number', () => {
+    expect(crossedEvents(placed, 110, 99, 1)).toEqual([]);
+    expect(crossedEvents(placed, 99, 110, 3).map((e) => e.id)).toEqual(['b']);
+    expect(crossedEvents(placed, 99, 110, 1, 1).map((e) => e.id)).toEqual(['b']);
   });
 });

@@ -528,10 +528,56 @@ body {
   border: 0;
 }
 
-/* Respect the reduced-motion setting: sizes change at once instead of sliding. */
+/* --- Events in the panel --- */
+
+.panel-event-summary {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.panel-plain-list {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* --- The pulse on the map where an event happened (src/map/historical.ts) --- */
+
+.event-pulse {
+  pointer-events: none;
+}
+
+.event-pulse span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 3px solid #0550ae;
+  border-radius: 50%;
+  animation: event-pulse 1.5s ease-out forwards;
+}
+
+@keyframes event-pulse {
+  from {
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Respect the reduced-motion setting: sizes change at once instead of sliding, and an event's
+   ring appears without moving (it's removed after a few seconds). */
 @media (prefers-reduced-motion: reduce) {
   .panel,
   .panel summary::before {
     transition: none;
+  }
+
+  .event-pulse span {
+    animation: none;
+    opacity: 0.8;
   }
 }
