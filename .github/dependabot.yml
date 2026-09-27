@@ -1,0 +1,31 @@
+# Dependabot opens pull requests when our libraries (npm) or our pinned GitHub Actions have new
+# versions. Each pull request runs the normal build check, and a maintainer reviews and merges it.
+# Security fixes are proposed as soon as they're available, regardless of this schedule.
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Wait a few days after a release before proposing it. Malicious or broken releases are
+    # usually caught and withdrawn within that window.
+    cooldown:
+      default-days: 5
+      semver-major-days: 14
+    groups:
+      # Bundle routine minor and patch updates into one pull request a week, to cut noise.
+      # Major versions (which can break things) still get their own pull requests.
+      npm-minor-and-patch:
+        update-types: ["minor", "patch"]
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 5
+    groups:
+      github-actions:
+        patterns: ["*"]
