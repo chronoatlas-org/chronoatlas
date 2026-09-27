@@ -1,0 +1,129 @@
+.timeline {
+  --timeline-bg: #ffffff;
+  --timeline-border: #d0d7de;
+  --timeline-tick: #8c959f;
+  --timeline-label: #57606a;
+  --timeline-label-major: #1f2328;
+  --timeline-playhead: #cf222e;
+  --timeline-outside: #eaeef2;
+
+  padding: 6px 12px 8px;
+  border-top: 1px solid var(--timeline-border);
+  background: var(--timeline-bg);
+  box-shadow: 0 -1px 4px rgb(0 0 0 / 8%);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.timeline-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timeline-date {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timeline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--timeline-border);
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: var(--timeline-label-major);
+  cursor: pointer;
+}
+
+.timeline-button:hover {
+  background: #eaeef2;
+}
+
+.timeline-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.timeline-play {
+  background: var(--timeline-label-major);
+  border-color: var(--timeline-label-major);
+  color: #ffffff;
+}
+
+.timeline-play:hover {
+  background: #424a53;
+}
+
+.timeline-zoom {
+  display: flex;
+  gap: 4px;
+}
+
+.timeline-speed-select {
+  height: 36px;
+  max-width: 11rem;
+  border: 1px solid var(--timeline-border);
+  border-radius: 6px;
+  background: #f6f8fa;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.timeline-track {
+  position: relative;
+  height: 48px;
+  border-radius: 4px;
+  cursor: grab;
+  /* The timeline handles its own dragging and pinching, so the browser must not scroll or zoom. */
+  touch-action: none;
+}
+
+.timeline-track:active {
+  cursor: grabbing;
+}
+
+.timeline-track:focus-visible,
+.timeline-button:focus-visible,
+.timeline-speed-select:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+.timeline-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Phones: bigger touch targets, and the speed menu shrinks to fit. */
+@media (max-width: 600px) {
+  .timeline-button,
+  .timeline-speed-select {
+    height: 44px;
+  }
+
+  .timeline-button {
+    width: 44px;
+  }
+
+  .timeline-speed-select {
+    max-width: 7.5rem;
+  }
+
+  .timeline-date {
+    font-size: 0.95rem;
+  }
+}

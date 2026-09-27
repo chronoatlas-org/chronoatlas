@@ -188,6 +188,26 @@ panel shows "administered by Manchukuo (per OHM) / sovereign: Republic of China 
 - **Limits:** 100 MB per file in the repo; about 1 GB for the repo and for the published site;
   100 GB/month bandwidth (soft limit).
 
+## The timeline
+
+- **A fixed playhead:** a red line in the middle marks the selected day, and time slides beneath
+  it. Zooming always keeps the selected day under the playhead, so you can zoom from 12,000 years
+  down to single days without losing your place.
+- **State:** a fractional day number (the position; the selected day is `Math.floor(position)`)
+  and a zoom level (days per pixel). The range runs from 10,000 BCE to today.
+- **Ticks** are chosen for the zoom level: days, then months, then years in steps up to 2,000.
+  They fall on calendar boundaries: the 1st of the month, 1 January, and round BCE years such as
+  "200 BCE". That logic lives in `src/timeline/scale.ts`, which contains no browser code and is
+  covered by tests.
+- **Input:**
+  - Drag to move through time, click to jump, and scroll or pinch to zoom.
+  - The track is an ARIA slider. Arrow keys step one tick unit, Page Up and Page Down take 10
+    units, Home and End jump to the ends, `+` and `−` zoom, and Space plays or pauses.
+- **Playback:** 1 day to 100 years per second. Grabbing the track pauses playback.
+- **Output:** the component calls `onChange(day)` only when the selected day actually changes.
+  The map will listen to it to filter historical layers. Drawing happens at most once per
+  animation frame, on a `<canvas>`.
+
 ## Visual language (never color alone)
 
 | Meaning | Style |
@@ -268,8 +288,8 @@ and 100 GB/month bandwidth as a soft limit):
   2. ✅ Automatic deployment to GitHub Pages, plus a build check on pull requests. This was moved
      up from step 7 so that every later step is visible online.
   3. ✅ A date library (EDTF → day numbers, BCE, precision) with tests, in `src/dates/`.
-  4. The translation layer (`src/i18n/`) and the timeline: zoom from millennia to days, drag,
-     play/pause, speed, keyboard control.
+  4. ✅ The translation layer (`src/i18n/`) and the timeline (`src/timeline/`): zoom from
+     millennia to days, drag, play/pause, speed, keyboard control.
   5. Data schema (including Figures), validator, and a pinned import of OHM for East Asia
      1900–1950. Everywhere else shows "no data".
   6. URL state and phone layout.

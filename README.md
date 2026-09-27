@@ -7,8 +7,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
 > **Status: early development (Phase 1).** So far there is a physical base map (land, lakes, and
-> rivers). The timeline and historical borders are next. See the
-> [roadmap](docs/architecture.md#roadmap).
+> rivers) and a working timeline: drag it, zoom from millennia down to single days, or press
+> play. Historical borders are next. See the [roadmap](docs/architecture.md#roadmap).
 
 ## What it will do
 

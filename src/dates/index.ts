@@ -12,4 +12,11 @@ export type {
   OpenEnd,
   UnknownEnd,
 } from './edtf.ts';
-export { formatDate, formatInterval, formatYear } from './format.ts';
+export {
+  formatDate,
+  formatDay,
+  formatInterval,
+  formatYear,
+  monthName,
+  monthShortName,
+} from './format.ts';

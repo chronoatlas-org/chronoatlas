@@ -10,11 +10,13 @@
     />
   </head>
   <body>
+    <!-- Text in elements with data-i18n comes from the translation catalogs (src/i18n). -->
     <header class="app-header">
       <h1>chronoatlas</h1>
-      <p>Early preview: physical base map only. Historical borders are coming next.</p>
+      <p data-i18n="app.previewNotice"></p>
     </header>
-    <main id="map" aria-label="Map"></main>
+    <main id="map"></main>
+    <section id="timeline"></section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

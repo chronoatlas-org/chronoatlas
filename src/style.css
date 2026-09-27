@@ -4,17 +4,21 @@ body {
   height: 100%;
 }
 
+/* The page is two rows: the map fills the space, and the timeline sits below it. */
 body {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100dvh; /* dvh: the height actually visible on phones, excluding browser bars */
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: #1f2328;
 }
 
-/* The map fills the whole window; other UI floats above it. */
 #map {
-  position: absolute;
-  inset: 0;
+  min-height: 0;
 }
 
+/* Floats over the top-left corner of the map. */
 .app-header {
   position: absolute;
   top: 12px;
@@ -36,4 +40,17 @@ body {
   margin: 2px 0 0;
   font-size: 0.8rem;
   color: #57606a;
+}
+
+/* Hidden on screen but read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }

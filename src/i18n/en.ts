@@ -1,0 +1,64 @@
+// English text for everything the site shows. This is the reference catalog: every other
+// language translates these keys, and any key a translation leaves out falls back to English.
+//
+// Placeholders in {braces} are filled in by the code, so keep them in the translation (they can
+// move within the sentence).
+
+export const en = {
+  'app.previewNotice':
+    'Early preview: physical base map and timeline. Historical borders are coming next.',
+  'app.mapLabel': 'Map',
+
+  'timeline.label': 'Timeline',
+  'timeline.help':
+    'Drag the timeline to move through time. Scroll or pinch to zoom. Arrow keys step, Page Up and Page Down take bigger steps, + and − zoom, and Space plays or pauses.',
+  'timeline.play': 'Play',
+  'timeline.pause': 'Pause',
+  'timeline.zoomIn': 'Zoom in on the timeline',
+  'timeline.zoomOut': 'Zoom out on the timeline',
+  'timeline.speed': 'Playback speed',
+  'timeline.speed.day': '1 day per second',
+  'timeline.speed.week': '1 week per second',
+  'timeline.speed.month': '1 month per second',
+  'timeline.speed.year': '1 year per second',
+  'timeline.speed.decade': '10 years per second',
+  'timeline.speed.century': '100 years per second',
+
+  'date.month.1': 'January',
+  'date.month.2': 'February',
+  'date.month.3': 'March',
+  'date.month.4': 'April',
+  'date.month.5': 'May',
+  'date.month.6': 'June',
+  'date.month.7': 'July',
+  'date.month.8': 'August',
+  'date.month.9': 'September',
+  'date.month.10': 'October',
+  'date.month.11': 'November',
+  'date.month.12': 'December',
+  'date.monthShort.1': 'Jan',
+  'date.monthShort.2': 'Feb',
+  'date.monthShort.3': 'Mar',
+  'date.monthShort.4': 'Apr',
+  'date.monthShort.5': 'May',
+  'date.monthShort.6': 'Jun',
+  'date.monthShort.7': 'Jul',
+  'date.monthShort.8': 'Aug',
+  'date.monthShort.9': 'Sep',
+  'date.monthShort.10': 'Oct',
+  'date.monthShort.11': 'Nov',
+  'date.monthShort.12': 'Dec',
+  'date.dayMonthYear': '{day} {month} {year}',
+  'date.monthYear': '{month} {year}',
+  'date.yearBce': '{year} BCE',
+  'date.yearCe': '{year} CE',
+  'date.decade': '{year}s',
+  'date.yearRange': '{start} – {end}',
+  'date.yearRangeBce': '{start}–{end} BCE',
+  'date.approximate': 'c. {date}',
+  'date.uncertain': '{date}?',
+  'date.interval': '{start} – {end}',
+  'date.intervalOnwards': '{start} onwards',
+  'date.intervalUntil': 'until {end}',
+  'date.unknown': 'unknown',
+} as const;

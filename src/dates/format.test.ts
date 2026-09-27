@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseEdtfDate, parseEdtfInterval } from './edtf.ts';
-import { formatDate, formatInterval, formatYear } from './format.ts';
+import { formatDate, formatDay, formatInterval, formatYear } from './format.ts';
+import { civilToJdn } from './jdn.ts';
 
 const show = (edtf: string) => formatDate(parseEdtfDate(edtf));
 
@@ -33,6 +34,13 @@ describe('formatDate', () => {
     expect(show('193X')).toBe('1930s');
     expect(show('19XX')).toBe('1900 – 1999');
     expect(show('-02XX')).toBe('300–201 BCE');
+  });
+});
+
+describe('formatDay', () => {
+  it('formats a Julian Day Number as a full date', () => {
+    expect(formatDay(civilToJdn(1985, 4, 12))).toBe('12 April 1985');
+    expect(formatDay(civilToJdn(-220, 3, 15))).toBe('15 March 221 BCE');
   });
 });
 

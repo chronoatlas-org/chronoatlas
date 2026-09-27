@@ -155,7 +155,17 @@ LTS, and the GitHub CLI are installed.
   which is allowed in tests only.
 - MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
   `src/main.ts`. Without that, the worker fails to load in both dev and production.
-- In dev mode the map is exposed as `window.map`, for debugging in the browser console.
+- In dev mode the map and timeline are exposed as `window.map` and `window.timeline`, for
+  debugging in the browser console.
+- **Translation:** never hard-code on-screen text. Add a key to `src/i18n/en.ts` and use
+  `t('key', { placeholder })`. Static HTML text uses `data-i18n="key"`, which `src/main.ts`
+  fills in. Date wording goes through `src/dates/format.ts`, which uses the catalogs.
+- **Timeline:** `src/timeline/scale.ts` holds the pure logic (tick units, calendar-aligned
+  ticks, keyboard steps) and is tested. `src/timeline/timeline.ts` holds the DOM, canvas, and
+  input. The design is in docs/architecture.md#the-timeline.
+- **Testing in the Claude app's browser pane:** a hidden pane has zero size, and pauses both
+  animation frames and resize notifications. Set a viewport with `resize_window` before judging
+  layout or drawing, and reset it afterwards.
 - MapLibre waits for the browser's animation frames, which don't run while the page is hidden.
   A map that "never loads" in a background tab may just be paused.
 - **Deployment:** `.github/workflows/deploy.yml` builds pull requests and deploys `main` to
