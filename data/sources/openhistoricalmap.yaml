@@ -1,0 +1,12 @@
+id: openhistoricalmap
+kind: dataset
+title: OpenHistoricalMap
+publisher: OpenHistoricalMap contributors
+url: https://www.openhistoricalmap.org/
+license: CC0-1.0 (public domain dedication); individual features may carry a license tag
+attribution: Map data courtesy of the OpenHistoricalMap project, in the public domain unless otherwise noted.
+notes: >-
+  A wiki-style historical map built on OpenStreetMap's software. Boundaries are relations with
+  start_date and end_date tags. OHM does not distinguish de facto control from de jure
+  sovereignty, and does not claim completeness. See data/imports/openhistoricalmap/manifest.json
+  for how its data is interpreted here.

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/coverage.schema.json",
+  "title": "Coverage",
+  "description": "A list of statements that a source is complete for a region and period. Inside a source's coverage, land with no polity is shown as 'no state (per source)'; without coverage it is 'no data'. Only add coverage when the source itself claims completeness.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "source", "region", "start", "end", "sources"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "source": { "$ref": "common.schema.json#/$defs/id", "description": "The source that is complete." },
+      "region": { "$ref": "common.schema.json#/$defs/id", "description": "A shape ID for the region covered." },
+      "start": { "$ref": "common.schema.json#/$defs/edtf" },
+      "end": { "$ref": "common.schema.json#/$defs/end" },
+      "sources": { "$ref": "common.schema.json#/$defs/citations", "description": "Where the source states its completeness (e.g. its documentation)." },
+      "notes": { "type": "string" }
+    }
+  }
+}

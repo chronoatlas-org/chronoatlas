@@ -139,8 +139,29 @@ LTS, and the GitHub CLI are installed.
 
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
-`npm run import:natural-earth`. Still to come in Phase 1: `npm run validate` and
-`npm run build-data`.
+`npm run validate`, `npm run build-data`, `npm run import:ohm` (add `-- --offline` to reprocess
+the last download), `npm run import:natural-earth`.
+
+**Data pipeline**
+
+- **Flow:** import scripts (`scripts/import-*.ts`) write `data/imports/<dataset>/`. Then
+  `npm run validate` checks everything against `schemas/*.schema.json` plus references, dates,
+  and geometry. Then `npm run build-data` writes `public/data/` (gitignored), which the site loads.
+  The format reference for contributors is `docs/data-format.md`; keep it in sync with the
+  schemas.
+- **`end` is exclusive:** it's the first day a statement no longer applied, or `ongoing`, or
+  `unknown`. Convert sources that give the *last* day. CShapes' `gwedate` is inclusive, so add
+  one day.
+- **OpenHistoricalMap import:** admin_level=2 boundaries become `administers` assertions. Every
+  interpretation decision is in `data/imports/openhistoricalmap/manifest.json`. Changing one is
+  the maintainer's call. Re-importing replaces the OHM-sourced names in `data/polities/` and keeps
+  all other names and fields. Polity IDs are fixed in `polity-ids.json`.
+- **Never hand-edit files under `data/imports/`.** Fix upstream and re-import.
+- **Polity records:** records built from CC0/public-domain sources may live in
+  `data/polities/`. Nothing derived from NC or SA sources may be written outside that source's
+  import folder.
+- **Examples and fixtures** in docs and tests use made-up names, dates, and coordinates
+  (Testland), never real-looking ones.
 
 **Implementation notes**
 

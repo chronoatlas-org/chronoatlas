@@ -1,0 +1,24 @@
+id: mongolian-people-s-republic
+wikidata: Q212056
+names:
+  - text: Mongolian People's Republic
+    lang: en
+    start: 1924-11-26
+    end: 1992-02-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2942671
+  - text: Бүгд Найрамдах Монгол Ард Улс
+    lang: und
+    start: 1924-11-26
+    end: 1992-02-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2942671
+  - text: 蒙古人民共和國
+    lang: zh
+    start: 1924-11-26
+    end: 1992-02-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2942671

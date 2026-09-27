@@ -1,0 +1,353 @@
+id: russian-republic
+wikidata: Q139319
+names:
+  - text: الجمهورية الروسية
+    lang: ar
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Рәсәй республикаһы
+    lang: ba
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Расійская рэспубліка
+    lang: be
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Руска република
+    lang: bg
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ruská republika
+    lang: cs
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Russiske Republik
+    lang: da
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Russische Republik
+    lang: de
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ρωσική Λαϊκή Ομοσπονδιακή Δημοκρατία
+    lang: el
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Russian Republic
+    lang: en
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Rusia Respubliko
+    lang: eo
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: República Rusa
+    lang: es
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Venemaa Vabariik
+    lang: et
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Errusiako Errepublika
+    lang: eu
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: جمهوری روسیه
+    lang: fa
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Venäjän tasavalta
+    lang: fi
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: République russe
+    lang: fr
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: הרפובליקה הרוסית
+    lang: he
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Oroszországi Köztársaság
+    lang: hu
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ռուսաստանի հանրապետություն
+    lang: hy
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Republik Rusia
+    lang: id
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Rusa republiko
+    lang: io
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Repubblica russa
+    lang: it
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: რუსეთის რესპუბლიკა
+    lang: ka
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ресей Республикасы
+    lang: kk
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: សាធារណរដ្ឋរុស្ស៊ី
+    lang: km
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: 러시아 공화국
+    lang: ko
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: ສາທາລະນະລັດລັດເຊຍ
+    lang: lo
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Rusijos Respublika
+    lang: lt
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Krievijas Republika
+    lang: lv
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Руска Република
+    lang: mk
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Бүгд Найрамдах Орос Улс
+    lang: mn
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Republik Rusia
+    lang: ms
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Republika Rosyjska
+    lang: pl
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: República Russa
+    lang: pt
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Republica Rusă
+    lang: ro
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Россійская Pеспублика
+    lang: ru
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ruská republika
+    lang: sk
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ruska republika
+    lang: sl
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Руска република
+    lang: sr
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Ryska republiken
+    lang: sv
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Jamhuri ya Urusi
+    lang: sw
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: உருசியக் குடியரசு
+    lang: ta
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: สาธารณรัฐรัสเซีย
+    lang: th
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Rus Cumhuriyeti
+    lang: tr
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Російська республіка
+    lang: uk
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Россійская Pеспублика
+    lang: und
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: روسی جمہوریہ
+    lang: ur
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Rossiya respublikasi
+    lang: uz
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: Cộng hòa Nga
+    lang: vi
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933
+  - text: 俄羅斯共和國
+    lang: zh
+    start: 1917-09-14
+    end: 1917-11-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2869933

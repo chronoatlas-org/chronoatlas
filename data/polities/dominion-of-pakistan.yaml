@@ -1,0 +1,247 @@
+id: dominion-of-pakistan
+names:
+  - text: دومينيون باكستان
+    lang: ar
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pakistan dominionu
+    lang: az
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Дамініён Пакістан
+    lang: be
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Доминион Пакистан
+    lang: bg
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: পাকিস্তান অধিরাজ্য
+    lang: bn
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Domini del Pakistan
+    lang: ca
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominium Pákistán
+    lang: cs
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominionen Pakistan
+    lang: da
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Ντομίνιον του Πακιστάν
+    lang: el
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominio Pakistano
+    lang: eo
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominio de Pakistán
+    lang: es
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pakistango Agindupeko Lurra
+    lang: eu
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: قلمرو پاکستان
+    lang: fa
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pakistanin dominio
+    lang: fi
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominion du Pakistan
+    lang: fr
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: पाकिस्तान अधिराज्य
+    lang: hi
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominion Pakistan
+    lang: id
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominion del Pakistan
+    lang: it
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: パキスタン自治領
+    lang: ja
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: 파키스탄 자치령
+    lang: ko
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pakistānas Domīnija
+    lang: lv
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominionen Pakistan
+    lang: nb
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominion Pakistan
+    lang: nl
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominium Pakistanu
+    lang: pl
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Domínio do Paquistão
+    lang: pt
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Доминион Пакистан
+    lang: ru
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pakistan (dominion)
+    lang: sv
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Қаламрави Покистон
+    lang: tg
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: ประเทศปากีสถานในเครือจักรภพ
+    lang: th
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Домініон Пакистан
+    lang: uk
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Dominion of Pakistan
+    lang: und
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: ڈومنین پاکستان
+    lang: ur
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Pokiston Dominioni
+    lang: uz
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: Lãnh thổ tự trị Pakistan
+    lang: vi
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447
+  - text: 巴基斯坦自治領
+    lang: zh
+    start: 1947-08-14
+    end: 1956-03-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801023, 2922446, 2922447

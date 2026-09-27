@@ -1,0 +1,73 @@
+id: british-weihaiwei
+wikidata: Q15939896
+names:
+  - text: Wei-hai-wei
+    lang: da
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: British Weihaiwei
+    lang: en
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: Weihaiwei británico
+    lang: es
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: Weihaiwei Britania
+    lang: id
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: 威海衛租借地
+    lang: ja
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: 웨이하이웨이
+    lang: ko
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: Британский Вэйхай
+    lang: ru
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: 威海衛 British Weihaiwei
+    lang: und
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: Uy Hải Vệ thuộc Anh
+    lang: vi
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211
+  - text: 威海衛
+    lang: zh
+    start: 1898-03-28
+    end: 1930-09-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848211

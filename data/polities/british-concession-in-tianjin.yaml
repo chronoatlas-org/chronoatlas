@@ -1,0 +1,59 @@
+id: british-concession-in-tianjin
+wikidata: Q10940330
+names:
+  - text: الامتياز البريطاني في تيانجين
+    lang: ar
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: British concession in Tianjin
+    lang: en
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: concession britannique de Tientsin
+    lang: fr
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: 天津イギリス租界
+    lang: ja
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: 영국령 톈진 조계
+    lang: ko
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: Британская концессия в Тяньцзине
+    lang: ru
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: British concession in Tianjin
+    lang: und
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233
+  - text: 天津英租界
+    lang: zh
+    start: 1897-03-31
+    end: 1941-12-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2901231, 2901232, 2901233

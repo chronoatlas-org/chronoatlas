@@ -1,0 +1,143 @@
+id: uryankhay-republic
+wikidata: Q56282578
+names:
+  - text: República Uryankhay
+    lang: ast
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Urjanchajská republika
+    lang: cs
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Uryankhay Republic
+    lang: en
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: República Uryankhay
+    lang: es
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: république d'Ouriankhaï
+    lang: fr
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Republik Uryankhay
+    lang: id
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: repubblica di Urjanchaj
+    lang: it
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: 우랸카이 공화국
+    lang: ko
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: República de Uryankhai
+    lang: pt
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: República de Uryankhai
+    lang: pt-br
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Республика Урянхай
+    lang: ru
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Urjanhajska republika
+    lang: sl
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Uranhay Cumhuriyeti
+    lang: tr
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Урянхай
+    lang: tyv
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Республіка Урянхай
+    lang: uk
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Урянхай
+    lang: und
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: Cộng hòa Uryankhay
+    lang: vi
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: 乌梁海共和国
+    lang: zh
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: 乌梁海共和国
+    lang: zh-hans
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292
+  - text: 烏樑海共和國
+    lang: zh-hant
+    start: 1911-12-01
+    end: 1914-04-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851292

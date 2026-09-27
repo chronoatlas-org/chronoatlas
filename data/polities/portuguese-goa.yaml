@@ -1,0 +1,465 @@
+id: portuguese-goa
+wikidata: Q323904
+names:
+  - text: الهند البرتغالية
+    lang: ar
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India portuguesa
+    lang: ast
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portuqaliya Hindistanı
+    lang: az
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Партугальская Індыя
+    lang: be
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Португалска Индия
+    lang: bg
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: পর্তুগিজ ভারত
+    lang: bn
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Índia Portuguesa
+    lang: ca
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugalská Indie
+    lang: cs
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugisisk Indien
+    lang: da
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugiesisch-Indien
+    lang: de
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Πορτογαλική Ινδία
+    lang: el
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portuguese Goa
+    lang: en
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: Portuguese India
+    lang: en
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugala Barato
+    lang: eo
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India portuguesa
+    lang: es
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugaldar India
+    lang: eu
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: هند پرتغال
+    lang: fa
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugalin Intia
+    lang: fi
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Inde portugaise
+    lang: fr
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India portuguesa
+    lang: gl
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: पोर्तुगेज भारत
+    lang: gom
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: הודו הפורטוגזית
+    lang: he
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: पुर्तगाली भारत
+    lang: hi
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India Portugis
+    lang: id
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India portoghese
+    lang: it
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: ポルトガル領ゴア
+    lang: ja
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: ポルトガル領インド
+    lang: ja
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 포르투갈령 고아
+    lang: ko
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: 포르투갈령 인도
+    lang: ko
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugāles Indija
+    lang: lv
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: പോർച്ചുഗീസ് ഇന്ത്യ
+    lang: ml
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: पोर्तुगीज भारत
+    lang: mr
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugisisk India
+    lang: nb
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugees-Indië
+    lang: nl
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Indie Portugalskie
+    lang: pl
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: پرتگیزی ہندستان
+    lang: pnb
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: پرتګالي هند
+    lang: ps
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Goa Portuguesa
+    lang: pt
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: Estado Português da Índia
+    lang: pt
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India Portugheză
+    lang: ro
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Португальская Индия
+    lang: ru
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugalská India
+    lang: sk
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugalska Indija
+    lang: sl
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: India Portugeze
+    lang: sq
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Португалска Индија
+    lang: sr
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Португалска Индија
+    lang: sr-ec
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugalska Indija
+    lang: sr-el
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portugisiska Indien
+    lang: sv
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: போர்த்துகேய இந்தியா
+    lang: ta
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: పోర్చుగీస్ భారతదేశం
+    lang: te
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: อินเดียของโปรตุเกส
+    lang: th
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Portekiz Hindistanı
+    lang: tr
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Португальська Індія
+    lang: uk
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Goa Portuguesa
+    lang: und
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: India Portugues
+    lang: und
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: پرتگیزی ہند
+    lang: ur
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: Ấn Độ thuộc Bồ Đào Nha
+    lang: vi
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡屬印度
+    lang: yue
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡萄牙領果亞
+    lang: zh
+    start: "1763"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922053
+  - text: 葡屬印度
+    lang: zh
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡属印度
+    lang: zh-cn
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡属印度
+    lang: zh-hans
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡屬印度
+    lang: zh-hant
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡屬印度
+    lang: zh-hk
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡属印度
+    lang: zh-sg
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074
+  - text: 葡屬印度
+    lang: zh-tw
+    start: "1785"
+    end: 1961-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922074

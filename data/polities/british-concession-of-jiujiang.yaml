@@ -1,0 +1,31 @@
+id: british-concession-of-jiujiang
+wikidata: Q9384736
+names:
+  - text: British Concession of Jiujiang
+    lang: en
+    start: 1861-03-25
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901240
+  - text: 영국령 주장 조계
+    lang: ko
+    start: 1861-03-25
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901240
+  - text: British Concession of Jiujiang
+    lang: und
+    start: 1861-03-25
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901240
+  - text: 九江英租界
+    lang: zh
+    start: 1861-03-25
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901240

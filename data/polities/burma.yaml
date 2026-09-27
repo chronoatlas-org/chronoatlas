@@ -1,0 +1,115 @@
+id: burma
+wikidata: Q7233551
+names:
+  - text: বার্মা
+    lang: be
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Burma
+    lang: de
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Burma
+    lang: en
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Birmania
+    lang: es
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Birmanie
+    lang: fr
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Burma
+    lang: id
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: ビルマ
+    lang: ja
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Бирма
+    lang: kk
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: 버마
+    lang: ko
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: ပြည်ထောင်စုမြန်မာနိုင်ငံတော်‌
+    lang: my
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Birmânia
+    lang: pt
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Бирма
+    lang: ru
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: สหภาพพม่า
+    lang: th
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: ပြည်ထောင်စုမြန်မာနိုင်ငံတော်‌
+    lang: und
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: Miến Điện sau độc lập
+    lang: vi
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252
+  - text: 緬甸
+    lang: zh
+    start: 1948-01-04
+    end: 1977-04-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848252

@@ -42,6 +42,46 @@ body {
   color: #57606a;
 }
 
+.app-header .legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* Matches the map's "no data" hatch (src/map/historical.ts). */
+.legend-no-data {
+  width: 16px;
+  height: 12px;
+  border: 1px solid #b8b0a2;
+  background: repeating-linear-gradient(-45deg, #f3f0e8 0 3px, #b8ad9c 3px 4.5px);
+}
+
+.border-popup h2 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+}
+
+.border-popup p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+}
+
+.border-popup-local {
+  font-size: 0.95rem !important;
+  color: #424a53;
+}
+
+.border-popup-relation {
+  font-weight: 600;
+}
+
+.border-popup-note,
+.border-popup-source {
+  color: #57606a;
+  font-size: 0.78rem !important;
+}
+
 /* Hidden on screen but read by screen readers. */
 .visually-hidden {
   position: absolute;

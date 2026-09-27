@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/figure.schema.json",
+  "title": "Figures",
+  "description": "A list of sourced statistics: 'According to <source>, <polity> had <metric> of <value> as of <date>.'",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "polity", "metric", "date", "basis", "sources"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "polity": { "$ref": "common.schema.json#/$defs/id" },
+      "metric": {
+        "description": "From a fixed list, so the same figure from different sources can be compared. Add new metrics in this schema, with a definition in docs/data-format.md.",
+        "enum": ["population", "area-km2"]
+      },
+      "value": { "type": "number" },
+      "low": { "type": "number" },
+      "high": { "type": "number" },
+      "date": { "$ref": "common.schema.json#/$defs/edtf" },
+      "basis": {
+        "description": "What territory the number counts.",
+        "enum": ["polity-territory", "present-day-borders", "computed-from-shape"]
+      },
+      "basis_detail": {
+        "description": "For present-day-borders: which modern country. For computed-from-shape: the shape ID and method.",
+        "type": "string"
+      },
+      "method": { "description": "How the source arrived at the number (census, estimate, reconstruction, ...).", "type": "string" },
+      "sources": { "$ref": "common.schema.json#/$defs/citations" },
+      "notes": { "type": "string" }
+    },
+    "anyOf": [{ "required": ["value"] }, { "required": ["low", "high"] }],
+    "allOf": [
+      {
+        "if": { "properties": { "basis": { "enum": ["present-day-borders", "computed-from-shape"] } } },
+        "then": { "required": ["basis_detail"] }
+      }
+    ]
+  }
+}

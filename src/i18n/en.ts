@@ -6,8 +6,19 @@
 
 export const en = {
   'app.previewNotice':
-    'Early preview: physical base map and timeline. Historical borders are coming next.',
+    'Early preview: country borders in East Asia, 1900–1950, from OpenHistoricalMap. Click a territory for details.',
   'app.mapLabel': 'Map',
+  'legend.noData': 'No data yet',
+
+  'relation.controls': 'Controlled (de facto)',
+  'relation.administers': 'Administered (de facto)',
+  'relation.occupies': 'Occupied',
+  'relation.sovereign': 'Sovereign (de jure)',
+  'relation.claims': 'Claimed',
+  'popup.period': '{start} – {end}',
+  'popup.administersNote':
+    'This source records who administered the area. It says nothing about legal recognition or rival claims.',
+  'popup.sourceLabel': 'Source:',
 
   'timeline.label': 'Timeline',
   'timeline.help':
@@ -61,4 +72,5 @@ export const en = {
   'date.intervalOnwards': '{start} onwards',
   'date.intervalUntil': 'until {end}',
   'date.unknown': 'unknown',
+  'date.ongoing': 'present',
 } as const;

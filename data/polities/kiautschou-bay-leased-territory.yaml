@@ -1,0 +1,45 @@
+id: kiautschou-bay-leased-territory
+wikidata: Q675321
+names:
+  - text: Deutsches Pachtgebiet Kiautschou
+    lang: de
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899
+  - text: Kiautschou Bay Leased Territory
+    lang: en
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899
+  - text: 膠州湾租借地
+    lang: ja
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899
+  - text: 독일령 교주만 조차지
+    lang: ko
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899
+  - text: 膠州灣租借地 Deutsches Pachtgebiet Kiautschou
+    lang: und
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899
+  - text: 膠州灣租借地
+    lang: zh
+    start: 1886-03-06
+    end: 1922-12-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889899

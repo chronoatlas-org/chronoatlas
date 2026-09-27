@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/polity.schema.json",
+  "title": "Polity",
+  "description": "Anything that can hold, claim, or govern territory. One file per polity in data/polities/<id>.yaml.",
+  "type": "object",
+  "required": ["id", "names"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "wikidata": { "$ref": "common.schema.json#/$defs/wikidata" },
+    "type": {
+      "enum": [
+        "state", "empire", "colony", "protectorate", "dominion", "mandate", "leased-territory",
+        "concession", "puppet-government", "occupation-authority", "city-state", "confederation",
+        "other"
+      ]
+    },
+    "names": {
+      "description": "Names over time, each attributed. Several names can be valid at once (different languages, or rival names).",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["text", "lang", "sources"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "lang": { "$ref": "common.schema.json#/$defs/lang" },
+          "start": { "$ref": "common.schema.json#/$defs/edtf" },
+          "end": { "$ref": "common.schema.json#/$defs/end" },
+          "sources": { "$ref": "common.schema.json#/$defs/citations" }
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

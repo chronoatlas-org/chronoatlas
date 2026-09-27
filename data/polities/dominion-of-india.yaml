@@ -1,0 +1,114 @@
+id: dominion-of-india
+names:
+  - text: ভারত অধিরাজ্য
+    lang: bn
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Dominion Indien
+    lang: de
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Dominion of India
+    lang: en
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Dominio de la India
+    lang: es
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Dominion de l'Inde
+    lang: fr
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: ભારત અધિરાજ્ય
+    lang: gu
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: भारतीय अधिराज्य
+    lang: hi
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: インド自治領
+    lang: ja
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: 인도 자치령
+    lang: ko
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: भारतीय अधिराज्य
+    lang: mr
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Domínio da Índia
+    lang: pt
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: Доминион Индия
+    lang: ru
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: இந்திய மேலாட்சி
+    lang: ta
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: भारतीय अधिराज्य / Dominion of India
+    lang: und
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: بھارت ڈومینین
+    lang: ur
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318
+  - text: 印度自治領
+    lang: zh
+    start: 1947-08-15
+    end: 1950-01-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801014, 2922132, 2922171, 2922317, 2922318

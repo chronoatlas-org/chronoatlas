@@ -6,9 +6,10 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: early development (Phase 1).** So far there is a physical base map (land, lakes, and
-> rivers) and a working timeline: drag it, zoom from millennia down to single days, or press
-> play. Historical borders are next. See the [roadmap](docs/architecture.md#roadmap).
+> **Status: early development (Phase 1).** Country borders for East Asia, 1900–1950, imported
+> from OpenHistoricalMap, change as you move the timeline; click a territory for its name, dates,
+> and source. Everywhere else shows "no data yet". See the
+> [roadmap](docs/architecture.md#roadmap).
 
 ## What it will do
 
@@ -64,7 +65,12 @@ file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 | `npm run typecheck` | Only checks the code for type errors |
 | `npm test` | Runs the automated tests once |
 | `npm run test:watch` | Re-runs the tests every time you save a file |
+| `npm run validate` | Checks every data file: format, references, dates, geometry, licenses |
+| `npm run build-data` | Compiles `data/` into the files the site loads (`public/data/`); runs automatically before `dev` and `build` |
+| `npm run import:ohm` | Re-imports the OpenHistoricalMap borders (see [data/imports/openhistoricalmap](data/imports/openhistoricalmap/README.md)) |
 | `npm run import:natural-earth` | Re-downloads the Natural Earth base map from its pinned release (see [data/imports/natural-earth](data/imports/natural-earth/README.md)) |
+
+The data format is documented in [docs/data-format.md](docs/data-format.md).
 
 **Publishing** is automatic. Every push to `main` runs
 [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes

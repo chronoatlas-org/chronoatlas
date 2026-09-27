@@ -1,0 +1,171 @@
+id: tibet
+wikidata: Q2444884
+names:
+  - text: التبت
+    lang: ar
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: তিব্বত
+    lang: bn
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: da
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: de
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Θιβέτ
+    lang: el
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: en
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tíbet
+    lang: es
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: تبت
+    lang: fa
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: fr
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: טיבט
+    lang: he
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: तिब्बत
+    lang: hi
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: id
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: it
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: チベット
+    lang: ja
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: 티베트
+    lang: ko
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibet
+    lang: nl
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tibete
+    lang: pt
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Тибет
+    lang: ru
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: திபெத்
+    lang: ta
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: ทิเบต
+    lang: th
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Тибет
+    lang: uk
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: བོད
+    lang: und
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: Tây Tạng
+    lang: vi
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810
+  - text: 西藏
+    lang: zh
+    start: "1912"
+    end: 1951-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828810

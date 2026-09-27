@@ -1,0 +1,86 @@
+id: empire-of-japan
+names:
+  - text: إمبراطورية اليابان
+    lang: ar
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Japanisches Kaiserreich
+    lang: de
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Empire of Japan
+    lang: en
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Imperio del Japón
+    lang: es
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Empire du Japon
+    lang: fr
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Impero giapponese
+    lang: it
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: 大日本帝国
+    lang: ja
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: 일본
+    lang: ko
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Imperium Iaponicum
+    lang: la
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: Японская империя
+    lang: ru
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: 大日本帝国
+    lang: und
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948
+  - text: 大日本帝國
+    lang: zh
+    start: 1898-07-24
+    end: 1947-05-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694483, 2694484, 2851273, 2889768, 2889779, 2889870, 2889890, 2889894, 2889895, 2948948

@@ -1,0 +1,44 @@
+id: japan-1947-1952
+names:
+  - text: Japan (1947-1952)
+    lang: de
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778
+  - text: Japan (1947-1952)
+    lang: en
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778
+  - text: 日本（1947-1952）
+    lang: ja
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778
+  - text: 일본
+    lang: ko
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778
+  - text: 日本 Japan
+    lang: und
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778
+  - text: 日本（1947-1952）
+    lang: zh
+    start: 1947-07-18
+    end: 1952-04-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889778

@@ -1,0 +1,206 @@
+id: siam
+wikidata: Q1155700
+names:
+  - text: مملكة راتاناكوسين
+    lang: ar
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Rattanakosinské království
+    lang: cs
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Königreich Rattanakosin
+    lang: de
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Siam
+    lang: en
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Reino de Rattanakosin
+    lang: es
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Rattanakosini Kuningriik
+    lang: et
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Royaume de Rattanakosin
+    lang: fr
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: रत्नकोसिन्द्र साम्राज्य
+    lang: hi
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Kerajaan Rattanakosin
+    lang: id
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Regno di Rattanakosin
+    lang: it
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: タイ帝国
+    lang: ja
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: អាណាចក្ររតនកោសិន្ទ្រ៍
+    lang: km
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: 랏따나꼬신 왕국
+    lang: ko
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: ອານາຈັກຣັດຕະນະໂກສິນ
+    lang: lo
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Ratānakosīnas karaliste
+    lang: lv
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: രത്തനകോശിൻ രാജ്യം
+    lang: ml
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Kerajaan Rattanakosin
+    lang: ms
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: ရတနကောသိန္ဒြပြည်
+    lang: my
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Rattanakosin
+    lang: nl
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Reino Rattanakosin
+    lang: pt
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Королевство Раттанакосин
+    lang: ru
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: இரத்தனகோசின் இராச்சியம்
+    lang: ta
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: ราชอาณาจักรสยาม
+    lang: th
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Rattanakosin Krallığı
+    lang: tr
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Королівство Раттанакосін
+    lang: uk
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: ราชอาณาจักรสยาม
+    lang: und
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: مملکت رتناکوسین
+    lang: ur
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: Vương quốc Rattanakosin
+    lang: vi
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874
+  - text: 拉达那哥欣王国
+    lang: zh
+    start: 1893-10-02
+    end: 1932-06-24
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2874871, 2874872, 2874873, 2874874

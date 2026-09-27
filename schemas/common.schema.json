@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/common.schema.json",
+  "title": "Shared definitions",
+  "$defs": {
+    "id": {
+      "description": "A permanent ID: lowercase letters, digits, and hyphens. Never renamed or reused once published.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "edtf": {
+      "description": "A date in EDTF, e.g. 1937-07-07, 1937-07, 1932~, -0220, 193X. See docs/data-format.md.",
+      "type": "string",
+      "minLength": 4
+    },
+    "end": {
+      "description": "The first day on which this no longer applied (the date of the change), as EDTF; or 'ongoing' if it still applies; or 'unknown'.",
+      "type": "string",
+      "minLength": 4
+    },
+    "wikidata": {
+      "description": "A Wikidata item ID, used as a cross-reference only.",
+      "type": "string",
+      "pattern": "^Q[1-9][0-9]*$"
+    },
+    "citation": {
+      "description": "Where the claim comes from: a source ID and a locator (page, map sheet, feature ID, ...).",
+      "type": "object",
+      "required": ["source", "locator"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "$ref": "#/$defs/id" },
+        "locator": { "type": "string", "minLength": 1 },
+        "note": { "type": "string" }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/citation" }
+    },
+    "lang": {
+      "description": "A language tag (BCP 47), e.g. en, zh-Hant, ja. Use 'und' when the language isn't known.",
+      "type": "string",
+      "pattern": "^([a-z]{2,3}(-[A-Za-z0-9]{2,8})*|und)$"
+    }
+  }
+}

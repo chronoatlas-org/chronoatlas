@@ -1,0 +1,114 @@
+id: indochinese-federation
+names:
+  - text: Indochinesische Union
+    lang: de
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Ινδοκινέζικη Ένωση
+    lang: el
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Indochinese Federation
+    lang: en
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Unión Indochina
+    lang: es
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Fédération indochinoise
+    lang: fr
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: インドシナ連邦
+    lang: ja
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: 인도차이나 연합
+    lang: ko
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Indosina Francica
+    lang: la
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Unie van Indochina
+    lang: nl
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Indochiny Francuskie
+    lang: pl
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Fédération indochinoise
+    lang: und
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: Liên bang Đông Dương
+    lang: vi
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: 聯邦東洋
+    lang: vi-Hani
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: 印度支那聯邦
+    lang: zh
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: 印度支那联邦
+    lang: zh-Hans
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895
+  - text: 印度支那聯邦
+    lang: zh-Hant
+    start: 1941-05-09
+    end: 1945-03-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2745895

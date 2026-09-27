@@ -1,0 +1,52 @@
+id: empire-of-vietnam
+wikidata: Q701337
+names:
+  - text: Empire of Vietnam
+    lang: en
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: 越南帝國
+    lang: ja
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: 베트남 제국
+    lang: ko
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: Đế quốc Việt Nam
+    lang: und
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: Đế quốc Việt Nam
+    lang: vi
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: 帝國越南
+    lang: vi-Hani
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076
+  - text: 越南帝國
+    lang: zh
+    start: 1945-03-11
+    end: 1945-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746076

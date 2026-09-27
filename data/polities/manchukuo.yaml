@@ -1,0 +1,45 @@
+id: manchukuo
+wikidata: Q30623
+names:
+  - text: Mandschu
+    lang: de
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965
+  - text: Manchukuo
+    lang: en
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965
+  - text: 滿洲國
+    lang: ja
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965
+  - text: 만주국
+    lang: ko
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965
+  - text: 滿洲國
+    lang: und
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965
+  - text: 滿洲國
+    lang: zh
+    start: "1932"
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885965

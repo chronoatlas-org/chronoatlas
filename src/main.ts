@@ -12,6 +12,7 @@ import { baseMapStyle } from './basemap';
 import { civilToJdn } from './dates/index.ts';
 import { getLocale, pickLocale, setLocale, t } from './i18n/index.ts';
 import type { MessageKey } from './i18n/index.ts';
+import { HistoricalLayers } from './map/historical';
 import { Timeline } from './timeline/timeline';
 
 // --- Language ---------------------------------------------------------------------------------
@@ -48,26 +49,31 @@ map.addControl(new maplibregl.ScaleControl(), 'bottom-left');
 const now = new Date();
 const today = civilToJdn(now.getUTCFullYear(), now.getUTCMonth() + 1, now.getUTCDate());
 
+// Open in mid-1937, inside the East Asia showcase period, with about 20 years in view. This is
+// only where the view starts; it makes no claim about any event or border.
+const initialDay = civilToJdn(1937, 7, 1);
+const historical = new HistoricalLayers(map, initialDay);
+
 const timeline = new Timeline({
   container: document.getElementById('timeline')!,
   minJdn: civilToJdn(-9999, 1, 1), // 10,000 BCE
   maxJdn: today,
-  // Open in mid-1937, inside the East Asia showcase period, with about 20 years in view. This is
-  // only where the view starts; it makes no claim about any event or border.
-  initialJdn: civilToJdn(1937, 7, 1),
+  initialJdn: initialDay,
   initialSpanDays: 20 * 365.2425,
-  // Phase 1, step 5 adds an `onChange` handler here that filters the historical layers by day.
+  onChange: (day) => historical.setDay(day),
 });
 
-// During development only, expose the map and timeline as `window.map` and `window.timeline`
+// During development only, expose the map, timeline, and historical layers on `window`
 // so they can be inspected from the browser's developer console. Left out of the published site.
 declare global {
   interface Window {
     map?: maplibregl.Map;
     timeline?: Timeline;
+    historical?: HistoricalLayers;
   }
 }
 if (import.meta.env.DEV) {
   window.map = map;
   window.timeline = timeline;
+  window.historical = historical;
 }

@@ -1,0 +1,381 @@
+id: china
+wikidata: Q865
+names:
+  - text: جمهورية الصين
+    lang: ar
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Çin Respublikası
+    lang: az
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Кітайская Рэспубліка
+    lang: be
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: República de la Xina
+    lang: ca
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Čínská republika
+    lang: cs
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republikken Kina
+    lang: da
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: China
+    lang: de
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: Republik China
+    lang: de
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Δημοκρατία της Κίνας
+    lang: el
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: China
+    lang: en
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: Republic of China
+    lang: en
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: República de China
+    lang: es
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Hiina Vabariik
+    lang: et
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Txinako Errepublika
+    lang: eu
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: جمهوری خلق چین
+    lang: fa
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: République de Chine
+    lang: fr
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: הרפובליקה הסינית
+    lang: he
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: चीन गणराज्य
+    lang: hi
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Kínai Köztársaság
+    lang: hu
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republik Tiongkok
+    lang: id
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republiko Chinia
+    lang: io
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Repubblica di Cina
+    lang: it
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 中華民国
+    lang: ja
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: ჩინეთის რესპუბლიკა
+    lang: ka
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Қытай Республикасы
+    lang: kk
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 중국
+    lang: ko
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: 중화민국
+    lang: ko
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Res publica Sinarum
+    lang: la
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Ķīnas Republika
+    lang: lv
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republik China
+    lang: ms
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: တရုတ်သမ္မတနိုင်ငံ
+    lang: my
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republiek China
+    lang: nl
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republikken Kina
+    lang: no
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Chiena
+    lang: pdt
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: Republika Chińska
+    lang: pl
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: República da China
+    lang: pt
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republica Chineză
+    lang: ro
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Китайская республика
+    lang: ru
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Čínska republika
+    lang: sk
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Република Кина
+    lang: sr
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Republiken Kina
+    lang: sv
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: สาธารณรัฐจีน
+    lang: th
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Çin Cumhuriyeti
+    lang: tr
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Республіка Китай
+    lang: uk
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 中國
+    lang: und
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: 中華民國
+    lang: und
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: جمہوریہ چین
+    lang: ur
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: Trung Hoa Dân Quốc
+    lang: vi
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 中國
+    lang: zh
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: 中華民國
+    lang: zh
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 中国
+    lang: zh-Hans
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: 中华民国
+    lang: zh-Hans
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970
+  - text: 中國
+    lang: zh-Hant
+    start: 1912-01-01
+    end: 1949-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694469, 2694471, 2694664, 2889460, 2948949, 2948950, 2957589
+  - text: 中華民國
+    lang: zh-Hant
+    start: 1949-10-01
+    end: 1958-09-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694468, 2889970

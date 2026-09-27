@@ -1,0 +1,310 @@
+id: kingdom-of-afghanistan
+names:
+  - text: مملكة أفغانستان
+    lang: ar
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Каралеўства Афганістан
+    lang: be
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Кралство Афганистан
+    lang: bg
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: আফগানিস্তান রাজ্য
+    lang: bn
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Regne de l'Afganistan
+    lang: ca
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Afghánské království
+    lang: cs
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Königreich Afghanistan
+    lang: de
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Βασίλειο του Αφγανιστάν
+    lang: el
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Kingdom of Afghanistan
+    lang: en
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Reĝlando Afganio
+    lang: eo
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Reino de Afganistán
+    lang: es
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: پادشاهی افغانستان
+    lang: fa
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Afganistanin kuningaskunta
+    lang: fi
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Royaume d'Afghanistan
+    lang: fr
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Reino de Afganistán
+    lang: gl
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: ממלכת אפגניסטן
+    lang: he
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Kerajaan Afganistan
+    lang: id
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Regno dell'Afghanistan
+    lang: it
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: アフガニスタン王国
+    lang: ja
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: ავღანეთის სამეფო
+    lang: ka
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: 아프가니스탄 왕국
+    lang: ko
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Keyaniya Efxanistanê
+    lang: ku
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: ອານາຈັກອັຟການິສຖານ
+    lang: lo
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: അഫ്ഗാനിസ്താൻ രാജവംശം
+    lang: ml
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Kerajaan Afghanistan
+    lang: ms
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Nadir Shahs og Zahir Shahs styre
+    lang: nb
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Koninkrijk Afghanistan
+    lang: nl
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Królestwo Afganistanu
+    lang: pl
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: د افغانستان شاهي واکمني
+    lang: ps
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Reino do Afeganistão
+    lang: pt
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Regatul Afganistanului
+    lang: ro
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Королевство Афганистан
+    lang: ru
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Краљевина Авганистан
+    lang: sr
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Kungariket Afghanistan
+    lang: sv
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: ஆப்கானித்தான் இராச்சியம்
+    lang: ta
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Подшоҳии Афғонистон
+    lang: tg
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: ราชอาณาจักรอัฟกานิสถาน
+    lang: th
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Afganistan Krallığı
+    lang: tr
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Королівство Афганістан
+    lang: uk
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: د افغانستان شاهي دولت
+    lang: und
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: مملکت افغانستان
+    lang: ur
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Afgʻoniston qirolligi
+    lang: uz
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: Vương quốc Afghanistan
+    lang: vi
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863
+  - text: 阿富汗王國
+    lang: zh
+    start: 1926-06-09
+    end: 1973-07-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2822863

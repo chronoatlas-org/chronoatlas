@@ -1,0 +1,241 @@
+id: commonwealth-of-the-philippines
+wikidata: Q146328
+names:
+  - text: كومنولث الفلبين
+    lang: ar
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Mancomunidá Filipina
+    lang: ast
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filipínské společenství
+    lang: cs
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Commonwealth der Philippinen
+    lang: de
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Commonwealth of the Philippines
+    lang: en
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filipina Komunumo
+    lang: eo
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Mancomunidad Filipina
+    lang: es
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filipinetako Mankomunitatea
+    lang: eu
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: فیلیپین مشترک‌المنافع
+    lang: fa
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filippiinien yhteisö
+    lang: fi
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Commonwealth des Philippines
+    lang: fr
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Mancomunidade Filipina
+    lang: gl
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: חבר העמים הפיליפיני
+    lang: he
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Persemakmuran Filipina
+    lang: id
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Mankomunidad ti Filipinas
+    lang: ilo
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Commonwealth delle Filippine
+    lang: it
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: フィリピン・コモンウェルス
+    lang: ja
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: 필리핀 자치령
+    lang: ko
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Consortio Insularum Philippinarum
+    lang: la
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Komanwel Filipina
+    lang: ms
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Gemenebest van de Filipijnen
+    lang: nl
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Wspólnota Filipin
+    lang: pl
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Comunidade das Filipinas
+    lang: pt
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Содружество Филиппины
+    lang: ru
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filipínske spoločenstvo
+    lang: sk
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Филипински комонвелт
+    lang: sr
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filippinska samväldet
+    lang: sv
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: பிலிப்பீன்சு பொதுநலவாயம்
+    lang: ta
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Komonwelt ng Pilipinas
+    lang: tl
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Filipin Topluluğu
+    lang: tr
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Співдружність Філіппін
+    lang: uk
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Commonwealth of the Philippines
+    lang: und
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: Thịnh vượng chung Philippines
+    lang: vi
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834
+  - text: 菲律賓自治邦
+    lang: zh
+    start: 1935-11-15
+    end: 1946-07-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2889831, 2889834

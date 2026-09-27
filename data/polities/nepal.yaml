@@ -1,0 +1,269 @@
+id: nepal
+wikidata: Q837
+names:
+  - text: نيبال
+    lang: ar
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepál
+    lang: cs
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: da
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: de
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Νεπάλ
+    lang: el
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: en
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: es
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: et
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: نپال
+    lang: fa
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: fi
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Népal
+    lang: fr
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: נפאל
+    lang: he
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: नेपाल
+    lang: hi
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepál
+    lang: hu
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: id
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: it
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: ネパール
+    lang: ja
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: ნეპალი
+    lang: ka
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: នេប៉ាល់
+    lang: km
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: 네팔
+    lang: ko
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepalia
+    lang: la
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepalas
+    lang: lt
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: နီပေါနိုင်ငံ
+    lang: my
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: नेपाल
+    lang: ne
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: nl
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: no
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: pl
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: pt
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Непал
+    lang: ru
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepál
+    lang: sk
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: sl
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: sv
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: நேபாளம்
+    lang: ta
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: ประเทศเนปาล
+    lang: th
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: tr
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: नेपाल
+    lang: und
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: Nepal
+    lang: vi
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390
+  - text: 尼泊爾
+    lang: zh
+    start: "1860"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2893390

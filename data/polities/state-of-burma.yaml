@@ -1,0 +1,136 @@
+id: state-of-burma
+wikidata: Q704358
+names:
+  - text: دولة بورما
+    lang: ar
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Staat Birma
+    lang: de
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: State of Burma
+    lang: en
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Estado de Birmania
+    lang: es
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: État de Birmanie
+    lang: fr
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: बर्मा राज्य
+    lang: hi
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Negara Burma
+    lang: id
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Stato di Birmania
+    lang: it
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: ビルマ國
+    lang: ja
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: 버마국
+    lang: ko
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: ဗမာ နိုင်ငံတော်
+    lang: my
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Staat Birma
+    lang: nl
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Państwo Birma
+    lang: pl
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Estado da Birmânia
+    lang: pt
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Государство Бирма
+    lang: ru
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: รัฐพม่า
+    lang: th
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: ビルマ國
+    lang: und
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: Quốc gia Miến Điện
+    lang: vi
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253
+  - text: 緬甸國
+    lang: zh
+    start: 1943-08-01
+    end: 1945-08-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848253

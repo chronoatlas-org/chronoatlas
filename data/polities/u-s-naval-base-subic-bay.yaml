@@ -1,0 +1,10 @@
+id: u-s-naval-base-subic-bay
+wikidata: Q1458014
+names:
+  - text: U.S. Naval Base Subic Bay
+    lang: und
+    start: 1946-07-04
+    end: 1959-12-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697345

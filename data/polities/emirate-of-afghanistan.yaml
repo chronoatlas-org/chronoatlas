@@ -1,0 +1,282 @@
+id: emirate-of-afghanistan
+names:
+  - text: إمارة أفغانستان
+    lang: ar
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Əfqanıstan Əmirliyi
+    lang: az
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Емирство Афганистан
+    lang: bg
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: আফগানিস্তান আমিরাত
+    lang: bn
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirat de Kabul
+    lang: ca
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Afghánský emirát
+    lang: cs
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirat Afghanistan
+    lang: de
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Εμιράτο του Αφγανιστάν
+    lang: el
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirate of Afghanistan
+    lang: en
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirlando Afganio
+    lang: eo
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirato de Afganistán
+    lang: es
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Afganistani Emiraat
+    lang: et
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Émirat d'Afghanistan
+    lang: fr
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: אמירות אפגניסטן
+    lang: he
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: अफ़ग़ानिस्तानी अमीरात
+    lang: hi
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Keamiran Afganistan
+    lang: id
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirato dell'Afghanistan
+    lang: it
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: ავღანეთის საამირო
+    lang: ka
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: 아프가니스탄 토후국
+    lang: ko
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Ооганстан Эмирлиги
+    lang: ky
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: ເອມີເຣດອັຟການິສຖານ
+    lang: lo
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Afganistano emyratas
+    lang: lt
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: അഫ്ഗാനിസ്താൻ അമീറത്ത്
+    lang: ml
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emiriah Afghanistan
+    lang: ms
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emiratet Afghanistan
+    lang: nb
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emiraat Afghanistan
+    lang: nl
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: د افغانستان امارت
+    lang: ps
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emirado do Afeganistão
+    lang: pt
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emiratul Afganistanului
+    lang: ro
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Эмират Афганистан
+    lang: ru
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Emiratet Afghanistan
+    lang: sv
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: ஆப்கானித்தான் அமீரகம்
+    lang: ta
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Аморати Афғонистон
+    lang: tg
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: เอมิเรตอัฟกานิสถาน
+    lang: th
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Afganistan Emirliği
+    lang: tr
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Емірат Афганістан
+    lang: uk
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: امارت افغانستان
+    lang: und
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Afgʻoniston amirligi
+    lang: uz
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: Tiểu vương quốc Afghanistan
+    lang: vi
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096
+  - text: 阿富汗酋长国
+    lang: zh
+    start: 1893-11-12
+    end: 1926-06-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961096

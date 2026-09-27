@@ -15,7 +15,12 @@
     "typecheck": "tsc --noEmit",
     "import:natural-earth": "node scripts/import-natural-earth.ts",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "import:ohm": "node scripts/import-ohm.ts",
+    "validate": "node scripts/validate.ts",
+    "build-data": "node scripts/build-data.ts",
+    "predev": "npm run build-data",
+    "prebuild": "npm run build-data"
   },
   "dependencies": {
     "@maplibre/maplibre-gl-style-spec": "26.4.4",
@@ -23,8 +28,11 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.3",
+    "ajv": "^8.20.0",
+    "polygon-clipping": "^0.15.7",
     "typescript": "^7.0.2",
     "vite": "^8.3.1",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.2",
+    "yaml": "^2.9.1"
   }
 }

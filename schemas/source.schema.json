@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/source.schema.json",
+  "title": "Source",
+  "description": "Who says it: a dataset, book, article, map, document, archive, or website. One file per source in data/sources/<id>.yaml.",
+  "type": "object",
+  "required": ["id", "kind", "title"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "kind": { "enum": ["dataset", "book", "article", "map", "document", "archive", "website"] },
+    "title": { "type": "string", "minLength": 1 },
+    "authors": { "type": "array", "items": { "type": "string" } },
+    "publisher": { "type": "string" },
+    "year": { "$ref": "common.schema.json#/$defs/edtf" },
+    "url": { "type": "string", "pattern": "^https?://" },
+    "doi": { "type": "string" },
+    "isbn": { "type": "string" },
+    "license": {
+      "description": "License or copyright status. Required for datasets and maps, because it decides what we may copy or trace.",
+      "type": "string"
+    },
+    "attribution": { "description": "Credit wording the source asks for.", "type": "string" },
+    "notes": { "type": "string" }
+  },
+  "if": { "properties": { "kind": { "enum": ["dataset", "map"] } } },
+  "then": { "required": ["license"] }
+}

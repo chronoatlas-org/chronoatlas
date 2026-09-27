@@ -1,0 +1,10 @@
+id: princely-state-of-jammu-and-kashmir
+wikidata: Q2571484
+names:
+  - text: Princely State of Jammu and Kashmir
+    lang: und
+    start: 1947-08-15
+    end: 1947-10-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2922315

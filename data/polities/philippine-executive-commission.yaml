@@ -1,0 +1,66 @@
+id: philippine-executive-commission
+wikidata: Q7185043
+names:
+  - text: Εκτελεστική Επιτροπή των Φιλιππίνων
+    lang: el
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: Philippine Executive Commission
+    lang: en
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: Comisión Ejecutiva de Filipinas
+    lang: es
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: フィリピン行政委員会
+    lang: ja
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: 필리핀 행정위원회
+    lang: ko
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: Филиппинская исполнительная комиссия
+    lang: ru
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: Komisyong Tagapagpaganap ng Pilipinas
+    lang: tl
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: フィリピン行政委員会 Komisyong Tagapagpaganap ng Pilipinas
+    lang: und
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833
+  - text: 菲律宾行政委员会
+    lang: zh
+    start: 1942-01-03
+    end: 1943-10-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889833

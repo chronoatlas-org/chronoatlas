@@ -119,26 +119,32 @@ That's how clicking an event on the timeline can highlight the border changes th
 ### Example (real, verified values)
 
 ```yaml
-# data/imports/ohm/assertions/manchukuo.yaml
-- relation: administers          # de facto; how OHM maps to this is documented in the import manifest
+# data/imports/openhistoricalmap/assertions.yaml (imported; this record exists now)
+- id: ohm-r2885965
+  relation: administers          # de facto; the mapping is recorded in the import manifest
   subject: manchukuo             # Wikidata Q30623
-  shape: ohm/r2885965
+  shape: ohm-r2885965
   start: "1932"                  # year precision, as OHM records it
-  end: "1945-08-17"
-  sources: [{ source: ohm, locator: "relation 2885965, snapshot 2026-09-26" }]
+  end: 1945-08-17                # the first day it no longer applied
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2885965, version 15
 
-# data/imports/cshapes-2.0/assertions/china.yaml
-- relation: sovereign            # de jure
-  subject: republic-of-china
-  shape: cshapes/710-1921-03-13
-  start: "1921-03-13"
-  end: "1945-08-14"
-  sources: [{ source: cshapes-2.0, locator: "gwcode 710",
-              note: "codes de jure only; excludes the occupation of Manchuria (codebook §3)" }]
+# data/imports/cshapes-2.0/assertions.yaml (planned for Phase 2)
+- id: cshapes-710-1921-03-13
+  relation: sovereign            # de jure
+  subject: china
+  shape: cshapes-710-1921-03-13
+  start: 1921-03-13
+  end: 1945-08-15                # CShapes gives the last day (1945-08-14); ours is the day after
+  sources:
+    - source: cshapes-2-0
+      locator: gwcode 710, period starting 1921-03-13
+      note: codes de jure changes only; excludes the occupation of Manchuria (codebook section 3)
 ```
 
-In 1937 both assertions cover Manchuria. The map hatches it as contested, and the territory
-panel shows "administered by Manchukuo (per OHM) / sovereign: Republic of China (per CShapes)".
+In 1937 both assertions cover Manchuria. The map will hatch it as contested, and the territory
+panel will show "administered by Manchukuo (per OHM) / sovereign: China (per CShapes)".
 
 ## Dates
 
@@ -290,8 +296,10 @@ and 100 GB/month bandwidth as a soft limit):
   3. ✅ A date library (EDTF → day numbers, BCE, precision) with tests, in `src/dates/`.
   4. ✅ The translation layer (`src/i18n/`) and the timeline (`src/timeline/`): zoom from
      millennia to days, drag, play/pause, speed, keyboard control.
-  5. Data schema (including Figures), validator, and a pinned import of OHM for East Asia
-     1900–1950. Everywhere else shows "no data".
+  5. ✅ Data schema (including Figures) in `schemas/`, the validator, the build step, and a
+     pinned import of OHM for East Asia 1900–1950 (162 boundaries, 62 polities), filtered by the
+     timeline, with a click popup. Everywhere else shows "no data". The format is documented in
+     `docs/data-format.md`.
   6. URL state and phone layout.
   7. A scrubbing benchmark.
   8. Data checks in CI; basic issue forms.

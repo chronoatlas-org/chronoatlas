@@ -1,0 +1,129 @@
+id: qing
+wikidata: Q8733
+names:
+  - text: كلمة
+    lang: ar
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: da
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: de
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: en
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: es
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: fr
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Csing
+    lang: hu
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: it
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: 大淸
+    lang: ja
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: 대청
+    lang: ko
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: ᡩᠠᡳ᠌ᠴᡳᠩ ᡤᡠᡵᡠᠨ
+    lang: mnc
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: daicing gurun
+    lang: mnc-Latn
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: nl
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: pl
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Qing
+    lang: pt
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: Цин
+    lang: ru
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: 大淸 ᡩᠠᡳ᠌ᠴᡳᠩ ᡤᡠᡵᡠᠨ
+    lang: und
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594
+  - text: 大淸
+    lang: zh
+    start: "1900"
+    end: 1912-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2694485, 2957594

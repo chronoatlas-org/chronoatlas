@@ -1,0 +1,16 @@
+id: british-concession-of-hankou
+names:
+  - text: 영국령 한커우 조계
+    lang: ko
+    start: "1862"
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901238
+  - text: British concession of Hankou
+    lang: und
+    start: "1862"
+    end: 1929-03-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901238

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/event.schema.json",
+  "title": "Event",
+  "description": "Something that happened at a date and place. One file per event in data/events/<id>.yaml. The summary is written in our own words from the cited sources.",
+  "type": "object",
+  "required": ["id", "title", "date", "summary", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "wikidata": { "$ref": "common.schema.json#/$defs/wikidata" },
+    "title": { "type": "string", "minLength": 1 },
+    "date": { "$ref": "common.schema.json#/$defs/edtf", "description": "A date or an interval (EDTF)." },
+    "location": {
+      "type": "object",
+      "required": ["coordinates", "precision_km", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "coordinates": {
+          "description": "[longitude, latitude]",
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "precision_km": { "type": "number", "minimum": 0 },
+        "sources": { "$ref": "common.schema.json#/$defs/citations" }
+      }
+    },
+    "summary": { "type": "string", "minLength": 1 },
+    "polities": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" } },
+    "effects": {
+      "description": "IDs of assertions this event started or ended.",
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/id" }
+    },
+    "importance": { "description": "1 (minor) to 5 (major); controls when it shows on the timeline.", "type": "integer", "minimum": 1, "maximum": 5 },
+    "sources": { "$ref": "common.schema.json#/$defs/citations" }
+  }
+}

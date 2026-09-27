@@ -1,0 +1,16 @@
+id: british-leased-liugong-island
+names:
+  - text: 영국령 류궁다오 조차지
+    lang: ko
+    start: 1930-09-30
+    end: 1940-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901216
+  - text: British Leased Liugong Island
+    lang: und
+    start: 1930-09-30
+    end: 1940-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2901216

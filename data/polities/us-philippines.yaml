@@ -1,0 +1,108 @@
+id: us-philippines
+wikidata: Q6042084
+names:
+  - text: الحكومة الجزيرية في جزر الفلبين
+    lang: ar
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Americká správa Filipín
+    lang: cs
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: US Philippines
+    lang: en
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Filipinas Estadounidense
+    lang: es
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Gouvernement insulaire des Îles Philippines
+    lang: fr
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Pemerintahan Insuler Amerika Serikat di Filipina
+    lang: id
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: フィリピン群島政府
+    lang: ja
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: ფილიპინების კუნძულების კუნძულოვანი მთავრობა
+    lang: ka
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: 필리핀 제도 정부
+    lang: ko
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Pemerintah Insular Kepulauan Filipina
+    lang: ms
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Governo Insular das Ilhas Filipinas
+    lang: pt
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Pamahalaang Insular ng mga Pulo ng Pilipinas
+    lang: tl
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: Острівний уряд Філіппін
+    lang: uk
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: US Philippines
+    lang: und
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835
+  - text: 美屬菲律賓
+    lang: zh
+    start: 1902-07-01
+    end: 1935-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889835

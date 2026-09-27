@@ -33,6 +33,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci # installs the exact versions recorded in package-lock.json
+      - run: npm run validate # checks every data file (schemas, references, dates, geometry)
       - run: npm test # runs the automated tests; a failure stops the deploy
       - run: npm run build # type-checks, then builds the site into dist/
       - if: github.event_name != 'pull_request'

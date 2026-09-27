@@ -1,0 +1,59 @@
+id: portuguese-macau
+wikidata: Q3916279
+names:
+  - text: Portuguese Macau
+    lang: en
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: Португалиялық Макао
+    lang: kk
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: 포르투갈령 마카오
+    lang: ko
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: Macau
+    lang: pt
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: 葡屬澳門 Portuguese Macau
+    lang: und
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: 葡屬澳門
+    lang: zh
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: 葡属澳门
+    lang: zh-Hans
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462
+  - text: 葡屬澳門
+    lang: zh-Hant
+    start: "1887"
+    end: 1999-12-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694462

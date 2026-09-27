@@ -1,0 +1,122 @@
+id: russian-empire
+wikidata: Q34266
+names:
+  - text: الإمبراطورية الروسية
+    lang: ar
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Russisches Kaiserreich
+    lang: de
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Russian Empire
+    lang: en
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Imperio Ruso
+    lang: es
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Venäjän keisarikunta
+    lang: fi
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Empire Russe
+    lang: fr
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Impero Russo
+    lang: it
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: ロシア帝国
+    lang: ja
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Ресей империясы
+    lang: kk
+    start: 1914-04-17
+    end: 1916-09-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2851294
+  - text: 러시아 제국
+    lang: ko
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Russlaunt
+    lang: pdt
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Imperium Rosyjskie
+    lang: pl
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Império Russo
+    lang: pt
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Российская империя
+    lang: ru
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Російська імперія
+    lang: uk
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: Российская империя
+    lang: und
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294
+  - text: 俄罗斯帝国
+    lang: zh
+    start: "1898"
+    end: 1917-09-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2849760, 2851152, 2851153, 2851158, 2851294

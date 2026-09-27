@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/assertion.schema.json",
+  "title": "Assertions",
+  "description": "A list of sourced statements: 'According to <source>, <subject> <relation> <shape or object> from <start> to <end>.'",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "relation", "subject", "start", "end", "sources"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "relation": {
+        "description": "controls/administers/occupies = de facto; sovereign = de jure; claims = a claim; leased-to, protectorate-of, puppet-of link to another polity.",
+        "enum": ["controls", "administers", "occupies", "sovereign", "claims", "leased-to", "protectorate-of", "puppet-of"]
+      },
+      "subject": { "$ref": "common.schema.json#/$defs/id", "description": "The polity this statement is about." },
+      "shape": { "$ref": "common.schema.json#/$defs/id", "description": "The territory, for territorial relations." },
+      "object": { "$ref": "common.schema.json#/$defs/id", "description": "The other polity, for puppet-of, protectorate-of, and leased-to." },
+      "recognized_by": {
+        "description": "For 'sovereign': polities that recognized it, if the source says.",
+        "type": "array",
+        "items": { "$ref": "common.schema.json#/$defs/id" }
+      },
+      "start": { "$ref": "common.schema.json#/$defs/edtf" },
+      "end": { "$ref": "common.schema.json#/$defs/end" },
+      "sources": { "$ref": "common.schema.json#/$defs/citations" },
+      "notes": { "type": "string" }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "relation": { "enum": ["controls", "administers", "occupies", "sovereign", "claims"] } } },
+        "then": { "required": ["shape"] }
+      },
+      {
+        "if": { "properties": { "relation": { "enum": ["leased-to", "protectorate-of", "puppet-of"] } } },
+        "then": { "required": ["object"] }
+      }
+    ]
+  }
+}

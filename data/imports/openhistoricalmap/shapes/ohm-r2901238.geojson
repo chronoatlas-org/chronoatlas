@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"ohm-r2901238","edge_precision":"unknown","ohm_relation":2901238,"ohm_version":3,"ohm_timestamp":"2026-07-28T20:48:36Z"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.2862,30.5831],
+[114.2934,30.5774],
+[114.298,30.5737],
+[114.3021,30.5805],
+[114.2904,30.5895],
+[114.2862,30.5831]
+]
+]
+]}
+}

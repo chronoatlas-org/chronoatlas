@@ -1,0 +1,10 @@
+id: princely-state-of-hunza
+wikidata: Q14957246
+names:
+  - text: Princely State of Hunza
+    lang: und
+    start: 1947-08-15
+    end: 1947-11-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2926486

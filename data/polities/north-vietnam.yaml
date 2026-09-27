@@ -1,0 +1,499 @@
+id: north-vietnam
+names:
+  - text: Noord-Viëtnam
+    lang: af
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: شمال فيتنام
+    lang: ar
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vyetnam Demokratik Respublikası
+    lang: az
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Дэмакратычная Рэспубліка В’етнам
+    lang: be
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Демократична република Виетнам
+    lang: bg
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: উত্তর ভিয়েতনাম
+    lang: bn
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Republik Demokratel Viêt Nam
+    lang: br
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: República Democràtica del Vietnam
+    lang: ca
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnamská demokratická republika
+    lang: cs
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Gogledd Fietnam
+    lang: cy
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nordvietnam
+    lang: da
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nordvietnam
+    lang: de
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Λαϊκή Δημοκρατία του Βιετνάμ
+    lang: el
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: North Vietnam
+    lang: en
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nord-Vjetnamio
+    lang: eo
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam del Norte
+    lang: es
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Põhja-Vietnam
+    lang: et
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Ipar Vietnam
+    lang: eu
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ویتنام شمالی
+    lang: fa
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnamin demokraattinen tasavalta
+    lang: fi
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vualiku Vietnam
+    lang: fj
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: République démocratique du Vietnam
+    lang: fr
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Noard-Fjetnam
+    lang: fy
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam do Norte
+    lang: gl
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Yvate Vienã
+    lang: gn
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: צפון וייטנאם
+    lang: he
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: उत्तरी वियतनाम
+    lang: hi
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnámi Demokratikus Köztársaság
+    lang: hu
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam Utara
+    lang: id
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nord-Vietnam
+    lang: io
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Norður-Víetnam
+    lang: is
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam del Nord
+    lang: it
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ベトナム民主共和国
+    lang: ja
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Viètnam Lor
+    lang: jv
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ჩრდილოეთი ვიეტნამი
+    lang: ka
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: វៀតណាមខាងជើង
+    lang: km
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ಉತ್ತರ ವಿಯೆಟ್ನಾಂ
+    lang: kn
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: 북베트남
+    lang: ko
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ສາທາລະນະ​ລັດ ປະຊາທິປະ​ໄຕ ຫວຽດນາມ
+    lang: lo
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Šiaurės Vietnamas
+    lang: lt
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Ziemeļvjetnama
+    lang: lv
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Северен Виетнам
+    lang: mk
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Бүгд Найрамдах Ардчилсан Вьетнам Улс
+    lang: mn
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: उत्तर व्हियेतनाम
+    lang: mr
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam Utara
+    lang: ms
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nord-Vietnam
+    lang: nb
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: उत्तर भियतनाम
+    lang: ne
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Noord-Vietnam
+    lang: nl
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nord-Vietnam
+    lang: nn
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Wietnam Północny
+    lang: pl
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: شمالي ويتنام
+    lang: ps
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietname do Norte
+    lang: pt
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnamul de Nord
+    lang: ro
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Демократическая Республика Вьетнам
+    lang: ru
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnamská demokratická republika
+    lang: sk
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Severni Vietnam
+    lang: sl
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Северни Вијетнам
+    lang: sr
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Nordvietnam
+    lang: sv
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vietnam Kaskazini
+    lang: sw
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: வடக்கு வியட்நாம்
+    lang: ta
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: ประเทศเวียดนามเหนือ
+    lang: th
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Hilagang Vietnam
+    lang: tl
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Kuzey Vietnam
+    lang: tr
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Демократична Республіка В'єтнам
+    lang: uk
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Việt Nam Dân chủ Cộng hòa
+    lang: und
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: شمالی ویت نام
+    lang: ur
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Vyetnam Demokratik Respublikasi
+    lang: uz
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: Việt Nam Dân chủ Cộng hòa
+    lang: vi
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: 越南民主共和
+    lang: vi-Hani
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: צפון וויעטנאם
+    lang: yi
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077
+  - text: 越南民主共和国
+    lang: zh
+    start: 1945-09-02
+    end: 1954-07-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746077

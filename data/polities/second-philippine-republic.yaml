@@ -1,0 +1,227 @@
+id: second-philippine-republic
+wikidata: Q2027229
+names:
+  - text: الجمهورية الفلبينية الثانية
+    lang: ar
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Segunda República Filipina
+    lang: ast
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Втора филипинска република
+    lang: bg
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Segona República filipina
+    lang: ca
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Filipínská druhá republika
+    lang: cs
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Zweite Philippinische Republik
+    lang: de
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Second Philippine Republic
+    lang: en
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Segunda República filipina
+    lang: es
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: جمهوری دوم فیلیپین
+    lang: fa
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: République des Philippines
+    lang: fr
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: הרפובليקה הפיליפינית השנייה
+    lang: he
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Druga Filipinska Republika
+    lang: hr
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Republik Filipina Kedua
+    lang: id
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Seconda Repubblica Filippina
+    lang: it
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: フィリピン第二共和国
+    lang: ja
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: 필리핀 제2공화국
+    lang: ko
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Экинчи Филиппин Республикасы
+    lang: ky
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Republik Filipina Kedua
+    lang: ms
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Tweede Filipijnse Republiek
+    lang: nl
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Druga Republika Filipin
+    lang: pl
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Segunda República das Filipinas
+    lang: pt
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Вторая Филиппинская Республика
+    lang: ru
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Druhá filipínska republika
+    lang: sk
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Друга Филипинска Република
+    lang: sr
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Andra filippinska republiken
+    lang: sv
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: สาธารณรัฐฟิลิปปินส์ที่ 2
+    lang: th
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Ikalawang Republika ng Pilipinas
+    lang: tl
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: İkinci Filipin Cumhuriyeti
+    lang: tr
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Друга філіппінська республіка
+    lang: uk
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Second Philippine Republic
+    lang: und
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: Đệ Nhị Cộng hòa Philippines
+    lang: vi
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832
+  - text: 菲律賓第二共和國
+    lang: zh
+    start: 1943-10-14
+    end: 1945-08-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889832

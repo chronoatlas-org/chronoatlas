@@ -1,0 +1,10 @@
+id: natural-earth
+kind: dataset
+title: Natural Earth
+publisher: Natural Earth (naturalearthdata.com)
+url: https://www.naturalearthdata.com/
+license: Public domain
+attribution: Made with Natural Earth.
+notes: >-
+  Physical base map only (land, lakes, rivers at 1:50m). See
+  data/imports/natural-earth/manifest.json for the release and processing.

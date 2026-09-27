@@ -1,0 +1,45 @@
+{
+  "dataset": "OpenHistoricalMap",
+  "source_id": "openhistoricalmap",
+  "license": "CC0 1.0 (public domain dedication); see LICENSE.md",
+  "endpoint": "https://overpass-api.openhistoricalmap.org/api/interpreter",
+  "query": "[out:json][timeout:900];\nrelation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"](10,73,55,150)(if: t[\"start_date\"] < \"1951\" && (!is_tag(\"end_date\") || t[\"end_date\"] > \"1900\"));\nout meta;\nway(r);\nout skel qt;\nnode(w);\nout skel qt;",
+  "retrieved": "2026-09-27T09:01:11.178Z",
+  "data_as_of": "2026-09-27T08:47:42Z",
+  "raw_download": {
+    "file": "raw/overpass.json (not committed)",
+    "bytes": 106279067,
+    "sha256": "cc600c6cfe45e8cd45c286681933b758e6c58566e0e1adbb6d0f0761b9d58d33"
+  },
+  "settings": {
+    "bbox": {
+      "south": 10,
+      "west": 73,
+      "north": 55,
+      "east": 150
+    },
+    "fromYear": 1900,
+    "toYear": 1950,
+    "adminLevel": "2",
+    "simplifyTolerance": 0.005,
+    "coordinateDecimals": 4
+  },
+  "counts": {
+    "relations_downloaded": 162,
+    "imported": 162,
+    "skipped": 0,
+    "polities": 62
+  },
+  "decisions": {
+    "relation": "OHM boundary=administrative + admin_level=2 relations are imported as \"administers\" (de facto administration). OHM does not distinguish de facto control from de jure sovereignty, so no sovereignty claim is imported. Labelled \"per OpenHistoricalMap\".",
+    "end_date": "OHM end_date is read as the first day the boundary no longer applied: OHM chains successive boundaries with the same date as one end_date and the next start_date. On a changeover day we show the successor. (OHM's own viewer shows both on that day.)",
+    "no_end_date": "A relation without end_date is imported with end \"ongoing\".",
+    "edtf_tags": "Where start_date:edtf or end_date:edtf exist, they are used instead of start_date/end_date.",
+    "polities": "Relations are grouped into one polity by their Wikidata ID, or by English name when there is none. Polity IDs are permanent and recorded in polity-ids.json.",
+    "names": "The name and name:<language> tags of each relation are copied, with the dates of the relations that carry them. Tagged \"name\" without a language is recorded as lang \"und\" (the local name).",
+    "geometry": "Each OHM way is simplified once (Douglas–Peucker, 0.005°), so shared borders stay aligned; rings are then assembled, trimmed to the import area, and rounded to 4 decimal places. Edge precision is \"unknown\" because OHM doesn't record it.",
+    "coverage": "No coverage is asserted: OHM does not claim to be complete, so land with no imported boundary is shown as \"no data\", never as \"no state\".",
+    "bce": "This import contains no BCE dates. OHM's convention for negative years has not been verified yet."
+  },
+  "skipped": []
+}

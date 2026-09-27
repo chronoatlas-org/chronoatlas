@@ -1,0 +1,87 @@
+id: united-states-military-government-of-the-philippine-islands
+wikidata: Q31351948
+names:
+  - text: United States Military Government of the Philippine Islands
+    lang: en
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Gobierno militar estadounidense de las Islas Filipinas
+    lang: es
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Gouvernement militaire américain des Îles Philippines
+    lang: fr
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Pemerintahan Militer Amerika Serikat di Kepulauan Filipina
+    lang: id
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: アメリカ合衆国フィリピン群島軍事政府
+    lang: ja
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: 미군정 필리핀 제도
+    lang: ko
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Pemerintahan Tentera Amerika Syarikat di Kepulauan Filipina
+    lang: ms
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: รัฐบาลทหารสหรัฐแห่งหมู่เกาะฟิลิปปินส์
+    lang: th
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Pamahalaang Militar ng Estados Unidos ng Kapuluang Pilipinas
+    lang: tl
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: Військовий уряд США на Філіппінських островах
+    lang: uk
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: United States Military Government of the Philippine Islands
+    lang: und
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
+  - text: 美國菲律賓群島軍政府
+    lang: zh
+    start: 1899-04-11
+    end: 1902-07-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2889836
