@@ -131,3 +131,8 @@ come in Phase 1: `npm test`, `npm run validate`, and `npm run build-data`.
 - In dev mode the map is exposed as `window.map`, for debugging in the browser console.
 - MapLibre waits for the browser's animation frames, which don't run while the page is hidden.
   A map that "never loads" in a background tab may just be paused.
+- **Deployment:** `.github/workflows/deploy.yml` builds pull requests and deploys `main` to
+  GitHub Pages (https://chronoatlas-project.github.io/chronoatlas/). The Pages source is "GitHub
+  Actions", so no Jekyll processing and no `gh-pages` branch. Actions are pinned to full commit
+  SHAs with a version comment. To update one, look up the new release's commit, and keep the
+  permissions minimal.

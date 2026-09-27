@@ -4,6 +4,8 @@ An open-source interactive map of how the world's borders changed through histor
 timeline or press play, and every state, empire, colony, city-state, and everything in between
 redraws for that date. Every border and event on the map is traced to a named source.
 
+**Live site: https://chronoatlas-project.github.io/chronoatlas/**
+
 > **Status: early development (Phase 1).** So far there is a physical base map (land, lakes, and
 > rivers). The timeline and historical borders are next. See the
 > [roadmap](docs/architecture.md#roadmap).
@@ -61,6 +63,11 @@ file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 | `npm run preview` | Serves the built `dist/` folder locally, exactly as it will be published |
 | `npm run typecheck` | Only checks the code for type errors |
 | `npm run import:natural-earth` | Re-downloads the Natural Earth base map from its pinned release (see [data/imports/natural-earth](data/imports/natural-earth/README.md)) |
+
+**Publishing** is automatic. Every push to `main` runs
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes
+it to GitHub Pages. The same workflow builds every pull request as a check, without publishing it.
+You can follow each run in the repository's **Actions** tab.
 
 ## Contributing
 

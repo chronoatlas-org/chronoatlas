@@ -1,0 +1,55 @@
+# Builds the site on every pull request (as a check that nothing is broken) and publishes it to
+# GitHub Pages on every push to main: https://chronoatlas-project.github.io/chronoatlas/
+
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: # allows a manual run from the Actions tab
+
+# One run at a time per branch. A newer pull-request push cancels the older check, but a
+# deployment that has already started is never cancelled halfway.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# Least privilege: jobs can only read the repository unless they ask for more below.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Each action is pinned to an exact commit (the comment shows its version), so a
+      # compromised or re-tagged release can't silently change what runs here.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false # the build never needs to push, so don't keep a token
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci # installs the exact versions recorded in package-lock.json
+      - run: npm run build # type-checks, then builds the site into dist/
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    # Publish only from main, never from pull requests.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write # to publish the site
+      id-token: write # to prove to GitHub Pages that the upload came from this workflow
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

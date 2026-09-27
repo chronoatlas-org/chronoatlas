@@ -196,14 +196,16 @@ Chinese, Japanese, and Korean) are shown alongside English from the start.
 - **Phase 0, setup:** repo, licenses, README, CONTRIBUTING, code of conduct, credits, CLAUDE.md,
   design docs.
 - **Phase 1, map and timeline, live on GitHub Pages:**
-  1. Vite + TypeScript + MapLibre with a Natural Earth base map.
-  2. A date library (EDTF → day numbers, BCE, precision) with tests.
-  3. The timeline: zoom from millennia to days, drag, play/pause, speed, keyboard control.
-  4. Data schema, validator, and a pinned import of OHM for East Asia 1900–1950. Everywhere else
+  1. ✅ Vite + TypeScript + MapLibre with a Natural Earth base map.
+  2. ✅ Automatic deployment to GitHub Pages, plus a build check on pull requests. This was moved
+     up from step 7 so that every later step is visible online.
+  3. A date library (EDTF → day numbers, BCE, precision) with tests.
+  4. The timeline: zoom from millennia to days, drag, play/pause, speed, keyboard control.
+  5. Data schema, validator, and a pinned import of OHM for East Asia 1900–1950. Everywhere else
      shows "no data".
-  5. URL state and phone layout.
-  6. A scrubbing benchmark.
-  7. CI checks and automatic deployment; basic issue forms.
+  6. URL state and phone layout.
+  7. A scrubbing benchmark.
+  8. Data checks in CI; basic issue forms.
 - **Phase 2, panel, events and transitions (the showcase begins):**
   - Territory panel with a "Report a problem with this border" button.
   - Events on the timeline, a pulse on the map, and transitions linked to events.
