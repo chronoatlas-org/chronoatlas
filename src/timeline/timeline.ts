@@ -26,14 +26,16 @@ export interface TimelineOptions {
 }
 
 const DAYS_PER_YEAR = 365.2425;
-const SPEEDS: { label: MessageKey; daysPerSecond: number }[] = [
-  { label: 'timeline.speed.day', daysPerSecond: 1 },
-  { label: 'timeline.speed.week', daysPerSecond: 7 },
-  { label: 'timeline.speed.month', daysPerSecond: DAYS_PER_YEAR / 12 },
-  { label: 'timeline.speed.year', daysPerSecond: DAYS_PER_YEAR },
-  { label: 'timeline.speed.decade', daysPerSecond: DAYS_PER_YEAR * 10 },
-  { label: 'timeline.speed.century', daysPerSecond: DAYS_PER_YEAR * 100 },
+const SPEEDS: { label: MessageKey; short: MessageKey; daysPerSecond: number }[] = [
+  { label: 'timeline.speed.day', short: 'timeline.speedShort.day', daysPerSecond: 1 },
+  { label: 'timeline.speed.week', short: 'timeline.speedShort.week', daysPerSecond: 7 },
+  { label: 'timeline.speed.month', short: 'timeline.speedShort.month', daysPerSecond: DAYS_PER_YEAR / 12 },
+  { label: 'timeline.speed.year', short: 'timeline.speedShort.year', daysPerSecond: DAYS_PER_YEAR },
+  { label: 'timeline.speed.decade', short: 'timeline.speedShort.decade', daysPerSecond: DAYS_PER_YEAR * 10 },
+  { label: 'timeline.speed.century', short: 'timeline.speedShort.century', daysPerSecond: DAYS_PER_YEAR * 100 },
 ];
+/** Screens this narrow get the short speed labels ("1 mo/s"). Matches the CSS breakpoint. */
+const NARROW_SCREEN = '(max-width: 600px)';
 const DEFAULT_SPEED = 2; // 1 month per second
 
 const MIN_TICK_SPACING_PX = 84; // room for a label like "10000 BCE"
@@ -101,8 +103,16 @@ export class Timeline {
     const speedSelect = element('select', 'timeline-speed-select');
     SPEEDS.forEach((s, i) => {
       const isDefault = i === DEFAULT_SPEED;
-      speedSelect.add(new Option(t(s.label), String(i), isDefault, isDefault));
+      const option = new Option(t(s.label), String(i), isDefault, isDefault);
+      option.title = t(s.label); // the full wording, even when the short label is showing
+      speedSelect.add(option);
     });
+    // Short labels on narrow screens, full ones elsewhere; switches if the screen rotates.
+    const narrow = matchMedia(NARROW_SCREEN);
+    const applySpeedLabels = () =>
+      SPEEDS.forEach((s, i) => (speedSelect.options[i].text = t(narrow.matches ? s.short : s.label)));
+    applySpeedLabels();
+    narrow.addEventListener('change', applySpeedLabels);
     speedSelect.addEventListener('change', () => (this.speed = Number(speedSelect.value)));
     speedLabel.append(speedText, speedSelect);
 

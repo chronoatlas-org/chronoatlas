@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport-fit=cover lets the page use the full screen on phones with notches; the CSS
+         keeps controls clear of the notch and home indicator with env(safe-area-inset-*). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>chronoatlas</title>
     <meta
       name="description"
@@ -10,11 +12,21 @@
     />
   </head>
   <body>
-    <!-- Text in elements with data-i18n comes from the translation catalogs (src/i18n). -->
+    <!-- Text in elements with data-i18n comes from the translation catalogs (src/i18n);
+         data-i18n-label sets a translated accessible label and tooltip. -->
     <header class="app-header">
-      <h1>chronoatlas</h1>
-      <p data-i18n="app.previewNotice"></p>
+      <div class="app-header-top">
+        <h1>chronoatlas</h1>
+        <button type="button" id="share-button" class="share-button" data-i18n-label="share.label">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 1 1 4.2 4.2l-2 2-1.4-1.4 2-2a1 1 0 1 0-1.4-1.4L12 13.4a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 1 1-4.2-4.2l2-2 1.4 1.4-2 2a1 1 0 1 0 1.4 1.4L12 10.6a1 1 0 0 1 1.4 0z" />
+          </svg>
+          <span data-i18n="share.button"></span>
+        </button>
+      </div>
+      <p class="app-notice" data-i18n="app.previewNotice"></p>
       <p class="legend"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></p>
+      <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </header>
     <main id="map"></main>
     <section id="timeline"></section>

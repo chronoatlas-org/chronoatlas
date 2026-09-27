@@ -184,9 +184,16 @@ the last download), `npm run import:natural-earth`.
 - **Timeline:** `src/timeline/scale.ts` holds the pure logic (tick units, calendar-aligned
   ticks, keyboard steps) and is tested. `src/timeline/timeline.ts` holds the DOM, canvas, and
   input. The design is in docs/architecture.md#the-timeline.
-- **Testing in the Claude app's browser pane:** a hidden pane has zero size, and pauses both
-  animation frames and resize notifications. Set a viewport with `resize_window` before judging
-  layout or drawing, and reset it afterwards.
+- **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `lang`), and
+  `src/main.ts` syncs it. Anything the timeline calls during its constructor, such as `onChange`,
+  must not touch `let`/`const` variables declared after `new Timeline(...)`. A real bug came from
+  this.
+- **Testing in the Claude app's browser pane:**
+  - A hidden pane has zero size, and pauses both animation frames and resize notifications. Set
+    a viewport with `resize_window` before judging layout or drawing, and reset it afterwards.
+  - Screenshots can time out when the app window is covered; check state with JavaScript
+    instead.
+  - Clipboard writes are denied in the pane, so the Copy link fallback message is expected.
 - MapLibre waits for the browser's animation frames, which don't run while the page is hidden.
   A map that "never loads" in a background tab may just be paused.
 - **Deployment:** `.github/workflows/deploy.yml` builds pull requests and deploys `main` to

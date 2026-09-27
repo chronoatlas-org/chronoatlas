@@ -8,7 +8,13 @@ export const en = {
   'app.previewNotice':
     'Early preview: country borders in East Asia, 1900–1950, from OpenHistoricalMap. Click a territory for details.',
   'app.mapLabel': 'Map',
+  'app.title': 'chronoatlas · {date}',
   'legend.noData': 'No data yet',
+
+  'share.button': 'Copy link',
+  'share.label': 'Copy a link to this date and map view',
+  'share.copied': 'Link copied. Anyone who opens it sees this date and view.',
+  'share.failed': "Couldn't copy the link. It's in your browser's address bar.",
 
   'relation.controls': 'Controlled (de facto)',
   'relation.administers': 'Administered (de facto)',
@@ -34,6 +40,13 @@ export const en = {
   'timeline.speed.year': '1 year per second',
   'timeline.speed.decade': '10 years per second',
   'timeline.speed.century': '100 years per second',
+  // Short versions for narrow phone screens.
+  'timeline.speedShort.day': '1 day/s',
+  'timeline.speedShort.week': '1 wk/s',
+  'timeline.speedShort.month': '1 mo/s',
+  'timeline.speedShort.year': '1 yr/s',
+  'timeline.speedShort.decade': '10 yr/s',
+  'timeline.speedShort.century': '100 yr/s',
 
   'date.month.1': 'January',
   'date.month.2': 'February',

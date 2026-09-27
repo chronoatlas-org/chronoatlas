@@ -21,19 +21,66 @@ body {
 /* Floats over the top-left corner of the map. */
 .app-header {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  /* env(safe-area-inset-*) keeps it clear of phone notches (see viewport-fit in index.html). */
+  top: max(12px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
   z-index: 1;
-  max-width: calc(100% - 80px); /* leave room for the zoom buttons on narrow phones */
+  max-width: min(420px, calc(100% - 80px)); /* leave room for the zoom buttons on narrow phones */
   padding: 8px 12px;
   border-radius: 6px;
   background: rgb(255 255 255 / 92%);
   box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
 }
 
+.app-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .app-header h1 {
   margin: 0;
   font-size: 1.1rem;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: #1f2328;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.share-button:hover {
+  background: #eaeef2;
+}
+
+.share-button:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+.share-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.share-status:empty {
+  display: none;
+}
+
+.app-header .share-status {
+  color: #1a7f37;
+  font-weight: 600;
 }
 
 .app-header p {
@@ -80,6 +127,32 @@ body {
 .border-popup-source {
   color: #57606a;
   font-size: 0.78rem !important;
+}
+
+/* Phones: a more compact header, with a bigger touch target for the button. */
+@media (max-width: 600px) {
+  .app-header {
+    padding: 6px 10px;
+  }
+
+  .app-header h1 {
+    font-size: 1rem;
+  }
+
+  .app-header p {
+    font-size: 0.72rem;
+  }
+
+  .share-button {
+    min-height: 44px;
+  }
+}
+
+/* Short screens (phones held sideways): keep the map visible by dropping the notice text. */
+@media (max-height: 500px) {
+  .app-notice {
+    display: none;
+  }
 }
 
 /* Hidden on screen but read by screen readers. */

@@ -231,9 +231,29 @@ pulses, respect the browser's reduced-motion setting.
 
 ## URL and sharing
 
-The map state lives in the URL hash, for example `#d=1937-07-07&m=5/35/115&sel=manchukuo`
-(date, zoom/latitude/longitude, selected territory). Hash URLs work on static hosting with no
-server.
+The view lives in the URL hash, so any moment can be shared as a link. Hash URLs work on static
+hosting with no server. The logic is in `src/url/state.ts` and is covered by tests.
+
+```
+#d=1937-07-01&m=4.5/38.2/118.9&lang=ja
+```
+
+| Key | Meaning |
+|---|---|
+| `d` | Selected day, as EDTF (`-0220-03-15` for BCE). A month or year opens on its first day. Clamped to the timeline's range. |
+| `m` | Map view: zoom/latitude/longitude (OpenStreetMap order). 2 decimals for zoom, 4 for coordinates. |
+| `lang` | Interface language. Only present if chosen explicitly; otherwise the browser's languages are used. |
+
+- **Updating the address:** it updates 300 ms after the view stops changing, with
+  `history.replaceState`, so scrubbing doesn't flood the Back button (browsers also limit how
+  often it may be called). The tab title shows the date.
+- **Following edits:** editing the address, or going Back/Forward, fires `hashchange`, and the
+  timeline and map follow.
+- **Damaged links:** anything unreadable is ignored and the rest still applies.
+- **Copy link:** the button opens the system share sheet on touch devices, and copies to the
+  clipboard elsewhere. If copying isn't allowed, it says the link is in the address bar.
+- **Selected territory (`sel`)** is planned with Phase 2's territory panel. A popup needs a click
+  point, but a side panel doesn't.
 
 ## Names
 
@@ -300,7 +320,9 @@ and 100 GB/month bandwidth as a soft limit):
      pinned import of OHM for East Asia 1900–1950 (162 boundaries, 62 polities), filtered by the
      timeline, with a click popup. Everywhere else shows "no data". The format is documented in
      `docs/data-format.md`.
-  6. URL state and phone layout.
+  6. ✅ Shareable URLs (date, map view, language) with a Copy link button, and the phone layout:
+     compact header, short speed labels, 44 px touch targets, safe areas for notches, and a
+     landscape layout.
   7. A scrubbing benchmark.
   8. Data checks in CI; basic issue forms.
 - **Phase 2, panel, events and transitions (the showcase begins):**

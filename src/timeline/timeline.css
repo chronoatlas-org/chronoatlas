@@ -7,7 +7,9 @@
   --timeline-playhead: #cf222e;
   --timeline-outside: #eaeef2;
 
-  padding: 6px 12px 8px;
+  /* env(safe-area-inset-*) keeps the controls clear of the iPhone home indicator and notches. */
+  padding: 6px max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
   border-top: 1px solid var(--timeline-border);
   background: var(--timeline-bg);
   box-shadow: 0 -1px 4px rgb(0 0 0 / 8%);
@@ -108,7 +110,7 @@
   height: 100%;
 }
 
-/* Phones: bigger touch targets, and the speed menu shrinks to fit. */
+/* Phones: bigger touch targets; the speed menu switches to short labels (see timeline.ts). */
 @media (max-width: 600px) {
   .timeline-button,
   .timeline-speed-select {
@@ -119,11 +121,18 @@
     width: 44px;
   }
 
-  .timeline-speed-select {
-    max-width: 7.5rem;
-  }
-
   .timeline-date {
     font-size: 0.95rem;
+  }
+}
+
+/* Short screens (phones held sideways): a slimmer bar leaves more room for the map. */
+@media (max-height: 500px) {
+  .timeline {
+    padding-top: 4px;
+  }
+
+  .timeline-track {
+    height: 40px;
   }
 }
