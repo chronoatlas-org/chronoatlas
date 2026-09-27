@@ -115,6 +115,22 @@ The full design is in [docs/architecture.md](docs/architecture.md). The dataset 
 - **The architecture must scale** from the East Asia showcase to a worldwide map without
   redesign.
 
+**Approved decisions (2026-09-27)**
+
+- **Home:** the repo moves to the GitHub organization `chronoatlas-org`, which is owned by the
+  `chronoatlas-project` account. It moves now, before links spread, because GitHub doesn't
+  redirect Pages URLs after a transfer. Organizations also allow triage-only moderator roles.
+- **Figures (statistics)** are part of the data model. Each is sourced, dated, ranged where
+  possible, and carries a `basis`: `polity-territory`, `present-day-borders`, or
+  `computed-from-shape`. Never interpolate between estimates. Never attach a figure based on
+  present-day borders to a historical polity as if it described that polity's territory.
+- **Translation:** all UI text goes through `src/i18n/` catalogs (English first). Never format
+  historical dates with `Intl`.
+- **Borders are drawn in OpenHistoricalMap** and imported. Never hand-edit imported geometry;
+  fix it upstream and re-import. `data/shapes/` is only for documented exceptions.
+- **IDs are permanent** once published: never renamed or reused. Wikidata IDs are
+  cross-references only.
+
 **Environment:** the maintainer works on Windows, and commands are run in PowerShell. Git, Node.js
 LTS, and the GitHub CLI are installed.
 

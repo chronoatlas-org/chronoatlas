@@ -49,6 +49,7 @@ data/           CC0, except data/imports/
   shapes/       GeoJSON, one shape per file
   assertions/   YAML, grouped by region
   events/       YAML, one file per event
+  figures/      YAML: sourced statistics (population, area, …), grouped by polity
   coverage/     YAML: where each source claims to be complete
   imports/<dataset>/   third-party data converted to our format: LICENSE + manifest + files
 docs/           design documents
@@ -71,6 +72,7 @@ sourced assertion.**
 | **Shape** | Geometry only | GeoJSON; edge precision (`treaty-line`, `approximate-line`, `frontier-zone`, `unknown`); where it came from |
 | **Assertion** | "According to *source*, *polity* *relation* *shape* from *date* to *date*." | relation, subject, shape, start, end, `sources[]` (with locator), notes |
 | **Event** | Something that happened at a date and place | Wikidata ID, date, location and its precision, summary (our words), `sources[]`, `effects[]` |
+| **Figure** | A sourced number about a polity at a date: "According to *source*, *polity* had *metric* of *value* as of *date*." | polity, metric (population, area, GDP, …), value or `low`–`high` range, unit, date (EDTF), **basis**, method, `sources[]` |
 | **Coverage** | "Source X is complete for region R during period P" | source, region, period |
 
 **Assertion relations:**
@@ -84,6 +86,21 @@ Every assertion needs at least one source with a locator.
 
 **Events drive transitions:** an event's `effects` list names the assertions it starts or ends.
 That's how clicking an event on the timeline can highlight the border changes that followed it.
+
+**Figures (statistics)** follow the same rules as borders:
+- **Every number has a source, a date, and a precision.** Ranges (`low`–`high`) are preferred
+  where sources give them. When sources disagree, we show them side by side.
+- **We never fill the gap between two estimates.** The panel shows the nearest estimate together
+  with its date.
+- **`basis` records what territory a number counts.** Many historical statistics datasets are
+  organized by *today's* countries, and such numbers must not be attached to a historical polity
+  as if they described its own territory. Values:
+  - `polity-territory`: the polity's own territory at the time.
+  - `present-day-borders`: a modern country's territory; say which one.
+  - `computed-from-shape`: we calculated it from a specific shape, such as its area, or the
+    population inside it from a gridded population dataset.
+- **Metric names are a fixed, documented list** (for example `population`, `area-km2`), so the
+  same figure from different sources can be compared.
 
 **No state vs. no data:**
 - Inside a source's coverage, an area with no polity is shown as **"no state (per source)"**.
@@ -197,6 +214,51 @@ server.
 Polity names are stored with language and script tags. Original-script names (for example
 Chinese, Japanese, and Korean) are shown alongside English from the start.
 
+## Permanent IDs
+
+Every polity, event, source, and shape has an ID (a short lowercase slug, such as `manchukuo`).
+**Once published, an ID never changes and is never reused,** because shared links and other data
+refer to it. If something needs a new name, the old ID stays and its display names change. If two
+entries turn out to be the same thing, one redirects to the other. Wikidata IDs are stored as
+cross-references, not used as our IDs, because not everything has one and Wikidata sometimes
+merges or deletes items.
+
+## Where borders are drawn
+
+New or corrected border lines are drawn in **OpenHistoricalMap (OHM)**, then imported. OHM's
+editor shares each line between the neighbors on both sides, so one correction fixes both, and
+OHM's community benefits too. This repo holds imported snapshots, plus the interpretation layered
+on top: claims, recognition, contested status, events, and figures. Imported geometry is never
+hand-edited here. A problem in an imported snapshot is fixed upstream and re-imported. `data/shapes/`
+is only for geometry OHM can't hold, and each case is documented.
+
+## Translation (i18n)
+
+- **All on-screen text goes through translation catalogs** (`src/i18n/`), with English first.
+  Adding a language means translating one file, not hunting through the code. Translations are
+  contributed and reviewed like any other change.
+- **Date wording** (month names, "c.", "BCE", word order) also lives in the catalogs. Historical
+  dates are never formatted with the browser's `Intl` date formatter, because it switches to the
+  Julian calendar before 1582.
+- **Map labels:**
+  - Chinese, Japanese, and Korean labels are drawn with fonts already on the visitor's device
+    (MapLibre's `localIdeographFontFamily`), which avoids large font downloads.
+  - Right-to-left scripts (Arabic, Hebrew, Persian) need MapLibre's RTL plugin, which will be
+    added when those labels arrive.
+
+## Hosting and growth
+
+To stay within GitHub's free limits (about 1 GB for the repo, about 1 GB for the published site,
+and 100 GB/month bandwidth as a soft limit):
+
+- **Large third-party datasets are not committed.** The build downloads them from the URL in
+  their manifest and verifies the checksum. A copy is kept as a GitHub release asset (up to 2 GB
+  per file, not counted toward the repo size), so builds don't depend on the original host.
+- **Published data is split by era and region,** so visitors download only what they're viewing.
+- **GitHub Pages compresses our files automatically** (the land file goes from 1.26 MB to 422 KB).
+- **The site is plain static files,** so it can move to another free static host without code
+  changes if traffic ever outgrows GitHub Pages.
+
 ## Roadmap
 
 - **Phase 0, setup:** repo, licenses, README, CONTRIBUTING, code of conduct, credits, CLAUDE.md,
@@ -206,26 +268,30 @@ Chinese, Japanese, and Korean) are shown alongside English from the start.
   2. ✅ Automatic deployment to GitHub Pages, plus a build check on pull requests. This was moved
      up from step 7 so that every later step is visible online.
   3. ✅ A date library (EDTF → day numbers, BCE, precision) with tests, in `src/dates/`.
-  4. The timeline: zoom from millennia to days, drag, play/pause, speed, keyboard control.
-  5. Data schema, validator, and a pinned import of OHM for East Asia 1900–1950. Everywhere else
-     shows "no data".
+  4. The translation layer (`src/i18n/`) and the timeline: zoom from millennia to days, drag,
+     play/pause, speed, keyboard control.
+  5. Data schema (including Figures), validator, and a pinned import of OHM for East Asia
+     1900–1950. Everywhere else shows "no data".
   6. URL state and phone layout.
   7. A scrubbing benchmark.
   8. Data checks in CI; basic issue forms.
 - **Phase 2, panel, events and transitions (the showcase begins):**
-  - Territory panel with a "Report a problem with this border" button.
+  - Territory panel with a "Figures" section (each number with its source and date) and a
+    "Report a problem with this border" button.
+  - Evaluate statistics datasets (coverage, basis, license) before importing any.
   - Events on the timeline, a pulse on the map, and transitions linked to events.
   - A "world around this date" panel.
   - CShapes (de jure) and Cliopatria (second opinion) layers.
   - First borders traced from public-domain maps.
 - **Phase 3, contested and uncertain borders:** the full visual language, soft edges, a
-  compare-sources view, and "no state" vs "no data".
+  compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
+  example population), keeping "no data" visually distinct.
 - **Phase 4, contribution pipeline:**
   - Complete issue forms and a pull request template.
   - A bot comment summarizing each data change.
   - A reviewer guide, and an upstream-to-OHM guide.
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,
-  and UI translations.
+  and more UI translations (the translation system itself exists from Phase 1).
 
 ## Showcase: East Asia 1931–1945
 

@@ -22,6 +22,7 @@ shows up as a reviewable change in a pull request.
 | `shapes/` | Geometry only, as GeoJSON, one shape per file |
 | `assertions/` | Sourced statements saying who controlled, was sovereign over, or claimed which shape, when |
 | `events/` | Dated, located events with summaries and sources |
+| `figures/` | Sourced statistics (population, area, …) for polities, each with a date and a basis |
 | `coverage/` | Where each source claims to be complete (used to tell "no state" from "no data") |
 | `imports/<dataset>/` | Third-party data converted to our format, under its own license |
 

@@ -108,14 +108,27 @@ Third-party datasets enter only through the import process, which keeps them in 
 - When good sources disagree, the resolution is to represent the disagreement, not to choose a
   winner.
 
-## Should my correction go to OpenHistoricalMap instead?
+## Drawing or fixing a border line
 
-Some of our geometry comes from [OpenHistoricalMap](https://www.openhistoricalmap.org) (OHM), a
-public-domain historical map that anyone can edit.
+Border lines are drawn in [OpenHistoricalMap](https://www.openhistoricalmap.org) (OHM), a
+public-domain historical map that anyone can edit with a free account. We then import them. OHM's
+editor shares each line between the neighbors on both sides, so one fix corrects both, and the
+whole OHM community benefits.
 
-- **Plain geometry and dates**, traced from public-domain or permissively licensed sources, often
-  belong upstream in OHM, so the whole community benefits. We then re-import them.
-- **Interpretation** belongs here: claims, recognition, contested status, comparisons between
-  sources, events, and summaries.
+- **New or corrected lines, and their dates:** edit them in OHM, citing your source there. Then
+  open an issue here with a link to your OHM change, so we can re-import it. OHM accepts only
+  public-domain or permissively licensed sources, which matches our rules.
+- **Everything else belongs here:** claims, recognition, contested status, comparisons between
+  sources, events, summaries, and figures.
+- **We never hand-edit imported geometry** in this repository, because the next import would
+  undo the fix.
 
-A step-by-step guide for this will be added in Phase 4. If you're unsure, open an issue and ask.
+A step-by-step guide will be added in Phase 4. If you're unsure, open an issue and ask.
+
+## Figures (statistics)
+
+Numbers such as population or area follow the same rules as borders: a source, a date, and
+honest precision (give a range, `low`–`high`, when the source does). Also say what territory the
+number counts: the polity's own territory at the time, or a modern country's borders. Many
+historical statistics are organized by today's countries, and those can't be attached to a
+historical state as if they described its territory.
