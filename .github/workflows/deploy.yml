@@ -1,5 +1,5 @@
 # Builds the site on every pull request (as a check that nothing is broken) and publishes it to
-# GitHub Pages on every push to main: https://chronoatlas-project.github.io/chronoatlas/
+# GitHub Pages on every push to main: https://chronoatlas-org.github.io/chronoatlas/
 
 name: Build and deploy
 

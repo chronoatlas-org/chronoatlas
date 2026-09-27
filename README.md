@@ -4,7 +4,7 @@ An open-source interactive map of how the world's borders changed through histor
 timeline or press play, and every state, empire, colony, city-state, and everything in between
 redraws for that date. Every border and event on the map is traced to a named source.
 
-**Live site: https://chronoatlas-project.github.io/chronoatlas/**
+**Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
 > **Status: early development (Phase 1).** So far there is a physical base map (land, lakes, and
 > rivers). The timeline and historical borders are next. See the
@@ -46,7 +46,7 @@ The full rules are in [CONTRIBUTING.md](CONTRIBUTING.md#ground-rules).
 You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) (the LTS version).
 
 ```bash
-git clone https://github.com/chronoatlas-project/chronoatlas.git
+git clone https://github.com/chronoatlas-org/chronoatlas.git
 cd chronoatlas
 npm install
 npm run dev

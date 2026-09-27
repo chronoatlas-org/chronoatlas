@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   // Relative paths, so the built site works at any address, including the GitHub Pages
-  // project URL (https://chronoatlas-project.github.io/chronoatlas/).
+  // project URL (https://chronoatlas-org.github.io/chronoatlas/).
   base: './',
   // MapLibre starts its worker as a JavaScript module, so bundle workers in module format.
   worker: { format: 'es' },
