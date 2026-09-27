@@ -165,7 +165,7 @@ the last download), `npm run import:natural-earth`.
   loads:
   - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
   - `tiles.json`: version, bounds, zooms, and the change index;
-  - `atlas.json`: polity names and sources, for popups.
+  - `atlas.json`: polity names and sources, for the territory panel.
 
   The build deletes `public/data/` first. Keep tile properties minimal, because they're repeated
   in every tile.
@@ -202,18 +202,29 @@ the last download), `npm run import:natural-earth`.
   which is allowed in tests only.
 - MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
   `src/main.ts`. Without that, the worker fails to load in both dev and production.
-- In dev mode the map and timeline are exposed as `window.map` and `window.timeline`, for
-  debugging in the browser console.
+- In dev mode the map, timeline, historical layers, and panel are exposed as `window.map`,
+  `window.timeline`, `window.historical`, and `window.panel`, for debugging in the browser
+  console.
 - **Translation:** never hard-code on-screen text. Add a key to `src/i18n/en.ts` and use
   `t('key', { placeholder })`. Static HTML text uses `data-i18n="key"`, which `src/main.ts`
   fills in. Date wording goes through `src/dates/format.ts`, which uses the catalogs.
 - **Timeline:** `src/timeline/scale.ts` holds the pure logic (tick units, calendar-aligned
   ticks, keyboard steps) and is tested. `src/timeline/timeline.ts` holds the DOM, canvas, and
   input. The design is in docs/architecture.md#the-timeline.
-- **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `lang`), and
+- **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `sel`, `lang`), and
   `src/main.ts` syncs it. Anything the timeline calls during its constructor, such as `onChange`,
   must not touch `let`/`const` variables declared after `new Timeline(...)`. A real bug came from
-  this.
+  this. That's why the panel and historical layers are created before the timeline.
+- **Territory panel (`src/panel/`):**
+  - `model.ts` works out what the panel says, as plain data. It's pure and tested, so put logic
+    here.
+  - `panel.tsx` only lays that out with Preact, plus a small `TerritoryPanel` class that
+    `main.ts` drives (`select`, `setDay`, `refresh`).
+  - JSX works through `jsx`/`jsxImportSource` in `tsconfig.json`, which Vite also reads; there's
+    no Preact build plugin. Never use `dangerouslySetInnerHTML`: names come from outside data.
+  - Until Phase 2 step 2, the panel's records come from `HistoricalLayers.bordersOf()`, which
+    only sees tiles the map has downloaded. So the panel must never say "no record"; it says the
+    border isn't in the loaded area.
 - **Testing in the Claude app's browser pane:**
   - A hidden pane has zero size, and pauses both animation frames and resize notifications. Set
     a viewport with `resize_window` before judging layout or drawing, and reset it afterwards.

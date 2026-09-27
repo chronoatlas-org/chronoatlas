@@ -405,7 +405,13 @@ quotations, and links are in
 
 Small steps, each committed, explained, and viewable locally and online, as in Phase 1.
 
-1. **Panel foundation.** Add Preact and confirm that type-checking and the build work. Move the popup's content into a side panel. Add `sel` to the URL, with tests.
+1. ✅ **Panel foundation.** Add Preact and confirm that type-checking and the build work. Move the popup's content into a side panel. Add `sel` to the URL, with tests.
+   *Done 2026-09-27.* TypeScript 7 and Vite 8 handle Preact's JSX with two `tsconfig.json`
+   settings and no extra build plugin. The whole step added 4.7 KB compressed to the site's
+   JavaScript (288.2 → 292.9 KB), including Preact's license notice, which its files don't
+   carry and which we add in `src/panel/panel.tsx` so it's kept in the published code. Until step 2, the panel reads its facts from the border
+   tiles the map has downloaded, so it says when a territory's border isn't in the loaded
+   area rather than claiming there's no record.
 2. **Per-polity data.** The build writes `public/data/polities/<id>.json`. The panel shows names
    over time, all relations kept separate, dates with precision, and sources with locators.
 3. **Phone bottom sheet** and panel accessibility (focus, Escape, Back button).

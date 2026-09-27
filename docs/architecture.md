@@ -21,7 +21,7 @@ Approved 2026-09-26. This is a living document: update it when a decision change
 | Language | TypeScript | JavaScript with types, which catches mistakes before the code runs |
 | Build tool | Vite | Fast local development server; bundles the site for GitHub Pages |
 | Map | MapLibre GL JS | Open source, no API keys, and GPU-rendered. Supports dashed lines, fill patterns (hatching), and blurred lines (soft edges). OpenHistoricalMap uses it too. |
-| UI panels | Plain TypeScript at first; framework decided in Phase 2 | Fewer moving parts while the core is built |
+| UI panels | Preact (decided 2026-09-27), for the panels only; the map and timeline are plain TypeScript | About 4 KB compressed. Components describe what a panel shows for the current data, and Preact keeps the page in step, so there's no hand-written "find this element and update it" code. Its JSX is the same as React's, which most contributors know. See [phase-2-plan.md](phase-2-plan.md#should-we-adopt-a-ui-framework-for-the-panels). |
 | Tests | Vitest | Works directly with Vite and TypeScript |
 | Hosting | GitHub Pages, deployed by GitHub Actions | Free; deploys automatically on merge |
 
@@ -264,13 +264,14 @@ The view lives in the URL hash, so any moment can be shared as a link. Hash URLs
 hosting with no server. The logic is in `src/url/state.ts` and is covered by tests.
 
 ```
-#d=1937-07-01&m=4.5/38.2/118.9&lang=ja
+#d=1937-07-01&m=4.5/38.2/118.9&sel=testland&lang=ja
 ```
 
 | Key | Meaning |
 |---|---|
 | `d` | Selected day, as EDTF (`-0220-03-15` for BCE). A month or year opens on its first day. Clamped to the timeline's range. |
 | `m` | Map view: zoom/latitude/longitude (OpenStreetMap order). 2 decimals for zoom, 4 for coordinates. |
+| `sel` | Selected territory, as a polity ID (permanent, so old links keep working). Opens the territory panel. Anything not shaped like an ID is ignored, and an ID that isn't in our data closes the panel and drops out of the address. |
 | `lang` | Interface language. Only present if chosen explicitly; otherwise the browser's languages are used. |
 
 - **Updating the address:** it updates 300 ms after the view stops changing, with
@@ -281,8 +282,8 @@ hosting with no server. The logic is in `src/url/state.ts` and is covered by tes
 - **Damaged links:** anything unreadable is ignored and the rest still applies.
 - **Copy link:** the button opens the system share sheet on touch devices, and copies to the
   clipboard elsewhere. If copying isn't allowed, it says the link is in the address bar.
-- **Selected territory (`sel`)** is planned with Phase 2's territory panel. A popup needs a click
-  point, but a side panel doesn't.
+- **Selecting a territory** (by clicking it, or closing the panel) also uses `replaceState` for
+  now. Phase 2, step 3 makes selection a Back-button step, so Back closes the panel.
 
 ## Names
 
@@ -358,7 +359,9 @@ and 100 GB/month bandwidth as a soft limit):
      request), issue forms for border corrections, missing events, and bugs
      (`.github/ISSUE_TEMPLATE/`), and a pull request template with the review checklist.
 - **Phase 2, panel, events and transitions (the showcase begins).** The detailed plan is
-  [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27):
+  [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27), which lists the steps. Done so far:
+  step 1 ✅ (panel foundation: Preact, a side panel replacing the popup, and `sel` in the
+  address). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

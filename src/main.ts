@@ -14,6 +14,7 @@ import { civilToJdn, formatDay } from './dates/index.ts';
 import { getLocale, pickLocale, setLocale, t } from './i18n/index.ts';
 import type { MessageKey } from './i18n/index.ts';
 import { HistoricalLayers } from './map/historical';
+import { TerritoryPanel } from './panel/panel';
 import { Timeline } from './timeline/timeline';
 import { formatHash, parseHash } from './url/state.ts';
 
@@ -63,14 +64,33 @@ const map = new maplibregl.Map({
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
 map.addControl(new maplibregl.ScaleControl(), 'bottom-left');
 
-// --- Timeline -----------------------------------------------------------------------------------
+// --- Borders and the territory panel ------------------------------------------------------------
 
 const initialDay = clampDay(fromUrl.day ?? DEFAULT_VIEW.day);
-const historical = new HistoricalLayers(map, initialDay);
 
-// Declared before the timeline, because the timeline reports its first day (which schedules a
-// URL update) while it's being created.
+// Declared before the timeline, because the timeline reports its first day (which updates the
+// panel and schedules a URL update) while it's being created.
 let urlTimer: number | undefined;
+/** The selected polity's ID, or null. */
+let selected: string | null = null;
+
+const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, {
+  bordersOf: (polity) => historical.bordersOf(polity),
+  onClose: () => select(null),
+});
+const historical = new HistoricalLayers(map, initialDay, {
+  onSelect: (polity) => select(polity),
+  onDataChange: () => panel.refresh(),
+});
+
+function select(polity: string | null): void {
+  selected = polity;
+  historical.setSelected(polity);
+  panel.select(polity);
+  scheduleUrlUpdate();
+}
+
+// --- Timeline -----------------------------------------------------------------------------------
 
 const timeline = new Timeline({
   container: document.getElementById('timeline')!,
@@ -80,9 +100,13 @@ const timeline = new Timeline({
   initialSpanDays: 20 * 365.2425,
   onChange: (day) => {
     historical.setDay(day);
+    panel.setDay(day);
     scheduleUrlUpdate();
   },
 });
+
+// Open the territory from the link, if any. (An ID that isn't in our data closes the panel again.)
+if (fromUrl.sel) select(fromUrl.sel);
 
 // --- Shareable URL ------------------------------------------------------------------------------
 
@@ -91,7 +115,14 @@ const timeline = new Timeline({
 function writeUrlNow(): void {
   window.clearTimeout(urlTimer);
   const center = map.getCenter();
-  const hash = formatHash({ day: timeline.day, zoom: map.getZoom(), lat: center.lat, lng: center.lng, lang: fromUrl.lang });
+  const hash = formatHash({
+    day: timeline.day,
+    zoom: map.getZoom(),
+    lat: center.lat,
+    lng: center.lng,
+    sel: selected ?? undefined,
+    lang: fromUrl.lang,
+  });
   if (hash !== location.hash) history.replaceState(null, '', hash);
   document.title = t('app.title', { date: formatDay(timeline.day) });
 }
@@ -110,6 +141,7 @@ window.addEventListener('hashchange', () => {
   if (next.zoom !== undefined && next.lat !== undefined && next.lng !== undefined) {
     map.jumpTo({ center: [next.lng, next.lat], zoom: next.zoom });
   }
+  if ((next.sel ?? null) !== selected) select(next.sel ?? null);
 });
 
 // "Copy link": on phones, open the system share sheet; elsewhere, copy to the clipboard.
@@ -141,10 +173,12 @@ declare global {
     map?: maplibregl.Map;
     timeline?: Timeline;
     historical?: HistoricalLayers;
+    panel?: TerritoryPanel;
   }
 }
 if (import.meta.env.DEV) {
   window.map = map;
   window.timeline = timeline;
   window.historical = historical;
+  window.panel = panel;
 }

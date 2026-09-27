@@ -1,5 +1,6 @@
 // The historical layers: borders for the selected day, a "no data" hatch on land where we have
-// nothing, and a popup describing whatever you click.
+// nothing, and an outline around the selected territory. Clicking a territory selects it; the
+// territory panel (src/panel/) shows the details.
 //
 // Borders come as vector tiles (built by scripts/build-data.ts), so only the tiles in view are
 // downloaded. The selected day lives in MapLibre's global state (`['global-state', 'day']`),
@@ -7,21 +8,11 @@
 // day" from the change index, because between change days the map looks identical.
 
 import * as maplibregl from 'maplibre-gl';
-import type { ExpressionSpecification, FilterSpecification } from '@maplibre/maplibre-gl-style-spec';
-import { formatDate, parseEdtfDate } from '../dates/index.ts';
-import { getLocale, t } from '../i18n/index.ts';
-import type { MessageKey } from '../i18n/index.ts';
+import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { segmentOf } from './changes.ts';
-import { pickNames } from './names.ts';
-import type { AtlasName } from './names.ts';
 
 /** Fill colors, indexed by the `color` the build assigns so that neighbours differ. */
 const PALETTE = ['#e9c9a5', '#b9d3a8', '#d7bfe0', '#f2b8a8', '#e6db9a', '#a8d0c8', '#d9b3c2', '#c8c29a'];
-
-interface Atlas {
-  polities: Record<string, { wikidata?: string; names: AtlasName[] }>;
-  sources: Record<string, { title: string; url?: string; attribution?: string }>;
-}
 
 /** public/data/tiles.json, written by the build. */
 interface TileIndex {
@@ -33,11 +24,36 @@ interface TileIndex {
   changes: number[];
 }
 
+/** The properties of one border in the tiles (see buildBorders in scripts/build-data.ts). */
+export interface BorderRecord {
+  /** The assertion's ID. */
+  id: string;
+  polity: string;
+  relation: string;
+  /** EDTF, as in the data. `end` is the first day it no longer applied, or ongoing/unknown. */
+  start: string;
+  end: string;
+  /** Day numbers: may have started from s0, had certainly started by s1, ended on e0. */
+  s0: number;
+  s1: number;
+  e0: number;
+  source: string;
+  locator: string;
+}
+
+export interface HistoricalOptions {
+  /** Called with a polity ID when someone clicks a territory. */
+  onSelect: (polity: string) => void;
+  /** Called when newly downloaded tiles may have changed what `bordersOf` returns. */
+  onDataChange: () => void;
+}
+
 const DAY: ExpressionSpecification = ['global-state', 'day'];
 /** A border is shown from its earliest possible start until the day it ended. */
-const ACTIVE: FilterSpecification = ['all', ['<=', ['get', 's0'], DAY], ['<', DAY, ['get', 'e0']]];
+const ACTIVE: ExpressionSpecification = ['all', ['<=', ['get', 's0'], DAY], ['<', DAY, ['get', 'e0']]];
 
-function dataUrl(file: string): string {
+/** The address of a file the build wrote to public/data/. */
+export function dataUrl(file: string): string {
   return new URL(`data/${file}`, document.baseURI).href;
 }
 
@@ -61,20 +77,19 @@ function hatchPattern(): ImageData {
 
 export class HistoricalLayers {
   private readonly map: maplibregl.Map;
+  private readonly options: HistoricalOptions;
   private day: number;
+  private selected = '';
   private ready = false;
-  private atlas: Atlas | null = null;
+  private sourceLayer = '';
   private changes: number[] = [];
   /** The stretch between change days currently shown on the map (see src/map/changes.ts). */
   private shownSegment = -1;
 
-  constructor(map: maplibregl.Map, initialDay: number) {
+  constructor(map: maplibregl.Map, initialDay: number, options: HistoricalOptions) {
     this.map = map;
     this.day = initialDay;
-    fetch(dataUrl('atlas.json'))
-      .then((r) => r.json())
-      .then((atlas: Atlas) => (this.atlas = atlas))
-      .catch((error) => console.error('Could not load atlas.json', error));
+    this.options = options;
     const mapLoaded = map.loaded() ? Promise.resolve() : new Promise((resolve) => map.once('load', resolve));
     Promise.all([fetch(dataUrl('tiles.json')).then((r) => r.json() as Promise<TileIndex>), mapLoaded])
       .then(([index]) => this.addLayers(index))
@@ -85,6 +100,23 @@ export class HistoricalLayers {
   setDay(day: number): void {
     this.day = day;
     this.showDay();
+  }
+
+  /** Outlines the selected polity's borders, or removes the outline (null). */
+  setSelected(polity: string | null): void {
+    this.selected = polity ?? '';
+    if (this.ready) this.map.setGlobalStateProperty('selected', this.selected);
+  }
+
+  /**
+   * The border records for a polity in the tiles downloaded so far, for every date (the panel
+   * picks the ones for the selected day). A border that crosses tiles appears once per tile.
+   */
+  bordersOf(polity: string): BorderRecord[] {
+    if (!this.ready) return [];
+    return this.map
+      .querySourceFeatures('borders', { sourceLayer: this.sourceLayer, filter: ['==', ['get', 'polity'], polity] })
+      .map((feature) => feature.properties as BorderRecord);
   }
 
   /** Updates the map, but only when the day has crossed into a different change segment. */
@@ -99,6 +131,7 @@ export class HistoricalLayers {
   private addLayers(index: TileIndex): void {
     const map = this.map;
     this.changes = index.changes;
+    this.sourceLayer = index.layer;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });
 
     // Hatch all land; borders drawn on top cover it wherever we have data.
@@ -119,7 +152,9 @@ export class HistoricalLayers {
         '<a href="https://www.openhistoricalmap.org/copyright">Borders: OpenHistoricalMap</a>',
     });
     this.ready = true;
-    this.showDay(); // sets the day before the layers that read it are added
+    // Set the global state before adding the layers that read it.
+    this.showDay();
+    this.setSelected(this.selected || null);
     map.addLayer(
       {
         id: 'borders-fill',
@@ -147,52 +182,26 @@ export class HistoricalLayers {
         'line-width': ['interpolate', ['linear'], ['zoom'], 2, 0.5, 6, 1.2, 10, 2],
       },
     });
+    // The selected territory: a thick dark outline (a change of width, not only of color).
+    map.addLayer({
+      id: 'borders-selected',
+      type: 'line',
+      source: 'borders',
+      'source-layer': index.layer,
+      filter: ['all', ACTIVE, ['==', ['get', 'polity'], ['global-state', 'selected']]],
+      paint: {
+        'line-color': '#1f2328',
+        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4.5],
+      },
+    });
 
-    map.on('click', 'borders-fill', (event) => this.showPopup(event));
+    map.on('click', 'borders-fill', (event) => {
+      const polity = event.features?.[0]?.properties.polity;
+      if (polity) this.options.onSelect(String(polity));
+    });
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));
-  }
-
-  private showPopup(event: maplibregl.MapLayerMouseEvent): void {
-    const feature = event.features?.[0];
-    if (!feature) return;
-    const p = feature.properties as Record<string, string | number>;
-    const content = document.createElement('div');
-    content.className = 'border-popup';
-    // Everything below is set with textContent, never innerHTML: names come from outside data.
-    const add = (tag: string, text: string, className?: string) => {
-      const el = document.createElement(tag);
-      el.textContent = text;
-      if (className) el.className = className;
-      content.append(el);
-      return el;
-    };
-
-    const names = pickNames(this.atlas?.polities[String(p.polity)]?.names ?? [], this.day, getLocale());
-    add('h2', names?.primary ?? String(p.polity));
-    if (names?.local) add('p', names.local, 'border-popup-local');
-
-    add('p', t(`relation.${p.relation}` as MessageKey), 'border-popup-relation');
-    const end = String(p.end);
-    const endText = end === 'ongoing' ? t('date.ongoing') : end === 'unknown' ? t('date.unknown') : formatDate(parseEdtfDate(end));
-    add('p', t('popup.period', { start: formatDate(parseEdtfDate(String(p.start))), end: endText }));
-    if (p.relation === 'administers') add('p', t('popup.administersNote'), 'border-popup-note');
-
-    const source = this.atlas?.sources[String(p.source)];
-    const sourceLine = add('p', '', 'border-popup-source');
-    const relationId = /relation (\d+)/.exec(String(p.locator))?.[1];
-    if (p.source === 'openhistoricalmap' && relationId) {
-      sourceLine.append(`${t('popup.sourceLabel')} `);
-      const link = document.createElement('a');
-      link.href = `https://www.openhistoricalmap.org/relation/${relationId}`;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.textContent = `${source?.title ?? String(p.source)}, ${String(p.locator)}`;
-      sourceLine.append(link);
-    } else {
-      sourceLine.textContent = `${t('popup.sourceLabel')} ${source?.title ?? String(p.source)}, ${String(p.locator)}`;
-    }
-
-    new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(event.lngLat).setDOMContent(content).addTo(this.map);
+    // "idle" fires once the map has finished downloading tiles and drawing.
+    map.on('idle', () => this.options.onDataChange());
   }
 }

@@ -10,6 +10,10 @@
     "noEmit": true,
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
+    // The panels are written as Preact components in .tsx files. "react-jsx" is the name of
+    // the modern JSX mode; jsxImportSource points it at Preact instead of React.
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     // Scripts in scripts/ run directly in Node, which strips types but can't compile TS-only
     // features like enums. These two settings keep the code compatible with that.
     "erasableSyntaxOnly": true,

@@ -24,6 +24,13 @@ describe('formatHash / parseHash', () => {
     expect(parseHash(formatHash(view))).toEqual(view);
   });
 
+  it('round-trips a selected territory, placed before the language', () => {
+    const view = { day: civilToJdn(1901, 5, 12), zoom: 4.5, lat: 10, lng: 20, sel: 'testland-north', lang: 'ja' };
+    const hash = formatHash(view);
+    expect(hash).toBe('#d=1901-05-12&m=4.5/10/20&sel=testland-north&lang=ja');
+    expect(parseHash(hash)).toEqual(view);
+  });
+
   it('rounds coordinates to about 11 m and drops trailing zeros', () => {
     expect(formatHash({ day: civilToJdn(2000, 1, 1), zoom: 3.14159, lat: 35.123456, lng: -0.00004 })).toBe(
       '#d=2000-01-01&m=3.14/35.1235/0',
@@ -43,6 +50,13 @@ describe('parseHash with incomplete or damaged links', () => {
     expect(parseHash('#m=4/38')).toEqual({});
     expect(parseHash('#lang=<script>')).toEqual({});
     expect(parseHash('')).toEqual({});
+  });
+
+  it('only accepts selections shaped like our IDs', () => {
+    expect(parseHash('#sel=testland').sel).toBe('testland');
+    for (const bad of ['Testland', 'test_land', '-testland', 'testland-', 'a--b', '%3Cscript%3E', 'x'.repeat(101)]) {
+      expect(parseHash(`#sel=${bad}`).sel, bad).toBeUndefined();
+    }
   });
 
   it('wraps longitudes into -180…180', () => {

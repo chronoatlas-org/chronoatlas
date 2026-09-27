@@ -6,7 +6,7 @@
 //                          tiles from two different builds.
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
-//   public/data/atlas.json polity names (with their dates) and source details, for popups
+//   public/data/atlas.json polity names (with their dates) and source details, for the panel
 //
 // Run with: npm run build-data (it also runs automatically before `npm run dev` and the build).
 // It validates the data first and refuses to build from invalid data.
@@ -104,7 +104,7 @@ export function buildBorders(ds: Dataset) {
   });
   const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e0 })));
 
-  // Only what the map and popup use goes into the tiles, to keep them small.
+  // Only what the map and the territory panel use goes into the tiles, to keep them small.
   const collection: GeoJSON.FeatureCollection = {
     type: 'FeatureCollection',
     features: items.map(({ assertion: a, shape, s0, s1, e0, endUnknown }) => ({

@@ -21,10 +21,21 @@ export const en = {
   'relation.occupies': 'Occupied',
   'relation.sovereign': 'Sovereign (de jure)',
   'relation.claims': 'Claimed',
-  'popup.period': '{start} – {end}',
-  'popup.administersNote':
+
+  'panel.close': 'Close territory details',
+  'panel.began': 'Began',
+  'panel.ended': 'Ended',
+  'panel.endOngoing': 'Not ended',
+  'panel.endUnknown': 'Unknown',
+  'panel.precision.month': '{date} (month only)',
+  'panel.precision.year': '{date} (year only)',
+  'panel.uncertainStart':
+    'The source gives this start only as {date}, so the map shows the border lighter until that period is over.',
+  'panel.administersNote':
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
-  'popup.sourceLabel': 'Source:',
+  'panel.sourceLabel': 'Source:',
+  'panel.noneInView':
+    'No border for {name} on this date in the part of the map loaded so far. Move the map or change the date to find it.',
 
   'timeline.label': 'Timeline',
   'timeline.help':

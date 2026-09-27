@@ -1,8 +1,9 @@
 // Reading and writing the part of the URL after "#", which records the view so it can be shared:
 //
-//   #d=1937-07-01&m=4.5/38.2/118.9&lang=en
+//   #d=1937-07-01&m=4.5/38.2/118.9&sel=testland&lang=en
 //     d     the selected day, as an EDTF date (BCE years are negative: d=-0220-03-15)
 //     m     the map view: zoom/latitude/longitude (the same order OpenStreetMap uses)
+//     sel   the selected territory, as a polity ID (IDs are permanent, so old links keep working)
 //     lang  the interface language, only present if someone chose it explicitly
 //
 // Everything is optional and checked: a damaged or hand-edited link falls back to defaults for
@@ -15,10 +16,14 @@ export interface ViewState {
   zoom?: number;
   lat?: number;
   lng?: number;
+  /** The selected polity's ID. */
+  sel?: string;
   lang?: string;
 }
 
 const LANG_PATTERN = /^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/;
+/** The same rule as IDs in our data files (schemas/common.schema.json). */
+const ID_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 /** Reads a hash such as "#d=1937-07-01&m=4.5/38.2/118.9". Unreadable parts are left out. */
 export function parseHash(hash: string): ViewState {
@@ -45,6 +50,10 @@ export function parseHash(hash: string): ViewState {
     }
   }
 
+  // Only the form is checked here. An ID that isn't in our data is dropped once the data loads.
+  const sel = params.get('sel');
+  if (sel && sel.length <= 100 && ID_PATTERN.test(sel)) state.sel = sel;
+
   const lang = params.get('lang');
   if (lang && LANG_PATTERN.test(lang)) state.lang = lang;
 
@@ -65,8 +74,9 @@ function short(value: number, decimals: number): string {
 }
 
 /** Builds the hash for a view. Zoom keeps 2 decimals, coordinates 4 (about 11 m). */
-export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & { lang?: string }): string {
+export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & Pick<ViewState, 'sel' | 'lang'>): string {
   let hash = `#d=${formatDayForUrl(state.day)}&m=${short(state.zoom, 2)}/${short(state.lat, 4)}/${short(state.lng, 4)}`;
+  if (state.sel) hash += `&sel=${state.sel}`;
   if (state.lang) hash += `&lang=${state.lang}`;
   return hash;
 }

@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@maplibre/maplibre-gl-style-spec": "26.4.4",
-    "maplibre-gl": "^6.11.2"
+    "maplibre-gl": "^6.11.2",
+    "preact": "^10.29.8"
   },
   "devDependencies": {
     "@mapbox/vector-tile": "3.0.0",

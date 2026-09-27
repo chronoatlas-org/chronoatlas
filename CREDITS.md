@@ -42,6 +42,7 @@ notices are kept in the bundle):
 |---|---|---|---|
 | [MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js) | 6.11.2 | BSD-3-Clause | Draws the map |
 | [@maplibre/maplibre-gl-style-spec](https://github.com/maplibre/maplibre-style-spec) | 26.4.4 | ISC | Map style definitions (part of MapLibre) |
+| [Preact](https://preactjs.com/) | 10.29.8 | MIT | Draws the territory panel |
 
 **Development tools only** (used to build and check the site; not shipped to visitors):
 
