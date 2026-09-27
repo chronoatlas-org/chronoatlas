@@ -166,6 +166,7 @@ the last download), `npm run import:natural-earth`.
   - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
   - `tiles.json`: version, bounds, zooms, and the change index;
   - `sources.json`: every source's title and address;
+  - `events.json`: every event's day range, importance, and title, for the timeline's markers;
   - `polities/<id>.json`: one polity's names and every record that mentions it, for the
     territory panel. A visitor downloads only the ones they open, which is what lets this scale
     worldwide.
@@ -214,7 +215,10 @@ the last download), `npm run import:natural-earth`.
   fills in. Date wording goes through `src/dates/format.ts`, which uses the catalogs.
 - **Timeline:** `src/timeline/scale.ts` holds the pure logic (tick units, calendar-aligned
   ticks, keyboard steps) and is tested. `src/timeline/timeline.ts` holds the DOM, canvas, and
-  input. The design is in docs/architecture.md#the-timeline.
+  input. The design is in docs/architecture.md#the-timeline. Event markers' logic (which show
+  at a zoom, next/previous, click hit-testing) is in `src/timeline/events.ts`.
+  - To see markers before real events exist, inject made-up ones from the dev console
+    (`timeline.setEvents([...])`). Never add fake events to `data/`.
 - **URL state:** `src/url/state.ts` parses and formats the hash (`d`, `m`, `sel`, `lang`), and
   `src/main.ts` syncs it. Anything the timeline calls during its constructor, such as `onChange`,
   must not touch `let`/`const` variables declared after `new Timeline(...)`. A real bug came from

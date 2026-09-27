@@ -6,6 +6,7 @@
   --timeline-label-major: #1f2328;
   --timeline-playhead: #cf222e;
   --timeline-outside: #eaeef2;
+  --timeline-event: #0550ae;
 
   /* env(safe-area-inset-*) keeps the controls clear of the iPhone home indicator and notches. */
   padding: 6px max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))

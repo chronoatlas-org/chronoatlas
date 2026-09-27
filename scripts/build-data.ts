@@ -7,6 +7,7 @@
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
 //   public/data/sources.json         each source's title and address
+//   public/data/events.json          every event's dates, importance, and title, for the timeline
 //   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
 //                          the territory panel (a visitor downloads only the ones they open)
 //
@@ -25,6 +26,8 @@ import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
 import type { Assertion, PolityName, ShapeFeature } from './lib/types.ts';
 import type { PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
+import type { TimelineEvent } from '../src/timeline/events.ts';
 
 const OUT_DIR = join(ROOT, 'public', 'data');
 const TILE_LAYER = 'borders';
@@ -149,6 +152,20 @@ export function changeDays(collection: GeoJSON.FeatureCollection): number[] {
   return [...days].sort((a, b) => a - b);
 }
 
+/**
+ * public/data/events.json: every event's day range, importance, and title, sorted by start, for
+ * the timeline's markers. (Summaries and sources stay out of it; the panel will load them.)
+ */
+export function buildEvents(ds: Dataset): { events: TimelineEvent[] } {
+  const events = ds.events
+    .map(({ value: e }): TimelineEvent => {
+      const { s0, s1, inexact } = eventDays(e.date);
+      return { id: e.id, title: e.title, s0, s1, importance: e.importance ?? DEFAULT_IMPORTANCE, ...(inexact ? { inexact } : {}) };
+    })
+    .sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
+  return { events };
+}
+
 /** public/data/sources.json: each source's title and address, shared by all polity files. */
 export function buildSources(ds: Dataset): SourcesFile {
   const sources = Object.fromEntries(
@@ -256,6 +273,7 @@ function main(): void {
     JSON.stringify({ version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes }),
   );
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
+  writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
   for (const file of buildPolityFiles(ds)) {
@@ -266,7 +284,7 @@ function main(): void {
   console.log(
     `Built public/data: ${collection.features.length} border features in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}), ${changes.length} change days, ` +
-      `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB).`,
+      `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB), ${ds.events.length} events.`,
   );
 }
 

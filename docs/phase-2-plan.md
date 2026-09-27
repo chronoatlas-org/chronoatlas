@@ -448,8 +448,16 @@ Small steps, each committed, explained, and viewable locally and online, as in P
    - `scripts/issue-forms.test.ts` fails if the form loses any field the button fills in.
    - Not yet checked on github.com itself: whether GitHub fills the fields in. That needs a
      signed-in visit, which the maintainer can do by pressing the button.
-5. **Events pipeline.** The build writes the events and their effects. Timeline markers by
+5. ✅ **Events pipeline.** The build writes the events and their effects. Timeline markers by
    importance and zoom, and keyboard access. Tested with synthetic "Testland" events only.
+   *Done 2026-09-27.*
+   - The build writes `public/data/events.json` (dates, importance, title), which is empty
+     until the first sourced event is added.
+   - The timeline marks events as described in
+     [architecture: the timeline](architecture.md#the-timeline). Clicking a marker or pressing
+     `[`/`]` jumps to it, and screen readers hear event titles with the date.
+   - Checked in the browser with made-up events injected from the console only; none went into
+     the data. Effects are for step 6, where selecting an event highlights them.
 6. **Event panel, map pulse (reduced-motion aware), and effect highlighting.**
 7. **"The world around this date"**: nearby events and border changes from the change index.
 8. **CShapes import**: script, license, manifest, crosswalk, polity records inside import

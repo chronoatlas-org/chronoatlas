@@ -69,7 +69,7 @@ export const en = {
 
   'timeline.label': 'Timeline',
   'timeline.help':
-    'Drag the timeline to move through time. Scroll or pinch to zoom. Arrow keys step, Page Up and Page Down take bigger steps, + and − zoom, and Space plays or pauses.',
+    'Drag the timeline to move through time. Scroll or pinch to zoom. Arrow keys step, Page Up and Page Down take bigger steps, + and − zoom, [ and ] jump to the previous or next event, and Space plays or pauses.',
   'timeline.play': 'Play',
   'timeline.pause': 'Pause',
   'timeline.zoomIn': 'Zoom in on the timeline',

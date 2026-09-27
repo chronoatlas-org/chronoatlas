@@ -237,7 +237,18 @@ numbers as absolute speeds.
 - **Input:**
   - Drag to move through time, click to jump, and scroll or pinch to zoom.
   - The track is an ARIA slider. Arrow keys step one tick unit, Page Up and Page Down take 10
-    units, Home and End jump to the ends, `+` and `−` zoom, and Space plays or pauses.
+    units, Home and End jump to the ends, `+` and `−` zoom, `[` and `]` jump between
+    events, and Space plays or pauses.
+- **Events** are marked along the top edge of the bar, from `public/data/events.json`.
+  - **Shapes:** a diamond for a single day, and a bar when the date range is wide enough to
+    see. Filled when the date is exact; hollow when it's approximate, uncertain, or has an open
+    end. The difference is in the shape, not only the color.
+  - **Importance** (1–5) decides the zoom level from which an event shows: only 5s beyond 1,000
+    years across, and everything below 5 years.
+  - **Picking an event:** click a marker, or press `[` and `]` to jump to the previous or next
+    event. Either calls `onEventSelect(id)`.
+  - **Screen readers** hear the events on the selected day after the date.
+  - The logic is in `src/timeline/events.ts`, with tests.
 - **Playback:** 1 day to 100 years per second. Grabbing the track pauses playback.
 - **Output:** the component calls `onChange(day)` only when the selected day actually changes.
   The map will listen to it to filter historical layers. Drawing happens at most once per
@@ -366,7 +377,8 @@ and 100 GB/month bandwidth as a soft limit):
   address) and step 2 ✅ (one data file per polity; the panel shows names over time and every
   record, keeping control, sovereignty, and claims apart), and step 3 ✅ (phone bottom sheet;
   focus, Escape, and Back; every overlapping record reachable), and step 4 ✅ (the "Report a
-  problem with this border" button). The goals:
+  problem with this border" button), and step 5 ✅ (the events pipeline and timeline markers,
+  tested with made-up events; there are no real events yet). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

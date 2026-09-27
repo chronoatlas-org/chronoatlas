@@ -3,11 +3,17 @@
 // selected date under the playhead), click to jump, or press play.
 //
 // It's drawn on a <canvas> for smooth redrawing while dragging. For keyboard and screen-reader
-// users, the track is an ARIA slider whose value text is the selected date.
+// users, the track is an ARIA slider whose value text is the selected date (plus any event on it).
+//
+// Events are marked along the top edge: a diamond for a single day, a bar for a longer range,
+// hollow when the date is approximate or uncertain. Only the more important events show when
+// zoomed out (see events.ts). [ and ] jump to the previous and next event.
 
 import { formatDay, formatYear, monthShortName } from '../dates/index.ts';
 import { t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
+import { adjacentEvent, eventNear, eventsInView, eventsOnDay, minImportance } from './events.ts';
+import type { TimelineEvent } from './events.ts';
 import { chooseTickUnit, clamp, generateTicks, stepDay } from './scale.ts';
 import type { Tick, TickUnit } from './scale.ts';
 import './timeline.css';
@@ -23,6 +29,8 @@ export interface TimelineOptions {
   initialSpanDays: number;
   /** Called whenever the selected day changes. */
   onChange?: (jdn: number) => void;
+  /** Called when someone picks an event marker (by clicking it, or with [ and ]). */
+  onEventSelect?: (id: string) => void;
 }
 
 const DAYS_PER_YEAR = 365.2425;
@@ -43,6 +51,9 @@ const MIN_TICK_SPACING_PX = 84; // room for a label like "10000 BCE"
 const MAX_PIXELS_PER_DAY = 100;
 const ZOOM_FACTOR = 2; // per click of the zoom buttons or press of +/-
 const CLICK_TOLERANCE_PX = 4; // a press that moves less than this is a click, not a drag
+const EVENT_BAND_PX = 20; // event markers sit in the top this-many pixels of the bar
+const EVENT_HIT_PX = 8; // a click this close to a marker picks it
+const EVENT_Y = 11; // vertical centre of the markers
 
 const ICONS = {
   play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
@@ -82,7 +93,9 @@ export class Timeline {
   private readonly context: CanvasRenderingContext2D;
   private readonly dateLabel: HTMLOutputElement;
   private readonly playButton: HTMLButtonElement;
-  private colors = { tick: '', label: '', labelMajor: '', playhead: '', outside: '', font: '' };
+  private colors = { tick: '', label: '', labelMajor: '', playhead: '', outside: '', event: '', font: '' };
+  /** Sorted by start day (see events.ts). */
+  private events: TimelineEvent[] = [];
 
   constructor(options: TimelineOptions) {
     this.options = options;
@@ -161,6 +174,24 @@ export class Timeline {
     this.setPosition(jdn + 0.5);
   }
 
+  /** The events to mark on the bar, sorted by start day. */
+  setEvents(events: TimelineEvent[]): void {
+    this.events = events;
+    this.lastReportedDay = Number.NaN; // refresh the screen-reader text, which names events
+    this.reportChange();
+    this.requestDraw();
+  }
+
+  /** The least important events shown at the current zoom. */
+  private minImportance(): number {
+    return minImportance(Math.max(1, this.width) * this.daysPerPixel);
+  }
+
+  private selectEvent(event: TimelineEvent): void {
+    this.setDay(event.s0);
+    this.options.onEventSelect?.(event.id);
+  }
+
   // --- State changes ---------------------------------------------------------------------
 
   private setPosition(position: number): void {
@@ -187,7 +218,9 @@ export class Timeline {
     const text = formatDay(day);
     this.dateLabel.textContent = text;
     this.track.setAttribute('aria-valuenow', String(day));
-    this.track.setAttribute('aria-valuetext', text);
+    // Screen readers hear the date, then up to three events on that day.
+    const titles = eventsOnDay(this.events, day, this.minImportance()).slice(0, 3).map((e) => e.title);
+    this.track.setAttribute('aria-valuetext', [text, ...titles].join(' · '));
     this.options.onChange?.(day);
   }
 
@@ -262,6 +295,7 @@ export class Timeline {
       labelMajor: style.getPropertyValue('--timeline-label-major'),
       playhead: style.getPropertyValue('--timeline-playhead'),
       outside: style.getPropertyValue('--timeline-outside'),
+      event: style.getPropertyValue('--timeline-event'),
       font: style.fontFamily,
     };
     this.requestDraw();
@@ -315,6 +349,30 @@ export class Timeline {
       ctx.fillStyle = major ? colors.labelMajor : colors.label;
       ctx.font = `${major ? 600 : 400} 12px ${colors.font}`;
       ctx.fillText(text, tx, baseline - 18);
+    }
+
+    // Events along the top: a bar if the range is wide enough to see, otherwise a diamond.
+    // Filled when the date is exact, hollow when it's approximate or uncertain (not color alone).
+    ctx.fillStyle = colors.event;
+    ctx.strokeStyle = colors.event;
+    ctx.lineWidth = 1.5;
+    for (const event of eventsInView(this.events, left, right, this.minImportance())) {
+      const x0 = x(event.s0);
+      const x1 = x(event.s1 + 1);
+      ctx.beginPath();
+      if (x1 - x0 >= 8) {
+        ctx.rect(x0 + 0.75, EVENT_Y - 3, x1 - x0 - 1.5, 6);
+      } else {
+        const cx = (x0 + x1) / 2;
+        const r = event.importance >= 4 ? 5.5 : 4.5;
+        ctx.moveTo(cx, EVENT_Y - r);
+        ctx.lineTo(cx + r, EVENT_Y);
+        ctx.lineTo(cx, EVENT_Y + r);
+        ctx.lineTo(cx - r, EVENT_Y);
+        ctx.closePath();
+      }
+      if (event.inexact) ctx.stroke();
+      else ctx.fill();
     }
 
     // The playhead: a line down the middle with a small marker at the top.
@@ -386,9 +444,16 @@ export class Timeline {
       this.pointers.delete(event.pointerId);
       if (this.pointers.size < 2) this.pinchDistance = 0;
       if (wasClick) {
-        // Jump to the clicked date.
-        const offset = event.clientX - track.getBoundingClientRect().left - this.width / 2;
-        this.setPosition(this.position + offset * this.daysPerPixel);
+        const rect = track.getBoundingClientRect();
+        const offset = event.clientX - rect.left - this.width / 2;
+        const clickedDay = this.position + offset * this.daysPerPixel;
+        // A click on an event marker picks the event; anywhere else jumps to the clicked date.
+        const picked =
+          event.clientY - rect.top <= EVENT_BAND_PX
+            ? eventNear(this.events, Math.floor(clickedDay), EVENT_HIT_PX * this.daysPerPixel, this.minImportance())
+            : undefined;
+        if (picked) this.selectEvent(picked);
+        else this.setPosition(clickedDay);
       }
     };
     track.addEventListener('pointerup', release);
@@ -445,6 +510,12 @@ export class Timeline {
         case ' ':
           this.togglePlay();
           break;
+        case '[':
+        case ']': {
+          const next = adjacentEvent(this.events, this.day, event.key === ']' ? 1 : -1, this.minImportance());
+          if (next) this.selectEvent(next);
+          break;
+        }
         default:
           return; // let other keys through
       }

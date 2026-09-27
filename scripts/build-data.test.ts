@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
+import { assignColors, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -48,6 +48,25 @@ describe('buildPolityFiles', () => {
   it('includes the names of the other polities its records mention, and only those', () => {
     expect(Object.keys(files.get('testland')!.related!)).toEqual(['otherland']);
     expect(files.get('quietland')!.related).toBeUndefined();
+  });
+});
+
+describe('buildEvents', () => {
+  it('lists events by start, with day ranges, a default importance, and inexact dates marked', () => {
+    // Made-up events (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const event = (id: string, date: string, importance?: number) => ({
+      file: id,
+      value: { id, title: `Test event ${id}`, date, summary: 'A made-up event.', sources: cite, ...(importance ? { importance } : {}) },
+    });
+    const { events } = buildEvents({
+      sources: [], polities: [], assertions: [], figures: [], coverage: [], shapes: [], imports: [], problems: [],
+      events: [event('later', '1902-03~', 5), event('earlier', '1901-05-12/1901-05-20')],
+    });
+    expect(events).toEqual([
+      { id: 'earlier', title: 'Test event earlier', s0: civilToJdn(1901, 5, 12), s1: civilToJdn(1901, 5, 20), importance: 3 },
+      { id: 'later', title: 'Test event later', s0: civilToJdn(1902, 3, 1), s1: civilToJdn(1902, 3, 31), importance: 5, inexact: true },
+    ]);
   });
 });
 

@@ -15,6 +15,7 @@ import { getLocale, pickLocale, setLocale, t } from './i18n/index.ts';
 import type { MessageKey } from './i18n/index.ts';
 import { HistoricalLayers } from './map/historical';
 import { TerritoryPanel } from './panel/panel';
+import type { TimelineEvent } from './timeline/events.ts';
 import { Timeline } from './timeline/timeline';
 import { formatHash, parseHash } from './url/state.ts';
 
@@ -120,6 +121,12 @@ const timeline = new Timeline({
     scheduleUrlUpdate();
   },
 });
+
+// Event markers on the timeline. (Events need citable sources, so there may be none yet.)
+fetch(new URL('data/events.json', document.baseURI))
+  .then((r) => r.json() as Promise<{ events: TimelineEvent[] }>)
+  .then(({ events }) => timeline.setEvents(events))
+  .catch((error) => console.error('Could not load events.json', error));
 
 // Open the territory from the link, if any. (An ID that isn't in our data closes the panel again.)
 if (fromUrl.sel) select(fromUrl.sel, 'link');
