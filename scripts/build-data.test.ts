@@ -1,6 +1,21 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, dayRanges, FAR_FUTURE } from './build-data.ts';
+import { assignColors, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
+
+describe('changeDays', () => {
+  it('lists every start, certain-start, and end day once, in order, without "no end yet"', () => {
+    const feature = (s0: number, s1: number, e0: number): GeoJSON.Feature => ({
+      type: 'Feature',
+      properties: { s0, s1, e0 },
+      geometry: { type: 'Point', coordinates: [0, 0] },
+    });
+    const days = changeDays({
+      type: 'FeatureCollection',
+      features: [feature(10, 20, 50), feature(20, 20, FAR_FUTURE), feature(5, 5, 50)],
+    });
+    expect(days).toEqual([5, 10, 20, 50]);
+  });
+});
 
 describe('dayRanges', () => {
   it('turns start and end into day-number ranges', () => {

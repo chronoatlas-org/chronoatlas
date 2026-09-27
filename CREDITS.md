@@ -53,6 +53,10 @@ notices are kept in the bundle):
 | [yaml](https://eemeli.org/yaml/) | 2.9.1 | ISC |
 | [Ajv](https://ajv.js.org/) (JSON Schema validator) | 8.20.0 | MIT |
 | [polygon-clipping](https://github.com/mfogel/polygon-clipping) | 0.15.7 | MIT |
+| [geojson-vt](https://github.com/mapbox/geojson-vt) | 5.0.2 | ISC |
+| [vt-pbf](https://github.com/mapbox/vt-pbf) | 3.1.3 | MIT |
+| [pbf](https://github.com/mapbox/pbf) (used in tests to read tiles back) | 5.1.2 | BSD-3-Clause |
+| [@mapbox/vector-tile](https://github.com/mapbox/vector-tile-js) (used in tests to read tiles back) | 3.0.0 | BSD-3-Clause |
 | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped) | 26.6.3 | MIT |
 
 Exact versions of every package, including indirect ones, are recorded in `package-lock.json`.

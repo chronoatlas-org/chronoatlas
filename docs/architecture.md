@@ -178,21 +178,50 @@ panel will show "administered by Manchukuo (per OHM) / sovereign: China (per CSh
 
 ## Rendering and smooth scrubbing
 
-- **Change index:** the build lists every day on which anything changes. While you drag the
-  timeline, the map only updates when the date crosses one of those days (found by binary
-  search), so most frames cost nothing.
-- **How the map filters by date:** the current date is stored in MapLibre's "global state" and
-  used in style expressions. Per MapLibre's docs, using it in a *filter* makes tiles reload,
-  while using it in a *paint* property (for example, opacity) doesn't. Phase 1 benchmarks both.
-  If neither is smooth enough, the fallback is GPU filtering with deck.gl.
-- **Data delivery:** the showcase data is small enough to load as GeoJSON, once per source. The
-  worldwide data (Cliopatria is 158 MB) will be cut into map tiles grouped by era.
-  - We'll start with a plain folder of tiles made by Node.js tools, which run on Windows, Mac,
-    and Linux.
-  - We avoid PMTiles for now, because there are open reports of it loading unreliably on GitHub
-    Pages.
+- **Vector tiles:** the build (`scripts/build-data.ts`, using `scripts/lib/tiles.ts`) cuts the
+  borders into Mapbox Vector Tiles for zooms 0–7 and writes them as a plain folder,
+  `public/data/tiles/<version>/{z}/{x}/{y}.pbf`.
+  - The browser downloads only the tiles in view, simplified to that zoom.
+  - `<version>` is a fingerprint of the data, so a browser never mixes cached tiles from two
+    builds.
+  - Empty tiles inside the data's bounds are still written, so no request ever returns 404.
+  - Zoom 7 is the highest level with its own tiles (about 40 m per tile unit, finer than the
+    data); MapLibre enlarges those tiles when you zoom in further.
+  - The tools are pure Node.js (geojson-vt, vt-pbf), so the build runs on Windows, Mac, and
+    Linux. We avoid PMTiles for now, because there are open reports of it loading unreliably
+    on GitHub Pages.
+- **Change index:** the build lists every day on which some border starts, stops being
+  uncertain, or ends (`changes` in `public/data/tiles.json`). The map only updates when the date
+  crosses one of those days (`src/map/changes.ts`, a binary search); between them it looks
+  identical.
+- **How the map filters by date:** the current date is stored in MapLibre's global state and
+  used in the layers' `filter`. We measured the alternative of hiding inactive borders with a
+  paint expression (opacity), and it was 4–5 times slower, so we use filters.
+- **Growing worldwide:** the tiles can also be split by era when Cliopatria (158 MB) arrives.
 - **Limits:** 100 MB per file in the repo; about 1 GB for the repo and for the published site;
   100 GB/month bandwidth (soft limit).
+
+### Measured (Phase 1, step 7, 2026-09-27)
+
+Measured in the Claude app's embedded browser at 1280×720, with frames driven at about 60 per
+second, over the 1937 East Asia view (162 borders). Compare the columns rather than reading the
+numbers as absolute speeds.
+
+| | Before (one GeoJSON file) | After (vector tiles + change index) |
+|---|---|---|
+| Data downloaded for the opening view | 9.2 MB (3.1 MB compressed) | about 0.3 MB (6 tiles at zoom 3) |
+| Time until borders appear (local server) | 1,317 ms | 63 ms |
+| One map update after a date change (median) | 35 ms | 34 ms (about two frames) |
+| Map updates while dragging day by day through 1937 | 365 | 3 (99.2% of steps skipped) |
+| Map updates playing 1900–1950 at 1 month per second | 36,718 frames | 147 (99.6% skipped) |
+
+**How it was measured, to repeat later:**
+1. In a dev build, create a MapLibre map over that view.
+2. Add the borders as a source with the date `filter`.
+3. For 51 dates (1 July of each year 1900–1950), call `setGlobalStateProperty('day', …)` and
+   time how long until the map's `idle` event.
+4. Count skipped updates by running `segmentOf` over the change list for each step of a drag
+   or of playback.
 
 ## The timeline
 
@@ -323,7 +352,8 @@ and 100 GB/month bandwidth as a soft limit):
   6. ✅ Shareable URLs (date, map view, language) with a Copy link button, and the phone layout:
      compact header, short speed labels, 44 px touch targets, safe areas for notches, and a
      landscape layout.
-  7. A scrubbing benchmark.
+  7. ✅ Performance: vector tiles instead of one large file, and the change index, with before
+     and after measurements (see [Measured](#measured-phase-1-step-7-2026-09-27)).
   8. Data checks in CI; basic issue forms.
 - **Phase 2, panel, events and transitions (the showcase begins):**
   - Territory panel with a "Figures" section (each number with its source and date) and a

@@ -1,14 +1,17 @@
 // The historical layers: borders for the selected day, a "no data" hatch on land where we have
 // nothing, and a popup describing whatever you click.
 //
-// The selected day lives in MapLibre's global state (`['global-state', 'day']`), so moving the
-// timeline only updates one value; the filters and colors below read it.
+// Borders come as vector tiles (built by scripts/build-data.ts), so only the tiles in view are
+// downloaded. The selected day lives in MapLibre's global state (`['global-state', 'day']`),
+// which the filters and colors below read. It is only updated when the day crosses a "change
+// day" from the change index, because between change days the map looks identical.
 
 import * as maplibregl from 'maplibre-gl';
 import type { ExpressionSpecification, FilterSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { formatDate, parseEdtfDate } from '../dates/index.ts';
 import { getLocale, t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
+import { segmentOf } from './changes.ts';
 import { pickNames } from './names.ts';
 import type { AtlasName } from './names.ts';
 
@@ -18,6 +21,16 @@ const PALETTE = ['#e9c9a5', '#b9d3a8', '#d7bfe0', '#f2b8a8', '#e6db9a', '#a8d0c8
 interface Atlas {
   polities: Record<string, { wikidata?: string; names: AtlasName[] }>;
   sources: Record<string, { title: string; url?: string; attribution?: string }>;
+}
+
+/** public/data/tiles.json, written by the build. */
+interface TileIndex {
+  version: string;
+  layer: string;
+  minzoom: number;
+  maxzoom: number;
+  bounds: [number, number, number, number];
+  changes: number[];
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -51,6 +64,9 @@ export class HistoricalLayers {
   private day: number;
   private ready = false;
   private atlas: Atlas | null = null;
+  private changes: number[] = [];
+  /** The stretch between change days currently shown on the map (see src/map/changes.ts). */
+  private shownSegment = -1;
 
   constructor(map: maplibregl.Map, initialDay: number) {
     this.map = map;
@@ -59,19 +75,30 @@ export class HistoricalLayers {
       .then((r) => r.json())
       .then((atlas: Atlas) => (this.atlas = atlas))
       .catch((error) => console.error('Could not load atlas.json', error));
-    if (map.loaded()) this.addLayers();
-    else map.once('load', () => this.addLayers());
+    const mapLoaded = map.loaded() ? Promise.resolve() : new Promise((resolve) => map.once('load', resolve));
+    Promise.all([fetch(dataUrl('tiles.json')).then((r) => r.json() as Promise<TileIndex>), mapLoaded])
+      .then(([index]) => this.addLayers(index))
+      .catch((error) => console.error('Could not load the border tiles', error));
   }
 
   /** Called by the timeline whenever the selected day changes. */
   setDay(day: number): void {
     this.day = day;
-    if (this.ready) this.map.setGlobalStateProperty('day', day);
+    this.showDay();
   }
 
-  private addLayers(): void {
+  /** Updates the map, but only when the day has crossed into a different change segment. */
+  private showDay(): void {
+    if (!this.ready) return;
+    const segment = segmentOf(this.changes, this.day);
+    if (segment === this.shownSegment) return;
+    this.shownSegment = segment;
+    this.map.setGlobalStateProperty('day', this.day);
+  }
+
+  private addLayers(index: TileIndex): void {
     const map = this.map;
-    map.setGlobalStateProperty('day', this.day);
+    this.changes = index.changes;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });
 
     // Hatch all land; borders drawn on top cover it wherever we have data.
@@ -80,17 +107,25 @@ export class HistoricalLayers {
       'coastline',
     );
 
+    // The tile URL template is appended after resolving the base, because URL() would escape
+    // the {z}/{x}/{y} placeholders MapLibre needs.
     map.addSource('borders', {
-      type: 'geojson',
-      data: dataUrl('borders.geojson'),
+      type: 'vector',
+      tiles: [`${dataUrl(`tiles/${index.version}/`)}{z}/{x}/{y}.pbf`],
+      minzoom: index.minzoom,
+      maxzoom: index.maxzoom,
+      bounds: index.bounds,
       attribution:
         '<a href="https://www.openhistoricalmap.org/copyright">Borders: OpenHistoricalMap</a>',
     });
+    this.ready = true;
+    this.showDay(); // sets the day before the layers that read it are added
     map.addLayer(
       {
         id: 'borders-fill',
         type: 'fill',
         source: 'borders',
+        'source-layer': index.layer,
         filter: ACTIVE,
         paint: {
           // ['match', color, 0, PALETTE[0], 1, PALETTE[1], ..., fallback]; built in code, so cast.
@@ -105,6 +140,7 @@ export class HistoricalLayers {
       id: 'borders-line',
       type: 'line',
       source: 'borders',
+      'source-layer': index.layer,
       filter: ACTIVE,
       paint: {
         'line-color': '#5b5146',
@@ -115,7 +151,6 @@ export class HistoricalLayers {
     map.on('click', 'borders-fill', (event) => this.showPopup(event));
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));
-    this.ready = true;
   }
 
   private showPopup(event: maplibregl.MapLayerMouseEvent): void {

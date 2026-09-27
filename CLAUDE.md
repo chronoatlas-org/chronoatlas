@@ -146,7 +146,18 @@ the last download), `npm run import:natural-earth`.
 
 - **Flow:** import scripts (`scripts/import-*.ts`) write `data/imports/<dataset>/`. Then
   `npm run validate` checks everything against `schemas/*.schema.json` plus references, dates,
-  and geometry. Then `npm run build-data` writes `public/data/` (gitignored), which the site loads.
+  and geometry. Then `npm run build-data` writes `public/data/` (gitignored), which the site
+  loads:
+  - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
+  - `tiles.json`: version, bounds, zooms, and the change index;
+  - `atlas.json`: polity names and sources, for popups.
+
+  The build deletes `public/data/` first. Keep tile properties minimal, because they're repeated
+  in every tile.
+- **Performance:** the map only updates when the day crosses a change day
+  (`src/map/changes.ts`). Filtering by date uses `filter` with global state, not opacity (we
+  measured opacity at 4–5 times slower). Measurements are in
+  docs/architecture.md#measured-phase-1-step-7-2026-09-27.
   The format reference for contributors is `docs/data-format.md`; keep it in sync with the
   schemas.
 - **`end` is exclusive:** it's the first day a statement no longer applied, or `ongoing`, or
