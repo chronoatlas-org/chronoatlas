@@ -62,6 +62,23 @@ labels as well. The site must work on phones.
 - When a decision belongs to the maintainer (licenses, scope, which sources to use), ask instead
   of guessing.
 
+## Privacy and safety of maintainers
+
+This project touches nationalist sensitivities, so maintainers stay pseudonymous.
+
+- The project's only public identity is the GitHub account `chronoatlas-project`. Conduct
+  reports go to `chronoatlas.conduct@gmail.com`.
+- Never put a maintainer's personal details anywhere public: not in files, commits, issues, pull
+  requests, or comments. That includes real names, personal accounts or usernames, location,
+  school, employer, or family. Write as "the maintainers".
+- Commits use the project identity (already set in this repo's local git config) with **UTC
+  timestamps**, so they don't reveal a timezone. Prefix commit commands with `TZ=UTC` in Git
+  Bash, or set `$env:TZ = 'UTC'` first in PowerShell.
+- Before pushing, check that `git log --format='%an <%ae> %ad'` shows only the project identity
+  and `+0000`.
+- The GitHub CLI also holds the maintainer's personal login. Check that `gh auth status` shows
+  `chronoatlas-project` as active before any GitHub operation on this project.
+
 ## Review checklist for data changes (for humans and for Claude)
 
 - Does every new or changed border, date, and event cite a source, with a locator such as a page,
