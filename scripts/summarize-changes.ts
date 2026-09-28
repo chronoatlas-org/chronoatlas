@@ -51,8 +51,13 @@ const SITE_URL = 'https://chronoatlas-org.github.io/chronoatlas/';
  */
 const COMMENT_MAX_LINES = [40, 20, 10, 5, 2];
 const COMMENT_LIMIT = 65_536;
-/** GitHub's limit for a check's summary page is 1 MiB; stay under it. */
-const FULL_LIMIT = 1_000_000;
+/** At most this many changed shapes get their land and movement measured (see summarize). */
+const DETAIL_LIMIT = 300;
+/**
+ * GitHub's limit for a check's summary page is 1 MiB, in bytes; some characters take several
+ * bytes, so stay well under it.
+ */
+const FULL_LIMIT = 900_000;
 
 /** Every file under a data/ folder with a hash of its contents, by path from the folder holding it ("data/…"). */
 function hashFiles(dataDir: string): FileHashes {
@@ -191,15 +196,38 @@ export function summarize(options: SummarizeOptions): { comment: string; full: s
         return [f.path, { before: read(baseDir), after: read(headDir) }];
       }),
   );
+  // Each shape is measured once, however many times the summary is rendered. Measuring land and
+  // what moved is slow (about half a second a shape), so a very large change (a whole new dataset)
+  // gets them for its first shapes only; every shape still gets its total area.
+  const remember = <K extends object, V>(measure: (shape: K) => V) => {
+    const known = new WeakMap<K, V>();
+    return (shape: K): V => {
+      if (!known.has(shape)) known.set(shape, measure(shape));
+      return known.get(shape)!;
+    };
+  };
+  let landMeasured = 0;
+  const landOf = land
+    ? remember((shape: MultiPolygon) => (landMeasured++ < DETAIL_LIMIT ? areaKm2(landPart(shape, land)) : undefined))
+    : undefined;
+  let diffsMeasured = 0;
+  const diffOf = new WeakMap<MultiPolygon, ReturnType<typeof shapeDiff> | undefined>();
+  const notes = changes.shapes.length > DETAIL_LIMIT
+    ? [`${changes.shapes.length.toLocaleString('en')} borders changed, so the land inside them and how far they moved are given for the first ${DETAIL_LIMIT} only; every border's total area is given.`]
+    : [];
   const context = {
+    notes,
     baseName: options.baseName,
     baseLabel: options.baseLabel,
     problems,
     side,
     skippedSide: !options.noSide && touched.length === 0,
-    areaKm2,
-    ...(land ? { landKm2: (shape: MultiPolygon) => areaKm2(landPart(shape, land)) } : {}),
-    shapeDiff,
+    areaKm2: remember((shape: MultiPolygon) => areaKm2(shape)),
+    ...(landOf ? { landKm2: (shape: MultiPolygon) => landOf(shape) as number } : {}),
+    shapeDiff: (before: MultiPolygon, after: MultiPolygon) => {
+      if (!diffOf.has(after)) diffOf.set(after, diffsMeasured++ < DETAIL_LIMIT ? shapeDiff(before, after) : undefined);
+      return diffOf.get(after);
+    },
     manifests,
     siteUrl: SITE_URL,
   };

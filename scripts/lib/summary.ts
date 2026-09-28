@@ -304,10 +304,12 @@ export interface SummaryContext {
   side?: SideEffects;
   /** Side effects not computed because nothing that affects them changed. */
   skippedSide?: boolean;
+  /** Notes shown under the checks, such as measurements left out of a very large change. */
+  notes?: readonly string[];
   /** Measures the land inside a shape, in km² (Natural Earth's land), when available. */
   landKm2?: (shape: MultiPolygon) => number;
   /** The area gained and lost by a changed shape, when available. */
-  shapeDiff?: (before: MultiPolygon, after: MultiPolygon) => { gained: number; lost: number; box?: [number, number, number, number] };
+  shapeDiff?: (before: MultiPolygon, after: MultiPolygon) => { gained: number; lost: number; box?: [number, number, number, number] } | undefined;
   /** Total area of a shape, in km². */
   areaKm2?: (shape: MultiPolygon) => number;
   /** Manifests of changed import folders, main's and the pull request's (by path). */
@@ -330,9 +332,14 @@ export const SUMMARY_MARKER = '<!-- chronoatlas:data-summary -->';
 
 const KIND_WORDS: Record<ChangeKind, string> = { added: 'Added', removed: 'Removed', changed: 'Changed' };
 
+// The same geometry always gives the same array, so measurements can be remembered between the
+// several renderings of one summary (see scripts/summarize-changes.ts).
+const multiPolygons = new WeakMap<object, MultiPolygon>();
 const asMultiPolygon = (geometry: ShapeFeature['geometry'] | undefined): MultiPolygon | undefined => {
   if (!geometry || !Array.isArray(geometry.coordinates)) return undefined;
-  return (geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates) as MultiPolygon;
+  if (geometry.type !== 'Polygon') return geometry.coordinates as MultiPolygon;
+  if (!multiPolygons.has(geometry)) multiPolygons.set(geometry, [geometry.coordinates] as MultiPolygon);
+  return multiPolygons.get(geometry);
 };
 
 /** Writes the summary as Markdown for a pull request comment (or the check's summary page). */
@@ -429,6 +436,7 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
       out.push('');
     }
   }
+  for (const note of context.notes ?? []) out.push(`**Note:** ${note}`, '');
 
   // What always needs the maintainers.
   const flags: string[] = [];
@@ -580,8 +588,9 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
         const same = roughly(m0.total) === roughly(m1.total) && roughly(m0.land ?? 0) === roughly(m1.land ?? 0);
         details.push(same ? `area: ${areaText(m1)}, unchanged when rounded` : `area: ${areaText(m0)} → ${areaText(m1)}`);
       }
-      if (before && after && context.shapeDiff) {
-        const { gained, lost, box } = context.shapeDiff(before, after);
+      const moved = before && after ? context.shapeDiff?.(before, after) : undefined;
+      if (moved) {
+        const { gained, lost, box } = moved;
         let where = '';
         if (box) {
           const [w, so, e, n] = box;
