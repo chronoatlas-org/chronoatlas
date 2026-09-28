@@ -396,9 +396,9 @@ and 100 GB/month bandwidth as a soft limit):
   import, in its own folder, with the crosswalk), and step 9 ✅ (the de jure view, and contested
   areas computed at build time), and step 10 ✅ (Cliopatria as a second opinion, with a reviewed
   crosswalk), and step 11 ✅ (the first Figure: each territory's land area, computed from its
-  borders and Natural Earth's coastline, with its method and sources). Step 12 is proposed
-  (seven sourced events for Manchuria 1931–33, in pull requests #1–#7, awaiting review; no map
-  locations until a gazetteer is chosen). Step 13's guide is done
+  borders and Natural Earth's coastline, with its method and sources), and step 12 ✅ (seven
+  sourced events for Manchuria 1931–33, merged 2026-09-28; no map locations until a gazetteer is
+  chosen). Step 13's guide is done
   ([tracing-guide.md](tracing-guide.md)); the first traced border is still to come, because
   people do the tracing in OpenHistoricalMap. The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
@@ -410,7 +410,9 @@ and 100 GB/month bandwidth as a soft limit):
   - First borders traced from public-domain maps (the guide is written; the tracing is next).
 - **Phase 3, contested and uncertain borders:** the full visual language, soft edges, a
   compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
-  example population), keeping "no data" visually distinct. It also includes:
+  example population), keeping "no data" visually distinct. The detailed plan is
+  [phase-3-plan.md](phase-3-plan.md) (a draft, 2026-09-28, awaiting approval). It proposes
+  putting off "no state" and coloring by a figure, for lack of data. It also includes:
   - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
     to sea to include coastal waters, often as a ring around each island. About 23% of the
     Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,

@@ -3,6 +3,11 @@
 > **Status: approved by the maintainer on 2026-09-27**, with the recommended answer to every
 > question. The decisions are recorded in [section 7](#7-decisions-2026-09-27). Drafted and
 > approved 2026-09-27.
+>
+> **Steps 1–12 are done, and step 13's guide is merged (2026-09-28).** The first traced border
+> is waiting on people tracing in OpenHistoricalMap. The [Phase 3 plan](phase-3-plan.md)
+> proposes closing Phase 2 and carrying that border and the open questions below into a
+> showcase data track.
 
 Phase 1 put borders on a map with a timeline. Phase 2 makes the map **explain itself**: clicking a
 territory opens a panel with everything we know about it and where each fact comes from, events
@@ -595,10 +600,10 @@ Small steps, each committed, explained, and viewable locally and online, as in P
       estimate nearest to the date, with its own date, never an in-between value. There are
       none yet (decision 10).
     - The panel's source line now says "Sources:" when it lists more than one.
-12. **First sourced events** for Manchuria 1931–33, once citable sources are located (see
+12. ✅ **First sourced events** for Manchuria 1931–33, once citable sources are located (see
     [section 2](#candidate-events-for-the-first-showcase-stage-manchuria-19311933)). Each is proposed as
     its own pull request, with sources for review.
-    *Proposed 2026-09-28: seven events, in pull requests #1–#7, awaiting review.*
+    *Done 2026-09-28: seven events, in pull requests #1–#7, reviewed and merged.*
     - **The events:** the Mukden incident (1931-09-18), the US non-recognition note (1932-01-07),
       the proclamation of Manchukuo (1932-03-01), the Japan–Manchukuo Protocol (1932-09-15), the
       League Assembly's report (1933-02-24), Japan's notice of withdrawal from the League
