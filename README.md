@@ -6,8 +6,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: Phase 3 in progress** ([plan](docs/phase-3-plan.md); Phase 2 is
-> [done](docs/phase-2-plan.md)). Country borders for East Asia,
+> **Status: Phase 4 in progress** ([plan](docs/phase-4-plan.md); Phases
+> [2](docs/phase-2-plan.md) and [3](docs/phase-3-plan.md) are done). Country borders for East Asia,
 > 1900–1950, imported from OpenHistoricalMap, change as you move the timeline. Everywhere else
 > shows "no data yet".
 >
@@ -132,7 +132,7 @@ public-domain maps, then imported. Everyone taking part follows our
   with progress and open questions.
 - [docs/phase-3-plan.md](docs/phase-3-plan.md): the plan for Phase 3, contested and uncertain
   borders (approved 2026-09-28), with progress.
-- [docs/phase-4-plan.md](docs/phase-4-plan.md): the draft plan for Phase 4, the contribution
-  pipeline (waiting for review).
+- [docs/phase-4-plan.md](docs/phase-4-plan.md): the plan for Phase 4, the contribution pipeline
+  (approved 2026-09-28), with progress.
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
   from a dated public-domain map so that our import picks it up.

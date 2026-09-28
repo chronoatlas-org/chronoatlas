@@ -453,7 +453,8 @@ and 100 GB/month bandwidth as a soft limit):
   on the map, with the device's own fonts), step 6 ✅ (what each source says at a clicked spot),
   step 8 ✅ (approximate lines and frontier zones, shown once data has them), and step 10 ✅
   (tidying), and step 7 ✅ (where OpenHistoricalMap and Cliopatria name different holders, with
-  the second opinion on). Step 9 (claims) waits for the first claim records. It also includes:
+  the second opinion on). Phase 3 closed on 2026-09-28; step 9 (claims) moved to the showcase data
+  track, and waits for the first claim records. It also includes:
   - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
     to sea to include coastal waters, often as a ring around each island. About 23% of the
     Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,
@@ -470,8 +471,8 @@ and 100 GB/month bandwidth as a soft limit):
     - Coastal waters stay in the data; this only changes how they're drawn.
   - **A dashed "edge of imported data" line** where an import's area ends, instead of borders
     that stop in a straight line.
-- **Phase 4, contribution pipeline** (detailed plan: [phase-4-plan.md](phase-4-plan.md), a draft
-  waiting for the maintainers' review):
+- **Phase 4, contribution pipeline** (detailed plan: [phase-4-plan.md](phase-4-plan.md), approved
+  2026-09-28; Phase 3 closed the same day, with step 9, claims, moved to the showcase data track):
   - Refine the issue forms and pull request template from experience.
   - A bot comment summarizing each data change.
   - A reviewer guide. (The guide to tracing in OHM was written early, in Phase 2 step 13.)

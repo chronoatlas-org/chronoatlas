@@ -1,7 +1,9 @@
 # Phase 3 plan: contested and uncertain borders
 
-> **Status: approved by the maintainer on 2026-09-28**, with the recommended answer to every
-> question. The decisions are recorded in [section 12](#12-decisions-2026-09-28).
+> **Status: closed on 2026-09-28.** Approved by the maintainer on 2026-09-28, with the
+> recommended answer to every question; the decisions are recorded in
+> [section 12](#12-decisions-2026-09-28). Steps 1–8 and 10 are done. Step 9 (claims) moved to the
+> showcase data track when Phase 4 was approved ([phase-4-plan.md](phase-4-plan.md)).
 
 Phase 2 made the map **explain itself in the panel**. Phase 3 makes the **map itself show how
 sure we are**, and lets a visitor compare the sources directly:
@@ -577,6 +579,7 @@ request when it's ready.
 | The first border traced in OHM (Phase 2 step 13), then re-imported | a contributor tracing in OHM | medium |
 | A gazetteer for event places (Phase 2 open question 3), then places for the seven events | the maintainer's choice. The candidates' license pages (`geonames.nga.mil`, `www.geonames.org`) are blocked from the environment this plan was written in, so either the network settings allow them, or the maintainer reads the licenses by hand. | medium |
 | OHM boundaries that overlap another polity's: administered, or claimed? (Phase 2 open question 1) | the maintainer's decision. It gates step 9. | high, if boundaries are to be re-imported as claims |
+| Step 9, the claims overlay (moved here when Phase 3 closed) | the first claim records, from the row above or a sourced claim | high |
 | Duplicate OHM boundaries for Bhutan, the British Raj, and Thailand (Phase 2 open question 2) | the maintainer's decision, or a contributor checking in OHM | low |
 | China 1937–45: areas under Japanese control, traced from dated public-domain maps (the flagship stage) | contributors tracing in OHM ([data-sources.md](data-sources.md#gap-front-lines-in-china-193745) lists a first candidate map) | medium per import |
 | The CShapes authors' reply about the R package's columns (Phase 2 decision 14) | the authors | low |
@@ -648,4 +651,9 @@ in "Waiting for the maintainers"):
 15. **The comparison stays main and second:** OpenHistoricalMap is the filled, main map (borders
     are corrected there, and its dates are the most precise), and the "Second opinion" toggle lays
     Cliopatria over it and marks where they differ.
+
+Decided with the Phase 4 plan (2026-09-28):
+
+16. **Phase 3 is closed.** Step 9 (claims) moves to the showcase data track below, and is built
+    once the first claim records exist.
 

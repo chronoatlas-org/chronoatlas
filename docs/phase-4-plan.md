@@ -1,8 +1,7 @@
 # Phase 4 plan: the contribution pipeline
 
-> **Status: draft, 2026-09-28, waiting for the maintainers' review.** No Phase 4 code is written
-> until it's approved. Every question has a recommended answer, in
-> [section 9](#9-questions-for-the-maintainers).
+> **Status: approved by the maintainers on 2026-09-28**, with the recommended answer to every
+> question. The decisions are recorded in [section 10](#10-decisions-2026-09-28).
 
 Phases 1–3 built the map. Phase 4 makes it **easy and safe for other people to improve it**, and
 for the maintainers, who aren't full-time programmers, to review what they send:
@@ -27,6 +26,7 @@ Sections:
 7. [Protecting main (repository settings)](#7-protecting-main-repository-settings)
 8. [Order of work](#8-order-of-work)
 9. [Questions for the maintainers](#9-questions-for-the-maintainers)
+10. [Decisions (2026-09-28)](#10-decisions-2026-09-28)
 
 ---
 
@@ -270,3 +270,21 @@ Each has a recommended answer. "Approve with the recommendations" answers them a
 6. **Protecting main:** require the build check, block force-pushes, add `CODEOWNERS`, and let the
    project account bypass the pull-request rule so fast-forwards keep working? *Recommended: yes.*
    You make the setting changes yourself, following the guide.
+
+## 10. Decisions (2026-09-28)
+
+The maintainers approved the plan with the recommended answer to each question.
+
+1. **Phase 3 is closed.** Step 9 (claims) moves to the showcase data track, and is built once the
+   first claim records exist.
+2. **The data-change summary** is posted as one comment on each pull request that changes
+   `data/`, updated in place. A separate workflow posts it and never runs the pull request's code.
+3. **Pictures of changed borders** are left out of Phase 4, to be revisited once there are border
+   contributions.
+4. **Re-import from GitHub:** a "Run workflow" button for OpenHistoricalMap, once the maintainers
+   allow GitHub Actions to create pull requests in the repository settings.
+5. **Forms and template:** the new `ohm_change` field, "who is speaking", the new "Suggest a
+   source or dataset" form, and the five new labels.
+6. **Protecting main:** require the build check, block force-pushes, add `CODEOWNERS`, and let the
+   project account bypass the pull-request rule so fast-forwards keep working. The maintainers
+   change the settings themselves, following the reviewer guide.

@@ -186,8 +186,20 @@ everyday work:
   record's `edge`, which the panel shows as "Border line". No real shape records any yet: every
   import sets `unknown`.
 
-**Phase 4 plan drafted (2026-09-28), not yet approved:** [docs/phase-4-plan.md](docs/phase-4-plan.md)
-(the contribution pipeline). Write no Phase 4 code until the maintainers approve it.
+**Phase 4 plan approved (2026-09-28)**, with all its recommendations; Phase 3 is closed, and its
+step 9 (claims) is on the showcase data track. The plan and its decisions are in
+[docs/phase-4-plan.md](docs/phase-4-plan.md#10-decisions-2026-09-28), with an effort setting for
+each step. The ones that affect everyday work:
+
+- **Data-change summary:** `scripts/summarize-changes.ts` compares `main`'s data with a pull
+  request's and writes Markdown. The read-only check saves it as an artifact; a separate
+  `workflow_run` workflow posts it as one comment, updated in place, and never runs the pull
+  request's code.
+- **Re-import button:** a manual workflow re-imports OpenHistoricalMap and opens a pull request
+  (it runs the checks itself, because a workflow's pull request starts no other workflows).
+  CShapes and Cliopatria stay pinned and are updated by hand.
+- **Repository settings** (branch protection, labels, the Actions pull-request setting) are the
+  maintainers' clicks; the reviewer guide `docs/reviewing.md` gives the steps.
 
 **CShapes decisions (2026-09-27)**, made while importing it:
 
