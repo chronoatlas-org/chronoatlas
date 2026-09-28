@@ -341,7 +341,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 4 ✅ | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 5 ✅ | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. *Done 2026-09-28,* with no font to import; see [progress](#progress). | high |
 | 6 ✅ | **"What each source says here"** in the panel (section 8). *Done 2026-09-28;* see [progress](#progress). | medium |
-| 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). *Proposed 2026-09-28, waiting for the maintainers;* see [below](#waiting-for-the-maintainers-2026-09-28). | high |
+| 7 ✅ | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). *Done 2026-09-28,* with the threshold approved (decision 11); see [below](#waiting-for-the-maintainers-2026-09-28). | high |
 | 8 ✅ | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 9 | **Claims overlay,** and claims in the contested computation, only once the first claim records exist (section 6). | high |
 | 10 ✅ | **Measure and tidy:** performance, the phone layout with the longer legend (folding on phones), docs. *Done 2026-09-28;* see [progress](#progress). | medium |
@@ -513,6 +513,25 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
 
 ### Waiting for the maintainers (2026-09-28)
 
+*Updated later on 2026-09-28:* the maintainers approved the recommendations (decisions 11–13), so
+step 7 is merged, and items 1 (threshold), 2, and 3 are settled. Two questions remain open:
+
+- **Kuomintang and the Republic of China.** The maintainers suggested showing both names for the
+  same nation. Checked in the data: Cliopatria keeps them apart itself. Its "Republic of China"
+  rows run without a break from 1912 to 2024 (already linked to our China), and its "Kuomintang"
+  rows run from 1917 to 1929 *alongside* them, as a separate polity in the same years. Linking
+  them as one state would merge what Cliopatria records as two governments at once, so it's put
+  to the maintainers with options rather than done. Both names already appear, each attributed,
+  in "What each source says here" and in "Sources differ".
+- **Which source is the main one.** The default map is OpenHistoricalMap and Cliopatria is the
+  second opinion (a decision of 2026-09-26). Whether the comparison should instead show both
+  sources on an equal footing is open.
+
+The overnight text follows, with one correction: item 1's crosswalk note said the Kuomintang made
+"nearly all of China" differ. That's so only for 1917–1929. After that, the differences in China
+are the areas Cliopatria gives to the Communist Party of China and to the Empire of Japan, which
+OpenHistoricalMap doesn't map separately, and the years in which one source's dates are uncertain.
+
 1. **Step 7, "sources differ" (a pull request left open for review).** It compares
    OpenHistoricalMap and Cliopatria, both of which record control, and marks where they name
    different holders. Four things need a decision:
@@ -612,3 +631,13 @@ The maintainer approved the plan with the recommended answer to each question.
    is hosted; see step 5.)*
 9. **Coloring the map by a figure** is left out of Phase 3.
 10. **The claims overlay** is built only once the first claim records exist.
+
+Decided later on 2026-09-28, after the overnight work (the maintainers approved the recommendations
+in "Waiting for the maintainers"):
+
+11. **"Sources differ" threshold:** differences are shown when at least 10 km wide on average and
+    1,000 km² in area. Step 7 is merged.
+12. **Map text:** the visitor's own fonts; no font is hosted.
+13. **Speed on a phone:** checked by the maintainers on a real phone; zooming and the timeline work
+    well, so the map text stays as built.
+

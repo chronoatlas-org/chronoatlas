@@ -289,7 +289,7 @@ numbers as absolute speeds.
 | Possibly contested (one of the two records may not apply yet, or any more) | the contested cross-hatch and edge, fainter, plus "Possibly contested" in the panel | built (Phase 3, step 2) |
 | A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
-| Sources differ (OpenHistoricalMap against Cliopatria, with the second opinion on over the default view) | teal dots with a thin teal edge, the words "Sources differ" on the map, a legend label, and a sentence in the panel | proposed (Phase 3, step 7) |
+| Sources differ (OpenHistoricalMap against Cliopatria, with the second opinion on over the default view) | teal dots with a thin teal edge, the words "Sources differ" on the map, a legend label, and a sentence in the panel | built (Phase 3, step 7) |
 | Coastal waters, as the source draws them | a faint tint, no outline, from zoom 4 | built (Phase 3, step 4) |
 | Edge of imported data | dashed gray line over land, plus a legend label (a label on the map comes with map text) | built (Phase 3, step 3) |
 | Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |
@@ -452,8 +452,8 @@ and 100 GB/month bandwidth as a soft limit):
   data), step 4 ✅ (fills that stop at the coast, a detailed coastline up close), step 5 ✅ (words
   on the map, with the device's own fonts), step 6 ✅ (what each source says at a clicked spot),
   step 8 ✅ (approximate lines and frontier zones, shown once data has them), and step 10 ✅
-  (tidying). Step 7 (sources differ) is proposed and waits for the maintainers; step 9 (claims)
-  waits for the first claim records. It also includes:
+  (tidying), and step 7 ✅ (where OpenHistoricalMap and Cliopatria name different holders, with
+  the second opinion on). Step 9 (claims) waits for the first claim records. It also includes:
   - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
     to sea to include coastal waters, often as a ring around each island. About 23% of the
     Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,

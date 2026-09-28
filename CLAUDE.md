@@ -173,7 +173,7 @@ everyday work:
   small ones until zoomed in. De jure labels for dependencies carry `unit` and `status` ("Korea /
   Colony of Japan"). Contested areas have their own `labels` ("Contested", "Possibly contested"),
   placed before names. Label days are in the change index.
-- **Sources differ (Phase 3 step 7, proposed):** `buildDiffer` runs the contested computation
+- **Sources differ (Phase 3 step 7; threshold approved 2026-09-28):** `buildDiffer` runs the contested computation
   between the default map and Cliopatria (both record control), keeping pieces at least
   `DIFFER_MIN_WIDTH_KM` (10) wide on average (`meanWidthKm`) and `DIFFER_MIN_KM2` (1,000) in
   area. Its own tile set (`differ-tiles/`, CC BY 4.0, credit Cliopatria) is shown only with the
