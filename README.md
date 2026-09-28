@@ -32,6 +32,9 @@ redraws for that date. Every border and event on the map is traced to a named so
 > - Seven sourced events for Manchuria, 1931–33, are marked on the timeline. Each opens in the
 >   panel with our summary, its sources, and who is speaking in each source.
 > - The address bar always links to the exact date, view, and selection, so you can share it.
+> - For contributors: every pull request that changes the data gets a plain-language summary of
+>   what it changes, as a comment; a border fixed in OpenHistoricalMap can be re-imported with a
+>   button on GitHub; and reviewers have a [guide](docs/reviewing.md).
 >
 > See the [roadmap](docs/architecture.md#roadmap).
 
@@ -102,7 +105,10 @@ The data format is documented in [docs/data-format.md](docs/data-format.md).
 **Publishing** is automatic. Every push to `main` runs
 [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes
 it to GitHub Pages. The same workflow builds every pull request as a check, without publishing it.
-You can follow each run in the repository's **Actions** tab.
+You can follow each run in the repository's **Actions** tab. Two more workflows help review:
+[data-summary.yml](.github/workflows/data-summary.yml) posts the data-change summary on pull
+requests, and [reimport-ohm.yml](.github/workflows/reimport-ohm.yml) is the "Re-import
+OpenHistoricalMap" button.
 
 ## Contributing
 
@@ -111,7 +117,8 @@ Because borders are politically sensitive, every change goes through a transpare
 Read [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to report a problem or propose a change, and
 what counts as a source. To draw or fix a border, see
 [docs/tracing-guide.md](docs/tracing-guide.md): borders are traced in OpenHistoricalMap from dated
-public-domain maps, then imported. Everyone taking part follows our
+public-domain maps, then imported. Reviewers: see [docs/reviewing.md](docs/reviewing.md). Everyone
+taking part follows our
 [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Licenses
@@ -135,5 +142,7 @@ public-domain maps, then imported. Everyone taking part follows our
   borders (approved 2026-09-28), with progress.
 - [docs/phase-4-plan.md](docs/phase-4-plan.md): the plan for Phase 4, the contribution pipeline
   (approved 2026-09-28), with progress.
+- [docs/reviewing.md](docs/reviewing.md): how to review a pull request, merge it without a time
+  zone stamp, and set up the repository's settings.
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
   from a dated public-domain map so that our import picks it up.

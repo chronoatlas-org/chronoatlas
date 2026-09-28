@@ -273,8 +273,8 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     links, images, HTML, or mentions (tested).
   - A small change to the data loader: it can read a second copy of `data/` from another folder,
     which is how main's copy is compared.
-- **Step 3 (2026-09-28): built; checked on a test pull request once it's on main** (a
-  `workflow_run` workflow only runs from main's copy).
+- **Step 3 (2026-09-28): done** (a `workflow_run` workflow only runs from main's copy, so it was
+  checked once on main).
   - **A change from section 3, for safety:** instead of the pull request's own check writing the
     summary and a second workflow posting it, the second workflow writes it too, with **main's**
     code. It takes only the pull request's data files (read as YAML and JSON, never run) from
@@ -294,6 +294,46 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
   - Checked here: the test merge of a real pull request fetched and summarized, and the GitHub
     calls against a stand-in server (it found the right pull request, ignored a look-alike comment
     by someone else, and updated its own).
+  - **Checked on a test pull request** (closed without merging): removing one crosswalk link
+    brought a summary comment 34 seconds after the build check, naming the removed link and the
+    new contested area it creates (129,000 km², 1902–1935). Undoing the change updated the same
+    comment to "changes nothing in `data/`".
+- **Step 4 (2026-09-28): built; waiting for the setting.** `.github/workflows/reimport-ohm.yml`
+  ("Re-import OpenHistoricalMap" in the Actions tab).
+  - It re-imports, checks the data, and, if anything changed, pushes a branch
+    (`import/openhistoricalmap-<date>-<run>`) as `github-actions[bot]` in UTC, then opens a pull
+    request with the reason given, posts the data-change summary as its first comment, and starts
+    the build check on the branch. If nothing changed, it says so and opens nothing.
+  - **How the check runs:** a pull request opened by a workflow starts no workflows, but a
+    workflow may start another by hand ("workflow_dispatch"). So it starts "Build and deploy" on
+    the new branch, which puts the `build` check on the pull request's commit. The build no longer
+    uploads a Pages package except on main.
+  - It runs only from main, and asks for three permissions: push a branch, open a pull request,
+    and start a workflow. The reason typed in reaches the commands as a variable, never pasted into
+    them.
+  - It needs the setting in [reviewing.md, section 7](reviewing.md#7-repository-settings-done-once)
+    before its first run. The tracing guide and the import's README now describe the button first.
+- **Step 5 (2026-09-28): done.**
+  - Border correction: a new optional `ohm_change` field (a link to the OpenHistoricalMap change),
+    and the stale "planned" comment fixed.
+  - Missing event: the sources field asks who is speaking in each source; the location field asks
+    how precise it is and for its source.
+  - A new form, "Suggest a source or dataset" (`suggest-source.yml`), which asks for the license
+    as the source states it.
+  - The pull request template has "How to see it", separate checklists for data and code
+    changes, and "I read the data-change summary".
+  - Existing field ids are unchanged; the form test checks the new ones. The five labels are for
+    the maintainers to create (section 7 of the reviewer guide); a form's label that doesn't exist
+    yet is simply left off.
+- **Step 6 (2026-09-28): done.** [reviewing.md](reviewing.md): reading the summary, checking a
+  source, each kind of change, sensitive changes, privacy, and merging by fast-forward (with
+  PowerShell steps). CONTRIBUTING.md links to it, with a new "After you open a pull request".
+- **Step 7 (2026-09-28): the file is done; the settings are the maintainers'.** `.github/CODEOWNERS`
+  asks for the project account's review on licenses, import folders, crosswalks, and workflows.
+  The settings, step by step, are in [reviewing.md, section 7](reviewing.md#7-repository-settings-done-once):
+  two rulesets for main (one that nobody bypasses: no deletion or force-push; one the project
+  account bypasses: pull request and `build` check), the Actions setting for the re-import
+  button, first-time-contributor approval kept, and the five labels.
 
 ## 9. Questions for the maintainers
 

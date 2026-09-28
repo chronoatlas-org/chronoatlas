@@ -473,9 +473,15 @@ and 100 GB/month bandwidth as a soft limit):
     that stop in a straight line.
 - **Phase 4, contribution pipeline** (detailed plan: [phase-4-plan.md](phase-4-plan.md), approved
   2026-09-28; Phase 3 closed the same day, with step 9, claims, moved to the showcase data track):
-  - Refine the issue forms and pull request template from experience.
-  - A bot comment summarizing each data change.
-  - A reviewer guide. (The guide to tracing in OHM was written early, in Phase 2 step 13.)
+  - Refine the issue forms and pull request template from experience. ✅ (step 5: an
+    `ohm_change` field, "who is speaking", a "Suggest a source or dataset" form)
+  - A bot comment summarizing each data change. ✅ (steps 2–3: `npm run summarize-changes`, and
+    `.github/workflows/data-summary.yml`, which runs main's code on the pull request's data files
+    only)
+  - Re-importing OpenHistoricalMap from GitHub's website. ✅ (step 4: a "Run workflow" button;
+    needs one setting)
+  - A reviewer guide. ✅ (step 6: [reviewing.md](reviewing.md), including the settings of step 7;
+    the guide to tracing in OHM was written early, in Phase 2 step 13.)
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,
   and more UI translations (the translation system itself exists from Phase 1).
 

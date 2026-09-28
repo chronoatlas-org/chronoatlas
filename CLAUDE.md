@@ -215,11 +215,22 @@ each step. The ones that affect everyday work:
     (`compareOverTime`), rounded to 3 significant figures as the site shows them.
   - `loadDataset(dir)` names files from the folder holding that copy (`data/…`) and sets `root`;
     the build reads an import's manifest from `ds.root`.
-- **Re-import button:** a manual workflow re-imports OpenHistoricalMap and opens a pull request
-  (it runs the checks itself, because a workflow's pull request starts no other workflows).
-  CShapes and Cliopatria stay pinned and are updated by hand.
-- **Repository settings** (branch protection, labels, the Actions pull-request setting) are the
-  maintainers' clicks; the reviewer guide `docs/reviewing.md` gives the steps.
+- **Re-import button:** `.github/workflows/reimport-ohm.yml` (workflow_dispatch, main only)
+  re-imports OpenHistoricalMap, commits as `github-actions[bot]` in UTC on
+  `import/openhistoricalmap-<date>-<run>`, opens a pull request, posts the summary, and starts
+  "Build and deploy" on the branch with `gh workflow run` (a workflow's pull request starts no
+  workflows, but a dispatch does). It needs "Allow GitHub Actions to create and approve pull
+  requests". CShapes and Cliopatria stay pinned and are updated by hand.
+- **Reviewer guide:** `docs/reviewing.md` (reading the summary, checking sources, each kind of
+  change, sensitive changes, privacy, merging by fast-forward, and the repository settings).
+  Keep it in step with the workflows and forms.
+- **Repository settings** (rulesets for main, labels, the Actions pull-request setting) are the
+  maintainers' clicks; `docs/reviewing.md` section 7 gives the steps. `.github/CODEOWNERS` asks
+  for the project account's review on licenses, import folders, crosswalks, and `.github/`.
+- **Merging:** finished work reaches main by fast-forward (option b), never the merge button,
+  which stamps a time zone. The reviewer guide has the PowerShell steps.
+- **Testing a workflow locally:** a `git fetch --depth=…` into this clone makes it shallow and
+  breaks later pushes; undo with `git fetch --unshallow origin`.
 
 **CShapes decisions (2026-09-27)**, made while importing it:
 
@@ -431,12 +442,14 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
 - **Issue forms** are in `.github/ISSUE_TEMPLATE/`. Their field `id`s are **stable**, because
   links pre-fill them through query parameters (`issues/new?template=border-correction.yml&territory=…`).
   Never rename or remove one; `scripts/issue-forms.test.ts` checks them.
-  - `border-correction.yml`: `territory`, `date_range`, `problem`, `sources`, `view_link`,
-    `suggested_fix`, `confirmations`.
+  - `border-correction.yml`: `territory`, `date_range`, `problem`, `sources`, `ohm_change`
+    (added 2026-09-28), `view_link`, `suggested_fix`, `confirmations`.
   - `missing-event.yml`: `event_name`, `date`, `location`, `why_it_matters`, `sources`,
     `related_territories`. (`event_name` was `title` until 2026-09-27, renamed before any link
     used it because `title` is GitHub's own parameter for the issue title.)
   - `bug.yml`: `what_happened`, `expected`, `steps`, `view_link`, `device_browser`.
+  - `suggest-source.yml` (added 2026-09-28): `source_title`, `link`, `covers`, `license`,
+    `why_useful`, `confirmations`.
   - The panel's "Report a problem with this border" link is built by `src/url/report.ts`
     (`REPORT_FORM` lists the fields it fills). Never add a `labels` parameter: without
     permission GitHub answers 404.
