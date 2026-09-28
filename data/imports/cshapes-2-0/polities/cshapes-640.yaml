@@ -1,0 +1,9 @@
+id: cshapes-640
+type: state
+names:
+  - text: Turkey (Ottoman Empire)
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 640
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 640).

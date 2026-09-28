@@ -1,0 +1,9 @@
+id: cshapes-349
+type: state
+names:
+  - text: Slovenia
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 349
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 349).

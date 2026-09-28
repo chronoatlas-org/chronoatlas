@@ -1,0 +1,9 @@
+id: cshapes-317
+type: state
+names:
+  - text: Slovakia
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 317
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 317).

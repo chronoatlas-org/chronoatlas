@@ -1,0 +1,9 @@
+id: cshapes-165
+type: state
+names:
+  - text: Uruguay
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 165
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 165).

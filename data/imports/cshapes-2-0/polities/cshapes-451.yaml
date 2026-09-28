@@ -1,0 +1,9 @@
+id: cshapes-451
+type: state
+names:
+  - text: Sierra Leone
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 451
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 451).

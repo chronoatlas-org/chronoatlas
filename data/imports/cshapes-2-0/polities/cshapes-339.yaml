@@ -1,0 +1,9 @@
+id: cshapes-339
+type: state
+names:
+  - text: Albania
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 339
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 339).

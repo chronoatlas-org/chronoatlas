@@ -1,0 +1,9 @@
+id: cshapes-90
+type: state
+names:
+  - text: Guatemala
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 90
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 90).
