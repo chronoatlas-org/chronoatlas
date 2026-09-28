@@ -125,6 +125,10 @@ longitude/latitude. Required properties: `id` and `edge_precision` (`treaty-line
 `approximate-line`, `frontier-zone`, or `unknown`). Outer rings run counter-clockwise, holes
 clockwise.
 
+The map draws `treaty-line` and `unknown` as a plain line, `approximate-line` as a softened line,
+and `frontier-zone` as a wide soft band, and the panel says which ("Border line"). Record only
+what your source shows; when it doesn't say, use `unknown`.
+
 **Most borders are drawn in OpenHistoricalMap and imported**, not added here. See
 [architecture](architecture.md#where-borders-are-drawn), and the
 [tracing guide](tracing-guide.md) for how to trace one so that our import reads it.

@@ -110,6 +110,10 @@ const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, 
 });
 let spotClicks = 0;
 const historical = new HistoricalLayers(map, initialDay, {
+  // The legend explains a softened line or a soft band only when the map has one.
+  onPrecision: (kinds) => {
+    for (const item of document.querySelectorAll<HTMLElement>('[data-precision]')) item.hidden = !kinds.includes(item.dataset.precision!);
+  },
   onSelect: (polities, spot) => {
     panel.setSpot(polities);
     select(territorySelection(polities[0]), 'click');

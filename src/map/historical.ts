@@ -45,6 +45,8 @@ interface TileIndex {
   bounds: [number, number, number, number];
   /** The sources of the default map's records. */
   sources?: string[];
+  /** The kinds of imprecise border line the default map has ('approximate-line', 'frontier-zone'). */
+  precision?: string[];
   changes: number[];
   /** Other layers' tiles: the de jure view, the contested areas, and the detailed coast. */
   extra?: Record<
@@ -63,6 +65,11 @@ export interface HistoricalOptions {
    * none should be unreachable.
    */
   onSelect: (polities: string[], spot: [number, number]) => void;
+  /**
+   * Called once the borders are on the map, with the kinds of imprecise border line they include,
+   * so the legend explains only what the map can show.
+   */
+  onPrecision?: (kinds: string[]) => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -376,17 +383,46 @@ export class HistoricalLayers {
       },
       'coastline',
     );
+    // Border lines, by how precise their source says they are (`ep`, Phase 3 decision 3): a plain
+    // line for a treaty line or unknown precision, a softened line for an approximate one, and a
+    // wide soft band for a frontier zone. Sharpness, not dots or dashes, which mean other things.
+    const lineWidth: ExpressionSpecification = ['interpolate', ['linear'], ['zoom'], 2, 0.5, 6, 1.2, 10, 2];
     map.addLayer({
       id: 'borders-line',
       type: 'line',
       source: 'borders',
       'source-layer': LINES,
-      filter: ACTIVE,
+      filter: ['all', ACTIVE, ['!', ['has', 'ep']]],
+      paint: { 'line-color': '#5b5146', 'line-width': lineWidth },
+    });
+    map.addLayer({
+      id: 'borders-line-approximate',
+      type: 'line',
+      source: 'borders',
+      'source-layer': LINES,
+      filter: ['all', ACTIVE, ['==', ['get', 'ep'], 1]],
       paint: {
         'line-color': '#5b5146',
-        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 0.5, 6, 1.2, 10, 2],
+        // Wider than a plain line and blurred nearly across its width: no crisp edge anywhere, but
+        // still a line, well short of a frontier zone's band.
+        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 3, 6, 6, 10, 8],
+        'line-blur': ['interpolate', ['linear'], ['zoom'], 2, 2.5, 6, 5, 10, 7],
       },
     });
+    map.addLayer({
+      id: 'borders-zone',
+      type: 'line',
+      source: 'borders',
+      'source-layer': LINES,
+      filter: ['all', ACTIVE, ['==', ['get', 'ep'], 2]],
+      paint: {
+        'line-color': '#5b5146',
+        'line-opacity': 0.35,
+        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 10, 6, 22, 10, 36],
+        'line-blur': ['interpolate', ['linear'], ['zoom'], 2, 8, 6, 18, 10, 30],
+      },
+    });
+    this.options.onPrecision?.(index.precision ?? []);
     // The selected territory: a thick dark outline (a change of width, not only of color).
     map.addLayer({
       id: 'borders-selected',

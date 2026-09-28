@@ -293,8 +293,8 @@ numbers as absolute speeds.
 | Coastal waters, as the source draws them | a faint tint, no outline, from zoom 4 | built (Phase 3, step 4) |
 | Edge of imported data | dashed gray line over land, plus a legend label (a label on the map comes with map text) | built (Phase 3, step 3) |
 | Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |
-| Approximate border | softened (blurred) line | planned (Phase 3, step 8) |
-| Frontier zone | a wide soft band, plus a label | planned (Phase 3, step 8) |
+| Approximate border | softened (blurred) line, plus a legend line and the panel's "Border line" | built (Phase 3, step 8); shown once a shape records it |
+| Frontier zone | a wide soft band, plus a legend line and the panel's "Border line" (a label on the map comes with map text) | built (Phase 3, step 8); shown once a shape records it |
 | Claim | a line with ticks on its inner side, plus a label | once claim records exist (Phase 3, step 9) |
 | No state (per source) | light stipple, plus a label (kept free for this) | put off until a source gives it (Phase 3, decision 5) |
 

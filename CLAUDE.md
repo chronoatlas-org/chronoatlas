@@ -166,7 +166,11 @@ everyday work:
   claims) are tested with Testland and appear on the map and legend only when the build finds
   real data. "No state" is put off, and the stipple is kept free for it.
 - **Line styles:** dots mean the second opinion and dashes are already taken, so edge precision
-  is shown by sharpness (a softened line, a soft band).
+  is shown by sharpness (a softened line, a soft band). The build puts `ep` on lines (1
+  approximate, 2 frontier zone; `EDGE_CODES`) and lists the kinds present in `tiles.json`
+  (`precision`), and the legend shows those entries only then. Polity files give each territorial
+  record's `edge`, which the panel shows as "Border line". No real shape records any yet: every
+  import sets `unknown`.
 
 **CShapes decisions (2026-09-27)**, made while importing it:
 

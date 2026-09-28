@@ -174,6 +174,12 @@ function Current({ entry }: { entry: CurrentEntry }) {
         <dd>{entry.began}</dd>
         <dt>{t('panel.ended')}</dt>
         <dd>{entry.ended}</dd>
+        {entry.border && (
+          <>
+            <dt>{t('panel.border')}</dt>
+            <dd>{entry.border}</dd>
+          </>
+        )}
       </dl>
       {entry.notes.map((note, i) => (
         <p key={i} class="panel-note">

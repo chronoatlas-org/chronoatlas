@@ -255,6 +255,30 @@ body {
   outline-offset: -2px;
 }
 
+/* Match the map's border lines (src/map/historical.ts): plain, softened, and a soft band. */
+.legend-line {
+  flex: none;
+  width: 18px;
+  height: 0;
+  border-top: 1.5px solid #5b5146;
+}
+
+.legend-line-approximate {
+  border-top-width: 3px;
+  filter: blur(1.2px);
+}
+
+.legend-line-zone {
+  height: 8px;
+  border: 0;
+  background: rgb(91 81 70 / 35%);
+  filter: blur(2.5px);
+}
+
+.legend-item[hidden] {
+  display: none;
+}
+
 /* Matches the map's dashed "edge of imported data" line (src/map/historical.ts). */
 .legend-edge {
   flex: none;

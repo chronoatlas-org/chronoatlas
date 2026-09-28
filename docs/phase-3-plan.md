@@ -342,7 +342,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
 | 6 ✅ | **"What each source says here"** in the panel (section 8). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
-| 8 | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). | medium |
+| 8 ✅ | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 9 | **Claims overlay,** and claims in the contested computation, only once the first claim records exist (section 6). | high |
 | 10 | **Measure and tidy:** performance, the phone layout with the longer legend (folding on phones), docs. | medium |
 
@@ -452,6 +452,22 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
   one-line mistake in skipping a layer. It's fixed, with a test that fails without the fix.
 - It appears only while the selected territory is one of those recorded at the clicked spot, so
   opening another territory from elsewhere doesn't show a stale spot.
+
+**Step 8, how precise a line is (done 2026-09-28):**
+
+- **On the map:** a border whose shape records `approximate-line` is drawn as a softened line,
+  and `frontier-zone` as a wide soft band. `treaty-line` and `unknown` stay plain lines. No shape
+  records either kind yet (every import sets `unknown`), so the map looks the same today. The
+  styles were checked by drawing made-up Testland lines from the browser console, never in the
+  data.
+- **In the legend:** a new line always explains the plain line ("a treaty or surveyed line, or
+  one whose source doesn't say how precise it is"). Lines for the softened line and the soft band
+  appear only when the build finds such borders (`precision` in `tiles.json`).
+- **In the panel:** each current record with a border now says how precise it is, under "Border
+  line", for example "Its source doesn't say how precise it is".
+- **For the maintainer:** OpenHistoricalMap has no tag our import reads for a border's precision,
+  so a traced border can't carry one yet. Decision 4 put per-stretch records off until real data
+  needs them; the first traced border with a precise or vague line would be that moment.
 
 ### Showcase data track (in parallel)
 

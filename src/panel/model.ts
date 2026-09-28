@@ -57,6 +57,8 @@ export interface PolityRecord {
   notes?: string;
   /** The area of the record's shape, in km² (measured on the globe). */
   km2?: number;
+  /** How precise the shape's border is: treaty-line, approximate-line, frontier-zone, or unknown. */
+  edge?: string;
   /**
    * Set on a de jure unit's record that the crosswalk links to this polity: the unit's ID, the
    * kind of link, and when the link applies (day numbers, m1 exclusive; open when missing).
@@ -204,6 +206,8 @@ export interface CurrentEntry {
   label: string;
   began: string;
   ended: string;
+  /** How precise the border is, in words (territorial records only). */
+  border?: string;
   notes: string[];
   sources: SourceLine[];
 }
@@ -453,6 +457,14 @@ export function otherPolitiesAtSpot(
     .map((id) => ({ id, name: pickNames(namesOf(id) ?? [], day, locale)?.primary ?? id }));
 }
 
+/** How precise a border is, in words. Treaty lines and unknown precision look alike on the map. */
+const EDGE_KEYS: Record<string, MessageKey> = {
+  'treaty-line': 'edge.treaty-line',
+  'approximate-line': 'edge.approximate-line',
+  'frontier-zone': 'edge.frontier-zone',
+  unknown: 'edge.unknown',
+};
+
 const SPOT_SET_KEYS: Record<SpotSet['set'], MessageKey> = {
   facto: 'spot.facto',
   jure: 'spot.jure',
@@ -543,7 +555,15 @@ export function describeTerritory(
     if (r.recognized_by?.length) notes.push(t('panel.recognizedBy', { list: listOf(r.recognized_by.map(nameOf), locale) }));
     if (r.notes) notes.push(r.notes);
     for (const c of r.sources) if (c.note) notes.push(c.note);
-    return { id: recordKey(r), label: label(r), began: describeDate(r.start), ended: describeDate(r.end), notes, sources: sourceLines(r.sources, sources) };
+    return {
+      id: recordKey(r),
+      label: label(r),
+      began: describeDate(r.start),
+      ended: describeDate(r.end),
+      ...(r.edge && EDGE_KEYS[r.edge] ? { border: t(EDGE_KEYS[r.edge]) } : {}),
+      notes,
+      sources: sourceLines(r.sources, sources),
+    };
   });
 
   // Say which kinds of statement we have no source for on this day, so silence isn't read as

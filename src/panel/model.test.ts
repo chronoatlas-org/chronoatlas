@@ -75,6 +75,14 @@ describe('describeTerritory: on this date', () => {
     expect(view(1905, 5, 12).current.map((e) => e.id)).toEqual(['c', 'b']);
   });
 
+  it('says how precise each border line is, when the record has a shape', () => {
+    const lined = { ...testland, records: [record('a', 'controls', '1901', 'ongoing', { edge: 'approximate-line' }), record('z', 'controls', '1901', 'ongoing', { edge: 'unknown' })] };
+    const [a, z] = describeTerritory(lined, sources, day(1903, 1, 1), 'en').current;
+    expect(a.border).toBe('Approximate (a softened line on the map)');
+    expect(z.border).toBe('Its source doesn’t say how precise it is');
+    expect(view(1903, 1, 1).current[0].border).toBeUndefined(); // no shape information
+  });
+
   it('says how precise each date is, and explains an uncertain start', () => {
     const during = view(1901, 6, 1).current[0];
     expect(during.began).toBe('1901 (year only)');

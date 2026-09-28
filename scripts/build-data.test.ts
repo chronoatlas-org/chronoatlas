@@ -240,6 +240,29 @@ describe('the default map', () => {
     expect(lines.features[0].geometry).toEqual({ type: 'MultiLineString', coordinates: [[[1, 1], [0, 1], [0, 0], [1, 0]]] });
   });
 
+  it('marks approximate lines and frontier zones on the lines, and lists which kinds there are', () => {
+    // Made-up shapes and records (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const shape = (id: string, edge: string) => ({
+      file: id,
+      value: { type: 'Feature' as const, properties: { id, edge_precision: edge }, geometry: { type: 'Polygon' as const, coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] } },
+    });
+    const record = (id: string) => ({ id, relation: 'administers' as const, subject: 'testland', shape: id, start: '1901', end: 'ongoing', sources: cite });
+    const edges = ['treaty-line', 'approximate-line', 'frontier-zone', 'unknown'];
+    const { lines, precision } = buildBorders({
+      sources: [], polities: [], events: [], figures: [], coverage: [], crosswalks: [], imports: [], problems: [],
+      shapes: edges.map((e) => shape(e, e)),
+      assertions: [{ file: 'data/imports/openhistoricalmap/assertions.yaml', value: edges.map(record) }],
+    });
+    expect(Object.fromEntries(lines.features.map((f) => [f.properties?.id, f.properties?.ep]))).toEqual({
+      'treaty-line': undefined,
+      'approximate-line': 1,
+      'frontier-zone': 2,
+      unknown: undefined,
+    });
+    expect(precision).toEqual(['approximate-line', 'frontier-zone']);
+  });
+
   it('adds the last possible end day only to borders whose end is uncertain', () => {
     // Made-up shapes and records (Testland), not real ones.
     const cite = [{ source: 'test-source', locator: 'p. 1' }];

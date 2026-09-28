@@ -12,6 +12,9 @@ export const en = {
   'legend.title': 'Map key',
   'legend.noData': 'No data yet',
   'legend.edge': 'Edge of imported data',
+  'legend.line': 'Solid line: a border (a treaty or surveyed line, or one whose source doesn’t say how precise it is)',
+  'legend.approximate': 'Softened line: an approximate border, per its source',
+  'legend.zone': 'Soft band: a frontier zone rather than a line, per its source',
   'legend.water': 'Faint tint (zoomed in): coastal waters, as the source draws them',
   'legend.contested': "Contested: administered by one state, legally recognized as another's (per the sources named)",
   'legend.jure':
@@ -102,6 +105,12 @@ export const en = {
   'panel.period': '{start} – {end}',
   'panel.began': 'Began',
   'panel.ended': 'Ended',
+  'panel.border': 'Border line',
+  // How precise a border is (the shape's edge_precision). The map draws the first and last alike.
+  'edge.treaty-line': 'A treaty or surveyed line',
+  'edge.approximate-line': 'Approximate (a softened line on the map)',
+  'edge.frontier-zone': 'A frontier zone, not a line (a soft band on the map)',
+  'edge.unknown': 'Its source doesn’t say how precise it is',
   'panel.endOngoing': 'Not ended',
   'panel.endUnknown': 'Unknown',
   'panel.precision.month': '{date} (month only)',

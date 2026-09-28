@@ -151,6 +151,13 @@ export interface OutlineContext {
   landPolygons?: LandIndex;
 }
 
+/**
+ * How precise a border line is, as the tiles carry it (only when it's not a plain line): 1 for an
+ * approximate line, 2 for a frontier zone. Treaty lines and unknown precision are drawn alike, as
+ * solid lines (Phase 3 decision 3), and the panel says which.
+ */
+export const EDGE_CODES: Record<string, number> = { 'approximate-line': 1, 'frontier-zone': 2 };
+
 /** From this zoom the map cuts fills at the coast and uses Natural Earth's 1:10m coastline. */
 export const COAST_MIN_ZOOM = 4;
 /** A border is cut at the coast only when coastal waters are at least this share of its area. */
@@ -285,7 +292,15 @@ function buildBorderLayer(
           type: 'Feature' as const,
           // What the line layers filter on: which record and polity, and when (no s1: lines aren't
           // drawn lighter while a start is uncertain; the fill is).
-          properties: { id: a.id, polity: a.subject, s0, e0, ...(e1 > e0 ? { e1 } : {}), ...extra(shape) },
+          properties: {
+            id: a.id,
+            polity: a.subject,
+            s0,
+            e0,
+            ...(e1 > e0 ? { e1 } : {}),
+            ...(EDGE_CODES[shape.properties.edge_precision] ? { ep: EDGE_CODES[shape.properties.edge_precision] } : {}),
+            ...extra(shape),
+          },
           geometry: { type: 'MultiLineString' as const, coordinates },
         },
       ];
@@ -297,7 +312,9 @@ function buildBorderLayer(
   );
   // The sources of this layer's records, so the panel can name them even where they have nothing.
   const sources = [...new Set(items.map(({ assertion: a }) => a.sources[0].source))].sort();
-  return { collection, lines, land, bounds: dataBounds, sources };
+  // The kinds of imprecise line this layer has, so the legend only explains what the map can show.
+  const precision = [...new Set(items.map(({ shape }) => shape.properties.edge_precision).filter((e) => EDGE_CODES[e]))].sort();
+  return { collection, lines, land, bounds: dataBounds, sources, precision };
 }
 
 const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
@@ -664,8 +681,11 @@ function nameDays(n: PolityName) {
   };
 }
 
-/** An assertion as the panel shows it: dates as written plus day numbers. */
-function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>): PolityRecord {
+/**
+ * An assertion as the panel shows it: dates as written plus day numbers, and for a territorial
+ * record, its shape's area and how precise its border is (`edges` gives each shape's).
+ */
+function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>, edges?: ReadonlyMap<string, string>): PolityRecord {
   const { s0, s1, e0, e1 } = dayRanges(a.start, a.end);
   const area = a.shape ? km2?.get(a.shape) : undefined;
   return {
@@ -683,6 +703,7 @@ function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>): Polit
     sources: a.sources,
     ...(a.notes ? { notes: a.notes } : {}),
     ...(area !== undefined ? { km2: Math.round(area) } : {}),
+    ...(a.shape && edges?.get(a.shape) ? { edge: edges.get(a.shape) } : {}),
   };
 }
 
@@ -712,6 +733,7 @@ export function buildPolityFiles(
   }
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
   const km2 = new Map([...shapes].map(([id, geometry]) => [id, areaKm2(geometry)]));
+  const edges = new Map(ds.shapes.map(({ value }) => [value.properties.id, value.properties.edge_precision]));
   const links = crosswalkLinks(ds);
 
   /** Whether two territorial records share land (at least CShapes' 10,000 km²) on the same days. */
@@ -724,7 +746,7 @@ export function buildPolityFiles(
   };
 
   return ds.polities.map(({ value: p }) => {
-    const own = (mentions.get(p.id) ?? []).map((a) => assertionRecord(a, km2));
+    const own = (mentions.get(p.id) ?? []).map((a) => assertionRecord(a, km2, edges));
 
     // Records of the de jure units the crosswalk links to this polity. A same-state link brings
     // all of the unit's records; a dependency link only those that share land with this polity's
@@ -738,7 +760,7 @@ export function buildPolityFiles(
         if (Math.max(s0, link.m0) >= Math.min(e1, link.m1)) continue;
         if (link.kind === 'dependency' && !ownTerritorial.some((o) => shareLand(o, a))) continue;
         linked.push({
-          ...assertionRecord(a, km2),
+          ...assertionRecord(a, km2, edges),
           via: link.unit,
           link: link.kind,
           ...(Number.isFinite(link.m0) ? { m0: link.m0 } : {}),
@@ -870,7 +892,7 @@ function main(): void {
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
   const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
-  const { collection, lines, land: landFills, bounds, sources } = buildBorders(ds, outlines);
+  const { collection, lines, land: landFills, bounds, sources, precision } = buildBorders(ds, outlines);
   // The land parts only matter up close, so they're left out of the tiles below COAST_MIN_ZOOM.
   const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } }, 0, sources);
   const dejure = buildDejure(ds, outlines);
@@ -903,7 +925,7 @@ function main(): void {
   );
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),
-    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, sources, changes, extra }),
+    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, sources, precision, changes, extra }),
   );
   // Which polity pairs disagree, and where, so a crosswalk mistake shows up here first.
   const pairs = new Map<string, number>();
