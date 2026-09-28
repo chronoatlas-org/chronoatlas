@@ -132,5 +132,7 @@ public-domain maps, then imported. Everyone taking part follows our
   with progress and open questions.
 - [docs/phase-3-plan.md](docs/phase-3-plan.md): the plan for Phase 3, contested and uncertain
   borders (approved 2026-09-28), with progress.
+- [docs/phase-4-plan.md](docs/phase-4-plan.md): the draft plan for Phase 4, the contribution
+  pipeline (waiting for review).
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
   from a dated public-domain map so that our import picks it up.

@@ -470,7 +470,8 @@ and 100 GB/month bandwidth as a soft limit):
     - Coastal waters stay in the data; this only changes how they're drawn.
   - **A dashed "edge of imported data" line** where an import's area ends, instead of borders
     that stop in a straight line.
-- **Phase 4, contribution pipeline:**
+- **Phase 4, contribution pipeline** (detailed plan: [phase-4-plan.md](phase-4-plan.md), a draft
+  waiting for the maintainers' review):
   - Refine the issue forms and pull request template from experience.
   - A bot comment summarizing each data change.
   - A reviewer guide. (The guide to tracing in OHM was written early, in Phase 2 step 13.)

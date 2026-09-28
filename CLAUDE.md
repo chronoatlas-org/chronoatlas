@@ -186,6 +186,9 @@ everyday work:
   record's `edge`, which the panel shows as "Border line". No real shape records any yet: every
   import sets `unknown`.
 
+**Phase 4 plan drafted (2026-09-28), not yet approved:** [docs/phase-4-plan.md](docs/phase-4-plan.md)
+(the contribution pipeline). Write no Phase 4 code until the maintainers approve it.
+
 **CShapes decisions (2026-09-27)**, made while importing it:
 
 - **Columns from the R package:** its status, owner, and "borders defined" columns come from the
