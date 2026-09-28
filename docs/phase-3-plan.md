@@ -344,7 +344,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
 | 8 ✅ | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 9 | **Claims overlay,** and claims in the contested computation, only once the first claim records exist (section 6). | high |
-| 10 | **Measure and tidy:** performance, the phone layout with the longer legend (folding on phones), docs. | medium |
+| 10 ✅ | **Measure and tidy:** performance, the phone layout with the longer legend (folding on phones), docs. *Done 2026-09-28;* see [progress](#progress). | medium |
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing, and
 updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
@@ -496,6 +496,56 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
   difference (0.775 s against 0.778 s). A trial that delayed the labels while the date moved made
   things worse, so it was dropped. **Worth re-measuring on a phone,** as in Phase 1 step 7.
 - **Size:** label points add about 0.2 MB to all tiles together.
+
+**Step 10, measure and tidy (done 2026-09-28):**
+
+- **Phone layout:** the map key folds on phones (done early, in step 4). Checked on a
+  390 × 844 screen for every step: the header stays at about 150 px with the key folded, and the
+  panel's new sections fit the bottom sheet.
+- **Speed:** measured in step 5, in an environment without a graphics card. Map updates took
+  about twice as long with text on the map; the time is spent drawing text. This needs measuring
+  again on a real phone (see below).
+- **Sizes, all tiles together on the server:** 11.6 MB before Phase 3, 23.3 MB now. What a
+  visitor downloads for the opening view went from about 0.28 to 0.43 MB (border lines); closer
+  views download more (land parts and the detailed coast, from zoom 4).
+- **The live site** was rebuilt and deployed after each step (GitHub Actions, all successful).
+- The README, the architecture roadmap, and CLAUDE.md describe what's built.
+
+### Waiting for the maintainers (2026-09-28)
+
+1. **Step 7, "sources differ" (a pull request left open for review).** It compares
+   OpenHistoricalMap and Cliopatria, both of which record control, and marks where they name
+   different holders. Four things need a decision:
+   - **The threshold:** differences are shown only when at least 10 km wide (on average) and
+     1,000 km² in area. Measured on the real data, the two sources differ in 2,568 distinct
+     pieces; 310 are at least 10 km wide, and they hold virtually all of the area. The rest are
+     slivers where borders drawn at different resolutions don't quite meet. *Recommended:
+     approve 10 km and 1,000 km².*
+   - **The crosswalk:** the Cliopatria crosswalk leaves China's factions unmatched on purpose
+     (Kuomintang, Communist Party of China, Empire of China). So where Cliopatria names the
+     Kuomintang and OpenHistoricalMap names the Republic of China, nearly all of China is marked
+     "sources differ". Whether the Kuomintang rows count as the same state as our Republic of
+     China, and for which years, is a data decision. *Recommended: decide it in a separate,
+     reviewed crosswalk change, with the evidence for each year range.*
+   - **How it's switched on (a change from the plan):** instead of a new "Compare" button with
+     any two sources, turning on "Second opinion" over the administered view shows the
+     differences. Only OpenHistoricalMap and Cliopatria make the same kind of statement (control);
+     comparing either with CShapes is comparing control with legal recognition, which the
+     contested hatch already shows. *Recommended: accept.*
+   - **Size:** its tiles add about 12 MB on the server (downloaded only with the second opinion
+     on), and the polity files grow from 1.5 to 2.9 MB (each file is downloaded when a territory
+     is opened). *Recommended: settle the crosswalk first; much of the size comes from the
+     unmatched factions.*
+2. **Map text needs no hosted font (decision 8 turned out unnecessary).** MapLibre 6 draws text
+   with the visitor's own fonts. Hosting Noto Sans is still possible, for the same look on every
+   device. *Recommended: keep the device fonts.*
+3. **Speed on a real phone:** please open the live site on a phone and drag the timeline through
+   the 1930s. If it feels slow, the map text is the first thing to look at.
+4. **A border's precision can't come from OpenHistoricalMap yet.** No tag our import reads says
+   how precise a border is, so every imported border is `unknown`. This matters once a traced
+   border comes from a map that marks lines as approximate or undefined (decision 4).
+5. **Still open from Phase 2:** open questions 1–3 (overlapping OpenHistoricalMap boundaries,
+   duplicate records, and a gazetteer for event places), and the first traced border.
 
 ### Showcase data track (in parallel)
 

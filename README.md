@@ -19,6 +19,14 @@ redraws for that date. Every border and event on the map is traced to a named so
 >   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, administered by one state
 >   and legally recognized as another's, and the panel says so in words.
 > - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
+> - The map shows how sure the sources are: a border whose start or end is known only to the
+>   month or year is drawn lighter for that stretch, and a contested area that depends on such a
+>   date is hatched more faintly ("Possibly contested").
+> - Territory names, "Contested", and the edge of the imported data are written on the map.
+>   Borders no longer run around islands out at sea, and up close the fills stop at a detailed
+>   coastline, with the source's coastal waters as a faint tint.
+> - Clicking the map shows, in the panel, what each source records at that spot on that date,
+>   side by side.
 > - The panel shows each territory's land area on the selected date, computed from its borders
 >   and a coastline, with how it was measured and its sources.
 > - Seven sourced events for Manchuria, 1931–33, are marked on the timeline. Each opens in the

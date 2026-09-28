@@ -447,7 +447,13 @@ and 100 GB/month bandwidth as a soft limit):
   example population), keeping "no data" visually distinct. The detailed plan is
   [phase-3-plan.md](phase-3-plan.md) (approved 2026-09-28). It puts off "no state" and coloring
   by a figure, for lack of data, and adds a showcase data track for the work that waits on
-  people. It also includes:
+  people. Done so far (all 2026-09-28): step 1 ✅ (the decisions), step 2 ✅ (uncertain end dates,
+  and "possibly contested"), step 3 ✅ (border lines apart from fills, the edge of the imported
+  data), step 4 ✅ (fills that stop at the coast, a detailed coastline up close), step 5 ✅ (words
+  on the map, with the device's own fonts), step 6 ✅ (what each source says at a clicked spot),
+  step 8 ✅ (approximate lines and frontier zones, shown once data has them), and step 10 ✅
+  (tidying). Step 7 (sources differ) is proposed and waits for the maintainers; step 9 (claims)
+  waits for the first claim records. It also includes:
   - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
     to sea to include coastal waters, often as a ring around each island. About 23% of the
     Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,
