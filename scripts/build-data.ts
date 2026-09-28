@@ -59,10 +59,10 @@ const OUT_DIR = join(ROOT, 'public', 'data');
 const TILE_LAYER = 'borders';
 /** Import folders whose assertions are legally recognized (de jure) borders, shown as their own view. */
 export const DE_JURE_FOLDERS = ['data/imports/cshapes-2-0/'];
-const isDejure = (file: string) => DE_JURE_FOLDERS.some((folder) => file.startsWith(folder));
+export const isDejure = (file: string) => DE_JURE_FOLDERS.some((folder) => file.startsWith(folder));
 /** Import folders shown as a "second opinion": outlines over the default map (Cliopatria). */
 export const SECOND_OPINION_FOLDERS = ['data/imports/cliopatria/'];
-const isSecondOpinion = (file: string) => SECOND_OPINION_FOLDERS.some((folder) => file.startsWith(folder));
+export const isSecondOpinion = (file: string) => SECOND_OPINION_FOLDERS.some((folder) => file.startsWith(folder));
 /** Highest zoom with its own tiles. At zoom 7 a tile unit is about 40 m, finer than the data. */
 const TILE_MAX_ZOOM = 7;
 /** Stands in for "no end yet" in day-number comparisons: a day far in the future. */
@@ -476,7 +476,7 @@ function describeArea([w, s, e, n]: Box): string {
 function importSettings(ds: Dataset): Map<string, { box: Box; fromYear?: number; toYear?: number }> {
   const settings = new Map<string, { box: Box; fromYear?: number; toYear?: number }>();
   for (const folder of ds.imports) {
-    const file = join(ROOT, folder, 'manifest.json');
+    const file = join(ds.root ?? ROOT, folder, 'manifest.json');
     if (!existsSync(file)) continue;
     const s = JSON.parse(readFileSync(file, 'utf8')).settings;
     if (s?.bbox) settings.set(folder, { box: [s.bbox.west, s.bbox.south, s.bbox.east, s.bbox.north], fromYear: s.fromYear, toYear: s.toYear });

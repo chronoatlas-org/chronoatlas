@@ -254,6 +254,26 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
 - **An editor in the browser:** borders are drawn in OpenHistoricalMap by design.
 - **Pictures of changed borders:** see question 3.
 
+### Progress
+
+- **Step 1 (2026-09-28): done.** The plan was approved with every recommendation (section 10),
+  and Phase 3 was closed.
+- **Step 2 (2026-09-28): done.** `npm run summarize-changes` writes the summary
+  (`scripts/summarize-changes.ts`, with the comparing and wording in `scripts/lib/summary.ts`).
+  - **Checked on real data**, on a scratch copy with a changed date, a moved border, a removed
+    crosswalk link, a made-up Testland event, and changed license and manifest files. Each shows
+    up in words. The removed crosswalk link shows as a new contested area (129,000 km² for
+    1902–1935), which a diff would never show.
+  - **Time:** about 2 seconds without map changes. With them, about 3 minutes, most of it
+    recomputing contested areas, "sources differ", and land areas for both copies. A re-import
+    that changes 100 borders takes under a minute more.
+  - **Size:** the comment shows at most 40 lines per section and counts the rest; the full
+    summary keeps them all for the check's summary page (step 3).
+  - **Safety:** text from the pull request is escaped, so it shows as written and can't add
+    links, images, HTML, or mentions (tested).
+  - A small change to the data loader: it can read a second copy of `data/` from another folder,
+    which is how main's copy is compared.
+
 ## 9. Questions for the maintainers
 
 Each has a recommended answer. "Approve with the recommendations" answers them all.

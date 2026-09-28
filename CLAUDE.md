@@ -195,6 +195,17 @@ each step. The ones that affect everyday work:
   request's and writes Markdown. The read-only check saves it as an artifact; a separate
   `workflow_run` workflow posts it as one comment, updated in place, and never runs the pull
   request's code.
+  - The comparing and wording are in `scripts/lib/summary.ts` (pure, tested). Dates, relations,
+    sources, and border-line words reuse the panel's (`describePeriod`, `sourceLink`, `t()`).
+  - Everything a pull request wrote goes through `plain()` (escaped, one line, length-capped) or
+    `code()`, so it can't add links, images, HTML, or mentions to a comment posted with write
+    permission. Only links we build ourselves (OpenHistoricalMap relations, FRUS documents, the
+    live map) are clickable.
+  - Contested areas, "sources differ", and land areas are recomputed for both copies only when
+    territorial records, shapes, or crosswalks changed (about 3 minutes), and compared day by day
+    (`compareOverTime`), rounded to 3 significant figures as the site shows them.
+  - `loadDataset(dir)` names files from the folder holding that copy (`data/…`) and sets `root`;
+    the build reads an import's manifest from `ds.root`.
 - **Re-import button:** a manual workflow re-imports OpenHistoricalMap and opens a pull request
   (it runs the checks itself, because a workflow's pull request starts no other workflows).
   CShapes and Cliopatria stay pinned and are updated by hand.
@@ -223,7 +234,8 @@ LTS, and the GitHub CLI are installed.
 
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
-`npm run validate`, `npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
+`npm run validate`, `npm run summarize-changes` (compares `data/` with `origin/main`; options at the
+top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
 `npm run import:cliopatria` (add `-- --offline` to reprocess the last download),
 `npm run import:natural-earth`.
 
