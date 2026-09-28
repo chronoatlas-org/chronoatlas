@@ -1,0 +1,9 @@
+id: cshapes-620
+type: state
+names:
+  - text: Libya
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 620
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 620).

@@ -1,0 +1,9 @@
+id: cshapes-235
+type: state
+names:
+  - text: Portugal
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 235
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 235).

@@ -1,0 +1,9 @@
+id: cshapes-950
+type: state
+names:
+  - text: Fiji
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 950
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 950).

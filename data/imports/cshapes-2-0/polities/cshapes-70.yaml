@@ -1,0 +1,9 @@
+id: cshapes-70
+type: state
+names:
+  - text: Mexico
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 70
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 70).

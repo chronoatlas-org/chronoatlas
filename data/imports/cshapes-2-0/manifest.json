@@ -3,7 +3,7 @@
   "source_id": "cshapes-2-0",
   "license": "CC BY-NC-SA 4.0 (non-commercial, share-alike), as stated on the dataset page. Everything in this folder is derived from CShapes and carries the same license. See LICENSE.md.",
   "page": "https://icr.ethz.ch/data/cshapes/",
-  "retrieved": "2026-09-27T22:55:59.528Z",
+  "retrieved": "2026-09-28T23:09:46.322Z",
   "downloads": [
     {
       "url": "https://icr.ethz.ch/data/cshapes/CShapes-2.0.geojson",
@@ -21,26 +21,27 @@
   ],
   "settings": {
     "bbox": {
-      "south": 10,
-      "west": 73,
-      "north": 55,
-      "east": 150
+      "south": -90,
+      "west": -180,
+      "north": 90,
+      "east": 180
     },
-    "fromYear": 1900,
-    "toYear": 1950,
+    "fromYear": 1886,
+    "toYear": 2019,
     "simplifyTolerance": 0.005,
     "coordinateDecimals": 4
   },
   "counts": {
     "rows_in_dataset": 710,
-    "imported": 68,
-    "skipped": 0,
-    "units": 20,
+    "imported": 708,
+    "skipped": 2,
+    "units": 189,
     "by_status": {
-      "independent": 47,
-      "protectorate": 3,
-      "colony": 14,
-      "occupied": 4
+      "independent": 365,
+      "colony": 219,
+      "occupied": 39,
+      "mandate": 23,
+      "protectorate": 62
     }
   },
   "decisions": {
@@ -52,7 +53,20 @@
     "borders_defined": "Units that CShapes marks as having partly undefined borders (b_def 0) get a note. Edge precision is otherwise \"unknown\": CShapes does not record it line by line.",
     "geometry": "Each ring is simplified (Douglas–Peucker, 0.005°), trimmed to the import area, and rounded to 4 decimal places. CShapes has no shared border lines, so neighbouring units are simplified separately and can show gaps or overlaps of up to about 500 m.",
     "coding_rules": "CShapes codes de jure changes only, dated to the day a treaty was signed, for example. It leaves out territorial changes under 10,000 km² (so small concessions, leased territories, and colonies such as Hong Kong, Macau, and Goa sit inside the surrounding state), unrecognized changes that were later reversed (such as Japan's occupation of Manchuria), and wartime changes reversed after the war. Where maps conflicted, it chose the one closest to present-day borders.",
-    "selection": "Rows that overlap 1900-01-01 to 1950-12-31 and have land in the import area after trimming."
+    "selection": "Rows that overlap 1886-01-01 to 2019-12-31 and have land in the import area after trimming."
   },
-  "skipped": []
+  "skipped": [
+    {
+      "gwcode": 600,
+      "name": "Morocco",
+      "period": "1904-01-02 to 1904-10-02",
+      "reason": "CShapes gives no status (N/A)"
+    },
+    {
+      "gwcode": 600,
+      "name": "Morocco",
+      "period": "1904-10-03 to 1912-11-26",
+      "reason": "CShapes gives no status (N/A)"
+    }
+  ]
 }

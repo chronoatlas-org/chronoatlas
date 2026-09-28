@@ -1,0 +1,9 @@
+id: cshapes-670
+type: state
+names:
+  - text: Saudi Arabia
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 670
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 670).

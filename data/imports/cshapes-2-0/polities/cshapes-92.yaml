@@ -1,0 +1,9 @@
+id: cshapes-92
+type: state
+names:
+  - text: El Salvador
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 92
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 92).

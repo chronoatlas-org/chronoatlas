@@ -1,0 +1,9 @@
+id: cshapes-366
+type: state
+names:
+  - text: Estonia
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 366
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 366).

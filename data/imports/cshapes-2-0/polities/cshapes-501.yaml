@@ -1,0 +1,9 @@
+id: cshapes-501
+type: state
+names:
+  - text: Kenya
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 501
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 501).

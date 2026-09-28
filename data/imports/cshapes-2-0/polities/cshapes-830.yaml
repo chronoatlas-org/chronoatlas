@@ -1,0 +1,9 @@
+id: cshapes-830
+type: state
+names:
+  - text: Singapore
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 830
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 830).

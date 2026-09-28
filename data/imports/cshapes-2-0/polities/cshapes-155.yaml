@@ -1,0 +1,9 @@
+id: cshapes-155
+type: state
+names:
+  - text: Chile
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 155
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 155).

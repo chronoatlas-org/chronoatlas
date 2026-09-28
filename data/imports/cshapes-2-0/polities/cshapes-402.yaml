@@ -1,0 +1,9 @@
+id: cshapes-402
+type: state
+names:
+  - text: Cape Verde
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 402
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 402).

@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cshapes-6511-1948-05-14","edge_precision":"unknown","cshapes_gwcode":6511,"cshapes_name":"Gaza","cshapes_first_day":"1948-05-14","cshapes_last_day":"1967-06-09","cshapes_status":"occupied","cshapes_owner":651,"cshapes_borders_defined":true},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[34.2168,31.3232],
+[34.2392,31.2947],
+[34.2676,31.2165],
+[34.3342,31.2597],
+[34.3712,31.3],
+[34.3646,31.3543],
+[34.3889,31.3947],
+[34.54,31.5147],
+[34.5589,31.54],
+[34.4929,31.5997],
+[34.4011,31.4892],
+[34.2168,31.3232]
+]
+]
+]}
+}

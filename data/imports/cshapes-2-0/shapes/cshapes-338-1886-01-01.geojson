@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cshapes-338-1886-01-01","edge_precision":"unknown","cshapes_gwcode":338,"cshapes_name":"Malta","cshapes_first_day":"1886-01-01","cshapes_last_day":"1964-09-20","cshapes_status":"colony","cshapes_owner":200,"cshapes_borders_defined":true},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[14.3291,35.9785],
+[14.3331,35.895],
+[14.3426,35.8772],
+[14.4239,35.8186],
+[14.5197,35.8],
+[14.5646,35.8235],
+[14.5669,35.8736],
+[14.5483,35.8922],
+[14.5103,35.9253],
+[14.37,35.9914],
+[14.3291,35.9785]
+]
+]
+]}
+}
