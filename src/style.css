@@ -549,6 +549,19 @@ body {
   overflow-wrap: anywhere;
 }
 
+.panel-source > p {
+  margin: 0;
+}
+
+.panel-source-list {
+  margin: 0.2rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.panel-source-list li + li {
+  margin-top: 0.3rem;
+}
+
 /* Phones: a more compact header, with a bigger touch target for the button. */
 @media (max-width: 600px) {
   .app-header {

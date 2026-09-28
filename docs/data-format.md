@@ -146,7 +146,14 @@ importance: 3            # 1–5: when it shows on the timeline
 sources:
   - source: some-source
     locator: pp. 12–14
+    note: Statement by the government of Testland.   # who is speaking in this source
 ```
+
+Events are often described differently by each side. Attribute each account in the summary
+("according to …"), and give each citation a `note` saying who is speaking in it: a consul's
+report, a government's statement, a commission's findings. The panel shows the note next to the
+source. For a volume of *Foreign Relations of the United States*, write the locator as
+`document 57, p. 76`; the panel then links to that document.
 
 ## Figures: `data/figures/**/*.yaml` (a list per file)
 

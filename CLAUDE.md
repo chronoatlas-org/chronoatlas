@@ -308,6 +308,10 @@ LTS, and the GitHub CLI are installed.
     dashed, whatever the date) and pulse its place (`HistoricalLayers.pulse`).
   - The Vite dev server can miss a second quick save of the same file and keep serving the
     older version. If the browser runs code that doesn't match the file, restart the dev server.
+  - **Source links:** `sourceLink` links an OpenHistoricalMap "relation N" and a FRUS "document N"
+    (in a source whose URL is a history.state.gov volume) to the exact record. Event sources show
+    each citation's `note` (who is speaking) on its own line; records fold their citation notes
+    into their own notes instead.
   - The panel keeps control, sovereignty, and claims apart. For each date it names the kinds with
     no record ("Not in our data yet for this date: …"), so silence isn't read as "there was none".
     Names get a `lang` attribute, so Chinese and Japanese text use the right glyphs.

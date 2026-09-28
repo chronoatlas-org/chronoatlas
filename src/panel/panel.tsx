@@ -52,19 +52,39 @@ import type { SheetHeight } from './sheet.ts';
 // --- Components ----------------------------------------------------------------------------------
 
 function Sources({ lines }: { lines: SourceLine[] }) {
+  const label = t(lines.length > 1 ? 'panel.sourcesLabel' : 'panel.sourceLabel');
+  const cited = (line: SourceLine) =>
+    line.url ? (
+      <a href={line.url} target="_blank" rel="noopener">
+        {line.text}
+      </a>
+    ) : (
+      line.text
+    );
+  // Notes say who is speaking in each source (a consul's report, a government's statement), so
+  // sources with notes get a line each.
+  if (lines.some((line) => line.note)) {
+    return (
+      <div class="panel-source">
+        <p>{label}</p>
+        <ul class="panel-source-list">
+          {lines.map((line, i) => (
+            <li key={i}>
+              {cited(line)}
+              {line.note && `. ${line.note}`}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return (
     <p class="panel-source">
-      {t(lines.length > 1 ? 'panel.sourcesLabel' : 'panel.sourceLabel')}{' '}
+      {label}{' '}
       {lines.map((line, i) => (
         <Fragment key={i}>
           {i > 0 && '; '}
-          {line.url ? (
-            <a href={line.url} target="_blank" rel="noopener">
-              {line.text}
-            </a>
-          ) : (
-            line.text
-          )}
+          {cited(line)}
         </Fragment>
       ))}
     </p>

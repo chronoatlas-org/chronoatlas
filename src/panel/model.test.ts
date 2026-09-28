@@ -174,10 +174,14 @@ describe('wording helpers', () => {
     expect(languageName('not a tag', 'en')).toBe('not a tag');
   });
 
-  it('links OpenHistoricalMap relations, and nothing else', () => {
+  it('links OpenHistoricalMap relations and FRUS documents, and nothing else', () => {
     expect(sourceLink('openhistoricalmap', 'relation 123, version 4')).toBe('https://www.openhistoricalmap.org/relation/123');
     expect(sourceLink('openhistoricalmap', 'name tags')).toBeUndefined();
     expect(sourceLink('test-source', 'relation 123')).toBeUndefined();
+    const volume = 'https://history.state.gov/historicaldocuments/testvolume';
+    expect(sourceLink('test-source', 'document 12, pp. 3–4', volume)).toBe(`${volume}/d12`);
+    expect(sourceLink('test-source', 'p. 3', volume)).toBeUndefined();
+    expect(sourceLink('test-source', 'document 12', 'https://example.org/testvolume')).toBeUndefined();
   });
 });
 
@@ -207,6 +211,11 @@ describe('describeEvent', () => {
       { id: 'otherland', name: 'Otherland' },
     ]);
     expect(v.sources).toEqual([{ text: 'Test Source, pp. 1–2' }]);
+  });
+
+  it('keeps each citation\'s note, which says who is speaking', () => {
+    const noted: EventFile = { ...treaty, sources: [{ source: 'test-source', locator: 'p. 3', note: 'A made-up statement.' }] };
+    expect(describeEvent(noted, sources, day(1905, 5, 12), 'en').sources).toEqual([{ text: 'Test Source, p. 3', note: 'A made-up statement.' }]);
   });
 
   it('says which records the event ended and which it started', () => {

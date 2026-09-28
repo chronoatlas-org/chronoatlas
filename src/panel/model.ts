@@ -166,6 +166,8 @@ export interface Credit {
 export interface SourceLine {
   text: string;
   url?: string;
+  /** What this source is, for reading it fairly (for example "Statement by the Japanese government"). */
+  note?: string;
 }
 
 /** A record in effect on the selected day, with everything needed to read it fairly. */
@@ -307,10 +309,19 @@ export function describePeriod(start: string | undefined, end: string | undefine
   return t('panel.period', { start: describeDate(start), end: end === 'unknown' ? t('date.unknown') : describeDate(end) });
 }
 
-/** A link to the exact record in the source, where we know how to build one. */
-export function sourceLink(source: string, locator: string): string | undefined {
+/** Volumes of Foreign Relations of the United States on the State Department historian's site. */
+const FRUS_VOLUME = /^https:\/\/history\.state\.gov\/historicaldocuments\/[a-z0-9-]+$/;
+
+/**
+ * A link to the exact record in the source, where we know how to build one: an OpenHistoricalMap
+ * relation, or a document in a volume of Foreign Relations of the United States ("document 57"
+ * is at <volume>/d57). `sourceUrl` is the source's own address.
+ */
+export function sourceLink(source: string, locator: string, sourceUrl?: string): string | undefined {
   const relationId = /\brelation (\d+)\b/.exec(locator)?.[1];
   if (source === 'openhistoricalmap' && relationId) return `https://www.openhistoricalmap.org/relation/${relationId}`;
+  const documentNumber = /^document (\d+)\b/.exec(locator)?.[1];
+  if (documentNumber && sourceUrl && FRUS_VOLUME.test(sourceUrl)) return `${sourceUrl}/d${documentNumber}`;
   return undefined;
 }
 
@@ -329,10 +340,18 @@ function creditsFor(citations: Iterable<Citation>, sources: SourcesFile['sources
   return [...seen.values()];
 }
 
-function sourceLines(citations: readonly Citation[], sources: SourcesFile['sources']): SourceLine[] {
+/**
+ * Each citation as "Title, locator", linked where possible. With `withNotes`, each keeps its note
+ * (who is speaking in it). Records show their citation notes among their own notes instead.
+ */
+function sourceLines(citations: readonly Citation[], sources: SourcesFile['sources'], withNotes = false): SourceLine[] {
   return citations.map((c) => {
-    const url = sourceLink(c.source, c.locator);
-    return { text: `${sources[c.source]?.title ?? c.source}, ${c.locator}`, ...(url ? { url } : {}) };
+    const url = sourceLink(c.source, c.locator, sources[c.source]?.url);
+    return {
+      text: `${sources[c.source]?.title ?? c.source}, ${c.locator}`,
+      ...(url ? { url } : {}),
+      ...(withNotes && c.note ? { note: c.note } : {}),
+    };
   });
 }
 
@@ -594,7 +613,7 @@ export function describeEvent(file: EventFile, sources: SourcesFile['sources'], 
       file.location.precision_km > 0
         ? t('panel.locationWithin', { km: file.location.precision_km })
         : t('panel.locationExact'),
-    sources: sourceLines(file.location.sources, sources),
+    sources: sourceLines(file.location.sources, sources, true),
   };
 
   return {
@@ -605,7 +624,7 @@ export function describeEvent(file: EventFile, sources: SourcesFile['sources'], 
     ...(location ? { location } : {}),
     polities: (file.polities ?? []).map((id) => ({ id, name: nameOf(id) })),
     effects,
-    sources: sourceLines(file.sources, sources),
+    sources: sourceLines(file.sources, sources, true),
     credits: creditsFor(
       [...file.sources, ...(file.location?.sources ?? []), ...(file.effects ?? []).flatMap((r) => r.sources)],
       sources,
