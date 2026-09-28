@@ -17,10 +17,15 @@ export interface TileOptions {
   layer: string;
   /** Highest zoom with its own tiles; MapLibre enlarges these for closer zooms. */
   maxZoom: number;
+  /** Lowest zoom written (default 0), for a tile set the map only shows up close. */
+  minZoom?: number;
   /** Only tiles touching these bounds are written. */
   bounds: Bounds;
-  /** More layers in the same tiles, by name (for example the border lines, apart from the fills). */
-  extraLayers?: Record<string, GeoJSON.FeatureCollection>;
+  /**
+   * More layers in the same tiles, by name (for example the border lines, apart from the fills).
+   * A layer given with `minZoom` is left out of the tiles below that zoom.
+   */
+  extraLayers?: Record<string, GeoJSON.FeatureCollection | { collection: GeoJSON.FeatureCollection; minZoom: number }>;
 }
 
 export interface BuiltTile {
@@ -65,14 +70,18 @@ export function* buildTiles(collection: GeoJSON.FeatureCollection, options: Tile
       buffer: 64, // overlap between neighbouring tiles, so tile edges never show as lines
     });
   const indexes = [
-    [options.layer, indexOf(collection)] as const,
-    ...Object.entries(options.extraLayers ?? {}).map(([name, c]) => [name, indexOf(c)] as const),
+    [options.layer, indexOf(collection), 0] as const,
+    ...Object.entries(options.extraLayers ?? {}).map(([name, c]) =>
+      'collection' in c ? ([name, indexOf(c.collection), c.minZoom] as const) : ([name, indexOf(c), 0] as const),
+    ),
   ];
-  for (let z = 0; z <= options.maxZoom; z++) {
+  for (let z = options.minZoom ?? 0; z <= options.maxZoom; z++) {
     const { x0, x1, y0, y1 } = tileRange(options.bounds, z);
     for (let x = x0; x <= x1; x++) {
       for (let y = y0; y <= y1; y++) {
-        const layers = Object.fromEntries(indexes.map(([name, index]) => [name, index.getTile(z, x, y) ?? { features: [] }]));
+        const layers = Object.fromEntries(
+          indexes.filter(([, , minZoom]) => z >= minZoom).map(([name, index]) => [name, index.getTile(z, x, y) ?? { features: [] }]),
+        );
         const data = vtpbf.fromGeojsonVt(layers, { version: 2 });
         yield { z, x, y, data };
       }

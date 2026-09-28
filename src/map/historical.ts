@@ -16,6 +16,7 @@
 
 import * as maplibregl from 'maplibre-gl';
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
+import { COLORS } from '../basemap.ts';
 import { segmentOf } from './changes.ts';
 import { pulseRadiusPx } from './pulse-size.ts';
 
@@ -41,8 +42,8 @@ interface TileIndex {
   maxzoom: number;
   bounds: [number, number, number, number];
   changes: number[];
-  /** Other layers' tiles: the de jure view and the contested areas. */
-  extra?: Record<string, { dir: string; version: string; layer: string; bounds: [number, number, number, number] }>;
+  /** Other layers' tiles: the de jure view, the contested areas, and the detailed coast. */
+  extra?: Record<string, { dir: string; version: string; layer: string; bounds: [number, number, number, number]; minzoom?: number }>;
 }
 
 /** Which borders the map shows: as administered (de facto) or as legally recognized (de jure). */
@@ -74,6 +75,16 @@ const ACTIVE: ExpressionSpecification = [
 ];
 /** While a border may not have started yet (before s1), or may already have ended (from e0). */
 const UNCERTAIN: ExpressionSpecification = ['any', ['<', DAY, ['get', 's1']], ['>=', DAY, ['get', 'e0']]];
+/** A fill's opacity: lighter while its dates are uncertain. */
+const FILL_OPACITY: ExpressionSpecification = ['case', UNCERTAIN, 0.55, 1];
+/**
+ * From this zoom, fills stop at the coast (the build's COAST_MIN_ZOOM): a border's coastal waters,
+ * as the source draws them, are only a faint tint, and its land part is filled over them.
+ */
+const COAST_ZOOM = 4;
+const WATER_TINT = 0.25;
+/** Over the tint, an uncertain land part at this opacity looks like FILL_OPACITY's 0.55. */
+const LAND_OVER_TINT: ExpressionSpecification = ['case', UNCERTAIN, 0.4, 1];
 
 /** The address of a file the build wrote to public/data/. */
 export function dataUrl(file: string): string {
@@ -224,6 +235,36 @@ export class HistoricalLayers {
       'coastline',
     );
 
+    // Up close, inside the imported area: Natural Earth's detailed (1:10m) land, sea, and "no data"
+    // hatch over the coarser base map, so the coast matches where the fills are cut; and the
+    // detailed coastline instead of the coarse one.
+    const coast = index.extra?.coast;
+    if (coast) {
+      map.addSource('coast', {
+        type: 'vector',
+        tiles: [`${dataUrl(`${coast.dir}/${coast.version}/`)}{z}/{x}/{y}.pbf`],
+        minzoom: coast.minzoom ?? COAST_ZOOM,
+        maxzoom: index.maxzoom,
+        bounds: coast.bounds,
+      });
+      const kind = (k: string): ExpressionSpecification => ['==', ['get', 'kind'], k];
+      const detail = { source: 'coast', 'source-layer': coast.layer, minzoom: COAST_ZOOM } as const;
+      map.addLayer({ id: 'coast-sea', type: 'fill', ...detail, filter: kind('sea'), paint: { 'fill-color': COLORS.water } }, 'coastline');
+      map.addLayer({ id: 'coast-land', type: 'fill', ...detail, filter: kind('land'), paint: { 'fill-color': COLORS.land } }, 'coastline');
+      map.addLayer({ id: 'no-data-detail', type: 'fill', ...detail, filter: kind('land'), paint: { 'fill-pattern': 'no-data-hatch' } }, 'coastline');
+      map.addLayer(
+        {
+          id: 'coastline-detail',
+          type: 'line',
+          ...detail,
+          filter: kind('coast'),
+          paint: { 'line-color': COLORS.coastline, 'line-width': ['interpolate', ['linear'], ['zoom'], 5, 1, 8, 1.4] },
+        },
+        'lakes',
+      );
+      map.setLayerZoomRange('coastline', 0, COAST_ZOOM);
+    }
+
     // The tile URL template is appended after resolving the base, because URL() would escape
     // the {z}/{x}/{y} placeholders MapLibre needs.
     map.addSource('borders', {
@@ -249,8 +290,28 @@ export class HistoricalLayers {
         paint: {
           'fill-color': colorMatch(PALETTE),
           // Lighter while the border's start or end is uncertain (e.g. "1932" = some time in 1932).
-          'fill-opacity': ['case', UNCERTAIN, 0.55, 1],
+          // Up close, a border with a land part (`coast`) is only a faint tint: its coastal waters.
+          'fill-opacity': [
+            'step',
+            ['zoom'],
+            FILL_OPACITY,
+            COAST_ZOOM,
+            ['case', ['==', ['get', 'coast'], 1], WATER_TINT, FILL_OPACITY],
+          ] as unknown as ExpressionSpecification,
         },
+      },
+      'coastline',
+    );
+    // Up close, the land part of each border that takes in coastal waters, filled over the tint.
+    map.addLayer(
+      {
+        id: 'borders-land',
+        type: 'fill',
+        source: 'borders',
+        'source-layer': 'land',
+        minzoom: COAST_ZOOM,
+        filter: ACTIVE,
+        paint: { 'fill-color': colorMatch(PALETTE), 'fill-opacity': LAND_OVER_TINT },
       },
       'coastline',
     );

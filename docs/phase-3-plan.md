@@ -338,7 +338,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 1 ✅ | Record Phase 2 as closed and the Phase 3 decisions. *Done 2026-09-28,* with the legend's contested line reworded (decision 7). | low |
 | 2 ✅ | **Uncertain ends on the map** (section 3). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 3 ✅ | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
-| 4 | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). | high |
+| 4 ✅ | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
 | 6 | **"What each source says here"** in the panel (section 8). | medium |
 | 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
@@ -404,6 +404,32 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
   under it show through. For example, British Burma in 1937, whose border starts "1937", looks
   hatched. That has been so since Phase 1. It reads as "not certain yet", but a clearer look
   may be wanted; it's listed for the maintainer.
+
+**Step 4, fills that stop at the coast (done 2026-09-28):**
+
+- **What changed on the map:** from zoom 4, a border's coastal waters (as its source draws them)
+  are a faint tint, and only its land is filled. For example, Japan's islands no longer sit in
+  colored rings, and Hong Kong's square of waters is tinted while its land is filled. The legend
+  says "Faint tint (zoomed in): coastal waters, as the source draws them".
+- **How, and a change from the plan:** instead of splitting each border into land and water
+  parts, the whole border is drawn as the tint and its land part is filled over it. That needs
+  half the geometry, and the two can never leave a gap. Only borders whose coastal waters are
+  at least 1% of their area (106 of 162) get a land part. The land parts are simplified like the
+  imports (0.005°, about 500 m), which is under a pixel at the map's closest tile zoom.
+- **Up close, the base map is more detailed:** inside the imported area, from zoom 4, it uses
+  Natural Earth's 1:10m land, sea, and coastline (as tiles), so the coast matches where the fills
+  are cut. Outside the area, the 1:50m base map stays.
+- **Why from zoom 4:** below it, the coastal bands are under a pixel wide. At zoom 4.5 they still
+  showed as halos, so the cut starts at 4 rather than the planned 5.
+- **Size:** the opening view (zoom 3) is unchanged, at about 0.43 MB. A zoom-4 view grows by
+  about 0.2 MB, and a zoom-5 tile averages 44 KB instead of 28. The detailed coast adds about
+  0.1 MB per view. The build takes about 20 seconds longer (73 seconds in all).
+- **Phones: the map key now folds.** The legend had grown to four lines, about a quarter of a
+  phone screen. On phones (and short landscape screens) it now starts folded behind "Map key",
+  and on wider screens it starts open. This was planned for step 10, but done now because each
+  step goes live.
+- **Not changed:** the de jure view (CShapes) and the second opinion follow their sources' own
+  coastlines, so they aren't cut. Contested areas aren't cut either; they're mostly on land.
 
 ### Showcase data track (in parallel)
 

@@ -2,9 +2,10 @@
 //   public/data/tiles/<version>/{z}/{x}/{y}.pbf
 //                          every territorial assertion joined to its shape, with dates as day
 //                          numbers, cut into vector tiles so the browser downloads only what's in
-//                          view. Each tile has two layers: the fills, and the border lines
-//                          (apart from the fills; see scripts/lib/outlines.ts). <version> is a
-//                          fingerprint of the data, so browsers never mix tiles from two builds.
+//                          view. Each tile has the fills, the border lines (apart from the fills;
+//                          see scripts/lib/outlines.ts), and from zoom 4 the land parts of borders
+//                          that take in coastal waters. <version> is a fingerprint of the data, so
+//                          browsers never mix tiles from two builds.
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
 //   public/data/edges.json           where each import's area ends, over land ("Edge of imported
@@ -16,6 +17,8 @@
 //   public/data/changes.json         every day a border starts or ends, with its polity and source
 //   public/data/dejure-tiles/<version>/…      CShapes' legally recognized borders, its own layer
 //   public/data/second-tiles/<version>/…      Cliopatria's borders, the "second opinion" outlines
+//   public/data/coast-tiles/<version>/…       Natural Earth's 1:10m land, sea, and coastline
+//                          inside the imports' areas, for the base map up close (zoom 4–7)
 //   public/data/contested-tiles/<version>/…   where the sources disagree (computed; carries
 //                          CShapes' CC BY-NC-SA license, so it's a layer of its own)
 //   public/data/polities/<id>.json   one polity's names, every record that mentions it, and its
@@ -33,7 +36,7 @@ import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset } from './lib/data.ts';
 import { boundingBox, computeContested } from './lib/contested.ts';
 import type { ContestedArea, Link, TimedShape } from './lib/contested.ts';
-import { areaKm2 } from './lib/geometry.ts';
+import { areaKm2, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
 import { LandIndex, landPart, touchesEdge } from './lib/land.ts';
@@ -144,13 +147,35 @@ export function onDefaultMap(file: string): boolean {
 export interface OutlineContext {
   areas: ReadonlyMap<string, Box>;
   land?: LandDistance;
+  /** The land polygons themselves, to cut the default map's fills at the coast. */
+  landPolygons?: LandIndex;
+}
+
+/** From this zoom the map cuts fills at the coast and uses Natural Earth's 1:10m coastline. */
+export const COAST_MIN_ZOOM = 4;
+/** A border is cut at the coast only when coastal waters are at least this share of its area. */
+const WATER_SHARE = 0.01;
+/** Simplification of the land parts, in degrees: the same as the imports' (about 500 m). */
+const LAND_SIMPLIFY = 0.005;
+
+/**
+ * The land part of a border, simplified like the imported borders, or undefined when the border
+ * takes in less than WATER_SHARE of water (then the whole shape is filled, as it's drawn).
+ */
+export function coastCut(shape: MultiPolygon, land: LandIndex): MultiPolygon | undefined {
+  const part = landPart(shape, land);
+  const total = areaKm2(shape);
+  if (total - areaKm2(part) < WATER_SHARE * total) return undefined;
+  return part
+    .map((polygon) => polygon.map((ring) => simplifyLine(ring, LAND_SIMPLIFY)).filter((ring) => ring.length >= 4))
+    .filter((polygon) => polygon.length > 0);
 }
 
 /** The import folder an assertions file belongs to ("data/imports/<name>"), if any. */
 const folderOf = (file: string) => /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
 
 export function buildBorders(ds: Dataset, outlines?: OutlineContext) {
-  return buildBorderLayer(ds, onDefaultMap, undefined, outlines);
+  return buildBorderLayer(ds, onDefaultMap, undefined, outlines, true);
 }
 
 /**
@@ -184,6 +209,7 @@ function buildBorderLayer(
   include: (file: string) => boolean,
   extra: (shape: ShapeFeature) => Record<string, number> = () => ({}),
   outlines?: OutlineContext,
+  cutAtCoast = false,
 ) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
@@ -197,27 +223,49 @@ function buildBorderLayer(
   });
   const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1 })));
 
+  // Fills that stop at the coast (the default map only): each shape's land part, worked out once
+  // per shape. Shapes with next to no coastal waters have none, and are filled whole.
+  const landOf = new Map<string, MultiPolygon | undefined>();
+  const landPartOf = (shape: ShapeFeature) => {
+    const id = shape.properties.id;
+    if (!cutAtCoast || !outlines?.landPolygons) return undefined;
+    if (!landOf.has(id)) landOf.set(id, coastCut(asMultiPolygon(shape.geometry), outlines.landPolygons));
+    return landOf.get(id);
+  };
+
   // Only what the map itself uses goes into the tiles, because it's repeated in every tile. The
   // territory panel gets the rest (dates as written, sources) from the polity files.
+  const fillProperties = ({ assertion: a, shape, s0, s1, e0, e1, endUnknown }: (typeof items)[number]) => ({
+    id: a.id,
+    polity: a.subject,
+    relation: a.relation,
+    s0,
+    s1,
+    e0,
+    // Only when the end is uncertain (a month or a year), to keep the tiles small.
+    ...(e1 > e0 ? { e1 } : {}),
+    ...(endUnknown ? { endUnknown: true } : {}),
+    color: colors.get(a.subject) ?? 0,
+    ...extra(shape),
+  });
   const collection: GeoJSON.FeatureCollection = {
     type: 'FeatureCollection',
-    features: items.map(({ assertion: a, shape, s0, s1, e0, e1, endUnknown }) => ({
+    features: items.map((item) => ({
       type: 'Feature',
-      properties: {
-        id: a.id,
-        polity: a.subject,
-        relation: a.relation,
-        s0,
-        s1,
-        e0,
-        // Only when the end is uncertain (a month or a year), to keep the tiles small.
-        ...(e1 > e0 ? { e1 } : {}),
-        ...(endUnknown ? { endUnknown: true } : {}),
-        color: colors.get(a.subject) ?? 0,
-        ...extra(shape),
-      },
-      geometry: shape.geometry as GeoJSON.Geometry,
+      // `coast`: this shape also has a land part (in `land`); up close, the whole shape is only a
+      // faint tint of coastal waters, and the land part is filled.
+      properties: { ...fillProperties(item), ...(landPartOf(item.shape) ? { coast: 1 } : {}) },
+      geometry: item.shape.geometry as GeoJSON.Geometry,
     })),
+  };
+  const land: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: items.flatMap((item) => {
+      const part = landPartOf(item.shape);
+      return part && part.length > 0
+        ? [{ type: 'Feature' as const, properties: fillProperties(item), geometry: { type: 'MultiPolygon' as const, coordinates: part } }]
+        : [];
+    }),
   };
   // The lines: each shape's outline is worked out once, however many records use the shape.
   const outlineOf = new Map<string, GeoJSON.Position[][]>();
@@ -247,7 +295,7 @@ function buildBorderLayer(
     (all, { box }) => [Math.min(all[0], box[0]), Math.min(all[1], box[1]), Math.max(all[2], box[2]), Math.max(all[3], box[3])],
     [180, 90, -180, -90],
   );
-  return { collection, lines, bounds: dataBounds };
+  return { collection, lines, land, bounds: dataBounds };
 }
 
 const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
@@ -452,6 +500,28 @@ export function computeAreas(
   }
   for (const figures of byPolity.values()) figures.sort((x, y) => x.s0 - y.s0 || x.relation.localeCompare(y.relation));
   return byPolity;
+}
+
+/**
+ * The base map up close (from COAST_MIN_ZOOM), inside the imports' areas: Natural Earth's 1:10m
+ * land and the sea around it, both as fills, and the coastline without the straight cuts at the
+ * area's edge. The map draws these over the coarser 1:50m base map there, so the coast matches
+ * where the fills are cut.
+ */
+export function buildCoast(land: LandIndex, box: Box): GeoJSON.FeatureCollection {
+  const [w, s, e, n] = box;
+  const frame: MultiPolygon = [[[[w, s], [e, s], [e, n], [w, n], [w, s]]]];
+  const inside = polygonClipping.intersection(land.all() as never, frame as never) as MultiPolygon;
+  const sea = polygonClipping.difference(frame as never, inside as never) as MultiPolygon;
+  const coast = borderLines(inside, box, undefined);
+  return {
+    type: 'FeatureCollection',
+    features: [
+      { type: 'Feature', properties: { kind: 'land' }, geometry: { type: 'MultiPolygon', coordinates: inside } },
+      { type: 'Feature', properties: { kind: 'sea' }, geometry: { type: 'MultiPolygon', coordinates: sea } },
+      { type: 'Feature', properties: { kind: 'coast' }, geometry: { type: 'MultiLineString', coordinates: coast } },
+    ],
+  };
 }
 
 /** computeAreas with Natural Earth's land polygons (from loadLand). */
@@ -770,47 +840,61 @@ function main(): void {
   mkdirSync(OUT_DIR, { recursive: true });
 
   /**
-   * Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. Its
-   * border lines go in the same tiles, as the layer `lines`.
+   * Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. More
+   * layers can go in the same tiles (the border lines as `lines`, the land parts as `land`).
    */
-  const writeTileSet = (dir: string, layer: string, collection: GeoJSON.FeatureCollection, bounds: Bounds, lines?: GeoJSON.FeatureCollection) => {
-    const version = createHash('sha256').update(JSON.stringify(collection)).update(JSON.stringify(lines ?? null)).digest('hex').slice(0, 12);
+  const writeTileSet = (
+    dir: string,
+    layer: string,
+    collection: GeoJSON.FeatureCollection,
+    bounds: Bounds,
+    extraLayers?: NonNullable<Parameters<typeof buildTiles>[1]['extraLayers']>,
+    minZoom = 0,
+  ) => {
+    const version = createHash('sha256').update(JSON.stringify(collection)).update(JSON.stringify(extraLayers ?? null)).digest('hex').slice(0, 12);
     let count = 0;
     let bytes = 0;
-    const extraLayers = lines ? { lines } : undefined;
-    for (const tile of buildTiles(collection, { layer, maxZoom: TILE_MAX_ZOOM, bounds, extraLayers })) {
+    for (const tile of buildTiles(collection, { layer, minZoom, maxZoom: TILE_MAX_ZOOM, bounds, extraLayers })) {
       const file = join(OUT_DIR, dir, version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
       mkdirSync(dirname(file), { recursive: true });
       writeFileSync(file, tile.data);
       count++;
       bytes += tile.data.length;
     }
-    return { dir, version, layer, bounds, count, bytes };
+    return { dir, version, layer, bounds, count, bytes, minzoom: minZoom };
   };
 
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
-  const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined };
-  const { collection, lines, bounds } = buildBorders(ds, outlines);
-  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, lines);
+  const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
+  const { collection, lines, land: landFills, bounds } = buildBorders(ds, outlines);
+  // The land parts only matter up close, so they're left out of the tiles below COAST_MIN_ZOOM.
+  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } });
   const dejure = buildDejure(ds, outlines);
-  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, dejure.lines);
+  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines });
   const second = buildSecondOpinion(ds, outlines);
-  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, second.lines);
+  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, { lines: second.lines });
+  // The base map up close, over the imports' areas (all of them together).
+  const areaList = [...importAreas(ds).values()];
+  const coastBox: Box | undefined = areaList.length
+    ? [Math.min(...areaList.map((a) => a[0])), Math.min(...areaList.map((a) => a[1])), Math.max(...areaList.map((a) => a[2])), Math.max(...areaList.map((a) => a[3]))]
+    : undefined;
+  const coastTiles = land && coastBox ? writeTileSet('coast-tiles', 'coast', buildCoast(land, coastBox), coastBox, undefined, COAST_MIN_ZOOM) : undefined;
   const edges = buildEdges(ds, outlines.land);
   writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
   const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds);
-  const tileCount = borders.count + dejureTiles.count + secondTiles.count + contestedTiles.count;
-  const tileBytes = borders.bytes + dejureTiles.bytes + secondTiles.bytes + contestedTiles.bytes;
+  const tileSets = [borders, dejureTiles, secondTiles, contestedTiles, ...(coastTiles ? [coastTiles] : [])];
+  const tileCount = tileSets.reduce((n, t) => n + t.count, 0);
+  const tileBytes = tileSets.reduce((n, t) => n + t.bytes, 0);
   // The map only redraws on these days, so they cover every layer it can show.
   const changes = changeDays({
     type: 'FeatureCollection',
     features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features, ...edges.features],
   });
   const extra = Object.fromEntries(
-    [dejureTiles, secondTiles, contestedTiles].map(({ dir, version, layer, bounds: b }) => [layer, { dir, version, layer, bounds: b }]),
+    tileSets.slice(1).map(({ dir, version, layer, bounds: b, minzoom }) => [layer, { dir, version, layer, bounds: b, ...(minzoom ? { minzoom } : {}) }]),
   );
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),

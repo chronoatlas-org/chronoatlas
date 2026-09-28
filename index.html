@@ -54,15 +54,20 @@
           <span class="label-long" data-i18n="view.second"></span><span class="label-short" data-i18n="view.secondShort"></span>
         </button>
       </div>
+      <!-- The map key: open on wider screens, folded on phones (src/main.ts). -->
+      <details class="map-key" open>
+      <summary data-i18n="legend.title"></summary>
       <p class="legend">
         <span class="legend-item"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></span>
         <span class="legend-item"><span class="legend-contested" aria-hidden="true"></span><span data-i18n="legend.contested"></span></span>
         <span class="legend-item"><span class="legend-edge" aria-hidden="true"></span><span data-i18n="legend.edge"></span></span>
+        <span class="legend-item"><span class="legend-water" aria-hidden="true"></span><span data-i18n="legend.water"></span></span>
       </p>
       <p class="legend legend-jure" hidden data-i18n="legend.jure"></p>
       <p class="legend legend-second" hidden>
         <span class="legend-item"><span class="legend-second-line" aria-hidden="true"></span><span data-i18n="legend.second"></span></span>
       </p>
+      </details>
       <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </header>
     <main id="map"></main>

@@ -40,6 +40,15 @@ describe('buildTiles', () => {
     expect(layer.feature(0).properties).toEqual({ id: 'testland', s0: 2415021, color: 3 });
   });
 
+  it('leaves a layer out of the tiles below its minimum zoom, and skips zooms below the set\'s', () => {
+    const tiles = [...buildTiles(square, { layer: 'borders', maxZoom: 2, bounds: [10, 10, 20, 20], extraLayers: { land: { collection: square, minZoom: 2 } } })];
+    const layers = (z: number) => Object.keys(new VectorTile(new PbfReader(tiles.find((t) => t.z === z)!.data)).layers).sort();
+    expect(layers(1)).toEqual(['borders']);
+    expect(layers(2)).toEqual(['borders', 'land']);
+    const upClose = [...buildTiles(square, { layer: 'borders', minZoom: 2, maxZoom: 2, bounds: [10, 10, 20, 20] })];
+    expect(upClose.map((t) => t.z)).toEqual([2]);
+  });
+
   it('writes empty tiles where there is nothing, instead of leaving gaps', () => {
     const tiles = [...buildTiles(square, { layer: 'borders', maxZoom: 3, bounds: [0, 0, 40, 40] })];
     const empty = tiles.filter((t) => new VectorTile(new PbfReader(t.data)).layers.borders?.length !== 1);

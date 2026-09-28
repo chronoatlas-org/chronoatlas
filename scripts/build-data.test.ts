@@ -5,11 +5,13 @@ import {
   buildBorders,
   buildChanges,
   buildContested,
+  buildCoast,
   buildEdges,
   buildEventFiles,
   buildEvents,
   buildPolityFiles,
   changeDays,
+  coastCut,
   computeAreas,
   dayRanges,
   FAR_FUTURE,
@@ -391,6 +393,21 @@ describe('land areas', () => {
     near(administered[0].landKm2, areaKm2([rect(0, 0, 1, 2)]) + areaKm2([rect(8, 0, 10, 2)]));
     near(administered[3].landKm2, areaKm2([rect(0, 0, 1, 2)]));
     near(administered[3].totalKm2, areaKm2([rect(0, 0, 2, 2)]));
+  });
+
+  it('cuts a border at the coast only when it takes in coastal waters', () => {
+    // "coastal" is half sea: its land part is the western half. "cut" is all land.
+    const [polygon] = coastCut([rect(0, 0, 2, 2)], land)!;
+    expect(areaKm2([polygon])).toBeCloseTo(areaKm2([rect(0, 0, 1, 2)]), -1);
+    expect(coastCut([rect(8, 0, 10, 2)], land)).toBeUndefined();
+  });
+
+  it('builds the detailed coast: land, the sea around it, and the coastline without the area\'s edges', () => {
+    const coast = buildCoast(land, [0, 0, 4, 4]);
+    expect(coast.features.map((f) => f.properties?.kind)).toEqual(['land', 'sea', 'coast']);
+    // The land inside the area is the strip 0–1°E, 0–2°N; only its east side is coastline (the
+    // west and south sides lie on the area's edge).
+    expect(coast.features[2].geometry).toEqual({ type: 'MultiLineString', coordinates: [[[1, 0], [1, 2], [0, 2]]] });
   });
 
   it('counts a shape drawn twice only once', () => {

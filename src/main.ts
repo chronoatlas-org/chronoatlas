@@ -140,6 +140,11 @@ function select(next: Selection | null, how: 'click' | 'close' | 'link'): void {
 // recorded in the address: it's a view of the date, which the address already has.
 const nearbyButton = document.getElementById('nearby-button')!;
 
+// The map key starts folded on phones (and short landscape screens), so the map has room; a tap on
+// "Map key" opens it.
+const mapKey = document.querySelector<HTMLDetailsElement>('.map-key')!;
+if (matchMedia('(max-width: 600px), (max-height: 500px)').matches) mapKey.open = false;
+
 // The view switch: borders as administered (OpenHistoricalMap) or as legally recognized (CShapes).
 const viewButtons = [...document.querySelectorAll<HTMLButtonElement>('.view-switch button')];
 const jureLegend = document.querySelector<HTMLElement>('.legend-jure')!;

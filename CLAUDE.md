@@ -204,7 +204,11 @@ LTS, and the GitHub CLI are installed.
     fills) and `lines` (the border lines, written apart by `scripts/lib/outlines.ts` without the
     cuts along an import's edge or the stretches more than 2 km out to sea). The de jure and
     second-opinion tile sets have the same two layers, and the map draws every border line from
-    `lines`, never by outlining a fill;
+    `lines`, never by outlining a fill. From zoom 4 (`COAST_MIN_ZOOM`) the default tiles also have
+    `land`: each border's land part (`coastCut`, only when its coastal waters are at least 1% of
+    it), filled over a faint tint of the whole shape, so fills stop at the coast;
+  - `coast-tiles/<version>/…` (zoom 4–7, inside the imports' areas): Natural Earth's 1:10m land,
+    sea, and coastline, drawn over the 1:50m base map up close so the coast matches the cut;
   - `edges.json`: where each import's area ends, over land, while its years apply ("Edge of
     imported data");
   - `tiles.json`: version, bounds, zooms, and the change index;

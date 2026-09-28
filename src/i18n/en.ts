@@ -9,8 +9,10 @@ export const en = {
     'Early preview: East Asia, 1900–1950. Borders as administered come from OpenHistoricalMap, legal borders from CShapes 2.0. Click a territory for details.',
   'app.mapLabel': 'Map',
   'app.title': 'chronoatlas · {date}',
+  'legend.title': 'Map key',
   'legend.noData': 'No data yet',
   'legend.edge': 'Edge of imported data',
+  'legend.water': 'Faint tint (zoomed in): coastal waters, as the source draws them',
   'legend.contested': "Contested: administered by one state, legally recognized as another's (per the sources named)",
   'legend.jure':
     'Legal borders per CShapes 2.0. Lighter, with dashed edges: a colony, protectorate, or occupied area, tinted like the state holding it.',

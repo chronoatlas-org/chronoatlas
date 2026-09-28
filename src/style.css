@@ -118,6 +118,45 @@ body {
   margin-top: 6px;
 }
 
+/* The map key: a "Map key" toggle, open on wider screens and folded on phones (src/main.ts). */
+.map-key {
+  margin-top: 6px;
+}
+
+.map-key > summary {
+  width: fit-content;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #57606a;
+  cursor: pointer;
+}
+
+.map-key > summary {
+  list-style: none;
+}
+
+.map-key > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* An arrow shows it opens and closes: ▸ folded, ▾ open. */
+.map-key > summary::before {
+  content: '▸';
+  margin-right: 6px;
+}
+
+.map-key[open] > summary::before {
+  content: '▾';
+}
+
+.map-key > summary:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
 /* `hidden` must win over the display rule above (the de jure legend line). */
 .app-header .legend[hidden] {
   display: none;
@@ -222,6 +261,15 @@ body {
   width: 18px;
   height: 0;
   border-top: 2px dashed #6e6455;
+}
+
+/* Matches the faint tint of coastal waters up close (src/map/historical.ts). */
+.legend-water {
+  flex: none;
+  width: 16px;
+  height: 12px;
+  border: 1px solid #b7c7d3;
+  background: linear-gradient(rgb(233 201 165 / 25%), rgb(233 201 165 / 25%)), #cfdce6;
 }
 
 /* Matches the map's "no data" hatch (src/map/historical.ts). */
@@ -604,6 +652,11 @@ body {
 
   .view-controls {
     flex-wrap: nowrap;
+  }
+
+  /* The folded map key's toggle is a 44 px touch target, like the other buttons. */
+  .map-key > summary {
+    min-height: 44px;
   }
 
   /* Phones: icon only for "Around this date" (its accessible label still names it). */

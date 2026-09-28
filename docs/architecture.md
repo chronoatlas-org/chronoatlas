@@ -205,6 +205,14 @@ sovereign: China (per CShapes)".
   draws every line from that layer, and the edge of the imported data as a dashed line of its
   own (`public/data/edges.json`). This adds about half again to each tile set: the opening
   view's default tiles went from about 0.28 to 0.43 MB.
+- **Fills that stop at the coast (Phase 3, step 4):** from zoom 4, a border that takes in coastal
+  waters (at least 1% of its area) is drawn as a faint tint, and its land part, cut with Natural
+  Earth's 1:10m land and simplified like the imports (0.005°), is filled over it. The land parts
+  are a third layer in the default tiles, only from zoom 4, so the opening view's download is
+  unchanged. Up close, inside the imports' areas, the base map switches to Natural Earth's 1:10m
+  land, sea, and coastline (`coast-tiles/`), so the coast matches the cut; outside them the
+  1:50m base map stays. At lower zooms the coastal bands are under a pixel wide, and the fills
+  are drawn whole, as before.
 - **Change index:** the build lists every day on which some border starts, stops being
   uncertain, may have ended, or has certainly ended (`changes` in `public/data/tiles.json`). The map only updates when the date
   crosses one of those days (`src/map/changes.ts`, a binary search); between them it looks
@@ -282,7 +290,7 @@ numbers as absolute speeds.
 | A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
 | Sources differ (compare view only) | a pattern of its own, plus a legend label | planned (Phase 3, step 7) |
-| Coastal waters, as the source draws them | a faint tint, no outline | planned (Phase 3, step 4) |
+| Coastal waters, as the source draws them | a faint tint, no outline, from zoom 4 | built (Phase 3, step 4) |
 | Edge of imported data | dashed gray line over land, plus a legend label (a label on the map comes with map text) | built (Phase 3, step 3) |
 | Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |
 | Approximate border | softened (blurred) line | planned (Phase 3, step 8) |

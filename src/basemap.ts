@@ -9,8 +9,9 @@ import landUrl from '../data/imports/natural-earth/ne_50m_land.geojson?url';
 import lakesUrl from '../data/imports/natural-earth/ne_50m_lakes.geojson?url';
 import riversUrl from '../data/imports/natural-earth/ne_50m_rivers_lake_centerlines.geojson?url';
 
-// Muted colors, so the historical layers drawn on top stand out.
-const COLORS = {
+// Muted colors, so the historical layers drawn on top stand out. (The detailed coast drawn up
+// close in src/map/historical.ts uses the same ones.)
+export const COLORS = {
   water: '#cfdce6',
   land: '#f3f0e8',
   coastline: '#9fb3c2',
@@ -36,6 +37,17 @@ export function baseMapStyle(): StyleSpecification {
     layers: [
       { id: 'water', type: 'background', paint: { 'background-color': COLORS.water } },
       { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': COLORS.land } },
+      // The coastline under everything historical. Where the detailed 1:10m coast is drawn up
+      // close, it covers this one; elsewhere this is the coastline at every zoom.
+      {
+        id: 'coastline-under',
+        type: 'line',
+        source: 'land',
+        paint: {
+          'line-color': COLORS.coastline,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.4, 6, 1.2],
+        },
+      },
       {
         id: 'coastline',
         type: 'line',
