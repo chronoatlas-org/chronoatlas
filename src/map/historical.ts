@@ -57,8 +57,17 @@ export interface HistoricalOptions {
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
-/** A border is shown from its earliest possible start until the day it ended. */
-const ACTIVE: ExpressionSpecification = ['all', ['<=', ['get', 's0'], DAY], ['<', DAY, ['get', 'e0']]];
+/**
+ * A border is shown from its earliest possible start (s0) until its last possible end: e1 when
+ * the end is known only to the month or year, otherwise e0, the day it ended.
+ */
+const ACTIVE: ExpressionSpecification = [
+  'all',
+  ['<=', ['get', 's0'], DAY],
+  ['<', DAY, ['coalesce', ['get', 'e1'], ['get', 'e0']]],
+];
+/** While a border may not have started yet (before s1), or may already have ended (from e0). */
+const UNCERTAIN: ExpressionSpecification = ['any', ['<', DAY, ['get', 's1']], ['>=', DAY, ['get', 'e0']]];
 
 /** The address of a file the build wrote to public/data/. */
 export function dataUrl(file: string): string {
@@ -233,8 +242,8 @@ export class HistoricalLayers {
         filter: ACTIVE,
         paint: {
           'fill-color': colorMatch(PALETTE),
-          // Lighter while the border's start date is still uncertain (e.g. "1932" = sometime in 1932).
-          'fill-opacity': ['case', ['<', DAY, ['get', 's1']], 0.55, 1],
+          // Lighter while the border's start or end is uncertain (e.g. "1932" = some time in 1932).
+          'fill-opacity': ['case', UNCERTAIN, 0.55, 1],
         },
       },
       'coastline',
@@ -338,7 +347,9 @@ export class HistoricalLayers {
           source: 'contested',
           'source-layer': contested.layer,
           filter: ACTIVE,
-          paint: { 'fill-pattern': 'contested-hatch' },
+          // Fainter where it's only possibly contested: a date involved is known only to the
+          // month or year (`maybe`), as uncertain borders are drawn lighter.
+          paint: { 'fill-pattern': 'contested-hatch', 'fill-opacity': ['case', ['==', ['get', 'maybe'], 1], 0.45, 1] },
         },
         'coastline',
       );
@@ -348,7 +359,12 @@ export class HistoricalLayers {
         source: 'contested',
         'source-layer': contested.layer,
         filter: ACTIVE,
-        paint: { 'line-color': '#9a1b5b', 'line-width': 1.5, 'line-dasharray': [3, 2] },
+        paint: {
+          'line-color': '#9a1b5b',
+          'line-width': 1.5,
+          'line-dasharray': [3, 2],
+          'line-opacity': ['case', ['==', ['get', 'maybe'], 1], 0.45, 1],
+        },
       });
     }
     // The second opinion (Cliopatria): dotted outlines only, in a color of their own, so they

@@ -199,7 +199,7 @@ sovereign: China (per CShapes)".
     Linux. We avoid PMTiles for now, because there are open reports of it loading unreliably
     on GitHub Pages.
 - **Change index:** the build lists every day on which some border starts, stops being
-  uncertain, or ends (`changes` in `public/data/tiles.json`). The map only updates when the date
+  uncertain, may have ended, or has certainly ended (`changes` in `public/data/tiles.json`). The map only updates when the date
   crosses one of those days (`src/map/changes.ts`, a binary search); between them it looks
   identical.
 - **How the map filters by date:** the current date is stored in MapLibre's global state and
@@ -270,7 +270,8 @@ numbers as absolute speeds.
 | Contested: administered by one state, legally recognized as another's (later also: conflicting claims) | magenta cross-hatch with a dashed edge, plus a legend label and a sentence in the panel | built (Phase 2, step 9) |
 | No data yet | gray diagonal hatch, plus a legend label | built |
 | Uncertain start (a date known only to the year, say) | lighter fill until the date is certain | built |
-| Uncertain end | lighter fill from the first to the last day it could have ended | planned (Phase 3, step 2) |
+| Uncertain end | lighter fill from the first to the last day it could have ended, plus a note in the panel | built (Phase 3, step 2) |
+| Possibly contested (one of the two records may not apply yet, or any more) | the contested cross-hatch and edge, fainter, plus "Possibly contested" in the panel | built (Phase 3, step 2) |
 | A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
 | Sources differ (compare view only) | a pattern of its own, plus a legend label | planned (Phase 3, step 7) |

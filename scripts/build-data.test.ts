@@ -59,6 +59,9 @@ describe('buildPolityFiles', () => {
   it('keeps the dates as written and adds day numbers', () => {
     const early = files.get('testland')!.records[0];
     expect(early).toMatchObject({ start: '1901-05-12', end: '1910', s0: civilToJdn(1901, 5, 12), e0: civilToJdn(1910, 1, 1) });
+    // An end known only to the year also gets its last possible day; an open end doesn't.
+    expect(early.e1).toBe(civilToJdn(1910, 12, 31));
+    expect(files.get('testland')!.records[2].e1).toBeUndefined();
     expect(files.get('testland')!.names[0]).toMatchObject({ start: '1901', s0: civilToJdn(1901, 1, 1), e0: null, sources: cite });
   });
 
@@ -124,6 +127,14 @@ describe('buildEvents', () => {
 });
 
 describe('changeDays', () => {
+  it('includes the last possible end of an uncertain end', () => {
+    const days = changeDays({
+      type: 'FeatureCollection',
+      features: [{ type: 'Feature', properties: { s0: 10, s1: 10, e0: 50, e1: 80 }, geometry: { type: 'Point', coordinates: [0, 0] } }],
+    });
+    expect(days).toEqual([10, 50, 80]);
+  });
+
   it('lists every start, certain-start, and end day once, in order, without "no end yet"', () => {
     const feature = (s0: number, s1: number, e0: number): GeoJSON.Feature => ({
       type: 'Feature',
@@ -145,6 +156,12 @@ describe('dayRanges', () => {
     expect(r.s1).toBe(civilToJdn(1932, 12, 31));
     expect(r.e0).toBe(civilToJdn(1945, 8, 17));
     expect(r.e1).toBe(civilToJdn(1945, 8, 17));
+  });
+
+  it('gives an end known only to the year its first and last possible days', () => {
+    const r = dayRanges('1901', '1905');
+    expect(r.e0).toBe(civilToJdn(1905, 1, 1));
+    expect(r.e1).toBe(civilToJdn(1905, 12, 31));
   });
 
   it('treats "ongoing" as no end yet', () => {
@@ -199,6 +216,26 @@ describe('the default map', () => {
       ],
     });
     expect(collection.features.map((f) => f.properties?.id)).toEqual(['mine']);
+  });
+
+  it('adds the last possible end day only to borders whose end is uncertain', () => {
+    // Made-up shapes and records (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const square = [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]];
+    const shape = (id: string) => ({
+      file: id,
+      value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: square } },
+    });
+    const record = (id: string, end: string) => ({ id, relation: 'administers' as const, subject: 'testland', shape: id, start: '1901', end, sources: cite });
+    const { collection } = buildBorders({
+      sources: [], polities: [], events: [], figures: [], coverage: [], crosswalks: [], imports: [], problems: [],
+      shapes: [shape('year'), shape('month'), shape('day'), shape('open')],
+      assertions: [
+        { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [record('year', '1905'), record('month', '1905-03'), record('day', '1905-03-07'), record('open', 'ongoing')] },
+      ],
+    });
+    const e1 = Object.fromEntries(collection.features.map((f) => [f.properties?.id, f.properties?.e1]));
+    expect(e1).toEqual({ year: civilToJdn(1905, 12, 31), month: civilToJdn(1905, 3, 31), day: undefined, open: undefined });
   });
 });
 
@@ -318,7 +355,9 @@ describe('land areas', () => {
       ['coastal-1', 'cut-1'],
       ['coastal-1'],
     ]);
-    expect(administered.map((f) => f.s0)).toEqual([day(1901, 1, 1), day(1905, 1, 1), day(1906, 1, 1), day(1911, 1, 1)]);
+    // Ends known only to the year ("1906", "1911") count until the last day of that year, as the
+    // map shows them.
+    expect(administered.map((f) => f.s0)).toEqual([day(1901, 1, 1), day(1905, 1, 1), day(1906, 12, 31), day(1911, 12, 31)]);
     near(administered[0].landKm2, areaKm2([rect(0, 0, 1, 2)]) + areaKm2([rect(8, 0, 10, 2)]));
     near(administered[3].landKm2, areaKm2([rect(0, 0, 1, 2)]));
     near(administered[3].totalKm2, areaKm2([rect(0, 0, 2, 2)]));

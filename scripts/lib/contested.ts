@@ -31,9 +31,15 @@ export interface TimedShape {
   holder: string;
   relation: string;
   source: string;
-  /** From s0 until e0 (exclusive), as day numbers. */
+  /** From s0 until e0 (exclusive), as day numbers: every day it may have applied. */
   s0: number;
   e0: number;
+  /**
+   * The days it certainly applied, from c0 until c1 (exclusive), when that's narrower: its start
+   * or end is known only to the month or year. Missing means the same as s0 and e0.
+   */
+  c0?: number;
+  c1?: number;
   shape: string;
   geometry: MultiPolygon;
   box: Box;
@@ -58,8 +64,24 @@ export interface ContestedArea {
   jureSource: string;
   s0: number;
   e0: number;
+  /** Set when one of the two records may not apply in this period (an uncertain start or end). */
+  maybe?: boolean;
   km2: number;
   geometry: MultiPolygon;
+}
+
+/**
+ * Splits a period at the edges of the days both records certainly applied: the parts outside are
+ * only possibly contested. In order, without empty parts.
+ */
+export function splitByCertainty(start: number, end: number, c0: number, c1: number): { s0: number; e0: number; maybe: boolean }[] {
+  const from = Math.min(Math.max(c0, start), end);
+  const to = Math.max(Math.min(c1, end), from);
+  return [
+    { s0: start, e0: from, maybe: true },
+    { s0: from, e0: to, maybe: false },
+    { s0: to, e0: end, maybe: true },
+  ].filter((p) => p.s0 < p.e0);
 }
 
 export function boundingBox(multi: MultiPolygon): Box {
@@ -121,7 +143,9 @@ export function computeContested(
       }
       if (pieces.length === 0) continue;
       const km2 = Math.round(areaKm2(pieces));
-      for (const [s0, e0] of periods) {
+      const c0 = Math.max(f.c0 ?? f.s0, j.c0 ?? j.s0);
+      const c1 = Math.min(f.c1 ?? f.e0, j.c1 ?? j.e0);
+      for (const { s0, e0, maybe } of periods.flatMap(([from, to]) => splitByCertainty(from, to, c0, c1))) {
         results.push({
           id: `${f.record}~${j.record}~${s0}`,
           facto: f.holder,
@@ -134,6 +158,7 @@ export function computeContested(
           jureSource: j.source,
           s0,
           e0,
+          ...(maybe ? { maybe } : {}),
           km2,
           geometry: pieces,
         });

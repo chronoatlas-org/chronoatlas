@@ -98,6 +98,8 @@ export const en = {
   'panel.precision.year': '{date} (year only)',
   'panel.uncertainStart':
     'The source gives this start only as {date}, so the map shows the border lighter until that period is over.',
+  'panel.uncertainEnd':
+    'The source gives this end only as {date}, so it may already have ended. The map keeps the border, lighter, until that period is over.',
   'panel.administersNote':
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
   'panel.sourceLabel': 'Source:',
@@ -114,6 +116,8 @@ export const en = {
   'figure.water': 'Its border also takes in about {value} km² of coastal waters, which are not counted.',
   'figure.relation': 'Counts only the area recorded as “{relation}”.',
   'figure.combined': 'Measured over the {count} records that apply on this date, counting any overlap once.',
+  'figure.uncertain':
+    'Some of those records may not have begun yet, or may already have ended, on this date (their dates are known only to the month or year), so the area held may have been smaller.',
   'figure.computed':
     'Computed by chronoatlas: the area inside this border and inside Natural Earth’s present-day coastline (1:10m; lakes count as land), measured on the globe. Approximate: coastlines have changed since, for example through land reclamation, and the figure is rounded to 2 significant figures.',
   'figure.presentDay': 'Counted within present-day borders ({detail}), not this polity’s own territory.',
@@ -124,6 +128,8 @@ export const en = {
   // Where the sources disagree ({source} is the other source's name; {holds} is its relation).
   'panel.contestedFacto': 'Contested: {source} records {name} {holds} about {km2} km² of this territory.',
   'panel.contestedJure': 'Contested: {source} records {name} {holds} about {km2} km² of this territory.',
+  'panel.contestedMaybe':
+    'Possibly contested: {source} records {name} {holds} about {km2} km² of this territory, but a date involved is known only to the month or year, so the two records may not overlap on this date. The map hatches it more faintly.',
   'panel.holds.sovereign': 'as sovereign over',
   'panel.holds.occupies': 'as occupying',
   'panel.holds.administers': 'as administering',

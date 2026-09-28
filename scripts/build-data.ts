@@ -59,7 +59,12 @@ export const FAR_FUTURE = 99_999_999;
 /** How many fill colors the map's palette has (see src/map/historical.ts). */
 const PALETTE_SIZE = 8;
 
-/** Day-number ranges for an assertion: s0–s1 = when it may have started, e0–e1 = when it may have ended. */
+/**
+ * Day-number ranges for an assertion: s0–s1 = when it may have started, e0–e1 = when it may have
+ * ended. It certainly applied from s1 until e0, and may have applied from s0 until e1 (exclusive:
+ * e1 is the last day that could have been the first day it no longer applied). The map, the
+ * panel, land areas, and contested areas all count it until e1, lighter where it's uncertain.
+ */
 export function dayRanges(start: string, end: string) {
   const s = parseEdtfDate(start);
   if (end === 'ongoing' || end === 'unknown') {
@@ -164,13 +169,13 @@ function buildBorderLayer(
     const shape = shapes.get(a.shape)!;
     return { assertion: a, shape, box: bounds(shape.geometry), ...dayRanges(a.start, a.end) };
   });
-  const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e0 })));
+  const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1 })));
 
   // Only what the map itself uses goes into the tiles, because it's repeated in every tile. The
   // territory panel gets the rest (dates as written, sources) from the polity files.
   const collection: GeoJSON.FeatureCollection = {
     type: 'FeatureCollection',
-    features: items.map(({ assertion: a, shape, s0, s1, e0, endUnknown }) => ({
+    features: items.map(({ assertion: a, shape, s0, s1, e0, e1, endUnknown }) => ({
       type: 'Feature',
       properties: {
         id: a.id,
@@ -179,6 +184,8 @@ function buildBorderLayer(
         s0,
         s1,
         e0,
+        // Only when the end is uncertain (a month or a year), to keep the tiles small.
+        ...(e1 > e0 ? { e1 } : {}),
         ...(endUnknown ? { endUnknown: true } : {}),
         color: colors.get(a.subject) ?? 0,
         ...extra(shape),
@@ -205,8 +212,10 @@ function timedShapes(ds: Dataset, include: (file: string) => boolean, relations:
     .filter((a) => relations.includes(a.relation) && a.shape && shapes.has(a.shape))
     .map((a) => {
       const geometry = asMultiPolygon(shapes.get(a.shape!)!.geometry);
-      const { s0, e0 } = dayRanges(a.start, a.end);
-      return { record: a.id, holder: a.subject, relation: a.relation, source: a.sources[0].source, s0, e0, shape: a.shape!, geometry, box: boundingBox(geometry) };
+      // Every day it may have applied, and, when narrower, the days it certainly did.
+      const { s0, s1, e0, e1 } = dayRanges(a.start, a.end);
+      const certain = { ...(s1 > s0 ? { c0: s1 } : {}), ...(e1 > e0 ? { c1: e0 } : {}) };
+      return { record: a.id, holder: a.subject, relation: a.relation, source: a.sources[0].source, s0, e0: e1, ...certain, shape: a.shape!, geometry, box: boundingBox(geometry) };
     });
 }
 
@@ -303,9 +312,10 @@ export function computeAreas(
     const area = folder ? areas.get(folder) : undefined;
     for (const a of value) {
       if (!TERRITORIAL_RELATIONS.includes(a.relation) || !a.shape || !shapes.has(a.shape)) continue;
-      const { s0, e0 } = dayRanges(a.start, a.end);
+      // Counted until the last day it could have ended, as the map shows it.
+      const { s0, e1 } = dayRanges(a.start, a.end);
       const key = `${a.subject} ${a.relation}`;
-      groups.set(key, [...(groups.get(key) ?? []), { a: a as Item['a'], area, s0, e0 }]);
+      groups.set(key, [...(groups.get(key) ?? []), { a: a as Item['a'], area, s0, e0: e1 }]);
     }
   }
 
@@ -378,7 +388,7 @@ export function contestedCollection(areas: readonly ContestedArea[]) {
     type: 'FeatureCollection',
     features: areas.map((a) => ({
       type: 'Feature',
-      properties: { id: a.id, facto: a.facto, jure: a.jure, s0: a.s0, e0: a.e0 },
+      properties: { id: a.id, facto: a.facto, jure: a.jure, s0: a.s0, e0: a.e0, ...(a.maybe ? { maybe: 1 } : {}) },
       geometry: { type: 'MultiPolygon', coordinates: a.geometry } as GeoJSON.MultiPolygon,
     })),
   };
@@ -390,14 +400,14 @@ export function contestedCollection(areas: readonly ContestedArea[]) {
 }
 
 /**
- * The change index: every day on which some border starts (s0), stops being uncertain (s1), or
- * ends (e0). The map's filter and styling only compare the day against these values, so the map
- * looks identical between two consecutive change days.
+ * The change index: every day on which some border starts (s0), stops being uncertain (s1), may
+ * have ended (e0), or has certainly ended (e1). The map's filter and styling only compare the day
+ * against these values, so the map looks identical between two consecutive change days.
  */
 export function changeDays(collection: GeoJSON.FeatureCollection): number[] {
   const days = new Set<number>();
   for (const { properties } of collection.features) {
-    for (const key of ['s0', 's1', 'e0']) {
+    for (const key of ['s0', 's1', 'e0', 'e1']) {
       const day = properties?.[key];
       if (typeof day === 'number' && day < FAR_FUTURE) days.add(day);
     }
@@ -494,7 +504,7 @@ function nameDays(n: PolityName) {
 
 /** An assertion as the panel shows it: dates as written plus day numbers. */
 function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>): PolityRecord {
-  const { s0, s1, e0 } = dayRanges(a.start, a.end);
+  const { s0, s1, e0, e1 } = dayRanges(a.start, a.end);
   const area = a.shape ? km2?.get(a.shape) : undefined;
   return {
     id: a.id,
@@ -507,6 +517,7 @@ function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>): Polit
     s0,
     s1,
     e0,
+    ...(e1 > e0 ? { e1 } : {}),
     sources: a.sources,
     ...(a.notes ? { notes: a.notes } : {}),
     ...(area !== undefined ? { km2: Math.round(area) } : {}),
@@ -545,7 +556,7 @@ export function buildPolityFiles(
   const shareLand = (a: Assertion, b: Assertion) => {
     const ra = dayRanges(a.start, a.end);
     const rb = dayRanges(b.start, b.end);
-    if (Math.max(ra.s0, rb.s0) >= Math.min(ra.e0, rb.e0) || !a.shape || !b.shape) return false;
+    if (Math.max(ra.s0, rb.s0) >= Math.min(ra.e1, rb.e1) || !a.shape || !b.shape) return false;
     const overlap = polygonClipping.intersection(shapes.get(a.shape) as never, shapes.get(b.shape) as never) as MultiPolygon;
     return areaKm2(overlap) >= 10_000;
   };
@@ -561,8 +572,8 @@ export function buildPolityFiles(
     for (const link of links.filter((l) => l.polity === p.id)) {
       for (const a of mentions.get(link.unit) ?? []) {
         if (a.subject !== link.unit) continue;
-        const { s0, e0 } = dayRanges(a.start, a.end);
-        if (Math.max(s0, link.m0) >= Math.min(e0, link.m1)) continue;
+        const { s0, e1 } = dayRanges(a.start, a.end);
+        if (Math.max(s0, link.m0) >= Math.min(e1, link.m1)) continue;
         if (link.kind === 'dependency' && !ownTerritorial.some((o) => shareLand(o, a))) continue;
         linked.push({
           ...assertionRecord(a, km2),
@@ -581,13 +592,13 @@ export function buildPolityFiles(
     const disputes: ContestedEntry[] = [];
     for (const c of contested) {
       if (c.facto === p.id) {
-        disputes.push({ side: 'facto', other: c.jure, relation: c.jureRelation, source: c.jureSource, s0: c.s0, e0: c.e0, km2: c.km2 });
+        disputes.push({ side: 'facto', other: c.jure, relation: c.jureRelation, source: c.jureSource, s0: c.s0, e0: c.e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
       }
       const window = c.jure === p.id ? ([-Infinity, Infinity] as const) : linkedWindows.get(c.jureRecord);
       if (window) {
         const s0 = Math.max(c.s0, window[0]);
         const e0 = Math.min(c.e0, window[1]);
-        if (s0 < e0) disputes.push({ side: 'jure', other: c.facto, relation: c.factoRelation, source: c.factoSource, s0, e0, km2: c.km2 });
+        if (s0 < e0) disputes.push({ side: 'jure', other: c.facto, relation: c.factoRelation, source: c.factoSource, s0, e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
       }
     }
     disputes.sort((a, b) => a.s0 - b.s0 || a.other.localeCompare(b.other));

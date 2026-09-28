@@ -155,8 +155,10 @@ and its order of work gives a recommended effort setting for each step. The ones
 everyday work:
 
 - **Uncertain dates look uncertain at both ends:** a record stays on the map, lighter, until the
-  last day it could have ended (`e1`). The panel, land areas, and contested areas use the same
-  end.
+  last day it could have ended (`e1`, from `dayRanges`; in tiles and polity files only when it
+  differs from `e0`). The panel, land areas, contested areas, and colors use the same end. A land
+  area measured over a record in its uncertain window says the area held may have been
+  smaller.
 - **Words:** "contested" means administered by one state and legally recognized as another's (or,
   later, conflicting claims). A disagreement between sources is "sources differ", shown only in
   the compare view.
@@ -249,6 +251,10 @@ LTS, and the GitHub CLI are installed.
   - **Where they go:** computed by the build into their own tile layer (`contested-tiles/`) and
     into polity files. They are never written into `data/`, because they carry CShapes'
     license.
+  - **Possibly contested (Phase 3 step 2):** each period is split at the edges of the days both
+    records certainly applied (`splitByCertainty`). The parts outside, where a start or end is
+    known only to the month or year, are marked `maybe`: a fainter hatch, and "Possibly contested"
+    in the panel.
   - **Checking them:** the build prints every contested pair; review it when the crosswalk or an
     import changes.
   - **Map layers:** `tiles.json` lists the extra tile sets under `extra`, the de jure view

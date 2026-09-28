@@ -1,7 +1,7 @@
 // Contested-area tests use made-up squares and polities (Testland), not real places.
 
 import { describe, expect, it } from 'vitest';
-import { boundingBox, computeContested, uncovered } from './contested.ts';
+import { boundingBox, computeContested, splitByCertainty, uncovered } from './contested.ts';
 import type { Link, TimedShape } from './contested.ts';
 import type { MultiPolygon } from './geometry.ts';
 
@@ -18,6 +18,19 @@ describe('uncovered', () => {
     expect(uncovered(0, 100, [])).toEqual([[0, 100]]);
     expect(uncovered(0, 100, [[20, 40], [60, 200]])).toEqual([[0, 20], [40, 60]]);
     expect(uncovered(0, 100, [[-50, 150]])).toEqual([]);
+  });
+});
+
+describe('splitByCertainty', () => {
+  it('marks the parts of a period outside the certain days as only possibly contested', () => {
+    expect(splitByCertainty(0, 100, 0, 100)).toEqual([{ s0: 0, e0: 100, maybe: false }]);
+    expect(splitByCertainty(0, 100, 20, 60)).toEqual([
+      { s0: 0, e0: 20, maybe: true },
+      { s0: 20, e0: 60, maybe: false },
+      { s0: 60, e0: 100, maybe: true },
+    ]);
+    // No certain overlap at all: the whole period is only possible.
+    expect(splitByCertainty(0, 100, 150, 200)).toEqual([{ s0: 0, e0: 100, maybe: true }]);
   });
 });
 
@@ -38,6 +51,17 @@ describe('computeContested', () => {
     expect(computeContested([testland], [unitA], always)).toEqual([]);
     const until200 = new Map<string, Link[]>([['unit-a', [{ polity: 'testland', m0: -Infinity, m1: 200 }]]]);
     expect(computeContested([testland], [unitA], until200).map((a) => [a.s0, a.e0])).toEqual([[200, 300]]);
+  });
+
+  it('marks the days when a record may not apply (an uncertain start or end) as possibly contested', () => {
+    // Testland's record may have started from day 100 but certainly by 150, and may have ended
+    // from day 250 but certainly by 300.
+    const uncertain = { ...testland, c0: 150, c1: 250 };
+    expect(computeContested([uncertain], [unitA], new Map()).map((a) => [a.s0, a.e0, a.maybe ?? false])).toEqual([
+      [100, 150, true],
+      [150, 250, false],
+      [250, 300, true],
+    ]);
   });
 
   it('leaves out disagreements smaller than 10,000 km², the size CShapes does not code', () => {

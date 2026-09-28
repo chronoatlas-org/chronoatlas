@@ -45,10 +45,14 @@ export interface PolityRecord {
   /** EDTF. `end` is the first day it no longer applied, or "ongoing" or "unknown". */
   start: string;
   end: string;
-  /** Day numbers: may have started from s0, had certainly started by s1, ended on e0. */
+  /**
+   * Day numbers: may have started from s0, had certainly started by s1, may have ended from e0.
+   * e1 is set only when the end is known just to the month or year: it had certainly ended by then.
+   */
   s0: number;
   s1: number;
   e0: number;
+  e1?: number;
   sources: Citation[];
   notes?: string;
   /** The area of the record's shape, in km² (measured on the globe). */
@@ -73,6 +77,8 @@ export interface ContestedEntry {
   source: string;
   s0: number;
   e0: number;
+  /** Set when one of the two records may not apply then (its date is known only to the month or year). */
+  maybe?: boolean;
   km2: number;
 }
 
@@ -418,9 +424,10 @@ export function describeTerritory(
       return String(n);
     }
   };
-  // A linked record counts only while its crosswalk link applies.
+  // A record counts until the last day it could have ended, as the map shows it. A linked record
+  // counts only while its crosswalk link applies.
   const isCurrent = (r: PolityRecord) =>
-    r.s0 <= day && day < r.e0 && (r.m0 === undefined || r.m0 <= day) && (r.m1 === undefined || day < r.m1);
+    r.s0 <= day && day < (r.e1 ?? r.e0) && (r.m0 === undefined || r.m0 <= day) && (r.m1 === undefined || day < r.m1);
 
   const label = (r: PolityRecord): string => {
     if (r.via) {
@@ -441,6 +448,7 @@ export function describeTerritory(
   const current = file.records.filter(isCurrent).map((r): CurrentEntry => {
     const notes: string[] = [];
     if (r.s0 <= day && day < r.s1) notes.push(t('panel.uncertainStart', { date: formatDate(parseEdtfDate(r.start)) }));
+    if (r.e1 !== undefined && r.e0 <= day) notes.push(t('panel.uncertainEnd', { date: formatDate(parseEdtfDate(r.end)) }));
     if (r.relation === 'administers') notes.push(t('panel.administersNote'));
     if (r.recognized_by?.length) notes.push(t('panel.recognizedBy', { list: listOf(r.recognized_by.map(nameOf), locale) }));
     if (r.notes) notes.push(r.notes);
@@ -489,7 +497,7 @@ export function describeTerritory(
   // Where the sources disagree over this territory today, attributed to the other side's source.
   const disputes = (file.contested ?? []).filter((c) => c.s0 <= day && day < c.e0);
   const contested = disputes.map((c) =>
-    t(c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', {
+    t(c.maybe ? 'panel.contestedMaybe' : c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', {
       source: sources[c.source]?.title ?? c.source,
       name: nameOf(c.other),
       holds: HOLDS_KEYS[c.relation] ? t(HOLDS_KEYS[c.relation]) : c.relation,
@@ -513,6 +521,13 @@ export function describeTerritory(
       notes.push(t('figure.relation', { relation: RELATION_KEYS[f.relation] ? t(RELATION_KEYS[f.relation]) : f.relation }));
     }
     if (f.records && f.records.length > 1) notes.push(t('figure.combined', { count: String(f.records.length) }));
+    // Measured over several records, one of which may not apply on this date (its start or end is
+    // known only to the month or year): the area held may have been smaller.
+    const unsure = (id: string) => {
+      const r = file.records.find((x) => x.id === id && !x.via);
+      return !!r && ((r.s0 <= day && day < r.s1) || (r.e1 !== undefined && r.e0 <= day && day < r.e1));
+    };
+    if (f.records && f.records.length > 1 && f.records.some(unsure)) notes.push(t('figure.uncertain'));
     if (f.partOf) notes.push(t('figure.partOf', { area: f.partOf }));
     if (f.waterKm2) notes.push(t('figure.water', { value: number(f.waterKm2) }));
     if (f.basis === 'computed-from-shape') notes.push(t('figure.computed'));

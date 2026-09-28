@@ -83,6 +83,17 @@ describe('describeTerritory: on this date', () => {
     expect(view(1902, 1, 1).current[0].notes).toEqual([]);
   });
 
+  it('keeps a record whose end is known only to the year until that year is over, and says so', () => {
+    const ending = { ...testland, records: [record('x', 'controls', '1901', '1905', { e1: day(1905, 12, 31) })] };
+    const on = (y: number, m: number, d: number) => describeTerritory(ending, sources, day(y, m, d), 'en').current;
+    expect(on(1904, 6, 1).map((e) => e.notes)).toEqual([[]]);
+    const during = on(1905, 6, 1);
+    expect(during.map((e) => e.id)).toEqual(['x']);
+    expect(during[0].ended).toBe('1905 (year only)');
+    expect(during[0].notes.join(' ')).toMatch(/only as 1905, so it may already have ended/);
+    expect(on(1905, 12, 31)).toEqual([]);
+  });
+
   it('adds caveats, recognition, and citation notes, with each source and its locator', () => {
     const [c, b] = view(1906, 1, 1).current;
     expect(c.notes).toEqual(['Recognized by Otherland, according to the source.', 'A made-up citation note.']);
@@ -296,6 +307,13 @@ describe('describeTerritory: other sources', () => {
     expect(describeTerritory(withLinks, sources, day(1904, 6, 1), 'en').contested).toEqual([]);
   });
 
+  it('says "possibly contested" when one of the records may not apply on the date', () => {
+    const maybe: PolityFile = { ...withLinks, contested: [{ ...withLinks.contested![0], maybe: true }] };
+    expect(describeTerritory(maybe, sources, day(1902, 6, 1), 'en').contested[0]).toMatch(
+      /^Possibly contested: Other Test Source records Unit B as sovereign over about 120,000 km² of this territory, but a date involved is known only to the month or year/,
+    );
+  });
+
   it('explains when a territory is too small for the legal-borders source', () => {
     const tiny: PolityFile = { ...testland, records: [record('a', 'controls', '1901', 'ongoing', { km2: 1_000 })] };
     expect(describeTerritory(tiny, sources, day(1902, 1, 1), 'en').smallTerritory).toMatch(/under 10,000 km²/);
@@ -326,8 +344,15 @@ describe('describeTerritory: figures', () => {
     expect(notes).toMatch(/about 5,000 km² of coastal waters/);
     expect(notes).toMatch(/present-day coastline/);
     expect(notes).not.toMatch(/Counts only the area recorded as/);
+    expect(notes).not.toMatch(/may have been smaller/);
     expect(occupied.notes).toContain('Counts only the area recorded as “Occupied”.');
     expect(describeTerritory(withFigures, sources, day(1906, 1, 1), 'en').figures.map((f) => f.label)).not.toContain('Land area');
+  });
+
+  it('warns when a combined area includes a record that may not apply on the date', () => {
+    // Record "a" starts in "1901", known only to the year.
+    const [area] = describeTerritory(withFigures, sources, day(1901, 6, 1), 'en').figures;
+    expect(area.notes.join(' ')).toMatch(/may not have begun yet, or may already have ended, .* so the area held may have been smaller/);
   });
 
   it('shows the sourced estimate nearest to the date, with its own date, never an in-between value', () => {

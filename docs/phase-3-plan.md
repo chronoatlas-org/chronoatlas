@@ -336,7 +336,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | Step | What | Effort |
 |---|---|---|
 | 1 ✅ | Record Phase 2 as closed and the Phase 3 decisions. *Done 2026-09-28,* with the legend's contested line reworded (decision 7). | low |
-| 2 | **Uncertain ends on the map** (section 3). | medium |
+| 2 ✅ | **Uncertain ends on the map** (section 3). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 3 | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). | high |
 | 4 | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). | high |
 | 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
@@ -348,6 +348,40 @@ geometry, licensing, or the visual language needs care, and lower where the work
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing, and
 updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
+
+### Progress
+
+**Step 2, uncertain ends (done 2026-09-28):**
+
+- **On the map:** a border whose end is known only to the month or year stays on the map, lighter,
+  until the last day it could have ended. For example, in May 1942 British Burma (ending
+  "1942-05") and the Japanese occupation of Burma (starting "1942-05") are both drawn lighter;
+  from June only the occupation is, at full strength.
+- **In the panel:** the record is listed as current in that window, with a note: "The source gives
+  this end only as May 1942, so it may already have ended."
+- **Found while building: "possibly contested".** Counting a record until its last possible end
+  (and, as before, from its first possible start) made some contested areas depend on a date
+  that's only known to the month or year. For example, OpenHistoricalMap dates Manchukuo's
+  border only to "1932", so Manchuria was hatched as contested from 1 January 1932. Now each
+  contested period is split where both records certainly apply:
+  - the certain part is hatched as before;
+  - the uncertain parts are hatched more faintly, and the panel says "Possibly contested", with
+    the reason.
+
+  In the real data this marks, among others, Manchuria through 1932, and southern Sakhalin from
+  5 September to 31 December 1905. Sakhalin's contested pair (Russian Empire per OpenHistoricalMap
+  vs Japan per CShapes, about 32,000 km²) is new: OpenHistoricalMap ends the older Russian
+  border only "1905", and CShapes gives the south to Japan on 5 September 1905.
+- **Land areas:** in an uncertain window, a polity's area is measured over both its old and new
+  borders together, and the panel now says the area held "may have been smaller". Areas changed
+  for 12 polities. The largest change: the Russian Soviet Federative Socialist Republic in 1920
+  reads about 3,500,000 km² instead of 2,000,000, because its older border, ending "1920", may
+  still apply.
+- **Contested entries changed for 13 polities,** each by extending the period to the end of the
+  uncertain month or year, plus the new Sakhalin pair.
+- **Sizes:** the change index grew from 288 to 299 days, all tiles together from 11.4 to 11.6 MB,
+  and the polity files from 1,474 to 1,500 KB. The new `e1` and `maybe` properties appear only
+  where needed.
 
 ### Showcase data track (in parallel)
 
