@@ -249,6 +249,42 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
 
 - **Step 1 (2026-09-28): done.** The plan was approved with every recommendation (section 12),
   and Phase 4 was closed.
+- **Step 2 (2026-09-28): measured.** A scratch worldwide build, never published: the real
+  Cliopatria import run for the whole world and every year, then the real build, then its layer
+  split into eras. What it found:
+
+  | | Result |
+  |---|---|
+  | Worldwide import | 18 seconds; 12,043 rows as 1,539 polities; **57 MB committed** (51.5 MB of shapes, 4.9 MB of records) |
+  | Whole build, unchanged, no eras | 5 minutes 15 seconds, 3 GB of memory; 1,621 polity files (9 MB); 1,218 change days |
+  | Cliopatria as one tile set for every year | 222 MB; largest tile 6.2 MB; **4.6 MB** for the East Asia opening view, **8.7 MB** for the whole world at zoom 1 |
+  | Split into eras, 3 MB budget (fills and lines) | **39 eras**, 297 MB in 133,000 tiles (empty ones not written); largest tile 370 KB; at most **0.51 MB** for the whole world at zoom 1, 0.27 MB for East Asia at zoom 3 |
+  | Split into eras, 6 MB budget | **18 eras**, 254 MB in 65,000 tiles; largest tile 665 KB; at most **0.72 MB** for the whole world at zoom 1 |
+  | Building the layer, labels, tiles | 18 s for fills and lines, 15 s for a label on every row, 18–23 s for all the era tiles |
+  | Missing tiles | MapLibre draws nothing for a tile that isn't there ("404 not found"), with no error and no effect on the tiles that are there. So empty tiles needn't be written, and PMTiles isn't needed. (The local development server answers a missing file with the page itself, so it needs a setting to answer "not found" under `/data/`.) |
+  | Speed (software rendering, 1280×720) | Changing the date in the busiest era (the 1940s) took 97 ms over East Asia and 88 ms over Europe, against 87 ms with today's tiles; 145 ms with the whole world in view. A real phone check stays in step 11. |
+  | Coast cut for Cliopatria | **Too costly:** about 77 minutes per build, and the cut shapes are 3.6 times bigger (about 173 MB more). Worldwide coast tiles themselves are small (9.3 MB). |
+
+  - **Found in the data:** 1,038 rows are dated BCE, and their IDs as the import writes them now
+    (`…--0041`) break the ID rule; one pair of rows shares a name and a first year, and so an ID.
+  - **Blocked from this environment:** CShapes' download server and OpenHistoricalMap's query
+    service. Cliopatria downloads fine.
+  - **Changes these call for,** put to the maintainers before step 3:
+    1. **Era budget:** 6 MB rather than 3 MB. Both keep every view under 1 MB; 6 MB halves the
+       number of files the site publishes (65,000 rather than 133,000 for the baseline alone),
+       which keeps deployments quick.
+    2. **The coast:** Cliopatria's fills aren't cut at the coast. From zoom 4 the detailed sea and
+       coastline are drawn over them, so they still stop at the coast. Unlike
+       OpenHistoricalMap's borders, Cliopatria's (at about 40 km² resolution) don't record small
+       islands, so the sea can't hide any. OpenHistoricalMap keeps its exact cut.
+    3. **IDs for BCE rows:** `cliopatria-<name>-41bce` (for a row starting in 41 BCE), and `-2`
+       added to the second of two rows with the same name and first year. Existing IDs don't
+       change.
+    4. **Importing CShapes worldwide:** its server is blocked here, so the import has to run on
+       GitHub's machines or a maintainer's computer. Recommended: let the re-import workflow also
+       re-run the pinned CShapes and Cliopatria imports (a choice of dataset). The pins still
+       hold: the import stops if a file's checksum changes, and a new version is still reviewed
+       by hand. It opens a pull request with the summary, like an OpenHistoricalMap re-import.
 
 **Left out of Phase 5:**
 
