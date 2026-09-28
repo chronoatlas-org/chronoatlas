@@ -1,10 +1,10 @@
 # Issue form for reporting a problem with a border or its dates.
 # Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
 #
-# The field ids below are STABLE. The site's planned "Report a problem with this border" button
-# pre-fills them through the address, for example:
+# The field ids below are STABLE. The site's "Report a problem with this border" button (in the
+# territory panel; src/url/report.ts) pre-fills them through the address, for example:
 #   issues/new?template=border-correction.yml&territory=Testland&date_range=1901-05/1901-09
-# Don't rename or remove an id without updating that button.
+# Never rename or remove an id: links already shared would stop filling it in.
 name: Border correction
 description: Report a border, date, or name that looks wrong, with a source that supports the fix.
 title: "[Border] "
@@ -18,7 +18,7 @@ body:
 
         **Border lines themselves are fixed upstream in [OpenHistoricalMap](https://www.openhistoricalmap.org)**
         (OHM) and then re-imported; we never hand-edit imported lines here. If you have already
-        fixed a line in OHM, put a link to your OHM change under "Sources". Claims, recognition,
+        fixed a line in OHM, link your change in the field for it below. Claims, recognition,
         contested status, and events are fixed in this repository. See
         [Drawing or fixing a border line](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#drawing-or-fixing-a-border-line).
   - type: input
@@ -61,6 +61,14 @@ body:
       placeholder: "e.g. Author, Title (Publisher, 1900), p. 12, map sheet 4. Public domain."
     validations:
       required: true
+  - type: input
+    id: ohm_change
+    attributes:
+      label: Link to your OpenHistoricalMap change (optional)
+      description: >-
+        If you've already fixed the border or its dates in OpenHistoricalMap, link the relation or
+        your changeset, so a maintainer can re-import it straight away.
+      placeholder: https://www.openhistoricalmap.org/relation/...
   - type: input
     id: view_link
     attributes:

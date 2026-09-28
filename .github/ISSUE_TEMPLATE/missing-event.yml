@@ -39,7 +39,9 @@ body:
     id: location
     attributes:
       label: Location (optional)
-      description: A place name, or coordinates, and how precise they are.
+      description: >-
+        A place name or coordinates, how precise they are (for example "within 5 km"), and the
+        source for them (it can be one of the sources below, with its page).
   - type: textarea
     id: why_it_matters
     attributes:
@@ -53,8 +55,12 @@ body:
       label: Sources
       description: >-
         Full citations (author, title, year, and publisher, URL, DOI, or ISBN), each **with a
-        locator** (page, section, document number). Wikipedia and Wikidata are leads, not
-        sources; cite what they cite. A Wikidata ID is welcome as an identifier.
+        locator** (page, section, document number), and **who is speaking** in each: whose
+        account it is (for example a government's statement, a diplomat's report, a
+        commission's finding, a historian's summary). Summaries say who said what, so this
+        matters. Wikipedia and Wikidata are leads, not sources; cite what they cite. A Wikidata ID
+        is welcome as an identifier.
+      placeholder: "e.g. Author, Title (Publisher, 1900), p. 12: the Testland government's statement, as reprinted there."
     validations:
       required: true
   - type: textarea

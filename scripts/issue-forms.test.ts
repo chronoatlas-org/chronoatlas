@@ -12,9 +12,10 @@ const forms = readdirSync(dir).filter((f) => f.endsWith('.yml') && f !== 'config
 
 // Field ids that the site (or docs) pre-fill through the address. Renaming one breaks those links.
 const STABLE_IDS: Record<string, string[]> = {
-  'border-correction.yml': ['territory', 'date_range', 'problem', 'sources', 'view_link', 'suggested_fix', 'confirmations'],
+  'border-correction.yml': ['territory', 'date_range', 'problem', 'sources', 'ohm_change', 'view_link', 'suggested_fix', 'confirmations'],
   'missing-event.yml': ['event_name', 'date', 'location', 'why_it_matters', 'sources', 'related_territories'],
   'bug.yml': ['what_happened', 'expected', 'steps', 'view_link', 'device_browser'],
+  'suggest-source.yml': ['source_title', 'link', 'covers', 'license', 'why_useful', 'confirmations'],
 };
 
 const TYPES = ['markdown', 'textarea', 'input', 'dropdown', 'checkboxes', 'upload'];
@@ -27,8 +28,8 @@ interface Item {
 }
 
 describe('issue forms', () => {
-  it('include the three forms', () => {
-    expect(forms.sort()).toEqual(['border-correction.yml', 'bug.yml', 'missing-event.yml']);
+  it('include the four forms', () => {
+    expect(forms.sort()).toEqual(['border-correction.yml', 'bug.yml', 'missing-event.yml', 'suggest-source.yml']);
   });
 
   for (const file of forms) {

@@ -1,0 +1,66 @@
+# Issue form for suggesting a source or dataset we could use.
+# Syntax: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+# The field ids are stable (they can be pre-filled from the address); never rename or remove one.
+name: Suggest a source or dataset
+description: Suggest a map, book, archive, or dataset we could use, with its license.
+title: "[Source] "
+labels: [sources]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Before anything is imported or traced from a source, the maintainers check its
+        **license** (whether we may use it, and on what terms) and what it actually records.
+        Datasets that forbid commercial use or require share-alike are kept apart from our own
+        data, and some can't be used at all. See
+        [how we evaluated the datasets we use](https://github.com/chronoatlas-org/chronoatlas/blob/main/docs/data-sources.md).
+        The more you can tell us below, the faster that check goes.
+  - type: input
+    id: source_title
+    attributes:
+      label: Source or dataset
+      description: Its title, and its author or publisher.
+      placeholder: e.g. A Test Atlas of Testland (Test Press, 1900)
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link (optional)
+      description: Where it can be found or downloaded, if it's online.
+      placeholder: https://...
+  - type: textarea
+    id: covers
+    attributes:
+      label: What it covers
+      description: >-
+        The places and years, and what it records: borders (as lines, or only which country held
+        a place), who controlled or legally held an area, claims, events, or figures such as
+        population. Say how precise it is, if you know (surveyed lines, sketch maps, dates to the
+        day or the year).
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License or copyright status
+      description: >-
+        Its license (for example CC0, CC BY 4.0, CC BY-NC-SA 4.0, public domain), with a link to
+        where it's stated. If you couldn't find one, say so: that's useful to know too.
+      placeholder: e.g. CC BY 4.0, stated at https://...
+    validations:
+      required: true
+  - type: textarea
+    id: why_useful
+    attributes:
+      label: Why it's useful
+      description: What it would add or correct on the map, for example a gap, a second opinion, or a better source for something we already show.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before you submit
+      options:
+        - label: I gave the license as stated by the source itself, or said I couldn't find one.
+          required: true
