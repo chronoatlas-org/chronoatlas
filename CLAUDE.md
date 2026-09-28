@@ -149,9 +149,22 @@ The ones that affect everyday work:
 - **No population dataset for now.** The first Figure is `area-km2`, computed from our shapes.
   Correlates of War is left out.
 
-**Phase 3 plan drafted (2026-09-28), not yet approved:** [docs/phase-3-plan.md](docs/phase-3-plan.md).
-Write no Phase 3 code until the maintainer approves it. Its order of work gives a recommended
-effort setting for each step.
+**Phase 3 plan approved (2026-09-28)**, with all its recommendations; Phase 2 is closed. The
+plan and its decisions are in [docs/phase-3-plan.md](docs/phase-3-plan.md#12-decisions-2026-09-28),
+and its order of work gives a recommended effort setting for each step. The ones that affect
+everyday work:
+
+- **Uncertain dates look uncertain at both ends:** a record stays on the map, lighter, until the
+  last day it could have ended (`e1`). The panel, land areas, and contested areas use the same
+  end.
+- **Words:** "contested" means administered by one state and legally recognized as another's (or,
+  later, conflicting claims). A disagreement between sources is "sources differ", shown only in
+  the compare view.
+- **No empty features:** styles with no real data yet (approximate lines, frontier zones,
+  claims) are tested with Testland and appear on the map and legend only when the build finds
+  real data. "No state" is put off, and the stipple is kept free for it.
+- **Line styles:** dots mean the second opinion and dashes are already taken, so edge precision
+  is shown by sharpness (a softened line, a soft band).
 
 **CShapes decisions (2026-09-27)**, made while importing it:
 

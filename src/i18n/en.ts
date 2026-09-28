@@ -10,7 +10,7 @@ export const en = {
   'app.mapLabel': 'Map',
   'app.title': 'chronoatlas · {date}',
   'legend.noData': 'No data yet',
-  'legend.contested': 'Contested: the sources disagree',
+  'legend.contested': "Contested: administered by one state, legally recognized as another's (per the sources named)",
   'legend.jure':
     'Legal borders per CShapes 2.0. Lighter, with dashed edges: a colony, protectorate, or occupied area, tinted like the state holding it.',
   'view.label': 'Borders shown',

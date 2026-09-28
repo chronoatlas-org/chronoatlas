@@ -6,7 +6,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: Phase 2 in progress** ([plan](docs/phase-2-plan.md)). Country borders for East Asia,
+> **Status: Phase 3 in progress** ([plan](docs/phase-3-plan.md); Phase 2 is
+> [done](docs/phase-2-plan.md)). Country borders for East Asia,
 > 1900–1950, imported from OpenHistoricalMap, change as you move the timeline. Everywhere else
 > shows "no data yet".
 >
@@ -15,8 +16,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 >   border.
 > - "Around this date" lists the border changes near the selected date.
 > - A switch shows the borders as administered (OpenHistoricalMap) or as legally recognized
->   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, where the two sources
->   disagree, and the panel says so in words.
+>   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, administered by one state
+>   and legally recognized as another's, and the panel says so in words.
 > - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
 > - The panel shows each territory's land area on the selected date, computed from its borders
 >   and a coastline, with how it was measured and its sources.
@@ -122,6 +123,6 @@ public-domain maps, then imported. Everyone taking part follows our
 - [docs/phase-2-plan.md](docs/phase-2-plan.md): the plan for Phase 2 (approved 2026-09-27),
   with progress and open questions.
 - [docs/phase-3-plan.md](docs/phase-3-plan.md): the plan for Phase 3, contested and uncertain
-  borders (a draft, awaiting approval).
+  borders (approved 2026-09-28), with progress.
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
   from a dated public-domain map so that our import picks it up.

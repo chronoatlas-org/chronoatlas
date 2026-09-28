@@ -4,10 +4,10 @@
 > question. The decisions are recorded in [section 7](#7-decisions-2026-09-27). Drafted and
 > approved 2026-09-27.
 >
-> **Steps 1–12 are done, and step 13's guide is merged (2026-09-28).** The first traced border
-> is waiting on people tracing in OpenHistoricalMap. The [Phase 3 plan](phase-3-plan.md)
-> proposes closing Phase 2 and carrying that border and the open questions below into a
-> showcase data track.
+> **Closed on 2026-09-28.** Steps 1–12 are done, and step 13's guide is merged. The first traced
+> border, which waits on people tracing in OpenHistoricalMap, and the open questions below moved
+> to the showcase data track of the [Phase 3 plan](phase-3-plan.md#showcase-data-track-in-parallel)
+> (Phase 3 decision 1).
 
 Phase 1 put borders on a map with a timeline. Phase 2 makes the map **explain itself**: clicking a
 territory opens a panel with everything we know about it and where each fact comes from, events

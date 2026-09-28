@@ -1,8 +1,7 @@
 # Phase 3 plan: contested and uncertain borders
 
-> **Status: draft, 2026-09-28, waiting for the maintainer's review.** No Phase 3 code is written
-> until it's approved. Every question has a recommended answer, in
-> [section 11](#11-questions-for-the-maintainer).
+> **Status: approved by the maintainer on 2026-09-28**, with the recommended answer to every
+> question. The decisions are recorded in [section 12](#12-decisions-2026-09-28).
 
 Phase 2 made the map **explain itself in the panel**. Phase 3 makes the **map itself show how
 sure we are**, and lets a visitor compare the sources directly:
@@ -27,6 +26,7 @@ Sections:
 9. [Left out of Phase 3](#9-left-out-of-phase-3)
 10. [Order of work](#10-order-of-work)
 11. [Questions for the maintainer](#11-questions-for-the-maintainer)
+12. [Decisions (2026-09-28)](#12-decisions-2026-09-28)
 
 ---
 
@@ -335,7 +335,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 
 | Step | What | Effort |
 |---|---|---|
-| 1 | Record Phase 2 as closed and the Phase 3 decisions (docs only). | low |
+| 1 ✅ | Record Phase 2 as closed and the Phase 3 decisions. *Done 2026-09-28,* with the legend's contested line reworded (decision 7). | low |
 | 2 | **Uncertain ends on the map** (section 3). | medium |
 | 3 | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). | high |
 | 4 | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). | high |
@@ -388,3 +388,28 @@ Each has a recommended answer. "Approve with the recommendations" answers them a
 9. **Coloring the map by a figure:** leave it out of Phase 3? *Recommended: yes.*
 10. **Claims overlay:** build it only once the first claim records exist (from Phase 2 open
     question 1 or a sourced claim)? *Recommended: yes.*
+
+## 12. Decisions (2026-09-28)
+
+The maintainer approved the plan with the recommended answer to each question.
+
+1. **Phase 2 is closed.** The first traced border and Phase 2's open questions move to the
+   showcase data track.
+2. **Uncertain ends:** a border stays on the map, lighter, until the last day it could have
+   ended. The panel, land areas, and contested areas follow the same rule.
+3. **Precision styles:** a solid line for both "treaty or surveyed" and "unknown" (the legend and
+   panel say which), a softened line for approximate, and a soft band for frontier zones.
+4. **Precision is recorded per shape** for now. Records per stretch of line wait until real data
+   needs them.
+5. **"No state" is put off** until a source says it's complete, or that an area had no state. The
+   stipple stays free for it.
+6. **The compare view is one map:** fills, outlines, "sources differ" areas, and a list of what
+   each source says at a spot.
+7. **"Contested" and "sources differ" are kept apart.** The legend's contested line now reads
+   "Contested: administered by one state, legally recognized as another's (per the sources
+   named)".
+8. **Map text:** Noto Sans for Latin text, hosted with the site in its own folder with its
+   license, and device fonts for Chinese, Japanese, and Korean, subject to the license check in
+   step 5.
+9. **Coloring the map by a figure** is left out of Phase 3.
+10. **The claims overlay** is built only once the first claim records exist.

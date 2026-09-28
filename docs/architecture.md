@@ -111,12 +111,15 @@ That's how clicking an event on the timeline can highlight the border changes th
 - A source can also state explicitly that an area was stateless.
 
 **Computed at build time:**
-- **Contested** means claims conflict, or the controller differs from the legal sovereign, or
-  sources disagree about who controlled an area.
+- **Contested** means claims conflict, or the controller differs from the legal sovereign. It's
+  reserved for disputes in the world.
+- **Sources differ** means two sources name different holders for the same place and day. That
+  can come from detail, resolution, or dating rather than a dispute, so it's shown only in the
+  compare view (Phase 3 decision 7).
 - **Views:**
   - de facto (the default)
   - de jure (per a chosen source)
-  - claims
+  - claims, as an overlay on either view, once claim records exist
   - compare sources
 
 ### Example (real, verified values)
@@ -264,15 +267,20 @@ numbers as absolute speeds.
 | Meaning | Style | Status |
 |---|---|---|
 | Boundary | solid line | built |
-| Contested: the sources disagree (for example, the controller differs from the legal sovereign) | magenta cross-hatch with a dashed edge, plus a legend label and a sentence in the panel | built (Phase 2, step 9) |
+| Contested: administered by one state, legally recognized as another's (later also: conflicting claims) | magenta cross-hatch with a dashed edge, plus a legend label and a sentence in the panel | built (Phase 2, step 9) |
 | No data yet | gray diagonal hatch, plus a legend label | built |
 | Uncertain start (a date known only to the year, say) | lighter fill until the date is certain | built |
+| Uncertain end | lighter fill from the first to the last day it could have ended | planned (Phase 3, step 2) |
 | A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
-| Claim | dashed line | planned |
-| Approximate border | dotted line | planned |
-| Frontier zone | blurred edge | planned |
-| No state (per source) | light stipple, plus a label | planned |
+| Sources differ (compare view only) | a pattern of its own, plus a legend label | planned (Phase 3, step 7) |
+| Coastal waters, as the source draws them | a faint tint, no outline | planned (Phase 3, step 4) |
+| Edge of imported data | dashed gray line, plus a label | planned (Phase 3, step 3) |
+| Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |
+| Approximate border | softened (blurred) line | planned (Phase 3, step 8) |
+| Frontier zone | a wide soft band, plus a label | planned (Phase 3, step 8) |
+| Claim | a line with ticks on its inner side, plus a label | once claim records exist (Phase 3, step 9) |
+| No state (per source) | light stipple, plus a label (kept free for this) | put off until a source gives it (Phase 3, decision 5) |
 
 Every style is also explained in words in the territory panel. Motion effects, such as event
 pulses, respect the browser's reduced-motion setting.
@@ -383,8 +391,9 @@ and 100 GB/month bandwidth as a soft limit):
   8. ✅ Data checks in CI (`npm run validate` and `npm test` run on every push and pull
      request), issue forms for border corrections, missing events, and bugs
      (`.github/ISSUE_TEMPLATE/`), and a pull request template with the review checklist.
-- **Phase 2, panel, events and transitions (the showcase begins).** The detailed plan is
-  [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27), which lists the steps. Done so far:
+- **Phase 2, panel, events and transitions (the showcase begins), closed 2026-09-28.** The
+  detailed plan is [phase-2-plan.md](phase-2-plan.md) (approved 2026-09-27), which lists the
+  steps. Done:
   step 1 ✅ (panel foundation: Preact, a side panel replacing the popup, and `sel` in the
   address) and step 2 ✅ (one data file per polity; the panel shows names over time and every
   record, keeping control, sovereignty, and claims apart), and step 3 ✅ (phone bottom sheet;
@@ -411,8 +420,9 @@ and 100 GB/month bandwidth as a soft limit):
 - **Phase 3, contested and uncertain borders:** the full visual language, soft edges, a
   compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
   example population), keeping "no data" visually distinct. The detailed plan is
-  [phase-3-plan.md](phase-3-plan.md) (a draft, 2026-09-28, awaiting approval). It proposes
-  putting off "no state" and coloring by a figure, for lack of data. It also includes:
+  [phase-3-plan.md](phase-3-plan.md) (approved 2026-09-28). It puts off "no state" and coloring
+  by a figure, for lack of data, and adds a showcase data track for the work that waits on
+  people. It also includes:
   - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
     to sea to include coastal waters, often as a ring around each island. About 23% of the
     Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,
