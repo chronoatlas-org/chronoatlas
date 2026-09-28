@@ -118,6 +118,19 @@ everything derived from it in its own folder, `data/imports/<name>/`:
       why: The reason, from the data.
 ```
 
+- **Where the crosswalk has been reviewed**, `data/imports/<name>/crosswalk-reviewed.yaml`, is
+  hand-written too. Contested areas are computed only inside these places and years (Phase 5
+  decision 6), so add a scope only after reviewing the crosswalk for it, in a pull request of its
+  own. Scopes shouldn't overlap:
+
+```yaml
+- area: { south: 10, west: 20, north: 30, east: 40 }   # a box, in degrees
+  from: "1901"                  # first day reviewed
+  until: "1951"                 # first day no longer reviewed
+  reviewed: 2026-01-01          # when the review was done
+  notes: What was reviewed, and where the review is recorded.
+```
+
 ## Shapes: `data/shapes/<id>.geojson`
 
 Geometry only: one GeoJSON Feature per file, a `Polygon` or `MultiPolygon` in
@@ -205,6 +218,9 @@ interpreting it. **Don't edit imported files by hand:** fix the problem upstream
 4. Every date parses, and nothing ends before it starts.
 5. Every shape is valid: closed rings, real coordinates, correct orientation.
 6. Every import folder has its license, readme, and manifest.
+7. A polity record in an import folder is used only by that folder's records.
+8. A crosswalk links its folder's units to our polities, with dates that parse.
+9. A crosswalk's reviewed scopes have dates that parse and a box that isn't empty.
 
 The site's build (`npm run build-data`) refuses to run on invalid data, and pull requests are
 checked automatically.

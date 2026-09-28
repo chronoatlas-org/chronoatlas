@@ -252,6 +252,13 @@ with an effort setting for each step. The ones that affect everyday work:
   where a crosswalk has been reviewed for those years (Europe 1914–1950 first); the panel says
   "Not yet checked against legal borders here" elsewhere. Crosswalk suggestions are never
   accepted without a maintainer's review.
+  - The reviewed places and years are listed in a hand-written `crosswalk-reviewed.yaml` beside
+    the crosswalk (schema `crosswalk-reviewed.schema.json`); `buildContested` cuts contested
+    areas to them with `withinScopes` (`scripts/lib/contested.ts`). CShapes' lists East Asia
+    1900–1950 only. A hand-made test dataset without `crosswalkScopes` isn't limited.
+  - The CShapes import skips dependencies whose owner code isn't a state in CShapes (codes 0 and
+    1: Danzig 1919–1938, West Irian 1962–63) and lists them in its manifest; what those codes
+    stand for is for the maintainers to check in the codebook.
 - **Cliopatria's shapes keep `edge_precision: unknown`;** land areas for its polities come from
   its own `Area`, credited to it.
 - **Translations** are published only after a native speaker's review.
