@@ -32,6 +32,8 @@ pick a form:
 
 - **Border correction:** a border, date, or name that looks wrong.
 - **Missing event:** an event the timeline should show.
+- **Suggest a source or dataset:** a map, book, archive, or dataset we could use, with its
+  license.
 - **Bug report:** something on the website that doesn't work.
 
 The forms ask for the place, the date or date range (as an [EDTF date](docs/data-format.md#conventions)),
@@ -115,6 +117,21 @@ Third-party datasets enter only through the import process, which keeps them in 
 - Reviewers may ask for more or better sources. Being asked is normal and not a rejection.
 - When good sources disagree, the resolution is to represent the disagreement, not to choose a
   winner.
+- How reviewers go about it, step by step: [docs/reviewing.md](docs/reviewing.md).
+
+### After you open a pull request
+
+- **The build check** runs the data checks and the tests, and builds the site. If it's your first
+  contribution, it waits until a maintainer presses "Approve and run"; that's GitHub's safety rule
+  for new contributors, not a judgment of your change.
+- **A data-change summary** appears as a comment a few minutes after the check finishes, if you
+  changed anything in `data/`. It says in words what your change does: records, dates and how
+  precise they are, sources, borders, and what that changes elsewhere on the map (contested areas,
+  land areas). Read it: if it says something you didn't mean, fix the files and push again, and
+  the comment updates. You can see the same summary before opening the pull request with
+  `npm run summarize-changes`.
+- **A maintainer reviews it,** checking your sources at the pages you cite. Changes to licenses,
+  import folders, crosswalks, and workflows always wait for a maintainer.
 
 ## Drawing or fixing a border line
 

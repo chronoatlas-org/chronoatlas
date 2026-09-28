@@ -1,0 +1,14 @@
+# Asks for the project account's review on the changes that are always the maintainers' decision,
+# however small (Phase 4 decision 6; docs/reviewing.md). Later lines win over earlier ones.
+# Syntax: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Licenses: the project's own and every dataset's.
+LICENSE @chronoatlas-project
+LICENSE.md @chronoatlas-project
+/CREDITS.md @chronoatlas-project
+
+# Third-party data, its manifests, and the hand-written crosswalks.
+/data/imports/ @chronoatlas-project
+
+# Workflows, issue forms, and this file: what runs with the repository's permissions.
+/.github/ @chronoatlas-project

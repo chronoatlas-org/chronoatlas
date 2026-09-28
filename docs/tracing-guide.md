@@ -257,8 +257,20 @@ This is what `scripts/import-ohm.ts` actually does, with the settings recorded i
 
 ## 7. Re-importing (for maintainers)
 
-After someone traces a border in OHM, a maintainer brings it into this repository. The commands
-work the same in PowerShell and other terminals. Run them in the project folder.
+After someone traces a border in OHM, a maintainer brings it into this repository.
+
+**The easy way, on GitHub's website:** open the repository's **Actions** tab, choose
+**Re-import OpenHistoricalMap**, press **Run workflow** (on `main`), and optionally say why (a
+link to the OHM change or the issue). Start it while signed in as the project account, because
+the run page shows who started it. A few minutes later it opens a pull request with the
+re-imported data, with the data-change summary as its first comment, and starts the build check on
+it. If nothing changed in OHM, it says so and opens nothing. Then review the pull request as in
+step 3 below. (This needs the repository setting "Allow GitHub Actions to create and approve pull
+requests", which the maintainers turn on once; see
+[the reviewer guide](reviewing.md#7-repository-settings-done-once).)
+
+**On your own computer,** the same thing with commands. They work the same in PowerShell and other
+terminals. Run them in the project folder.
 
 1. **Start from an up-to-date branch:**
    ```
@@ -284,7 +296,8 @@ work the same in PowerShell and other terminals. Run them in the project folder.
    http://localhost:5173 at a date the new border covers. The build also prints the contested
    areas; look for new ones.
 6. **Commit and open a pull request** in the usual way, with the relation links in the
-   description.
+   description. The data-change summary appears as a comment once the build check finishes; you
+   can also see it beforehand with `npm run summarize-changes`.
 
 Never fix imported files by hand: if something is wrong, fix it in OHM and import again.
 
