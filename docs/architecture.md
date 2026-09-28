@@ -258,15 +258,17 @@ numbers as absolute speeds.
 
 ## Visual language (never color alone)
 
-| Meaning | Style |
-|---|---|
-| Boundary | solid line |
-| Claim | dashed line |
-| Approximate border | dotted line |
-| Contested, or controller differs from legal sovereign | hatched fill |
-| Frontier zone | blurred edge |
-| No state (per source) | light stipple, plus a label |
-| No data yet | gray crosshatch, plus a label |
+| Meaning | Style | Status |
+|---|---|---|
+| Boundary | solid line | built |
+| Contested: the sources disagree (for example, the controller differs from the legal sovereign) | magenta cross-hatch with a dashed edge, plus a legend label and a sentence in the panel | built (Phase 2, step 9) |
+| No data yet | gray diagonal hatch, plus a legend label | built |
+| Uncertain start (a date known only to the year, say) | lighter fill until the date is certain | built |
+| A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
+| Claim | dashed line | planned |
+| Approximate border | dotted line | planned |
+| Frontier zone | blurred edge | planned |
+| No state (per source) | light stipple, plus a label | planned |
 
 Every style is also explained in words in the territory panel. Motion effects, such as event
 pulses, respect the browser's reduced-motion setting.
@@ -286,6 +288,7 @@ hosting with no server. The logic is in `src/url/state.ts` and is covered by tes
 | `m` | Map view: zoom/latitude/longitude (OpenStreetMap order). 2 decimals for zoom, 4 for coordinates. |
 | `sel` | Selected territory, as a polity ID (permanent, so old links keep working). Opens the territory panel. Anything not shaped like an ID is ignored, and an ID that isn't in our data closes the panel and drops out of the address. |
 | `ev` | Selected event, as an event ID, instead of `sel` (the panel shows one or the other). It opens the event in the panel, outlines its effects, and pulses its place. |
+| `v` | `jure` for the borders as legally recognized (per CShapes); absent for the default, as administered (per OpenHistoricalMap). |
 | `lang` | Interface language. Only present if chosen explicitly; otherwise the browser's languages are used. |
 
 - **Updating the address:** it updates 300 ms after the view stops changing, with
@@ -384,7 +387,8 @@ and 100 GB/month bandwidth as a soft limit):
   tested with made-up events; there are no real events yet), and step 6 ✅ (the event panel, the
   pulse on the map, and dashed outlines of an event's effects), and step 7 ✅ ("Around this date":
   the events and border changes in the part of the timeline in view), and step 8 ✅ (the CShapes
-  import, in its own folder, with the crosswalk). The goals:
+  import, in its own folder, with the crosswalk), and step 9 ✅ (the de jure view, and contested
+  areas computed at build time). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

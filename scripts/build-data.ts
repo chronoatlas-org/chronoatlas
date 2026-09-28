@@ -11,6 +11,9 @@
 //                          timeline's markers and the map's pulse
 //   public/data/events/<id>.json     one event in full (summary, sources, effects), for the panel
 //   public/data/changes.json         every day a border starts or ends, with its polity and source
+//   public/data/dejure-tiles/<version>/…      CShapes' legally recognized borders, its own layer
+//   public/data/contested-tiles/<version>/…   where the sources disagree (computed; carries
+//                          CShapes' CC BY-NC-SA license, so it's a layer of its own)
 //   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
 //                          the territory panel (a visitor downloads only the ones they open)
 //
@@ -23,18 +26,26 @@ import { dirname, join } from 'node:path';
 import { parseEdtfDate } from '../src/dates/index.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset } from './lib/data.ts';
+import { boundingBox, computeContested } from './lib/contested.ts';
+import type { ContestedArea, Link, TimedShape } from './lib/contested.ts';
+import { areaKm2 } from './lib/geometry.ts';
+import type { MultiPolygon } from './lib/geometry.ts';
+import polygonClipping from 'polygon-clipping';
 import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
 import type { Assertion, Polity, PolityName, ShapeFeature } from './lib/types.ts';
 import type { AtlasName } from '../src/map/names.ts';
-import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import type { BorderChange, ContestedEntry, EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
 import type { TimelineEvent } from '../src/timeline/events.ts';
 
 const OUT_DIR = join(ROOT, 'public', 'data');
 const TILE_LAYER = 'borders';
+/** Import folders whose assertions are legally recognized (de jure) borders, shown as their own view. */
+export const DE_JURE_FOLDERS = ['data/imports/cshapes-2-0/'];
+const isDejure = (file: string) => DE_JURE_FOLDERS.some((folder) => file.startsWith(folder));
 /** Highest zoom with its own tiles. At zoom 7 a tile unit is about 40 m, finer than the data. */
 const TILE_MAX_ZOOM = 7;
 /** Stands in for "no end yet" in day-number comparisons: a day far in the future. */
@@ -112,9 +123,29 @@ export function onDefaultMap(file: string): boolean {
 }
 
 export function buildBorders(ds: Dataset) {
+  return buildBorderLayer(ds, onDefaultMap);
+}
+
+/**
+ * The de jure view: CShapes' borders, colored by the state CShapes records as sovereign (so a
+ * colony shares its owner's color). `dep` marks colonies, protectorates, mandates, and occupied
+ * units.
+ */
+export function buildDejure(ds: Dataset) {
+  return buildBorderLayer(ds, isDejure, (shape): Record<string, number> => {
+    const status = shape.properties.cshapes_status;
+    return typeof status === 'string' && status !== 'independent' ? { dep: 1 } : {};
+  });
+}
+
+function buildBorderLayer(
+  ds: Dataset,
+  include: (file: string) => boolean,
+  extra: (shape: ShapeFeature) => Record<string, number> = () => ({}),
+) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
-    .filter(({ file }) => onDefaultMap(file))
+    .filter(({ file }) => include(file))
     .flatMap(({ value }) => value)
     .filter((a): a is Assertion & { shape: string } => TERRITORIAL_RELATIONS.includes(a.relation) && !!a.shape);
 
@@ -139,6 +170,7 @@ export function buildBorders(ds: Dataset) {
         e0,
         ...(endUnknown ? { endUnknown: true } : {}),
         color: colors.get(a.subject) ?? 0,
+        ...extra(shape),
       },
       geometry: shape.geometry as GeoJSON.Geometry,
     })),
@@ -148,6 +180,71 @@ export function buildBorders(ds: Dataset) {
     [180, 90, -180, -90],
   );
   return { collection, bounds: dataBounds };
+}
+
+const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
+  (geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates) as MultiPolygon;
+
+/** Territorial assertions from some files, with their shapes and days, for comparing sources. */
+function timedShapes(ds: Dataset, include: (file: string) => boolean, relations: readonly string[]): TimedShape[] {
+  const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
+  return ds.assertions
+    .filter(({ file }) => include(file))
+    .flatMap(({ value }) => value)
+    .filter((a) => relations.includes(a.relation) && a.shape && shapes.has(a.shape))
+    .map((a) => {
+      const geometry = asMultiPolygon(shapes.get(a.shape!)!.geometry);
+      const { s0, e0 } = dayRanges(a.start, a.end);
+      return { record: a.id, holder: a.subject, relation: a.relation, source: a.sources[0].source, s0, e0, shape: a.shape!, geometry, box: boundingBox(geometry) };
+    });
+}
+
+export interface CrosswalkLink extends Link {
+  unit: string;
+  kind: 'same-state' | 'dependency';
+}
+
+/** The crosswalks' matches, as day ranges (m1 exclusive; open ends are infinite). */
+export function crosswalkLinks(ds: Dataset): CrosswalkLink[] {
+  return ds.crosswalks.flatMap(({ value }) =>
+    value.flatMap((entry) =>
+      entry.matches.map((m) => ({
+        unit: entry.unit,
+        polity: m.polity,
+        kind: m.kind,
+        m0: m.from ? parseEdtfDate(m.from).earliest : -Infinity,
+        m1: m.until ? parseEdtfDate(m.until).earliest : Infinity,
+      })),
+    ),
+  );
+}
+
+/** Where the default map's source and a de jure source disagree (see scripts/lib/contested.ts). */
+export function buildContested(ds: Dataset): ContestedArea[] {
+  const byUnit = new Map<string, Link[]>();
+  for (const link of crosswalkLinks(ds)) byUnit.set(link.unit, [...(byUnit.get(link.unit) ?? []), link]);
+  return computeContested(
+    timedShapes(ds, onDefaultMap, ['administers', 'controls', 'occupies']),
+    timedShapes(ds, isDejure, ['sovereign', 'occupies']),
+    byUnit,
+  );
+}
+
+/** The contested areas as a layer: only what the map needs (who, and when). */
+export function contestedCollection(areas: readonly ContestedArea[]) {
+  const collection: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: areas.map((a) => ({
+      type: 'Feature',
+      properties: { id: a.id, facto: a.facto, jure: a.jure, s0: a.s0, e0: a.e0 },
+      geometry: { type: 'MultiPolygon', coordinates: a.geometry } as GeoJSON.MultiPolygon,
+    })),
+  };
+  const bounds = areas.reduce<Bounds>((all, a) => {
+    const b = boundingBox(a.geometry);
+    return [Math.min(all[0], b[0]), Math.min(all[1], b[1]), Math.max(all[2], b[2]), Math.max(all[3], b[3])];
+  }, [180, 90, -180, -90]);
+  return { collection, bounds };
 }
 
 /**
@@ -254,8 +351,9 @@ function nameDays(n: PolityName) {
 }
 
 /** An assertion as the panel shows it: dates as written plus day numbers. */
-function assertionRecord(a: Assertion): PolityRecord {
+function assertionRecord(a: Assertion, km2?: ReadonlyMap<string, number>): PolityRecord {
   const { s0, s1, e0 } = dayRanges(a.start, a.end);
+  const area = a.shape ? km2?.get(a.shape) : undefined;
   return {
     id: a.id,
     relation: a.relation,
@@ -269,6 +367,7 @@ function assertionRecord(a: Assertion): PolityRecord {
     e0,
     sources: a.sources,
     ...(a.notes ? { notes: a.notes } : {}),
+    ...(area !== undefined ? { km2: Math.round(area) } : {}),
   };
 }
 
@@ -284,7 +383,7 @@ function namesFor(ids: Iterable<string>, polities: Map<string, Polity>): Record<
  * visitor downloads only the polities they open. Each file has all the polity's names and every
  * assertion that mentions it (as subject, or as the other polity in a relation).
  */
-export function buildPolityFiles(ds: Dataset): PolityFile[] {
+export function buildPolityFiles(ds: Dataset, contested: readonly ContestedArea[] = []): PolityFile[] {
   const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
   const mentions = new Map<string, Assertion[]>();
   for (const a of ds.assertions.flatMap(({ value }) => value)) {
@@ -292,12 +391,66 @@ export function buildPolityFiles(ds: Dataset): PolityFile[] {
       mentions.set(id, [...(mentions.get(id) ?? []), a]);
     }
   }
+  const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
+  const km2 = new Map([...shapes].map(([id, geometry]) => [id, areaKm2(geometry)]));
+  const links = crosswalkLinks(ds);
+
+  /** Whether two territorial records share land (at least CShapes' 10,000 km²) on the same days. */
+  const shareLand = (a: Assertion, b: Assertion) => {
+    const ra = dayRanges(a.start, a.end);
+    const rb = dayRanges(b.start, b.end);
+    if (Math.max(ra.s0, rb.s0) >= Math.min(ra.e0, rb.e0) || !a.shape || !b.shape) return false;
+    const overlap = polygonClipping.intersection(shapes.get(a.shape) as never, shapes.get(b.shape) as never) as MultiPolygon;
+    return areaKm2(overlap) >= 10_000;
+  };
 
   return ds.polities.map(({ value: p }) => {
-    const records = (mentions.get(p.id) ?? []).map(assertionRecord).sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
+    const own = (mentions.get(p.id) ?? []).map((a) => assertionRecord(a, km2));
+
+    // Records of the de jure units the crosswalk links to this polity. A same-state link brings
+    // all of the unit's records; a dependency link only those that share land with this polity's
+    // own records (the United Kingdom's record for India, not for Burma, in the British Raj).
+    const ownTerritorial = (mentions.get(p.id) ?? []).filter((a) => a.subject === p.id && a.shape);
+    const linked: PolityRecord[] = [];
+    for (const link of links.filter((l) => l.polity === p.id)) {
+      for (const a of mentions.get(link.unit) ?? []) {
+        if (a.subject !== link.unit) continue;
+        const { s0, e0 } = dayRanges(a.start, a.end);
+        if (Math.max(s0, link.m0) >= Math.min(e0, link.m1)) continue;
+        if (link.kind === 'dependency' && !ownTerritorial.some((o) => shareLand(o, a))) continue;
+        linked.push({
+          ...assertionRecord(a, km2),
+          via: link.unit,
+          link: link.kind,
+          ...(Number.isFinite(link.m0) ? { m0: link.m0 } : {}),
+          ...(Number.isFinite(link.m1) ? { m1: link.m1 } : {}),
+        });
+      }
+    }
+    const records = [...own, ...linked].sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
+
+    // Where the sources disagree over this polity's territory: as the de facto side, as the
+    // de jure unit itself, or through a record the crosswalk links to it.
+    const linkedWindows = new Map(linked.map((r) => [r.id, [r.m0 ?? -Infinity, r.m1 ?? Infinity] as const]));
+    const disputes: ContestedEntry[] = [];
+    for (const c of contested) {
+      if (c.facto === p.id) {
+        disputes.push({ side: 'facto', other: c.jure, relation: c.jureRelation, source: c.jureSource, s0: c.s0, e0: c.e0, km2: c.km2 });
+      }
+      const window = c.jure === p.id ? ([-Infinity, Infinity] as const) : linkedWindows.get(c.jureRecord);
+      if (window) {
+        const s0 = Math.max(c.s0, window[0]);
+        const e0 = Math.min(c.e0, window[1]);
+        if (s0 < e0) disputes.push({ side: 'jure', other: c.facto, relation: c.factoRelation, source: c.factoSource, s0, e0, km2: c.km2 });
+      }
+    }
+    disputes.sort((a, b) => a.s0 - b.s0 || a.other.localeCompare(b.other));
 
     // Other polities the records mention, with just enough to name them.
-    const others = new Set(records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? [])]));
+    const others = new Set([
+      ...records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? []), r.via ?? '']),
+      ...disputes.map((d) => d.other),
+    ]);
     others.delete(p.id);
     others.delete('');
     const related = namesFor(others, polities);
@@ -314,6 +467,7 @@ export function buildPolityFiles(ds: Dataset): PolityFile[] {
         sources: n.sources,
       })),
       records,
+      ...(disputes.length > 0 ? { contested: disputes } : {}),
       ...(p.notes ? { notes: p.notes } : {}),
       ...(others.size > 0 ? { related } : {}),
     };
@@ -331,22 +485,43 @@ function main(): void {
   rmSync(OUT_DIR, { recursive: true, force: true });
   mkdirSync(OUT_DIR, { recursive: true });
 
+  /** Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. */
+  const writeTileSet = (dir: string, layer: string, collection: GeoJSON.FeatureCollection, bounds: Bounds) => {
+    const version = createHash('sha256').update(JSON.stringify(collection)).digest('hex').slice(0, 12);
+    let count = 0;
+    let bytes = 0;
+    for (const tile of buildTiles(collection, { layer, maxZoom: TILE_MAX_ZOOM, bounds })) {
+      const file = join(OUT_DIR, dir, version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
+      mkdirSync(dirname(file), { recursive: true });
+      writeFileSync(file, tile.data);
+      count++;
+      bytes += tile.data.length;
+    }
+    return { dir, version, layer, bounds, count, bytes };
+  };
+
   const { collection, bounds } = buildBorders(ds);
-  const version = createHash('sha256').update(JSON.stringify(collection)).digest('hex').slice(0, 12);
-  let tileCount = 0;
-  let tileBytes = 0;
-  for (const tile of buildTiles(collection, { layer: TILE_LAYER, maxZoom: TILE_MAX_ZOOM, bounds })) {
-    const file = join(OUT_DIR, 'tiles', version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
-    mkdirSync(dirname(file), { recursive: true });
-    writeFileSync(file, tile.data);
-    tileCount++;
-    tileBytes += tile.data.length;
-  }
-  const changes = changeDays(collection);
+  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds);
+  const dejure = buildDejure(ds);
+  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds);
+  const contested = buildContested(ds);
+  const contestedLayer = contestedCollection(contested);
+  const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds);
+  const tileCount = borders.count + dejureTiles.count + contestedTiles.count;
+  const tileBytes = borders.bytes + dejureTiles.bytes + contestedTiles.bytes;
+  // The map only redraws on these days, so they cover every layer it can show.
+  const changes = changeDays({ type: 'FeatureCollection', features: [...collection.features, ...dejure.collection.features, ...contestedLayer.collection.features] });
+  const extra = Object.fromEntries(
+    [dejureTiles, contestedTiles].map(({ dir, version, layer, bounds: b }) => [layer, { dir, version, layer, bounds: b }]),
+  );
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),
-    JSON.stringify({ version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes }),
+    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes, extra }),
   );
+  // Which polity pairs disagree, and where, so a crosswalk mistake shows up here first.
+  const pairs = new Map<string, number>();
+  for (const c of contested) pairs.set(`${c.facto} vs ${c.jure}`, Math.max(pairs.get(`${c.facto} vs ${c.jure}`) ?? 0, c.km2));
+  console.log(`Contested (largest area per pair of polities): ${[...pairs].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v.toLocaleString('en')} km²`).join('; ') || 'none'}`);
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
   writeFileSync(join(OUT_DIR, 'changes.json'), JSON.stringify(buildChanges(ds)));
   writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
@@ -354,13 +529,14 @@ function main(): void {
   for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
-  for (const file of buildPolityFiles(ds)) {
+  for (const file of buildPolityFiles(ds, contested)) {
     const json = JSON.stringify(file);
     writeFileSync(join(OUT_DIR, 'polities', `${file.id}.json`), json);
     polityBytes += json.length;
   }
   console.log(
-    `Built public/data: ${collection.features.length} border features in ${tileCount} tiles ` +
+    `Built public/data: ${collection.features.length} border features, ${dejure.collection.features.length} de jure, ` +
+      `${contested.length} contested, in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}), ${changes.length} change days, ` +
       `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB), ${ds.events.length} events.`,
   );

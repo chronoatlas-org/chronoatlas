@@ -112,9 +112,68 @@ body {
 
 .app-header .legend {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 6px;
+}
+
+/* `hidden` must win over the display rule above (the de jure legend line). */
+.app-header .legend[hidden] {
+  display: none;
+}
+
+.legend-item {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+/* Matches the map's contested cross-hatch (src/map/historical.ts). */
+.legend-contested,
+.panel-contested-swatch {
+  flex: none;
+  width: 16px;
+  height: 12px;
+  border: 1px dashed #9a1b5b;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 3px, rgb(154 27 91 / 70%) 3px 4.5px),
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(154 27 91 / 70%) 3px 4.5px);
+}
+
+/* The view switch: two buttons, the pressed one filled (and announced as pressed). */
+.view-switch {
+  display: inline-flex;
   margin-top: 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.view-switch button {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: none;
+  background: #f6f8fa;
+  color: #1f2328;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.view-switch button + button {
+  border-left: 1px solid #d0d7de;
+}
+
+.view-switch button[aria-pressed='true'] {
+  background: #1f2328;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.view-switch button:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: -2px;
 }
 
 /* Matches the map's "no data" hatch (src/map/historical.ts). */
@@ -354,6 +413,17 @@ body {
   outline-offset: 1px;
 }
 
+.panel-contested {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 0.85rem;
+}
+
+.panel-contested-swatch {
+  margin-top: 3px;
+}
+
 .panel-missing {
   font-style: italic;
   color: #57606a;
@@ -444,6 +514,10 @@ body {
   #nearby-button {
     min-width: 44px;
     justify-content: center;
+  }
+
+  .view-switch button {
+    min-height: 40px;
   }
 
   /* The panel becomes a "bottom sheet" between the map and the timeline, full width, with three

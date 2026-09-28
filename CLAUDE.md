@@ -158,6 +158,9 @@ The ones that affect everyday work:
   `sovereign` by the owner.
 - **Assertions name CShapes' own units** (`cshapes-<gwcode>`). The hand-written
   `polity-crosswalk.yaml` links them to our polities; never cut CShapes rows to fit our polities.
+- **Disagreements under 10,000 km² aren't contested:** CShapes doesn't code changes that small,
+  so it has no view on them (Hong Kong, Macau, Goa, concessions, border slivers). Legal status
+  for small territories comes from our own sourced records.
 
 **Environment:** the maintainer works on Windows, and commands are run in PowerShell. Git, Node.js
 LTS, and the GitHub CLI are installed.
@@ -207,6 +210,17 @@ LTS, and the GitHub CLI are installed.
   - The build's `onDefaultMap()` keeps every import except OpenHistoricalMap off the default
     map. Each other source becomes its own layer.
   - The import stops if an upstream checksum changes. Review the change, then re-pin.
+- **Contested areas** (`scripts/lib/contested.ts`, Phase 2 step 9):
+  - **What they are:** where the default map's administering polity and a de jure source's
+    sovereign or occupying state differ on the same days. The crosswalk decides what counts as
+    the same state.
+  - **Where they go:** computed by the build into their own tile layer (`contested-tiles/`) and
+    into polity files. They are never written into `data/`, because they carry CShapes'
+    license.
+  - **Checking them:** the build prints every contested pair; review it when the crosswalk or an
+    import changes.
+  - **Map layers:** `tiles.json` lists the extra tile sets under `extra`, the de jure view
+    (`dejure-tiles/`) and the contested areas. The change index covers all three.
 - **Never hand-edit files under `data/imports/`.** Fix upstream and re-import. The one exception
   is `polity-crosswalk.yaml`, which is hand-written by design.
 - **Polity records:** records built from CC0/public-domain sources may live in
@@ -259,6 +273,11 @@ LTS, and the GitHub CLI are installed.
     may be unreachable.
   - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
     replaces the address.
+  - Polity files carry the crosswalk-linked de jure records (`via`, `link`, `m0`/`m1` for when
+    the link applies), `contested` entries, and each territorial record's `km2`. The panel
+    counts a linked record as current only inside its link's window.
+  - The map's view switch (`HistoricalLayers.setView`: 'facto' or 'jure') is recorded in the
+    address as `v=jure`.
   - The panel shows a `Selection`: `{ kind: 'polity' | 'event' | 'nearby', id }`. 'nearby'
     ("Around this date") lists what's in the timeline's visible range, so the panel redraws
     when the timeline zooms (`onZoom`). When an event's file

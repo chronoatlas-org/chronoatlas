@@ -14,6 +14,7 @@ import { civilToJdn, formatDay } from './dates/index.ts';
 import { getLocale, pickLocale, setLocale, t } from './i18n/index.ts';
 import type { MessageKey } from './i18n/index.ts';
 import { HistoricalLayers } from './map/historical';
+import type { BorderView } from './map/historical';
 import { TerritoryPanel } from './panel/panel';
 import type { Selection } from './panel/panel';
 import type { TimelineEvent } from './timeline/events.ts';
@@ -76,6 +77,8 @@ const initialDay = clampDay(fromUrl.day ?? DEFAULT_VIEW.day);
 let urlTimer: number | undefined;
 /** What the panel shows: a territory or an event, or nothing (null). */
 let selected: Selection | null = null;
+/** Which borders the map shows: as administered (default) or as legally recognized. */
+let view: BorderView = fromUrl.view === 'jure' ? 'jure' : 'facto';
 
 const territorySelection = (id: string): Selection => ({ kind: 'polity', id });
 const eventSelection = (id: string): Selection => ({ kind: 'event', id });
@@ -127,6 +130,18 @@ function select(next: Selection | null, how: 'click' | 'close' | 'link'): void {
 // "Around this date" opens (or closes) the list of what changed near the selected day. It isn't
 // recorded in the address: it's a view of the date, which the address already has.
 const nearbyButton = document.getElementById('nearby-button')!;
+
+// The view switch: borders as administered (OpenHistoricalMap) or as legally recognized (CShapes).
+const viewButtons = [...document.querySelectorAll<HTMLButtonElement>('.view-switch button')];
+const jureLegend = document.querySelector<HTMLElement>('.legend-jure')!;
+function setView(next: BorderView): void {
+  view = next;
+  historical.setView(next);
+  for (const button of viewButtons) button.setAttribute('aria-pressed', String(button.dataset.view === next));
+  jureLegend.hidden = next !== 'jure';
+  scheduleUrlUpdate();
+}
+for (const button of viewButtons) button.addEventListener('click', () => setView(button.dataset.view as BorderView));
 nearbyButton.addEventListener('click', () =>
   select(selected?.kind === 'nearby' ? null : { kind: 'nearby', id: '' }, 'click'),
 );
@@ -158,6 +173,8 @@ fetch(new URL('data/events.json', document.baseURI))
     panel.setEvents(events);
   })
   .catch((error) => console.error('Could not load events.json', error));
+
+setView(view);
 
 // Open the territory or event from the link, if any. (An ID that isn't in our data closes the
 // panel again.)
@@ -195,6 +212,7 @@ function currentHash(): string {
     lng: center.lng,
     sel: selected?.kind === 'polity' ? selected.id : undefined,
     ev: selected?.kind === 'event' ? selected.id : undefined,
+    view: view === 'jure' ? 'jure' : undefined,
     lang: fromUrl.lang,
   });
 }
@@ -214,6 +232,7 @@ window.addEventListener('hashchange', () => {
     map.jumpTo({ center: [next.lng, next.lat], zoom: next.zoom });
   }
   select(selectionFrom(next), 'link');
+  if ((next.view ?? 'facto') !== view) setView(next.view ?? 'facto');
 });
 
 // "Copy link": on phones, open the system share sheet; elsewhere, copy to the clipboard.

@@ -14,6 +14,9 @@ redraws for that date. Every border and event on the map is traced to a named so
 >   sources, and what isn't in our data yet. The panel has a button to report a problem with that
 >   border.
 > - "Around this date" lists the border changes near the selected date.
+> - A switch shows the borders as administered (OpenHistoricalMap) or as legally recognized
+>   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, where the two sources
+>   disagree, and the panel says so in words.
 > - Event markers, event details, and map pulses are built and waiting for the first sourced
 >   events.
 > - The address bar always links to the exact date, view, and selection, so you can share it.

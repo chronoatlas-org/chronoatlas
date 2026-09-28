@@ -51,6 +51,29 @@ export interface PolityRecord {
   e0: number;
   sources: Citation[];
   notes?: string;
+  /** The area of the record's shape, in km² (measured on the globe). */
+  km2?: number;
+  /**
+   * Set on a de jure unit's record that the crosswalk links to this polity: the unit's ID, the
+   * kind of link, and when the link applies (day numbers, m1 exclusive; open when missing).
+   */
+  via?: string;
+  link?: 'same-state' | 'dependency';
+  m0?: number;
+  m1?: number;
+}
+
+/** Where the sources disagree over this polity's territory (computed by the build). */
+export interface ContestedEntry {
+  /** 'facto': this polity ran the area; 'jure': this polity (or its de jure unit) held it legally. */
+  side: 'facto' | 'jure';
+  /** The polity on the other side, and its relation to the area, per its source. */
+  other: string;
+  relation: string;
+  source: string;
+  s0: number;
+  e0: number;
+  km2: number;
 }
 
 /** public/data/polities/<id>.json */
@@ -64,6 +87,7 @@ export interface PolityFile {
   records: PolityRecord[];
   /** Names of the other polities the records mention (for "Protectorate of …" and so on). */
   related?: Record<string, AtlasName[]>;
+  contested?: ContestedEntry[];
 }
 
 /** public/data/events/<id>.json */
@@ -168,6 +192,10 @@ export interface TerritoryView {
   nameCount: number;
   /** The polity record's notes. */
   note?: string;
+  /** Where the sources disagree over this polity's territory on this date, in words. */
+  contested: string[];
+  /** Said when our only legal-borders source can't cover a territory this small. */
+  smallTerritory?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
 }
@@ -191,6 +219,18 @@ const INVERSE_KEYS: Record<string, MessageKey> = {
   'protectorate-of': 'relation.inverse.protectorate-of',
   'puppet-of': 'relation.inverse.puppet-of',
 };
+
+/** How a contested entry describes the other side's relation to the area. */
+const HOLDS_KEYS: Record<string, MessageKey> = {
+  sovereign: 'panel.holds.sovereign',
+  occupies: 'panel.holds.occupies',
+  administers: 'panel.holds.administers',
+  controls: 'panel.holds.controls',
+};
+
+/** CShapes (our source for legal borders) doesn't code territorial changes under this size. */
+const LEGAL_SOURCE = 'cshapes-2-0';
+const LEGAL_SOURCE_MIN_KM2 = 10_000;
 
 /** The three kinds of territorial statement the ground rules keep apart. */
 const CATEGORIES: { key: MessageKey; relations: string[] }[] = [
@@ -306,9 +346,17 @@ export function describeTerritory(
   locale: string,
 ): TerritoryView {
   const nameOf = (id: string) => pickNames(file.related?.[id] ?? [], day, locale)?.primary ?? id;
-  const isCurrent = (r: PolityRecord) => r.s0 <= day && day < r.e0;
+  // A linked record counts only while its crosswalk link applies.
+  const isCurrent = (r: PolityRecord) =>
+    r.s0 <= day && day < r.e0 && (r.m0 === undefined || r.m0 <= day) && (r.m1 === undefined || day < r.m1);
 
   const label = (r: PolityRecord): string => {
+    if (r.via) {
+      // A de jure unit's record, linked by the crosswalk: "Sovereign (de jure), as “China”", or
+      // for a dependency, the state that held it: "Sovereign (de jure): United Kingdom".
+      const relation = RELATION_KEYS[r.relation] ? t(RELATION_KEYS[r.relation]) : r.relation;
+      return t(r.link === 'dependency' ? 'panel.heldBy' : 'panel.heldAs', { relation, name: nameOf(r.subject) });
+    }
     if (r.subject !== file.id) {
       const key = INVERSE_KEYS[r.relation];
       return key ? t(key, { name: nameOf(r.subject) }) : r.relation;
@@ -325,19 +373,19 @@ export function describeTerritory(
     if (r.recognized_by?.length) notes.push(t('panel.recognizedBy', { list: listOf(r.recognized_by.map(nameOf), locale) }));
     if (r.notes) notes.push(r.notes);
     for (const c of r.sources) if (c.note) notes.push(c.note);
-    return { id: r.id, label: label(r), began: describeDate(r.start), ended: describeDate(r.end), notes, sources: sourceLines(r.sources, sources) };
+    return { id: recordKey(r), label: label(r), began: describeDate(r.start), ended: describeDate(r.end), notes, sources: sourceLines(r.sources, sources) };
   });
 
   // Say which kinds of statement we have no source for on this day, so silence isn't read as
   // "there was none". Only when the polity has some territory on this day.
   const territorial = CATEGORIES.flatMap((c) => c.relations);
-  const own = file.records.filter((r) => r.subject === file.id && isCurrent(r) && territorial.includes(r.relation));
+  const own = file.records.filter((r) => (r.subject === file.id || r.via) && isCurrent(r) && territorial.includes(r.relation));
   const absent = own.length === 0 ? [] : CATEGORIES.filter((c) => !own.some((r) => c.relations.includes(r.relation)));
   const missing = absent.length > 0 ? t('panel.missing', { list: listOf(absent.map((c) => t(c.key)), locale) }) : undefined;
 
   const history = file.records.map(
     (r): HistoryEntry => ({
-      id: r.id,
+      id: recordKey(r),
       label: label(r),
       period: describePeriod(r.start, r.end)!,
       day: r.s0,
@@ -366,6 +414,29 @@ export function describeTerritory(
     });
   }
 
+  // Where the sources disagree over this territory today, attributed to the other side's source.
+  const number = (n: number) => {
+    try {
+      return new Intl.NumberFormat(locale, { maximumSignificantDigits: 2 }).format(n);
+    } catch {
+      return String(n);
+    }
+  };
+  const disputes = (file.contested ?? []).filter((c) => c.s0 <= day && day < c.e0);
+  const contested = disputes.map((c) =>
+    t(c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', {
+      source: sources[c.source]?.title ?? c.source,
+      name: nameOf(c.other),
+      holds: HOLDS_KEYS[c.relation] ? t(HOLDS_KEYS[c.relation]) : c.relation,
+      km2: number(c.km2),
+    }),
+  );
+
+  // CShapes can't speak to territories under its 10,000 km² threshold; say so rather than leave
+  // the reader wondering why the legal side is missing.
+  const legal = own.some((r) => r.sources.some((s) => s.source === LEGAL_SOURCE));
+  const small = own.length > 0 && !legal && own.every((r) => r.km2 !== undefined && r.km2 < LEGAL_SOURCE_MIN_KM2);
+
   const names = pickNames(file.names, day, locale);
   const name = names?.primary ?? file.id;
   return {
@@ -380,8 +451,22 @@ export function describeTerritory(
     names: [...groups.values()],
     nameCount: file.names.length,
     ...(file.notes ? { note: file.notes } : {}),
-    credits: creditsFor([...file.records.flatMap((r) => r.sources), ...file.names.flatMap((n) => n.sources)], sources),
+    contested,
+    ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
+    credits: creditsFor(
+      [
+        ...file.records.flatMap((r) => r.sources),
+        ...file.names.flatMap((n) => n.sources),
+        ...disputes.map((c) => ({ source: c.source, locator: '' })),
+      ],
+      sources,
+    ),
   };
+}
+
+/** A key that stays unique when the crosswalk links the same record through two periods. */
+function recordKey(r: PolityRecord): string {
+  return r.via ? `${r.id}@${r.m0 ?? ''}` : r.id;
 }
 
 // --- Events --------------------------------------------------------------------------------------

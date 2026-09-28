@@ -40,7 +40,16 @@
         </div>
       </div>
       <p class="app-notice" data-i18n="app.previewNotice"></p>
-      <p class="legend"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></p>
+      <!-- Which borders the map shows (src/main.ts): as administered, or as legally recognized. -->
+      <div class="view-switch" role="group" data-i18n-label="view.label">
+        <button type="button" data-view="facto" aria-pressed="true" data-i18n="view.facto"></button>
+        <button type="button" data-view="jure" aria-pressed="false" data-i18n="view.jure"></button>
+      </div>
+      <p class="legend">
+        <span class="legend-item"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></span>
+        <span class="legend-item"><span class="legend-contested" aria-hidden="true"></span><span data-i18n="legend.contested"></span></span>
+      </p>
+      <p class="legend legend-jure" hidden data-i18n="legend.jure"></p>
       <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </header>
     <main id="map"></main>

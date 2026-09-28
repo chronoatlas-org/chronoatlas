@@ -59,6 +59,13 @@ describe('parseHash with incomplete or damaged links', () => {
     expect(parseHash('#ev=Not_An_Id').ev).toBeUndefined();
   });
 
+  it('records the legally recognized view, and ignores any other view', () => {
+    const view = { day: civilToJdn(1901, 5, 12), zoom: 3, lat: 10, lng: 20, sel: 'testland', view: 'jure' as const };
+    expect(formatHash(view)).toBe('#d=1901-05-12&m=3/10/20&sel=testland&v=jure');
+    expect(parseHash(formatHash(view))).toEqual(view);
+    expect(parseHash('#v=something').view).toBeUndefined();
+  });
+
   it('only accepts selections shaped like our IDs', () => {
     expect(parseHash('#sel=testland').sel).toBe('testland');
     for (const bad of ['Testland', 'test_land', '-testland', 'testland-', 'a--b', '%3Cscript%3E', 'x'.repeat(101)]) {

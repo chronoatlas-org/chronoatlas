@@ -2,6 +2,7 @@
 
 import { describe, expect, it } from 'vitest';
 import {
+  areaKm2,
   assembleRings,
   buildMultiPolygon,
   cleanMultiPolygon,
@@ -86,5 +87,21 @@ describe('formatFeature', () => {
     const parsed = JSON.parse(text);
     expect(parsed.geometry.type).toBe('MultiPolygon');
     expect(text.split('\n').filter((l) => /^\[-?\d/.test(l))).toHaveLength(5);
+  });
+});
+
+describe('areaKm2', () => {
+  it('measures a 1° × 1° cell on the globe, smaller away from the equator', () => {
+    // On a sphere of radius R, a cell 1° wide between latitudes φ1 and φ2 has area
+    // R² · (π/180) · (sin φ2 − sin φ1): about 12,364 km² from 0° to 1°N.
+    expect(areaKm2([[square(0, 0, 1)]])).toBeCloseTo(12363.7, 0);
+    expect(areaKm2([[square(0, 60, 1)]])).toBeCloseTo(6088.4, 0);
+  });
+
+  it('subtracts holes and adds separate polygons, whatever the ring direction', () => {
+    const hole = square(0.25, 0.25, 0.5).reverse();
+    const withHole = areaKm2([[square(0, 0, 1), hole]]);
+    expect(withHole).toBeCloseTo(areaKm2([[square(0, 0, 1)]]) - areaKm2([[square(0.25, 0.25, 0.5)]]), 6);
+    expect(areaKm2([[square(0, 0, 1)], [square(5, 0, 1)]])).toBeCloseTo(2 * areaKm2([[square(0, 0, 1)]]), 6);
   });
 });

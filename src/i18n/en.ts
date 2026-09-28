@@ -6,10 +6,16 @@
 
 export const en = {
   'app.previewNotice':
-    'Early preview: country borders in East Asia, 1900–1950, from OpenHistoricalMap. Click a territory for details.',
+    'Early preview: East Asia, 1900–1950. Borders as administered come from OpenHistoricalMap, legal borders from CShapes 2.0. Click a territory for details.',
   'app.mapLabel': 'Map',
   'app.title': 'chronoatlas · {date}',
   'legend.noData': 'No data yet',
+  'legend.contested': 'Contested: the sources disagree',
+  'legend.jure':
+    'Legal borders per CShapes 2.0. Lighter, with dashed edges: a colony, protectorate, or occupied area, tinted like the state holding it.',
+  'view.label': 'Borders shown',
+  'view.facto': 'As administered',
+  'view.jure': 'As legally recognized',
 
   'share.button': 'Copy link',
   'share.label': 'Copy a link to this date and map view',
@@ -90,6 +96,18 @@ export const en = {
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
   'panel.sourceLabel': 'Source:',
   'panel.credits': 'Sources and credits',
+  // A de jure unit's record, linked by the crosswalk (see data/imports/cshapes-2-0/).
+  'panel.heldAs': '{relation}, as “{name}”',
+  'panel.heldBy': '{relation}: {name}',
+  // Where the sources disagree ({source} is the other source's name; {holds} is its relation).
+  'panel.contestedFacto': 'Contested: {source} records {name} {holds} about {km2} km² of this territory.',
+  'panel.contestedJure': 'Contested: {source} records {name} {holds} about {km2} km² of this territory.',
+  'panel.holds.sovereign': 'as sovereign over',
+  'panel.holds.occupies': 'as occupying',
+  'panel.holds.administers': 'as administering',
+  'panel.holds.controls': 'as controlling',
+  'panel.smallTerritory':
+    'CShapes 2.0, our source for legal borders, leaves out territories under 10,000 km², so it has no view on this one.',
 
   'timeline.label': 'Timeline',
   'timeline.help':

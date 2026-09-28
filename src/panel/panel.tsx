@@ -191,7 +191,14 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
             ))}
           </ul>
         )}
+        {view.contested.map((line, i) => (
+          <p key={i} class="panel-contested">
+            <span class="panel-contested-swatch" aria-hidden="true" />
+            {line}
+          </p>
+        ))}
         {view.missing && <p class="panel-missing">{view.missing}</p>}
+        {view.smallTerritory && <p class="panel-missing">{view.smallTerritory}</p>}
         <p class="panel-report">
           <a href={reportUrl()} target="_blank" rel="noopener" onPointerDown={refreshReportLink} onFocus={refreshReportLink}>
             {t('panel.report')}

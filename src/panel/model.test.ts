@@ -258,3 +258,39 @@ describe('describeNearby', () => {
     expect(v.window).toBe('From 1 January 1900 to 1 January 1910 (the part of the timeline in view), nearest first.');
   });
 });
+
+describe('describeTerritory: other sources', () => {
+  const withLinks: PolityFile = {
+    ...testland,
+    records: [
+      ...testland.records,
+      record('legal-1', 'sovereign', '1901', 'ongoing', { subject: 'unit-a', via: 'unit-a', link: 'same-state', m1: day(1904, 1, 1), sources: [{ source: 'other-test-source', locator: 'row 1' }] }),
+      record('legal-2', 'sovereign', '1901', 'ongoing', { subject: 'unit-b', via: 'unit-b', link: 'dependency', sources: [{ source: 'other-test-source', locator: 'row 2' }] }),
+    ],
+    contested: [
+      { side: 'facto', other: 'unit-b', relation: 'sovereign', source: 'other-test-source', s0: day(1902, 1, 1), e0: day(1903, 1, 1), km2: 123_456 },
+    ],
+    related: { ...testland.related, 'unit-a': [{ text: 'Unit A', lang: 'en', s0: null, e0: null }], 'unit-b': [{ text: 'Unit B', lang: 'en', s0: null, e0: null }] },
+  };
+
+  it('labels linked records by the unit that holds them, and only while the link applies', () => {
+    const labels = (y: number) => describeTerritory(withLinks, sources, day(y, 6, 1), 'en').current.map((e) => e.label);
+    expect(labels(1903)).toContain('Sovereign (de jure), as “Unit A”');
+    expect(labels(1903)).toContain('Sovereign (de jure): Unit B');
+    expect(labels(1905)).not.toContain('Sovereign (de jure), as “Unit A”'); // the link ended in 1904
+  });
+
+  it('describes a disagreement in words, attributed to the other source, only on its days', () => {
+    expect(describeTerritory(withLinks, sources, day(1902, 6, 1), 'en').contested).toEqual([
+      'Contested: Other Test Source records Unit B as sovereign over about 120,000 km² of this territory.',
+    ]);
+    expect(describeTerritory(withLinks, sources, day(1904, 6, 1), 'en').contested).toEqual([]);
+  });
+
+  it('explains when a territory is too small for the legal-borders source', () => {
+    const tiny: PolityFile = { ...testland, records: [record('a', 'controls', '1901', 'ongoing', { km2: 1_000 })] };
+    expect(describeTerritory(tiny, sources, day(1902, 1, 1), 'en').smallTerritory).toMatch(/under 10,000 km²/);
+    const large: PolityFile = { ...testland, records: [record('a', 'controls', '1901', 'ongoing', { km2: 50_000 })] };
+    expect(describeTerritory(large, sources, day(1902, 1, 1), 'en').smallTerritory).toBeUndefined();
+  });
+});

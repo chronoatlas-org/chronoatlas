@@ -5,6 +5,7 @@
 //     m     the map view: zoom/latitude/longitude (the same order OpenStreetMap uses)
 //     sel   the selected territory, as a polity ID (IDs are permanent, so old links keep working)
 //     ev    the selected event, as an event ID (instead of sel: the panel shows one or the other)
+//     v     "jure" for the legally recognized borders (CShapes); absent for the default view
 //     lang  the interface language, only present if someone chose it explicitly
 //
 // Everything is optional and checked: a damaged or hand-edited link falls back to defaults for
@@ -21,6 +22,8 @@ export interface ViewState {
   sel?: string;
   /** The selected event's ID. */
   ev?: string;
+  /** The legally recognized borders instead of the default (administered) ones. */
+  view?: 'jure';
   lang?: string;
 }
 
@@ -59,6 +62,7 @@ export function parseHash(hash: string): ViewState {
   if (isId(sel)) state.sel = sel;
   const ev = params.get('ev');
   if (isId(ev)) state.ev = ev;
+  if (params.get('v') === 'jure') state.view = 'jure';
 
   const lang = params.get('lang');
   if (lang && LANG_PATTERN.test(lang)) state.lang = lang;
@@ -80,10 +84,11 @@ function short(value: number, decimals: number): string {
 }
 
 /** Builds the hash for a view. Zoom keeps 2 decimals, coordinates 4 (about 11 m). */
-export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & Pick<ViewState, 'sel' | 'ev' | 'lang'>): string {
+export function formatHash(state: Required<Pick<ViewState, 'day' | 'zoom' | 'lat' | 'lng'>> & Pick<ViewState, 'sel' | 'ev' | 'view' | 'lang'>): string {
   let hash = `#d=${formatDayForUrl(state.day)}&m=${short(state.zoom, 2)}/${short(state.lat, 4)}/${short(state.lng, 4)}`;
   if (state.sel) hash += `&sel=${state.sel}`;
   if (state.ev) hash += `&ev=${state.ev}`;
+  if (state.view === 'jure') hash += '&v=jure';
   if (state.lang) hash += `&lang=${state.lang}`;
   return hash;
 }

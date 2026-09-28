@@ -90,6 +90,34 @@ export function ringArea(ring: Ring): number {
   return sum / 2;
 }
 
+/** The Earth's mean radius in km (IUGG), for areas measured on the globe. */
+const EARTH_RADIUS_KM = 6371.0088;
+
+/**
+ * The area of a ring on the globe, in km², however it's oriented. Uses the spherical formula from
+ * Chamberlain and Duquette, "Some Algorithms for Polygons on a Sphere" (NASA JPL, 2007): each
+ * edge contributes (λ2 − λ1)(2 + sin φ1 + sin φ2), times R²/2. Unlike an area measured on a flat
+ * map projection, it doesn't grow toward the poles.
+ */
+export function ringAreaKm2(ring: Ring): number {
+  const rad = Math.PI / 180;
+  let sum = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [lon1, lat1] = ring[j];
+    const [lon2, lat2] = ring[i];
+    sum += (lon2 - lon1) * rad * (2 + Math.sin(lat1 * rad) + Math.sin(lat2 * rad));
+  }
+  return Math.abs((sum * EARTH_RADIUS_KM * EARTH_RADIUS_KM) / 2);
+}
+
+/** The area of a MultiPolygon on the globe, in km²: outer edges minus holes. */
+export function areaKm2(multi: MultiPolygon): number {
+  return multi.reduce(
+    (total, polygon) => total + ringAreaKm2(polygon[0]) - polygon.slice(1).reduce((holes, hole) => holes + ringAreaKm2(hole), 0),
+    0,
+  );
+}
+
 /** Ray-casting test: is the point inside the ring? */
 export function pointInRing(point: Position, ring: Ring): boolean {
   let inside = false;

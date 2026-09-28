@@ -1,6 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, buildBorders, buildChanges, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE, onDefaultMap } from './build-data.ts';
+import {
+  assignColors,
+  buildBorders,
+  buildChanges,
+  buildContested,
+  buildEventFiles,
+  buildEvents,
+  buildPolityFiles,
+  changeDays,
+  dayRanges,
+  FAR_FUTURE,
+  onDefaultMap,
+} from './build-data.ts';
+import { loadDataset } from './lib/data.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -183,5 +196,77 @@ describe('the default map', () => {
       ],
     });
     expect(collection.features.map((f) => f.properties?.id)).toEqual(['mine']);
+  });
+});
+
+describe('the crosswalk in polity files', () => {
+  // Made-up polities, squares, and records (Testland), not real ones.
+  const cite = [{ source: 'test-source', locator: 'p. 1' }];
+  const square = (x: number) => [[[x, 0], [x + 2, 0], [x + 2, 2], [x, 2], [x, 0]]];
+  const shape = (id: string, x: number) => ({
+    file: id,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: square(x) } },
+  });
+  const polity = (id: string, file: string) => ({ file, value: { id, names: [{ text: id, lang: 'en', sources: cite }] } });
+  const record = (id: string, subject: string, shapeId: string, relation: 'administers' | 'sovereign' = 'administers') => ({
+    id, relation, subject, shape: shapeId, start: '1901', end: 'ongoing', sources: cite,
+  });
+  const ds: Dataset = {
+    sources: [], events: [], figures: [], coverage: [], imports: [], problems: [],
+    polities: [
+      polity('testland', 'data/polities/testland.yaml'),
+      polity('colony-office', 'data/polities/colony-office.yaml'),
+      polity('rival', 'data/polities/rival.yaml'),
+      polity('unit-a', 'data/imports/test-legal/polities/unit-a.yaml'),
+      polity('unit-b', 'data/imports/test-legal/polities/unit-b.yaml'),
+    ],
+    shapes: [shape('home', 0), shape('colony', 10), shape('far-colony', 20), shape('unit-a-home', 0), shape('unit-a-colony', 10), shape('unit-a-far', 20)],
+    assertions: [
+      { file: 'data/assertions/test.yaml', value: [record('t-home', 'testland', 'home'), record('c-colony', 'colony-office', 'colony')] },
+      { file: 'data/imports/test-legal/assertions.yaml', value: [
+        record('a-home', 'unit-a', 'unit-a-home', 'sovereign'),
+        record('a-colony', 'unit-a', 'unit-a-colony', 'sovereign'),
+        record('a-far', 'unit-a', 'unit-a-far', 'sovereign'),
+      ] },
+    ],
+    crosswalks: [{ file: 'data/imports/test-legal/polity-crosswalk.yaml', value: [{ unit: 'unit-a', matches: [
+      { polity: 'testland', kind: 'same-state' as const },
+      { polity: 'colony-office', kind: 'dependency' as const, until: '1950' },
+    ] }] }],
+  };
+  const files = new Map(buildPolityFiles(ds).map((f) => [f.id, f]));
+
+  it('brings all of a same-state unit\'s records to our polity, marked with the unit', () => {
+    const linked = files.get('testland')!.records.filter((r) => r.via);
+    expect(linked.map((r) => [r.id, r.via, r.link])).toEqual([
+      ['a-colony', 'unit-a', 'same-state'],
+      ['a-far', 'unit-a', 'same-state'],
+      ['a-home', 'unit-a', 'same-state'],
+    ]);
+  });
+
+  it('brings only the records that share land with a dependency, within the link\'s period', () => {
+    const linked = files.get('colony-office')!.records.filter((r) => r.via);
+    expect(linked.map((r) => r.id)).toEqual(['a-colony']);
+    expect(linked[0]).toMatchObject({ link: 'dependency', m1: civilToJdn(1950, 1, 1) });
+    expect(linked[0].m0).toBeUndefined();
+  });
+
+  it('records the areas of territorial records', () => {
+    expect(files.get('testland')!.records.find((r) => r.id === 't-home')!.km2).toBeGreaterThan(49_000);
+  });
+});
+
+describe('reference test: Manchuria in 1937 (the real imported data)', () => {
+  it('is contested: Manchukuo administered it per OpenHistoricalMap, China was sovereign per CShapes', () => {
+    // Checked against the pinned imports on 2026-09-27, as the Phase 2 plan requires.
+    const ds = loadDataset();
+    const keep = new Set(['manchukuo', 'cshapes-710']);
+    const subset = { ...ds, assertions: ds.assertions.map(({ file, value }) => ({ file, value: value.filter((a) => keep.has(a.subject)) })) };
+    const day = civilToJdn(1937, 7, 1);
+    const areas = buildContested(subset).filter((a) => a.s0 <= day && day < a.e0);
+    expect(areas).toHaveLength(1);
+    expect(areas[0]).toMatchObject({ facto: 'manchukuo', factoRelation: 'administers', jure: 'cshapes-710', jureRelation: 'sovereign' });
+    expect(areas[0].km2).toBeGreaterThan(1_000_000);
   });
 });

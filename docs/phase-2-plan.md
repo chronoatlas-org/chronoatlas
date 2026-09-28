@@ -515,7 +515,40 @@ Small steps, each committed, explained, and viewable locally and online, as in P
        differences between the sources, but they need a clear explanation in the panel.
      - CShapes' borders are simplified one unit at a time, so tiny slivers along shared borders
        need filtering.
-9. **De jure view and contested hatching**, computed at build time, with the 1937 Manchuria test.
+9. ✅ **De jure view and contested hatching**, computed at build time, with the 1937 Manchuria test.
+   *Done 2026-09-27.*
+   - **The switch:** a header switch shows the borders "As administered" (OpenHistoricalMap, the
+     default) or "As legally recognized" (CShapes). Dependencies get a lighter tint of their
+     holder's color and dashed edges. Links record the choice as `v=jure`.
+   - **Contested areas** are computed by the build (`scripts/lib/contested.ts`). They're the
+     places where OpenHistoricalMap's administering polity and CShapes' sovereign or occupying
+     state are different, once the crosswalk has matched the two sources' names for the same
+     state. They're drawn as a magenta cross-hatch with a dashed edge, in both views.
+   - **The panel says it in words**, attributed to the other source: "Contested: CShapes 2.0
+     records China as sovereign over about 1,300,000 km² of this territory." Through the
+     crosswalk, our polities' panels now also show CShapes' records ("Sovereign (de jure), as
+     'China'").
+   - **Small territories** (a change of plan, agreed with the maintainer): CShapes doesn't code
+     territorial changes under 10,000 km², so disagreements smaller than that aren't marked. That
+     leaves Hong Kong, Macau, Goa, and the concessions unhatched, and removes the slivers where
+     the two sources' borders don't quite meet. Their panels say CShapes has no view on them.
+     Their legal status can come later from our own sourced records, such as treaty texts.
+   - **The reference test passes on the real data:** in mid-1937, Manchukuo (per
+     OpenHistoricalMap) against China (per CShapes), about 1.3 million km².
+   - The build lists every pair of polities that disagree, largest area first, so a crosswalk
+     mistake shows up there.
+   - **Results that come from how the data is interpreted,** for the maintainer to review:
+     - Outer Mongolia is hatched because OpenHistoricalMap's Republic of China border includes
+       it. That's the same claims-versus-administration question as open question 1.
+     - Mainland China is hatched from 1949-10-01 to 1949-12-07. The People's Republic
+       administers it (per OpenHistoricalMap) while the crosswalk still reads CShapes' "China"
+       as the Republic until Taiwan's CShapes start date, 1949-12-08. Changing that is a
+       one-line crosswalk edit.
+   - **Licensing:** contested areas combine OpenHistoricalMap (CC0) with CShapes (CC BY-NC-SA),
+     so they carry CShapes' license. They exist only in the build output, as their own tile
+     layer, credited on the map and in the panel.
+   - **Not done yet:** text labels drawn on the map itself. The map has no label fonts yet, so the
+     legend and the panel carry the words for now.
 10. **Cliopatria import** and the "second opinion" outline layer.
 11. **First Figure**: `area-km2` computed from shapes, shown in the panel.
 12. **First sourced events** for Manchuria 1931–33, once citable sources are located (see
