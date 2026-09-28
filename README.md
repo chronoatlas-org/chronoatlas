@@ -20,8 +20,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 > - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
 > - The panel shows each territory's land area on the selected date, computed from its borders
 >   and a coastline, with how it was measured and its sources.
-> - Event markers, event details, and map pulses are built and waiting for the first sourced
->   events.
+> - Seven sourced events for Manchuria, 1931–33, are marked on the timeline. Each opens in the
+>   panel with our summary, its sources, and who is speaking in each source.
 > - The address bar always links to the exact date, view, and selection, so you can share it.
 >
 > See the [roadmap](docs/architecture.md#roadmap).
@@ -121,5 +121,7 @@ public-domain maps, then imported. Everyone taking part follows our
   precision, format, license), including statistics datasets.
 - [docs/phase-2-plan.md](docs/phase-2-plan.md): the plan for Phase 2 (approved 2026-09-27),
   with progress and open questions.
+- [docs/phase-3-plan.md](docs/phase-3-plan.md): the plan for Phase 3, contested and uncertain
+  borders (a draft, awaiting approval).
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
   from a dated public-domain map so that our import picks it up.

@@ -149,6 +149,10 @@ The ones that affect everyday work:
 - **No population dataset for now.** The first Figure is `area-km2`, computed from our shapes.
   Correlates of War is left out.
 
+**Phase 3 plan drafted (2026-09-28), not yet approved:** [docs/phase-3-plan.md](docs/phase-3-plan.md).
+Write no Phase 3 code until the maintainer approves it. Its order of work gives a recommended
+effort setting for each step.
+
 **CShapes decisions (2026-09-27)**, made while importing it:
 
 - **Columns from the R package:** its status, owner, and "borders defined" columns come from the
