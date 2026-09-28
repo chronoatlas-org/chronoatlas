@@ -289,7 +289,7 @@ numbers as absolute speeds.
 | Possibly contested (one of the two records may not apply yet, or any more) | the contested cross-hatch and edge, fainter, plus "Possibly contested" in the panel | built (Phase 3, step 2) |
 | A dependency, in the de jure view (colony, protectorate, or occupied) | lighter tint of the holding state's color, with dashed edges | built (Phase 2, step 9) |
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
-| Sources differ (compare view only) | a pattern of its own, plus a legend label | planned (Phase 3, step 7) |
+| Sources differ (OpenHistoricalMap against Cliopatria, with the second opinion on over the default view) | teal dots with a thin teal edge, the words "Sources differ" on the map, a legend label, and a sentence in the panel | proposed (Phase 3, step 7) |
 | Coastal waters, as the source draws them | a faint tint, no outline, from zoom 4 | built (Phase 3, step 4) |
 | Edge of imported data | dashed gray line over land, plus a legend label (a label on the map comes with map text) | built (Phase 3, step 3) |
 | Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |

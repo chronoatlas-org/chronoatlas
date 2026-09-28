@@ -124,6 +124,8 @@ export interface PolityFile {
   /** Names of the other polities the records mention (for "Protectorate of …" and so on). */
   related?: Record<string, AtlasName[]>;
   contested?: ContestedEntry[];
+  /** Where the second opinion (Cliopatria) names a different holder over this territory: "sources differ". */
+  differ?: ContestedEntry[];
   figures?: FigureEntry[];
 }
 
@@ -257,6 +259,8 @@ export interface TerritoryView {
   note?: string;
   /** Where the sources disagree over this polity's territory on this date, in words. */
   contested: string[];
+  /** Where the second opinion names a different holder on this date, in words ("sources differ"). */
+  differ: string[];
   /** Figures for this date, each with what it counts, how it was made, and its sources. */
   figures: FigureLine[];
   /** Said when our only legal-borders source can't cover a territory this small. */
@@ -614,6 +618,17 @@ export function describeTerritory(
       km2: number(c.km2),
     }),
   );
+  // Where the second opinion names someone else: a difference between sources, not a dispute.
+  const differ = (file.differ ?? [])
+    .filter((c) => c.s0 <= day && day < c.e0)
+    .map((c) =>
+      t(c.maybe ? 'panel.differMaybe' : 'panel.differ', {
+        source: sources[c.source]?.title ?? c.source,
+        name: nameOf(c.other),
+        holds: HOLDS_KEYS[c.relation] ? t(HOLDS_KEYS[c.relation]) : c.relation,
+        km2: number(c.km2),
+      }),
+    );
 
   // Figures. A computed figure applies while its record does. For sourced figures, show the
   // estimate nearest to this date, with its own date, rather than invent an in-between value.
@@ -675,6 +690,7 @@ export function describeTerritory(
     nameCount: file.names.length,
     ...(file.notes ? { note: file.notes } : {}),
     contested,
+    differ,
     figures: figureLines,
     ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
     credits: creditsFor(

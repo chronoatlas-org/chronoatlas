@@ -168,6 +168,16 @@ body {
   gap: 6px;
 }
 
+/* Matches the map's "sources differ" dots (src/map/historical.ts), in the second opinion's teal. */
+.legend-differ,
+.panel-differ-swatch {
+  flex: none;
+  width: 16px;
+  height: 12px;
+  border: 1px solid #0b6e77;
+  background: radial-gradient(circle, rgb(11 110 119 / 80%) 1.2px, transparent 1.6px) 0 0 / 5px 5px;
+}
+
 /* Matches the map's contested cross-hatch (src/map/historical.ts). */
 .legend-contested,
 .panel-contested-swatch {
@@ -588,7 +598,8 @@ body {
   font-size: 0.85rem;
 }
 
-.panel-contested-swatch {
+.panel-contested-swatch,
+.panel-differ-swatch {
   margin-top: 3px;
 }
 

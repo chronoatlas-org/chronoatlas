@@ -21,6 +21,24 @@ import type { MultiPolygon } from './geometry.ts';
 /** CShapes leaves out territorial changes smaller than this (its codebook's coding rules). */
 export const MIN_DISAGREEMENT_KM2 = 10_000;
 
+/**
+ * A polygon's mean width in km (twice its area over its perimeter): a long strip w km wide comes
+ * out close to w. Used to leave out the thin strips where two sources' borders, drawn at different
+ * resolutions, don't quite meet.
+ */
+export function meanWidthKm(polygon: MultiPolygon[number]): number {
+  let perimeter = 0;
+  for (const ring of polygon) {
+    for (let i = 1; i < ring.length; i++) {
+      const [x1, y1] = ring[i - 1];
+      const [x2, y2] = ring[i];
+      const k = Math.cos((((y1 + y2) / 2) * Math.PI) / 180);
+      perimeter += Math.hypot((x2 - x1) * 111.32 * k, (y2 - y1) * 110.57);
+    }
+  }
+  return perimeter === 0 ? 0 : (2 * areaKm2([polygon])) / perimeter;
+}
+
 type Box = [number, number, number, number];
 
 /** A territorial record with its shape and days, from either side. */
@@ -122,6 +140,7 @@ export function computeContested(
   dejure: readonly TimedShape[],
   links: ReadonlyMap<string, readonly Link[]>,
   minKm2 = MIN_DISAGREEMENT_KM2,
+  minWidthKm = 0,
 ): ContestedArea[] {
   const results: ContestedArea[] = [];
   const overlaps = new Map<string, MultiPolygon>(); // by pair of shapes, which repeat across periods
@@ -138,7 +157,7 @@ export function computeContested(
       let pieces = overlaps.get(key);
       if (!pieces) {
         const overlap = polygonClipping.intersection(f.geometry as never, j.geometry as never) as MultiPolygon;
-        pieces = cleanMultiPolygon(overlap, 4).filter((polygon) => areaKm2([polygon]) >= minKm2);
+        pieces = cleanMultiPolygon(overlap, 4).filter((polygon) => areaKm2([polygon]) >= minKm2 && (minWidthKm === 0 || meanWidthKm(polygon) >= minWidthKm));
         overlaps.set(key, pieces);
       }
       if (pieces.length === 0) continue;

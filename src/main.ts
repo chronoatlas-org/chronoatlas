@@ -161,11 +161,14 @@ if (matchMedia('(max-width: 600px), (max-height: 500px)').matches) mapKey.open =
 // The view switch: borders as administered (OpenHistoricalMap) or as legally recognized (CShapes).
 const viewButtons = [...document.querySelectorAll<HTMLButtonElement>('.view-switch button')];
 const jureLegend = document.querySelector<HTMLElement>('.legend-jure')!;
+// "Sources differ" is explained only while it's on the map (the second opinion over the default view).
+const differLegend = document.querySelector<HTMLElement>('.legend-differ-item')!;
 function setView(next: BorderView): void {
   view = next;
   historical.setView(next);
   for (const button of viewButtons) button.setAttribute('aria-pressed', String(button.dataset.view === next));
   jureLegend.hidden = next !== 'jure';
+  differLegend.hidden = !historical.comparing;
   scheduleUrlUpdate();
 }
 for (const button of viewButtons) button.addEventListener('click', () => setView(button.dataset.view as BorderView));
@@ -178,6 +181,7 @@ function setSecondOpinion(on: boolean): void {
   historical.setSecondOpinion(on);
   secondButton.setAttribute('aria-pressed', String(on));
   secondLegend.hidden = !on;
+  differLegend.hidden = !historical.comparing;
   scheduleUrlUpdate();
 }
 secondButton.addEventListener('click', () => setSecondOpinion(!secondOpinion));

@@ -341,7 +341,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 4 ✅ | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 5 ✅ | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. *Done 2026-09-28,* with no font to import; see [progress](#progress). | high |
 | 6 ✅ | **"What each source says here"** in the panel (section 8). *Done 2026-09-28;* see [progress](#progress). | medium |
-| 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
+| 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). *Proposed 2026-09-28, waiting for the maintainers;* see [below](#waiting-for-the-maintainers-2026-09-28). | high |
 | 8 ✅ | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 9 | **Claims overlay,** and claims in the contested computation, only once the first claim records exist (section 6). | high |
 | 10 ✅ | **Measure and tidy:** performance, the phone layout with the longer legend (folding on phones), docs. *Done 2026-09-28;* see [progress](#progress). | medium |

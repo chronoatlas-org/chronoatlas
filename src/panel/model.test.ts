@@ -315,6 +315,17 @@ describe('describeTerritory: other sources', () => {
     expect(describeTerritory(withLinks, sources, day(1904, 6, 1), 'en').contested).toEqual([]);
   });
 
+  it('says in words where the second opinion names someone else ("sources differ")', () => {
+    const differing: PolityFile = {
+      ...withLinks,
+      differ: [{ side: 'facto', other: 'unit-b', relation: 'controls', source: 'other-test-source', s0: day(1902, 1, 1), e0: day(1903, 1, 1), km2: 54_321 }],
+    };
+    expect(describeTerritory(differing, sources, day(1902, 6, 1), 'en').differ).toEqual([
+      'Sources differ: Other Test Source records Unit B as controlling about 54,000 km² of this territory.',
+    ]);
+    expect(describeTerritory(differing, sources, day(1904, 6, 1), 'en').differ).toEqual([]);
+  });
+
   it('says "possibly contested" when one of the records may not apply on the date', () => {
     const maybe: PolityFile = { ...withLinks, contested: [{ ...withLinks.contested![0], maybe: true }] };
     expect(describeTerritory(maybe, sources, day(1902, 6, 1), 'en').contested[0]).toMatch(

@@ -15,6 +15,8 @@ export const en = {
   'map.maybeContested': 'Possibly contested',
   'map.edge': 'Edge of imported data',
   'map.zone': 'Frontier zone',
+  'map.differ': 'Sources differ',
+  'map.maybeDiffer': 'Sources may differ',
   // A dependency's status and holder, beneath its name in the de jure view ({holder} is a name).
   'map.status.colony': 'Colony of {holder}',
   'map.status.protectorate': 'Protectorate of {holder}',
@@ -39,6 +41,8 @@ export const en = {
   'view.jureShort': 'Legal',
   'view.secondShort': '2nd opinion',
   'legend.second': "Dotted outlines: Cliopatria's borders (a second opinion; it doesn't separate control from legal rule)",
+  'legend.differ':
+    'Teal dots: OpenHistoricalMap and Cliopatria name different holders (differences under about 10 km wide or 1,000 km² aren’t shown)',
 
   'share.button': 'Copy link',
   'share.label': 'Copy a link to this date and map view',
@@ -160,6 +164,9 @@ export const en = {
   'panel.contestedJure': 'Contested: {source} records {name} {holds} about {km2} km² of this territory.',
   'panel.contestedMaybe':
     'Possibly contested: {source} records {name} {holds} about {km2} km² of this territory, but a date involved is known only to the month or year, so the two records may not overlap on this date. The map hatches it more faintly.',
+  'panel.differ': 'Sources differ: {source} records {name} {holds} about {km2} km² of this territory.',
+  'panel.differMaybe':
+    'Sources may differ: {source} records {name} {holds} about {km2} km² of this territory, but a date involved is known only to the month or year.',
   'panel.holds.sovereign': 'as sovereign over',
   'panel.holds.occupies': 'as occupying',
   'panel.holds.administers': 'as administering',

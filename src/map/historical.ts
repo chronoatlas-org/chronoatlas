@@ -187,6 +187,25 @@ function crossHatchPattern(): ImageData {
   return ctx.getImageData(0, 0, size, size);
 }
 
+/**
+ * Dots in the second opinion's teal, for "sources differ": a pattern of its own (not the
+ * contested cross-hatch or the "no data" hatch), so the difference doesn't rest on color alone.
+ */
+function dotsPattern(): ImageData {
+  const size = 10;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+  ctx.fillStyle = 'rgba(11, 110, 119, 0.8)';
+  for (const [x, y] of [[2.5, 2.5], [7.5, 7.5]]) {
+    ctx.beginPath();
+    ctx.arc(x, y, 1.3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  return ctx.getImageData(0, 0, size, size);
+}
+
 /** A diagonal-line pattern for land with no data. */
 function hatchPattern(): ImageData {
   const size = 16;
@@ -249,13 +268,30 @@ export class HistoricalLayers {
     };
     show(['borders-fill', 'borders-land', 'borders-line', 'borders-line-approximate', 'borders-zone', 'borders-selected', 'borders-labels'], view === 'facto');
     show(['dejure-fill', 'dejure-line', 'dejure-line-dependent', 'dejure-selected', 'dejure-labels'], view === 'jure');
+    this.showDiffer();
   }
 
-  /** Shows or hides the second opinion: Cliopatria's borders as dotted outlines. */
+  /**
+   * Shows or hides the second opinion: Cliopatria's borders as dotted outlines. Over the default
+   * view it's also the comparison of sources: where the two name different holders is marked
+   * "Sources differ" (both record control, so that's like with like; against the legal borders
+   * the difference is what "contested" already shows).
+   */
   setSecondOpinion(on: boolean): void {
     this.secondOpinion = on;
-    if (this.ready && this.map.getLayer('second-line')) {
-      this.map.setLayoutProperty('second-line', 'visibility', on ? 'visible' : 'none');
+    if (!this.ready) return;
+    if (this.map.getLayer('second-line')) this.map.setLayoutProperty('second-line', 'visibility', on ? 'visible' : 'none');
+    this.showDiffer();
+  }
+
+  /** Whether "sources differ" is on the map: the second opinion over the default view. */
+  get comparing(): boolean {
+    return this.secondOpinion && this.view === 'facto';
+  }
+
+  private showDiffer(): void {
+    for (const id of ['differ-dots', 'differ-line', 'differ-labels']) {
+      if (this.map.getLayer(id)) this.map.setLayoutProperty(id, 'visibility', this.comparing ? 'visible' : 'none');
     }
   }
 
@@ -592,6 +628,43 @@ export class HistoricalLayers {
         },
       });
     }
+    // Where the default map and the second opinion name different holders ("sources differ"):
+    // teal dots with a thin teal edge, shown with the second opinion over the default view.
+    const differ = index.extra?.differ;
+    if (differ) {
+      map.addImage('differ-dots', dotsPattern(), { pixelRatio: 2 });
+      map.addSource('differ', {
+        type: 'vector',
+        tiles: [`${dataUrl(`${differ.dir}/${differ.version}/`)}{z}/{x}/{y}.pbf`],
+        minzoom: index.minzoom,
+        maxzoom: index.maxzoom,
+        bounds: differ.bounds,
+        attribution:
+          'Sources differ: computed from OpenHistoricalMap and <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria (CC BY 4.0)</a>',
+      });
+      const maybeFaint: ExpressionSpecification = ['case', ['==', ['get', 'maybe'], 1], 0.45, 1];
+      map.addLayer(
+        {
+          id: 'differ-dots',
+          type: 'fill',
+          source: 'differ',
+          'source-layer': differ.layer,
+          filter: ACTIVE,
+          layout: { visibility: 'none' },
+          paint: { 'fill-pattern': 'differ-dots', 'fill-opacity': maybeFaint },
+        },
+        'coastline',
+      );
+      map.addLayer({
+        id: 'differ-line',
+        type: 'line',
+        source: 'differ',
+        'source-layer': differ.layer,
+        filter: ACTIVE,
+        layout: { visibility: 'none' },
+        paint: { 'line-color': '#0b6e77', 'line-width': 1, 'line-opacity': maybeFaint },
+      });
+    }
     // The second opinion (Cliopatria): dotted outlines only, in a color of their own, so they
     // read as another source's lines over whichever view is shown. Hidden until chosen.
     const second = index.extra?.second;
@@ -672,6 +745,25 @@ export class HistoricalLayers {
       paint: { 'text-color': '#5b5146', 'text-halo-color': 'rgba(255, 255, 255, 0.85)', 'text-halo-width': 1 },
     });
     map.addLayer(nameLayer('borders-labels', 'borders', 'labels'));
+    if (differ) {
+      map.addLayer({
+        id: 'differ-labels',
+        type: 'symbol',
+        source: 'differ',
+        'source-layer': 'labels',
+        filter: ACTIVE,
+        layout: {
+          visibility: 'none',
+          'text-field': ['case', ['==', ['get', 'maybe'], 1], t('map.maybeDiffer'), t('map.differ')],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 2, 10, 6, 12],
+          'text-anchor': 'bottom',
+          'text-offset': [0, -2.1],
+          'text-padding': 1,
+          'symbol-sort-key': ['-', ['get', 'a']],
+        },
+        paint: { 'text-color': '#0b6e77', 'text-halo-color': 'rgba(255, 255, 255, 0.9)', 'text-halo-width': 1.4 },
+      });
+    }
     if (this.hasDejure && dejure) {
       const dejureNames = nameLayer('dejure-labels', 'dejure', 'labels');
       map.addLayer({ ...dejureNames, layout: { ...dejureNames.layout, visibility: 'none' } }); // shown by setView

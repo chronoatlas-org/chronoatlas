@@ -17,6 +17,8 @@
 //   public/data/changes.json         every day a border starts or ends, with its polity and source
 //   public/data/dejure-tiles/<version>/…      CShapes' legally recognized borders, its own layer
 //   public/data/second-tiles/<version>/…      Cliopatria's borders, the "second opinion" outlines
+//   public/data/differ-tiles/<version>/…      where the default map and the second opinion
+//                          name different holders ("sources differ"; credits Cliopatria)
 //   public/data/coast-tiles/<version>/…       Natural Earth's 1:10m land, sea, and coastline
 //                          inside the imports' areas, for the base map up close (zoom 4–7)
 //   public/data/contested-tiles/<version>/…   where the sources disagree (computed; carries
@@ -639,6 +641,32 @@ export function buildContested(ds: Dataset): ContestedArea[] {
   );
 }
 
+/**
+ * "Sources differ" areas are shown only where a difference is at least this large and this wide:
+ * Cliopatria works at about 40 km² resolution (a pixel of about 6 km), so its borders wander a few
+ * kilometres either side of the others', leaving thin strips that aren't a real disagreement.
+ * Proposed from measurements (Phase 3 step 7), for the maintainers to approve.
+ */
+export const DIFFER_MIN_KM2 = 1_000;
+export const DIFFER_MIN_WIDTH_KM = 10;
+
+/**
+ * Where the default map's source and the second opinion (Cliopatria) name different holders on
+ * the same days: both record control, so where they differ, the sources simply differ (not a
+ * dispute in the world; that's "contested"). The crosswalk decides what counts as the same polity.
+ */
+export function buildDiffer(ds: Dataset): ContestedArea[] {
+  const byUnit = new Map<string, Link[]>();
+  for (const link of crosswalkLinks(ds)) byUnit.set(link.unit, [...(byUnit.get(link.unit) ?? []), link]);
+  return computeContested(
+    timedShapes(ds, onDefaultMap, ['administers', 'controls', 'occupies']),
+    timedShapes(ds, isSecondOpinion, ['controls']),
+    byUnit,
+    DIFFER_MIN_KM2,
+    DIFFER_MIN_WIDTH_KM,
+  );
+}
+
 /** The contested areas as a layer: only what the map needs (who, and when). */
 export function contestedCollection(areas: readonly ContestedArea[]) {
   const collection: GeoJSON.FeatureCollection = {
@@ -811,6 +839,7 @@ export function buildPolityFiles(
   ds: Dataset,
   contested: readonly ContestedArea[] = [],
   areas: ReadonlyMap<string, AreaFigure[]> = new Map(),
+  differ: readonly ContestedArea[] = [],
 ): PolityFile[] {
   const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
   const mentions = new Map<string, Assertion[]>();
@@ -858,22 +887,46 @@ export function buildPolityFiles(
     }
     const records = [...own, ...linked].sort((a, b) => a.s0 - b.s0 || a.id.localeCompare(b.id));
 
-    // Where the sources disagree over this polity's territory: as the de facto side, as the
-    // de jure unit itself, or through a record the crosswalk links to it.
+    // Where the sources disagree over this polity's territory: as the default map's side, as the
+    // other source's unit itself, or through a record the crosswalk links to it. Contested areas
+    // (against the legal borders) and "sources differ" areas (against the second opinion) alike.
     const linkedWindows = new Map(linked.map((r) => [r.id, [r.m0 ?? -Infinity, r.m1 ?? Infinity] as const]));
-    const disputes: ContestedEntry[] = [];
-    for (const c of contested) {
-      if (c.facto === p.id) {
-        disputes.push({ side: 'facto', other: c.jure, relation: c.jureRelation, source: c.jureSource, s0: c.s0, e0: c.e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
+    const entriesFrom = (found: readonly ContestedArea[]) => {
+      const entries: ContestedEntry[] = [];
+      for (const c of found) {
+        if (c.facto === p.id) {
+          entries.push({ side: 'facto', other: c.jure, relation: c.jureRelation, source: c.jureSource, s0: c.s0, e0: c.e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
+        }
+        const window = c.jure === p.id ? ([-Infinity, Infinity] as const) : linkedWindows.get(c.jureRecord);
+        if (window) {
+          const s0 = Math.max(c.s0, window[0]);
+          const e0 = Math.min(c.e0, window[1]);
+          if (s0 < e0) entries.push({ side: 'jure', other: c.facto, relation: c.factoRelation, source: c.factoSource, s0, e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
+        }
       }
-      const window = c.jure === p.id ? ([-Infinity, Infinity] as const) : linkedWindows.get(c.jureRecord);
-      if (window) {
-        const s0 = Math.max(c.s0, window[0]);
-        const e0 = Math.min(c.e0, window[1]);
-        if (s0 < e0) disputes.push({ side: 'jure', other: c.facto, relation: c.factoRelation, source: c.factoSource, s0, e0, ...(c.maybe ? { maybe: true } : {}), km2: c.km2 });
+      entries.sort((a, b) => a.s0 - b.s0 || a.other.localeCompare(b.other));
+      // Merge back-to-back periods that would read the same in the panel (it shows areas to 2
+      // significant figures), so a long disagreement split by many small changes stays one entry.
+      const shown = (km2: number) => Number(km2.toPrecision(2));
+      const merged: ContestedEntry[] = [];
+      for (const entry of entries) {
+        const same = merged.find(
+          (m) =>
+            m.e0 === entry.s0 &&
+            m.side === entry.side &&
+            m.other === entry.other &&
+            m.relation === entry.relation &&
+            m.source === entry.source &&
+            !!m.maybe === !!entry.maybe &&
+            shown(m.km2) === shown(entry.km2),
+        );
+        if (same) same.e0 = entry.e0;
+        else merged.push({ ...entry });
       }
-    }
-    disputes.sort((a, b) => a.s0 - b.s0 || a.other.localeCompare(b.other));
+      return merged;
+    };
+    const disputes = entriesFrom(contested);
+    const differences = entriesFrom(differ);
 
     // Figures: this polity's land areas (computed by computeAreas), then any sourced figures
     // from data/figures/.
@@ -915,6 +968,7 @@ export function buildPolityFiles(
     const others = new Set([
       ...records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? []), r.via ?? '']),
       ...disputes.map((d) => d.other),
+      ...differences.map((d) => d.other),
     ]);
     others.delete(p.id);
     others.delete('');
@@ -934,6 +988,7 @@ export function buildPolityFiles(
       records,
       ...(figures.length > 0 ? { figures } : {}),
       ...(disputes.length > 0 ? { contested: disputes } : {}),
+      ...(differences.length > 0 ? { differ: differences } : {}),
       ...(p.notes ? { notes: p.notes } : {}),
       ...(others.size > 0 ? { related } : {}),
     };
@@ -998,7 +1053,12 @@ function main(): void {
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
   const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds, { labels: contestedLayer.labels });
-  const tileSets = [borders, dejureTiles, secondTiles, contestedTiles, ...(coastTiles ? [coastTiles] : [])];
+  // Where the default map and the second opinion differ (combines OpenHistoricalMap, CC0, with
+  // Cliopatria, CC BY 4.0, so it's credited to Cliopatria wherever it's shown).
+  const differ = buildDiffer(ds);
+  const differLayer = contestedCollection(differ);
+  const differTiles = writeTileSet('differ-tiles', 'differ', differLayer.collection, differLayer.bounds, { labels: differLayer.labels });
+  const tileSets = [borders, dejureTiles, secondTiles, contestedTiles, differTiles, ...(coastTiles ? [coastTiles] : [])];
   const tileCount = tileSets.reduce((n, t) => n + t.count, 0);
   const tileBytes = tileSets.reduce((n, t) => n + t.bytes, 0);
   // The map only redraws on these days, so they cover every layer it can show.
@@ -1009,6 +1069,7 @@ function main(): void {
       ...dejure.collection.features,
       ...second.collection.features,
       ...contestedLayer.collection.features,
+      ...differLayer.collection.features,
       ...edges.features,
       // Labels change name on their own days, inside a record.
       ...labels.features,
@@ -1028,6 +1089,9 @@ function main(): void {
   const pairs = new Map<string, number>();
   for (const c of contested) pairs.set(`${c.facto} vs ${c.jure}`, Math.max(pairs.get(`${c.facto} vs ${c.jure}`) ?? 0, c.km2));
   console.log(`Contested (largest area per pair of polities): ${[...pairs].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v.toLocaleString('en')} km²`).join('; ') || 'none'}`);
+  const differPairs = new Map<string, number>();
+  for (const c of differ) differPairs.set(`${c.facto} vs ${c.jure}`, Math.max(differPairs.get(`${c.facto} vs ${c.jure}`) ?? 0, c.km2));
+  console.log(`Sources differ (largest area per pair): ${[...differPairs].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v.toLocaleString('en')} km²`).join('; ') || 'none'}`);
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
   writeFileSync(join(OUT_DIR, 'changes.json'), JSON.stringify(buildChanges(ds)));
   writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
@@ -1036,7 +1100,7 @@ function main(): void {
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
   const areas = buildAreas(ds, land);
-  for (const file of buildPolityFiles(ds, contested, areas)) {
+  for (const file of buildPolityFiles(ds, contested, areas, differ)) {
     const json = JSON.stringify(file);
     writeFileSync(join(OUT_DIR, 'polities', `${file.id}.json`), json);
     polityBytes += json.length;

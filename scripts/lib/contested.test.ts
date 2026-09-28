@@ -1,7 +1,7 @@
 // Contested-area tests use made-up squares and polities (Testland), not real places.
 
 import { describe, expect, it } from 'vitest';
-import { boundingBox, computeContested, splitByCertainty, uncovered } from './contested.ts';
+import { boundingBox, computeContested, meanWidthKm, splitByCertainty, uncovered } from './contested.ts';
 import type { Link, TimedShape } from './contested.ts';
 import type { MultiPolygon } from './geometry.ts';
 
@@ -62,6 +62,17 @@ describe('computeContested', () => {
       [150, 250, false],
       [250, 300, true],
     ]);
+  });
+
+  it('can leave out thin strips, by mean width, as well as small areas', () => {
+    // A 4° × 0.05° strip at the equator: about 440 km long and 5.5 km wide.
+    const strip: MultiPolygon = [[[[0, 0], [4, 0], [4, 0.05], [0, 0.05], [0, 0]]]];
+    expect(meanWidthKm(strip[0])).toBeGreaterThan(5);
+    expect(meanWidthKm(strip[0])).toBeLessThan(6);
+    const thin = shape('facto-5', 'testland', strip, 100, 300);
+    const wide = shape('jure-2', 'unit-a', square(0, 0, 5), 0, 1000, 'controls');
+    expect(computeContested([thin], [wide], new Map(), 1_000)).toHaveLength(1);
+    expect(computeContested([thin], [wide], new Map(), 1_000, 10)).toEqual([]);
   });
 
   it('leaves out disagreements smaller than 10,000 km², the size CShapes does not code', () => {

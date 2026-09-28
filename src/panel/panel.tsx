@@ -290,6 +290,12 @@ function Territory({ view, alsoHere, spot, reportUrl, onGoToDay, onSelectOther }
             {line}
           </p>
         ))}
+        {view.differ.map((line, i) => (
+          <p key={`d${i}`} class="panel-contested">
+            <span class="panel-differ-swatch" aria-hidden="true" />
+            {line}
+          </p>
+        ))}
         {view.missing && <p class="panel-missing">{view.missing}</p>}
         {spot && <Spot view={spot} onSelect={onSelectOther} />}
         {view.smallTerritory && <p class="panel-missing">{view.smallTerritory}</p>}

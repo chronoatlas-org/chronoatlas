@@ -173,6 +173,12 @@ everyday work:
   small ones until zoomed in. De jure labels for dependencies carry `unit` and `status` ("Korea /
   Colony of Japan"). Contested areas have their own `labels` ("Contested", "Possibly contested"),
   placed before names. Label days are in the change index.
+- **Sources differ (Phase 3 step 7, proposed):** `buildDiffer` runs the contested computation
+  between the default map and Cliopatria (both record control), keeping pieces at least
+  `DIFFER_MIN_WIDTH_KM` (10) wide on average (`meanWidthKm`) and `DIFFER_MIN_KM2` (1,000) in
+  area. Its own tile set (`differ-tiles/`, CC BY 4.0, credit Cliopatria) is shown only with the
+  second opinion on over the default view (`HistoricalLayers.comparing`); polity files carry
+  `differ` entries, worded "Sources differ: …" in the panel.
 - **Line styles:** dots mean the second opinion and dashes are already taken, so edge precision
   is shown by sharpness (a softened line, a soft band). The build puts `ep` on lines (1
   approximate, 2 frontier zone; `EDGE_CODES`) and lists the kinds present in `tiles.json`
