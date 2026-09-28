@@ -1,0 +1,8 @@
+id: cliopatria-german-empire
+names:
+  - text: German Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "German Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

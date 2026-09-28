@@ -1,0 +1,46 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-british-colonial-empire-1947","edge_precision":"unknown","cliopatria_name":"British Colonial Empire","cliopatria_from_year":1947,"cliopatria_to_year":1957,"cliopatria_area_km2":1411857,"cliopatria_wikidata":"Q8680","cliopatria_wikipedia":"British Empire","cliopatria_seshat_id":"gb_british_emp_2","cliopatria_member_of":"(British Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[98.0878,10.8288],
+[98.3015,10.7645],
+[98.3072,10.8288],
+[98.2456,10.9574],
+[98.0992,10.9574],
+[98.0878,10.8288]
+]
+],
+[
+[
+[98.247,12.5003],
+[98.4603,12.436],
+[98.4868,12.6932],
+[98.2669,12.6932],
+[98.247,12.5003]
+]
+],
+[
+[
+[98.3049,11.6003],
+[98.4453,11.536],
+[98.5185,11.536],
+[98.6101,11.7289],
+[98.3233,11.7931],
+[98.3049,11.6003]
+]
+],
+[
+[
+[113.9842,22.4005],
+[113.9986,22.0791],
+[114.5311,22.1434],
+[114.6039,22.5291],
+[114.3184,22.5934],
+[113.9963,22.4648],
+[113.9842,22.4005]
+]
+]
+]}
+}

@@ -87,6 +87,17 @@ description. Re-check before relying on anything here, because datasets change.
     (1932–35), 3,103,824 km² (1938), and 7,043,789 km² (1943).
   - The Republic of China and "Communist Party of China" areas also change year to year.
   - **Puppet states are merged into Japan:** there's no separate Manchukuo.
+- **Imported 2026-09-28** into [data/imports/cliopatria/](../data/imports/cliopatria/README.md).
+  Found while importing:
+  - **The file:** the zip at the pinned commit holds `cliopatria_polities_only.geojson`
+    (166 MB). It has 13,380 POLITY rows and 385 RELATION rows, and its last year is 2024.
+  - **Grouping rows:** some POLITY rows are groupings, such as "(British Empire)", "(French
+    Third Republic)", and "(Vichy France)". Their names are in parentheses and `Components`
+    lists their parts. The import skips them (61 rows in our area), because their parts already
+    cover the land.
+  - **Wrong Wikidata IDs:** some are wrong for this period. "Republic of China" carries Q148
+    (the People's Republic of China), and "Republic of Korea" carries Q423 (North Korea). So
+    polities are matched by a reviewed crosswalk, never automatically by Wikidata ID.
 
 ## Natural Earth
 

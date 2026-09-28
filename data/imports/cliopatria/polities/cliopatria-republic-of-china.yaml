@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-china
+names:
+  - text: Republic of China
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of China"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

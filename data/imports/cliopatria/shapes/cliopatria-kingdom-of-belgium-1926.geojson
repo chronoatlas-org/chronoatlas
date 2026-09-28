@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-belgium-1926","edge_precision":"unknown","cliopatria_name":"Kingdom of Belgium","cliopatria_from_year":1926,"cliopatria_to_year":1927,"cliopatria_area_km2":34570,"cliopatria_wikidata":"Q31","cliopatria_wikipedia":"Belgium"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.4615,39.1265],
+[117.5519,38.9972],
+[117.709,38.9972],
+[117.6524,39.1911],
+[117.8775,39.3203],
+[117.6075,39.2557],
+[117.5738,39.1911],
+[117.4615,39.1265]
+]
+]
+]}
+}

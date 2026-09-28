@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-austria-hungary-1915","edge_precision":"unknown","cliopatria_name":"Austria-Hungary","cliopatria_from_year":1915,"cliopatria_to_year":1915,"cliopatria_area_km2":592417,"cliopatria_wikidata":"Q28513","cliopatria_wikipedia":"Austria-Hungary","cliopatria_seshat_id":"at_habsburg_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.1375,39.7083],
+[117.2952,39.7083],
+[117.3298,39.7729],
+[117.4086,39.7729],
+[117.5482,40.0317],
+[117.1375,39.7083]
+]
+]
+]}
+}

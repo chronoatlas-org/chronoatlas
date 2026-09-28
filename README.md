@@ -17,6 +17,7 @@ redraws for that date. Every border and event on the map is traced to a named so
 > - A switch shows the borders as administered (OpenHistoricalMap) or as legally recognized
 >   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, where the two sources
 >   disagree, and the panel says so in words.
+> - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
 > - Event markers, event details, and map pulses are built and waiting for the first sourced
 >   events.
 > - The address bar always links to the exact date, view, and selection, so you can share it.
@@ -81,6 +82,7 @@ file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 | `npm run build-data` | Compiles `data/` into the files the site loads (`public/data/`); runs automatically before `dev` and `build` |
 | `npm run import:ohm` | Re-imports the OpenHistoricalMap borders (see [data/imports/openhistoricalmap](data/imports/openhistoricalmap/README.md)) |
 | `npm run import:cshapes` | Re-imports CShapes 2.0 from its pinned files (non-commercial; see [data/imports/cshapes-2-0](data/imports/cshapes-2-0/README.md)) |
+| `npm run import:cliopatria` | Re-imports Cliopatria from its pinned release (see [data/imports/cliopatria](data/imports/cliopatria/README.md)) |
 | `npm run import:natural-earth` | Re-downloads the Natural Earth base map from its pinned release (see [data/imports/natural-earth](data/imports/natural-earth/README.md)) |
 
 The data format is documented in [docs/data-format.md](docs/data-format.md).

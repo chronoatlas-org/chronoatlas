@@ -159,6 +159,9 @@ The ones that affect everyday work:
   `sovereign` by the owner.
 - **Assertions name CShapes' own units** (`cshapes-<gwcode>`). The hand-written
   `polity-crosswalk.yaml` links them to our polities; never cut CShapes rows to fit our polities.
+- **Cliopatria (2026-09-28)** is matched to our polities by a reviewed crosswalk, never
+  automatically by Wikidata ID. Some of its IDs are wrong for this period: "Republic of China" has
+  Q148, and "Republic of Korea" has Q423.
 - **Disagreements under 10,000 km² aren't contested:** CShapes doesn't code changes that small,
   so it has no view on them (Hong Kong, Macau, Goa, concessions, border slivers). Legal status
   for small territories comes from our own sourced records.
@@ -168,8 +171,9 @@ LTS, and the GitHub CLI are installed.
 
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
-`npm run validate`, `npm run build-data`, `npm run import:ohm` and `npm run import:cshapes` (add
-`-- --offline` to reprocess the last download), `npm run import:natural-earth`.
+`npm run validate`, `npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
+`npm run import:cliopatria` (add `-- --offline` to reprocess the last download),
+`npm run import:natural-earth`.
 
 **Data pipeline**
 
@@ -211,6 +215,13 @@ LTS, and the GitHub CLI are installed.
   - The build's `onDefaultMap()` keeps every import except OpenHistoricalMap off the default
     map. Each other source becomes its own layer.
   - The import stops if an upstream checksum changes. Review the change, then re-pin.
+- **Cliopatria import** (`data/imports/cliopatria/`, CC BY 4.0):
+  - It's shown as a "second opinion" (`SECOND_OPINION_FOLDERS` in the build): dotted outlines,
+    toggled in the header, `alt=cliopatria` in links.
+  - Grouping rows ("(British Empire)", with `Components`) are skipped, because their parts
+    cover the same land.
+  - The zip is read by `scripts/lib/zip.ts`, and the import needs a larger Node memory limit
+    (set in its npm script).
 - **Contested areas** (`scripts/lib/contested.ts`, Phase 2 step 9):
   - **What they are:** where the default map's administering polity and a de jure source's
     sovereign or occupying state differ on the same days. The crosswalk decides what counts as

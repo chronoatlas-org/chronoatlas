@@ -12,6 +12,7 @@
 //   public/data/events/<id>.json     one event in full (summary, sources, effects), for the panel
 //   public/data/changes.json         every day a border starts or ends, with its polity and source
 //   public/data/dejure-tiles/<version>/…      CShapes' legally recognized borders, its own layer
+//   public/data/second-tiles/<version>/…      Cliopatria's borders, the "second opinion" outlines
 //   public/data/contested-tiles/<version>/…   where the sources disagree (computed; carries
 //                          CShapes' CC BY-NC-SA license, so it's a layer of its own)
 //   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
@@ -46,6 +47,9 @@ const TILE_LAYER = 'borders';
 /** Import folders whose assertions are legally recognized (de jure) borders, shown as their own view. */
 export const DE_JURE_FOLDERS = ['data/imports/cshapes-2-0/'];
 const isDejure = (file: string) => DE_JURE_FOLDERS.some((folder) => file.startsWith(folder));
+/** Import folders shown as a "second opinion": outlines over the default map (Cliopatria). */
+export const SECOND_OPINION_FOLDERS = ['data/imports/cliopatria/'];
+const isSecondOpinion = (file: string) => SECOND_OPINION_FOLDERS.some((folder) => file.startsWith(folder));
 /** Highest zoom with its own tiles. At zoom 7 a tile unit is about 40 m, finer than the data. */
 const TILE_MAX_ZOOM = 7;
 /** Stands in for "no end yet" in day-number comparisons: a day far in the future. */
@@ -136,6 +140,11 @@ export function buildDejure(ds: Dataset) {
     const status = shape.properties.cshapes_status;
     return typeof status === 'string' && status !== 'independent' ? { dep: 1 } : {};
   });
+}
+
+/** The "second opinion" layer: Cliopatria's borders, drawn as outlines over the default map. */
+export function buildSecondOpinion(ds: Dataset) {
+  return buildBorderLayer(ds, isSecondOpinion);
 }
 
 function buildBorderLayer(
@@ -504,15 +513,20 @@ function main(): void {
   const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds);
   const dejure = buildDejure(ds);
   const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds);
+  const second = buildSecondOpinion(ds);
+  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds);
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
   const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds);
-  const tileCount = borders.count + dejureTiles.count + contestedTiles.count;
-  const tileBytes = borders.bytes + dejureTiles.bytes + contestedTiles.bytes;
+  const tileCount = borders.count + dejureTiles.count + secondTiles.count + contestedTiles.count;
+  const tileBytes = borders.bytes + dejureTiles.bytes + secondTiles.bytes + contestedTiles.bytes;
   // The map only redraws on these days, so they cover every layer it can show.
-  const changes = changeDays({ type: 'FeatureCollection', features: [...collection.features, ...dejure.collection.features, ...contestedLayer.collection.features] });
+  const changes = changeDays({
+    type: 'FeatureCollection',
+    features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features],
+  });
   const extra = Object.fromEntries(
-    [dejureTiles, contestedTiles].map(({ dir, version, layer, bounds: b }) => [layer, { dir, version, layer, bounds: b }]),
+    [dejureTiles, secondTiles, contestedTiles].map(({ dir, version, layer, bounds: b }) => [layer, { dir, version, layer, bounds: b }]),
   );
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),
@@ -536,6 +550,7 @@ function main(): void {
   }
   console.log(
     `Built public/data: ${collection.features.length} border features, ${dejure.collection.features.length} de jure, ` +
+      `${second.collection.features.length} second-opinion, ` +
       `${contested.length} contested, in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}), ${changes.length} change days, ` +
       `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB), ${ds.events.length} events.`,

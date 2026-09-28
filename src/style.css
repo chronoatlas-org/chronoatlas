@@ -141,10 +141,50 @@ body {
     repeating-linear-gradient(-45deg, transparent 0 3px, rgb(154 27 91 / 70%) 3px 4.5px);
 }
 
+.view-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* A toggle: pressed shows Cliopatria's dotted outlines. */
+.second-opinion {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px dashed #0b6e77;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0b6e77;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.second-opinion[aria-pressed='true'] {
+  border-style: solid;
+  background: #0b6e77;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.second-opinion:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+/* Matches the map's dotted Cliopatria outlines (src/map/historical.ts). */
+.legend-second-line {
+  flex: none;
+  width: 18px;
+  height: 0;
+  border-top: 3px dotted #0b6e77;
+}
+
 /* The view switch: two buttons, the pressed one filled (and announced as pressed). */
 .view-switch {
   display: inline-flex;
-  margin-top: 6px;
   border: 1px solid #d0d7de;
   border-radius: 6px;
   overflow: hidden;
@@ -506,6 +546,24 @@ body {
     min-height: 44px;
   }
 
+  /* Phones: short labels, and no preview notice, so the header leaves room for the map. The
+     notice's source credits are also in the map's credits and in the panel. */
+  .view-controls .label-long {
+    display: none;
+  }
+
+  .view-controls .label-short {
+    display: inline;
+  }
+
+  .app-notice {
+    display: none;
+  }
+
+  .view-controls {
+    flex-wrap: nowrap;
+  }
+
   /* Phones: icon only for "Around this date" (its accessible label still names it). */
   .share-button .optional-label {
     display: none;
@@ -516,7 +574,8 @@ body {
     justify-content: center;
   }
 
-  .view-switch button {
+  .view-switch button,
+  .second-opinion {
     min-height: 40px;
   }
 
@@ -608,6 +667,11 @@ body {
   .app-notice {
     display: none;
   }
+}
+
+/* Long button labels, and short ones for phones (see the narrow-screen rules). */
+.label-short {
+  display: none;
 }
 
 /* Hidden on screen but read by screen readers. */

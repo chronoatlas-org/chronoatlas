@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-german-empire-1915","edge_precision":"unknown","cliopatria_name":"German Empire","cliopatria_from_year":1915,"cliopatria_to_year":1915,"cliopatria_area_km2":632360,"cliopatria_wikidata":"Q43287","cliopatria_wikipedia":"German Empire","cliopatria_seshat_id":"de_hohenzollern_3"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.1056,38.7389],
+[117.2625,38.7389],
+[117.3615,38.9326],
+[117.5519,38.9972],
+[117.4951,39.1911],
+[117.1137,39.0618],
+[117.2044,38.9326],
+[117.1384,38.8034],
+[117.1056,38.7389]
+]
+]
+]}
+}

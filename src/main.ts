@@ -66,6 +66,13 @@ const map = new maplibregl.Map({
 });
 
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+// MapLibre opens the compact credits box at first. On phones that covers much of the map, so fold
+// it: the (i) button opens the full credits and license notices.
+map.once('load', () => {
+  if (matchMedia('(max-width: 600px)').matches) {
+    map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+  }
+});
 map.addControl(new maplibregl.ScaleControl(), 'bottom-left');
 
 // --- Borders and the territory panel ------------------------------------------------------------
@@ -79,6 +86,8 @@ let urlTimer: number | undefined;
 let selected: Selection | null = null;
 /** Which borders the map shows: as administered (default) or as legally recognized. */
 let view: BorderView = fromUrl.view === 'jure' ? 'jure' : 'facto';
+/** Whether Cliopatria's borders are shown as a second opinion. */
+let secondOpinion = fromUrl.alt === 'cliopatria';
 
 const territorySelection = (id: string): Selection => ({ kind: 'polity', id });
 const eventSelection = (id: string): Selection => ({ kind: 'event', id });
@@ -142,6 +151,18 @@ function setView(next: BorderView): void {
   scheduleUrlUpdate();
 }
 for (const button of viewButtons) button.addEventListener('click', () => setView(button.dataset.view as BorderView));
+
+// The second opinion: Cliopatria's borders as dotted outlines over either view.
+const secondButton = document.getElementById('second-opinion')!;
+const secondLegend = document.querySelector<HTMLElement>('.legend-second')!;
+function setSecondOpinion(on: boolean): void {
+  secondOpinion = on;
+  historical.setSecondOpinion(on);
+  secondButton.setAttribute('aria-pressed', String(on));
+  secondLegend.hidden = !on;
+  scheduleUrlUpdate();
+}
+secondButton.addEventListener('click', () => setSecondOpinion(!secondOpinion));
 nearbyButton.addEventListener('click', () =>
   select(selected?.kind === 'nearby' ? null : { kind: 'nearby', id: '' }, 'click'),
 );
@@ -175,6 +196,7 @@ fetch(new URL('data/events.json', document.baseURI))
   .catch((error) => console.error('Could not load events.json', error));
 
 setView(view);
+setSecondOpinion(secondOpinion);
 
 // Open the territory or event from the link, if any. (An ID that isn't in our data closes the
 // panel again.)
@@ -213,6 +235,7 @@ function currentHash(): string {
     sel: selected?.kind === 'polity' ? selected.id : undefined,
     ev: selected?.kind === 'event' ? selected.id : undefined,
     view: view === 'jure' ? 'jure' : undefined,
+    alt: secondOpinion ? 'cliopatria' : undefined,
     lang: fromUrl.lang,
   });
 }
@@ -233,6 +256,7 @@ window.addEventListener('hashchange', () => {
   }
   select(selectionFrom(next), 'link');
   if ((next.view ?? 'facto') !== view) setView(next.view ?? 'facto');
+  if ((next.alt === 'cliopatria') !== secondOpinion) setSecondOpinion(next.alt === 'cliopatria');
 });
 
 // "Copy link": on phones, open the system share sheet; elsewhere, copy to the clipboard.

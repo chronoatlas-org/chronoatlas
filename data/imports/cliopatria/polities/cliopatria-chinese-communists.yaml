@@ -1,0 +1,8 @@
+id: cliopatria-chinese-communists
+names:
+  - text: Chinese Communists
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Chinese Communists"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

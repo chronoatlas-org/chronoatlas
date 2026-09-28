@@ -1,0 +1,353 @@
+{
+  "dataset": "Cliopatria (Seshat Global History Databank)",
+  "source_id": "cliopatria",
+  "license": "CC BY 4.0. Everything in this folder is derived from Cliopatria and carries the same license. See LICENSE.md.",
+  "repository": "https://github.com/Seshat-Global-History-Databank/cliopatria",
+  "version": "v0.2.0",
+  "commit": "ad28a691b7c07c1fca89d0e0636d324667d2a258",
+  "retrieved": "2026-09-28T02:54:20.684Z",
+  "download": {
+    "url": "https://raw.githubusercontent.com/Seshat-Global-History-Databank/cliopatria/ad28a691b7c07c1fca89d0e0636d324667d2a258/cliopatria.geojson.zip",
+    "file": "raw/cliopatria.geojson.zip (not committed)",
+    "bytes": 44231317,
+    "sha256": "d01ae3a20d358cc5d54f69d9d725d390767d9c8759ac89ad6f90c58d106f3370",
+    "entry": "cliopatria_polities_only.geojson"
+  },
+  "settings": {
+    "bbox": {
+      "south": 10,
+      "west": 73,
+      "north": 55,
+      "east": 150
+    },
+    "fromYear": 1900,
+    "toYear": 1950,
+    "simplifyTolerance": 0.005,
+    "coordinateDecimals": 4
+  },
+  "counts": {
+    "rows_in_dataset": 13765,
+    "imported": 286,
+    "polities": 46,
+    "skipped_relation_rows": 0,
+    "skipped_grouping_rows": 61,
+    "last_year_in_data": 2024
+  },
+  "decisions": {
+    "relation": "Rows become \"controls\" assertions: Cliopatria maps the territory each polity held and does not separate control from legal sovereignty (maintainer decision, 2026-09-27). Each assertion says so in its notes.",
+    "rows": "Only POLITY rows are imported. Grouping rows (a name in parentheses with a Components list, such as \"(British Empire)\") are skipped, because the rows they group already cover their land. RELATION rows are skipped too, and counted.",
+    "subjects": "Assertions name Cliopatria's own polities (cliopatria-<name>), with records in polities/ that stay in this folder. They are not matched to our polities by Wikidata ID, because some of Cliopatria's IDs are wrong for this period: its \"Republic of China\" rows carry Q148 (the People's Republic of China) and its \"Republic of Korea\" row carries Q423 (North Korea). The hand-written polity-crosswalk.yaml links them to our polities, and says on what evidence.",
+    "dates": "FromYear and ToYear are whole years, inclusive (per Cliopatria's README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as \"ongoing\".",
+    "bce": "Cliopatria's README says negative years are BCE, but not whether year 0 exists. That must be checked before any BCE import; it does not affect 1900–1950.",
+    "geometry": "Each ring is simplified (Douglas–Peucker, 0.005°), trimmed to the import area, and rounded to 4 decimal places. Edge precision is \"unknown\". Cliopatria's own area (km², equal-area projection) is kept in each shape's properties.",
+    "puppet_states": "Cliopatria folds some governments into their patrons (for example, there is no separate Manchukuo; its land is inside the Empire of Japan). That is Cliopatria's view, shown attributed, not an error to correct.",
+    "selection": "POLITY rows that overlap 1900–1950 and have land in the import area after trimming."
+  },
+  "skipped": [
+    {
+      "name": "(British Empire)",
+      "years": "1900–1904",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1900–1904",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1905–1907",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1905–1907",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1908–1910",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1908–1910",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1911–1911",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1911–1912",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1912–1914",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1913–1913",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1914–1914",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1915–1915",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1915–1915",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1916–1916",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1916–1916",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1917–1917",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1917–1917",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1918–1918",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1918–1918",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1919–1919",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1919–1919",
+      "reason": "a grouping of other rows (French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1920–1921",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1920–1921",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1922–1923",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1922–1923",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1924–1925",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1924–1925",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1926–1926",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1926–1926",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1927–1929",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1927–1927",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1928–1929",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1930–1931",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1930–1931",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1932–1935",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1932–1935",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1936–1937",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1936–1937",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1938–1938",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1938–1938",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1939–1939",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Third Republic)",
+      "years": "1939–1939",
+      "reason": "a grouping of other rows (French Mandate for Syria and Lebanon;French Africa;French Third Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1940–1940",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(Vichy France)",
+      "years": "1940–1940",
+      "reason": "a grouping of other rows (Vichy France;French Africa;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1941–1941",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(Vichy France)",
+      "years": "1941–1941",
+      "reason": "a grouping of other rows (Vichy France;French Africa;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1942–1942",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(Vichy France)",
+      "years": "1942–1942",
+      "reason": "a grouping of other rows (Vichy France;French Africa;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1943–1943",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(Vichy France)",
+      "years": "1943–1943",
+      "reason": "a grouping of other rows (Vichy France;French Africa;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1944–1944",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1945–1945",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1945–1945",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1946–1946",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1946–1946",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1947–1947",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Raj;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1947–1947",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(British Empire)",
+      "years": "1948–1952",
+      "reason": "a grouping of other rows (British Colonial Empire;Kingdom of Great Britain;British Africa), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1948–1948",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1949–1949",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    },
+    {
+      "name": "(French Fourth Republic)",
+      "years": "1950–1952",
+      "reason": "a grouping of other rows (French Africa;French Fourth Republic;French Indochina), whose land they already cover"
+    }
+  ]
+}

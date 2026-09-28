@@ -1,0 +1,8 @@
+id: cliopatria-hyderabad-state
+names:
+  - text: Hyderabad State
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Hyderabad State"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

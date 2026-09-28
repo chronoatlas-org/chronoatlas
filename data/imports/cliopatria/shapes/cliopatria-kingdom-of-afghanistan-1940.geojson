@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-afghanistan-1940","edge_precision":"unknown","cliopatria_name":"Kingdom of Afghanistan","cliopatria_from_year":1940,"cliopatria_to_year":1942,"cliopatria_area_km2":643832,"cliopatria_wikidata":"Q1138904","cliopatria_wikipedia":"Kingdom of Afghanistan","cliopatria_seshat_id":"af_afghanistan_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[73,36.8269],
+[74.1074,36.8682],
+[74.5506,37.0615],
+[74.5869,37.1904],
+[74.8986,37.1904],
+[74.9354,37.3193],
+[74.0961,37.3838],
+[73.8258,37.2549],
+[73.7243,37.4483],
+[73.3343,37.4483],
+[73,37.2711],
+[73,36.8269]
+]
+]
+]}
+}

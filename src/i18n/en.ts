@@ -16,6 +16,12 @@ export const en = {
   'view.label': 'Borders shown',
   'view.facto': 'As administered',
   'view.jure': 'As legally recognized',
+  'view.second': 'Second opinion',
+  // Short versions for narrow phone screens.
+  'view.factoShort': 'Administered',
+  'view.jureShort': 'Legal',
+  'view.secondShort': '2nd opinion',
+  'legend.second': "Dotted outlines: Cliopatria's borders (a second opinion; it doesn't separate control from legal rule)",
 
   'share.button': 'Copy link',
   'share.label': 'Copy a link to this date and map view',

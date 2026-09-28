@@ -1,0 +1,8 @@
+id: cliopatria-great-mongol-state
+names:
+  - text: Great Mongol State
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Great Mongol State"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

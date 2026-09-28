@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-united-states-of-america-1942","edge_precision":"unknown","cliopatria_name":"United States of America","cliopatria_from_year":1942,"cliopatria_to_year":1943,"cliopatria_area_km2":11770179,"cliopatria_wikidata":"Q30","cliopatria_wikipedia":"United States"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[120.2415,14.6861],
+[120.3149,14.6861],
+[120.2859,14.4932],
+[120.6436,14.4289],
+[120.6089,14.6861],
+[120.6187,14.7504],
+[120.2513,14.7504],
+[120.2415,14.6861]
+]
+]
+]}
+}

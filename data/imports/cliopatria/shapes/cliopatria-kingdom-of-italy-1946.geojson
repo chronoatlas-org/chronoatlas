@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-italy-1946","edge_precision":"unknown","cliopatria_name":"Kingdom of Italy","cliopatria_from_year":1946,"cliopatria_to_year":1946,"cliopatria_area_km2":340,"cliopatria_wikidata":"Q172579","cliopatria_wikipedia":"Kingdom of Italy","cliopatria_seshat_id":"it_italian_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.1375,39.7083],
+[117.1477,39.5789],
+[117.3053,39.5789],
+[117.4875,39.7729],
+[117.2163,39.7083],
+[117.1375,39.7083]
+]
+]
+]}
+}

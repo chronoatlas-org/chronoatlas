@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-united-states-of-america-1944","edge_precision":"unknown","cliopatria_name":"United States of America","cliopatria_from_year":1944,"cliopatria_to_year":1944,"cliopatria_area_km2":11770302,"cliopatria_wikidata":"Q30","cliopatria_wikipedia":"United States","cliopatria_seshat_id":"us_united_states_of_america_contemporary"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[144.6109,13.2718],
+[144.8414,13.336],
+[144.9683,13.6575],
+[144.8949,13.6575],
+[144.6532,13.5289],
+[144.6109,13.2718]
+]
+]
+]}
+}

@@ -1,0 +1,184 @@
+# Which of our polities (data/polities/, drawn from OpenHistoricalMap) is the same as each
+# Cliopatria polity. HAND-WRITTEN and reviewed like any data change: the import script never
+# overwrites it. It lives in this folder because it's built on Cliopatria's data (CC BY 4.0).
+#
+# Every match rests on evidence in the data, stated in `why`: the same Wikidata ID, or the same
+# name in overlapping years. Cliopatria's Wikidata IDs are not trusted on their own: some are
+# wrong for this period (its "Republic of China" rows carry Q148, the People's Republic of
+# China, and its "Republic of Korea" row carries Q423, North Korea).
+#
+# Kinds (see data/imports/cshapes-2-0/polity-crosswalk.yaml): same-state means the same polity.
+#
+# Not matched, on purpose: the warring factions in China (Kuomintang, Communist Party of China,
+# Chinese Communists, Anti-Kuomintang Coalition, Empire of China), the East Turkestan Republic,
+# the Great Mongol State, the European states and colonial empires (their East Asian land was
+# small concessions and colonies we record separately), and Pakistan and India (whose Cliopatria
+# names and years don't line up with ours).
+
+- unit: cliopatria-british-raj
+  matches:
+    - polity: british-raj
+      kind: same-state
+      why: The same Wikidata ID (Q129286).
+
+- unit: cliopatria-burma
+  matches:
+    - polity: burma
+      kind: same-state
+      why: The same name ("Burma") in overlapping years (Cliopatria 1948 on; ours 1948–1977).
+
+- unit: cliopatria-democratic-people-s-republic-of-korea
+  matches:
+    - polity: north-korea-1948-1953
+      kind: same-state
+      why: The same Wikidata ID (Q423).
+
+- unit: cliopatria-emirate-of-afghanistan
+  matches:
+    - polity: emirate-of-afghanistan
+      kind: same-state
+      why: The same name ("Emirate of Afghanistan") in overlapping years.
+
+- unit: cliopatria-empire-of-japan
+  matches:
+    - polity: empire-of-japan
+      kind: same-state
+      why: The same name ("Empire of Japan") in overlapping years.
+
+- unit: cliopatria-french-indochina
+  matches:
+    - polity: indochinese-union
+      kind: same-state
+      why: >-
+        Our polity's names include "Indochiny Francuskie" (Polish for "French Indochina"), and
+        the years overlap (Cliopatria 1900–1952; ours 1893–1941).
+    - polity: indochinese-federation
+      kind: same-state
+      why: >-
+        Our polity's names include "Indochiny Francuskie" (Polish for "French Indochina"), and
+        the years overlap (ours 1941–1945).
+
+- unit: cliopatria-hyderabad-state
+  matches:
+    - polity: princely-state-of-hyderabad
+      kind: same-state
+      why: The same Wikidata ID (Q1240096).
+
+- unit: cliopatria-kashmir-and-jammu
+  matches:
+    - polity: princely-state-of-jammu-and-kashmir
+      kind: same-state
+      why: The same Wikidata ID (Q2571484).
+
+- unit: cliopatria-kingdom-of-afghanistan
+  matches:
+    - polity: kingdom-of-afghanistan
+      kind: same-state
+      why: The same name ("Kingdom of Afghanistan") in overlapping years.
+
+- unit: cliopatria-kingdom-of-bhutan
+  matches:
+    - polity: bhutan
+      kind: same-state
+      why: The same Wikidata ID (Q917).
+
+- unit: cliopatria-kingdom-of-thailand
+  matches:
+    - polity: thailand
+      kind: same-state
+      why: The same Wikidata ID (Q869).
+
+- unit: cliopatria-korean-empire
+  matches:
+    - polity: korean-empire
+      kind: same-state
+      why: The same Wikidata ID (Q28233).
+
+- unit: cliopatria-mongolian-people-s-republic
+  matches:
+    - polity: mongolian-people-s-republic
+      kind: same-state
+      why: The same Wikidata ID (Q212056).
+
+- unit: cliopatria-nepal
+  matches:
+    - polity: nepal
+      kind: same-state
+      why: The same Wikidata ID (Q837).
+
+- unit: cliopatria-people-s-republic-of-china
+  matches:
+    - polity: people-s-republic-of-china
+      kind: same-state
+      why: The same Wikidata ID (Q148) and name.
+
+- unit: cliopatria-qing-dynasty
+  matches:
+    - polity: qing
+      kind: same-state
+      why: The same Wikidata ID (Q8733).
+
+- unit: cliopatria-rattanakosin-kingdom
+  matches:
+    - polity: siam
+      kind: same-state
+      why: The same Wikidata ID (Q1155700).
+
+- unit: cliopatria-republic-of-china
+  matches:
+    - polity: china
+      kind: same-state
+      why: >-
+        Our polity's names include "Republic of China" and 中華民國, and the years overlap.
+        (Cliopatria tags these rows with Q148, the People's Republic of China, which is wrong
+        for 1912–1949, so the Wikidata ID isn't used.)
+
+- unit: cliopatria-republic-of-korea
+  matches:
+    - polity: south-korea
+      kind: same-state
+      why: >-
+        Our polity's names include "Republic of Korea", and the years overlap. (Cliopatria tags
+        this row with Q423, North Korea, so the Wikidata ID isn't used.)
+
+- unit: cliopatria-republic-of-the-philippines
+  matches:
+    - polity: philippines
+      kind: same-state
+      why: The same Wikidata ID (Q928).
+
+- unit: cliopatria-republic-of-uryankhay
+  matches:
+    - polity: uryankhay-republic
+      kind: same-state
+      why: The same Wikidata ID (Q56282578).
+
+- unit: cliopatria-russian-empire
+  matches:
+    - polity: russian-empire
+      kind: same-state
+      why: The same Wikidata ID (Q34266).
+
+- unit: cliopatria-russian-republic
+  matches:
+    - polity: russian-republic
+      kind: same-state
+      why: The same Wikidata ID (Q139319).
+
+- unit: cliopatria-tibet
+  matches:
+    - polity: tibet
+      kind: same-state
+      why: The same name ("Tibet") in overlapping years (Cliopatria 1912–1952; ours 1912–1951).
+
+- unit: cliopatria-union-of-soviet-socialist-republics
+  matches:
+    - polity: soviet-union
+      kind: same-state
+      why: The same Wikidata ID (Q15180).
+
+- unit: cliopatria-united-states-of-america
+  matches:
+    - polity: united-states
+      kind: same-state
+      why: The same Wikidata ID (Q30).

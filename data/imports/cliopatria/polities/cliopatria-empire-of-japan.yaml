@@ -1,0 +1,8 @@
+id: cliopatria-empire-of-japan
+names:
+  - text: Empire of Japan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Empire of Japan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

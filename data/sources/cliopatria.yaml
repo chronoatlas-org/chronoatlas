@@ -1,0 +1,18 @@
+id: cliopatria
+kind: dataset
+title: Cliopatria
+publisher: Seshat Global History Databank
+year: "2026"
+url: https://github.com/Seshat-Global-History-Databank/cliopatria
+license: CC BY 4.0
+attribution: >-
+  Cliopatria, Seshat Global History Databank, version 0.2.0
+  (https://github.com/Seshat-Global-History-Databank/cliopatria), licensed under CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/). Simplified, trimmed to East Asia 1900–1950,
+  and converted by chronoatlas.
+notes: >-
+  A worldwide dataset of the territory held by polities, 3400 BCE to 2024 CE, sampled at
+  varying time steps (whole years). It doesn't distinguish control from legal sovereignty, and
+  it folds some governments into their patrons (Manchukuo is inside the Empire of Japan). Used
+  here as a "second opinion". See data/imports/cliopatria/manifest.json for how its data is
+  interpreted.

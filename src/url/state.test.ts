@@ -66,6 +66,13 @@ describe('parseHash with incomplete or damaged links', () => {
     expect(parseHash('#v=something').view).toBeUndefined();
   });
 
+  it('records the second opinion, and ignores unknown ones', () => {
+    const view = { day: civilToJdn(1901, 5, 12), zoom: 3, lat: 10, lng: 20, view: 'jure' as const, alt: 'cliopatria' as const };
+    expect(formatHash(view)).toBe('#d=1901-05-12&m=3/10/20&v=jure&alt=cliopatria');
+    expect(parseHash(formatHash(view))).toEqual(view);
+    expect(parseHash('#alt=elsewhere').alt).toBeUndefined();
+  });
+
   it('only accepts selections shaped like our IDs', () => {
     expect(parseHash('#sel=testland').sel).toBe('testland');
     for (const bad of ['Testland', 'test_land', '-testland', 'testland-', 'a--b', '%3Cscript%3E', 'x'.repeat(101)]) {

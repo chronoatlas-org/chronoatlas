@@ -6,7 +6,8 @@
 //   'facto' (the default): who ran each area, per OpenHistoricalMap;
 //   'jure':  who was legally recognized as sovereign, per CShapes 2.0 (CC BY-NC-SA 4.0).
 // In both, a cross-hatch marks contested areas, where the two sources disagree (computed by the
-// build; see scripts/lib/contested.ts).
+// build; see scripts/lib/contested.ts). A third source, Cliopatria, can be laid over either view
+// as dotted outlines: a "second opinion" (setSecondOpinion).
 //
 // Borders come as vector tiles (built by scripts/build-data.ts), so only the tiles in view are
 // downloaded. The selected day lives in MapLibre's global state (`['global-state', 'day']`),
@@ -115,6 +116,7 @@ export class HistoricalLayers {
   private shownSegment = -1;
   private view: BorderView = 'facto';
   private hasDejure = false;
+  private secondOpinion = false;
 
   constructor(map: maplibregl.Map, initialDay: number, options: HistoricalOptions) {
     this.map = map;
@@ -141,6 +143,14 @@ export class HistoricalLayers {
     };
     show(['borders-fill', 'borders-line', 'borders-selected'], view === 'facto');
     show(['dejure-fill', 'dejure-line', 'dejure-line-dependent', 'dejure-selected'], view === 'jure');
+  }
+
+  /** Shows or hides the second opinion: Cliopatria's borders as dotted outlines. */
+  setSecondOpinion(on: boolean): void {
+    this.secondOpinion = on;
+    if (this.ready && this.map.getLayer('second-line')) {
+      this.map.setLayoutProperty('second-line', 'visibility', on ? 'visible' : 'none');
+    }
   }
 
   /** Outlines the selected polity's borders, or removes the outline (null). */
@@ -341,7 +351,35 @@ export class HistoricalLayers {
         paint: { 'line-color': '#9a1b5b', 'line-width': 1.5, 'line-dasharray': [3, 2] },
       });
     }
+    // The second opinion (Cliopatria): dotted outlines only, in a color of their own, so they
+    // read as another source's lines over whichever view is shown. Hidden until chosen.
+    const second = index.extra?.second;
+    if (second) {
+      map.addSource('second', {
+        type: 'vector',
+        tiles: [`${dataUrl(`${second.dir}/${second.version}/`)}{z}/{x}/{y}.pbf`],
+        minzoom: index.minzoom,
+        maxzoom: index.maxzoom,
+        bounds: second.bounds,
+        attribution:
+          '<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Second opinion: Cliopatria (CC BY 4.0)</a>',
+      });
+      map.addLayer({
+        id: 'second-line',
+        type: 'line',
+        source: 'second',
+        'source-layer': second.layer,
+        filter: ACTIVE,
+        layout: { visibility: 'none', 'line-cap': 'round' },
+        paint: {
+          'line-color': '#0b6e77',
+          'line-width': ['interpolate', ['linear'], ['zoom'], 2, 1.2, 6, 2, 10, 3],
+          'line-dasharray': [0.1, 2.2],
+        },
+      });
+    }
     this.setView(this.view);
+    this.setSecondOpinion(this.secondOpinion);
 
     // A selected event's effects: dashed (not only a different color), whatever the date.
     map.addLayer({

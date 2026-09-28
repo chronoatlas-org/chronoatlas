@@ -366,6 +366,12 @@ Cliopatria, from the Seshat Global History Databank, has worldwide polity shapes
   error. Side by side with OHM, it's exactly the kind of disagreement the site exists to show.
 - **Matching:** each row has a `Wikidata` ID. Rows whose Wikidata ID matches one of our polities
   use that polity's ID. Others get polity records inside the Cliopatria folder, as for CShapes.
+  **As built (2026-09-28), this changed:** some of Cliopatria's Wikidata IDs are wrong for this
+  period ("Republic of China" carries the People's Republic's Q148, "Republic of Korea" carries
+  North Korea's Q423). Matching on them would have filed South Korea under North Korea. So, as
+  for CShapes, assertions name Cliopatria's own polities, and a hand-written crosswalk links them
+  to ours, each link citing its evidence: the same Wikidata ID, or the same name in overlapping
+  years.
 - **On the map:** a "second opinion" layer, drawn as outlines only over the default view, with a
   label saying whose view it is. The full compare-sources view is Phase 3.
 
@@ -549,7 +555,24 @@ Small steps, each committed, explained, and viewable locally and online, as in P
      layer, credited on the map and in the panel.
    - **Not done yet:** text labels drawn on the map itself. The map has no label fonts yet, so the
      legend and the panel carry the words for now.
-10. **Cliopatria import** and the "second opinion" outline layer.
+10. ✅ **Cliopatria import** and the "second opinion" outline layer.
+    *Done 2026-09-28.*
+    - `npm run import:cliopatria` downloads the pinned zip (commit `ad28a69`) and imports 286
+      rows as 46 Cliopatria polities, as `controls` statements. It skips 61 grouping rows such as
+      "(British Empire)", whose parts cover the same land; our area has no RELATION rows.
+    - A hand-written crosswalk links 26 of those polities to ours, each citing its evidence.
+      Wikidata IDs are used only where they're right (see Matching above).
+    - **On the map:** a "Second opinion" toggle (`alt=cliopatria` in links) draws Cliopatria's
+      borders as dotted teal outlines over either view, with a legend line saying whose they
+      are.
+    - **In the panel:** our polities now show its records beside the others. The Empire of Japan
+      in 1937 shows CShapes (sovereign), OpenHistoricalMap (administered), and Cliopatria
+      (controlled).
+    - **Phones:** the header had grown to about a third of the screen with the new buttons. On
+      narrow screens it now uses short button labels on one row and hides the preview notice,
+      and the map's credits start folded behind their (i) button.
+    - Cliopatria isn't part of the contested computation yet; comparing all the sources is the
+      Phase 3 compare-sources view.
 11. **First Figure**: `area-km2` computed from shapes, shown in the panel.
 12. **First sourced events** for Manchuria 1931–33, once citable sources are located (see
     [section 2](#candidate-events-for-the-first-showcase-stage-manchuria-19311933)). Each is proposed as
@@ -605,7 +628,8 @@ The maintainer approved the plan with the recommended answer to each question.
    unit has one, linked to our polities by the crosswalk; see step 8.)
 7. **CShapes first-of-the-month dates** are kept as given, with a note shown in the panel.
 8. **Cliopatria** is imported as `controls` (de facto), and `RELATION` rows are skipped at first
-   (with the count recorded).
+   (with the count recorded). (As built: our area has no RELATION rows, but 61 grouping rows,
+   which are skipped the same way; see step 10.)
 9. **Cliopatria version:** pinned to commit `ad28a691b7c07c1fca89d0e0636d324667d2a258`, which
    both `v0.2.0` tags point to, so there's no need to ask its maintainers.
 10. **Population: neither dataset for now.** If Seshat is chosen later, its account must be

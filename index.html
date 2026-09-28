@@ -41,15 +41,27 @@
       </div>
       <p class="app-notice" data-i18n="app.previewNotice"></p>
       <!-- Which borders the map shows (src/main.ts): as administered, or as legally recognized. -->
-      <div class="view-switch" role="group" data-i18n-label="view.label">
-        <button type="button" data-view="facto" aria-pressed="true" data-i18n="view.facto"></button>
-        <button type="button" data-view="jure" aria-pressed="false" data-i18n="view.jure"></button>
+      <div class="view-controls">
+        <div class="view-switch" role="group" data-i18n-label="view.label">
+          <button type="button" data-view="facto" aria-pressed="true">
+            <span class="label-long" data-i18n="view.facto"></span><span class="label-short" data-i18n="view.factoShort"></span>
+          </button>
+          <button type="button" data-view="jure" aria-pressed="false">
+            <span class="label-long" data-i18n="view.jure"></span><span class="label-short" data-i18n="view.jureShort"></span>
+          </button>
+        </div>
+        <button type="button" id="second-opinion" class="second-opinion" aria-pressed="false">
+          <span class="label-long" data-i18n="view.second"></span><span class="label-short" data-i18n="view.secondShort"></span>
+        </button>
       </div>
       <p class="legend">
         <span class="legend-item"><span class="legend-no-data" aria-hidden="true"></span><span data-i18n="legend.noData"></span></span>
         <span class="legend-item"><span class="legend-contested" aria-hidden="true"></span><span data-i18n="legend.contested"></span></span>
       </p>
       <p class="legend legend-jure" hidden data-i18n="legend.jure"></p>
+      <p class="legend legend-second" hidden>
+        <span class="legend-item"><span class="legend-second-line" aria-hidden="true"></span><span data-i18n="legend.second"></span></span>
+      </p>
       <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </header>
     <main id="map"></main>
