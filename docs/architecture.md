@@ -282,7 +282,7 @@ numbers as absolute speeds.
 | Meaning | Style | Status |
 |---|---|---|
 | Boundary | solid line | built |
-| Contested: administered by one state, legally recognized as another's (later also: conflicting claims) | magenta cross-hatch with a dashed edge, plus a legend label and a sentence in the panel | built (Phase 2, step 9) |
+| Contested: administered by one state, legally recognized as another's (later also: conflicting claims) | magenta cross-hatch with a dashed edge, the word "Contested" on the map, a legend label, and a sentence in the panel | built (Phase 2, step 9; the word on the map, Phase 3 step 5) |
 | No data yet | gray diagonal hatch, plus a legend label | built |
 | Uncertain start (a date known only to the year, say) | lighter fill until the date is certain | built |
 | Uncertain end | lighter fill from the first to the last day it could have ended, plus a note in the panel | built (Phase 3, step 2) |
@@ -368,9 +368,15 @@ that our import reads it is in the [tracing guide](tracing-guide.md).
 - **Date wording** (month names, "c.", "BCE", word order) also lives in the catalogs. Historical
   dates are never formatted with the browser's `Intl` date formatter, because it switches to the
   Julian calendar before 1582.
-- **Map labels:**
-  - Chinese, Japanese, and Korean labels are drawn with fonts already on the visitor's device
-    (MapLibre's `localIdeographFontFamily`), which avoids large font downloads.
+- **Map labels (Phase 3, step 5):**
+  - All text on the map is drawn with fonts already on the visitor's device. The style has no
+    `glyphs` address and no font files: MapLibre 6 draws each character with the browser's own
+    fonts when none is supplied. Nothing is downloaded, and no third-party font is involved.
+  - Territory names show the English name with the local name beneath, as the source gives them.
+    Where a polity's name changes during a record, the build splits the label. Smaller
+    territories' names appear only as the map zooms in.
+  - Han characters on the map use one form for every language: unlike the panel, the map can't
+    switch between Chinese and Japanese glyph forms by language.
   - Right-to-left scripts (Arabic, Hebrew, Persian) need MapLibre's RTL plugin, which will be
     added when those labels arrive.
 

@@ -263,6 +263,38 @@ describe('the default map', () => {
     expect(precision).toEqual(['approximate-line', 'frontier-zone']);
   });
 
+  it('labels each record at one point, with the names that apply, split where a name changes', () => {
+    // Made-up polity, names, shape, and record (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const { labels } = buildBorders({
+      sources: [], events: [], figures: [], coverage: [], crosswalks: [], imports: [], problems: [],
+      polities: [
+        {
+          file: 'data/polities/testland.yaml',
+          value: {
+            id: 'testland',
+            names: [
+              { text: 'Old Testland', lang: 'en', end: '1905', sources: cite },
+              { text: 'Testland', lang: 'en', start: '1905', sources: cite },
+              { text: '試驗國', lang: 'und', sources: cite },
+            ],
+          },
+        },
+      ],
+      shapes: [{ file: 's', value: { type: 'Feature', properties: { id: 's', edge_precision: 'unknown' }, geometry: { type: 'Polygon', coordinates: [[[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]] } } }],
+      assertions: [
+        { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [{ id: 'r', relation: 'administers', subject: 'testland', shape: 's', start: '1901', end: '1910', sources: cite }] },
+      ],
+    });
+    expect(labels.features.map((f) => [f.properties?.name, f.properties?.local, f.properties?.s0, f.properties?.e0, f.properties?.e1])).toEqual([
+      ['Old Testland', '試驗國', civilToJdn(1901, 1, 1), civilToJdn(1905, 1, 1), undefined],
+      ['Testland', '試驗國', civilToJdn(1905, 1, 1), civilToJdn(1910, 1, 1), civilToJdn(1910, 12, 31)],
+    ]);
+    const [x, y] = (labels.features[0].geometry as GeoJSON.Point).coordinates;
+    expect(x).toBeCloseTo(1, 1);
+    expect(y).toBeCloseTo(1, 1);
+  });
+
   it('adds the last possible end day only to borders whose end is uncertain', () => {
     // Made-up shapes and records (Testland), not real ones.
     const cite = [{ source: 'test-source', locator: 'p. 1' }];

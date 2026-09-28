@@ -18,6 +18,8 @@ import * as maplibregl from 'maplibre-gl';
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { COLORS } from '../basemap.ts';
 import type { SpotRecord, SpotSet } from '../panel/model.ts';
+import { t } from '../i18n/index.ts';
+import type { MessageKey } from '../i18n/index.ts';
 import { segmentOf } from './changes.ts';
 import { pointInRings, readLayer, tileAt } from './mvt.ts';
 import { pulseRadiusPx } from './pulse-size.ts';
@@ -90,6 +92,7 @@ const ACTIVE: ExpressionSpecification = [
 ];
 /** While a border may not have started yet (before s1), or may already have ended (from e0). */
 const UNCERTAIN: ExpressionSpecification = ['any', ['<', DAY, ['get', 's1']], ['>=', DAY, ['get', 'e0']]];
+
 /** A fill's opacity: lighter while its dates are uncertain. */
 const FILL_OPACITY: ExpressionSpecification = ['case', UNCERTAIN, 0.55, 1];
 /**
@@ -104,6 +107,64 @@ const LAND_OVER_TINT: ExpressionSpecification = ['case', UNCERTAIN, 0.4, 1];
 /** The address of a file the build wrote to public/data/. */
 export function dataUrl(file: string): string {
   return new URL(`data/${file}`, document.baseURI).href;
+}
+
+/**
+ * Territory names on the map (Phase 3 step 5): the English name, with the local name beneath when
+ * it differs. Larger territories are placed first; the rest appear as there's room. Text is drawn
+ * with the visitor's own fonts (the style has no glyphs address), so no font is downloaded.
+ */
+function nameLayer(id: string, source: string, layer: string): maplibregl.SymbolLayerSpecification {
+  // A dependency in the de jure view names the unit, and beneath it its status and holder, e.g.
+  // "Korea / Colony of Japan". The wording comes from the catalog ("Colony of {holder}"), split
+  // around the placeholder so the map can put the holder's name in.
+  const status = (key: MessageKey): ExpressionSpecification => {
+    const [before, after = ''] = t(key, { holder: '\u0000' }).split('\u0000');
+    return ['concat', before, ['get', 'name'], after];
+  };
+  const dependency: ExpressionSpecification = [
+    'match',
+    ['get', 'status'],
+    'colony',
+    status('map.status.colony'),
+    'protectorate',
+    status('map.status.protectorate'),
+    'mandate',
+    status('map.status.mandate'),
+    'occupied',
+    status('map.status.occupied'),
+    status('map.status.other'),
+  ];
+  return {
+    id,
+    type: 'symbol',
+    source,
+    'source-layer': layer,
+    // Smaller territories' names only as the map zooms in, so they don't crowd out the rest (`a`
+    // is the territory's area in thousands of km²).
+    filter: ['all', ACTIVE, ['>=', ['get', 'a'], ['step', ['zoom'], 100, 4, 10, 5, 1, 6, 0]]],
+    layout: {
+      'text-field': [
+        'case',
+        ['has', 'unit'],
+        ['format', ['get', 'unit'], {}, '\n', {}, dependency, { 'font-scale': 0.85 }],
+        ['has', 'local'],
+        ['format', ['get', 'name'], {}, '\n', {}, ['get', 'local'], { 'font-scale': 0.85 }],
+        ['get', 'name'],
+      ] as unknown as ExpressionSpecification,
+      'text-size': ['interpolate', ['linear'], ['zoom'], 2, 10, 5, 12, 8, 15],
+      'text-max-width': 8,
+      'text-padding': 3,
+      'symbol-sort-key': ['-', ['get', 'a']],
+    },
+    paint: {
+      'text-color': '#3d352c',
+      'text-halo-color': 'rgba(255, 255, 255, 0.85)',
+      'text-halo-width': 1.2,
+      // Lighter while the record's dates are uncertain, like its fill.
+      'text-opacity': ['case', UNCERTAIN, 0.65, 1],
+    },
+  };
 }
 
 /** A cross-hatch for contested areas: a different pattern from "no data", not only a color. */
@@ -186,8 +247,8 @@ export class HistoricalLayers {
     const show = (ids: string[], visible: boolean) => {
       for (const id of ids) if (this.map.getLayer(id)) this.map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
     };
-    show(['borders-fill', 'borders-line', 'borders-selected'], view === 'facto');
-    show(['dejure-fill', 'dejure-line', 'dejure-line-dependent', 'dejure-selected'], view === 'jure');
+    show(['borders-fill', 'borders-land', 'borders-line', 'borders-line-approximate', 'borders-zone', 'borders-selected', 'borders-labels'], view === 'facto');
+    show(['dejure-fill', 'dejure-line', 'dejure-line-dependent', 'dejure-selected', 'dejure-labels'], view === 'jure');
   }
 
   /** Shows or hides the second opinion: Cliopatria's borders as dotted outlines. */
@@ -590,6 +651,52 @@ export class HistoricalLayers {
         'line-dasharray': [2, 1.5],
       },
     });
+
+    // Words on the map, over everything else: "Contested" on contested areas, the edge of the
+    // imported data along its line, "Frontier zone" along zone bands, then territory names.
+    map.addLayer({
+      id: 'data-edge-label',
+      type: 'symbol',
+      source: 'edges',
+      filter: ['all', ['<=', ['get', 's0'], DAY], ['<', DAY, ['get', 'e0']]],
+      layout: { 'symbol-placement': 'line', 'symbol-spacing': 500, 'text-field': t('map.edge'), 'text-size': 10, 'text-offset': [0, -0.8] },
+      paint: { 'text-color': '#6e6455', 'text-halo-color': 'rgba(255, 255, 255, 0.85)', 'text-halo-width': 1 },
+    });
+    map.addLayer({
+      id: 'zone-label',
+      type: 'symbol',
+      source: 'borders',
+      'source-layer': LINES,
+      filter: ['all', ACTIVE, ['==', ['get', 'ep'], 2]],
+      layout: { 'symbol-placement': 'line', 'symbol-spacing': 400, 'text-field': t('map.zone'), 'text-size': 10 },
+      paint: { 'text-color': '#5b5146', 'text-halo-color': 'rgba(255, 255, 255, 0.85)', 'text-halo-width': 1 },
+    });
+    map.addLayer(nameLayer('borders-labels', 'borders', 'labels'));
+    if (this.hasDejure && dejure) {
+      const dejureNames = nameLayer('dejure-labels', 'dejure', 'labels');
+      map.addLayer({ ...dejureNames, layout: { ...dejureNames.layout, visibility: 'none' } }); // shown by setView
+    }
+    // Contested areas' labels go on top, so they're placed before names and never crowded out.
+    if (contested) {
+      map.addLayer({
+        id: 'contested-labels',
+        type: 'symbol',
+        source: 'contested',
+        'source-layer': 'labels',
+        filter: ACTIVE,
+        layout: {
+          'text-field': ['case', ['==', ['get', 'maybe'], 1], t('map.maybeContested'), t('map.contested')],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 2, 10, 6, 12],
+          // Hanging just below a two-line name at the same spot, so both fit.
+          'text-anchor': 'top',
+          'text-offset': [0, 2.1],
+          'text-padding': 1,
+          'symbol-sort-key': ['-', ['get', 'a']],
+        },
+        paint: { 'text-color': '#9a1b5b', 'text-halo-color': 'rgba(255, 255, 255, 0.9)', 'text-halo-width': 1.4 },
+      });
+    }
+    this.setView(this.view);
 
     map.on('click', 'borders-fill', (event) => {
       const polities = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];

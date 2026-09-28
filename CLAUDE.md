@@ -165,6 +165,14 @@ everyday work:
 - **No empty features:** styles with no real data yet (approximate lines, frontier zones,
   claims) are tested with Testland and appear on the map and legend only when the build finds
   real data. "No state" is put off, and the stipple is kept free for it.
+- **Words on the map (Phase 3 step 5):** drawn with the visitor's own fonts; the style has no
+  `glyphs` and no font files (MapLibre 6 falls back to the browser's fonts), so decision 8's
+  hosted font isn't needed. The build writes one label point per record (`scripts/lib/labels.ts`,
+  the point farthest from the edges) in a `labels` tile layer, split where the polity's name
+  changes, with `a` (area in thousands of km²) to place large territories first and to hide
+  small ones until zoomed in. De jure labels for dependencies carry `unit` and `status` ("Korea /
+  Colony of Japan"). Contested areas have their own `labels` ("Contested", "Possibly contested"),
+  placed before names. Label days are in the change index.
 - **Line styles:** dots mean the second opinion and dashes are already taken, so edge precision
   is shown by sharpness (a softened line, a soft band). The build puts `ep` on lines (1
   approximate, 2 frontier zone; `EDGE_CODES`) and lists the kinds present in `tiles.json`

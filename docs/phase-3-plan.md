@@ -339,7 +339,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 2 ✅ | **Uncertain ends on the map** (section 3). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 3 ✅ | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 4 ✅ | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
-| 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
+| 5 ✅ | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. *Done 2026-09-28,* with no font to import; see [progress](#progress). | high |
 | 6 ✅ | **"What each source says here"** in the panel (section 8). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
 | 8 ✅ | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). *Done 2026-09-28;* see [progress](#progress). | medium |
@@ -469,6 +469,34 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
   so a traced border can't carry one yet. Decision 4 put per-stretch records off until real data
   needs them; the first traced border with a precise or vague line would be that moment.
 
+**Step 5, words on the map (done 2026-09-28):**
+
+- **What's on the map now:**
+  - territory names, with the local name beneath (for example "Manchukuo / 滿洲國"), lighter
+    while the record's dates are uncertain;
+  - "Contested" or "Possibly contested" on contested areas;
+  - "Edge of imported data" along that line;
+  - "Frontier zone" along zone bands, once there are any.
+- **In the de jure view,** a dependency is named after itself, with its status and holder
+  beneath, per CShapes: "Korea / Colony of Japan", "India / Colony of United Kingdom". Labelling it
+  only with its holder's name would read as "this is Japan".
+- **No font to import (a change from decision 8):** MapLibre 6 can draw all text with the
+  visitor's own fonts when the style gives no font. Latin text with accents and Chinese,
+  Japanese, and Korean all drew correctly this way. So nothing is downloaded, and no third-party
+  font, license, or credit is involved. Noto Sans can still be hosted later, if the maintainers
+  want the map's text to look the same on every device.
+- **Placement:** each label sits at the point of its territory's land farthest from the edges
+  (`scripts/lib/labels.ts`, written here). Larger territories are placed first, and smaller
+  ones' names appear only as the map zooms in: in the 1937 overview, "British concession in
+  Tianjin" no longer competes with "China". Where a name changes during a record, the label is
+  split, and the map redraws on that day.
+- **Speed, measured in this environment (no graphics card, so slower than a real device):** a map
+  update took about 0.39 s with the text layers hidden and 0.78 s with them shown. The extra time
+  is drawing text, not working out which labels apply: changing only the labels' date made no
+  difference (0.775 s against 0.778 s). A trial that delayed the labels while the date moved made
+  things worse, so it was dropped. **Worth re-measuring on a phone,** as in Phase 1 step 7.
+- **Size:** label points add about 0.2 MB to all tiles together.
+
 ### Showcase data track (in parallel)
 
 This is work for people and data decisions, not Phase 3 code. Each item becomes its own pull
@@ -530,6 +558,7 @@ The maintainer approved the plan with the recommended answer to each question.
    named)".
 8. **Map text:** Noto Sans for Latin text, hosted with the site in its own folder with its
    license, and device fonts for Chinese, Japanese, and Korean, subject to the license check in
-   step 5.
+   step 5. *(As built: not needed. MapLibre 6 draws all text with the device's fonts, so no font
+   is hosted; see step 5.)*
 9. **Coloring the map by a figure** is left out of Phase 3.
 10. **The claims overlay** is built only once the first claim records exist.

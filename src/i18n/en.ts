@@ -10,6 +10,17 @@ export const en = {
   'app.mapLabel': 'Map',
   'app.title': 'chronoatlas · {date}',
   'legend.title': 'Map key',
+  // Words drawn on the map itself.
+  'map.contested': 'Contested',
+  'map.maybeContested': 'Possibly contested',
+  'map.edge': 'Edge of imported data',
+  'map.zone': 'Frontier zone',
+  // A dependency's status and holder, beneath its name in the de jure view ({holder} is a name).
+  'map.status.colony': 'Colony of {holder}',
+  'map.status.protectorate': 'Protectorate of {holder}',
+  'map.status.mandate': 'Mandate of {holder}',
+  'map.status.occupied': 'Occupied by {holder}',
+  'map.status.other': 'Held by {holder}',
   'legend.noData': 'No data yet',
   'legend.edge': 'Edge of imported data',
   'legend.line': 'Solid line: a border (a treaty or surveyed line, or one whose source doesn’t say how precise it is)',

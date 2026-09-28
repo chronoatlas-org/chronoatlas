@@ -3,8 +3,8 @@
 //                          every territorial assertion joined to its shape, with dates as day
 //                          numbers, cut into vector tiles so the browser downloads only what's in
 //                          view. Each tile has the fills, the border lines (apart from the fills;
-//                          see scripts/lib/outlines.ts), and from zoom 4 the land parts of borders
-//                          that take in coastal waters. <version> is a fingerprint of the data, so
+//                          see scripts/lib/outlines.ts), the name labels (scripts/lib/labels.ts),
+//                          and from zoom 4 the land parts of borders that take in coastal waters. <version> is a fingerprint of the data, so
 //                          browsers never mix tiles from two builds.
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
@@ -41,6 +41,8 @@ import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
 import { LandIndex, landPart, touchesEdge } from './lib/land.ts';
 import { borderLines, boxEdgeOnLand, LandDistance } from './lib/outlines.ts';
+import { labelPoint } from './lib/labels.ts';
+import { pickNames } from '../src/map/names.ts';
 import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
@@ -178,11 +180,73 @@ export function coastCut(shape: MultiPolygon, land: LandIndex): MultiPolygon | u
     .filter((polygon) => polygon.length > 0);
 }
 
+/**
+ * Label points for a layer's records (see buildBorderLayer): each at the point of the record's
+ * land part (or shape) farthest from its edges, carrying the English name and the local name that
+ * apply, split into stretches of time where the polity's names change. `a` (thousands of km²)
+ * lets the map place larger territories' names first.
+ */
+function buildLabels(
+  ds: Dataset,
+  items: readonly { assertion: Assertion; shape: ShapeFeature; s0: number; s1: number; e0: number; e1: number }[],
+  landPartOf: (shape: ShapeFeature) => MultiPolygon | undefined,
+  labelExtra: (shape: ShapeFeature) => Record<string, string> = () => ({}),
+): GeoJSON.Feature[] {
+  const names = new Map(ds.polities.map(({ value }) => [value.id, value.names.map((n) => ({ text: n.text, lang: n.lang, ...nameDays(n) }))]));
+  const points = new Map<string, { at: GeoJSON.Position; a: number } | null>();
+  const pointOf = (shape: ShapeFeature) => {
+    const id = shape.properties.id;
+    if (!points.has(id)) {
+      const geometry = landPartOf(shape) ?? asMultiPolygon(shape.geometry);
+      const at = labelPoint(geometry);
+      points.set(id, at ? { at: [Number(at[0].toFixed(4)), Number(at[1].toFixed(4))], a: Math.round(areaKm2(geometry) / 1000) } : null);
+    }
+    return points.get(id);
+  };
+  return items.flatMap(({ assertion: a, shape, s0, s1, e0, e1 }) => {
+    const point = pointOf(shape);
+    const polityNames = names.get(a.subject) ?? [];
+    if (!point || polityNames.length === 0) return [];
+    // Cut the record's days wherever one of its polity's names starts or stops.
+    const cuts = [...new Set(polityNames.flatMap((n) => [n.s0, n.e0]).filter((d): d is number => d !== null && d > s0 && d < e1))].sort((x, y) => x - y);
+    const bounds = [s0, ...cuts, e1];
+    const pieces: { from: number; to: number; primary: string; local?: string }[] = [];
+    for (let i = 0; i + 1 < bounds.length; i++) {
+      const chosen = pickNames(polityNames, bounds[i], 'en');
+      if (!chosen) continue;
+      const last = pieces[pieces.length - 1];
+      if (last && last.to === bounds[i] && last.primary === chosen.primary && last.local === chosen.local) last.to = bounds[i + 1];
+      else pieces.push({ from: bounds[i], to: bounds[i + 1], primary: chosen.primary, ...(chosen.local ? { local: chosen.local } : {}) });
+    }
+    return pieces.map((piece): GeoJSON.Feature => {
+      const isLast = piece.to === e1;
+      return {
+        type: 'Feature',
+        properties: {
+          id: a.id,
+          polity: a.subject,
+          s0: piece.from,
+          s1: piece.from === s0 ? s1 : piece.from,
+          // The last piece ends as the record does (uncertainly, when its end is); the others end
+          // exactly where a name changes.
+          e0: isLast ? e0 : piece.to,
+          ...(isLast && e1 > e0 ? { e1 } : {}),
+          name: piece.primary,
+          ...(piece.local ? { local: piece.local } : {}),
+          a: point.a,
+          ...labelExtra(shape),
+        },
+        geometry: { type: 'Point', coordinates: point.at },
+      };
+    });
+  });
+}
+
 /** The import folder an assertions file belongs to ("data/imports/<name>"), if any. */
 const folderOf = (file: string) => /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
 
 export function buildBorders(ds: Dataset, outlines?: OutlineContext) {
-  return buildBorderLayer(ds, onDefaultMap, undefined, outlines, true);
+  return buildBorderLayer(ds, onDefaultMap, undefined, outlines, true, true);
 }
 
 /**
@@ -199,6 +263,14 @@ export function buildDejure(ds: Dataset, outlines?: OutlineContext) {
       return typeof status === 'string' && status !== 'independent' ? { dep: 1 } : {};
     },
     outlines,
+    false,
+    true,
+    // A dependency's label names the unit itself ("Korea") and its status; its record names the
+    // state holding it (sovereign, or occupying), which the map adds ("Colony of Japan").
+    (shape): Record<string, string> => {
+      const { cshapes_status: status, cshapes_name: unit } = shape.properties;
+      return typeof status === 'string' && status !== 'independent' && typeof unit === 'string' ? { unit, status } : {};
+    },
   );
 }
 
@@ -217,6 +289,8 @@ function buildBorderLayer(
   extra: (shape: ShapeFeature) => Record<string, number> = () => ({}),
   outlines?: OutlineContext,
   cutAtCoast = false,
+  withLabels = false,
+  labelExtra: (shape: ShapeFeature) => Record<string, string> = () => ({}),
 ) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
@@ -310,11 +384,15 @@ function buildBorderLayer(
     (all, { box }) => [Math.min(all[0], box[0]), Math.min(all[1], box[1]), Math.max(all[2], box[2]), Math.max(all[3], box[3])],
     [180, 90, -180, -90],
   );
+  // Names on the map: one point per record, inside its land (or its shape), with the name its
+  // source gives, split where the name changes during the record.
+  const labels: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: withLabels ? buildLabels(ds, items, landPartOf, labelExtra) : [] };
+
   // The sources of this layer's records, so the panel can name them even where they have nothing.
   const sources = [...new Set(items.map(({ assertion: a }) => a.sources[0].source))].sort();
   // The kinds of imprecise line this layer has, so the legend only explains what the map can show.
   const precision = [...new Set(items.map(({ shape }) => shape.properties.edge_precision).filter((e) => EDGE_CODES[e]))].sort();
-  return { collection, lines, land, bounds: dataBounds, sources, precision };
+  return { collection, lines, land, labels, bounds: dataBounds, sources, precision };
 }
 
 const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
@@ -575,7 +653,17 @@ export function contestedCollection(areas: readonly ContestedArea[]) {
     const b = boundingBox(a.geometry);
     return [Math.min(all[0], b[0]), Math.min(all[1], b[1]), Math.max(all[2], b[2]), Math.max(all[3], b[3])];
   }, [180, 90, -180, -90]);
-  return { collection, bounds };
+  // A "Contested" label for each area, at its point farthest from its edges.
+  const labels: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: areas.flatMap((a) => {
+      const at = labelPoint(a.geometry);
+      return at
+        ? [{ type: 'Feature' as const, properties: { s0: a.s0, e0: a.e0, ...(a.maybe ? { maybe: 1 } : {}), a: Math.round(a.km2 / 1000) }, geometry: { type: 'Point' as const, coordinates: at } }]
+        : [];
+    }),
+  };
+  return { collection, labels, bounds };
 }
 
 /**
@@ -892,11 +980,11 @@ function main(): void {
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
   const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
-  const { collection, lines, land: landFills, bounds, sources, precision } = buildBorders(ds, outlines);
+  const { collection, lines, land: landFills, labels, bounds, sources, precision } = buildBorders(ds, outlines);
   // The land parts only matter up close, so they're left out of the tiles below COAST_MIN_ZOOM.
-  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } }, 0, sources);
+  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, labels, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } }, 0, sources);
   const dejure = buildDejure(ds, outlines);
-  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines }, 0, dejure.sources);
+  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines, labels: dejure.labels }, 0, dejure.sources);
   const second = buildSecondOpinion(ds, outlines);
   const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, { lines: second.lines }, 0, second.sources);
   // The base map up close, over the imports' areas (all of them together).
@@ -909,14 +997,23 @@ function main(): void {
   writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
-  const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds);
+  const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds, { labels: contestedLayer.labels });
   const tileSets = [borders, dejureTiles, secondTiles, contestedTiles, ...(coastTiles ? [coastTiles] : [])];
   const tileCount = tileSets.reduce((n, t) => n + t.count, 0);
   const tileBytes = tileSets.reduce((n, t) => n + t.bytes, 0);
   // The map only redraws on these days, so they cover every layer it can show.
   const changes = changeDays({
     type: 'FeatureCollection',
-    features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features, ...edges.features],
+    features: [
+      ...collection.features,
+      ...dejure.collection.features,
+      ...second.collection.features,
+      ...contestedLayer.collection.features,
+      ...edges.features,
+      // Labels change name on their own days, inside a record.
+      ...labels.features,
+      ...dejure.labels.features,
+    ],
   });
   const extra = Object.fromEntries(
     tileSets
