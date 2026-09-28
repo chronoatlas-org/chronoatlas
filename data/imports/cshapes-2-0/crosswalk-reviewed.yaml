@@ -1,0 +1,13 @@
+# Hand-written: where and when the maintainers have reviewed polity-crosswalk.yaml, the links
+# between CShapes' units and our polities. Contested areas are computed only inside these scopes
+# (Phase 5 decision 6); elsewhere, a difference may only mean that nobody has said yet which
+# units are the same state. Add a scope only after reviewing the crosswalk for that area and
+# those years, in a pull request of its own. Format: schemas/crosswalk-reviewed.schema.json.
+- area: { south: 10, west: 73, north: 55, east: 150 }
+  from: "1900"
+  until: "1951"
+  reviewed: 2026-09-27
+  notes: >-
+    The East Asia showcase: the crosswalk was written and reviewed for the CShapes units imported
+    for this area and these years in Phase 2 (contested areas, step 9), and says on what evidence
+    for each link.

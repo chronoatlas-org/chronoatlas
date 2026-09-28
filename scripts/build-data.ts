@@ -36,8 +36,8 @@ import { dirname, join } from 'node:path';
 import { parseEdtfDate } from '../src/dates/index.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset } from './lib/data.ts';
-import { boundingBox, computeContested } from './lib/contested.ts';
-import type { ContestedArea, Link, TimedShape } from './lib/contested.ts';
+import { boundingBox, computeContested, withinScopes } from './lib/contested.ts';
+import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
 import { areaKm2, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
@@ -634,11 +634,26 @@ export function buildAreas(ds: Dataset, land = loadLand(ds)): Map<string, AreaFi
 export function buildContested(ds: Dataset): ContestedArea[] {
   const byUnit = new Map<string, Link[]>();
   for (const link of crosswalkLinks(ds)) byUnit.set(link.unit, [...(byUnit.get(link.unit) ?? []), link]);
-  return computeContested(
+  const areas = computeContested(
     timedShapes(ds, onDefaultMap, ['administers', 'controls', 'occupies']),
     timedShapes(ds, isDejure, ['sovereign', 'occupies']),
     byUnit,
   );
+  // Only where the de jure source's crosswalk has been reviewed (Phase 5 decision 6). A dataset
+  // made by hand (in tests) that doesn't say is taken as reviewed everywhere.
+  return ds.crosswalkScopes ? withinScopes(areas, reviewedScopes(ds, isDejure)) : areas;
+}
+
+/** The reviewed scopes (crosswalk-reviewed.yaml) of the import folders `include` accepts, as boxes and days. */
+export function reviewedScopes(ds: Dataset, include: (file: string) => boolean): ReviewedScope[] {
+  return (ds.crosswalkScopes ?? [])
+    .filter(({ file }) => include(file))
+    .flatMap(({ value }) => value)
+    .map((scope) => ({
+      box: [scope.area.west, scope.area.south, scope.area.east, scope.area.north] as Box,
+      d0: parseEdtfDate(scope.from).earliest,
+      d1: parseEdtfDate(scope.until).earliest,
+    }));
 }
 
 /**

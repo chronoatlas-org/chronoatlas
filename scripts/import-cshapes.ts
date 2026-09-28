@@ -197,6 +197,20 @@ async function main(): Promise<void> {
   }
   if (unmatched > 0) throw new Error(`${unmatched} GeoJSON rows have no match in the R package's data; review before importing.`);
   rows.sort((a, b) => a.gwcode - b.gwcode || a.first.localeCompare(b.first));
+  // A dependency whose owner code isn't a state in CShapes (codes 0 and 1 appear, since the import
+  // went worldwide) can't be named without CShapes' codebook, so the row is skipped and listed,
+  // rather than guessed. The maintainers decide what to do with it after checking the codebook.
+  for (let i = rows.length - 1; i >= 0; i--) {
+    const row = rows[i];
+    if (row.status === 'independent' || namesByCode.has(row.owner)) continue;
+    skipped.push({
+      gwcode: row.gwcode,
+      name: row.name,
+      period: `${row.first} to ${row.last}`,
+      reason: `CShapes lists its owner as code ${row.owner}, which isn't a state in CShapes; what the code stands for must be checked in the codebook before this row is imported`,
+    });
+    rows.splice(i, 1);
+  }
 
   const unitId = (code: number) => `cshapes-${code}`;
   const nameOf = (code: number) => [...(namesByCode.get(code) ?? [])].join(' / ') || `gwcode ${code}`;

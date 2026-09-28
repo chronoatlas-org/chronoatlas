@@ -127,5 +127,15 @@ export interface CrosswalkEntry {
   }[];
 }
 
+/** One entry of an import folder's crosswalk-reviewed.yaml (see schemas/crosswalk-reviewed.schema.json). */
+export interface CrosswalkScope {
+  area: { south: number; west: number; north: number; east: number };
+  /** First day reviewed, and the first day no longer reviewed (EDTF). */
+  from: string;
+  until: string;
+  reviewed: string;
+  notes?: string;
+}
+
 /** Special values allowed in `end` fields instead of a date. */
 export const END_KEYWORDS = ['ongoing', 'unknown'] as const;

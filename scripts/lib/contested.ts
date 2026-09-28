@@ -186,3 +186,44 @@ export function computeContested(
   }
   return results;
 }
+
+/** Where and when a crosswalk has been reviewed: a box (west, south, east, north) and days [d0, d1). */
+export interface ReviewedScope {
+  box: Box;
+  d0: number;
+  d1: number;
+}
+
+/**
+ * Keeps only the parts of contested areas inside the places and years where the crosswalk has
+ * been reviewed (Phase 5 decision 6): elsewhere, a difference may only mean that no one has said
+ * yet which units are the same state. Each area is cut to each scope's box and days; the pieces
+ * keep their area's fields, with the area and ID of the piece.
+ */
+export function withinScopes(areas: readonly ContestedArea[], scopes: readonly ReviewedScope[]): ContestedArea[] {
+  const kept: ContestedArea[] = [];
+  for (const area of areas) {
+    const [w, s, e, n] = boundingBox(area.geometry);
+    scopes.forEach((scope, i) => {
+      const s0 = Math.max(area.s0, scope.d0);
+      const e0 = Math.min(area.e0, scope.d1);
+      if (s0 >= e0) return;
+      const [bw, bs, be, bn] = scope.box;
+      if (w >= be || e <= bw || s >= bn || n <= bs) return;
+      const inside = w >= bw && e <= be && s >= bs && n <= bn;
+      const geometry = inside
+        ? area.geometry
+        : cleanMultiPolygon(polygonClipping.intersection(area.geometry as never, [[[[bw, bs], [be, bs], [be, bn], [bw, bn], [bw, bs]]]] as never) as MultiPolygon, 4);
+      if (geometry.length === 0) return;
+      const whole = inside && s0 === area.s0 && e0 === area.e0;
+      kept.push({
+        ...area,
+        ...(whole ? {} : { id: `${area.id}-s${i}`, km2: Math.round(areaKm2(geometry)) }),
+        s0,
+        e0,
+        geometry,
+      });
+    });
+  }
+  return kept;
+}

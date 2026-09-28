@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronoatlas-org.github.io/chronoatlas/schemas/crosswalk-reviewed.schema.json",
+  "title": "Where a crosswalk has been reviewed",
+  "description": "Hand-written, in an import folder beside its polity-crosswalk.yaml (data/imports/<name>/crosswalk-reviewed.yaml): the places and years for which the maintainers have reviewed which of the import's units are the same state as ours. Contested areas are computed only inside them (Phase 5 decision 6). A list of scopes, which shouldn't overlap.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["area", "from", "until", "reviewed"],
+    "additionalProperties": false,
+    "properties": {
+      "area": {
+        "type": "object",
+        "description": "A box in degrees.",
+        "required": ["south", "west", "north", "east"],
+        "additionalProperties": false,
+        "properties": {
+          "south": { "type": "number", "minimum": -90, "maximum": 90 },
+          "west": { "type": "number", "minimum": -180, "maximum": 180 },
+          "north": { "type": "number", "minimum": -90, "maximum": 90 },
+          "east": { "type": "number", "minimum": -180, "maximum": 180 }
+        }
+      },
+      "from": { "$ref": "common.schema.json#/$defs/edtf", "description": "First day reviewed." },
+      "until": { "$ref": "common.schema.json#/$defs/edtf", "description": "First day no longer reviewed." },
+      "reviewed": { "$ref": "common.schema.json#/$defs/edtf", "description": "When the review was done." },
+      "notes": { "type": "string", "description": "What was reviewed, and where the review is recorded." }
+    }
+  }
+}

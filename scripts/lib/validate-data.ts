@@ -10,6 +10,8 @@
 //      that folder's own records, so nothing derived from that source leaks outside it;
 //   8. a crosswalk (data/imports/<name>/polity-crosswalk.yaml) links that folder's units to our
 //      own polities, with dates that parse.
+//   9. a crosswalk's reviewed scopes (crosswalk-reviewed.yaml beside it) have dates that parse and
+//      a box that isn't empty.
 
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
@@ -22,7 +24,7 @@ import type { Dataset, Loaded, Problem } from './data.ts';
 import { END_KEYWORDS } from './types.ts';
 import type { Citation } from './types.ts';
 
-type SchemaName = 'source' | 'polity' | 'assertion' | 'event' | 'figure' | 'coverage' | 'shape' | 'crosswalk';
+type SchemaName = 'source' | 'polity' | 'assertion' | 'event' | 'figure' | 'coverage' | 'shape' | 'crosswalk' | 'crosswalk-reviewed';
 
 function loadSchemas(): Record<SchemaName, ValidateFunction> {
   // Strict mode catches typos in the schemas. `strictRequired` is off because our conditional
@@ -47,6 +49,7 @@ function loadSchemas(): Record<SchemaName, ValidateFunction> {
     coverage: get('coverage'),
     shape: get('shape'),
     crosswalk: get('crosswalk'),
+    'crosswalk-reviewed': get('crosswalk-reviewed'),
   };
 }
 
@@ -80,6 +83,7 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
   checkSchema('coverage', ds.coverage);
   checkSchema('shape', ds.shapes);
   checkSchema('crosswalk', ds.crosswalks);
+  checkSchema('crosswalk-reviewed', ds.crosswalkScopes ?? []);
 
   // 2. Unique IDs, and file names that match.
   const index = <T extends { id: string }>(kind: string, records: { file: string; value: T }[]) => {
@@ -232,6 +236,20 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
         const stop = match.until === undefined ? null : date(file, `match ${entry.unit} → ${match.polity} until`, match.until);
         if (start && stop && start.earliest >= stop.earliest) report(file, `match ${entry.unit} → ${match.polity} ends before it starts`);
       }
+    }
+  }
+
+  // 9. Where crosswalks have been reviewed: dates that parse and don't run backwards, and a box
+  // that isn't empty.
+  for (const { file, value } of ds.crosswalkScopes ?? []) {
+    for (const scope of Array.isArray(value) ? value : []) {
+      const label = `reviewed scope ${scope.from}/${scope.until}`;
+      const start = date(file, `${label} from`, scope.from);
+      const stop = date(file, `${label} until`, scope.until);
+      date(file, `${label} reviewed`, scope.reviewed);
+      if (start && stop && start.earliest >= stop.earliest) report(file, `${label} ends before it starts`);
+      const a = scope.area;
+      if (a && (a.south >= a.north || a.west >= a.east)) report(file, `${label}: its area is empty (south must be below north, and west of east)`);
     }
   }
 

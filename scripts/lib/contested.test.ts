@@ -1,8 +1,8 @@
 // Contested-area tests use made-up squares and polities (Testland), not real places.
 
 import { describe, expect, it } from 'vitest';
-import { boundingBox, computeContested, meanWidthKm, splitByCertainty, uncovered } from './contested.ts';
-import type { Link, TimedShape } from './contested.ts';
+import { boundingBox, computeContested, meanWidthKm, splitByCertainty, uncovered, withinScopes } from './contested.ts';
+import type { ContestedArea, Link, TimedShape } from './contested.ts';
 import type { MultiPolygon } from './geometry.ts';
 
 const square = (x: number, y: number, size: number): MultiPolygon => [
@@ -84,5 +84,43 @@ describe('computeContested', () => {
     const later = shape('facto-3', 'testland', square(0, 0, 2), 2000, 3000);
     const elsewhere = shape('facto-4', 'testland', square(20, 20, 2), 100, 300);
     expect(computeContested([later, elsewhere], [unitA], new Map())).toEqual([]);
+  });
+});
+
+describe('withinScopes', () => {
+  // A made-up Testland area, not a real border.
+  const area: ContestedArea = {
+    id: 'c1',
+    facto: 'testland',
+    factoRecord: 'r1',
+    factoRelation: 'administers',
+    factoSource: 'test-source',
+    jure: 'otherland',
+    jureRecord: 'r2',
+    jureRelation: 'sovereign',
+    jureSource: 'test-source',
+    s0: 100,
+    e0: 200,
+    km2: 1,
+    geometry: [[[[0, 0], [4, 0], [4, 2], [0, 2], [0, 0]]]],
+  };
+
+  it('keeps an area whole when it lies inside a scope', () => {
+    expect(withinScopes([area], [{ box: [-1, -1, 5, 5], d0: 0, d1: 1000 }])).toEqual([area]);
+  });
+
+  it('cuts an area to the scope’s days and box, renaming the piece', () => {
+    const [piece] = withinScopes([area], [{ box: [2, -1, 5, 5], d0: 150, d1: 1000 }]);
+    expect(piece.id).toBe('c1-s0');
+    expect([piece.s0, piece.e0]).toEqual([150, 200]);
+    const xs = piece.geometry.flat(2).map(([x]) => x);
+    expect(Math.min(...xs)).toBe(2);
+    expect(piece.km2).toBeGreaterThan(0);
+  });
+
+  it('leaves out areas outside every scope, in place or in time', () => {
+    expect(withinScopes([area], [{ box: [10, 10, 20, 20], d0: 0, d1: 1000 }])).toEqual([]);
+    expect(withinScopes([area], [{ box: [-1, -1, 5, 5], d0: 300, d1: 400 }])).toEqual([]);
+    expect(withinScopes([area], [])).toEqual([]);
   });
 });

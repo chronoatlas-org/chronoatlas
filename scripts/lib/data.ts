@@ -9,6 +9,7 @@ import type {
   Assertion,
   Coverage,
   CrosswalkEntry,
+  CrosswalkScope,
   Figure,
   HistoricalEvent,
   Polity,
@@ -40,6 +41,11 @@ export interface Dataset {
   shapes: Loaded<ShapeFeature>[];
   /** Hand-written crosswalks in import folders (polity-crosswalk.yaml): a list per file. */
   crosswalks: Loaded<CrosswalkEntry[]>[];
+  /**
+   * Where each crosswalk has been reviewed (crosswalk-reviewed.yaml beside it): contested areas
+   * are computed only there. Absent in hand-made test datasets.
+   */
+  crosswalkScopes?: Loaded<CrosswalkScope[]>[];
   /** Import folders (data/imports/<name>), relative to the repository root. */
   imports: string[];
   /** Files that couldn't be read or parsed at all. */
@@ -145,6 +151,7 @@ export function loadDataset(dataDir = DATA_DIR): Dataset {
       root,
     ),
     crosswalks: load<CrosswalkEntry[]>(inImports('polity-crosswalk.yaml'), yaml, problems, root),
+    crosswalkScopes: load<CrosswalkScope[]>(inImports('crosswalk-reviewed.yaml'), yaml, problems, root),
     imports: imports.map((dir) => pathFrom(root, dir)),
     problems,
     ...(root === ROOT ? {} : { root }),
