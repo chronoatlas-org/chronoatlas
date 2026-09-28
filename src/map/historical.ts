@@ -21,6 +21,7 @@ import type { SpotRecord, SpotSet } from '../panel/model.ts';
 import { t } from '../i18n/index.ts';
 import type { MessageKey } from '../i18n/index.ts';
 import { segmentOf } from './changes.ts';
+import { eraOf } from './eras.ts';
 import { pointInRings, readLayer, tileAt } from './mvt.ts';
 import { pulseRadiusPx } from './pulse-size.ts';
 
@@ -40,7 +41,6 @@ function colorMatch(colors: readonly string[]): ExpressionSpecification {
 
 /** public/data/tiles.json, written by the build. */
 interface TileIndex {
-  version: string;
   layer: string;
   minzoom: number;
   maxzoom: number;
@@ -49,13 +49,32 @@ interface TileIndex {
   sources?: string[];
   /** The kinds of imprecise border line the default map has ('approximate-line', 'frontier-zone'). */
   precision?: string[];
-  changes: number[];
-  /** Other layers' tiles: the de jure view, the contested areas, and the detailed coast. */
+  /**
+   * The eras the tiles are split into (Phase 5, decision 10), in order and covering every day, each
+   * with its change index: the days on which something starts or ends inside it.
+   */
+  eras: { start: number; end: number; changes: number[] }[];
+  /** The default map's tiles for each era (a fingerprint of their contents), in the eras' order. */
+  versions: string[];
+  /**
+   * Other layers' tiles: the de jure view, the second opinion, the contested areas, and "sources
+   * differ", split by era like the default map (`versions`), and the detailed coast, which doesn't
+   * change with time (`version`).
+   */
   extra?: Record<
     string,
-    { dir: string; version: string; layer: string; bounds: [number, number, number, number]; minzoom?: number; sources?: string[] }
+    { dir: string; layer: string; bounds: [number, number, number, number]; versions?: string[]; version?: string; minzoom?: number; sources?: string[] }
   >;
 }
+
+/** The tile sets split by era, as MapLibre source IDs, with their folders under public/data/. */
+const TIMED_SOURCES = [
+  ['borders', 'tiles'],
+  ['dejure', 'dejure-tiles'],
+  ['second', 'second-tiles'],
+  ['contested', 'contested-tiles'],
+  ['differ', 'differ-tiles'],
+] as const;
 
 /** Which borders the map shows: as administered (de facto) or as legally recognized (de jure). */
 export type BorderView = 'facto' | 'jure';
@@ -105,6 +124,14 @@ const WATER_TINT = 0.25;
 const LAND_OVER_TINT: ExpressionSpecification = ['case', UNCERTAIN, 0.4, 1];
 
 /** The address of a file the build wrote to public/data/. */
+/**
+ * A tile set's address template for MapLibre. The {z}/{x}/{y} placeholders are appended after the
+ * base is resolved, because URL() would escape them.
+ */
+function tileUrls(dir: string, version: string): string[] {
+  return [`${dataUrl(`${dir}/${version}/`)}{z}/{x}/{y}.pbf`];
+}
+
 export function dataUrl(file: string): string {
   return new URL(`data/${file}`, document.baseURI).href;
 }
@@ -238,6 +265,8 @@ export class HistoricalLayers {
   private view: BorderView = 'facto';
   /** public/data/tiles.json, once loaded. */
   private index: TileIndex | null = null;
+  /** The era whose tiles are on the map (an index into `index.eras`). */
+  private era = 0;
   /** Tiles fetched for recordsAt, by address (each source's tile at a clicked spot). */
   private readonly spotTiles = new Map<string, Promise<Uint8Array | null>>();
   private hasDejure = false;
@@ -339,10 +368,11 @@ export class HistoricalLayers {
   async recordsAt([lng, lat]: [number, number]): Promise<SpotSet[]> {
     const index = this.index;
     if (!index) return [];
+    const era = this.era;
     const layers: { set: SpotSet['set']; dir: string; version: string; layer: string; bounds: number[]; sources?: string[] }[] = [
-      { set: 'facto', dir: 'tiles', version: index.version, layer: index.layer, bounds: index.bounds, sources: index.sources },
-      ...(index.extra?.dejure ? [{ set: 'jure' as const, ...index.extra.dejure }] : []),
-      ...(index.extra?.second ? [{ set: 'second' as const, ...index.extra.second }] : []),
+      { set: 'facto', dir: 'tiles', version: index.versions[era], layer: index.layer, bounds: index.bounds, sources: index.sources },
+      ...(index.extra?.dejure?.versions ? [{ set: 'jure' as const, ...index.extra.dejure, version: index.extra.dejure.versions[era] }] : []),
+      ...(index.extra?.second?.versions ? [{ set: 'second' as const, ...index.extra.second, version: index.extra.second.versions[era] }] : []),
     ];
     const z = index.maxzoom;
     const { x, y, px, py } = tileAt(lng, lat, z);
@@ -379,19 +409,38 @@ export class HistoricalLayers {
     return tile;
   }
 
-  /** Updates the map, but only when the day has crossed into a different change segment. */
+  /**
+   * Updates the map, but only when the day has crossed into a different change segment. Crossing
+   * into another era first swaps every time-bearing layer's tiles for that era's.
+   */
   private showDay(): void {
-    if (!this.ready) return;
+    if (!this.ready || !this.index) return;
+    const era = eraOf(this.index.eras, this.day);
+    if (era !== this.era) this.showEra(era);
     const segment = segmentOf(this.changes, this.day);
     if (segment === this.shownSegment) return;
     this.shownSegment = segment;
     this.map.setGlobalStateProperty('day', this.day);
   }
 
+  /** Points each time-bearing layer at an era's tiles. The layers and their styles stay as they are. */
+  private showEra(era: number): void {
+    const index = this.index!;
+    this.era = era;
+    this.changes = index.eras[era].changes;
+    this.shownSegment = -1;
+    for (const [id, dir] of TIMED_SOURCES) {
+      const versions = id === 'borders' ? index.versions : index.extra?.[id]?.versions;
+      const source = this.map.getSource<maplibregl.VectorTileSource>(id);
+      if (source && versions) source.setTiles(tileUrls(dir, versions[era]));
+    }
+  }
+
   private addLayers(index: TileIndex): void {
     const map = this.map;
     this.index = index;
-    this.changes = index.changes;
+    this.era = eraOf(index.eras, this.day);
+    this.changes = index.eras[this.era].changes;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });
 
     // Hatch all land; borders drawn on top cover it wherever we have data.
@@ -434,7 +483,7 @@ export class HistoricalLayers {
     // the {z}/{x}/{y} placeholders MapLibre needs.
     map.addSource('borders', {
       type: 'vector',
-      tiles: [`${dataUrl(`tiles/${index.version}/`)}{z}/{x}/{y}.pbf`],
+      tiles: tileUrls('tiles', index.versions[this.era]),
       minzoom: index.minzoom,
       maxzoom: index.maxzoom,
       bounds: index.bounds,
@@ -540,7 +589,7 @@ export class HistoricalLayers {
     if (dejure) {
       map.addSource('dejure', {
         type: 'vector',
-        tiles: [`${dataUrl(`${dejure.dir}/${dejure.version}/`)}{z}/{x}/{y}.pbf`],
+        tiles: tileUrls(dejure.dir, dejure.versions?.[this.era] ?? ''),
         minzoom: index.minzoom,
         maxzoom: index.maxzoom,
         bounds: dejure.bounds,
@@ -594,7 +643,7 @@ export class HistoricalLayers {
       map.addImage('contested-hatch', crossHatchPattern(), { pixelRatio: 2 });
       map.addSource('contested', {
         type: 'vector',
-        tiles: [`${dataUrl(`${contested.dir}/${contested.version}/`)}{z}/{x}/{y}.pbf`],
+        tiles: tileUrls(contested.dir, contested.versions?.[this.era] ?? ''),
         minzoom: index.minzoom,
         maxzoom: index.maxzoom,
         bounds: contested.bounds,
@@ -635,7 +684,7 @@ export class HistoricalLayers {
       map.addImage('differ-dots', dotsPattern(), { pixelRatio: 2 });
       map.addSource('differ', {
         type: 'vector',
-        tiles: [`${dataUrl(`${differ.dir}/${differ.version}/`)}{z}/{x}/{y}.pbf`],
+        tiles: tileUrls(differ.dir, differ.versions?.[this.era] ?? ''),
         minzoom: index.minzoom,
         maxzoom: index.maxzoom,
         bounds: differ.bounds,
@@ -671,7 +720,7 @@ export class HistoricalLayers {
     if (second) {
       map.addSource('second', {
         type: 'vector',
-        tiles: [`${dataUrl(`${second.dir}/${second.version}/`)}{z}/{x}/{y}.pbf`],
+        tiles: tileUrls(second.dir, second.versions?.[this.era] ?? ''),
         minzoom: index.minzoom,
         maxzoom: index.maxzoom,
         bounds: second.bounds,

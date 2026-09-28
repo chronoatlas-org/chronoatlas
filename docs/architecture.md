@@ -192,7 +192,13 @@ sovereign: China (per CShapes)".
   - The browser downloads only the tiles in view, simplified to that zoom.
   - `<version>` is a fingerprint of the data, so a browser never mixes cached tiles from two
     builds.
-  - Empty tiles inside the data's bounds are still written, so no request ever returns 404.
+  - **Split into eras (Phase 5, step 4):** every tile set that changes with time is written once
+    per era, with a version per era, and `tiles.json` lists the eras with each one's change index.
+    The map loads the era of the day shown, and swaps every layer's tiles (`setTiles`) when the day
+    crosses into another; eras with the same contents share their tiles. See below.
+  - **Empty tiles aren't written** (since Phase 5, step 4): MapLibre draws nothing for a tile that
+    isn't there ("404 Not Found"), with no error (measured in Phase 5, step 2). Vite's own servers
+    are set to answer the same way for a missing tile (`vite.config.ts`).
   - Zoom 7 is the highest level with its own tiles (about 40 m per tile unit, finer than the
     data); MapLibre enlarges those tiles when you zoom in further.
   - The tools are pure Node.js (geojson-vt, vt-pbf), so the build runs on Windows, Mac, and
@@ -220,7 +226,12 @@ sovereign: China (per CShapes)".
 - **How the map filters by date:** the current date is stored in MapLibre's global state and
   used in the layers' `filter`. We measured the alternative of hiding inactive borders with a
   paint expression (opacity), and it was 4–5 times slower, so we use filters.
-- **Growing worldwide:** the tiles can also be split by era when Cliopatria (158 MB) arrives.
+- **Eras (Phase 5, decision 10):** the build (`chooseEras`, `scripts/lib/eras.ts`) splits time
+  so that each tile set's shapes in an era stay within about 6 MB: boundaries on 1 January, every
+  50 years before 1500 and every 10 years from then, as long as the budget allows. A record that
+  spans eras goes into each. Today's East Asia data makes 6 eras (before 1910, each decade to
+  1950, and after); a worldwide scratch build with all of Cliopatria made 19, with every view
+  under 1 MB (Phase 5 plan, step 2).
 - **Limits:** 100 MB per file in the repo; about 1 GB for the repo and for the published site;
   100 GB/month bandwidth (soft limit).
 

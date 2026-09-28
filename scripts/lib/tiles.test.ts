@@ -49,10 +49,13 @@ describe('buildTiles', () => {
     expect(upClose.map((t) => t.z)).toEqual([2]);
   });
 
-  it('writes empty tiles where there is nothing, instead of leaving gaps', () => {
+  it('marks the tiles with nothing in them as empty, so the build can leave them out', () => {
     const tiles = [...buildTiles(square, { layer: 'borders', maxZoom: 3, bounds: [0, 0, 40, 40] })];
-    const empty = tiles.filter((t) => new VectorTile(new PbfReader(t.data)).layers.borders?.length !== 1);
-    expect(empty.length).toBeGreaterThan(0);
-    expect(tiles.every((t) => t.data.length > 0)).toBe(true);
+    for (const t of tiles) {
+      const hasSquare = new VectorTile(new PbfReader(t.data)).layers.borders?.length === 1;
+      expect(t.empty).toBe(!hasSquare);
+    }
+    expect(tiles.some((t) => t.empty)).toBe(true);
+    expect(tiles.some((t) => !t.empty)).toBe(true);
   });
 });

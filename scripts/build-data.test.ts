@@ -16,6 +16,8 @@ import {
   dayRanges,
   FAR_FUTURE,
   onDefaultMap,
+  eraItems,
+  forEra,
 } from './build-data.ts';
 import { loadDataset } from './lib/data.ts';
 import { areaKm2 } from './lib/geometry.ts';
@@ -485,5 +487,31 @@ describe('land areas', () => {
     expect(first).toMatchObject({ metric: 'area-km2', basis: 'computed-from-shape', relation: 'administers', value: administered[0].landKm2 });
     expect(first.sources).toEqual([...cite, landSource]);
     expect(first.waterKm2).toBeGreaterThan(20_000); // the sea half of "coastal", left out of the land area
+  });
+});
+
+describe('eras in the build', () => {
+  // Made-up Testland features, not real borders.
+  const feature = (props: Record<string, number>): GeoJSON.Feature => ({
+    type: 'Feature',
+    properties: props,
+    geometry: { type: 'Polygon', coordinates: [[[0, 0], [1, 0], [1, 1], [0, 0]]] },
+  });
+  const collection: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: [feature({ s0: 0, e0: 10 }), feature({ s0: 10, e0: 20, e1: 30 }), feature({})],
+  };
+
+  it('keeps the features drawn at some point in an era, counting an uncertain end', () => {
+    expect(forEra(collection, { start: 20, end: 25 }).features.map((f) => f.properties)).toEqual([{ s0: 10, e0: 20, e1: 30 }, {}]);
+    expect(forEra(collection, { start: 0, end: 5 }).features).toHaveLength(2);
+  });
+
+  it('lists every layer\'s features, with their days and sizes, for choosing eras', () => {
+    const items = eraItems({ key: 'test', dir: 'test-tiles', layer: 'test', collection, bounds: [0, 0, 1, 1], extraLayers: { lines: { collection, minZoom: 4 } } });
+    expect(items).toHaveLength(6);
+    expect(items[1]).toMatchObject({ set: 'test-tiles', s0: 10, e0: 30 });
+    expect(items[2].s0).toBeLessThan(-1e7);
+    expect(items[0].bytes).toBeGreaterThan(0);
   });
 });

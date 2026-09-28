@@ -296,7 +296,8 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   `npm run validate` checks everything against `schemas/*.schema.json` plus references, dates,
   and geometry. Then `npm run build-data` writes `public/data/` (gitignored), which the site
   loads:
-  - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders` (the
+  - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, one version per era (Phase 5 step 4; empty
+    tiles aren't written), zoom 0–7, source-layer `borders` (the
     fills) and `lines` (the border lines, written apart by `scripts/lib/outlines.ts` without the
     cuts along an import's edge or the stretches more than 2 km out to sea). The de jure and
     second-opinion tile sets have the same two layers, and the map draws every border line from
@@ -307,7 +308,9 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
     sea, and coastline, drawn over the 1:50m base map up close so the coast matches the cut;
   - `edges.json`: where each import's area ends, over land, while its years apply ("Edge of
     imported data");
-  - `tiles.json`: version, bounds, zooms, and the change index;
+  - `tiles.json`: bounds, zooms, `eras` (each with its change index), and `versions` for each
+    era-split tile set (the default map at the top level; `extra.dejure`, `second`, `contested`,
+    `differ`), while `extra.coast` keeps a single `version`;
   - `sources.json`: every source's title and address;
   - `events.json`: every event's day range, importance, title, and place, for the timeline's
     markers and the map's pulse;
@@ -322,7 +325,8 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   or filters on), because they're repeated in every tile. Text for the panel belongs in the
   polity files.
 - **Performance:** the map only updates when the day crosses a change day
-  (`src/map/changes.ts`). Filtering by date uses `filter` with global state, not opacity (we
+  (`src/map/changes.ts`), and swaps tile sets only when it crosses into another era
+  (`HistoricalLayers.showEra`, `eraOf` in `src/map/eras.ts`). Filtering by date uses `filter` with global state, not opacity (we
   measured opacity at 4–5 times slower). Measurements are in
   docs/architecture.md#measured-phase-1-step-7-2026-09-27.
   The format reference for contributors is `docs/data-format.md`; keep it in sync with the
@@ -395,6 +399,10 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   are flags that never widen the range. Seasons (`2001-21`) are rejected until we define their
   months. Tests cross-check against documented reference days and against JavaScript `Date`,
   which is allowed in tests only.
+- **Vite and the tiles:** `vite.config.ts` answers "404" for a missing `.pbf` under `/data/` (as
+  GitHub Pages does; otherwise Vite answers with the page itself), and doesn't watch
+  `public/data/` (a worldwide build has over 100,000 tiles, more than a system may allow to be
+  watched). Reload the page after `npm run build-data`.
 - MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
   `src/main.ts`. Without that, the worker fails to load in both dev and production.
 - In dev mode the map, timeline, historical layers, and panel are exposed as `window.map`,

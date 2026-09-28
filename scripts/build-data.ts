@@ -37,6 +37,8 @@ import { parseEdtfDate } from '../src/dates/index.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset } from './lib/data.ts';
 import { boundingBox, computeContested, withinScopes } from './lib/contested.ts';
+import { chooseEras, inEra } from './lib/eras.ts';
+import type { Era, EraItem } from './lib/eras.ts';
 import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
 import { areaKm2, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
@@ -1010,6 +1012,49 @@ export function buildPolityFiles(
   });
 }
 
+type ExtraLayers = NonNullable<Parameters<typeof buildTiles>[1]['extraLayers']>;
+
+/** A tile set that changes with time, and is split into eras (Phase 5, decision 10). */
+export interface TimedTileSet {
+  /** Its name in tiles.json ('borders' for the default map, which sits at the top level). */
+  key: string;
+  dir: string;
+  layer: string;
+  collection: GeoJSON.FeatureCollection;
+  bounds: Bounds;
+  sources?: string[];
+  extraLayers?: ExtraLayers;
+}
+
+/** The days a feature is drawn: from s0 until its last possible end (e1 when it has one), exclusive. */
+const drawnDays = (f: GeoJSON.Feature): [number, number] => {
+  const p = f.properties ?? {};
+  return [typeof p.s0 === 'number' ? p.s0 : -FAR_FUTURE, typeof p.e1 === 'number' ? p.e1 : typeof p.e0 === 'number' ? p.e0 : FAR_FUTURE];
+};
+
+/** The features drawn at some point in an era. */
+export function forEra(collection: GeoJSON.FeatureCollection, era: Era): GeoJSON.FeatureCollection {
+  return { type: 'FeatureCollection', features: collection.features.filter((f) => inEra(era, ...drawnDays(f))) };
+}
+
+function extraForEra(layers: ExtraLayers | undefined, era: Era): ExtraLayers | undefined {
+  if (!layers) return undefined;
+  return Object.fromEntries(
+    Object.entries(layers).map(([name, l]) => [name, 'collection' in l ? { collection: forEra(l.collection, era), minZoom: l.minZoom } : forEra(l, era)]),
+  );
+}
+
+/** Every feature of a tile set, with its days and size, for choosing eras. */
+export function eraItems(set: TimedTileSet): EraItem[] {
+  const collections = [set.collection, ...Object.values(set.extraLayers ?? {}).map((l) => ('collection' in l ? l.collection : l))];
+  return collections.flatMap((c) =>
+    c.features.map((f) => {
+      const [s0, e0] = drawnDays(f);
+      return { set: set.dir, s0, e0, bytes: JSON.stringify(f.geometry).length };
+    }),
+  );
+}
+
 function main(): void {
   const ds = loadDataset();
   const problems = validateDataset(ds);
@@ -1022,83 +1067,98 @@ function main(): void {
   mkdirSync(OUT_DIR, { recursive: true });
 
   /**
-   * Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. More
-   * layers can go in the same tiles (the border lines as `lines`, the land parts as `land`).
+   * Writes one layer's tiles under public/data/<dir>/<version>/, leaving out empty tiles (MapLibre
+   * draws nothing for a tile that isn't there). More layers can go in the same tiles (the border
+   * lines as `lines`, the land parts as `land`). The version is a fingerprint of the contents, so
+   * two eras with the same contents share their tiles.
    */
-  const writeTileSet = (
-    dir: string,
-    layer: string,
-    collection: GeoJSON.FeatureCollection,
-    bounds: Bounds,
-    extraLayers?: NonNullable<Parameters<typeof buildTiles>[1]['extraLayers']>,
-    minZoom = 0,
-    sources?: string[],
-  ) => {
-    const version = createHash('sha256').update(JSON.stringify(collection)).update(JSON.stringify(extraLayers ?? null)).digest('hex').slice(0, 12);
-    let count = 0;
-    let bytes = 0;
-    for (const tile of buildTiles(collection, { layer, minZoom, maxZoom: TILE_MAX_ZOOM, bounds, extraLayers })) {
-      const file = join(OUT_DIR, dir, version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
-      mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, tile.data);
-      count++;
-      bytes += tile.data.length;
+  const writtenVersions = new Map<string, { count: number; bytes: number }>();
+  const writeTiles = (dir: string, layer: string, collection: GeoJSON.FeatureCollection, bounds: Bounds, extraLayers?: ExtraLayers, minZoom = 0) => {
+    const version = createHash('sha256').update(dir).update(JSON.stringify(collection)).update(JSON.stringify(extraLayers ?? null)).digest('hex').slice(0, 12);
+    if (!writtenVersions.has(version)) {
+      let count = 0;
+      let bytes = 0;
+      for (const tile of buildTiles(collection, { layer, minZoom, maxZoom: TILE_MAX_ZOOM, bounds, extraLayers })) {
+        if (tile.empty) continue;
+        const file = join(OUT_DIR, dir, version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
+        mkdirSync(dirname(file), { recursive: true });
+        writeFileSync(file, tile.data);
+        count++;
+        bytes += tile.data.length;
+      }
+      writtenVersions.set(version, { count, bytes });
     }
-    return { dir, version, layer, bounds, count, bytes, minzoom: minZoom, sources };
+    return version;
   };
 
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
   const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
-  const { collection, lines, land: landFills, labels, bounds, sources, precision } = buildBorders(ds, outlines);
-  // The land parts only matter up close, so they're left out of the tiles below COAST_MIN_ZOOM.
-  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, labels, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } }, 0, sources);
+  const borders = buildBorders(ds, outlines);
   const dejure = buildDejure(ds, outlines);
-  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines, labels: dejure.labels }, 0, dejure.sources);
   const second = buildSecondOpinion(ds, outlines);
-  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, { lines: second.lines }, 0, second.sources);
-  // The base map up close, over the imports' areas (all of them together).
-  const areaList = [...importAreas(ds).values()];
-  const coastBox: Box | undefined = areaList.length
-    ? [Math.min(...areaList.map((a) => a[0])), Math.min(...areaList.map((a) => a[1])), Math.max(...areaList.map((a) => a[2])), Math.max(...areaList.map((a) => a[3]))]
-    : undefined;
-  const coastTiles = land && coastBox ? writeTileSet('coast-tiles', 'coast', buildCoast(land, coastBox), coastBox, undefined, COAST_MIN_ZOOM) : undefined;
   const edges = buildEdges(ds, outlines.land);
   writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
-  const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds, { labels: contestedLayer.labels });
   // Where the default map and the second opinion differ (combines OpenHistoricalMap, CC0, with
   // Cliopatria, CC BY 4.0, so it's credited to Cliopatria wherever it's shown).
   const differ = buildDiffer(ds);
   const differLayer = contestedCollection(differ);
-  const differTiles = writeTileSet('differ-tiles', 'differ', differLayer.collection, differLayer.bounds, { labels: differLayer.labels });
-  const tileSets = [borders, dejureTiles, secondTiles, contestedTiles, differTiles, ...(coastTiles ? [coastTiles] : [])];
-  const tileCount = tileSets.reduce((n, t) => n + t.count, 0);
-  const tileBytes = tileSets.reduce((n, t) => n + t.bytes, 0);
-  // The map only redraws on these days, so they cover every layer it can show.
-  const changes = changeDays({
-    type: 'FeatureCollection',
-    features: [
-      ...collection.features,
-      ...dejure.collection.features,
-      ...second.collection.features,
-      ...contestedLayer.collection.features,
-      ...differLayer.collection.features,
-      ...edges.features,
-      // Labels change name on their own days, inside a record.
-      ...labels.features,
-      ...dejure.labels.features,
-    ],
-  });
-  const extra = Object.fromEntries(
-    tileSets
-      .slice(1)
-      .map(({ dir, version, layer, bounds: b, minzoom, sources: s }) => [layer, { dir, version, layer, bounds: b, ...(minzoom ? { minzoom } : {}), ...(s ? { sources: s } : {}) }]),
+
+  // Every tile set that changes with time, split into the same eras (Phase 5, decision 10). The
+  // land parts only matter up close, so they're left out of the default tiles below COAST_MIN_ZOOM.
+  const timed: TimedTileSet[] = [
+    { key: 'borders', dir: 'tiles', layer: TILE_LAYER, collection: borders.collection, bounds: borders.bounds, sources: borders.sources, extraLayers: { lines: borders.lines, labels: borders.labels, land: { collection: borders.land, minZoom: COAST_MIN_ZOOM } } },
+    { key: 'dejure', dir: 'dejure-tiles', layer: 'dejure', collection: dejure.collection, bounds: dejure.bounds, sources: dejure.sources, extraLayers: { lines: dejure.lines, labels: dejure.labels } },
+    { key: 'second', dir: 'second-tiles', layer: 'second', collection: second.collection, bounds: second.bounds, sources: second.sources, extraLayers: { lines: second.lines } },
+    { key: 'contested', dir: 'contested-tiles', layer: 'contested', collection: contestedLayer.collection, bounds: contestedLayer.bounds, extraLayers: { labels: contestedLayer.labels } },
+    { key: 'differ', dir: 'differ-tiles', layer: 'differ', collection: differLayer.collection, bounds: differLayer.bounds, extraLayers: { labels: differLayer.labels } },
+  ];
+  const eras = chooseEras(timed.flatMap(eraItems), FAR_FUTURE);
+  const versions = timed.map((set) =>
+    eras.map((era) => writeTiles(set.dir, set.layer, forEra(set.collection, era), set.bounds, extraForEra(set.extraLayers, era))),
   );
+  // The base map up close, over the imports' areas (all of them together). It doesn't change with time.
+  const areaList = [...importAreas(ds).values()];
+  const coastBox: Box | undefined = areaList.length
+    ? [Math.min(...areaList.map((a) => a[0])), Math.min(...areaList.map((a) => a[1])), Math.max(...areaList.map((a) => a[2])), Math.max(...areaList.map((a) => a[3]))]
+    : undefined;
+  const coastVersion = land && coastBox ? writeTiles('coast-tiles', 'coast', buildCoast(land, coastBox), coastBox, undefined, COAST_MIN_ZOOM) : undefined;
+  const tileCount = [...writtenVersions.values()].reduce((n, t) => n + t.count, 0);
+  const tileBytes = [...writtenVersions.values()].reduce((n, t) => n + t.bytes, 0);
+
+  // Each era's change index: the map only redraws on these days, so they cover every layer it can
+  // show (labels change name on their own days, inside a record) and the edge of the imported data.
+  const allTimed: GeoJSON.Feature[] = [
+    ...timed.flatMap((set) => [set.collection, ...Object.values(set.extraLayers ?? {}).map((l) => ('collection' in l ? l.collection : l))].flatMap((c) => c.features)),
+    ...edges.features,
+  ];
+  const eraIndex = eras.map((era) => ({
+    start: era.start,
+    end: era.end,
+    changes: changeDays(forEra({ type: 'FeatureCollection', features: allTimed }, era)).filter((day) => day > era.start && day < era.end),
+  }));
+  const extra = Object.fromEntries([
+    ...timed.slice(1).map((set, i) => [
+      set.key,
+      { dir: set.dir, layer: set.layer, bounds: set.bounds, versions: versions[i + 1], ...(set.sources ? { sources: set.sources } : {}) },
+    ]),
+    ...(coastVersion && coastBox ? [['coast', { dir: 'coast-tiles', layer: 'coast', bounds: coastBox, version: coastVersion, minzoom: COAST_MIN_ZOOM }]] : []),
+  ]);
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),
-    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, sources, precision, changes, extra }),
+    JSON.stringify({
+      layer: TILE_LAYER,
+      minzoom: 0,
+      maxzoom: TILE_MAX_ZOOM,
+      bounds: borders.bounds,
+      sources: borders.sources,
+      precision: borders.precision,
+      eras: eraIndex,
+      versions: versions[0],
+      extra,
+    }),
   );
   // Which polity pairs disagree, and where, so a crosswalk mistake shows up here first.
   const pairs = new Map<string, number>();
@@ -1121,10 +1181,11 @@ function main(): void {
     polityBytes += json.length;
   }
   console.log(
-    `Built public/data: ${collection.features.length} border features, ${dejure.collection.features.length} de jure, ` +
+    `Built public/data: ${borders.collection.features.length} border features, ${dejure.collection.features.length} de jure, ` +
       `${second.collection.features.length} second-opinion, ` +
       `${contested.length} contested, in ${tileCount} tiles ` +
-      `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}), ${changes.length} change days, ` +
+      `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}, empty tiles left out) in ${eras.length} era${eras.length === 1 ? '' : 's'}, ` +
+      `${eraIndex.reduce((n, e) => n + e.changes.length, 0)} change days, ` +
       `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB), ${ds.events.length} events.`,
   );
 }

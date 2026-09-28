@@ -33,6 +33,11 @@ export interface BuiltTile {
   x: number;
   y: number;
   data: Uint8Array;
+  /**
+   * Whether no layer has anything in this tile. The build doesn't write empty tiles (Phase 5):
+   * MapLibre draws nothing for a tile that isn't there.
+   */
+  empty: boolean;
 }
 
 function lonToTileX(lon: number, z: number): number {
@@ -83,7 +88,8 @@ export function* buildTiles(collection: GeoJSON.FeatureCollection, options: Tile
           indexes.filter(([, , minZoom]) => z >= minZoom).map(([name, index]) => [name, index.getTile(z, x, y) ?? { features: [] }]),
         );
         const data = vtpbf.fromGeojsonVt(layers, { version: 2 });
-        yield { z, x, y, data };
+        const empty = Object.values(layers).every((layer) => layer.features.length === 0);
+        yield { z, x, y, data, empty };
       }
     }
   }

@@ -313,6 +313,27 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     - **Cliopatria's year 0:** its data has one (six rows end in year 0, followed by rows starting
       in year 1), so its years are astronomical, as ours are: -40 is 41 BCE. Recorded in its
       manifest.
+- **Step 4 (2026-09-28): done.** Every tile set that changes with time (the default map, the
+  legal borders, the second opinion, contested areas, "sources differ") is written once per era,
+  and the map switches era when the day crosses into another.
+  - **The build:** `chooseEras` (`scripts/lib/eras.ts`) picks the eras from all those tile sets
+    together, at about 6 MB each (decision 10); each set's tiles are written per era with their own
+    version (eras with the same contents share tiles), empty tiles are left out, and `tiles.json`
+    lists the eras with each one's change index.
+  - **The map:** `HistoricalLayers` loads the era of the day shown and, when the day crosses into
+    another, points every time-bearing layer at that era's tiles (`setTiles`); the layers and styles
+    stay as they are. "What each source says here" reads the current era's tiles.
+  - **Today's data** (East Asia): 6 eras (before 1910, each decade to 1950, and after), because the
+    default map's fills, lines, labels, and land parts together pass 6 MB. So a visitor at 1937 now
+    downloads only the 1930s. 16,470 tiles (47 MB, against 35.7 MB before: a record that spans
+    several decades is in each one's tiles); the build still takes about 2 minutes.
+  - **Worldwide** (the scratch copy with all of Cliopatria): 19 eras, 105,056 tiles, 305 MB, built in
+    7 minutes. In the browser, the map switched eras correctly from 200 BCE to 1960, drew
+    Cliopatria's borders in each, and the spot lookup worked, with no errors.
+  - **Found on the way:** Vite's development server watched every file in `public/`, and with the
+    worldwide tiles it hit the system's limit and stopped; it now ignores `public/data/`. It also
+    answered a missing tile with the page itself; it now answers "404" for a missing tile, as
+    GitHub Pages does.
 
 **Left out of Phase 5:**
 
