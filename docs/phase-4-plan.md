@@ -298,8 +298,19 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     brought a summary comment 34 seconds after the build check, naming the removed link and the
     new contested area it creates (129,000 km², 1902–1935). Undoing the change updated the same
     comment to "changes nothing in `data/`".
-- **Step 4 (2026-09-28): built; waiting for the setting.** `.github/workflows/reimport-ohm.yml`
-  ("Re-import OpenHistoricalMap" in the Actions tab).
+- **Step 4 (2026-09-28): done.** `.github/workflows/reimport-ohm.yml` ("Re-import
+  OpenHistoricalMap" in the Actions tab).
+  - **First runs:** the first stopped at opening the pull request, because the setting has to be
+    turned on in the organization before the repository (the guide now says so), and left its
+    branch behind; the workflow now deletes its branch when that happens. The second opened a real
+    re-import, [pull request 24](https://github.com/chronoatlas-org/chronoatlas/pull/24), with the
+    data checked, the summary posted, and the build check passed.
+  - **What it taught the summary:** a whole re-import went over GitHub's comment limit, so the side
+    effects now come first, sections shrink until the comment fits, names that changed the same
+    way share one line, and changed shape properties are named. The summary also runs after
+    builds started by hand, so a re-import's comment stays current. And it flagged a real overlap:
+    two State of Burma boundaries in OpenHistoricalMap both apply from 1 to 18 August 1943, so the
+    contested area there doubles (the summary now explains such jumps).
   - It re-imports, checks the data, and, if anything changed, pushes a branch
     (`import/openhistoricalmap-<date>-<run>`) as `github-actions[bot]` in UTC, then opens a pull
     request with the reason given, posts the data-change summary as its first comment, and starts
