@@ -298,7 +298,8 @@ async function main(): Promise<void> {
     license:
       'CC BY-NC-SA 4.0 (non-commercial, share-alike), as stated on the dataset page. Everything in this folder is derived from CShapes and carries the same license. See LICENSE.md.',
     page: PAGE,
-    retrieved: new Date().toISOString().slice(0, 10),
+    // When the pinned files were downloaded (not when this script last ran, which may be --offline).
+    retrieved: statSync(join(RAW, FILES.geojson.file)).mtime.toISOString(),
     downloads: [
       { url: FILES.geojson.url, file: `raw/${FILES.geojson.file} (not committed)`, bytes: statSync(join(RAW, FILES.geojson.file)).size, sha256: FILES.geojson.sha256 },
       {
@@ -313,7 +314,7 @@ async function main(): Promise<void> {
     counts: { rows_in_dataset: geojson.features.length, imported: rows.length, skipped: skipped.length, units: subjects.size, by_status: statusCounts },
     decisions: {
       columns:
-        "The GeoJSON, CSV, and SQL files on the dataset page lack the status, owner, and b_def columns that the codebook lists. They are taken from the data file in the authors' R package (cshapes 2.0, from the same page), matched row by row on gwcode, start, and end (all 710 rows match). The package's DESCRIPTION file says \"License: GPL (>= 2)\"; the maintainers decided on 2026-09-27 to treat these columns as part of CShapes 2.0 under its dataset license (CC BY-NC-SA 4.0) and to ask the authors to confirm.",
+        "The GeoJSON, CSV, and SQL files on the dataset page lack the status, owner, and b_def columns that the codebook lists. They are taken from the data file in the authors' R package (cshapes 2.0, from the same page), matched row by row on gwcode, start, and end (all 710 rows match). The package's DESCRIPTION file says \"License: GPL (>= 2)\"; the maintainers decided on 2026-09-27 to treat these columns as part of CShapes 2.0 under its dataset license (CC BY-NC-SA 4.0) and asked the authors to confirm (2026-09-27; awaiting their reply).",
       relation:
         'Independent units become "sovereign" assertions by the unit itself. Colonies, protectorates, and mandates become "sovereign" assertions by their owner (the codebook defines the owner as "the state that holds sovereignty over this territory"). Occupied units become "occupies" assertions by their owner (maintainer decision, 2026-09-27). Each dependency\'s status is stated in its notes.',
       subjects:

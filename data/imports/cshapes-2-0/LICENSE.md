@@ -45,5 +45,5 @@ but the data file in the authors' R package (`cshapes_2.0.tar.gz`, on the same p
 package's `DESCRIPTION` file says "License: GPL (>= 2)".
 
 On 2026-09-27 the maintainers decided to treat these columns as part of CShapes 2.0, under its
-dataset license (CC BY-NC-SA 4.0), and to ask the authors to confirm. If the authors say
+dataset license (CC BY-NC-SA 4.0), and asked the authors to confirm by email the same day. If the authors say
 otherwise, this folder will be removed or re-imported without those columns.

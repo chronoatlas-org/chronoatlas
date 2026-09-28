@@ -398,7 +398,23 @@ and 100 GB/month bandwidth as a soft limit):
   - First borders traced from public-domain maps.
 - **Phase 3, contested and uncertain borders:** the full visual language, soft edges, a
   compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
-  example population), keeping "no data" visually distinct.
+  example population), keeping "no data" visually distinct. It also includes:
+  - **Fills that stop at the coast.** OpenHistoricalMap draws many borders a few kilometres out
+    to sea to include coastal waters, often as a ring around each island. About 23% of the
+    Empire of Japan's 1931–39 shape is sea, in bands 4–10 km wide. The map fills the whole shape,
+    so the color runs past the coastline.
+    - **The fix:** the build splits each shape into its land part and its coastal-waters part,
+      using Natural Earth's land. The land part is filled as now. The coastal-waters part gets
+      only a faint tint and no outline, and the legend says "Coastal waters, as the source draws
+      them".
+    - **Why not paint the sea over the fills,** which would be simpler: it would hide small
+      islands missing from the base map's coastline, and in East Asia those are often the most
+      disputed places.
+    - **The base map** moves to Natural Earth's 1:10m coastline at close zooms, so the coast
+      isn't blocky where the split is visible.
+    - Coastal waters stay in the data; this only changes how they're drawn.
+  - **A dashed "edge of imported data" line** where an import's area ends, instead of borders
+    that stop in a straight line.
 - **Phase 4, contribution pipeline:**
   - Refine the issue forms and pull request template from experience.
   - A bot comment summarizing each data change.

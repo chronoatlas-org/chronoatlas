@@ -622,7 +622,7 @@ option each time):
 
 14. **CShapes' status and owner columns** are treated as part of CShapes 2.0, under its dataset
     license (CC BY-NC-SA 4.0), although they come from the authors' R package, whose file says
-    GPL (>= 2). The GPL label is recorded in the folder's LICENSE.md, and the maintainers will ask
-    the authors to confirm. **Occupied units** become `occupies` assertions by their owner
+    GPL (>= 2). The GPL label is recorded in the folder's LICENSE.md, and the maintainers asked
+    the authors to confirm by email the same day (awaiting a reply). **Occupied units** become `occupies` assertions by their owner
     ("Occupied, per CShapes"), not `sovereign` ones. That covers northern and southern Korea in
     1945–48, and Jammu and Kashmir and Azad Kashmir in 1947–49.

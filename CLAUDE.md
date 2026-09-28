@@ -153,7 +153,8 @@ The ones that affect everyday work:
 
 - **Columns from the R package:** its status, owner, and "borders defined" columns come from the
   authors' R package (labelled GPL (>= 2)). They're treated as part of CShapes 2.0 under
-  CC BY-NC-SA 4.0, pending confirmation from the authors.
+  CC BY-NC-SA 4.0. The maintainers asked the authors to confirm (2026-09-27); if they object, the
+  import is re-done without those columns or removed.
 - **Occupied units** become `occupies` by the owner. Colonies, protectorates, and mandates become
   `sovereign` by the owner.
 - **Assertions name CShapes' own units** (`cshapes-<gwcode>`). The hand-written

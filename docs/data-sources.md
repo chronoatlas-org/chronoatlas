@@ -65,8 +65,8 @@ description. Re-check before relying on anything here, because datasets change.
   - **Missing columns:** the GeoJSON, CSV, and SQL downloads lack the `status`, `owner`, and
     `b_def` columns that the codebook lists. Only the data file in the authors' R package
     (`cshapes_2.0.tar.gz`, same page) has them, and its `DESCRIPTION` file says "License: GPL
-    (>= 2)". The maintainers treat them as part of CShapes 2.0 under CC BY-NC-SA 4.0 and will ask
-    the authors to confirm.
+    (>= 2)". The maintainers treat them as part of CShapes 2.0 under CC BY-NC-SA 4.0, and asked the
+    authors to confirm by email on 2026-09-27.
   - **Dates:** the GeoJSON's date strings are shifted by a time zone ("31.12.1885 23:00:00" means
     1 January 1886). The separate year, month, and day columns are right.
   - **Status values** across the whole dataset: independent (365 rows), colony (219), protectorate

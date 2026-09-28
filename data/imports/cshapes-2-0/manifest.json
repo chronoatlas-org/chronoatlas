@@ -3,7 +3,7 @@
   "source_id": "cshapes-2-0",
   "license": "CC BY-NC-SA 4.0 (non-commercial, share-alike), as stated on the dataset page. Everything in this folder is derived from CShapes and carries the same license. See LICENSE.md.",
   "page": "https://icr.ethz.ch/data/cshapes/",
-  "retrieved": "2026-09-28",
+  "retrieved": "2026-09-27T22:55:59.528Z",
   "downloads": [
     {
       "url": "https://icr.ethz.ch/data/cshapes/CShapes-2.0.geojson",
@@ -44,7 +44,7 @@
     }
   },
   "decisions": {
-    "columns": "The GeoJSON, CSV, and SQL files on the dataset page lack the status, owner, and b_def columns that the codebook lists. They are taken from the data file in the authors' R package (cshapes 2.0, from the same page), matched row by row on gwcode, start, and end (all 710 rows match). The package's DESCRIPTION file says \"License: GPL (>= 2)\"; the maintainers decided on 2026-09-27 to treat these columns as part of CShapes 2.0 under its dataset license (CC BY-NC-SA 4.0) and to ask the authors to confirm.",
+    "columns": "The GeoJSON, CSV, and SQL files on the dataset page lack the status, owner, and b_def columns that the codebook lists. They are taken from the data file in the authors' R package (cshapes 2.0, from the same page), matched row by row on gwcode, start, and end (all 710 rows match). The package's DESCRIPTION file says \"License: GPL (>= 2)\"; the maintainers decided on 2026-09-27 to treat these columns as part of CShapes 2.0 under its dataset license (CC BY-NC-SA 4.0) and asked the authors to confirm (2026-09-27; awaiting their reply).",
     "relation": "Independent units become \"sovereign\" assertions by the unit itself. Colonies, protectorates, and mandates become \"sovereign\" assertions by their owner (the codebook defines the owner as \"the state that holds sovereignty over this territory\"). Occupied units become \"occupies\" assertions by their owner (maintainer decision, 2026-09-27). Each dependency's status is stated in its notes.",
     "subjects": "Assertions name CShapes' own units (cshapes-<gwcode>), with polity records in polities/ that stay in this folder. CShapes follows a state through changes of regime under one code (710 is China under the Qing, the Republic, and the People's Republic), while our polities are split by regime, so CShapes rows are not cut up to fit ours. The hand-written polity-crosswalk.yaml records which of our polities is the same state, and when.",
     "dates": "Dates come from the year, month, and day columns (the GeoJSON's date strings are shifted by a time zone). CShapes gives each period's last day; our end is the day after. A row that runs to CShapes' last day (2019-12-31) is imported as \"ongoing\". A start of 1886-01-01 (CShapes' first day) is noted as the start of the data.",
