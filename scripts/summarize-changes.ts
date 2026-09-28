@@ -45,8 +45,12 @@ import type { FileHashes, SideEffects, TimedValue } from './lib/summary.ts';
 import { validateDataset } from './lib/validate-data.ts';
 
 const SITE_URL = 'https://chronoatlas-org.github.io/chronoatlas/';
-/** The most lines per section in the comment; the full summary has them all. */
-const COMMENT_MAX_LINES = 40;
+/**
+ * The most lines per section in the comment, tried in turn until it fits in a GitHub comment
+ * (65,536 characters); the full summary has them all.
+ */
+const COMMENT_MAX_LINES = [40, 20, 10, 5, 2];
+const COMMENT_LIMIT = 65_536;
 /** GitHub's limit for a check's summary page is 1 MiB; stay under it. */
 const FULL_LIMIT = 1_000_000;
 
@@ -201,11 +205,13 @@ export function summarize(options: SummarizeOptions): { comment: string; full: s
   };
 
   const full = fitComment(renderSummary(base, head, changes, context), FULL_LIMIT);
-  const comment = fitComment(
-    renderSummary(base, head, changes, context, { maxLines: COMMENT_MAX_LINES, fullSummaryUrl: options.fullSummaryUrl }),
-    65_536,
-    options.fullSummaryUrl,
-  );
+  // Fewer lines per section until it fits; as a last resort, cut at a line (fitComment).
+  let comment = '';
+  for (const maxLines of COMMENT_MAX_LINES) {
+    comment = renderSummary(base, head, changes, context, { maxLines, fullSummaryUrl: options.fullSummaryUrl });
+    if (comment.length <= COMMENT_LIMIT) break;
+  }
+  comment = fitComment(comment, COMMENT_LIMIT, options.fullSummaryUrl);
   return { comment, full, changed: hasChanges(changes), count: Object.values(changes).reduce((n, list) => n + list.length, 0) };
 }
 

@@ -28,19 +28,20 @@ It says, in words:
   changed license, a changed import manifest, crosswalk links, removed IDs (which would break
   shared links), and changes inside import folders (which should come from a re-import, never a
   hand edit).
+- **What it changes elsewhere on the map:** contested areas, "sources differ" areas, and land
+  areas that appear, disappear, or change, day by day. A one-line change to a crosswalk can move
+  these across a whole country, which the file diff never shows.
 - **Records:** who held what, how (administered, sovereign, occupied, claimed), from when until
   when, and per which source. Dates show their precision: "1901 (year only)". An end date is the
   first day a record no longer applied, as in the data.
 - **Borders:** for a changed shape, the area before and after, how much was gained and lost, and
   roughly where, with a link to the live map there (which still shows `main`'s borders).
 - **Events, names, figures, crosswalk links, sources, and other files.**
-- **What it changes elsewhere on the map:** contested areas, "sources differ" areas, and land
-  areas that appear, disappear, or change, day by day. A one-line change to a crosswalk can move
-  these across a whole country, which the file diff never shows.
 - **Still for a person to check:** what no program can check. That's your part (sections 2–4).
 
-Long sections are cut short in the comment; the link at the end of a section opens the full
-summary on the workflow run's page. Open the files themselves (the **Files changed** tab) when the
+Long sections are cut short in the comment (the side effects come first, so they're never the part
+that's cut); the link at the end of a section opens the full summary on the workflow run's page.
+Names that changed the same way, as after a re-import, are reported together in one line. Open the files themselves (the **Files changed** tab) when the
 summary says something you didn't expect, or when you want to read an event's summary in full.
 
 If the summary says `npm run validate` found problems, the build check will fail too. Ask the

@@ -465,6 +465,66 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
   }
   section('⚠️ For the maintainers', flags);
 
+  // Side effects come next: they're what a diff never shows, so they're never the part cut short.
+  const side = context.side;
+  if (side || context.skippedSide) {
+    out.push('### What it changes elsewhere on the map', '');
+    if (context.skippedSide || !side) {
+      out.push('Nothing that moves contested areas, "sources differ" areas, or land areas changed, so they weren\'t recomputed.', '');
+    } else {
+      const pair = (key: string) => key.split('\t');
+      const amount = (c: TimedChange) =>
+        c.before === 0 ? `new, ${km2(c.after)}` : c.after === 0 ? `gone (was ${km2(c.before)})` : `${km2(c.before)} → ${km2(c.after)}`;
+      const lines = (list: TimedChange[] | undefined, label: (key: string) => string) =>
+        (list ?? []).map((c) => `- ${label(c.key)}, ${span(c.s0, c.e0)}: ${amount(c)}`);
+      const groups: [string, TimedChange[] | undefined, (key: string) => string, string][] = [
+        [
+          'Contested areas',
+          side.contested,
+          (key) => {
+            const [facto, jure] = pair(key);
+            return `administered by ${nameOf(facto)}, legally ${nameOf(jure)}'s`;
+          },
+          'Administered by one state and legally recognized as another\'s (including "possibly contested"), in km².',
+        ],
+        [
+          'Sources differ',
+          side.differ,
+          (key) => {
+            const [main, second] = pair(key);
+            return `OpenHistoricalMap: ${nameOf(main)}; Cliopatria: ${nameOf(second)}`;
+          },
+          'Where the default map and the second opinion name different holders, in km².',
+        ],
+        [
+          'Land areas',
+          side.areas,
+          (key) => {
+            const [polity, relation] = pair(key);
+            return `${nameOf(polity)}, ${relationWords({ relation } as Assertion).toLowerCase()}`;
+          },
+          'Land held on the default map, as the territory panel shows it.',
+        ],
+      ];
+      for (const [title, list, label, about] of groups) {
+        if (list === undefined) continue;
+        if (list.length === 0) {
+          out.push(`**${title}:** no change.`, '');
+          continue;
+        }
+        out.push(`**${title}** (${number(list.length)} change${list.length === 1 ? '' : 's'}). ${about}`, '');
+        const all = lines(list, label);
+        out.push(...all.slice(0, maxLines));
+        if (all.length > maxLines) {
+          const more = `…and ${number(all.length - maxLines)} more`;
+          out.push(`- ${options.fullSummaryUrl ? `[${more} in the full summary](${options.fullSummaryUrl})` : more}.`);
+        }
+        out.push('');
+      }
+    }
+  }
+
+
   // Records (assertions).
   const assertionLines = changes.assertions.map((c) => {
     const a = (c.after ?? c.before)!;
@@ -553,7 +613,8 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
       const { id: _id, edge_precision: _edge, ...rest } = p ?? ({} as ShapeFeature['properties']);
       return rest;
     };
-    if (!sameValue(otherProperties(c.before?.properties), otherProperties(c.after?.properties))) details.push('other properties changed');
+    const properties = manifestChanges(otherProperties(c.before?.properties), otherProperties(c.after?.properties));
+    if (properties.length > 0) details.push(`properties: ${properties.join('; ')}`);
     return `${head}${usedBy} ${fileNote(c.file)}\n${details.map((d) => `  - ${d}`).join('\n')}`;
   });
   section('Borders', shapeLines, countsOf(changes.shapes));
@@ -599,11 +660,28 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
     if (c.kind === 'removed') return `${head} ${fileNote(c.file)}`;
     const details: string[] = [];
     const b = c.before;
-    const key = (n: Polity['names'][number]) => JSON.stringify([n.text, n.lang, n.start, n.end, n.sources]);
-    const old = new Set((b?.names ?? []).map(key));
-    const now = new Set((p.names ?? []).map(key));
-    for (const n of p.names ?? []) if (!old.has(key(n))) details.push(`name ${b ? 'added or changed' : 'added'}: ${nameText(n)}`);
-    for (const n of b?.names ?? []) if (!now.has(key(n))) details.push(`name removed or changed: ${nameText(n)}`);
+    // Names are matched by text and language. Names that changed the same way (a re-import often
+    // adds a relation to every name's sources) are reported together, in one line.
+    type Name = Polity['names'][number];
+    const nameKey = (n: Name) => JSON.stringify([n.text, n.lang]);
+    const oldNames = new Map((b?.names ?? []).map((n) => [nameKey(n), n]));
+    const newNames = new Map((p.names ?? []).map((n) => [nameKey(n), n]));
+    for (const [k, n] of newNames) if (!oldNames.has(k)) details.push(`name added: ${nameText(n)}`);
+    for (const [k, n] of oldNames) if (!newNames.has(k)) details.push(`name removed: ${nameText(n)}`);
+    const sameChange = new Map<string, Name[]>();
+    for (const [k, n] of newNames) {
+      const was = oldNames.get(k);
+      if (!was || sameValue(was, n)) continue;
+      const parts: string[] = [];
+      if (was.start !== n.start || was.end !== n.end) parts.push(`dates ${period(was.start, was.end)} → ${period(n.start, n.end)}`);
+      if (!sameValue(was.sources, n.sources)) parts.push(`sources ${citations(was.sources)} → ${citations(n.sources)}`);
+      const change = parts.join('; ') || 'changed';
+      sameChange.set(change, [...(sameChange.get(change) ?? []), n]);
+    }
+    for (const [change, names] of sameChange) {
+      const which = names.length === 1 ? `“${plain(names[0].text, 80)}” (${code(names[0].lang)})` : `${names.length} names (${names.slice(0, 10).map((n) => code(n.lang)).join(', ')}${names.length > 10 ? `, and ${names.length - 10} more` : ''})`;
+      details.push(`${which}: ${change}`);
+    }
     if (b && b.type !== p.type) details.push(`type: ${b.type ? code(b.type) : 'none'} → ${p.type ? code(p.type) : 'none'}`);
     else if (!b && p.type) details.push(`type: ${code(p.type)}`);
     if (b && b.wikidata !== p.wikidata) details.push(`Wikidata ID: ${b.wikidata ? code(b.wikidata) : 'none'} → ${p.wikidata ? code(p.wikidata) : 'none'}`);
@@ -666,65 +744,6 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
     return `- **${KIND_WORDS[f.kind]}** ${code(f.path)}${fields.length ? `\n${fields.slice(0, 12).map((l) => `  - ${l}`).join('\n')}${fields.length > 12 ? `\n  - …and ${fields.length - 12} more fields` : ''}` : ''}`;
   });
   section('Other files', otherLines, `${changes.otherFiles.length}`);
-
-  // Side effects.
-  const side = context.side;
-  if (side || context.skippedSide) {
-    out.push('### What it changes elsewhere on the map', '');
-    if (context.skippedSide || !side) {
-      out.push('Nothing that moves contested areas, "sources differ" areas, or land areas changed, so they weren\'t recomputed.', '');
-    } else {
-      const pair = (key: string) => key.split('\t');
-      const amount = (c: TimedChange) =>
-        c.before === 0 ? `new, ${km2(c.after)}` : c.after === 0 ? `gone (was ${km2(c.before)})` : `${km2(c.before)} → ${km2(c.after)}`;
-      const lines = (list: TimedChange[] | undefined, label: (key: string) => string) =>
-        (list ?? []).map((c) => `- ${label(c.key)}, ${span(c.s0, c.e0)}: ${amount(c)}`);
-      const groups: [string, TimedChange[] | undefined, (key: string) => string, string][] = [
-        [
-          'Contested areas',
-          side.contested,
-          (key) => {
-            const [facto, jure] = pair(key);
-            return `administered by ${nameOf(facto)}, legally ${nameOf(jure)}'s`;
-          },
-          'Administered by one state and legally recognized as another\'s (including "possibly contested"), in km².',
-        ],
-        [
-          'Sources differ',
-          side.differ,
-          (key) => {
-            const [main, second] = pair(key);
-            return `OpenHistoricalMap: ${nameOf(main)}; Cliopatria: ${nameOf(second)}`;
-          },
-          'Where the default map and the second opinion name different holders, in km².',
-        ],
-        [
-          'Land areas',
-          side.areas,
-          (key) => {
-            const [polity, relation] = pair(key);
-            return `${nameOf(polity)}, ${relationWords({ relation } as Assertion).toLowerCase()}`;
-          },
-          'Land held on the default map, as the territory panel shows it.',
-        ],
-      ];
-      for (const [title, list, label, about] of groups) {
-        if (list === undefined) continue;
-        if (list.length === 0) {
-          out.push(`**${title}:** no change.`, '');
-          continue;
-        }
-        out.push(`**${title}** (${number(list.length)} change${list.length === 1 ? '' : 's'}). ${about}`, '');
-        const all = lines(list, label);
-        out.push(...all.slice(0, maxLines));
-        if (all.length > maxLines) {
-          const more = `…and ${number(all.length - maxLines)} more`;
-          out.push(`- ${options.fullSummaryUrl ? `[${more} in the full summary](${options.fullSummaryUrl})` : more}.`);
-        }
-        out.push('');
-      }
-    }
-  }
 
   out.push(
     '### Still for a person to check',

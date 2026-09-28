@@ -281,6 +281,38 @@ describe('renderSummary', () => {
   });
 });
 
+describe('renderSummary on a re-import', () => {
+  // A re-import often changes every name's sources the same way, and a shape's source version.
+  const names = (relations: string) =>
+    ['en', 'fr', 'de'].map((lang) => ({ text: `Testland (${lang})`, lang, sources: [{ source: 'test-source', locator: relations }] }));
+  const shape = (version: number) => ({
+    file: 'data/shapes/square.geojson',
+    value: {
+      type: 'Feature' as const,
+      properties: { id: 'square', edge_precision: 'unknown', version },
+      geometry: { type: 'Polygon' as const, coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] },
+    },
+  });
+  const base = dataset({ polities: [{ file: 'data/polities/testland.yaml', value: { id: 'testland', names: names('relations 1') } }], shapes: [shape(1)] });
+  const head = dataset({ polities: [{ file: 'data/polities/testland.yaml', value: { id: 'testland', names: names('relations 1, 2') } }], shapes: [shape(2)] });
+  const text = renderSummary(base, head, compareDatasets(base, head), {
+    side: { contested: [{ key: 'testland\totherland', s0: 2_415_386, e0: 2_415_751, before: 0, after: 1200 }] },
+  });
+
+  it('reports names that changed the same way in one line', () => {
+    expect(text).toContain('3 names (`en`, `fr`, `de`): sources A Test Atlas, relations 1 → A Test Atlas, relations 1, 2');
+    expect(text).not.toContain('name added');
+  });
+
+  it('names the shape properties that changed, with their values', () => {
+    expect(text).toContain('properties: `version`: `1` → `2`');
+  });
+
+  it('puts what changes elsewhere on the map before the detailed lists', () => {
+    expect(text.indexOf('### What it changes elsewhere')).toBeLessThan(text.indexOf('### Borders'));
+  });
+});
+
 describe('fitComment', () => {
   it('leaves short summaries alone, and cuts long ones at a line with a pointer to the full one', () => {
     expect(fitComment('short', 100)).toBe('short');
