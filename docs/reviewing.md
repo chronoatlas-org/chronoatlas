@@ -191,10 +191,20 @@ because the second lets the project account bypass it and the first doesn't:
    Actions). Under **Bypass list**, add **Repository admin** with **Always allow**, so the project
    account can keep adding checked work by fast-forward. Save.
 
-**Let the re-import button open pull requests** (**Actions → General**, at the bottom, **Workflow
-permissions**): keep **Read repository contents and packages permissions**, and tick **Allow
-GitHub Actions to create and approve pull requests**. Save. (Approvals aren't required yet, so
-the "approve" half has no effect.)
+**Let the re-import button open pull requests.** The organization's setting comes first: while
+it's off, the repository's checkbox is greyed out (the pointer shows a "not allowed" sign).
+
+1. **The organization:** open
+   [the organization's Actions settings](https://github.com/organizations/chronoatlas-org/settings/actions)
+   (profile picture → **Your organizations** → `chronoatlas-org` → **Settings** → **Actions** →
+   **General**). At the bottom, under **Workflow permissions**, keep **Read repository contents and
+   packages permissions**, tick **Allow GitHub Actions to create and approve pull requests**, and
+   press **Save**.
+2. **The repository:** in the repository's **Settings → Actions → General**, the same checkbox at
+   the bottom is now available. Reload the page, tick it if it isn't ticked, and press **Save**.
+
+(Approvals aren't required yet, so the "approve" half has no effect. Keep the read-only default:
+each workflow asks for exactly the extra permissions it needs.)
 
 **Keep first-time contributors' checks waiting for approval** (**Actions → General → Approval for
 running fork pull request workflows from contributors**): keep **Require approval for first-time
