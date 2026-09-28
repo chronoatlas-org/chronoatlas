@@ -200,7 +200,13 @@ LTS, and the GitHub CLI are installed.
   `npm run validate` checks everything against `schemas/*.schema.json` plus references, dates,
   and geometry. Then `npm run build-data` writes `public/data/` (gitignored), which the site
   loads:
-  - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders`;
+  - `tiles/<version>/{z}/{x}/{y}.pbf`: vector tiles, zoom 0–7, source-layer `borders` (the
+    fills) and `lines` (the border lines, written apart by `scripts/lib/outlines.ts` without the
+    cuts along an import's edge or the stretches more than 2 km out to sea). The de jure and
+    second-opinion tile sets have the same two layers, and the map draws every border line from
+    `lines`, never by outlining a fill;
+  - `edges.json`: where each import's area ends, over land, while its years apply ("Edge of
+    imported data");
   - `tiles.json`: version, bounds, zooms, and the change index;
   - `sources.json`: every source's title and address;
   - `events.json`: every event's day range, importance, title, and place, for the timeline's

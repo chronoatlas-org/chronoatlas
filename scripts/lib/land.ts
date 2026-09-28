@@ -38,6 +38,11 @@ export class LandIndex {
     this.pieces = clipped.map((polygon) => ({ polygon, box: boxOf(polygon) }));
   }
 
+  /** Every land polygon in the area. */
+  all(): MultiPolygon {
+    return this.pieces.map((p) => p.polygon);
+  }
+
   /** The land polygons whose boxes touch `box`. */
   near(box: Box): MultiPolygon {
     return this.pieces.filter((p) => overlaps(p.box, box)).map((p) => p.polygon);

@@ -10,7 +10,7 @@
 // as dotted outlines: a "second opinion" (setSecondOpinion).
 //
 // Borders come as vector tiles (built by scripts/build-data.ts), so only the tiles in view are
-// downloaded. The selected day lives in MapLibre's global state (`['global-state', 'day']`),
+// downloaded. Each tile holds the fills and, as a layer of their own, the border lines. The selected day lives in MapLibre's global state (`['global-state', 'day']`),
 // which the filters and colors below read. It is only updated when the day crosses a "change
 // day" from the change index, because between change days the map looks identical.
 
@@ -57,6 +57,12 @@ export interface HistoricalOptions {
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
+/**
+ * The layer, in each tile set, with the border lines. The build writes them apart from the fills,
+ * without the straight cuts where an import's area ends and without the stretches at sea
+ * (scripts/lib/outlines.ts), so the lines are drawn from it rather than by outlining the fills.
+ */
+const LINES = 'lines';
 /**
  * A border is shown from its earliest possible start (s0) until its last possible end: e1 when
  * the end is known only to the month or year, otherwise e0, the day it ended.
@@ -252,7 +258,7 @@ export class HistoricalLayers {
       id: 'borders-line',
       type: 'line',
       source: 'borders',
-      'source-layer': index.layer,
+      'source-layer': LINES,
       filter: ACTIVE,
       paint: {
         'line-color': '#5b5146',
@@ -264,7 +270,7 @@ export class HistoricalLayers {
       id: 'borders-selected',
       type: 'line',
       source: 'borders',
-      'source-layer': index.layer,
+      'source-layer': LINES,
       filter: ['all', ACTIVE, ['==', ['get', 'polity'], ['global-state', 'selected']]],
       paint: {
         'line-color': '#1f2328',
@@ -304,7 +310,7 @@ export class HistoricalLayers {
           id,
           type: 'line',
           source: 'dejure',
-          'source-layer': dejure.layer,
+          'source-layer': LINES,
           filter: ['all', ACTIVE, dependent ? ['==', ['get', 'dep'], 1] : ['!=', ['get', 'dep'], 1]],
           layout: { visibility: 'none' },
           paint: {
@@ -319,7 +325,7 @@ export class HistoricalLayers {
         id: 'dejure-selected',
         type: 'line',
         source: 'dejure',
-        'source-layer': dejure.layer,
+        'source-layer': LINES,
         filter: ['all', ACTIVE, ['==', ['get', 'polity'], ['global-state', 'selected']]],
         layout: { visibility: 'none' },
         paint: { 'line-color': '#1f2328', 'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4.5] },
@@ -384,7 +390,7 @@ export class HistoricalLayers {
         id: 'second-line',
         type: 'line',
         source: 'second',
-        'source-layer': second.layer,
+        'source-layer': LINES,
         filter: ACTIVE,
         layout: { visibility: 'none', 'line-cap': 'round' },
         paint: {
@@ -397,12 +403,28 @@ export class HistoricalLayers {
     this.setView(this.view);
     this.setSecondOpinion(this.secondOpinion);
 
+    // Where the imported data ends: a dashed gray line over land, while the imports' years
+    // apply, so borders cut at the edge don't read as real borders (public/data/edges.json).
+    map.addSource('edges', { type: 'geojson', data: dataUrl('edges.json') });
+    map.addLayer({
+      id: 'data-edge',
+      type: 'line',
+      source: 'edges',
+      filter: ['all', ['<=', ['get', 's0'], DAY], ['<', DAY, ['get', 'e0']]],
+      layout: { 'line-cap': 'butt' },
+      paint: {
+        'line-color': '#6e6455',
+        'line-width': ['interpolate', ['linear'], ['zoom'], 2, 1, 6, 1.6],
+        'line-dasharray': [5, 3],
+      },
+    });
+
     // A selected event's effects: dashed (not only a different color), whatever the date.
     map.addLayer({
       id: 'borders-effects',
       type: 'line',
       source: 'borders',
-      'source-layer': index.layer,
+      'source-layer': LINES,
       filter: this.effectsFilter(),
       paint: {
         'line-color': '#0550ae',

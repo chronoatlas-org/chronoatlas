@@ -5,6 +5,7 @@ import {
   buildBorders,
   buildChanges,
   buildContested,
+  buildEdges,
   buildEventFiles,
   buildEvents,
   buildPolityFiles,
@@ -218,6 +219,25 @@ describe('the default map', () => {
     expect(collection.features.map((f) => f.properties?.id)).toEqual(['mine']);
   });
 
+  it('writes each border\'s lines apart from its fill, without the cut along the import\'s edge', () => {
+    // Made-up shape and record (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const { lines } = buildBorders(
+      {
+        sources: [], polities: [], events: [], figures: [], coverage: [], crosswalks: [], imports: [], problems: [],
+        shapes: [{ file: 'cut', value: { type: 'Feature', properties: { id: 'cut', edge_precision: 'unknown' }, geometry: { type: 'Polygon', coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] } } }],
+        assertions: [
+          { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [{ id: 'cut-1', relation: 'administers', subject: 'testland', shape: 'cut', start: '1901', end: '1905', sources: cite }] },
+        ],
+      },
+      { areas: new Map([['data/imports/openhistoricalmap', [-10, -10, 1, 10]]]) },
+    );
+    expect(lines.features).toHaveLength(1);
+    expect(lines.features[0].properties).toEqual({ id: 'cut-1', polity: 'testland', s0: civilToJdn(1901, 1, 1), e0: civilToJdn(1905, 1, 1), e1: civilToJdn(1905, 12, 31) });
+    // The east side, along the area's edge at 1°E, is left out.
+    expect(lines.features[0].geometry).toEqual({ type: 'MultiLineString', coordinates: [[[1, 1], [0, 1], [0, 0], [1, 0]]] });
+  });
+
   it('adds the last possible end day only to borders whose end is uncertain', () => {
     // Made-up shapes and records (Testland), not real ones.
     const cite = [{ source: 'test-source', locator: 'p. 1' }];
@@ -236,6 +256,16 @@ describe('the default map', () => {
     });
     const e1 = Object.fromEntries(collection.features.map((f) => [f.properties?.id, f.properties?.e1]));
     expect(e1).toEqual({ year: civilToJdn(1905, 12, 31), month: civilToJdn(1905, 3, 31), day: undefined, open: undefined });
+  });
+});
+
+describe('the edge of imported data', () => {
+  it('draws one edge for imports that share an area and years, only in those years', () => {
+    // The real manifests: OpenHistoricalMap, CShapes, and Cliopatria all cover 10–55°N,
+    // 73–150°E, 1900–1950. Without land to check, the whole edge is drawn.
+    const edges = buildEdges(loadDataset());
+    expect(edges.features).toHaveLength(1);
+    expect(edges.features[0].properties).toMatchObject({ s0: civilToJdn(1900, 1, 1), e0: civilToJdn(1951, 1, 1) });
   });
 });
 

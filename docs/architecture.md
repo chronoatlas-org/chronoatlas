@@ -198,6 +198,13 @@ sovereign: China (per CShapes)".
   - The tools are pure Node.js (geojson-vt, vt-pbf), so the build runs on Windows, Mac, and
     Linux. We avoid PMTiles for now, because there are open reports of it loading unreliably
     on GitHub Pages.
+- **Border lines apart from fills (Phase 3, step 3):** each tile set has two layers, the fills
+  and the lines. The build writes each border's outline as lines without the straight cuts where
+  an import's area ends, and without stretches more than 2 km from Natural Earth's land (the
+  rings OpenHistoricalMap draws around islands). Borders that follow a coast are kept. The map
+  draws every line from that layer, and the edge of the imported data as a dashed line of its
+  own (`public/data/edges.json`). This adds about half again to each tile set: the opening
+  view's default tiles went from about 0.28 to 0.43 MB.
 - **Change index:** the build lists every day on which some border starts, stops being
   uncertain, may have ended, or has certainly ended (`changes` in `public/data/tiles.json`). The map only updates when the date
   crosses one of those days (`src/map/changes.ts`, a binary search); between them it looks
@@ -276,7 +283,7 @@ numbers as absolute speeds.
 | A second opinion (another source's borders) | dotted teal outlines, plus a legend label | built (Phase 2, step 10) |
 | Sources differ (compare view only) | a pattern of its own, plus a legend label | planned (Phase 3, step 7) |
 | Coastal waters, as the source draws them | a faint tint, no outline | planned (Phase 3, step 4) |
-| Edge of imported data | dashed gray line, plus a label | planned (Phase 3, step 3) |
+| Edge of imported data | dashed gray line over land, plus a legend label (a label on the map comes with map text) | built (Phase 3, step 3) |
 | Treaty or surveyed line, or precision unknown | solid line (the panel says which) | built |
 | Approximate border | softened (blurred) line | planned (Phase 3, step 8) |
 | Frontier zone | a wide soft band, plus a label | planned (Phase 3, step 8) |

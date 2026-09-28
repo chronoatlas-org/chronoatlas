@@ -2,10 +2,13 @@
 //   public/data/tiles/<version>/{z}/{x}/{y}.pbf
 //                          every territorial assertion joined to its shape, with dates as day
 //                          numbers, cut into vector tiles so the browser downloads only what's in
-//                          view. <version> is a fingerprint of the data, so browsers never mix
-//                          tiles from two different builds.
+//                          view. Each tile has two layers: the fills, and the border lines
+//                          (apart from the fills; see scripts/lib/outlines.ts). <version> is a
+//                          fingerprint of the data, so browsers never mix tiles from two builds.
 //   public/data/tiles.json where the tiles are, and the change index: every day on which the map
 //                          changes, so dragging the timeline only redraws when one is crossed
+//   public/data/edges.json           where each import's area ends, over land ("Edge of imported
+//                          data"), so borders cut at that edge don't read as real borders
 //   public/data/sources.json         each source's title and address
 //   public/data/events.json          every event's dates, importance, title, and place, for the
 //                          timeline's markers and the map's pulse
@@ -34,6 +37,7 @@ import { areaKm2 } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
 import { LandIndex, landPart, touchesEdge } from './lib/land.ts';
+import { borderLines, boxEdgeOnLand, LandDistance } from './lib/outlines.ts';
 import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
@@ -133,8 +137,20 @@ export function onDefaultMap(file: string): boolean {
   return !file.startsWith('data/imports/') || file.startsWith('data/imports/openhistoricalmap/');
 }
 
-export function buildBorders(ds: Dataset) {
-  return buildBorderLayer(ds, onDefaultMap);
+/**
+ * What the build needs to write border lines apart from the fills: each import folder's area (the
+ * lines leave out its edges) and, when available, the land (the lines leave out stretches at sea).
+ */
+export interface OutlineContext {
+  areas: ReadonlyMap<string, Box>;
+  land?: LandDistance;
+}
+
+/** The import folder an assertions file belongs to ("data/imports/<name>"), if any. */
+const folderOf = (file: string) => /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
+
+export function buildBorders(ds: Dataset, outlines?: OutlineContext) {
+  return buildBorderLayer(ds, onDefaultMap, undefined, outlines);
 }
 
 /**
@@ -142,32 +158,42 @@ export function buildBorders(ds: Dataset) {
  * colony shares its owner's color). `dep` marks colonies, protectorates, mandates, and occupied
  * units.
  */
-export function buildDejure(ds: Dataset) {
-  return buildBorderLayer(ds, isDejure, (shape): Record<string, number> => {
-    const status = shape.properties.cshapes_status;
-    return typeof status === 'string' && status !== 'independent' ? { dep: 1 } : {};
-  });
+export function buildDejure(ds: Dataset, outlines?: OutlineContext) {
+  return buildBorderLayer(
+    ds,
+    isDejure,
+    (shape): Record<string, number> => {
+      const status = shape.properties.cshapes_status;
+      return typeof status === 'string' && status !== 'independent' ? { dep: 1 } : {};
+    },
+    outlines,
+  );
 }
 
 /** The "second opinion" layer: Cliopatria's borders, drawn as outlines over the default map. */
-export function buildSecondOpinion(ds: Dataset) {
-  return buildBorderLayer(ds, isSecondOpinion);
+export function buildSecondOpinion(ds: Dataset, outlines?: OutlineContext) {
+  return buildBorderLayer(ds, isSecondOpinion, undefined, outlines);
 }
 
+/**
+ * One source's borders: the fills (`collection`), and the lines (`lines`) drawn apart from them,
+ * without the edges of the import's area or, given the land, the stretches at sea.
+ */
 function buildBorderLayer(
   ds: Dataset,
   include: (file: string) => boolean,
   extra: (shape: ShapeFeature) => Record<string, number> = () => ({}),
+  outlines?: OutlineContext,
 ) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
     .filter(({ file }) => include(file))
-    .flatMap(({ value }) => value)
-    .filter((a): a is Assertion & { shape: string } => TERRITORIAL_RELATIONS.includes(a.relation) && !!a.shape);
+    .flatMap(({ file, value }) => value.map((a) => ({ a, folder: folderOf(file) })))
+    .filter((x): x is { a: Assertion & { shape: string }; folder: string | undefined } => TERRITORIAL_RELATIONS.includes(x.a.relation) && !!x.a.shape);
 
-  const items = territorial.map((a) => {
+  const items = territorial.map(({ a, folder }) => {
     const shape = shapes.get(a.shape)!;
-    return { assertion: a, shape, box: bounds(shape.geometry), ...dayRanges(a.start, a.end) };
+    return { assertion: a, folder, shape, box: bounds(shape.geometry), ...dayRanges(a.start, a.end) };
   });
   const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1 })));
 
@@ -193,11 +219,35 @@ function buildBorderLayer(
       geometry: shape.geometry as GeoJSON.Geometry,
     })),
   };
+  // The lines: each shape's outline is worked out once, however many records use the shape.
+  const outlineOf = new Map<string, GeoJSON.Position[][]>();
+  const lines: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: items.flatMap(({ assertion: a, folder, shape, s0, e0, e1 }) => {
+      const key = `${a.shape} ${folder ?? ''}`;
+      let coordinates = outlineOf.get(key);
+      if (!coordinates) {
+        const area = folder ? outlines?.areas.get(folder) : undefined;
+        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land);
+        outlineOf.set(key, coordinates);
+      }
+      if (coordinates.length === 0) return [];
+      return [
+        {
+          type: 'Feature' as const,
+          // What the line layers filter on: which record and polity, and when (no s1: lines aren't
+          // drawn lighter while a start is uncertain; the fill is).
+          properties: { id: a.id, polity: a.subject, s0, e0, ...(e1 > e0 ? { e1 } : {}), ...extra(shape) },
+          geometry: { type: 'MultiLineString' as const, coordinates },
+        },
+      ];
+    }),
+  };
   const dataBounds = items.reduce<Bounds>(
     (all, { box }) => [Math.min(all[0], box[0]), Math.min(all[1], box[1]), Math.max(all[2], box[2]), Math.max(all[3], box[3])],
     [180, 90, -180, -90],
   );
-  return { collection, bounds: dataBounds };
+  return { collection, lines, bounds: dataBounds };
 }
 
 const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
@@ -275,16 +325,60 @@ function describeArea([w, s, e, n]: Box): string {
   return `${lat(s)}–${lat(n)}, ${lon(w)}–${lon(e)}`;
 }
 
-/** Each import folder's area, from the settings.bbox its manifest records. */
-function importAreas(ds: Dataset): Map<string, Box> {
-  const areas = new Map<string, Box>();
+/** Each import folder's settings from its manifest: its area (settings.bbox) and years. */
+function importSettings(ds: Dataset): Map<string, { box: Box; fromYear?: number; toYear?: number }> {
+  const settings = new Map<string, { box: Box; fromYear?: number; toYear?: number }>();
   for (const folder of ds.imports) {
     const file = join(ROOT, folder, 'manifest.json');
     if (!existsSync(file)) continue;
-    const bbox = JSON.parse(readFileSync(file, 'utf8')).settings?.bbox;
-    if (bbox) areas.set(folder, [bbox.west, bbox.south, bbox.east, bbox.north]);
+    const s = JSON.parse(readFileSync(file, 'utf8')).settings;
+    if (s?.bbox) settings.set(folder, { box: [s.bbox.west, s.bbox.south, s.bbox.east, s.bbox.north], fromYear: s.fromYear, toYear: s.toYear });
   }
-  return areas;
+  return settings;
+}
+
+/** Each import folder's area, from the settings.bbox its manifest records. */
+function importAreas(ds: Dataset): Map<string, Box> {
+  return new Map([...importSettings(ds)].map(([folder, { box }]) => [folder, box]));
+}
+
+/**
+ * Natural Earth's 1:10m land around the imports' areas (a degree wider, so the edges of the areas
+ * are well inside it), or undefined when there are no areas or no land file.
+ */
+export function loadLand(ds: Dataset): LandIndex | undefined {
+  const areas = [...importAreas(ds).values()];
+  if (areas.length === 0 || !existsSync(LAND_FILE)) return undefined;
+  const extent: Box = [
+    Math.min(...areas.map((a) => a[0])) - 1,
+    Math.min(...areas.map((a) => a[1])) - 1,
+    Math.max(...areas.map((a) => a[2])) + 1,
+    Math.max(...areas.map((a) => a[3])) + 1,
+  ];
+  const land = JSON.parse(readFileSync(LAND_FILE, 'utf8')).features.map((f: { geometry: ShapeFeature['geometry'] }) => f.geometry);
+  return new LandIndex(land, extent);
+}
+
+/**
+ * public/data/edges.json: where each import's area ends, over land, while its years apply, so
+ * the map can draw "Edge of imported data" instead of letting borders stop in a straight line.
+ * Imports that share an area and years share one edge.
+ */
+export function buildEdges(ds: Dataset, land?: LandDistance): GeoJSON.FeatureCollection {
+  const seen = new Set<string>();
+  const features: GeoJSON.Feature[] = [];
+  for (const [folder, { box, fromYear, toYear }] of importSettings(ds)) {
+    const s0 = fromYear !== undefined ? parseEdtfDate(String(fromYear).padStart(4, '0')).earliest : -FAR_FUTURE;
+    const e0 = toYear !== undefined ? parseEdtfDate(String(toYear + 1).padStart(4, '0')).earliest : FAR_FUTURE;
+    const key = `${box.join(',')} ${s0} ${e0}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const coordinates = boxEdgeOnLand(box, land);
+    if (coordinates.length > 0) {
+      features.push({ type: 'Feature', properties: { folder, s0, e0 }, geometry: { type: 'MultiLineString', coordinates } });
+    }
+  }
+  return { type: 'FeatureCollection', features };
 }
 
 /**
@@ -360,15 +454,11 @@ export function computeAreas(
   return byPolity;
 }
 
-/** computeAreas with Natural Earth's land polygons, cut to the imports' areas. */
-export function buildAreas(ds: Dataset): Map<string, AreaFigure[]> {
-  const areas = importAreas(ds);
-  if (areas.size === 0 || !existsSync(LAND_FILE)) return new Map();
-  const all = [...areas.values()];
-  const extent: Box = [Math.min(...all.map((a) => a[0])), Math.min(...all.map((a) => a[1])), Math.max(...all.map((a) => a[2])), Math.max(...all.map((a) => a[3]))];
-  const land = JSON.parse(readFileSync(LAND_FILE, 'utf8')).features.map((f: { geometry: ShapeFeature['geometry'] }) => f.geometry);
+/** computeAreas with Natural Earth's land polygons (from loadLand). */
+export function buildAreas(ds: Dataset, land = loadLand(ds)): Map<string, AreaFigure[]> {
+  if (!land) return new Map();
   const release = JSON.parse(readFileSync(join(LAND_FOLDER, 'manifest.json'), 'utf8')).release;
-  return computeAreas(ds, new LandIndex(land, extent), areas, { source: 'natural-earth', locator: `1:10m land, release ${release}` });
+  return computeAreas(ds, land, importAreas(ds), { source: 'natural-earth', locator: `1:10m land, release ${release}` });
 }
 
 /** Where the default map's source and a de jure source disagree (see scripts/lib/contested.ts). */
@@ -409,7 +499,7 @@ export function changeDays(collection: GeoJSON.FeatureCollection): number[] {
   for (const { properties } of collection.features) {
     for (const key of ['s0', 's1', 'e0', 'e1']) {
       const day = properties?.[key];
-      if (typeof day === 'number' && day < FAR_FUTURE) days.add(day);
+      if (typeof day === 'number' && Math.abs(day) < FAR_FUTURE) days.add(day);
     }
   }
   return [...days].sort((a, b) => a - b);
@@ -679,12 +769,16 @@ function main(): void {
   rmSync(OUT_DIR, { recursive: true, force: true });
   mkdirSync(OUT_DIR, { recursive: true });
 
-  /** Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. */
-  const writeTileSet = (dir: string, layer: string, collection: GeoJSON.FeatureCollection, bounds: Bounds) => {
-    const version = createHash('sha256').update(JSON.stringify(collection)).digest('hex').slice(0, 12);
+  /**
+   * Writes one layer's tiles under public/data/<dir>/<version>/ and says where they went. Its
+   * border lines go in the same tiles, as the layer `lines`.
+   */
+  const writeTileSet = (dir: string, layer: string, collection: GeoJSON.FeatureCollection, bounds: Bounds, lines?: GeoJSON.FeatureCollection) => {
+    const version = createHash('sha256').update(JSON.stringify(collection)).update(JSON.stringify(lines ?? null)).digest('hex').slice(0, 12);
     let count = 0;
     let bytes = 0;
-    for (const tile of buildTiles(collection, { layer, maxZoom: TILE_MAX_ZOOM, bounds })) {
+    const extraLayers = lines ? { lines } : undefined;
+    for (const tile of buildTiles(collection, { layer, maxZoom: TILE_MAX_ZOOM, bounds, extraLayers })) {
       const file = join(OUT_DIR, dir, version, String(tile.z), String(tile.x), `${tile.y}.pbf`);
       mkdirSync(dirname(file), { recursive: true });
       writeFileSync(file, tile.data);
@@ -694,12 +788,17 @@ function main(): void {
     return { dir, version, layer, bounds, count, bytes };
   };
 
-  const { collection, bounds } = buildBorders(ds);
-  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds);
-  const dejure = buildDejure(ds);
-  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds);
-  const second = buildSecondOpinion(ds);
-  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds);
+  // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
+  const land = loadLand(ds);
+  const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined };
+  const { collection, lines, bounds } = buildBorders(ds, outlines);
+  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, lines);
+  const dejure = buildDejure(ds, outlines);
+  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, dejure.lines);
+  const second = buildSecondOpinion(ds, outlines);
+  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, second.lines);
+  const edges = buildEdges(ds, outlines.land);
+  writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);
   const contestedLayer = contestedCollection(contested);
   const contestedTiles = writeTileSet('contested-tiles', 'contested', contestedLayer.collection, contestedLayer.bounds);
@@ -708,7 +807,7 @@ function main(): void {
   // The map only redraws on these days, so they cover every layer it can show.
   const changes = changeDays({
     type: 'FeatureCollection',
-    features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features],
+    features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features, ...edges.features],
   });
   const extra = Object.fromEntries(
     [dejureTiles, secondTiles, contestedTiles].map(({ dir, version, layer, bounds: b }) => [layer, { dir, version, layer, bounds: b }]),
@@ -728,7 +827,7 @@ function main(): void {
   for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
-  const areas = buildAreas(ds);
+  const areas = buildAreas(ds, land);
   for (const file of buildPolityFiles(ds, contested, areas)) {
     const json = JSON.stringify(file);
     writeFileSync(join(OUT_DIR, 'polities', `${file.id}.json`), json);

@@ -337,7 +337,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 |---|---|---|
 | 1 ✅ | Record Phase 2 as closed and the Phase 3 decisions. *Done 2026-09-28,* with the legend's contested line reworded (decision 7). | low |
 | 2 ✅ | **Uncertain ends on the map** (section 3). *Done 2026-09-28;* see [progress](#progress). | medium |
-| 3 | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). | high |
+| 3 ✅ | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 4 | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). | high |
 | 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
 | 6 | **"What each source says here"** in the panel (section 8). | medium |
@@ -382,6 +382,28 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
 - **Sizes:** the change index grew from 288 to 299 days, all tiles together from 11.4 to 11.6 MB,
   and the polity files from 1,474 to 1,500 KB. The new `e1` and `maybe` properties appear only
   where needed.
+
+**Step 3, border lines apart from the fills (done 2026-09-28):**
+
+- **What changed on the map:**
+  - Borders no longer run around islands out at sea. OpenHistoricalMap draws many borders a few
+    kilometres offshore; those stretches, more than 2 km from land, are no longer drawn as
+    lines. About 40% of OpenHistoricalMap's outline was at sea. (The fills still reach out to
+    sea until step 4.)
+  - Borders no longer stop in a straight line where the imported data ends. A dashed gray line
+    marks the edge instead (over land, 1900–1950), with "Edge of imported data" in the legend.
+- **How:** `scripts/lib/outlines.ts` works out which stretches of each outline to keep. It
+  checks distances against Natural Earth's 1:10m land through a grid, so the whole build takes
+  about a second more per source.
+- **Borders along coasts are kept,** because they're within 2 km of the coastline. CShapes keeps
+  almost all of its outline (its borders follow the coast), Cliopatria about three quarters.
+- **Size:** each tile set grows by about half. The opening view's default tiles went from about
+  0.28 to 0.43 MB. The de jure view adds about 0.09 MB, and the second opinion 0.22 MB, only
+  when they're switched on. All tiles together went from 11.6 to 18.6 MB on the server.
+- **Noticed, not changed:** a lighter fill (an uncertain date) lets the "No data yet" hatch
+  under it show through. For example, British Burma in 1937, whose border starts "1937", looks
+  hatched. That has been so since Phase 1. It reads as "not certain yet", but a clearer look
+  may be wanted; it's listed for the maintainer.
 
 ### Showcase data track (in parallel)
 

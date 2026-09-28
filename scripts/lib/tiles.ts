@@ -19,6 +19,8 @@ export interface TileOptions {
   maxZoom: number;
   /** Only tiles touching these bounds are written. */
   bounds: Bounds;
+  /** More layers in the same tiles, by name (for example the border lines, apart from the fills). */
+  extraLayers?: Record<string, GeoJSON.FeatureCollection>;
 }
 
 export interface BuiltTile {
@@ -55,18 +57,23 @@ export function tileRange(bounds: Bounds, z: number) {
  * are still written (a few bytes each), so the browser never asks for a file that doesn't exist.
  */
 export function* buildTiles(collection: GeoJSON.FeatureCollection, options: TileOptions): Generator<BuiltTile> {
-  const index = new GeoJSONVT(collection, {
-    maxZoom: options.maxZoom,
-    tolerance: 3, // simplification in tile units (a tile is 4096 units across)
-    extent: 4096,
-    buffer: 64, // overlap between neighbouring tiles, so tile edges never show as lines
-  });
+  const indexOf = (c: GeoJSON.FeatureCollection) =>
+    new GeoJSONVT(c, {
+      maxZoom: options.maxZoom,
+      tolerance: 3, // simplification in tile units (a tile is 4096 units across)
+      extent: 4096,
+      buffer: 64, // overlap between neighbouring tiles, so tile edges never show as lines
+    });
+  const indexes = [
+    [options.layer, indexOf(collection)] as const,
+    ...Object.entries(options.extraLayers ?? {}).map(([name, c]) => [name, indexOf(c)] as const),
+  ];
   for (let z = 0; z <= options.maxZoom; z++) {
     const { x0, x1, y0, y1 } = tileRange(options.bounds, z);
     for (let x = x0; x <= x1; x++) {
       for (let y = y0; y <= y1; y++) {
-        const tile = index.getTile(z, x, y);
-        const data = vtpbf.fromGeojsonVt({ [options.layer]: tile ?? { features: [] } }, { version: 2 });
+        const layers = Object.fromEntries(indexes.map(([name, index]) => [name, index.getTile(z, x, y) ?? { features: [] }]));
+        const data = vtpbf.fromGeojsonVt(layers, { version: 2 });
         yield { z, x, y, data };
       }
     }

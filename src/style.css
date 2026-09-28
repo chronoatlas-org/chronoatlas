@@ -216,6 +216,14 @@ body {
   outline-offset: -2px;
 }
 
+/* Matches the map's dashed "edge of imported data" line (src/map/historical.ts). */
+.legend-edge {
+  flex: none;
+  width: 18px;
+  height: 0;
+  border-top: 2px dashed #6e6455;
+}
+
 /* Matches the map's "no data" hatch (src/map/historical.ts). */
 .legend-no-data {
   width: 16px;
