@@ -54,7 +54,7 @@ import type { SheetHeight } from './sheet.ts';
 function Sources({ lines }: { lines: SourceLine[] }) {
   return (
     <p class="panel-source">
-      {t('panel.sourceLabel')}{' '}
+      {t(lines.length > 1 ? 'panel.sourcesLabel' : 'panel.sourceLabel')}{' '}
       {lines.map((line, i) => (
         <Fragment key={i}>
           {i > 0 && '; '}
@@ -190,6 +190,26 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
               <Current key={entry.id} entry={entry} />
             ))}
           </ul>
+        )}
+        {view.figures.length > 0 && (
+          <div class="panel-figures">
+            <h4>{t('panel.figures')}</h4>
+            <ul class="panel-plain-list">
+              {view.figures.map((figure) => (
+                <li key={figure.id} class="panel-figure">
+                  <p>
+                    <span class="panel-figure-label">{figure.label}:</span> {figure.value}
+                  </p>
+                  {figure.notes.map((note, i) => (
+                    <p key={i} class="panel-note">
+                      {note}
+                    </p>
+                  ))}
+                  <Sources lines={figure.sources} />
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
         {view.contested.map((line, i) => (
           <p key={i} class="panel-contested">

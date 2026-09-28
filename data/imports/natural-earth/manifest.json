@@ -4,7 +4,7 @@
   "repository": "https://github.com/nvkelso/natural-earth-vector",
   "release": "v5.1.2",
   "license": "Public domain (https://www.naturalearthdata.com/about/terms-of-use/)",
-  "retrieved": "2026-09-27",
+  "retrieved": "2026-09-28",
   "processing": [
     "Downloaded GeoJSON from the v5.1.2 release tag.",
     "Kept only the properties listed per file; dropped all others (including modern names).",
@@ -20,6 +20,16 @@
       "upstreamSha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b",
       "outputSha256": "87eed5d923f405c70de73e9222698a9279c2fdd01b4e973c38c6ebfb0175f94e",
       "featureCount": 1420,
+      "keptProperties": []
+    },
+    {
+      "file": "ne_10m_land.geojson",
+      "description": "Land polygons (1:10m), for measuring land areas in the build",
+      "upstreamUrl": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_land.geojson",
+      "upstreamBytes": 10157965,
+      "upstreamSha256": "1ac90796408bc6ad6911d69448485d3c4dbf2190370080368a09976e1c9f7416",
+      "outputSha256": "bbeebfaea0c88d639152a040bc49d55ac5ce786db02b66e58f1a40a64e128084",
+      "featureCount": 11,
       "keptProperties": []
     },
     {

@@ -15,14 +15,15 @@
 //   public/data/second-tiles/<version>/…      Cliopatria's borders, the "second opinion" outlines
 //   public/data/contested-tiles/<version>/…   where the sources disagree (computed; carries
 //                          CShapes' CC BY-NC-SA license, so it's a layer of its own)
-//   public/data/polities/<id>.json   one polity's names and every record that mentions it, for
-//                          the territory panel (a visitor downloads only the ones they open)
+//   public/data/polities/<id>.json   one polity's names, every record that mentions it, and its
+//                          figures (land areas), for the territory panel (a visitor downloads
+//                          only the ones they open)
 //
 // Run with: npm run build-data (it also runs automatically before `npm run dev` and the build).
 // It validates the data first and refuses to build from invalid data.
 
 import { createHash } from 'node:crypto';
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseEdtfDate } from '../src/dates/index.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
@@ -32,13 +33,14 @@ import type { ContestedArea, Link, TimedShape } from './lib/contested.ts';
 import { areaKm2 } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
+import { LandIndex, landPart, touchesEdge } from './lib/land.ts';
 import { buildTiles } from './lib/tiles.ts';
 import type { Bounds } from './lib/tiles.ts';
 import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
-import type { Assertion, Polity, PolityName, ShapeFeature } from './lib/types.ts';
+import type { Assertion, Citation, Polity, PolityName, Relation, ShapeFeature } from './lib/types.ts';
 import type { AtlasName } from '../src/map/names.ts';
-import type { BorderChange, ContestedEntry, EventFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import type { BorderChange, ContestedEntry, EventFile, FigureEntry, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
 import type { TimelineEvent } from '../src/timeline/events.ts';
 
@@ -228,6 +230,137 @@ export function crosswalkLinks(ds: Dataset): CrosswalkLink[] {
   );
 }
 
+/** Natural Earth's 1:10m land, used to measure land areas (public domain). */
+const LAND_FOLDER = join(ROOT, 'data', 'imports', 'natural-earth');
+const LAND_FILE = join(LAND_FOLDER, 'ne_10m_land.geojson');
+
+/**
+ * The land area a polity holds on the default map, in one relation (administers, occupies, …),
+ * over a stretch of time in which the same records apply. When several records apply at once,
+ * it's measured over all of them together, so any overlap counts once.
+ */
+export interface AreaFigure {
+  relation: Relation;
+  /** When it applies: from s0 until e0 (exclusive), as day numbers. */
+  s0: number;
+  e0: number;
+  /** The records measured. */
+  records: string[];
+  /** Land inside the borders, in km² (measured on the globe). */
+  landKm2: number;
+  /** Everything inside the borders, including coastal waters, in km². */
+  totalKm2: number;
+  /** Set when a shape was cut at the edge of its import's area: that area, in words. */
+  partOf?: string;
+  /** The records' sources, then the land polygons'. */
+  sources: Citation[];
+}
+
+/** Rounds to 3 significant figures: neither the borders nor the coastline is more precise. */
+const roughly = (km2: number) => Number(km2.toPrecision(3));
+
+/** An area such as "10°N–55°N, 73°E–150°E" (west, south, east, north in degrees). */
+function describeArea([w, s, e, n]: Box): string {
+  const lat = (v: number) => `${Math.abs(v)}°${v < 0 ? 'S' : 'N'}`;
+  const lon = (v: number) => `${Math.abs(v)}°${v < 0 ? 'W' : 'E'}`;
+  return `${lat(s)}–${lat(n)}, ${lon(w)}–${lon(e)}`;
+}
+
+/** Each import folder's area, from the settings.bbox its manifest records. */
+function importAreas(ds: Dataset): Map<string, Box> {
+  const areas = new Map<string, Box>();
+  for (const folder of ds.imports) {
+    const file = join(ROOT, folder, 'manifest.json');
+    if (!existsSync(file)) continue;
+    const bbox = JSON.parse(readFileSync(file, 'utf8')).settings?.bbox;
+    if (bbox) areas.set(folder, [bbox.west, bbox.south, bbox.east, bbox.north]);
+  }
+  return areas;
+}
+
+/**
+ * The land areas of every polity on the default map, per relation and stretch of time (see
+ * AreaFigure). `areas` gives each import folder's area, to tell when a shape was cut at its edge;
+ * `landSource` cites the land polygons.
+ */
+export function computeAreas(
+  ds: Dataset,
+  land: LandIndex,
+  areas: ReadonlyMap<string, Box>,
+  landSource: Citation,
+): Map<string, AreaFigure[]> {
+  const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
+  interface Item {
+    a: Assertion & { shape: string };
+    area?: Box;
+    s0: number;
+    e0: number;
+  }
+  const groups = new Map<string, Item[]>();
+  for (const { file, value } of ds.assertions) {
+    if (!onDefaultMap(file)) continue;
+    const folder = /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
+    const area = folder ? areas.get(folder) : undefined;
+    for (const a of value) {
+      if (!TERRITORIAL_RELATIONS.includes(a.relation) || !a.shape || !shapes.has(a.shape)) continue;
+      const { s0, e0 } = dayRanges(a.start, a.end);
+      const key = `${a.subject} ${a.relation}`;
+      groups.set(key, [...(groups.get(key) ?? []), { a: a as Item['a'], area, s0, e0 }]);
+    }
+  }
+
+  // The same set of shapes is measured once, however many stretches of time it appears in.
+  const measured = new Map<string, Pick<AreaFigure, 'landKm2' | 'totalKm2' | 'partOf'>>();
+  const measure = (items: Item[]) => {
+    const ids = [...new Set(items.map((i) => i.a.shape))].sort();
+    let m = measured.get(ids.join(' '));
+    if (!m) {
+      const geometries = ids.map((id) => shapes.get(id)!);
+      const all = geometries.length === 1 ? geometries[0] : (polygonClipping.union(...(geometries as [never])) as MultiPolygon);
+      const cut = items.find((i) => i.area && touchesEdge(shapes.get(i.a.shape)!, i.area));
+      m = {
+        landKm2: roughly(areaKm2(landPart(all, land))),
+        totalKm2: roughly(areaKm2(all)),
+        ...(cut ? { partOf: describeArea(cut.area!) } : {}),
+      };
+      measured.set(ids.join(' '), m);
+    }
+    return m;
+  };
+
+  const byPolity = new Map<string, AreaFigure[]>();
+  for (const items of groups.values()) {
+    const days = [...new Set(items.flatMap((i) => [i.s0, i.e0]))].sort((x, y) => x - y);
+    for (let k = 0; k + 1 < days.length; k++) {
+      const active = items.filter((i) => i.s0 <= days[k] && days[k] < i.e0);
+      if (active.length === 0) continue;
+      const m = measure(active);
+      // No land under the border in the coastline data (a rock too small for it, say): leave the
+      // figure out rather than show 0.
+      if (m.landKm2 === 0) continue;
+      const cited = new Map([...active.flatMap((i) => i.a.sources), landSource].map((c) => [`${c.source} ${c.locator}`, c]));
+      const { subject, relation } = active[0].a;
+      byPolity.set(subject, [
+        ...(byPolity.get(subject) ?? []),
+        { relation, s0: days[k], e0: days[k + 1], records: active.map((i) => i.a.id).sort(), ...m, sources: [...cited.values()] },
+      ]);
+    }
+  }
+  for (const figures of byPolity.values()) figures.sort((x, y) => x.s0 - y.s0 || x.relation.localeCompare(y.relation));
+  return byPolity;
+}
+
+/** computeAreas with Natural Earth's land polygons, cut to the imports' areas. */
+export function buildAreas(ds: Dataset): Map<string, AreaFigure[]> {
+  const areas = importAreas(ds);
+  if (areas.size === 0 || !existsSync(LAND_FILE)) return new Map();
+  const all = [...areas.values()];
+  const extent: Box = [Math.min(...all.map((a) => a[0])), Math.min(...all.map((a) => a[1])), Math.max(...all.map((a) => a[2])), Math.max(...all.map((a) => a[3]))];
+  const land = JSON.parse(readFileSync(LAND_FILE, 'utf8')).features.map((f: { geometry: ShapeFeature['geometry'] }) => f.geometry);
+  const release = JSON.parse(readFileSync(join(LAND_FOLDER, 'manifest.json'), 'utf8')).release;
+  return computeAreas(ds, new LandIndex(land, extent), areas, { source: 'natural-earth', locator: `1:10m land, release ${release}` });
+}
+
 /** Where the default map's source and a de jure source disagree (see scripts/lib/contested.ts). */
 export function buildContested(ds: Dataset): ContestedArea[] {
   const byUnit = new Map<string, Link[]>();
@@ -392,7 +525,11 @@ function namesFor(ids: Iterable<string>, polities: Map<string, Polity>): Record<
  * visitor downloads only the polities they open. Each file has all the polity's names and every
  * assertion that mentions it (as subject, or as the other polity in a relation).
  */
-export function buildPolityFiles(ds: Dataset, contested: readonly ContestedArea[] = []): PolityFile[] {
+export function buildPolityFiles(
+  ds: Dataset,
+  contested: readonly ContestedArea[] = [],
+  areas: ReadonlyMap<string, AreaFigure[]> = new Map(),
+): PolityFile[] {
   const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
   const mentions = new Map<string, Assertion[]>();
   for (const a of ds.assertions.flatMap(({ value }) => value)) {
@@ -455,6 +592,42 @@ export function buildPolityFiles(ds: Dataset, contested: readonly ContestedArea[
     }
     disputes.sort((a, b) => a.s0 - b.s0 || a.other.localeCompare(b.other));
 
+    // Figures: this polity's land areas (computed by computeAreas), then any sourced figures
+    // from data/figures/.
+    const figures: FigureEntry[] = [];
+    for (const f of areas.get(p.id) ?? []) {
+      const water = roughly(f.totalKm2 - f.landKm2);
+      figures.push({
+        metric: 'area-km2',
+        value: f.landKm2,
+        basis: 'computed-from-shape',
+        s0: f.s0,
+        e0: f.e0,
+        relation: f.relation,
+        records: f.records,
+        ...(f.partOf ? { partOf: f.partOf } : {}),
+        // Coastal waters inside the border, when they're more than a sliver.
+        ...(water >= f.totalKm2 * 0.01 ? { waterKm2: water } : {}),
+        sources: f.sources,
+      });
+    }
+    for (const f of ds.figures.flatMap(({ value }) => value).filter((f) => f.polity === p.id)) {
+      const when = parseEdtfDate(f.date);
+      figures.push({
+        metric: f.metric,
+        ...(f.value !== undefined ? { value: f.value } : {}),
+        ...(f.low !== undefined ? { low: f.low } : {}),
+        ...(f.high !== undefined ? { high: f.high } : {}),
+        basis: f.basis,
+        ...(f.basis_detail ? { basisDetail: f.basis_detail } : {}),
+        date: f.date,
+        s0: when.earliest,
+        e0: when.latest + 1,
+        sources: f.sources,
+        ...(f.notes ? { notes: f.notes } : {}),
+      });
+    }
+
     // Other polities the records mention, with just enough to name them.
     const others = new Set([
       ...records.flatMap((r) => [r.subject, r.object ?? '', ...(r.recognized_by ?? []), r.via ?? '']),
@@ -476,6 +649,7 @@ export function buildPolityFiles(ds: Dataset, contested: readonly ContestedArea[
         sources: n.sources,
       })),
       records,
+      ...(figures.length > 0 ? { figures } : {}),
       ...(disputes.length > 0 ? { contested: disputes } : {}),
       ...(p.notes ? { notes: p.notes } : {}),
       ...(others.size > 0 ? { related } : {}),
@@ -543,7 +717,8 @@ function main(): void {
   for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));
   mkdirSync(join(OUT_DIR, 'polities'));
   let polityBytes = 0;
-  for (const file of buildPolityFiles(ds, contested)) {
+  const areas = buildAreas(ds);
+  for (const file of buildPolityFiles(ds, contested, areas)) {
     const json = JSON.stringify(file);
     writeFileSync(join(OUT_DIR, 'polities', `${file.id}.json`), json);
     polityBytes += json.length;

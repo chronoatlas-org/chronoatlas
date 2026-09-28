@@ -294,3 +294,37 @@ describe('describeTerritory: other sources', () => {
     expect(describeTerritory(large, sources, day(1902, 1, 1), 'en').smallTerritory).toBeUndefined();
   });
 });
+
+describe('describeTerritory: figures', () => {
+  const cite = [{ source: 'test-source', locator: 'map 1' }];
+  const withFigures: PolityFile = {
+    ...testland,
+    figures: [
+      { metric: 'area-km2', value: 123_456, basis: 'computed-from-shape', s0: day(1901, 1, 1), e0: day(1905, 1, 1), relation: 'administers', records: ['a', 'b'], waterKm2: 5_000, partOf: '1–2°N, 3–4°E', sources: cite },
+      { metric: 'area-km2', value: 5_000, basis: 'computed-from-shape', s0: day(1901, 1, 1), e0: day(1905, 1, 1), relation: 'occupies', records: ['c'], sources: cite },
+      { metric: 'population', value: 1_000_000, basis: 'polity-territory', date: '1902', s0: day(1902, 1, 1), e0: day(1903, 1, 1), sources: [{ source: 'other-test-source', locator: 'table 1' }] },
+      { metric: 'population', value: 2_000_000, basis: 'polity-territory', date: '1910', s0: day(1910, 1, 1), e0: day(1911, 1, 1), sources: [{ source: 'other-test-source', locator: 'table 2' }] },
+    ],
+  };
+
+  it('shows a computed land area while it applies, saying what it counts and leaves out', () => {
+    const [area, occupied] = describeTerritory(withFigures, sources, day(1903, 6, 1), 'en').figures;
+    expect(area.label).toBe('Land area');
+    expect(area.value).toBe('about 120,000 km²');
+    const notes = area.notes.join(' ');
+    expect(notes).toMatch(/Measured over the 2 records that apply on this date, counting any overlap once/);
+    expect(notes).toMatch(/Only the part inside the area imported so far \(1–2°N, 3–4°E\)/);
+    expect(notes).toMatch(/about 5,000 km² of coastal waters/);
+    expect(notes).toMatch(/present-day coastline/);
+    expect(notes).not.toMatch(/Counts only the area recorded as/);
+    expect(occupied.notes).toContain('Counts only the area recorded as “Occupied”.');
+    expect(describeTerritory(withFigures, sources, day(1906, 1, 1), 'en').figures.map((f) => f.label)).not.toContain('Land area');
+  });
+
+  it('shows the sourced estimate nearest to the date, with its own date, never an in-between value', () => {
+    const population = (y: number) => describeTerritory(withFigures, sources, day(y, 6, 1), 'en').figures.find((f) => f.label === 'Population')!;
+    expect(population(1903).value).toBe('about 1,000,000');
+    expect(population(1903).notes).toContain('The nearest estimate to this date: 1902 (year only).');
+    expect(population(1908).value).toBe('about 2,000,000');
+  });
+});

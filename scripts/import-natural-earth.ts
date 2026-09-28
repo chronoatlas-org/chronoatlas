@@ -30,6 +30,9 @@ interface LayerSpec {
 
 const LAYERS: LayerSpec[] = [
   { file: 'ne_50m_land.geojson', description: 'Land polygons (1:50m)', keep: [] },
+  // More detailed land for the build to measure land areas and split borders at the coast. The
+  // browser's base map doesn't load it.
+  { file: 'ne_10m_land.geojson', description: 'Land polygons (1:10m), for measuring land areas in the build', keep: [] },
   { file: 'ne_50m_lakes.geojson', description: 'Lakes and reservoirs (1:50m)', keep: ['scalerank'] },
   {
     file: 'ne_50m_rivers_lake_centerlines.geojson',

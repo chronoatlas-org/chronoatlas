@@ -573,7 +573,28 @@ Small steps, each committed, explained, and viewable locally and online, as in P
       and the map's credits start folded behind their (i) button.
     - Cliopatria isn't part of the contested computation yet; comparing all the sources is the
       Phase 3 compare-sources view.
-11. **First Figure**: `area-km2` computed from shapes, shown in the panel.
+11. ✅ **First Figure**: `area-km2` computed from shapes, shown in the panel.
+    - **What it shows:** under "On this date", for example "Land area: about 1,300,000 km²" for
+      Manchukuo in 1937, with how it was computed, what it leaves out, and its sources (the
+      border's OpenHistoricalMap relation and Natural Earth).
+    - **Land, not the drawn shape:** borders are cut with Natural Earth's 1:10m land (public
+      domain), added to the Natural Earth import for the build only; the site never downloads it.
+      Hong Kong's border takes in about 2,900 km², of which about 1,100 km² is land. The same
+      land split is what Phase 3's coast-aligned fills will use.
+    - **One figure per stretch of time:** when several records of a polity apply at once, the
+      area is measured over all of them together, so overlaps count once. OpenHistoricalMap has
+      overlapping records for Bhutan, the British Raj, and Thailand (open question 2 below);
+      adding them up would have double-counted. Relations are never added together, so occupied
+      land won't be counted as administered land once our own data has occupations.
+    - **Precision, stated in the panel:** stored to 3 significant figures and shown to 2. The
+      coastline is present-day (land reclaimed since then counts), lakes count as land, and a
+      territory cut at the edge of the imported area says its full area is larger. Coastal
+      waters inside a border are named when they're at least 1% of it (Macau's border takes in
+      about 93 km² of water and 22 km² of land).
+    - Sourced figures from `data/figures/` are wired through too: the panel would show the
+      estimate nearest to the date, with its own date, never an in-between value. There are
+      none yet (decision 10).
+    - The panel's source line now says "Sources:" when it lists more than one.
 12. **First sourced events** for Manchuria 1931–33, once citable sources are located (see
     [section 2](#candidate-events-for-the-first-showcase-stage-manchuria-19311933)). Each is proposed as
     its own pull request, with sources for review.
@@ -609,6 +630,26 @@ These came up while building. None blocks the current steps; each needs the main
         rule, and it needs care to avoid mislabelling real administration.
      3. Keep the import as it is, and raise the question with OHM's community, which would be
         an outward-facing step.
+
+2. **Overlapping OHM records for the same polity** (found in step 11)
+   - **What overlaps:** OpenHistoricalMap has two boundaries for the same polity on the same
+     days in three places:
+     - Bhutan: relations 2906073 (1841 to 1949-08-08) and 2800954 (1947 to 1959-07), with the
+       same shape;
+     - British Raj: relations 2923715 (1891 to 1917) and 2961101 (1893-11-12 to 1917), with
+       nearly the same shape;
+     - Thailand: relations 2801980 (1939 to 1943-10-18) and 2874870 (1941-03 to 1943-10-18); the
+       second is larger and covers almost all of the first.
+   - **What it affects:** the map draws both, so it shows their combined extent, and the land
+     area counts the overlap once. But the panel lists two current records where there may be
+     one.
+   - **A guess at the cause:** each looks like an older version whose end date wasn't moved when a
+     newer version was added. That's only a guess until someone checks the sources behind them
+     in OHM.
+   - **Options:**
+     1. Leave it: the map and the figures already handle overlaps.
+     2. Check each one in OHM and correct the dates there if they're slips, then re-import.
+        Editing OHM is outward-facing, so that's the maintainer's call (or a contributor's).
 
 ## 7. Decisions (2026-09-27)
 

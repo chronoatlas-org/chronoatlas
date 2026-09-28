@@ -18,6 +18,8 @@ redraws for that date. Every border and event on the map is traced to a named so
 >   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, where the two sources
 >   disagree, and the panel says so in words.
 > - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
+> - The panel shows each territory's land area on the selected date, computed from its borders
+>   and a coastline, with how it was measured and its sources.
 > - Event markers, event details, and map pulses are built and waiting for the first sourced
 >   events.
 > - The address bar always links to the exact date, view, and selection, so you can share it.

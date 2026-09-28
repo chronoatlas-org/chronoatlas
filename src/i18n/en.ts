@@ -101,7 +101,23 @@ export const en = {
   'panel.administersNote':
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
   'panel.sourceLabel': 'Source:',
+  'panel.sourcesLabel': 'Sources:',
   'panel.credits': 'Sources and credits',
+  'panel.figures': 'Figures',
+  'figure.area-km2': 'Land area',
+  'figure.population': 'Population',
+  'figure.areaValue': 'about {value} km²',
+  'figure.approximately': 'about {value}',
+  'figure.range': '{low} to {high}',
+  'figure.partOf':
+    'Only the part inside the area imported so far ({area}): the territory reaches beyond it, so its full area is larger.',
+  'figure.water': 'Its border also takes in about {value} km² of coastal waters, which are not counted.',
+  'figure.relation': 'Counts only the area recorded as “{relation}”.',
+  'figure.combined': 'Measured over the {count} records that apply on this date, counting any overlap once.',
+  'figure.computed':
+    'Computed by chronoatlas: the area inside this border and inside Natural Earth’s present-day coastline (1:10m; lakes count as land), measured on the globe. Approximate: coastlines have changed since, for example through land reclamation, and the figure is rounded to 2 significant figures.',
+  'figure.presentDay': 'Counted within present-day borders ({detail}), not this polity’s own territory.',
+  'figure.asOf': 'The nearest estimate to this date: {date}.',
   // A de jure unit's record, linked by the crosswalk (see data/imports/cshapes-2-0/).
   'panel.heldAs': '{relation}, as “{name}”',
   'panel.heldBy': '{relation}: {name}',

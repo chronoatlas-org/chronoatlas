@@ -453,6 +453,27 @@ body {
   outline-offset: 1px;
 }
 
+.panel-figures {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #eaeef2;
+}
+
+.panel-figures h4 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #57606a;
+}
+
+.panel-figure + .panel-figure {
+  margin-top: 8px;
+}
+
+.panel-figure-label {
+  font-weight: 600;
+}
+
 .panel-contested {
   display: flex;
   gap: 8px;

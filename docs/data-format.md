@@ -155,6 +155,9 @@ says what territory the number counts:** `polity-territory` (the polity's own te
 time), `present-day-borders` (a modern country's; name it in `basis_detail`), or
 `computed-from-shape` (we calculated it; name the shape and method in `basis_detail`).
 
+Don't add land areas here: the build computes `area-km2` for every polity on the map from its
+borders.
+
 ```yaml
 - id: example-population-1935
   polity: example-polity

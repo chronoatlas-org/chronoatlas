@@ -9,11 +9,14 @@ import {
   buildEvents,
   buildPolityFiles,
   changeDays,
+  computeAreas,
   dayRanges,
   FAR_FUTURE,
   onDefaultMap,
 } from './build-data.ts';
 import { loadDataset } from './lib/data.ts';
+import { areaKm2 } from './lib/geometry.ts';
+import { LandIndex } from './lib/land.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -268,5 +271,78 @@ describe('reference test: Manchuria in 1937 (the real imported data)', () => {
     expect(areas).toHaveLength(1);
     expect(areas[0]).toMatchObject({ facto: 'manchukuo', factoRelation: 'administers', jure: 'cshapes-710', jureRelation: 'sovereign' });
     expect(areas[0].km2).toBeGreaterThan(1_000_000);
+  });
+});
+
+describe('land areas', () => {
+  // Made-up shapes, land, and records (Testland), not real ones.
+  const day = civilToJdn;
+  const cite = [{ source: 'test-source', locator: 'p. 1' }];
+  const rect = (x0: number, y0: number, x1: number, y1: number): [number, number][][] => [[[x0, y0], [x1, y0], [x1, y1], [x0, y1], [x0, y0]]];
+  const shape = (id: string, coordinates: number[][][]) => ({
+    file: id,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates } },
+  });
+  const record = (id: string, relation: 'administers' | 'occupies', shapeId: string, start: string, end: string) => ({
+    id, relation, subject: 'testland', shape: shapeId, start, end, sources: cite,
+  });
+  const ds: Dataset = {
+    sources: [], events: [], figures: [], coverage: [], crosswalks: [], problems: [],
+    imports: ['data/imports/openhistoricalmap'],
+    polities: [{ file: 'data/polities/testland.yaml', value: { id: 'testland', names: [{ text: 'Testland', lang: 'en', sources: cite }] } }],
+    // "coastal" is half land, half sea; "cut" is all land and runs along the import area's east
+    // edge; "copy" is drawn exactly over "coastal".
+    shapes: [shape('coastal', rect(0, 0, 2, 2)), shape('cut', rect(8, 0, 10, 2)), shape('copy', rect(0, 0, 2, 2))],
+    assertions: [
+      {
+        file: 'data/imports/openhistoricalmap/assertions.yaml',
+        value: [
+          record('coastal-1', 'administers', 'coastal', '1901', 'ongoing'),
+          record('cut-1', 'administers', 'cut', '1901', '1911'),
+          record('copy-1', 'administers', 'copy', '1905', '1906'),
+          record('occupied-1', 'occupies', 'cut', '1920', '1921'),
+        ],
+      },
+    ],
+  };
+  const land = new LandIndex([{ type: 'Polygon', coordinates: rect(0, 0, 1, 2) }, { type: 'Polygon', coordinates: rect(8, 0, 10, 2) }], [-10, -10, 20, 20]);
+  const landSource = { source: 'land-test-source', locator: 'sheet 1' };
+  const areas = computeAreas(ds, land, new Map([['data/imports/openhistoricalmap', [-10, -10, 10, 10]]]), landSource);
+  const administered = areas.get('testland')!.filter((f) => f.relation === 'administers');
+  const near = (a: number, b: number) => expect(Math.abs(a / b - 1)).toBeLessThan(0.005); // 3 significant figures
+
+  it('measures everything a polity holds at once together, and splits time where that changes', () => {
+    expect(administered.map((f) => f.records)).toEqual([
+      ['coastal-1', 'cut-1'],
+      ['coastal-1', 'copy-1', 'cut-1'],
+      ['coastal-1', 'cut-1'],
+      ['coastal-1'],
+    ]);
+    expect(administered.map((f) => f.s0)).toEqual([day(1901, 1, 1), day(1905, 1, 1), day(1906, 1, 1), day(1911, 1, 1)]);
+    near(administered[0].landKm2, areaKm2([rect(0, 0, 1, 2)]) + areaKm2([rect(8, 0, 10, 2)]));
+    near(administered[3].landKm2, areaKm2([rect(0, 0, 1, 2)]));
+    near(administered[3].totalKm2, areaKm2([rect(0, 0, 2, 2)]));
+  });
+
+  it('counts a shape drawn twice only once', () => {
+    expect(administered[1].landKm2).toBe(administered[0].landKm2);
+  });
+
+  it('keeps each relation apart: an occupied area is not added to an administered one', () => {
+    const occupied = areas.get('testland')!.filter((f) => f.relation === 'occupies');
+    expect(occupied.map((f) => f.records)).toEqual([['occupied-1']]);
+  });
+
+  it('marks shapes cut at the edge of their import\'s area', () => {
+    expect(administered[0].partOf).toBe('10°S–10°N, 10°W–10°E');
+    expect(administered[3].partOf).toBeUndefined();
+  });
+
+  it('turns them into figures in the polity file, citing each source once and the land last', () => {
+    const [file] = buildPolityFiles(ds, [], areas);
+    const [first] = file.figures!;
+    expect(first).toMatchObject({ metric: 'area-km2', basis: 'computed-from-shape', relation: 'administers', value: administered[0].landKm2 });
+    expect(first.sources).toEqual([...cite, landSource]);
+    expect(first.waterKm2).toBeGreaterThan(20_000); // the sea half of "coastal", left out of the land area
   });
 });

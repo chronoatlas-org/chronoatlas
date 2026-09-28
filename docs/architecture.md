@@ -98,7 +98,10 @@ That's how clicking an event on the timeline can highlight the border changes th
   - `polity-territory`: the polity's own territory at the time.
   - `present-day-borders`: a modern country's territory; say which one.
   - `computed-from-shape`: we calculated it from a specific shape, such as its area, or the
-    population inside it from a gridded population dataset.
+    population inside it from a gridded population dataset. The build computes `area-km2` this
+    way for every polity on the default map: the land inside its borders (Natural Earth's 1:10m
+    land), for each stretch of time in which the same records apply, counting overlapping records
+    once and never adding different relations together.
 - **Metric names are a fixed, documented list** (for example `population`, `area-km2`), so the
   same figure from different sources can be compared.
 
@@ -391,7 +394,8 @@ and 100 GB/month bandwidth as a soft limit):
   the events and border changes in the part of the timeline in view), and step 8 ✅ (the CShapes
   import, in its own folder, with the crosswalk), and step 9 ✅ (the de jure view, and contested
   areas computed at build time), and step 10 ✅ (Cliopatria as a second opinion, with a reviewed
-  crosswalk). The goals:
+  crosswalk), and step 11 ✅ (the first Figure: each territory's land area, computed from its
+  borders and Natural Earth's coastline, with its method and sources). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

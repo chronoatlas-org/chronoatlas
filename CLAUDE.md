@@ -189,8 +189,8 @@ LTS, and the GitHub CLI are installed.
   - `events/<id>.json`: one event in full (summary, sources, place, effects), for the panel;
   - `changes.json`: every day a territorial record starts or ends, with its polity and source,
     for "Around this date" (it will need splitting by period for the worldwide map);
-  - `polities/<id>.json`: one polity's names and every record that mentions it, for the
-    territory panel. A visitor downloads only the ones they open, which is what lets this scale
+  - `polities/<id>.json`: one polity's names, every record that mentions it, and its figures
+    (land areas), for the territory panel. A visitor downloads only the ones they open, which is what lets this scale
     worldwide.
 
   The build deletes `public/data/` first. Keep tile properties minimal (only what the map draws
@@ -233,6 +233,17 @@ LTS, and the GitHub CLI are installed.
     import changes.
   - **Map layers:** `tiles.json` lists the extra tile sets under `extra`, the de jure view
     (`dejure-tiles/`) and the contested areas. The change index covers all three.
+- **Land areas** (`scripts/lib/land.ts`, `computeAreas` in `scripts/build-data.ts`, Phase 2
+  step 11):
+  - The build measures the land inside each default-map polity's borders, using Natural Earth's
+    1:10m land (`ne_10m_land.geojson`). Only the build uses that file; the site never loads it.
+    The results go into polity files as `figures` (`basis: computed-from-shape`).
+  - There's one figure per polity, relation, and stretch of time in which the same records
+    apply. Several records at once are measured over their union, so overlaps count once.
+    Different relations are never added together.
+  - Values are rounded to 3 significant figures (the panel shows 2). `partOf` marks a shape cut
+    at the edge of its import's area, and `waterKm2` gives coastal waters of at least 1% of the
+    border's area. The panel says the coastline is present-day and lakes count as land.
 - **Never hand-edit files under `data/imports/`.** Fix upstream and re-import. The one exception
   is `polity-crosswalk.yaml`, which is hand-written by design.
 - **Polity records:** records built from CC0/public-domain sources may live in
@@ -286,7 +297,7 @@ LTS, and the GitHub CLI are installed.
   - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
     replaces the address.
   - Polity files carry the crosswalk-linked de jure records (`via`, `link`, `m0`/`m1` for when
-    the link applies), `contested` entries, and each territorial record's `km2`. The panel
+    the link applies), `contested` entries, `figures`, and each territorial record's `km2`. The panel
     counts a linked record as current only inside its link's window.
   - The map's view switch (`HistoricalLayers.setView`: 'facto' or 'jure') is recorded in the
     address as `v=jure`.

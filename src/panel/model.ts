@@ -76,6 +76,34 @@ export interface ContestedEntry {
   km2: number;
 }
 
+/**
+ * A figure (statistic) about a polity: computed by the build from a shape (its land area), or
+ * sourced from data/figures/. Each says what territory it counts (`basis`).
+ */
+export interface FigureEntry {
+  metric: string;
+  value?: number;
+  low?: number;
+  high?: number;
+  basis: 'polity-territory' | 'present-day-borders' | 'computed-from-shape';
+  basisDetail?: string;
+  /** For a sourced figure: the date it describes (EDTF). */
+  date?: string;
+  /** When it applies: from s0 until e0 (exclusive), as day numbers. */
+  s0: number;
+  e0: number;
+  /** For a computed figure: the relation it counts (administers, occupies, …). */
+  relation?: string;
+  /** For a computed figure: the records whose shapes it was measured over, together. */
+  records?: string[];
+  /** Set when only the part inside an import's area was measured: that area, in words. */
+  partOf?: string;
+  /** Coastal waters inside the border that the land area leaves out, in km². */
+  waterKm2?: number;
+  sources: Citation[];
+  notes?: string;
+}
+
 /** public/data/polities/<id>.json */
 export interface PolityFile {
   id: string;
@@ -88,6 +116,7 @@ export interface PolityFile {
   /** Names of the other polities the records mention (for "Protectorate of …" and so on). */
   related?: Record<string, AtlasName[]>;
   contested?: ContestedEntry[];
+  figures?: FigureEntry[];
 }
 
 /** public/data/events/<id>.json */
@@ -194,10 +223,20 @@ export interface TerritoryView {
   note?: string;
   /** Where the sources disagree over this polity's territory on this date, in words. */
   contested: string[];
+  /** Figures for this date, each with what it counts, how it was made, and its sources. */
+  figures: FigureLine[];
   /** Said when our only legal-borders source can't cover a territory this small. */
   smallTerritory?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
+}
+
+export interface FigureLine {
+  id: string;
+  label: string;
+  value: string;
+  notes: string[];
+  sources: SourceLine[];
 }
 
 // --- Wording -------------------------------------------------------------------------------------
@@ -218,6 +257,12 @@ const INVERSE_KEYS: Record<string, MessageKey> = {
   'leased-to': 'relation.inverse.leased-to',
   'protectorate-of': 'relation.inverse.protectorate-of',
   'puppet-of': 'relation.inverse.puppet-of',
+};
+
+/** Labels for the metrics a figure can have (schemas/figure.schema.json). */
+const FIGURE_KEYS: Record<string, MessageKey> = {
+  'area-km2': 'figure.area-km2',
+  population: 'figure.population',
 };
 
 /** How a contested entry describes the other side's relation to the area. */
@@ -346,6 +391,14 @@ export function describeTerritory(
   locale: string,
 ): TerritoryView {
   const nameOf = (id: string) => pickNames(file.related?.[id] ?? [], day, locale)?.primary ?? id;
+  // Numbers are rounded to 2 significant figures: none of the areas is more precise than that.
+  const number = (n: number) => {
+    try {
+      return new Intl.NumberFormat(locale, { maximumSignificantDigits: 2 }).format(n);
+    } catch {
+      return String(n);
+    }
+  };
   // A linked record counts only while its crosswalk link applies.
   const isCurrent = (r: PolityRecord) =>
     r.s0 <= day && day < r.e0 && (r.m0 === undefined || r.m0 <= day) && (r.m1 === undefined || day < r.m1);
@@ -415,13 +468,6 @@ export function describeTerritory(
   }
 
   // Where the sources disagree over this territory today, attributed to the other side's source.
-  const number = (n: number) => {
-    try {
-      return new Intl.NumberFormat(locale, { maximumSignificantDigits: 2 }).format(n);
-    } catch {
-      return String(n);
-    }
-  };
   const disputes = (file.contested ?? []).filter((c) => c.s0 <= day && day < c.e0);
   const contested = disputes.map((c) =>
     t(c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', {
@@ -431,6 +477,39 @@ export function describeTerritory(
       km2: number(c.km2),
     }),
   );
+
+  // Figures. A computed figure applies while its record does. For sourced figures, show the
+  // estimate nearest to this date, with its own date, rather than invent an in-between value.
+  const figureLines: FigureLine[] = [];
+  const computed = (file.figures ?? []).filter((f) => !f.date && f.s0 <= day && day < f.e0);
+  const distance = (f: FigureEntry) => (day < f.s0 ? f.s0 - day : day >= f.e0 ? day - f.e0 + 1 : 0);
+  const nearest = new Map<string, FigureEntry>();
+  for (const f of (file.figures ?? []).filter((f) => f.date)) {
+    const best = nearest.get(f.metric);
+    if (!best || distance(f) < distance(best)) nearest.set(f.metric, f);
+  }
+  for (const f of [...computed, ...nearest.values()]) {
+    const notes: string[] = [];
+    if (f.relation && f.relation !== 'administers') {
+      notes.push(t('figure.relation', { relation: RELATION_KEYS[f.relation] ? t(RELATION_KEYS[f.relation]) : f.relation }));
+    }
+    if (f.records && f.records.length > 1) notes.push(t('figure.combined', { count: String(f.records.length) }));
+    if (f.partOf) notes.push(t('figure.partOf', { area: f.partOf }));
+    if (f.waterKm2) notes.push(t('figure.water', { value: number(f.waterKm2) }));
+    if (f.basis === 'computed-from-shape') notes.push(t('figure.computed'));
+    if (f.basis === 'present-day-borders') notes.push(t('figure.presentDay', { detail: f.basisDetail ?? '' }));
+    if (f.date) notes.push(t('figure.asOf', { date: describeEventDate(f.date) }));
+    if (f.notes) notes.push(f.notes);
+    const amount =
+      f.value !== undefined ? number(f.value) : f.low !== undefined && f.high !== undefined ? t('figure.range', { low: number(f.low), high: number(f.high) }) : '';
+    figureLines.push({
+      id: `${f.metric}-${f.relation ?? ''}-${f.date ?? f.s0}`,
+      label: FIGURE_KEYS[f.metric] ? t(FIGURE_KEYS[f.metric]) : f.metric,
+      value: f.metric === 'area-km2' ? t('figure.areaValue', { value: amount }) : t('figure.approximately', { value: amount }),
+      notes,
+      sources: sourceLines(f.sources, sources),
+    });
+  }
 
   // CShapes can't speak to territories under its 10,000 km² threshold; say so rather than leave
   // the reader wondering why the legal side is missing.
@@ -452,12 +531,14 @@ export function describeTerritory(
     nameCount: file.names.length,
     ...(file.notes ? { note: file.notes } : {}),
     contested,
+    figures: figureLines,
     ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
     credits: creditsFor(
       [
         ...file.records.flatMap((r) => r.sources),
         ...file.names.flatMap((n) => n.sources),
         ...disputes.map((c) => ({ source: c.source, locator: '' })),
+        ...(file.figures ?? []).flatMap((f) => f.sources),
       ],
       sources,
     ),
