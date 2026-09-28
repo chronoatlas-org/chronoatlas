@@ -298,7 +298,10 @@ numbers as absolute speeds.
 | Claim | a line with ticks on its inner side, plus a label | once claim records exist (Phase 3, step 9) |
 | No state (per source) | light stipple, plus a label (kept free for this) | put off until a source gives it (Phase 3, decision 5) |
 
-Every style is also explained in words in the territory panel. Motion effects, such as event
+Every style is also explained in words in the territory panel. After a click on the map, the panel
+also lists what each source records at that spot on that day, side by side ("What each source
+says at the spot you clicked", Phase 3 step 6), including "No record here" for a source that has
+nothing there. Motion effects, such as event
 pulses, respect the browser's reduced-motion setting.
 
 ## URL and sharing

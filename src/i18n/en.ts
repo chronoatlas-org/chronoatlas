@@ -55,6 +55,13 @@ export const en = {
   'panel.loadFailedTitle': 'Details unavailable',
   'panel.loadFailed': "Couldn't load the details. Check your connection, then select the territory again.",
   'panel.alsoHere': 'Also recorded at the spot you clicked:',
+  // "What each source says at the spot you clicked" (the panel, after a click on the map).
+  'spot.title': 'What each source says at the spot you clicked',
+  'spot.facto': 'As administered',
+  'spot.jure': 'As legally recognized',
+  'spot.second': 'Second opinion',
+  'spot.none': 'No record here on this date.',
+  'spot.maybe': 'Its dates are known only to the month or year, so it may not apply on this date.',
   'panel.onThisDate': 'On this date',
   'panel.noTerritory': 'No territory recorded for {name} on this date.',
   'panel.missing': 'Not in our data yet for this date: {list}.',

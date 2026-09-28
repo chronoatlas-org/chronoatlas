@@ -108,10 +108,19 @@ const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, 
   onSelectEvent: (id) => select(eventSelection(id), 'click'),
   visibleRange: () => timeline.visibleRange(),
 });
+let spotClicks = 0;
 const historical = new HistoricalLayers(map, initialDay, {
-  onSelect: (polities) => {
+  onSelect: (polities, spot) => {
     panel.setSpot(polities);
     select(territorySelection(polities[0]), 'click');
+    // What every source has at that spot, for the panel (only the latest click counts).
+    const click = ++spotClicks;
+    historical
+      .recordsAt(spot)
+      .then((sets) => {
+        if (click === spotClicks) panel.setSpotSources(sets);
+      })
+      .catch((error) => console.error('Could not look up the sources at the clicked spot', error));
   },
 });
 

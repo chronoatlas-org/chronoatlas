@@ -340,7 +340,7 @@ geometry, licensing, or the visual language needs care, and lower where the work
 | 3 ✅ | **Border lines as their own features,** without the import edges, and the dashed "edge of imported data" line (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 4 ✅ | **Fills that stop at the coast:** land and coastal-waters parts, and the 1:10m base map at close zooms, tiled (section 4). *Done 2026-09-28;* see [progress](#progress). | high |
 | 5 | **Words on the map:** the font (after its license check), territory names, "Contested", and "Edge of imported data" (section 7). Scrubbing measured again. | high |
-| 6 | **"What each source says here"** in the panel (section 8). | medium |
+| 6 ✅ | **"What each source says here"** in the panel (section 8). *Done 2026-09-28;* see [progress](#progress). | medium |
 | 7 | **The compare view:** "sources differ" for each pair of sources, with the strip threshold measured and proposed first (section 8). | high |
 | 8 | **Precision styles:** softened approximate lines and frontier zones, tested with Testland, shown only when real data exists (section 5). | medium |
 | 9 | **Claims overlay,** and claims in the contested computation, only once the first claim records exist (section 6). | high |
@@ -430,6 +430,28 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
   step goes live.
 - **Not changed:** the de jure view (CShapes) and the second opinion follow their sources' own
   coastlines, so they aren't cut. Contested areas aren't cut either; they're mostly on land.
+
+**Step 6, "What each source says at the spot you clicked" (done 2026-09-28):**
+
+- **What it shows:** after a click on the map, the territory panel lists, for that spot and day,
+  what each source's layer records there, side by side: "As administered · OpenHistoricalMap",
+  "As legally recognized · CShapes 2.0", and "Second opinion · Cliopatria". Each record gives the
+  relation, the polity (a button that opens it), its dates, and its source. A source with nothing
+  there says "No record here on this date", and a record whose date is only known to the month
+  or year says it may not apply. It follows the timeline as the date changes.
+- **Example (real data):** clicking Manchuria in mid-1937 shows OpenHistoricalMap recording both
+  China (its 1935–38 boundary) and Manchukuo as administering it, CShapes recording China as
+  sovereign, and Cliopatria recording the Empire of Japan in control. The disagreement is plain,
+  and each part is attributed.
+- **How:** the site fetches each source's most detailed tile at the spot (one small file per
+  source, kept for later clicks), whether or not that layer is on the map, and checks which
+  borders contain the point. It reads the tiles with a small reader of our own
+  (`src/map/mvt.ts`), checked against the reference reader in the tests, so the site needs no new
+  library (and no new license).
+- **Found while testing:** the reader first failed on real tiles with three layers, because of a
+  one-line mistake in skipping a layer. It's fixed, with a test that fails without the fix.
+- It appears only while the selected territory is one of those recorded at the clicked spot, so
+  opening another territory from elsewhere doesn't show a stale spot.
 
 ### Showcase data track (in parallel)
 

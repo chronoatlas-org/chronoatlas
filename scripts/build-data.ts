@@ -295,7 +295,9 @@ function buildBorderLayer(
     (all, { box }) => [Math.min(all[0], box[0]), Math.min(all[1], box[1]), Math.max(all[2], box[2]), Math.max(all[3], box[3])],
     [180, 90, -180, -90],
   );
-  return { collection, lines, land, bounds: dataBounds };
+  // The sources of this layer's records, so the panel can name them even where they have nothing.
+  const sources = [...new Set(items.map(({ assertion: a }) => a.sources[0].source))].sort();
+  return { collection, lines, land, bounds: dataBounds, sources };
 }
 
 const asMultiPolygon = (geometry: ShapeFeature['geometry']): MultiPolygon =>
@@ -850,6 +852,7 @@ function main(): void {
     bounds: Bounds,
     extraLayers?: NonNullable<Parameters<typeof buildTiles>[1]['extraLayers']>,
     minZoom = 0,
+    sources?: string[],
   ) => {
     const version = createHash('sha256').update(JSON.stringify(collection)).update(JSON.stringify(extraLayers ?? null)).digest('hex').slice(0, 12);
     let count = 0;
@@ -861,19 +864,19 @@ function main(): void {
       count++;
       bytes += tile.data.length;
     }
-    return { dir, version, layer, bounds, count, bytes, minzoom: minZoom };
+    return { dir, version, layer, bounds, count, bytes, minzoom: minZoom, sources };
   };
 
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
   const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
-  const { collection, lines, land: landFills, bounds } = buildBorders(ds, outlines);
+  const { collection, lines, land: landFills, bounds, sources } = buildBorders(ds, outlines);
   // The land parts only matter up close, so they're left out of the tiles below COAST_MIN_ZOOM.
-  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } });
+  const borders = writeTileSet('tiles', TILE_LAYER, collection, bounds, { lines, land: { collection: landFills, minZoom: COAST_MIN_ZOOM } }, 0, sources);
   const dejure = buildDejure(ds, outlines);
-  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines });
+  const dejureTiles = writeTileSet('dejure-tiles', 'dejure', dejure.collection, dejure.bounds, { lines: dejure.lines }, 0, dejure.sources);
   const second = buildSecondOpinion(ds, outlines);
-  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, { lines: second.lines });
+  const secondTiles = writeTileSet('second-tiles', 'second', second.collection, second.bounds, { lines: second.lines }, 0, second.sources);
   // The base map up close, over the imports' areas (all of them together).
   const areaList = [...importAreas(ds).values()];
   const coastBox: Box | undefined = areaList.length
@@ -894,11 +897,13 @@ function main(): void {
     features: [...collection.features, ...dejure.collection.features, ...second.collection.features, ...contestedLayer.collection.features, ...edges.features],
   });
   const extra = Object.fromEntries(
-    tileSets.slice(1).map(({ dir, version, layer, bounds: b, minzoom }) => [layer, { dir, version, layer, bounds: b, ...(minzoom ? { minzoom } : {}) }]),
+    tileSets
+      .slice(1)
+      .map(({ dir, version, layer, bounds: b, minzoom, sources: s }) => [layer, { dir, version, layer, bounds: b, ...(minzoom ? { minzoom } : {}), ...(s ? { sources: s } : {}) }]),
   );
   writeFileSync(
     join(OUT_DIR, 'tiles.json'),
-    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, changes, extra }),
+    JSON.stringify({ version: borders.version, layer: TILE_LAYER, minzoom: 0, maxzoom: TILE_MAX_ZOOM, bounds, sources, changes, extra }),
   );
   // Which polity pairs disagree, and where, so a crosswalk mistake shows up here first.
   const pairs = new Map<string, number>();

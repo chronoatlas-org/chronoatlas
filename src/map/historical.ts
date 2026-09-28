@@ -17,7 +17,9 @@
 import * as maplibregl from 'maplibre-gl';
 import type { ExpressionSpecification } from '@maplibre/maplibre-gl-style-spec';
 import { COLORS } from '../basemap.ts';
+import type { SpotRecord, SpotSet } from '../panel/model.ts';
 import { segmentOf } from './changes.ts';
+import { pointInRings, readLayer, tileAt } from './mvt.ts';
 import { pulseRadiusPx } from './pulse-size.ts';
 
 /** Fill colors, indexed by the `color` the build assigns so that neighbours differ. */
@@ -41,9 +43,14 @@ interface TileIndex {
   minzoom: number;
   maxzoom: number;
   bounds: [number, number, number, number];
+  /** The sources of the default map's records. */
+  sources?: string[];
   changes: number[];
   /** Other layers' tiles: the de jure view, the contested areas, and the detailed coast. */
-  extra?: Record<string, { dir: string; version: string; layer: string; bounds: [number, number, number, number]; minzoom?: number }>;
+  extra?: Record<
+    string,
+    { dir: string; version: string; layer: string; bounds: [number, number, number, number]; minzoom?: number; sources?: string[] }
+  >;
 }
 
 /** Which borders the map shows: as administered (de facto) or as legally recognized (de jure). */
@@ -52,9 +59,10 @@ export type BorderView = 'facto' | 'jure';
 export interface HistoricalOptions {
   /**
    * Called when someone clicks a territory, with every polity recorded at that spot (the one
-   * drawn on top first). Records can overlap, and none should be unreachable.
+   * drawn on top first) and the spot itself ([longitude, latitude]). Records can overlap, and
+   * none should be unreachable.
    */
-  onSelect: (polities: string[]) => void;
+  onSelect: (polities: string[], spot: [number, number]) => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -141,6 +149,10 @@ export class HistoricalLayers {
   /** The stretch between change days currently shown on the map (see src/map/changes.ts). */
   private shownSegment = -1;
   private view: BorderView = 'facto';
+  /** public/data/tiles.json, once loaded. */
+  private index: TileIndex | null = null;
+  /** Tiles fetched for recordsAt, by address (each source's tile at a clicked spot). */
+  private readonly spotTiles = new Map<string, Promise<Uint8Array | null>>();
   private hasDejure = false;
   private secondOpinion = false;
 
@@ -215,6 +227,54 @@ export class HistoricalLayers {
     window.setTimeout(() => marker.remove(), still ? 3000 : 1600);
   }
 
+  /**
+   * Every territorial record at a spot ([longitude, latitude]) in each source's layer: the default
+   * map, the de jure view, and the second opinion, whether or not they're shown. Read from each
+   * layer's most detailed tile there (one small download per layer, kept for later clicks).
+   */
+  async recordsAt([lng, lat]: [number, number]): Promise<SpotSet[]> {
+    const index = this.index;
+    if (!index) return [];
+    const layers: { set: SpotSet['set']; dir: string; version: string; layer: string; bounds: number[]; sources?: string[] }[] = [
+      { set: 'facto', dir: 'tiles', version: index.version, layer: index.layer, bounds: index.bounds, sources: index.sources },
+      ...(index.extra?.dejure ? [{ set: 'jure' as const, ...index.extra.dejure }] : []),
+      ...(index.extra?.second ? [{ set: 'second' as const, ...index.extra.second }] : []),
+    ];
+    const z = index.maxzoom;
+    const { x, y, px, py } = tileAt(lng, lat, z);
+    return Promise.all(
+      layers.map(async ({ set, dir, version, layer, bounds, sources }) => {
+        const [w, s, e, n] = bounds;
+        const inside = lng >= w && lng <= e && lat >= s && lat <= n;
+        const bytes = inside ? await this.spotTile(dataUrl(`${dir}/${version}/${z}/${x}/${y}.pbf`)) : null;
+        const features = (bytes && readLayer(bytes, layer)?.features) ?? [];
+        const records = features
+          .filter((f) => f.type === 3 && pointInRings(px, py, f.rings))
+          .map(({ properties: p }): SpotRecord => ({
+            id: String(p.id),
+            polity: String(p.polity),
+            relation: String(p.relation),
+            s0: Number(p.s0),
+            s1: Number(p.s1),
+            e0: Number(p.e0),
+            ...(p.e1 !== undefined ? { e1: Number(p.e1) } : {}),
+          }));
+        return { set, sources: sources ?? [], records };
+      }),
+    );
+  }
+
+  private spotTile(url: string): Promise<Uint8Array | null> {
+    let tile = this.spotTiles.get(url);
+    if (!tile) {
+      tile = fetch(url)
+        .then(async (response) => (response.ok ? new Uint8Array(await response.arrayBuffer()) : null))
+        .catch(() => null);
+      this.spotTiles.set(url, tile);
+    }
+    return tile;
+  }
+
   /** Updates the map, but only when the day has crossed into a different change segment. */
   private showDay(): void {
     if (!this.ready) return;
@@ -226,6 +286,7 @@ export class HistoricalLayers {
 
   private addLayers(index: TileIndex): void {
     const map = this.map;
+    this.index = index;
     this.changes = index.changes;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });
 
@@ -496,14 +557,14 @@ export class HistoricalLayers {
 
     map.on('click', 'borders-fill', (event) => {
       const polities = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];
-      if (polities.length > 0) this.options.onSelect(polities);
+      if (polities.length > 0) this.options.onSelect(polities, [event.lngLat.lng, event.lngLat.lat]);
     });
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));
     if (this.hasDejure) {
       map.on('click', 'dejure-fill', (event) => {
         const holders = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];
-        if (holders.length > 0) this.options.onSelect(holders);
+        if (holders.length > 0) this.options.onSelect(holders, [event.lngLat.lng, event.lngLat.lat]);
       });
       map.on('mouseenter', 'dejure-fill', () => (map.getCanvas().style.cursor = 'pointer'));
       map.on('mouseleave', 'dejure-fill', () => (map.getCanvas().style.cursor = ''));

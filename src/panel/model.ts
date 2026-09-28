@@ -157,6 +157,28 @@ export interface BorderChange {
   source: Citation;
 }
 
+/**
+ * A territorial record found at a clicked spot, from one source's tiles (read by
+ * HistoricalLayers.recordsAt): its record and polity IDs, relation, and day numbers.
+ */
+export interface SpotRecord {
+  id: string;
+  polity: string;
+  relation: string;
+  s0: number;
+  s1: number;
+  e0: number;
+  e1?: number;
+}
+
+/** What one source's layer has at a clicked spot: the map's default view, the de jure view, or the second opinion. */
+export interface SpotSet {
+  set: 'facto' | 'jure' | 'second';
+  /** The sources this layer's records come from (for naming them where there's no record). */
+  sources: string[];
+  records: SpotRecord[];
+}
+
 // --- What the panel shows ------------------------------------------------------------------------
 
 /**
@@ -237,6 +259,29 @@ export interface TerritoryView {
   smallTerritory?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
+}
+
+/** "What each source says at the spot you clicked": one group per source layer. */
+export interface SpotView {
+  groups: {
+    set: SpotSet['set'];
+    /** The layer and its sources, e.g. "As administered · OpenHistoricalMap". */
+    heading: string;
+    entries: {
+      /** The record's ID (for keys). */
+      id: string;
+      polity: string;
+      /** The relation in words, e.g. "Administered (de facto)". */
+      relation: string;
+      name: string;
+      period?: string;
+      /** Said when the record's start or end is uncertain and it may not apply on this date. */
+      maybe?: string;
+      sources: SourceLine[];
+    }[];
+    /** Said when the layer has no record at the spot on this date. */
+    none?: string;
+  }[];
 }
 
 export interface FigureLine {
@@ -406,6 +451,51 @@ export function otherPolitiesAtSpot(
   return spot
     .filter((id) => id !== selected)
     .map((id) => ({ id, name: pickNames(namesOf(id) ?? [], day, locale)?.primary ?? id }));
+}
+
+const SPOT_SET_KEYS: Record<SpotSet['set'], MessageKey> = {
+  facto: 'spot.facto',
+  jure: 'spot.jure',
+  second: 'spot.second',
+};
+
+/**
+ * What each source's layer has at the spot the reader clicked, on this day, side by side: every
+ * record in effect (with the relation, name, dates, and sources), or that there's none. Shown only
+ * while the selected polity is one of those recorded at the spot. `fileOf` gives a polity's file,
+ * once loaded, for its names and the record's dates and sources.
+ */
+export function describeSpot(
+  sets: readonly SpotSet[] | null,
+  selected: string,
+  fileOf: (id: string) => PolityFile | undefined,
+  sources: SourcesFile['sources'],
+  day: number,
+  locale: string,
+): SpotView | undefined {
+  if (!sets || !sets.some((s) => s.records.some((r) => r.polity === selected))) return undefined;
+  return {
+    groups: sets.map((set) => {
+      const titles = set.sources.map((id) => sources[id]?.title ?? id).join(', ');
+      const heading = titles ? `${t(SPOT_SET_KEYS[set.set])} · ${titles}` : t(SPOT_SET_KEYS[set.set]);
+      const current = set.records.filter((r) => r.s0 <= day && day < (r.e1 ?? r.e0));
+      const entries = current.map((r) => {
+        const file = fileOf(r.polity);
+        const record = file?.records.find((x) => x.id === r.id && !x.via);
+        const uncertain = (r.s0 <= day && day < r.s1) || (r.e1 !== undefined && r.e0 <= day);
+        return {
+          id: r.id,
+          polity: r.polity,
+          relation: RELATION_KEYS[r.relation] ? t(RELATION_KEYS[r.relation]) : r.relation,
+          name: pickNames(file?.names ?? [], day, locale)?.primary ?? r.polity,
+          ...(record ? { period: describePeriod(record.start, record.end) } : {}),
+          ...(uncertain ? { maybe: t('spot.maybe') } : {}),
+          sources: record ? sourceLines(record.sources, sources) : [],
+        };
+      });
+      return { set: set.set, heading, entries, ...(entries.length === 0 ? { none: t('spot.none') } : {}) };
+    }),
+  };
 }
 
 /** Describes a polity on a given day, from its polity file. */

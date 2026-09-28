@@ -44,8 +44,21 @@ import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
 import { borderReportUrl } from '../url/report.ts';
 import type { TimelineEvent } from '../timeline/events.ts';
-import { describeEvent, describeNearby, describeTerritory, otherPolitiesAtSpot } from './model.ts';
-import type { BorderChange, Credit, CurrentEntry, EventFile, EventView, NearbyView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
+import { describeEvent, describeNearby, describeSpot, describeTerritory, otherPolitiesAtSpot } from './model.ts';
+import type {
+  BorderChange,
+  Credit,
+  CurrentEntry,
+  EventFile,
+  EventView,
+  NearbyView,
+  PolityFile,
+  SourceLine,
+  SourcesFile,
+  SpotSet,
+  SpotView,
+  TerritoryView,
+} from './model.ts';
 import { attachSheetHandle } from './sheet.ts';
 import type { SheetHeight } from './sheet.ts';
 
@@ -172,16 +185,50 @@ function Current({ entry }: { entry: CurrentEntry }) {
   );
 }
 
+/** "What each source says at the spot you clicked": each source's layer, side by side. */
+function Spot({ view, onSelect }: { view: SpotView; onSelect: (polity: string) => void }) {
+  return (
+    <div class="panel-spot">
+      <h4>{t('spot.title')}</h4>
+      {view.groups.map((group) => (
+        <div key={group.set} class="panel-spot-group">
+          <p class="panel-spot-heading">{group.heading}</p>
+          {group.none && <p class="panel-note">{group.none}</p>}
+          {group.entries.length > 0 && (
+            <ul class="panel-plain-list">
+              {group.entries.map((entry) => (
+                <li key={entry.id} class="panel-spot-entry">
+                  <p>
+                    {entry.relation}:{' '}
+                    <button type="button" class="panel-link-button" onClick={() => onSelect(entry.polity)}>
+                      {entry.name}
+                    </button>
+                    {entry.period && <span class="panel-spot-period"> ({entry.period})</span>}
+                  </p>
+                  {entry.maybe && <p class="panel-note">{entry.maybe}</p>}
+                  {entry.sources.length > 0 && <Sources lines={entry.sources} />}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 interface TerritoryProps {
   view: TerritoryView;
   alsoHere: { id: string; name: string }[];
+  /** What each source says at the clicked spot, when the panel was opened by a click there. */
+  spot?: SpotView;
   /** The "Report a problem" address for the current view (built when used, so it's never stale). */
   reportUrl: () => string;
   onGoToDay: (day: number) => void;
   onSelectOther: (polity: string) => void;
 }
 
-function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: TerritoryProps) {
+function Territory({ view, alsoHere, spot, reportUrl, onGoToDay, onSelectOther }: TerritoryProps) {
   // Refresh the link just before it's used: the map may have moved since the panel was drawn.
   const refreshReportLink = (event: Event) => ((event.currentTarget as HTMLAnchorElement).href = reportUrl());
   return (
@@ -238,6 +285,7 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
           </p>
         ))}
         {view.missing && <p class="panel-missing">{view.missing}</p>}
+        {spot && <Spot view={spot} onSelect={onSelectOther} />}
         {view.smallTerritory && <p class="panel-missing">{view.smallTerritory}</p>}
         <p class="panel-report">
           <a href={reportUrl()} target="_blank" rel="noopener" onPointerDown={refreshReportLink} onFocus={refreshReportLink}>
@@ -452,6 +500,8 @@ export class TerritoryPanel {
   private shownEvent: string | null = null;
   /** The polities recorded where the reader last clicked, top one first. */
   private spot: string[] = [];
+  /** What each source's layer has where the reader last clicked (null while it's looked up). */
+  private spotSets: SpotSet[] | null = null;
   private day: number;
   /** The phone panel's height (see sheet.ts). */
   private sheet: SheetHeight = 'half';
@@ -538,7 +588,15 @@ export class TerritoryPanel {
   /** Records which polities are at the spot the reader clicked, so the panel can offer the others. */
   setSpot(polities: string[]): void {
     this.spot = polities;
+    this.spotSets = null; // looked up again for the new spot (setSpotSources)
     for (const id of polities) this.loadIfNeeded(`polities/${id}`); // for their names
+  }
+
+  /** What each source's layer has at the clicked spot, for "What each source says here". */
+  setSpotSources(sets: SpotSet[]): void {
+    this.spotSets = sets;
+    for (const set of sets) for (const r of set.records) this.loadIfNeeded(`polities/${r.polity}`); // names, dates, sources
+    this.draw();
   }
 
   /** Whether keyboard focus is inside the panel (so closing it should move focus elsewhere). */
@@ -643,13 +701,19 @@ export class TerritoryPanel {
       const polity = selection.id;
       const view = describeTerritory(state as PolityFile, this.sources, this.day, locale);
       const alsoHere = otherPolitiesAtSpot(this.spot, polity, polityNames, this.day, locale);
+      const polityFile = (id: string) => {
+        const file = this.files.get(`polities/${id}`);
+        return typeof file === 'object' ? (file as PolityFile) : undefined;
+      };
+      const spot = describeSpot(this.spotSets, polity, polityFile, this.sources, this.day, locale);
       const reportUrl = () => borderReportUrl({ name: view.name, polity, day: this.day, viewLink: this.options.viewLink() });
       this.show(
-        `${this.sheet} ${JSON.stringify(alsoHere)} ${JSON.stringify(view)}`,
+        `${this.sheet} ${JSON.stringify(alsoHere)} ${JSON.stringify(spot)} ${JSON.stringify(view)}`,
         <Shell title={view.name} subtitle={view.localName} summary={view.summary} {...shell}>
           <Territory
             view={view}
             alsoHere={alsoHere}
+            spot={spot}
             reportUrl={reportUrl}
             onGoToDay={this.options.onGoToDay}
             onSelectOther={this.options.onSelectPolity}

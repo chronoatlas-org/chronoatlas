@@ -282,6 +282,33 @@ body {
 
 /* --- Territory panel (src/panel/) --- */
 
+/* "What each source says at the spot you clicked": one group per source layer. */
+.panel-spot {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #d8dee4;
+}
+
+.panel-spot-group + .panel-spot-group {
+  margin-top: 8px;
+}
+
+.panel-spot-heading {
+  margin: 0 0 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #57606a;
+}
+
+.panel-spot-entry p {
+  margin: 2px 0;
+}
+
+.panel-spot-period {
+  color: #57606a;
+  font-size: 0.85em;
+}
+
 .panel {
   grid-column: 2;
   grid-row: 1;

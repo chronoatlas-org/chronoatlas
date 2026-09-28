@@ -327,9 +327,15 @@ LTS, and the GitHub CLI are installed.
     no Preact build plugin. Never use `dangerouslySetInnerHTML`: names come from outside data.
   - `sheet.ts` holds the phone bottom sheet's heights and handle (drag, tap, arrow keys). Its
     heights must match `.panel[data-sheet=…]` in `src/style.css`.
-  - A map click passes every polity at that spot (`onSelect(polities)`), and the panel offers
+  - A map click passes every polity at that spot (`onSelect(polities, spot)`), and the panel offers
     the others ("Also recorded at the spot you clicked"), because records can overlap and none
     may be unreachable.
+  - **"What each source says at the spot you clicked"** (Phase 3 step 6): `HistoricalLayers.recordsAt`
+    fetches each source's zoom-7 tile at the spot (default map, de jure, second opinion, shown or
+    not), reads it with `src/map/mvt.ts` (our own small tile reader, so the site needs no extra
+    library), and finds the polygons containing the point. `describeSpot` (model.ts) lays them out
+    side by side for the day, with "No record here" per source; `tiles.json` names each tile set's
+    `sources` for that.
   - Selecting by click adds a Back-button step (`writeUrlNow({ push: true })`); closing only
     replaces the address.
   - Polity files carry the crosswalk-linked de jure records (`via`, `link`, `m0`/`m1` for when

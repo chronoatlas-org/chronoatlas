@@ -2,8 +2,8 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
-import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile } from './model.ts';
+import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeSpot, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
+import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile, SpotSet } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
   'test-source': { title: 'Test Source' },
@@ -360,5 +360,48 @@ describe('describeTerritory: figures', () => {
     expect(population(1903).value).toBe('about 1,000,000');
     expect(population(1903).notes).toContain('The nearest estimate to this date: 1902 (year only).');
     expect(population(1908).value).toBe('about 2,000,000');
+  });
+});
+
+describe('describeSpot', () => {
+  // At a made-up spot: Testland administers it (record "b", from 1905-05-12); Unit A is sovereign
+  // per another source; the second opinion has a record that ends "1905" (known only to the year).
+  const spotRecord = (id: string, polity: string, relation: string, s0: number, s1: number, e0: number, e1?: number) => ({
+    id, polity, relation, s0, s1, e0, ...(e1 !== undefined ? { e1 } : {}),
+  });
+  const sets: SpotSet[] = [
+    { set: 'facto', sources: ['openhistoricalmap'], records: [spotRecord('b', 'testland', 'administers', day(1905, 5, 12), day(1905, 5, 12), FAR_FUTURE)] },
+    { set: 'jure', sources: ['other-test-source'], records: [spotRecord('u', 'unit-a', 'sovereign', day(1901, 1, 1), day(1901, 1, 1), day(1920, 1, 1))] },
+    { set: 'second', sources: ['test-source'], records: [spotRecord('s', 'secondland', 'controls', day(1901, 1, 1), day(1901, 12, 31), day(1905, 1, 1), day(1905, 12, 31))] },
+  ];
+  const files: Record<string, PolityFile> = { testland };
+  const at = (y: number, m: number, d: number, selected = 'testland') =>
+    describeSpot(sets, selected, (id) => files[id], sources, day(y, m, d), 'en');
+
+  it('lists each source\'s record at the spot, side by side, with its dates and sources', () => {
+    const view = at(1905, 6, 1)!;
+    expect(view.groups.map((g) => g.heading)).toEqual([
+      'As administered · OpenHistoricalMap',
+      'As legally recognized · Other Test Source',
+      'Second opinion · Test Source',
+    ]);
+    const [facto] = view.groups[0].entries;
+    expect(facto).toMatchObject({ polity: 'testland', relation: 'Administered (de facto)', name: 'Testland' });
+    expect(facto.period).toBe('12 May 1905 onwards');
+    expect(facto.sources[0].text).toBe('OpenHistoricalMap, relation 1, version 2');
+    // A polity whose file hasn't loaded yet is named by its ID until it does.
+    expect(view.groups[1].entries[0]).toMatchObject({ name: 'unit-a', relation: 'Sovereign (de jure)' });
+  });
+
+  it('says so when a source may no longer apply, or has no record on the date', () => {
+    expect(at(1905, 6, 1)!.groups[2].entries[0].maybe).toMatch(/may not apply on this date/);
+    const later = at(1906, 6, 1)!;
+    expect(later.groups[2].entries).toEqual([]);
+    expect(later.groups[2].none).toBe('No record here on this date.');
+  });
+
+  it('shows nothing when the selected polity isn\'t one recorded at the spot, or before the lookup', () => {
+    expect(at(1905, 6, 1, 'elsewhere')).toBeUndefined();
+    expect(describeSpot(null, 'testland', () => undefined, sources, day(1905, 6, 1), 'en')).toBeUndefined();
   });
 });
