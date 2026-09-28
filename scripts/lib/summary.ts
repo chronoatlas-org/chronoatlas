@@ -485,7 +485,7 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
             const [facto, jure] = pair(key);
             return `administered by ${nameOf(facto)}, legally ${nameOf(jure)}'s`;
           },
-          'Administered by one state and legally recognized as another\'s (including "possibly contested"), in km².',
+          'Administered by one state and legally recognized as another\'s (including "possibly contested"), in km². Areas of overlapping records are added together, so a sudden doubling usually means two records overlap in the source.',
         ],
         [
           'Sources differ',
@@ -494,7 +494,7 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
             const [main, second] = pair(key);
             return `OpenHistoricalMap: ${nameOf(main)}; Cliopatria: ${nameOf(second)}`;
           },
-          'Where the default map and the second opinion name different holders, in km².',
+          'Where the default map and the second opinion name different holders, in km². Areas of overlapping records are added together.',
         ],
         [
           'Land areas',
