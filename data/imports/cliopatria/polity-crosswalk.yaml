@@ -10,10 +10,12 @@
 # Kinds (see data/imports/cshapes-2-0/polity-crosswalk.yaml): same-state means the same polity.
 #
 # Not matched, on purpose: the warring factions in China (Kuomintang, Communist Party of China,
-# Chinese Communists, Anti-Kuomintang Coalition, Empire of China), the East Turkestan Republic,
-# the Great Mongol State, the European states and colonial empires (their East Asian land was
-# small concessions and colonies we record separately), and Pakistan and India (whose Cliopatria
-# names and years don't line up with ours).
+# Chinese Communists, Anti-Kuomintang Coalition, Empire of China). For the Kuomintang this was
+# confirmed by the maintainers on 2026-09-28 (Phase 3 decision 14): Cliopatria keeps it as a polity
+# of its own beside its "Republic of China" in 1917–1929, so it isn't the same state. Also not
+# matched: the East Turkestan Republic, the Great Mongol State, the European states and colonial
+# empires (their East Asian land was small concessions and colonies we record separately), and
+# Pakistan and India (whose Cliopatria names and years don't line up with ours).
 
 - unit: cliopatria-british-raj
   matches:

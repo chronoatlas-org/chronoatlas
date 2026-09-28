@@ -514,7 +514,8 @@ updates `docs/architecture.md` and CLAUDE.md where it changes how things work.
 ### Waiting for the maintainers (2026-09-28)
 
 *Updated later on 2026-09-28:* the maintainers approved the recommendations (decisions 11–13), so
-step 7 is merged, and items 1 (threshold), 2, and 3 are settled. Two questions remain open:
+step 7 is merged, and items 1 (threshold), 2, and 3 are settled. The two questions below were
+then settled too (decisions 14 and 15):
 
 - **Kuomintang and the Republic of China.** The maintainers suggested showing both names for the
   same nation. Checked in the data: Cliopatria keeps them apart itself. Its "Republic of China"
@@ -640,4 +641,11 @@ in "Waiting for the maintainers"):
 12. **Map text:** the visitor's own fonts; no font is hosted.
 13. **Speed on a phone:** checked by the maintainers on a real phone; zooming and the timeline work
     well, so the map text stays as built.
+14. **Kuomintang stays separate from our Republic of China.** Cliopatria records it as a polity of
+    its own beside its "Republic of China" in 1917–1929, so linking the two would merge what it
+    records as two governments at once. Both names already appear, each attributed, in "What each
+    source says here" and "Sources differ".
+15. **The comparison stays main and second:** OpenHistoricalMap is the filled, main map (borders
+    are corrected there, and its dates are the most precise), and the "Second opinion" toggle lays
+    Cliopatria over it and marks where they differ.
 
