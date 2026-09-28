@@ -102,7 +102,12 @@ jobs:
             echo
             echo 'The data-change summary is in the first comment. Review this like any data change ([how review works](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#how-review-works)): other people edit OpenHistoricalMap too, so look at every changed border, not only the one you expected. Nothing is merged automatically.'
           } > summary/body.md
-          url="$(gh pr create --base "$BASE" --head "$branch" --title "Re-import OpenHistoricalMap (${day})" --body-file summary/body.md)"
+          if ! url="$(gh pr create --base "$BASE" --head "$branch" --title "Re-import OpenHistoricalMap (${day})" --body-file summary/body.md)"; then
+            # Don't leave the branch behind when the pull request can't be opened.
+            git push -q origin --delete "$branch"
+            echo "::error::Couldn't open the pull request. Check that \"Allow GitHub Actions to create and approve pull requests\" is ticked and saved in both the organization's and the repository's Settings → Actions → General (docs/reviewing.md, section 7), then run this again."
+            exit 1
+          fi
           gh pr comment "$url" --body-file summary/comment.md
           # A pull request opened by this workflow starts no checks by itself; start the build here.
           gh workflow run deploy.yml --ref "$branch"
