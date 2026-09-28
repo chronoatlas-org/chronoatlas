@@ -142,6 +142,8 @@ taking part follows our
   borders (approved 2026-09-28), with progress.
 - [docs/phase-4-plan.md](docs/phase-4-plan.md): the plan for Phase 4, the contribution pipeline
   (approved 2026-09-28), with progress.
+- [docs/phase-5-plan.md](docs/phase-5-plan.md): the draft plan for Phase 5, the worldwide map
+  (waiting for review).
 - [docs/reviewing.md](docs/reviewing.md): how to review a pull request, merge it without a time
   zone stamp, and set up the repository's settings.
 - [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap

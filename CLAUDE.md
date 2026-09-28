@@ -233,6 +233,9 @@ each step. The ones that affect everyday work:
 - **Testing a workflow locally:** a `git fetch --depth=…` into this clone makes it shallow and
   breaks later pushes; undo with `git fetch --unshallow origin`.
 
+**Phase 5 plan drafted (2026-09-28), not yet approved:** [docs/phase-5-plan.md](docs/phase-5-plan.md)
+(the worldwide map). Write no Phase 5 code until the maintainers approve it.
+
 **CShapes decisions (2026-09-27)**, made while importing it:
 
 - **Columns from the R package:** its status, owner, and "borders defined" columns come from the

@@ -483,7 +483,9 @@ and 100 GB/month bandwidth as a soft limit):
   - A reviewer guide. ✅ (step 6: [reviewing.md](reviewing.md), including the settings of step 7;
     the guide to tracing in OHM was written early, in Phase 2 step 13.)
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,
-  and more UI translations (the translation system itself exists from Phase 1).
+  and more UI translations (the translation system itself exists from Phase 1). Detailed plan:
+  [phase-5-plan.md](phase-5-plan.md), a draft waiting for the maintainers' review, with
+  measurements of Cliopatria worldwide.
 
 ## Showcase: East Asia 1931–1945
 
