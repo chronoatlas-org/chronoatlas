@@ -9,6 +9,7 @@ See [docs/data-sources.md](docs/data-sources.md) for the full evaluation.
 | Source | License | Where | What | Attribution |
 |---|---|---|---|---|
 | [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/) v5.1.2 | Public domain | [data/imports/natural-earth/](data/imports/natural-earth/README.md) | Base map: land, lakes, and rivers at 1:50m | "Made with Natural Earth", shown in the map's attribution |
+| [CShapes 2.0](https://icr.ethz.ch/data/cshapes/), downloaded 2026-09-27 (checksums in its manifest) | **CC BY-NC-SA 4.0** (non-commercial, share-alike) | [data/imports/cshapes-2-0/](data/imports/cshapes-2-0/README.md) only | Legally recognized (de jure) borders of states and their dependencies, East Asia 1900–1950. Its status, owner, and "borders defined" columns come from the authors' R package, whose file says GPL (>= 2); we treat them as part of the dataset, and will ask the authors to confirm (see its [LICENSE.md](data/imports/cshapes-2-0/LICENSE.md)). | Schvitz, Guy, Seraina Rüegger, Luc Girardin, Lars-Erik Cederman, Nils Weidmann, and Kristian Skrede Gleditsch. 2022. "Mapping The International System, 1886-2017: The CShapes 2.0 Dataset." *Journal of Conflict Resolution* 66(1): 144–61. Shown in the territory panel's credits wherever its data appears. **Nobody, including forks, may use it commercially. It can't be merged with differently licensed data or contributed to OpenHistoricalMap.** |
 | [OpenHistoricalMap](https://www.openhistoricalmap.org/copyright), snapshot of 2026-09-27 | CC0 1.0. The import skips any feature with a non-public-domain `license` tag; this snapshot had none. | [data/imports/openhistoricalmap/](data/imports/openhistoricalmap/README.md), plus names in `data/polities/` | Country-level borders (admin level 2), East Asia 1900–1950 | "Borders: OpenHistoricalMap" in the map's attribution. OHM's requested wording: "Map data courtesy of the OpenHistoricalMap project, in the public domain unless otherwise noted." |
 
 ## Planned data sources
@@ -16,7 +17,6 @@ See [docs/data-sources.md](docs/data-sources.md) for the full evaluation.
 | Source | License | How we plan to use it | Attribution / notes |
 |---|---|---|---|
 | [Wikidata](https://www.wikidata.org/) | CC0 1.0 | Stable IDs for polities and events | We cite the references behind Wikidata statements, not Wikidata alone. |
-| [CShapes 2.0](https://icr.ethz.ch/data/cshapes/) | **CC BY-NC-SA 4.0** (non-commercial, share-alike) | A separate "de jure borders (per CShapes)" layer | Schvitz et al. (2022), "Mapping the International System, 1886–2017: The CShapes 2.0 Dataset", *Journal of Conflict Resolution* 66(1): 144–61. **Kept only in its own folder and map layer. Nobody, including forks, may use it commercially. It can't be merged with differently licensed data or contributed to OpenHistoricalMap.** |
 | [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) (Seshat Global History Databank) | CC BY 4.0 | A yearly second-opinion layer, and later the worldwide baseline | Credit and note changes. Paper: [*Scientific Data* (2025)](https://www.nature.com/articles/s41597-025-04516-9). |
 
 ## Evaluated and not used
@@ -58,6 +58,7 @@ notices are kept in the bundle):
 | [vt-pbf](https://github.com/mapbox/vt-pbf) | 3.1.3 | MIT |
 | [pbf](https://github.com/mapbox/pbf) (used in tests to read tiles back) | 5.1.2 | BSD-3-Clause |
 | [@mapbox/vector-tile](https://github.com/mapbox/vector-tile-js) (used in tests to read tiles back) | 3.0.0 | BSD-3-Clause |
+| [xz-decompress](https://github.com/httptoolkit/xz-decompress) (used by the CShapes import to unpack the R package's data file) | 0.2.3 | MIT (per its package.json; the npm package has no license file) |
 | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped) | 26.6.3 | MIT |
 
 Exact versions of every package, including indirect ones, are recorded in `package-lock.json`.

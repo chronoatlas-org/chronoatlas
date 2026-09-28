@@ -123,6 +123,16 @@ describe('describeTerritory: history and names', () => {
     });
   });
 
+  it('lists every source the view cites once, with its credit, and passes the polity note on', () => {
+    const v = describeTerritory({ ...testland, notes: 'A made-up note.' }, { ...sources, 'test-source': { title: 'Test Source', attribution: 'Credit: Test Source.', url: 'https://example.test/' } }, day(1903, 1, 1), 'en');
+    expect(v.credits).toEqual([
+      { title: 'Test Source', attribution: 'Credit: Test Source.', url: 'https://example.test/' },
+      { title: 'OpenHistoricalMap' },
+      { title: 'Other Test Source' },
+    ]);
+    expect(v.note).toBe('A made-up note.');
+  });
+
   it('titles the panel with the name in the reader’s language for that day', () => {
     expect(view(1903, 1, 1, 'fr').name).toBe('Testlande');
     expect(view(1907, 1, 1, 'fr').name).toBe('Testland'); // the French name ended in 1905

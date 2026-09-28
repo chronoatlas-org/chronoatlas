@@ -1,0 +1,9 @@
+id: cshapes-775
+type: state
+names:
+  - text: Myanmar (Burma)
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 775
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 775).

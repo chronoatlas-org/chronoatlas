@@ -549,6 +549,15 @@ body {
   border: 0;
 }
 
+.panel-credits li {
+  font-size: 0.78rem;
+  color: #57606a;
+}
+
+.panel-credits li + li {
+  margin-top: 6px;
+}
+
 /* --- Events in the panel --- */
 
 .panel-event-summary {

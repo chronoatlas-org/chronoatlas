@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
-import { assignColors, buildChanges, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE } from './build-data.ts';
+import { assignColors, buildBorders, buildChanges, buildEventFiles, buildEvents, buildPolityFiles, changeDays, dayRanges, FAR_FUTURE, onDefaultMap } from './build-data.ts';
 import type { Dataset } from './lib/data.ts';
 
 describe('buildPolityFiles', () => {
@@ -27,6 +27,7 @@ describe('buildPolityFiles', () => {
     figures: [],
     coverage: [],
     shapes: [],
+    crosswalks: [],
     imports: [],
     problems: [],
   };
@@ -96,7 +97,7 @@ describe('buildEvents', () => {
       value: { id, title: `Test event ${id}`, date, summary: 'A made-up event.', sources: cite, ...(importance ? { importance } : {}) },
     });
     const { events } = buildEvents({
-      sources: [], polities: [], assertions: [], figures: [], coverage: [], shapes: [], imports: [], problems: [],
+      sources: [], polities: [], assertions: [], figures: [], coverage: [], shapes: [], crosswalks: [], imports: [], problems: [],
       events: [event('later', '1902-03~', 5), event('earlier', '1901-05-12/1901-05-20')],
     });
     expect(events).toEqual([
@@ -154,5 +155,33 @@ describe('assignColors', () => {
       { polity: 'b', box: [0, 0, 1, 1], s0: 10, e0: 20 }, // starts when a ends
     ]);
     expect(colors.get('a')).toBe(colors.get('b'));
+  });
+});
+
+describe('the default map', () => {
+  it('draws our own data and OpenHistoricalMap, and keeps every other import out', () => {
+    expect(onDefaultMap('data/assertions/testland.yaml')).toBe(true);
+    expect(onDefaultMap('data/imports/openhistoricalmap/assertions.yaml')).toBe(true);
+    expect(onDefaultMap('data/imports/cshapes-2-0/assertions.yaml')).toBe(false);
+  });
+
+  it('builds the border tiles from default-map assertions only', () => {
+    // Made-up shapes and records (Testland), not real ones.
+    const cite = [{ source: 'test-source', locator: 'p. 1' }];
+    const square = [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]];
+    const shape = (id: string) => ({
+      file: id,
+      value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: square } },
+    });
+    const record = (id: string) => ({ id, relation: 'administers' as const, subject: 'testland', shape: id, start: '1901', end: 'ongoing', sources: cite });
+    const { collection } = buildBorders({
+      sources: [], polities: [], events: [], figures: [], coverage: [], crosswalks: [], imports: [], problems: [],
+      shapes: [shape('mine'), shape('other-import')],
+      assertions: [
+        { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [record('mine')] },
+        { file: 'data/imports/test-other/assertions.yaml', value: [record('other-import')] },
+      ],
+    });
+    expect(collection.features.map((f) => f.properties?.id)).toEqual(['mine']);
   });
 });

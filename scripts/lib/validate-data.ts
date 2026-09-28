@@ -5,7 +5,11 @@
 //   3. every reference (polity, shape, source, assertion) points at something that exists;
 //   4. every date parses, and nothing ends before it starts;
 //   5. every shape is valid geometry (closed rings, sensible coordinates, correct orientation);
-//   6. every import folder has its LICENSE.md, README.md, and manifest.json.
+//   6. every import folder has its LICENSE.md, README.md, and manifest.json;
+//   7. a polity record inside an import folder (data/imports/<name>/polities/) is only used by
+//      that folder's own records, so nothing derived from that source leaks outside it;
+//   8. a crosswalk (data/imports/<name>/polity-crosswalk.yaml) links that folder's units to our
+//      own polities, with dates that parse.
 
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
@@ -18,7 +22,7 @@ import type { Dataset, Loaded, Problem } from './data.ts';
 import { END_KEYWORDS } from './types.ts';
 import type { Citation } from './types.ts';
 
-type SchemaName = 'source' | 'polity' | 'assertion' | 'event' | 'figure' | 'coverage' | 'shape';
+type SchemaName = 'source' | 'polity' | 'assertion' | 'event' | 'figure' | 'coverage' | 'shape' | 'crosswalk';
 
 function loadSchemas(): Record<SchemaName, ValidateFunction> {
   // Strict mode catches typos in the schemas. `strictRequired` is off because our conditional
@@ -42,6 +46,7 @@ function loadSchemas(): Record<SchemaName, ValidateFunction> {
     figure: get('figure'),
     coverage: get('coverage'),
     shape: get('shape'),
+    crosswalk: get('crosswalk'),
   };
 }
 
@@ -72,6 +77,7 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
   checkSchema('figure', ds.figures);
   checkSchema('coverage', ds.coverage);
   checkSchema('shape', ds.shapes);
+  checkSchema('crosswalk', ds.crosswalks);
 
   // 2. Unique IDs, and file names that match.
   const index = <T extends { id: string }>(kind: string, records: { file: string; value: T }[]) => {
@@ -189,6 +195,41 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
   for (const dir of ds.imports) {
     for (const required of ['LICENSE.md', 'README.md', 'manifest.json']) {
       if (!fileExists(`${dir}/${required}`)) report(dir, `import folder is missing ${required}`);
+    }
+  }
+
+  // 7. Polities that belong to an import folder may only be used inside that folder.
+  const homeFolder = new Map<string, string>();
+  for (const { file, value } of ds.polities) {
+    const folder = /^(data\/imports\/[^/]+)\/polities\//.exec(file)?.[1];
+    if (folder && typeof value?.id === 'string') homeFolder.set(value.id, folder);
+  }
+  const mustStayHome = (file: string, id: unknown) => {
+    const folder = typeof id === 'string' ? homeFolder.get(id) : undefined;
+    if (folder && !file.startsWith(`${folder}/`)) {
+      report(file, `polity "${id as string}" belongs to ${folder} and can only be used by records in that folder`);
+    }
+  };
+  for (const { file, value: a } of list(ds.assertions)) {
+    for (const id of [a.subject, a.object, ...(a.recognized_by ?? [])]) mustStayHome(file, id);
+  }
+  for (const { file, value: e } of ds.events) for (const id of e?.polities ?? []) mustStayHome(file, id);
+  for (const { file, value: f } of list(ds.figures)) mustStayHome(file, f.polity);
+
+  // 8. Crosswalks: each unit is a polity of the crosswalk's own folder, and each match is one of
+  // our polities (data/polities/), with dates that parse and don't run backwards.
+  for (const { file, value } of ds.crosswalks) {
+    const folder = file.slice(0, file.lastIndexOf('/'));
+    for (const entry of Array.isArray(value) ? value : []) {
+      if (!polities.has(entry.unit)) report(file, `unit "${entry.unit}" does not exist`);
+      else if (homeFolder.get(entry.unit) !== folder) report(file, `unit "${entry.unit}" is not a polity of ${folder}`);
+      for (const match of entry.matches ?? []) {
+        if (!polities.has(match.polity)) report(file, `polity "${match.polity}" does not exist`);
+        else if (homeFolder.has(match.polity)) report(file, `polity "${match.polity}" should be one of ours (data/polities/), not an import's`);
+        const start = match.from === undefined ? null : date(file, `match ${entry.unit} → ${match.polity} from`, match.from);
+        const stop = match.until === undefined ? null : date(file, `match ${entry.unit} → ${match.polity} until`, match.until);
+        if (start && stop && start.earliest >= stop.earliest) report(file, `match ${entry.unit} → ${match.polity} ends before it starts`);
+      }
     }
   }
 

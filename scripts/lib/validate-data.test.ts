@@ -35,6 +35,7 @@ function dataset(overrides: Partial<Dataset> = {}): Dataset {
     figures: [],
     coverage: [],
     shapes: [{ file: 'data/shapes/testland-1900.geojson', value: shape }],
+    crosswalks: [],
     imports: [],
     problems: [],
     ...overrides,
@@ -50,6 +51,49 @@ const messages = (ds: Dataset, fileExists = () => true) =>
   validateDataset(ds, { fileExists }).map((p) => p.message).join('\n');
 
 describe('validateDataset', () => {
+  it('keeps polity records that live in an import folder inside that folder', () => {
+    const imported: Polity = {
+      id: 'import-only-land',
+      names: [{ text: 'Import-only land', lang: 'en', sources: [{ source: 'test-atlas', locator: 'p. 2' }] }],
+    };
+    const use = (file: string) => ({
+      file,
+      value: [{ ...dataset().assertions[0].value[0], id: `uses-${file.length}`, subject: 'import-only-land' }],
+    });
+    const base = dataset();
+    const ds = dataset({
+      polities: [...base.polities, { file: 'data/imports/test-import/polities/import-only-land.yaml', value: imported }],
+      assertions: [...base.assertions, use('data/imports/test-import/assertions.yaml')],
+    });
+    expect(validateDataset(ds, { fileExists: () => true })).toEqual([]);
+    ds.assertions.push(use('data/assertions/outside.yaml'));
+    expect(messages(ds)).toMatch(/polity "import-only-land" belongs to data\/imports\/test-import and can only be used/);
+  });
+
+  it('checks crosswalks: units from their own folder, matches to our polities, sensible dates', () => {
+    const unit: Polity = { id: 'test-unit-1', names: [{ text: 'Unit 1', lang: 'en', sources: [{ source: 'test-atlas', locator: 'p. 3' }] }] };
+    const base = dataset();
+    const ds = dataset({
+      polities: [...base.polities, { file: 'data/imports/test-import/polities/test-unit-1.yaml', value: unit }],
+      crosswalks: [
+        {
+          file: 'data/imports/test-import/polity-crosswalk.yaml',
+          value: [{ unit: 'test-unit-1', matches: [{ polity: 'testland', kind: 'same-state', from: '1901', until: '1905' }] }],
+        },
+      ],
+    });
+    expect(validateDataset(ds, { fileExists: () => true })).toEqual([]);
+    ds.crosswalks[0].value[0].matches.push(
+      { polity: 'nowhere', kind: 'same-state' },
+      { polity: 'test-unit-1', kind: 'dependency' },
+      { polity: 'testland', kind: 'same-state', from: '1910', until: '1905' },
+    );
+    const text = messages(ds);
+    expect(text).toMatch(/polity "nowhere" does not exist/);
+    expect(text).toMatch(/polity "test-unit-1" should be one of ours/);
+    expect(text).toMatch(/ends before it starts/);
+  });
+
   it('accepts a valid dataset', () => {
     expect(validateDataset(dataset(), { fileExists: () => true })).toEqual([]);
   });

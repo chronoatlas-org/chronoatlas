@@ -89,6 +89,7 @@ export const en = {
   'panel.administersNote':
     'This source records who administered the area. It says nothing about legal recognition or rival claims.',
   'panel.sourceLabel': 'Source:',
+  'panel.credits': 'Sources and credits',
 
   'timeline.label': 'Timeline',
   'timeline.help':

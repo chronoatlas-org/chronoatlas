@@ -99,6 +99,25 @@ The heart of the data: **"According to *source*, *subject* *relation* *shape* fr
 
 Two sources that disagree are two assertions. We never merge or choose between them.
 
+## Records that belong to an import
+
+An import whose license isn't CC0 or public domain (for example CShapes, CC BY-NC-SA) keeps
+everything derived from it in its own folder, `data/imports/<name>/`:
+
+- **Polity records** go in `data/imports/<name>/polities/<id>.yaml`, in the same format as above.
+  Only that folder's own records may use them; the validator reports any use from outside.
+- **A crosswalk**, `data/imports/<name>/polity-crosswalk.yaml`, is hand-written. It says which of
+  our polities goes with each of the import's own units, and when:
+
+```yaml
+- unit: example-unit-1          # a polity record in this import folder
+  matches:
+    - polity: example-polity    # one of ours, in data/polities/
+      kind: same-state          # or: dependency (it administered the unit's colony or occupied area)
+      from: "1901"              # optional; until (exclusive) is optional too
+      why: The reason, from the data.
+```
+
 ## Shapes: `data/shapes/<id>.geojson`
 
 Geometry only: one GeoJSON Feature per file, a `Polygon` or `MultiPolygon` in

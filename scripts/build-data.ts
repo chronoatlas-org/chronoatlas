@@ -102,9 +102,19 @@ export function assignColors(items: { polity: string; box: Box; s0: number; e0: 
   return colors;
 }
 
+/**
+ * Whether an assertions file belongs on the default map (the de facto view): our own data and
+ * OpenHistoricalMap. Every other import is its own layer, never mixed into this one: each source
+ * ships separately, and some (CShapes) have license terms that keep them apart.
+ */
+export function onDefaultMap(file: string): boolean {
+  return !file.startsWith('data/imports/') || file.startsWith('data/imports/openhistoricalmap/');
+}
+
 export function buildBorders(ds: Dataset) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
+    .filter(({ file }) => onDefaultMap(file))
     .flatMap(({ value }) => value)
     .filter((a): a is Assertion & { shape: string } => TERRITORIAL_RELATIONS.includes(a.relation) && !!a.shape);
 
@@ -304,6 +314,7 @@ export function buildPolityFiles(ds: Dataset): PolityFile[] {
         sources: n.sources,
       })),
       records,
+      ...(p.notes ? { notes: p.notes } : {}),
       ...(others.size > 0 ? { related } : {}),
     };
   });

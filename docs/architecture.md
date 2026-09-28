@@ -130,21 +130,23 @@ That's how clicking an event on the timeline can highlight the border changes th
     - source: openhistoricalmap
       locator: relation 2885965, version 15
 
-# data/imports/cshapes-2.0/assertions.yaml (planned for Phase 2)
+# data/imports/cshapes-2-0/assertions.yaml (imported 2026-09-27; this record exists now)
 - id: cshapes-710-1921-03-13
   relation: sovereign            # de jure
-  subject: china
+  subject: cshapes-710           # China as CShapes identifies it; polity-crosswalk.yaml links it to our china
   shape: cshapes-710-1921-03-13
   start: 1921-03-13
   end: 1945-08-15                # CShapes gives the last day (1945-08-14); ours is the day after
   sources:
     - source: cshapes-2-0
-      locator: gwcode 710, period starting 1921-03-13
-      note: codes de jure changes only; excludes the occupation of Manchuria (codebook section 3)
+      locator: gwcode 710, period 1921-03-13 to 1945-08-14
 ```
 
-In 1937 both assertions cover Manchuria. The map will hatch it as contested, and the territory
-panel will show "administered by Manchukuo (per OHM) / sovereign: China (per CShapes)".
+In 1937 both assertions cover Manchuria (checked against the imported shapes on 2026-09-27).
+CShapes' codebook says it leaves out unrecognized territorial exchanges that were later reversed,
+and gives Japan's occupation of Manchuria as its example. From Phase 2, step 9, the map will hatch
+the area as contested, and the territory panel will show "administered by Manchukuo (per OHM) /
+sovereign: China (per CShapes)".
 
 ## Dates
 
@@ -381,7 +383,8 @@ and 100 GB/month bandwidth as a soft limit):
   problem with this border" button), and step 5 ✅ (the events pipeline and timeline markers,
   tested with made-up events; there are no real events yet), and step 6 ✅ (the event panel, the
   pulse on the map, and dashed outlines of an event's effects), and step 7 ✅ ("Around this date":
-  the events and border changes in the part of the timeline in view). The goals:
+  the events and border changes in the part of the timeline in view), and step 8 ✅ (the CShapes
+  import, in its own folder, with the crosswalk). The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.

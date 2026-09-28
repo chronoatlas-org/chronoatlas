@@ -114,5 +114,18 @@ export interface ShapeFeature {
   geometry: { type: 'Polygon' | 'MultiPolygon'; coordinates: unknown };
 }
 
+/** One entry of an import folder's polity-crosswalk.yaml (see schemas/crosswalk.schema.json). */
+export interface CrosswalkEntry {
+  /** A polity record in the same import folder. */
+  unit: string;
+  matches: {
+    polity: string;
+    kind: 'same-state' | 'dependency';
+    from?: string;
+    until?: string;
+    why?: string;
+  }[];
+}
+
 /** Special values allowed in `end` fields instead of a date. */
 export const END_KEYWORDS = ['ongoing', 'unknown'] as const;

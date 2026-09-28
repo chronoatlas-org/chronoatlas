@@ -45,7 +45,7 @@ import { dataUrl } from '../map/historical.ts';
 import { borderReportUrl } from '../url/report.ts';
 import type { TimelineEvent } from '../timeline/events.ts';
 import { describeEvent, describeNearby, describeTerritory, otherPolitiesAtSpot } from './model.ts';
-import type { BorderChange, CurrentEntry, EventFile, EventView, NearbyView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
+import type { BorderChange, Credit, CurrentEntry, EventFile, EventView, NearbyView, PolityFile, SourceLine, SourcesFile, TerritoryView } from './model.ts';
 import { attachSheetHandle } from './sheet.ts';
 import type { SheetHeight } from './sheet.ts';
 
@@ -79,6 +79,30 @@ interface ShellProps {
   sheet: SheetHeight;
   onClose: () => void;
   children: ComponentChildren;
+}
+
+/** The sources shown in a view, with the credit and license notice each asks for. */
+function Credits({ credits }: { credits: Credit[] }) {
+  if (credits.length === 0) return null;
+  return (
+    <section class="panel-section panel-credits" aria-labelledby="panel-credits">
+      <h3 id="panel-credits">{t('panel.credits')}</h3>
+      <ul class="panel-plain-list">
+        {credits.map((credit) => (
+          <li key={credit.title}>
+            {credit.url ? (
+              <a href={credit.url} target="_blank" rel="noopener">
+                {credit.title}
+              </a>
+            ) : (
+              credit.title
+            )}
+            {credit.attribution && <span>: {credit.attribution}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
 
 function Shell({ title, subtitle, summary, sheet, onClose, children }: ShellProps) {
@@ -142,6 +166,7 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
   const refreshReportLink = (event: Event) => ((event.currentTarget as HTMLAnchorElement).href = reportUrl());
   return (
     <>
+      {view.note && <p class="panel-note">{view.note}</p>}
       {alsoHere.length > 0 && (
         <p class="panel-also">
           {t('panel.alsoHere')}{' '}
@@ -215,6 +240,7 @@ function Territory({ view, alsoHere, reportUrl, onGoToDay, onSelectOther }: Terr
           </div>
         ))}
       </details>
+      <Credits credits={view.credits} />
     </>
   );
 }
@@ -271,6 +297,7 @@ function EventDetails({ view, onSelectPolity }: EventDetailsProps) {
           </ul>
         </section>
       )}
+      <Credits credits={view.credits} />
     </>
   );
 }
@@ -324,6 +351,7 @@ function Nearby({ view, onSelectEvent, onSelectPolity, onGoToDay }: NearbyProps)
           <p class="panel-empty">{t('nearby.noChanges')}</p>
         )}
       </section>
+      <Credits credits={view.credits} />
     </>
   );
 }

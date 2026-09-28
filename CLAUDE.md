@@ -149,13 +149,23 @@ The ones that affect everyday work:
 - **No population dataset for now.** The first Figure is `area-km2`, computed from our shapes.
   Correlates of War is left out.
 
+**CShapes decisions (2026-09-27)**, made while importing it:
+
+- **Columns from the R package:** its status, owner, and "borders defined" columns come from the
+  authors' R package (labelled GPL (>= 2)). They're treated as part of CShapes 2.0 under
+  CC BY-NC-SA 4.0, pending confirmation from the authors.
+- **Occupied units** become `occupies` by the owner. Colonies, protectorates, and mandates become
+  `sovereign` by the owner.
+- **Assertions name CShapes' own units** (`cshapes-<gwcode>`). The hand-written
+  `polity-crosswalk.yaml` links them to our polities; never cut CShapes rows to fit our polities.
+
 **Environment:** the maintainer works on Windows, and commands are run in PowerShell. Git, Node.js
 LTS, and the GitHub CLI are installed.
 
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
-`npm run validate`, `npm run build-data`, `npm run import:ohm` (add `-- --offline` to reprocess
-the last download), `npm run import:natural-earth`.
+`npm run validate`, `npm run build-data`, `npm run import:ohm` and `npm run import:cshapes` (add
+`-- --offline` to reprocess the last download), `npm run import:natural-earth`.
 
 **Data pipeline**
 
@@ -191,7 +201,14 @@ the last download), `npm run import:natural-earth`.
   interpretation decision is in `data/imports/openhistoricalmap/manifest.json`. Changing one is
   the maintainer's call. Re-importing replaces the OHM-sourced names in `data/polities/` and keeps
   all other names and fields. Polity IDs are fixed in `polity-ids.json`.
-- **Never hand-edit files under `data/imports/`.** Fix upstream and re-import.
+- **CShapes import** (`data/imports/cshapes-2-0/`, CC BY-NC-SA 4.0):
+  - Everything derived from it stays in that folder, including its polity records
+    (`polities/cshapes-<gwcode>.yaml`) and the hand-written `polity-crosswalk.yaml`.
+  - The build's `onDefaultMap()` keeps every import except OpenHistoricalMap off the default
+    map. Each other source becomes its own layer.
+  - The import stops if an upstream checksum changes. Review the change, then re-pin.
+- **Never hand-edit files under `data/imports/`.** Fix upstream and re-import. The one exception
+  is `polity-crosswalk.yaml`, which is hand-written by design.
 - **Polity records:** records built from CC0/public-domain sources may live in
   `data/polities/`. Nothing derived from NC or SA sources may be written outside that source's
   import folder.

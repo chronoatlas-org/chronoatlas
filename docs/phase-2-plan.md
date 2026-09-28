@@ -280,14 +280,19 @@ Its evaluation is in [data-sources.md](data-sources.md#cshapes-20).
 CShapes identifies units by Gleditsch–Ward code (`gwcode`, for example 710 for China), not by
 our IDs.
 
-- A **crosswalk file**, `data/imports/cshapes-2-0/polity-crosswalk.yaml`, maps each `gwcode` (and,
-  for dependencies, the owner's code) to one of our polity IDs, such as `710 → china`. It's
-  written and reviewed by hand, **and it stays inside the CShapes folder**, so nothing derived from
-  the NC-SA data is written outside it.
-- Where a unit has no matching polity in `data/polities/` (which only holds records from CC0 or
-  public-domain sources), the import creates a **polity record inside the CShapes folder**, with
-  its CShapes name. That needs a small validator change: polity records inside an import folder,
-  which can only be referred to by that folder's own assertions.
+- **As built (2026-09-27):** assertions name **CShapes' own units** (`cshapes-710` and so on), as
+  polity records inside the CShapes folder.
+  - **Why not our polity IDs:** CShapes follows a state through changes of regime under one code
+    (710 is China under the Qing, the Republic, and the People's Republic), while our polities are
+    split by regime. Naming our polities would mean cutting CShapes' rows at dates taken from
+    OpenHistoricalMap, which would put words in CShapes' mouth.
+  - **The link to our polities:** a hand-written **crosswalk file**,
+    `data/imports/cshapes-2-0/polity-crosswalk.yaml`, says which of our polities is the same state
+    as each unit, or administered its dependency, and when. It **stays inside the CShapes folder**,
+    because it's built on CShapes' coding.
+  - **Checks:** the validator checks the crosswalk, and checks that nothing outside the folder
+    uses its polity records.
+  - **Where it's used:** the build uses the crosswalk from step 9.
 - **Our IDs never change** (see architecture: permanent IDs). If a CShapes unit turns out to be the
   same as an OHM polity, the crosswalk is corrected, and no ID is renamed.
 
@@ -296,7 +301,8 @@ our IDs.
 | CShapes row | Becomes |
 |---|---|
 | An independent state | a `sovereign` assertion: that state over the shape |
-| A dependency (colony, protectorate, leased territory, occupied), with an owner | a `sovereign` assertion by the **owner** over the shape, with the CShapes status in the note. Status-specific relations (`leased-to`, `protectorate-of`) could be added later as links between polities. |
+| A colony, protectorate, or mandate, with an owner | a `sovereign` assertion by the **owner** over the shape, with the CShapes status in the notes. Status-specific relations (`leased-to`, `protectorate-of`) could be added later as links between polities. |
+| An occupied unit, with an owner | an `occupies` assertion by the **owner**, with the status in the notes (decision 14) |
 
 Every decision goes into the manifest, as the OHM import does.
 
@@ -487,8 +493,28 @@ Small steps, each committed, explained, and viewable locally and online, as in P
      index in `tiles.json` has only the days, and naming the polities needs more.
    - **Growth note:** at 67 KB it's fine for East Asia. For the worldwide map it will need
      splitting by period, as the tiles are.
-8. **CShapes import**: script, license, manifest, crosswalk, polity records inside import
+8. ✅ **CShapes import**: script, license, manifest, crosswalk, polity records inside import
    folders (a validator change), and East Asia 1900–1950.
+   *Done 2026-09-27.*
+   - `npm run import:cshapes` downloads the pinned files and imports 68 rows as 20 CShapes units:
+     47 independent, 14 colony, 3 protectorate, and 4 occupied.
+   - **Found while importing:** the GeoJSON, CSV, and SQL files lack the status, owner, and
+     "borders defined" columns the codebook lists. Only the authors' R package has them, and it
+     says GPL (>= 2); see decision 14. All 710 rows match between the two, row for row.
+   - **Also found:** the GeoJSON's date strings are shifted by a time zone ("31.12.1885
+     23:00:00" for 1 January 1886), so the separate year, month, and day columns are used.
+   - **Keeping it apart:** CShapes stays off the default map. The build only tiles our own data
+     and OpenHistoricalMap, and the map tiles are byte-for-byte unchanged.
+   - **Where its data shows now:** "Around this date" lists its changes, each CShapes unit has
+     its own panel, and every panel now ends with "Sources and credits", as its license requires.
+   - **Checked:** in the 1937 data, both CShapes' China and OpenHistoricalMap's Manchukuo cover
+     Manchuria, as the plan expected.
+   - **For step 9:**
+     - Because CShapes leaves out territories under 10,000 km², the contested computation will
+       flag places like Hong Kong, Macau, Goa, and the concessions in China. Those are real
+       differences between the sources, but they need a clear explanation in the panel.
+     - CShapes' borders are simplified one unit at a time, so tiny slivers along shared borders
+       need filtering.
 9. **De jure view and contested hatching**, computed at build time, with the 1937 Manchuria test.
 10. **Cliopatria import** and the "second opinion" outline layer.
 11. **First Figure**: `area-km2` computed from shapes, shown in the panel.
@@ -540,9 +566,10 @@ The maintainer approved the plan with the recommended answer to each question.
 3. **Report button:** `date_range` is pre-filled with the **selected day**.
 4. **Reporting needs a GitHub account**, which is acceptable for now.
 5. **CShapes mapping:** independent state → `sovereign`; dependency → `sovereign` by the owner,
-   with the CShapes status in a note.
+   with the CShapes status in a note. (Changed for occupied units by decision 14.)
 6. **Polity records inside import folders** are allowed for units that aren't in our CC0 polity
-   list. They can only be referred to by that folder's own assertions.
+   list. They can only be referred to by that folder's own assertions. (As built, every CShapes
+   unit has one, linked to our polities by the crosswalk; see step 8.)
 7. **CShapes first-of-the-month dates** are kept as given, with a note shown in the panel.
 8. **Cliopatria** is imported as `controls` (de facto), and `RELATION` rows are skipped at first
    (with the count recorded).
@@ -556,3 +583,13 @@ The maintainer approved the plan with the recommended answer to each question.
 13. **Missing-event form:** the field `title` is renamed to `event_name` now, before any link
     depends on it, because `title` is also GitHub's own address parameter for the issue title.
     This is the only rename allowed; from now on the ids are fixed.
+
+Decided later on 2026-09-27, while importing CShapes (the maintainer chose the recommended
+option each time):
+
+14. **CShapes' status and owner columns** are treated as part of CShapes 2.0, under its dataset
+    license (CC BY-NC-SA 4.0), although they come from the authors' R package, whose file says
+    GPL (>= 2). The GPL label is recorded in the folder's LICENSE.md, and the maintainers will ask
+    the authors to confirm. **Occupied units** become `occupies` assertions by their owner
+    ("Occupied, per CShapes"), not `sovereign` ones. That covers northern and southern Korea in
+    1945–48, and Jammu and Kashmir and Azad Kashmir in 1947–49.

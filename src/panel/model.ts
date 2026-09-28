@@ -58,6 +58,8 @@ export interface PolityFile {
   id: string;
   wikidata?: string;
   names: PolityName[];
+  /** The polity record's notes, e.g. that it is a state as one source identifies it. */
+  notes?: string;
   /** Sorted by start. */
   records: PolityRecord[];
   /** Names of the other polities the records mention (for "Protectorate of …" and so on). */
@@ -97,6 +99,16 @@ export interface BorderChange {
 }
 
 // --- What the panel shows ------------------------------------------------------------------------
+
+/**
+ * A source shown in the panel, with the credit it asks for. Licenses such as CC BY-NC-SA require
+ * the credit and license notice wherever their data appears, so each view lists its sources.
+ */
+export interface Credit {
+  title: string;
+  attribution?: string;
+  url?: string;
+}
 
 export interface SourceLine {
   text: string;
@@ -154,6 +166,10 @@ export interface TerritoryView {
   history: HistoryEntry[];
   names: NameGroup[];
   nameCount: number;
+  /** The polity record's notes. */
+  note?: string;
+  /** Every source this view cites, with its credit. */
+  credits: Credit[];
 }
 
 // --- Wording -------------------------------------------------------------------------------------
@@ -211,6 +227,21 @@ export function sourceLink(source: string, locator: string): string | undefined 
   const relationId = /\brelation (\d+)\b/.exec(locator)?.[1];
   if (source === 'openhistoricalmap' && relationId) return `https://www.openhistoricalmap.org/relation/${relationId}`;
   return undefined;
+}
+
+/** The distinct sources cited, in the order first cited, with their credits. */
+function creditsFor(citations: Iterable<Citation>, sources: SourcesFile['sources']): Credit[] {
+  const seen = new Map<string, Credit>();
+  for (const { source } of citations) {
+    if (seen.has(source)) continue;
+    const s = sources[source];
+    seen.set(source, {
+      title: s?.title ?? source,
+      ...(s?.attribution ? { attribution: s.attribution } : {}),
+      ...(s?.url ? { url: s.url } : {}),
+    });
+  }
+  return [...seen.values()];
 }
 
 function sourceLines(citations: readonly Citation[], sources: SourcesFile['sources']): SourceLine[] {
@@ -348,6 +379,8 @@ export function describeTerritory(
     history,
     names: [...groups.values()],
     nameCount: file.names.length,
+    ...(file.notes ? { note: file.notes } : {}),
+    credits: creditsFor([...file.records.flatMap((r) => r.sources), ...file.names.flatMap((n) => n.sources)], sources),
   };
 }
 
@@ -365,6 +398,7 @@ export interface EventView {
   /** The records the event started or ended (outlined on the map while it's selected). */
   effects: { id: string; label: string; period: string; sources: SourceLine[] }[];
   sources: SourceLine[];
+  credits: Credit[];
 }
 
 /** An event date in words: a single date, or a range with either end open or unknown. */
@@ -406,6 +440,10 @@ export function describeEvent(file: EventFile, sources: SourcesFile['sources'], 
     polities: (file.polities ?? []).map((id) => ({ id, name: nameOf(id) })),
     effects,
     sources: sourceLines(file.sources, sources),
+    credits: creditsFor(
+      [...file.sources, ...(file.location?.sources ?? []), ...(file.effects ?? []).flatMap((r) => r.sources)],
+      sources,
+    ),
   };
 }
 
@@ -418,6 +456,7 @@ export interface NearbyView {
   window: string;
   events: { id: string; title: string; date: string }[];
   changes: { key: string; polity: string; name: string; label: string; date: string; day: number; sources: SourceLine[] }[];
+  credits: Credit[];
 }
 
 /**
@@ -460,7 +499,9 @@ export function describeNearby(
       };
     });
 
+  const nearChangeSources = changes.filter((c) => nearChanges.some((n) => n.key === `${c.record}-${c.kind}`)).map((c) => c.source);
   return {
+    credits: creditsFor(nearChangeSources, sources),
     title: t('nearby.title', { date: formatDay(day) }),
     window: t('nearby.window', { start: formatDay(Math.ceil(left)), end: formatDay(Math.floor(right)) }),
     events: nearEvents,

@@ -60,6 +60,17 @@ description. Re-check before relying on anything here, because datasets change.
   - There's no Manchukuo, and Hong Kong and Kwantung don't appear as separate units.
 - **Citation:** Schvitz et al. (2022), "Mapping the International System, 1886–2017: The CShapes
   2.0 Dataset", *Journal of Conflict Resolution* 66(1): 144–61.
+- **Imported 2026-09-27** into [data/imports/cshapes-2-0/](../data/imports/cshapes-2-0/README.md).
+  Found while importing:
+  - **Missing columns:** the GeoJSON, CSV, and SQL downloads lack the `status`, `owner`, and
+    `b_def` columns that the codebook lists. Only the data file in the authors' R package
+    (`cshapes_2.0.tar.gz`, same page) has them, and its `DESCRIPTION` file says "License: GPL
+    (>= 2)". The maintainers treat them as part of CShapes 2.0 under CC BY-NC-SA 4.0 and will ask
+    the authors to confirm.
+  - **Dates:** the GeoJSON's date strings are shifted by a time zone ("31.12.1885 23:00:00" means
+    1 January 1886). The separate year, month, and day columns are right.
+  - **Status values** across the whole dataset: independent (365 rows), colony (219), protectorate
+    (62), occupied (39), mandate (23), and N/A (2, both Morocco).
 
 ## Cliopatria (Seshat Global History Databank)
 

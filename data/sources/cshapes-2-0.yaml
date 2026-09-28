@@ -1,0 +1,23 @@
+id: cshapes-2-0
+kind: dataset
+title: CShapes 2.0
+authors:
+  - Guy Schvitz
+  - Seraina Rüegger
+  - Luc Girardin
+  - Lars-Erik Cederman
+  - Nils Weidmann
+  - Kristian Skrede Gleditsch
+publisher: ETH Zürich, International Conflict Research
+year: "2022"
+url: https://icr.ethz.ch/data/cshapes/
+license: CC BY-NC-SA 4.0 (non-commercial, share-alike)
+attribution: >-
+  Schvitz, Guy, Seraina Rüegger, Luc Girardin, Lars-Erik Cederman, Nils Weidmann, and Kristian
+  Skrede Gleditsch. 2022. "Mapping The International System, 1886-2017: The CShapes 2.0
+  Dataset." Journal of Conflict Resolution 66(1): 144–61. Licensed under CC BY-NC-SA 4.0.
+notes: >-
+  Borders of independent states and dependent territories, 1886–2019, coded de jure (a change is
+  dated to the day a treaty was signed, for example). Only its own folder,
+  data/imports/cshapes-2-0/, holds data derived from it, because of its non-commercial and
+  share-alike terms. See that folder's manifest.json for how its data is interpreted here.

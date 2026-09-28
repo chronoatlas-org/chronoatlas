@@ -8,6 +8,7 @@ import { parse as parseYaml } from 'yaml';
 import type {
   Assertion,
   Coverage,
+  CrosswalkEntry,
   Figure,
   HistoricalEvent,
   Polity,
@@ -37,6 +38,8 @@ export interface Dataset {
   figures: Loaded<Figure[]>[];
   coverage: Loaded<Coverage[]>[];
   shapes: Loaded<ShapeFeature>[];
+  /** Hand-written crosswalks in import folders (polity-crosswalk.yaml): a list per file. */
+  crosswalks: Loaded<CrosswalkEntry[]>[];
   /** Import folders (data/imports/<name>), relative to the repository root. */
   imports: string[];
   /** Files that couldn't be read or parsed at all. */
@@ -90,7 +93,16 @@ export function loadDataset(dataDir = DATA_DIR): Dataset {
 
   return {
     sources: load<Source>(filesIn(join(dataDir, 'sources'), '.yaml'), yaml, problems),
-    polities: load<Polity>(filesIn(join(dataDir, 'polities'), '.yaml'), yaml, problems),
+    // Polity records built from an import that isn't CC0 or public domain stay inside that import's
+    // folder (data/imports/<name>/polities/); the validator keeps them there.
+    polities: load<Polity>(
+      [
+        ...filesIn(join(dataDir, 'polities'), '.yaml'),
+        ...imports.flatMap((dir) => filesIn(join(dir, 'polities'), '.yaml')),
+      ],
+      yaml,
+      problems,
+    ),
     assertions: load<Assertion[]>(
       [...filesIn(join(dataDir, 'assertions'), '.yaml'), ...inImports('assertions.yaml')],
       yaml,
@@ -115,6 +127,7 @@ export function loadDataset(dataDir = DATA_DIR): Dataset {
       json,
       problems,
     ),
+    crosswalks: load<CrosswalkEntry[]>(inImports('polity-crosswalk.yaml'), yaml, problems),
     imports: imports.map(repoPath),
     problems,
   };

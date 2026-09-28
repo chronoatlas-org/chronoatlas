@@ -1,0 +1,58 @@
+{
+  "dataset": "CShapes 2.0",
+  "source_id": "cshapes-2-0",
+  "license": "CC BY-NC-SA 4.0 (non-commercial, share-alike), as stated on the dataset page. Everything in this folder is derived from CShapes and carries the same license. See LICENSE.md.",
+  "page": "https://icr.ethz.ch/data/cshapes/",
+  "retrieved": "2026-09-28",
+  "downloads": [
+    {
+      "url": "https://icr.ethz.ch/data/cshapes/CShapes-2.0.geojson",
+      "file": "raw/CShapes-2.0.geojson (not committed)",
+      "bytes": 26344671,
+      "sha256": "384b1ea90b9419f30a858d7ec237c85a22c60d1b35b5f85f215a1204f9989d42"
+    },
+    {
+      "url": "https://icr.ethz.ch/data/cshapes/cshapes_2.0.tar.gz",
+      "file": "raw/cshapes_2.0.tar.gz (not committed)",
+      "bytes": 4181760,
+      "sha256": "6708b263224888c368aab136cdcae8a24c220bd07929af10f8bd69cf53634caa",
+      "used": "cshapes/inst/extdata/cshapes_2_gw.topojson.xz: only its status, owner, and b_def columns"
+    }
+  ],
+  "settings": {
+    "bbox": {
+      "south": 10,
+      "west": 73,
+      "north": 55,
+      "east": 150
+    },
+    "fromYear": 1900,
+    "toYear": 1950,
+    "simplifyTolerance": 0.005,
+    "coordinateDecimals": 4
+  },
+  "counts": {
+    "rows_in_dataset": 710,
+    "imported": 68,
+    "skipped": 0,
+    "units": 20,
+    "by_status": {
+      "independent": 47,
+      "protectorate": 3,
+      "colony": 14,
+      "occupied": 4
+    }
+  },
+  "decisions": {
+    "columns": "The GeoJSON, CSV, and SQL files on the dataset page lack the status, owner, and b_def columns that the codebook lists. They are taken from the data file in the authors' R package (cshapes 2.0, from the same page), matched row by row on gwcode, start, and end (all 710 rows match). The package's DESCRIPTION file says \"License: GPL (>= 2)\"; the maintainers decided on 2026-09-27 to treat these columns as part of CShapes 2.0 under its dataset license (CC BY-NC-SA 4.0) and to ask the authors to confirm.",
+    "relation": "Independent units become \"sovereign\" assertions by the unit itself. Colonies, protectorates, and mandates become \"sovereign\" assertions by their owner (the codebook defines the owner as \"the state that holds sovereignty over this territory\"). Occupied units become \"occupies\" assertions by their owner (maintainer decision, 2026-09-27). Each dependency's status is stated in its notes.",
+    "subjects": "Assertions name CShapes' own units (cshapes-<gwcode>), with polity records in polities/ that stay in this folder. CShapes follows a state through changes of regime under one code (710 is China under the Qing, the Republic, and the People's Republic), while our polities are split by regime, so CShapes rows are not cut up to fit ours. The hand-written polity-crosswalk.yaml records which of our polities is the same state, and when.",
+    "dates": "Dates come from the year, month, and day columns (the GeoJSON's date strings are shifted by a time zone). CShapes gives each period's last day; our end is the day after. A row that runs to CShapes' last day (2019-12-31) is imported as \"ongoing\". A start of 1886-01-01 (CShapes' first day) is noted as the start of the data.",
+    "first_of_month": "When the exact day was unknown, CShapes used the first of the month or 1 January (codebook). Dates are kept as given, with a note on every start or end that falls on the first of a month (maintainer decision, 2026-09-27).",
+    "borders_defined": "Units that CShapes marks as having partly undefined borders (b_def 0) get a note. Edge precision is otherwise \"unknown\": CShapes does not record it line by line.",
+    "geometry": "Each ring is simplified (Douglas–Peucker, 0.005°), trimmed to the import area, and rounded to 4 decimal places. CShapes has no shared border lines, so neighbouring units are simplified separately and can show gaps or overlaps of up to about 500 m.",
+    "coding_rules": "CShapes codes de jure changes only, dated to the day a treaty was signed, for example. It leaves out territorial changes under 10,000 km² (so small concessions, leased territories, and colonies such as Hong Kong, Macau, and Goa sit inside the surrounding state), unrecognized changes that were later reversed (such as Japan's occupation of Manchuria), and wartime changes reversed after the war. Where maps conflicted, it chose the one closest to present-day borders.",
+    "selection": "Rows that overlap 1900-01-01 to 1950-12-31 and have land in the import area after trimming."
+  },
+  "skipped": []
+}

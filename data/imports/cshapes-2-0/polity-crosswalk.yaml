@@ -1,0 +1,190 @@
+# Which of our polities (data/polities/, drawn from OpenHistoricalMap) goes with each CShapes unit.
+# HAND-WRITTEN and reviewed like any data change: the import script never overwrites it. It lives
+# in this folder because it is derived from CShapes' coding (CC BY-NC-SA 4.0).
+#
+# Why it exists: CShapes follows a state through changes of regime under one code (710 is China
+# under the Qing, the Republic, and the People's Republic), while our polities are split by
+# regime. The build uses this file (from Phase 2, step 9) to tell a real disagreement between the
+# sources ("contested") from the two sources naming the same state differently.
+#
+# Each match has a kind:
+#   same-state  our polity is the same state as the CShapes unit;
+#   dependency  our polity administered a territory that CShapes codes as this unit's colony,
+#               protectorate, or occupied territory.
+# `from`/`until` limit a match in time (until = the first day it no longer applies, like `end`).
+# Without them, the match holds whenever both exist. Every date here is CShapes' own.
+#
+# Not matched, on purpose, so that the build can show them as disagreements between the sources:
+# Manchukuo, the Japanese-backed governments in Burma and the Philippines, the concessions and
+# leased territories inside China, Hong Kong, Macau, and Goa (CShapes leaves out territories
+# under 10,000 km², so it places them inside the surrounding state), the princely states of 1947,
+# and the post-1945 governments in Indochina.
+
+- unit: cshapes-2 # United States of America
+  matches:
+    - polity: united-states
+      kind: same-state
+      why: Our polity is the United States (Wikidata Q30).
+    - polity: united-states-military-government-of-the-philippine-islands
+      kind: dependency
+      why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
+    - polity: us-philippines
+      kind: dependency
+      why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
+    - polity: commonwealth-of-the-philippines
+      kind: dependency
+      why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
+    - polity: united-states-army-military-government-in-korea
+      kind: dependency
+      why: CShapes codes southern Korea (732) as occupied by the United States from 1945-08-15 to 1948-08-14.
+
+- unit: cshapes-200 # United Kingdom
+  matches:
+    - polity: british-raj
+      kind: dependency
+      why: CShapes codes India (750) as a colony of the United Kingdom until 1947-08-14.
+    - polity: british-burma
+      kind: dependency
+      why: CShapes codes Burma (775) as a colony of the United Kingdom from 1937-04-01 to 1948-01-03.
+    - polity: emirate-of-afghanistan
+      kind: dependency
+      until: 1919-05-01
+      why: CShapes codes Afghanistan (700) as a protectorate of the United Kingdom until 1919-04-30.
+    - polity: bhutan
+      kind: dependency
+      until: 1947-08-15
+      why: CShapes codes Bhutan (760) as a protectorate of the United Kingdom until 1947-08-14.
+
+- unit: cshapes-220 # France
+  matches:
+    - polity: indochinese-union
+      kind: dependency
+      why: CShapes codes Cambodia (811), Laos (812), and Vietnam (815) as colonies of France until 1953–54.
+    - polity: indochinese-federation
+      kind: dependency
+      why: CShapes codes Cambodia (811), Laos (812), and Vietnam (815) as colonies of France until 1953–54.
+
+- unit: cshapes-365 # Russia (Soviet Union)
+  matches:
+    - polity: russian-empire
+      kind: same-state
+    - polity: russian-republic
+      kind: same-state
+    - polity: russian-soviet-federative-socialist-republic
+      kind: same-state
+    - polity: soviet-union
+      kind: same-state
+    - polity: soviet-civil-administration
+      kind: dependency
+      why: CShapes codes northern Korea (731) as occupied by the Soviet Union from 1945-08-15 to 1948-09-08.
+
+- unit: cshapes-700 # Afghanistan
+  matches:
+    - polity: emirate-of-afghanistan
+      kind: same-state
+      from: 1919-05-01
+      why: CShapes codes Afghanistan as independent from 1919-05-01 (a protectorate of the United Kingdom before).
+    - polity: kingdom-of-afghanistan
+      kind: same-state
+
+- unit: cshapes-710 # China
+  matches:
+    - polity: qing
+      kind: same-state
+    - polity: china
+      kind: same-state
+      until: 1949-12-08
+      why: CShapes starts Taiwan (713) as a separate state on 1949-12-08; from then on it uses 710 for the People's Republic.
+    - polity: people-s-republic-of-china
+      kind: same-state
+      from: 1949-12-08
+      why: CShapes starts Taiwan (713) as a separate state on 1949-12-08; from then on it uses 710 for the People's Republic.
+
+- unit: cshapes-711 # Tibet
+  matches:
+    - polity: tibet
+      kind: same-state
+
+- unit: cshapes-712 # Mongolia
+  matches:
+    - polity: mongolian-people-s-republic
+      kind: same-state
+
+- unit: cshapes-713 # Taiwan
+  matches:
+    - polity: china
+      kind: same-state
+      from: 1949-12-08
+      why: >-
+        CShapes starts Taiwan (713) as a separate state on 1949-12-08. Our china polity's
+        OpenHistoricalMap boundaries from 1949-10-01 on cover Taiwan and nearby islands.
+
+- unit: cshapes-730 # Korea
+  matches:
+    - polity: korean-empire
+      kind: same-state
+
+- unit: cshapes-731 # Korea, People's Republic of
+  matches:
+    - polity: north-korea-1948-1953
+      kind: same-state
+
+- unit: cshapes-732 # Korea, Republic of
+  matches:
+    - polity: south-korea
+      kind: same-state
+
+- unit: cshapes-740 # Japan
+  matches:
+    - polity: empire-of-japan
+      kind: same-state
+    - polity: japan-1947-1947
+      kind: same-state
+    - polity: japan-1947-1952
+      kind: same-state
+
+- unit: cshapes-750 # India
+  matches:
+    - polity: dominion-of-india
+      kind: same-state
+    - polity: india
+      kind: same-state
+    - polity: bhutan
+      kind: dependency
+      from: 1947-08-15
+      until: 1949-01-01
+      why: CShapes codes Bhutan (760) as a protectorate of India from 1947-08-15 to 1948-12-31.
+
+- unit: cshapes-760 # Bhutan
+  matches:
+    - polity: bhutan
+      kind: same-state
+      from: 1949-01-01
+      why: CShapes codes Bhutan as independent from 1949-01-01 (a protectorate of the United Kingdom, then India, before).
+
+- unit: cshapes-770 # Pakistan
+  matches:
+    - polity: dominion-of-pakistan
+      kind: same-state
+
+- unit: cshapes-775 # Myanmar (Burma)
+  matches:
+    - polity: burma
+      kind: same-state
+
+- unit: cshapes-790 # Nepal
+  matches:
+    - polity: nepal
+      kind: same-state
+
+- unit: cshapes-800 # Thailand
+  matches:
+    - polity: siam
+      kind: same-state
+    - polity: thailand
+      kind: same-state
+
+- unit: cshapes-840 # Philippines
+  matches:
+    - polity: philippines
+      kind: same-state
