@@ -286,6 +286,33 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
        re-run the pinned CShapes and Cliopatria imports (a choice of dataset). The pins still
        hold: the import stops if a file's checksum changes, and a new version is still reviewed
        by hand. It opens a pull request with the summary, like an OpenHistoricalMap re-import.
+- **Step 3 (2026-09-28): done; the data waits for steps 4–5.** The imports' settings cover the
+  world (Cliopatria 3400 BCE–2024, CShapes 1886–2019), and the button re-runs any pinned import
+  ("Re-import a dataset", decision 13). It opened two pull requests, which pass the data checks:
+  - **Cliopatria,** [pull request 33](https://github.com/chronoatlas-org/chronoatlas/pull/33):
+    11,757 records and 1,493 polities added, 190 shapes changed (no longer cut to East Asia).
+  - **CShapes,** [pull request 36](https://github.com/chronoatlas-org/chronoatlas/pull/36): 638
+    records and 167 polities added, 38 shapes changed; no change to contested areas.
+  - **They're merged only with steps 4–5,** because until then the site would publish one tile set
+    for every year (the 4.6–8.7 MB views measured in step 2), and would draw the "edge of imported
+    data" line along the world's edge. If `main`'s data changes before then, they're regenerated
+    with the button rather than merged.
+  - **Found on the way, and fixed first:**
+    - **The summary was too slow** for a whole new dataset (hours): each border is now measured
+      once, and a change of more than 300 borders gets land and movement for the first 300 only.
+    - **Unreviewed contested areas:** with CShapes worldwide, Cambodia after 1953 (among others)
+      read as contested, only because nobody had linked it to CShapes' "Cambodia (Kampuchea)".
+      Contested areas are now computed only inside the places and years listed in a hand-written
+      `crosswalk-reviewed.yaml` (decision 6); CShapes' lists East Asia 1900–1950. Today's 102
+      contested areas are unchanged.
+    - **Owners CShapes doesn't name:** Danzig (1919–1938) and West Irian (1962–63) list their
+      owners as codes 0 and 1, which aren't states in CShapes. Rather than guess, the import skips
+      them and lists them in its manifest. *For the maintainers:* CShapes' codebook (on its
+      download page, which this environment can't reach) should say what the two codes stand for;
+      then they can be imported with the right owner.
+    - **Cliopatria's year 0:** its data has one (six rows end in year 0, followed by rows starting
+      in year 1), so its years are astronomical, as ours are: -40 is 41 BCE. Recorded in its
+      manifest.
 
 **Left out of Phase 5:**
 
