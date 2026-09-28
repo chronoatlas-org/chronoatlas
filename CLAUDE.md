@@ -193,7 +193,8 @@ each step. The ones that affect everyday work:
 
 - **Data-change summary:** `scripts/summarize-changes.ts` compares `main`'s data with a pull
   request's and writes Markdown. `.github/workflows/data-summary.yml` (`workflow_run`, after
-  "Build and deploy" finishes on a pull request) runs **main's** code (`scripts/post-summary.ts`),
+  "Build and deploy" finishes on a pull request, or after a build started by hand, as the re-import
+  workflow does on its branch) runs **main's** code (`scripts/post-summary.ts`),
   which takes only the pull request's `data/` from GitHub's test merge (`refs/pull/N/merge`; first
   parent = base) as files, summarizes it, and posts one comment, updated in place. It never runs
   the pull request's code, so the summary can't be forged (a change from the plan's artifact
