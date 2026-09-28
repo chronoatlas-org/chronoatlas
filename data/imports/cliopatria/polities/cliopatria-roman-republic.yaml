@@ -1,0 +1,8 @@
+id: cliopatria-roman-republic
+names:
+  - text: Roman Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Roman Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

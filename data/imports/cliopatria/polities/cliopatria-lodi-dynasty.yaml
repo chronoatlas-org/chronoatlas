@@ -1,0 +1,8 @@
+id: cliopatria-lodi-dynasty
+names:
+  - text: Lodi Dynasty
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Lodi Dynasty"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-nanzhao-0741","edge_precision":"unknown","cliopatria_name":"Nanzhao","cliopatria_from_year":741,"cliopatria_to_year":749,"cliopatria_area_km2":10877,"cliopatria_wikidata":"Q1045322","cliopatria_wikipedia":"Nanzhao"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[99.5171,24.7792],
+[99.6543,24.7149],
+[99.6181,24.5221],
+[99.7555,24.4578],
+[99.7436,24.3935],
+[100.0906,24.6506],
+[100.1151,24.7792],
+[100.3518,24.8435],
+[100.5195,25.6793],
+[100.2467,25.8079],
+[100.0763,26.0651],
+[99.8991,25.9365],
+[99.6173,25.2936],
+[99.5171,24.7792]
+]
+]
+]}
+}

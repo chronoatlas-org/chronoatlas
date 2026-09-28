@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-wessex-0534","edge_precision":"unknown","cliopatria_name":"Kingdom of Wessex","cliopatria_from_year":534,"cliopatria_to_year":576,"cliopatria_area_km2":9563,"cliopatria_wikidata":"Q105313","cliopatria_wikipedia":"Wessex","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.2078,51.7142],
+[-2.1702,51.3128],
+[-1.8015,50.9789],
+[-1.7778,50.7121],
+[-1.4407,50.7121],
+[-1.4464,50.7788],
+[-1.3621,50.7788],
+[-1.3678,50.8455],
+[-1.4696,51.0457],
+[-1.1487,51.246],
+[0.046,51.1124],
+[-0.0643,51.4465],
+[0.0204,51.4465],
+[0.0152,51.5134],
+[-0.0695,51.5134],
+[-0.0748,51.5803],
+[-0.5782,51.5134],
+[-0.7477,51.5134],
+[-0.8437,51.6472],
+[-1.2622,51.5803],
+[-1.3647,51.7811],
+[-1.7105,51.8481],
+[-2.2078,51.7142]
+]
+]
+]}
+}

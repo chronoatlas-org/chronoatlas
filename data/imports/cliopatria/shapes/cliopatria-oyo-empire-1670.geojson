@@ -1,0 +1,37 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-oyo-empire-1670","edge_precision":"unknown","cliopatria_name":"Oyo Empire","cliopatria_from_year":1670,"cliopatria_to_year":1682,"cliopatria_area_km2":29176,"cliopatria_wikidata":"Q849623","cliopatria_wikipedia":"Oyo Empire","cliopatria_seshat_id":"ni_oyo_emp_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[2.964,7.6145],
+[3.2559,7.6145],
+[3.3285,7.5502],
+[3.2546,7.4216],
+[3.9118,7.4859],
+[3.9834,7.293],
+[4.5686,7.4859],
+[4.7173,7.8716],
+[4.9368,7.9359],
+[4.8642,8.0002],
+[4.8647,8.0645],
+[5.158,8.2573],
+[5.2332,8.5788],
+[5.0137,8.5145],
+[4.8692,8.7716],
+[3.4081,8.7073],
+[3.0423,8.5788],
+[2.964,7.6145]
+]
+],
+[
+[
+[4.716,7.6787],
+[4.7889,7.6787],
+[4.7894,7.743],
+[4.7164,7.743],
+[4.716,7.6787]
+]
+]
+]}
+}

@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-touraine-1272","edge_precision":"unknown","cliopatria_name":"County of Touraine","cliopatria_from_year":1272,"cliopatria_to_year":1304,"cliopatria_area_km2":10003,"cliopatria_wikidata":"Q605051","cliopatria_wikipedia":"Touraine","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.9038,45.8243],
+[2.3047,45.5623],
+[2.536,45.8243],
+[2.6011,46.1521],
+[2.4274,46.3489],
+[2.1783,46.4145],
+[0.9417,46.5459],
+[0.9538,46.3489],
+[1.2072,46.2177],
+[1.2149,46.0865],
+[0.9736,46.0209],
+[0.9038,45.8243]
+]
+]
+]}
+}

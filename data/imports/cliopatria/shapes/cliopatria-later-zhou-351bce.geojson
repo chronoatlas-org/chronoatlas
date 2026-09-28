@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-later-zhou-351bce","edge_precision":"unknown","cliopatria_name":"Later Zhou","cliopatria_from_year":-350,"cliopatria_to_year":-257,"cliopatria_area_km2":3966,"cliopatria_wikidata":"Q1154556","cliopatria_wikipedia":"Later Zhou","cliopatria_seshat_id":"cn_eastern_zhou_warring_states","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[112.186,35.1297],
+[113.4218,35.1297],
+[113.5301,35.3871],
+[113.4027,35.4514],
+[112.3199,35.4514],
+[112.2394,35.2584],
+[112.186,35.1297]
+]
+]
+]}
+}

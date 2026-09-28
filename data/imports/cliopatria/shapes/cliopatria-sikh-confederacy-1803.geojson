@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sikh-confederacy-1803","edge_precision":"unknown","cliopatria_name":"Sikh Confederacy","cliopatria_from_year":1803,"cliopatria_to_year":1805,"cliopatria_area_km2":3082,"cliopatria_wikidata":"Q2578028","cliopatria_wikipedia":"Misl"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[73.8485,30.7578],
+[73.9245,30.7578],
+[73.911,30.6935],
+[74.063,30.6935],
+[74.0496,30.6292],
+[74.2015,30.6292],
+[74.6011,31.0791],
+[74.5669,31.2719],
+[74.3385,31.2719],
+[73.9925,31.0791],
+[73.862,30.822],
+[73.8485,30.7578]
+]
+]
+]}
+}

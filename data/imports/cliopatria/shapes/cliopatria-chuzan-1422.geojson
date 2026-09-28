@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-chuzan-1422","edge_precision":"unknown","cliopatria_name":"Chüzan","cliopatria_from_year":1422,"cliopatria_to_year":1428,"cliopatria_area_km2":2127,"cliopatria_wikidata":"Q55521","cliopatria_wikipedia":"Chūzan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[127.5927,26.0651],
+[127.8176,26.0651],
+[127.9091,26.3865],
+[128.3784,26.708],
+[128.4168,26.8366],
+[128.1915,26.8366],
+[128.1723,26.7723],
+[127.9279,26.708],
+[127.5927,26.0651]
+]
+]
+]}
+}

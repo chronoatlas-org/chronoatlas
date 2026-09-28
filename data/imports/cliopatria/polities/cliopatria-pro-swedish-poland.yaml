@@ -1,0 +1,8 @@
+id: cliopatria-pro-swedish-poland
+names:
+  - text: Pro-Swedish Poland
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Pro-Swedish Poland"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

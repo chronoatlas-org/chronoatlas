@@ -1,0 +1,8 @@
+id: cliopatria-henan
+names:
+  - text: Henan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Henan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

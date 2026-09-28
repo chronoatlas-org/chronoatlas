@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-saint-sava-1453","edge_precision":"unknown","cliopatria_name":"Duchy of Saint Sava","cliopatria_from_year":1453,"cliopatria_to_year":1467,"cliopatria_area_km2":2778,"cliopatria_wikidata":"Q106311455","cliopatria_wikipedia":"Duchy of Saint Sava"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.7781,42.4962],
+[19.1625,42.1712],
+[19.3223,42.1712],
+[19.4983,42.4962],
+[18.9568,42.8864],
+[18.8766,42.8864],
+[18.8704,42.7563],
+[18.7902,42.7563],
+[18.7781,42.4962]
+]
+]
+]}
+}

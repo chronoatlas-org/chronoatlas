@@ -1,0 +1,8 @@
+id: cliopatria-achaean-league
+names:
+  - text: Achaean League
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Achaean League"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

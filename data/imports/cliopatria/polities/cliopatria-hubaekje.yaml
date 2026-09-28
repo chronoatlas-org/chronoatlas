@@ -1,0 +1,8 @@
+id: cliopatria-hubaekje
+names:
+  - text: Hubaekje
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Hubaekje"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

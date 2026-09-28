@@ -1,0 +1,8 @@
+id: cliopatria-hyksos
+names:
+  - text: Hyksos
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Hyksos"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

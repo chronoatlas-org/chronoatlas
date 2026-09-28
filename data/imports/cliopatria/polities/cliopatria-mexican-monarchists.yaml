@@ -1,0 +1,8 @@
+id: cliopatria-mexican-monarchists
+names:
+  - text: Mexican Monarchists
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mexican Monarchists"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,42 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-armagnac-1453","edge_precision":"unknown","cliopatria_name":"County of Armagnac","cliopatria_from_year":1453,"cliopatria_to_year":1491,"cliopatria_area_km2":14009,"cliopatria_wikidata":"Q676745","cliopatria_wikipedia":"County of Armagnac","cliopatria_seshat_id":"fr_valois_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.3287,43.4723],
+[-0.0793,43.3421],
+[-0.0713,43.2118],
+[0.0894,43.2118],
+[0.0815,43.3421],
+[0.4032,43.3421],
+[0.476,43.4723],
+[0.7175,43.4723],
+[0.948,43.6678],
+[0.9222,44.1243],
+[0.2839,43.9938],
+[0.0377,44.0591],
+[-0.2811,43.9938],
+[-0.3287,43.4723]
+]
+],
+[
+[
+[1.9524,44.516],
+[2.0499,44.1896],
+[2.4571,44.1243],
+[2.4633,43.9938],
+[2.7892,43.9286],
+[2.8787,43.733],
+[3.2789,43.7982],
+[3.4292,44.0591],
+[3.2649,44.1243],
+[3.1698,44.4507],
+[2.5907,44.7119],
+[2.3572,44.516],
+[2.192,44.5813],
+[1.9524,44.516]
+]
+]
+]}
+}

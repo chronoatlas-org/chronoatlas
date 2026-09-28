@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-selangor-1744","edge_precision":"unknown","cliopatria_name":"Sultanate of Selangor","cliopatria_from_year":1744,"cliopatria_to_year":1774,"cliopatria_area_km2":11824,"cliopatria_wikidata":"Q7636765","cliopatria_wikipedia":"Sultan of Selangor"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[100.7507,3.7572],
+[100.8145,3.5643],
+[101.2339,3.1786],
+[101.2172,2.7929],
+[101.6433,2.5357],
+[101.7161,2.5357],
+[102.0181,2.7929],
+[102.1021,3.05],
+[101.8894,3.1786],
+[101.8372,3.6286],
+[101.6976,3.7572],
+[101.4032,3.6929],
+[101.2636,3.8215],
+[101.1118,3.6929],
+[100.9753,3.8858],
+[100.7537,3.8215],
+[100.7507,3.7572]
+]
+]
+]}
+}

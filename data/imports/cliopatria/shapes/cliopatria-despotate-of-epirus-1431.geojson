@@ -1,0 +1,43 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-despotate-of-epirus-1431","edge_precision":"unknown","cliopatria_name":"Despotate of Epirus","cliopatria_from_year":1431,"cliopatria_to_year":1449,"cliopatria_area_km2":13441,"cliopatria_wikidata":"Q187684","cliopatria_wikipedia":"Despotate of Epirus","cliopatria_seshat_id":"gr_epirus_despot"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.3199,38.1578],
+[20.7865,38.0933],
+[20.7954,38.2869],
+[20.5664,38.416],
+[20.4881,38.416],
+[20.3285,38.3515],
+[20.3199,38.1578]
+]
+],
+[
+[
+[20.6028,39.1911],
+[20.911,39.0618],
+[20.7414,38.8034],
+[20.9737,38.7389],
+[21.1933,38.416],
+[22.0552,38.416],
+[21.9904,38.6743],
+[22.0689,38.6743],
+[22.1685,39.0618],
+[21.8717,39.385],
+[21.1699,39.5143],
+[20.6059,39.2557],
+[20.6028,39.1911]
+]
+],
+[
+[
+[20.6127,37.7062],
+[20.9221,37.6417],
+[20.934,37.8998],
+[20.6213,37.8998],
+[20.6127,37.7062]
+]
+]
+]}
+}

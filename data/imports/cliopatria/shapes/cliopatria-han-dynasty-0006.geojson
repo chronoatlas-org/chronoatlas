@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-han-dynasty-0006","edge_precision":"unknown","cliopatria_name":"Han Dynasty","cliopatria_from_year":6,"cliopatria_to_year":13,"cliopatria_area_km2":143,"cliopatria_wikidata":"Q1068371","cliopatria_wikipedia":"Han dynasty","cliopatria_seshat_id":"cn_western_han_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[80.0832,42.3012],
+[80.1631,42.3012],
+[80.2138,42.4312],
+[80.1338,42.4312],
+[80.0832,42.3012]
+]
+],
+[
+[
+[112.9451,40.2906],
+[113.0242,40.2906],
+[113.0584,40.3554],
+[112.9793,40.3554],
+[112.9451,40.2906]
+]
+]
+]}
+}

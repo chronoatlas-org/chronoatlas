@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-denmark-norway-1940","edge_precision":"unknown","cliopatria_name":"Denmark-Norway","cliopatria_from_year":1940,"cliopatria_to_year":1940,"cliopatria_area_km2":1430,"cliopatria_wikidata":"Q62651","cliopatria_wikipedia":"Denmark-Norway"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-7.3122,62.2599],
+[-7.2756,62.0459],
+[-6.9848,61.9746],
+[-6.8919,61.9746],
+[-6.6944,61.9034],
+[-6.6602,62.2599],
+[-6.7652,62.3313],
+[-7.3122,62.2599]
+]
+],
+[
+[
+[-7.0181,61.619],
+[-6.9945,61.477],
+[-6.7056,61.406],
+[-6.7404,61.619],
+[-7.0181,61.619]
+]
+]
+]}
+}

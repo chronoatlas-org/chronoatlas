@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-asmaka-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Aśmaka","cliopatria_from_year":-600,"cliopatria_to_year":-551,"cliopatria_area_km2":5467,"cliopatria_wikidata":"Q1194906","cliopatria_wikipedia":"Asmaka","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[77.8114,19.7648],
+[77.952,19.7005],
+[77.9296,19.5077],
+[78.0852,19.5719],
+[78.0702,19.4434],
+[78.3663,19.4434],
+[78.3813,19.5719],
+[78.6926,19.7005],
+[78.7969,19.9577],
+[78.4415,20.0862],
+[78.4565,20.2148],
+[78.16,20.2148],
+[78.1451,20.0862],
+[77.8338,19.9577],
+[77.8114,19.7648]
+]
+]
+]}
+}

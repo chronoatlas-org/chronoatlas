@@ -1,0 +1,8 @@
+id: cliopatria-sultanate-of-johor
+names:
+  - text: Sultanate of Johor
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sultanate of Johor"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

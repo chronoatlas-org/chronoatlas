@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zheng-751bce","edge_precision":"unknown","cliopatria_name":"Zheng","cliopatria_from_year":-750,"cliopatria_to_year":-451,"cliopatria_area_km2":5553,"cliopatria_wikidata":"Q197598","cliopatria_wikipedia":"Zheng (state)","cliopatria_member_of":"(Spring and Autumn States)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[113.3414,34.9366],
+[113.6738,34.8079],
+[113.7509,34.8079],
+[114.4721,34.8723],
+[114.499,34.9366],
+[114.3759,35.194],
+[114.4081,35.4514],
+[114.3307,35.4514],
+[114.3033,35.3871],
+[113.5301,35.3871],
+[113.3414,34.9366]
+]
+]
+]}
+}

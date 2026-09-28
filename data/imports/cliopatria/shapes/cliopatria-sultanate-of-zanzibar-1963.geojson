@@ -1,0 +1,39 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-zanzibar-1963","edge_precision":"unknown","cliopatria_name":"Sultanate of Zanzibar","cliopatria_from_year":1963,"cliopatria_to_year":1966,"cliopatria_area_km2":4245,"cliopatria_wikidata":"Q157904","cliopatria_wikipedia":"Sultanate of Zanzibar"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[39.0568,-6.2074],
+[39.427,-6.5288],
+[39.4933,-6.1431],
+[39.3474,-6.1431],
+[39.3432,-5.8859],
+[39.2682,-5.7574],
+[39.1224,-5.7574],
+[39.0568,-6.2074]
+]
+],
+[
+[
+[39.5241,-7.8146],
+[39.528,-8.0074],
+[39.674,-8.0074],
+[39.7443,-7.8789],
+[39.8173,-7.8789],
+[39.8134,-7.686],
+[39.6675,-7.686],
+[39.5241,-7.8146]
+]
+],
+[
+[
+[39.547,-4.9216],
+[39.5547,-5.4359],
+[39.7005,-5.4359],
+[39.7665,-4.9859],
+[39.547,-4.9216]
+]
+]
+]}
+}

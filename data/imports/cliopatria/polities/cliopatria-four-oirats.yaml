@@ -1,0 +1,8 @@
+id: cliopatria-four-oirats
+names:
+  - text: Four Oirats
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Four Oirats"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

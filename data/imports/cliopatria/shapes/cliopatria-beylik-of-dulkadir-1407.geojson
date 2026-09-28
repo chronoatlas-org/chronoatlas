@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-beylik-of-dulkadir-1407","edge_precision":"unknown","cliopatria_name":"Beylik of Dulkadir","cliopatria_from_year":1407,"cliopatria_to_year":1439,"cliopatria_area_km2":30414,"cliopatria_wikidata":"Q1264808","cliopatria_wikipedia":"Beylik of Dulkadir"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.6221,37.8352],
+[36.0129,37.8352],
+[36.1469,37.6417],
+[37.0133,37.7062],
+[37.646,37.7707],
+[38.0207,37.6417],
+[38.0829,37.5128],
+[38.395,37.5128],
+[39.0605,37.8352],
+[39.1638,38.0288],
+[39.5024,38.2224],
+[39.4413,38.3515],
+[39.363,38.3515],
+[39.3106,38.5451],
+[38.8488,38.6097],
+[36.8257,38.7389],
+[36.4803,38.4806],
+[36.1591,38.416],
+[36.0503,38.1578],
+[35.7224,38.0288],
+[35.6221,37.8352]
+]
+]
+]}
+}

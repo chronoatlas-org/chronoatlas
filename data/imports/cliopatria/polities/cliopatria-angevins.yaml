@@ -1,0 +1,8 @@
+id: cliopatria-angevins
+names:
+  - text: Angevins
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Angevins"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

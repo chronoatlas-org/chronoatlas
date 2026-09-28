@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tangier-international-zone-1956","edge_precision":"unknown","cliopatria_name":"Tangier International Zone","cliopatria_from_year":1956,"cliopatria_to_year":1957,"cliopatria_area_km2":275,"cliopatria_wikidata":"Q3497642","cliopatria_wikipedia":"Tangier International Zone"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.9405,35.5802],
+[-5.7128,35.6445],
+[-5.7217,35.7733],
+[-5.8766,35.7733],
+[-5.8721,35.7089],
+[-5.9405,35.5802]
+]
+]
+]}
+}

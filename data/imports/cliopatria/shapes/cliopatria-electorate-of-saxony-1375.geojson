@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-electorate-of-saxony-1375","edge_precision":"unknown","cliopatria_name":"Electorate of Saxony","cliopatria_from_year":1375,"cliopatria_to_year":1384,"cliopatria_area_km2":5675,"cliopatria_wikidata":"Q156199","cliopatria_wikipedia":"Electorate of Saxony","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.1463,52.1163],
+[12.2285,51.9151],
+[12.3975,51.8481],
+[12.3085,51.5803],
+[12.563,51.5803],
+[12.476,51.4465],
+[12.6444,51.3797],
+[12.6455,51.4465],
+[13.0691,51.4465],
+[13.0705,51.5134],
+[13.1553,51.5134],
+[13.5824,51.6472],
+[13.2444,51.7142],
+[13.2474,51.8481],
+[13.5024,51.8481],
+[13.504,51.9151],
+[13.589,51.9151],
+[13.5907,51.9822],
+[12.9141,52.1833],
+[12.4029,52.1833],
+[12.1463,52.1163]
+]
+]
+]}
+}

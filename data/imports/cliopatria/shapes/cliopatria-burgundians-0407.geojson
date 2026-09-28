@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-burgundians-0407","edge_precision":"unknown","cliopatria_name":"Burgundians","cliopatria_from_year":407,"cliopatria_to_year":409,"cliopatria_area_km2":9094,"cliopatria_wikidata":"Q13590051","cliopatria_wikipedia":"Burgundians"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.551,47.9938],
+[7.5594,47.5982],
+[8.467,47.5982],
+[8.5476,47.73],
+[8.8771,47.7959],
+[9.0385,48.1257],
+[8.6227,48.2578],
+[8.2027,48.5881],
+[8.115,48.8527],
+[7.7058,48.522],
+[7.6338,47.9938],
+[7.551,47.9938]
+]
+]
+]}
+}

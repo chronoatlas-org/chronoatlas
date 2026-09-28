@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-westphalia
+names:
+  - text: Kingdom of Westphalia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Westphalia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

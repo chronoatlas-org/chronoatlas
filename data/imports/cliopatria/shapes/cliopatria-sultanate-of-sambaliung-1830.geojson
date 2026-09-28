@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-sambaliung-1830","edge_precision":"unknown","cliopatria_name":"Sultanate of Sambaliung","cliopatria_from_year":1830,"cliopatria_to_year":1847,"cliopatria_area_km2":13501,"cliopatria_wikidata":"Q19727688","cliopatria_wikipedia":"id.wikipedia.org/wiki/Kesultanan_Sambaliung"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.1373,2.2143],
+[117.3991,1.5071],
+[118.4689,0.9285],
+[118.4642,0.8],
+[118.9033,0.8643],
+[118.9103,1.0571],
+[118.7672,1.1214],
+[118.7696,1.1857],
+[117.7788,1.8929],
+[117.7842,2.0214],
+[118.0082,2.15],
+[117.9526,2.5357],
+[117.8798,2.5357],
+[117.507,2.3429],
+[117.5042,2.2786],
+[117.1373,2.2143]
+]
+]
+]}
+}

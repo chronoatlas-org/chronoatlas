@@ -1,0 +1,8 @@
+id: cliopatria-palau
+names:
+  - text: Palau
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Palau"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

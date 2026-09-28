@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-british-colonial-empire-1706","edge_precision":"unknown","cliopatria_name":"British Colonial Empire","cliopatria_from_year":1706,"cliopatria_to_year":1708,"cliopatria_area_km2":174,"cliopatria_wikidata":"Q8680","cliopatria_wikipedia":"British Empire","cliopatria_seshat_id":"gb_british_emp_1","cliopatria_member_of":"(British Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.5162,36.1596],
+[-5.3611,36.1596],
+[-5.2924,36.2884],
+[-5.2969,36.3528],
+[-5.5162,36.1596]
+]
+]
+]}
+}

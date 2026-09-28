@@ -1,0 +1,8 @@
+id: cliopatria-sierra-leone
+names:
+  - text: Sierra Leone
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sierra Leone"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

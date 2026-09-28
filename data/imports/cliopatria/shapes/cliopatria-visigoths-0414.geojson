@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-visigoths-0414","edge_precision":"unknown","cliopatria_name":"Visigoths","cliopatria_from_year":414,"cliopatria_to_year":416,"cliopatria_area_km2":12792,"cliopatria_wikidata":"Q23693","cliopatria_wikipedia":"Visigoths"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.3403,43.8634],
+[1.3543,43.6027],
+[1.6931,43.2769],
+[1.9343,43.2769],
+[2.1045,43.0816],
+[2.3484,43.0165],
+[2.9933,42.9515],
+[2.9877,43.0816],
+[2.9849,43.1467],
+[3.4589,43.3421],
+[3.4562,43.4072],
+[3.2038,43.6678],
+[2.4664,43.9286],
+[1.6561,43.9938],
+[1.3403,43.8634]
+]
+]
+]}
+}

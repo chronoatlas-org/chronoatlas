@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-grand-duchy-of-tuscany-1807","edge_precision":"unknown","cliopatria_name":"Grand Duchy of Tuscany","cliopatria_from_year":1807,"cliopatria_to_year":1813,"cliopatria_area_km2":891,"cliopatria_wikidata":"Q154849","cliopatria_wikipedia":"Grand Duchy of Tuscany"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.9697,44.1243],
+[9.9702,43.9938],
+[10.0509,43.9938],
+[10.0507,44.0591],
+[10.1314,44.0591],
+[10.1316,43.9938],
+[10.2123,43.9938],
+[10.2125,43.9286],
+[10.5353,43.8634],
+[10.5352,44.1243],
+[9.9697,44.1243]
+]
+]
+]}
+}

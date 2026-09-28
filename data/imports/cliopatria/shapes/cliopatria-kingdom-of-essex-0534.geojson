@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-essex-0534","edge_precision":"unknown","cliopatria_name":"Kingdom of Essex","cliopatria_from_year":534,"cliopatria_to_year":627,"cliopatria_area_km2":4132,"cliopatria_wikidata":"Q110888","cliopatria_wikipedia":"Kingdom of Essex","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.6963,51.9151],
+[-0.5782,51.5134],
+[-0.0748,51.5803],
+[-0.0695,51.5134],
+[0.5288,51.4465],
+[0.863,51.5134],
+[0.8487,51.7142],
+[0.3241,51.9151],
+[-0.4412,51.9151],
+[-0.4303,51.7811],
+[-0.5152,51.7811],
+[-0.6963,51.9151]
+]
+]
+]}
+}

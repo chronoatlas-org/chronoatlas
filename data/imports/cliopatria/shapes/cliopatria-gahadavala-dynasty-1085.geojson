@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-gahadavala-dynasty-1085","edge_precision":"unknown","cliopatria_name":"Gahadavala Dynasty","cliopatria_from_year":1085,"cliopatria_to_year":1151,"cliopatria_area_km2":216799,"cliopatria_wikidata":"Q1147823","cliopatria_wikipedia":"Gahadavala dynasty","cliopatria_seshat_id":"in_gahadavala_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[78.4709,29.2571],
+[78.6443,28.2169],
+[78.8424,27.4987],
+[79.6102,26.3285],
+[80.8237,25.635],
+[81.0219,25.214],
+[81.6163,24.8673],
+[82.3593,24.7682],
+[83.6224,24.7682],
+[84.2168,25.1149],
+[84.7245,25.0458],
+[85.2446,25.8022],
+[85.6385,27.0826],
+[85.4607,27.158],
+[85.356,27.251],
+[84.9845,27.3253],
+[83.9691,27.251],
+[83.3004,27.4739],
+[82.706,27.7711],
+[81.4924,28.737],
+[80.0312,29.2819],
+[78.6443,30.124],
+[78.4709,29.2571]
+]
+]
+]}
+}

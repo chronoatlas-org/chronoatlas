@@ -1,0 +1,8 @@
+id: cliopatria-mongol-empire
+names:
+  - text: Mongol Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mongol Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

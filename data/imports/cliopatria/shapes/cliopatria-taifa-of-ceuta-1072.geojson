@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-ceuta-1072","edge_precision":"unknown","cliopatria_name":"Taifa of Ceuta","cliopatria_from_year":1072,"cliopatria_to_year":1084,"cliopatria_area_km2":1451,"cliopatria_wikidata":"Q5947557","cliopatria_wikipedia":"Taifa of Ceuta","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.945,35.6445],
+[-5.9405,35.5802],
+[-5.2441,35.5802],
+[-5.2484,35.6445],
+[-5.3258,35.6445],
+[-5.3389,35.8377],
+[-5.5713,35.8377],
+[-5.8766,35.7733],
+[-5.945,35.6445]
+]
+]
+]}
+}

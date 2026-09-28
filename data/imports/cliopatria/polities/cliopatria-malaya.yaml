@@ -1,0 +1,8 @@
+id: cliopatria-malaya
+names:
+  - text: Malaya
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Malaya"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-empire-of-trebizond
+names:
+  - text: Empire of Trebizond
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Empire of Trebizond"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

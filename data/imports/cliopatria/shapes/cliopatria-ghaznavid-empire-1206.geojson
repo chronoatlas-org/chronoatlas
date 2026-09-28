@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ghaznavid-empire-1206","edge_precision":"unknown","cliopatria_name":"Ghaznavid Empire","cliopatria_from_year":1206,"cliopatria_to_year":1209,"cliopatria_area_km2":105,"cliopatria_wikidata":"Q12844800","cliopatria_wikipedia":"Ghaznavids"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[69.7453,28.251],
+[69.8961,28.251],
+[69.9069,28.3153],
+[69.756,28.3153],
+[69.7453,28.251]
+]
+]
+]}
+}

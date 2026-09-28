@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-texcoco-1202","edge_precision":"unknown","cliopatria_name":"Texcoco","cliopatria_from_year":1202,"cliopatria_to_year":1325,"cliopatria_area_km2":2632,"cliopatria_wikidata":"Q1178043","cliopatria_wikipedia":"Texcoco"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-99.1878,19.3148],
+[-98.9463,18.8005],
+[-98.5997,18.9291],
+[-98.7203,19.1862],
+[-98.732,19.2505],
+[-98.8413,19.4434],
+[-99.0634,19.4434],
+[-99.1878,19.3148]
+]
+]
+]}
+}

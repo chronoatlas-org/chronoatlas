@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-g-ogow-1279","edge_precision":"unknown","cliopatria_name":"Duchy of Głogów","cliopatria_from_year":1279,"cliopatria_to_year":1304,"cliopatria_area_km2":3087,"cliopatria_wikidata":"Q684501","cliopatria_wikipedia":"Duchy of Głogów","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.4493,51.6472],
+[15.8736,51.6472],
+[15.8708,51.5803],
+[16.7032,51.246],
+[17.0516,51.4465],
+[16.9768,51.6472],
+[16.719,51.5803],
+[16.137,51.8481],
+[15.7915,51.7142],
+[15.5394,51.7811],
+[15.4493,51.6472]
+]
+]
+]}
+}

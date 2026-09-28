@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-achaea-1431","edge_precision":"unknown","cliopatria_name":"Principality of Achaea","cliopatria_from_year":1431,"cliopatria_to_year":1439,"cliopatria_area_km2":248,"cliopatria_wikidata":"Q332005","cliopatria_wikipedia":"Principality of Achaea","cliopatria_seshat_id":"gr_achaea_principality"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[21.9085,37.0615],
+[22.1421,37.0615],
+[22.1485,37.1904],
+[21.9927,37.1904],
+[21.9085,37.0615]
+]
+]
+]}
+}

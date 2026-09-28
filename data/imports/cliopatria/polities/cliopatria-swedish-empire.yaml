@@ -1,0 +1,8 @@
+id: cliopatria-swedish-empire
+names:
+  - text: Swedish Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Swedish Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

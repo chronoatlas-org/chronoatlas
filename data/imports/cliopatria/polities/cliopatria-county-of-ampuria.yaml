@@ -1,0 +1,8 @@
+id: cliopatria-county-of-ampuria
+names:
+  - text: County of Ampuria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Ampuria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

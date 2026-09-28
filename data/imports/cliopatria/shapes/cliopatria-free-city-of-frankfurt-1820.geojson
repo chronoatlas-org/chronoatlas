@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-free-city-of-frankfurt-1820","edge_precision":"unknown","cliopatria_name":"Free City of Frankfurt","cliopatria_from_year":1820,"cliopatria_to_year":1864,"cliopatria_area_km2":178,"cliopatria_wikidata":"Q704300","cliopatria_wikipedia":"Free City of Frankfurt"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.2607,50.113],
+[8.2629,49.98],
+[8.4306,49.98],
+[8.4286,50.113],
+[8.2607,50.113]
+]
+]
+]}
+}

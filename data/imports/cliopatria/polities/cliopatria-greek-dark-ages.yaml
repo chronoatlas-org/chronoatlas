@@ -1,0 +1,8 @@
+id: cliopatria-greek-dark-ages
+names:
+  - text: Greek Dark Ages
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Greek Dark Ages"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

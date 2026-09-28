@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ayutthaya-kingdom-1352","edge_precision":"unknown","cliopatria_name":"Ayutthaya Kingdom","cliopatria_from_year":1352,"cliopatria_to_year":1374,"cliopatria_area_km2":7488,"cliopatria_wikidata":"Q841364","cliopatria_wikipedia":"Ayutthaya Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[100.3867,14.5575],
+[100.413,14.1718],
+[100.7067,14.1718],
+[100.8692,14.3004],
+[101.0895,14.3004],
+[101.1788,14.4289],
+[101.6195,14.4289],
+[101.4152,14.5575],
+[101.2439,14.9432],
+[100.5089,14.9432],
+[100.3867,14.5575]
+]
+]
+]}
+}

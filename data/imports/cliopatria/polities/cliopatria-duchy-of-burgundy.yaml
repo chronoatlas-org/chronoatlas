@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-burgundy
+names:
+  - text: Duchy of Burgundy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Burgundy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

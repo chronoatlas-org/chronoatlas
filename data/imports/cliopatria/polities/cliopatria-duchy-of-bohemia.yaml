@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-bohemia
+names:
+  - text: Duchy of Bohemia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Bohemia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-portuguese-ceylon-1582","edge_precision":"unknown","cliopatria_name":"Portuguese Ceylon","cliopatria_from_year":1582,"cliopatria_to_year":1594,"cliopatria_area_km2":49906,"cliopatria_wikidata":"Q1709007","cliopatria_wikipedia":"Portuguese Ceylon","cliopatria_member_of":"(Portuguese Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[79.7906,8.5145],
+[80.0097,8.5145],
+[80.075,8.3859],
+[80.0511,6.6501],
+[80.187,6.4573],
+[80.1838,6.393],
+[80.3264,6.3287],
+[80.3199,6.2001],
+[80.8271,6.1358],
+[80.8936,6.0073],
+[80.9665,6.0073],
+[81.3375,6.1358],
+[81.8779,6.7144],
+[81.9167,7.4216],
+[81.7744,7.4859],
+[81.6544,7.9359],
+[81.4468,8.1288],
+[81.3971,8.5145],
+[81.2511,8.5145],
+[81.2531,8.5466],
+[80.1891,8.7755],
+[79.8908,8.9566],
+[79.7945,8.5788],
+[79.7906,8.5145]
+]
+]
+]}
+}

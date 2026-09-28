@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-khmer-empire-0800","edge_precision":"unknown","cliopatria_name":"Khmer Empire","cliopatria_from_year":800,"cliopatria_to_year":805,"cliopatria_area_km2":5340,"cliopatria_wikidata":"Q201705","cliopatria_wikipedia":"Khmer Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[103.2427,13.2718],
+[103.3894,13.2718],
+[103.5069,13.0146],
+[103.8002,13.0146],
+[103.8148,13.1432],
+[104.1229,13.2718],
+[104.153,13.5289],
+[103.8748,13.6575],
+[103.8902,13.7861],
+[103.5966,13.7861],
+[103.5813,13.6575],
+[103.3535,13.5932],
+[103.3459,13.5289],
+[103.2427,13.2718]
+]
+]
+]}
+}

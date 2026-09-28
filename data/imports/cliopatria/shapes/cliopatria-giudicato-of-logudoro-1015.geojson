@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-giudicato-of-logudoro-1015","edge_precision":"unknown","cliopatria_name":"Giudicato of Logudoro","cliopatria_from_year":1015,"cliopatria_to_year":1017,"cliopatria_area_km2":3645,"cliopatria_wikidata":"Q1761381","cliopatria_wikipedia":"Judicate of Logudoro"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.5548,40.6144],
+[8.6379,40.2259],
+[9.1123,40.2259],
+[9.1133,40.0964],
+[9.2717,40.0317],
+[9.269,40.4201],
+[9.4261,40.6144],
+[9.188,40.6792],
+[9.2664,40.8088],
+[9.1866,40.8736],
+[9.1073,40.8736],
+[8.8711,40.6792],
+[8.5548,40.6144]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-bosnia-and-herzegovina
+names:
+  - text: Bosnia and Herzegovina
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Bosnia and Herzegovina"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

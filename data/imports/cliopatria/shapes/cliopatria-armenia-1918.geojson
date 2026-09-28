@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-armenia-1918","edge_precision":"unknown","cliopatria_name":"Armenia","cliopatria_from_year":1918,"cliopatria_to_year":1918,"cliopatria_area_km2":16537,"cliopatria_wikidata":"Q399","cliopatria_wikipedia":"Armenia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.0426,40.6144],
+[44.0656,40.2906],
+[44.2804,40.1612],
+[44.2582,40.0317],
+[44.563,39.967],
+[44.7554,39.7083],
+[45.1496,39.7083],
+[45.1608,39.7729],
+[45.4201,39.9023],
+[45.738,40.3554],
+[45.73,40.744],
+[45.4607,41.0032],
+[44.6787,41.068],
+[44.0997,40.9384],
+[44.1676,40.8736],
+[44.0426,40.6144]
+]
+]
+]}
+}

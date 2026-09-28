@@ -1,0 +1,8 @@
+id: cliopatria-commonwealth-of-england
+names:
+  - text: Commonwealth of England
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Commonwealth of England"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

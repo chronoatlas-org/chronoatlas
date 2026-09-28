@@ -1,0 +1,8 @@
+id: cliopatria-ifat-sultanate
+names:
+  - text: Ifat Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ifat Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

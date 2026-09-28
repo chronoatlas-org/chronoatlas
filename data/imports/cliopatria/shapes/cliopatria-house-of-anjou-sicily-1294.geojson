@@ -1,0 +1,42 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-anjou-sicily-1294","edge_precision":"unknown","cliopatria_name":"House of Anjou-Sicily","cliopatria_from_year":1294,"cliopatria_to_year":1325,"cliopatria_area_km2":701,"cliopatria_wikidata":"Q939200","cliopatria_wikipedia":"Capetian House of Anjou"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.2516,40.6792],
+[19.3279,40.6144],
+[19.4131,40.744],
+[19.2545,40.744],
+[19.2516,40.6792]
+]
+],
+[
+[
+[19.4071,40.6144],
+[19.4863,40.6144],
+[19.4893,40.6792],
+[19.4101,40.6792],
+[19.4071,40.6144]
+]
+],
+[
+[
+[19.4714,40.2906],
+[19.6356,40.4201],
+[19.6386,40.4849],
+[19.4863,40.6144],
+[19.4714,40.2906]
+]
+],
+[
+[
+[19.7578,39.6436],
+[19.9125,39.5789],
+[19.9214,39.7729],
+[19.7637,39.7729],
+[19.7578,39.6436]
+]
+]
+]}
+}

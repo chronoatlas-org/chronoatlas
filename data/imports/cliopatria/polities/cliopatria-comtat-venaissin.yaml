@@ -1,0 +1,8 @@
+id: cliopatria-comtat-venaissin
+names:
+  - text: Comtat Venaissin
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Comtat Venaissin"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

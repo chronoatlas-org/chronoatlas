@@ -1,0 +1,8 @@
+id: cliopatria-free-french
+names:
+  - text: Free French
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Free French"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

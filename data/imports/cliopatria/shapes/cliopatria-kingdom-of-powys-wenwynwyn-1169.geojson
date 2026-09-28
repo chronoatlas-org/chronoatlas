@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-powys-wenwynwyn-1169","edge_precision":"unknown","cliopatria_name":"Kingdom of Powys Wenwynwyn","cliopatria_from_year":1169,"cliopatria_to_year":1205,"cliopatria_area_km2":3078,"cliopatria_wikidata":"Q2670639","cliopatria_wikipedia":"Powys Wenwynwyn","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-4.0714,52.4519],
+[-3.8859,52.3176],
+[-3.8786,52.2505],
+[-3.6229,52.2505],
+[-3.0676,52.6535],
+[-3.0886,52.8554],
+[-3.1742,52.8554],
+[-3.3384,52.7881],
+[-3.6098,52.9227],
+[-3.9302,52.7208],
+[-3.9227,52.6535],
+[-4.0714,52.4519]
+]
+]
+]}
+}

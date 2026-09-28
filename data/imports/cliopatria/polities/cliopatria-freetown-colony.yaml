@@ -1,0 +1,8 @@
+id: cliopatria-freetown-colony
+names:
+  - text: Freetown Colony
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Freetown Colony"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-pallars-jussa-1188","edge_precision":"unknown","cliopatria_name":"County of Pallars Jussà","cliopatria_from_year":1188,"cliopatria_to_year":1191,"cliopatria_area_km2":1429,"cliopatria_wikidata":"Q12723","cliopatria_wikipedia":"Pallars Jussà"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.6404,41.9764],
+[1.1192,41.9764],
+[1.1091,42.1712],
+[1.189,42.1712],
+[1.1856,42.2362],
+[0.699,42.3662],
+[0.6404,41.9764]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-chimor
+names:
+  - text: Chimor
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Chimor"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-mingrelia-1721","edge_precision":"unknown","cliopatria_name":"Principality of Mingrelia","cliopatria_from_year":1721,"cliopatria_to_year":1726,"cliopatria_area_km2":5867,"cliopatria_wikidata":"Q2907860","cliopatria_wikipedia":"Principality of Mingrelia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[41.552,42.3012],
+[41.632,42.3012],
+[41.6207,42.2362],
+[41.7006,42.2362],
+[41.6893,42.1712],
+[41.6094,42.1712],
+[41.5982,42.1063],
+[41.7579,42.1063],
+[42.3853,42.0413],
+[42.5346,42.4312],
+[42.7063,42.4962],
+[42.6052,42.8213],
+[42.3316,43.0816],
+[42.0673,42.9515],
+[42.0892,42.6262],
+[41.5633,42.3662],
+[41.552,42.3012]
+]
+]
+]}
+}

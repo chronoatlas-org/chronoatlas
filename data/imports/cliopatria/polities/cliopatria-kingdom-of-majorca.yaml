@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-majorca
+names:
+  - text: Kingdom of Majorca
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Majorca"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

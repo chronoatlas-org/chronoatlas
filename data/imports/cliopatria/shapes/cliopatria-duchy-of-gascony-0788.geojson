@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-gascony-0788","edge_precision":"unknown","cliopatria_name":"Duchy of Gascony","cliopatria_from_year":788,"cliopatria_to_year":792,"cliopatria_area_km2":24218,"cliopatria_wikidata":"Q2295939","cliopatria_wikipedia":"Duchy of Gascony"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.1949,43.0816],
+[-3.0293,43.0165],
+[-3.0142,42.8213],
+[-2.934,42.8213],
+[-2.9993,42.6262],
+[-2.1984,42.6262],
+[-2.1276,42.7563],
+[-1.4019,42.6912],
+[0.7167,42.0413],
+[1.3487,42.1712],
+[1.4855,42.6262],
+[1.0747,42.8213],
+[0.0401,42.6912],
+[-0.2081,42.8213],
+[-0.5288,42.8213],
+[-1.027,43.0816],
+[-1.4284,43.0816],
+[-1.4418,43.2769],
+[-1.6876,43.3421],
+[-3.1402,43.4072],
+[-3.1949,43.0816]
+]
+]
+]}
+}

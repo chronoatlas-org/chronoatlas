@@ -1,0 +1,8 @@
+id: cliopatria-denmark-norway
+names:
+  - text: Denmark-Norway
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Denmark-Norway"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

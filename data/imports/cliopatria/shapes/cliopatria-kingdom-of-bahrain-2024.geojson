@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-bahrain-2024","edge_precision":"unknown","cliopatria_name":"Kingdom of Bahrain","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":881,"cliopatria_wikidata":"Q398","cliopatria_wikipedia":"Bahrain"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[50.4299,25.9365],
+[50.6487,25.8722],
+[50.6729,26.1294],
+[50.6852,26.258],
+[50.4602,26.258],
+[50.4299,25.9365]
+]
+]
+]}
+}

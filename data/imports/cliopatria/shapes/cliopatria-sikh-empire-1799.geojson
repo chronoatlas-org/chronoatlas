@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sikh-empire-1799","edge_precision":"unknown","cliopatria_name":"Sikh Empire","cliopatria_from_year":1799,"cliopatria_to_year":1799,"cliopatria_area_km2":2735,"cliopatria_wikidata":"Q83572","cliopatria_wikipedia":"Sikh Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[73.8056,31.2719],
+[73.9302,31.1434],
+[74.2346,31.1434],
+[74.4427,31.4005],
+[74.4568,31.4647],
+[74.347,31.6575],
+[74.0421,31.6575],
+[73.8614,31.529],
+[73.8056,31.2719]
+]
+]
+]}
+}

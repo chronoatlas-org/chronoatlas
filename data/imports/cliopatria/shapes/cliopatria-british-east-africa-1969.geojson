@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-british-east-africa-1969","edge_precision":"unknown","cliopatria_name":"British East Africa","cliopatria_from_year":1969,"cliopatria_to_year":1972,"cliopatria_area_km2":259,"cliopatria_wikidata":"Q876185","cliopatria_wikipedia":"East Africa Protectorate","cliopatria_member_of":"(British Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[55.2077,-4.6002],
+[55.4304,-4.7931],
+[55.429,-4.7288],
+[55.4263,-4.6002],
+[55.2077,-4.6002]
+]
+]
+]}
+}

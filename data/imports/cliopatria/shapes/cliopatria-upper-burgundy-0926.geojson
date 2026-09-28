@@ -1,0 +1,37 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-upper-burgundy-0926","edge_precision":"unknown","cliopatria_name":"Upper Burgundy","cliopatria_from_year":926,"cliopatria_to_year":935,"cliopatria_area_km2":45842,"cliopatria_wikidata":"Q33235","cliopatria_wikipedia":"Upper Burgundy","cliopatria_seshat_id":"fr_carolingian_emp_2","cliopatria_member_of":"(Carolingian Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[5.3568,46.8743],
+[5.6139,46.5459],
+[5.7962,45.9554],
+[6.5312,45.9554],
+[7.0303,45.5623],
+[7.0318,45.4968],
+[7.9265,45.5623],
+[8.0025,45.8898],
+[7.9185,46.0209],
+[8.4028,46.4145],
+[8.3116,47.0058],
+[8.3928,47.0716],
+[8.3095,47.1374],
+[8.5525,47.4006],
+[8.5496,47.5982],
+[7.4769,47.5982],
+[7.3973,47.4665],
+[7.15,47.4665],
+[6.9753,47.8619],
+[6.8082,47.9278],
+[6.1447,47.9938],
+[5.8181,47.8619],
+[5.8224,47.73],
+[5.5769,47.6641],
+[5.5945,47.1374],
+[5.4322,47.0716],
+[5.3568,46.8743]
+]
+]
+]}
+}

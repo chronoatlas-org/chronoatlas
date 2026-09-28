@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-lithuania
+names:
+  - text: Republic of Lithuania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Lithuania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

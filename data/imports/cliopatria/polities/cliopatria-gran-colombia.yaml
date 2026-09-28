@@ -1,0 +1,8 @@
+id: cliopatria-gran-colombia
+names:
+  - text: Gran Colombia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Gran Colombia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

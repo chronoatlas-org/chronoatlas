@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-mysore-1572","edge_precision":"unknown","cliopatria_name":"Kingdom of Mysore","cliopatria_from_year":1572,"cliopatria_to_year":1672,"cliopatria_area_km2":18135,"cliopatria_wikidata":"Q266923","cliopatria_wikipedia":"Kingdom of Mysore","cliopatria_seshat_id":"in_mysore_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.0405,12.6364],
+[76.1083,12.1601],
+[76.3294,11.9522],
+[76.285,11.6744],
+[76.992,11.5601],
+[77.3013,11.6781],
+[77.5815,12.0475],
+[77.551,12.4885],
+[76.7746,12.9078],
+[76.44,12.8127],
+[76.0405,12.6364]
+]
+]
+]}
+}

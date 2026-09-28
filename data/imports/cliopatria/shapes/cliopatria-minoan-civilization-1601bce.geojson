@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-minoan-civilization-1601bce","edge_precision":"unknown","cliopatria_name":"Minoan civilization","cliopatria_from_year":-1600,"cliopatria_to_year":-1501,"cliopatria_area_km2":5499,"cliopatria_wikidata":"Q134178","cliopatria_wikipedia":"Minoan civilization","cliopatria_seshat_id":"gr_crete_new_palace"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[23.6154,35.5158],
+[23.6792,35.2584],
+[24.4484,35.194],
+[24.7574,35.194],
+[24.8237,35.001],
+[26.1401,35.0653],
+[26.2253,35.194],
+[25.6806,35.1297],
+[25.6923,35.3227],
+[24.301,35.3227],
+[24.1499,35.3871],
+[24.1569,35.5158],
+[23.6154,35.5158]
+]
+]
+]}
+}

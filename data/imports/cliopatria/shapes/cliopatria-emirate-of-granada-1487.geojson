@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-emirate-of-granada-1487","edge_precision":"unknown","cliopatria_name":"Emirate of Granada","cliopatria_from_year":1487,"cliopatria_to_year":1491,"cliopatria_area_km2":13011,"cliopatria_wikidata":"Q238445","cliopatria_wikipedia":"Emirate of Granada"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.6463,37.2549],
+[-3.474,36.9971],
+[-3.4577,36.7393],
+[-2.6801,36.7393],
+[-2.5321,36.8682],
+[-1.9875,36.8682],
+[-1.8574,37.3193],
+[-1.7794,37.3193],
+[-1.939,37.3838],
+[-2.1216,37.8352],
+[-2.356,37.8352],
+[-2.4263,37.7062],
+[-2.903,37.8352],
+[-2.8909,37.6417],
+[-3.0348,37.4483],
+[-3.6463,37.2549]
+]
+],
+[
+[
+[-1.7794,37.3193],
+[-1.7757,37.2549],
+[-1.6978,37.2549],
+[-1.7014,37.3193],
+[-1.7794,37.3193]
+]
+]
+]}
+}

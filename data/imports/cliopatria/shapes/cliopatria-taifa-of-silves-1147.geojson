@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-silves-1147","edge_precision":"unknown","cliopatria_name":"Taifa of Silves","cliopatria_from_year":1147,"cliopatria_to_year":1151,"cliopatria_area_km2":6222,"cliopatria_wikidata":"Q1994569","cliopatria_wikipedia":"Taifa of Silves","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-9.0127,37.126],
+[-9.007,37.0615],
+[-8.1504,37.0615],
+[-8.1668,37.2549],
+[-8.0218,37.3838],
+[-8.2168,37.8352],
+[-8.8537,37.9643],
+[-8.8188,37.5773],
+[-8.8969,37.5773],
+[-8.874,37.3193],
+[-9.0127,37.126]
+]
+]
+]}
+}

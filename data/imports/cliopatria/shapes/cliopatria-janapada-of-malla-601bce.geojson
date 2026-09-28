@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-malla-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Malla","cliopatria_from_year":-600,"cliopatria_to_year":-481,"cliopatria_area_km2":5486,"cliopatria_wikidata":"Q1376303","cliopatria_wikipedia":"Malla (tribe)","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[83.6613,26.5151],
+[83.8114,26.5151],
+[83.9154,26.258],
+[84.204,26.1937],
+[84.377,26.3222],
+[84.4119,26.5151],
+[84.562,26.5151],
+[84.6096,26.7723],
+[84.3332,26.9009],
+[84.3575,27.0295],
+[84.069,27.0938],
+[84.0326,26.9009],
+[83.8824,26.9009],
+[83.8585,26.7723],
+[83.6964,26.708],
+[83.6847,26.6437],
+[83.6613,26.5151]
+]
+]
+]}
+}

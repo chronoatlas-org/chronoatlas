@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sasanian-empire-0215","edge_precision":"unknown","cliopatria_name":"Sasanian Empire","cliopatria_from_year":215,"cliopatria_to_year":223,"cliopatria_area_km2":52229,"cliopatria_wikidata":"Q1661685","cliopatria_wikipedia":"Sasanian Empire","cliopatria_seshat_id":"ir_sassanid_emp_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[51.5076,29.6009],
+[51.5834,29.6009],
+[51.5592,29.4081],
+[52.0489,29.0867],
+[52.2811,28.5081],
+[52.4167,28.3795],
+[52.7939,28.3795],
+[53.5282,28.8295],
+[53.6446,29.1509],
+[53.8124,29.2795],
+[53.9824,29.9865],
+[53.9912,30.0508],
+[53.7866,30.7578],
+[53.6346,30.7578],
+[53.5769,30.8863],
+[53.139,31.0148],
+[52.3024,31.0148],
+[51.9804,30.8863],
+[51.6071,30.3722],
+[51.5076,29.6009]
+]
+]
+]}
+}

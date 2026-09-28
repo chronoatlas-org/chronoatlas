@@ -1,0 +1,8 @@
+id: cliopatria-new-zealand
+names:
+  - text: New Zealand
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "New Zealand"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

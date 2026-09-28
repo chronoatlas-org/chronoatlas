@@ -1,0 +1,8 @@
+id: cliopatria-turk-shahis
+names:
+  - text: Turk Shahis
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Turk Shahis"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

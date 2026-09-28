@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-brunswick
+names:
+  - text: Duchy of Brunswick
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Brunswick"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

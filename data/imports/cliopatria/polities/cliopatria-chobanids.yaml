@@ -1,0 +1,8 @@
+id: cliopatria-chobanids
+names:
+  - text: Chobanids
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Chobanids"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

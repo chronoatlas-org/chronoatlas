@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-khalifa-1783","edge_precision":"unknown","cliopatria_name":"House of Khalifa","cliopatria_from_year":1783,"cliopatria_to_year":1799,"cliopatria_area_km2":1576,"cliopatria_wikidata":"Q1158126","cliopatria_wikipedia":"House of Khalifa"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[50.4299,25.9365],
+[50.6487,25.8722],
+[50.6668,26.0651],
+[50.6852,26.258],
+[50.4602,26.258],
+[50.4299,25.9365]
+]
+],
+[
+[
+[50.9425,25.8079],
+[51.1673,25.8079],
+[51.1794,25.9365],
+[51.2544,25.9365],
+[51.2728,26.1294],
+[51.1229,26.1294],
+[50.9425,25.8079]
+]
+]
+]}
+}

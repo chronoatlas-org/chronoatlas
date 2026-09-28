@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-ragusa
+names:
+  - text: Republic of Ragusa
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Ragusa"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

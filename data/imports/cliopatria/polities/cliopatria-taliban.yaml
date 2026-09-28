@@ -1,0 +1,8 @@
+id: cliopatria-taliban
+names:
+  - text: Taliban
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Taliban"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

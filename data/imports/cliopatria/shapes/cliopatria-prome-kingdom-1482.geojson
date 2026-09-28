@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-prome-kingdom-1482","edge_precision":"unknown","cliopatria_name":"Prome Kingdom","cliopatria_from_year":1482,"cliopatria_to_year":1486,"cliopatria_area_km2":18965,"cliopatria_wikidata":"Q13576027","cliopatria_wikipedia":"Prome Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[94.827,19.6362],
+[94.9649,18.5434],
+[95.1589,18.3505],
+[95.0391,18.0291],
+[95.0583,17.6433],
+[96.2021,17.9005],
+[96.6451,17.9005],
+[95.9538,18.7362],
+[95.8059,18.7362],
+[95.2338,19.3791],
+[95.0858,19.3791],
+[94.827,19.6362]
+]
+]
+]}
+}

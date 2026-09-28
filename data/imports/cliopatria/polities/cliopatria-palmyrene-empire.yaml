@@ -1,0 +1,8 @@
+id: cliopatria-palmyrene-empire
+names:
+  - text: Palmyrene Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Palmyrene Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

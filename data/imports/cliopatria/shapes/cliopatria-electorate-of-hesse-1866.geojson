@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-electorate-of-hesse-1866","edge_precision":"unknown","cliopatria_name":"Electorate of Hesse","cliopatria_from_year":1866,"cliopatria_to_year":1867,"cliopatria_area_km2":331,"cliopatria_wikidata":"Q529605","cliopatria_wikipedia":"Electorate of Hesse"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[10.1047,50.9122],
+[10.1893,50.7788],
+[10.2736,50.7788],
+[10.5266,50.8455],
+[10.3579,50.8455],
+[10.3578,50.9789],
+[10.2734,50.9789],
+[10.1047,50.9122]
+]
+]
+]}
+}

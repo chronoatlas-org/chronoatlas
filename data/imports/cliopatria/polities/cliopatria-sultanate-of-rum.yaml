@@ -1,0 +1,8 @@
+id: cliopatria-sultanate-of-rum
+names:
+  - text: Sultanate of Rum
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sultanate of Rum"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

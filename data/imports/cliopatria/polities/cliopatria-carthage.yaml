@@ -1,0 +1,8 @@
+id: cliopatria-carthage
+names:
+  - text: Carthage
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Carthage"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

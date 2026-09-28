@@ -1,0 +1,8 @@
+id: cliopatria-bavarians
+names:
+  - text: Bavarians
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Bavarians"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

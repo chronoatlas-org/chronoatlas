@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-maine-1046","edge_precision":"unknown","cliopatria_name":"County of Maine","cliopatria_from_year":1046,"cliopatria_to_year":1055,"cliopatria_area_km2":13599,"cliopatria_wikidata":"Q732738","cliopatria_wikipedia":"Maine (province)","cliopatria_seshat_id":"fr_capetian_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.2023,47.7959],
+[-1.187,47.5982],
+[1.214,47.4665],
+[1.2964,47.4665],
+[1.1977,47.73],
+[1.2763,47.7959],
+[0.9247,48.1257],
+[0.4368,47.9938],
+[0.3361,48.2578],
+[-0.0001,48.3238],
+[-0.0924,48.4559],
+[-0.5804,48.3238],
+[-1,48.3899],
+[-1.0421,47.8619],
+[-1.2023,47.7959]
+]
+]
+]}
+}

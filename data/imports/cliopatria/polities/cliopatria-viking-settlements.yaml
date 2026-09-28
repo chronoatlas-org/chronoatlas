@@ -1,0 +1,8 @@
+id: cliopatria-viking-settlements
+names:
+  - text: Viking settlements
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Viking settlements"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

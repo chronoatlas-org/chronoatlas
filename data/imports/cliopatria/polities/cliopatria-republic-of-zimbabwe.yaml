@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-zimbabwe
+names:
+  - text: Republic of Zimbabwe
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Zimbabwe"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

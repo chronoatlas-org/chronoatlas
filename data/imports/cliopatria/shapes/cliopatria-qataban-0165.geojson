@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-qataban-0165","edge_precision":"unknown","cliopatria_name":"Qataban","cliopatria_from_year":165,"cliopatria_to_year":183,"cliopatria_area_km2":11722,"cliopatria_wikidata":"Q748595","cliopatria_wikipedia":"Qataban"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.2897,15.1361],
+[44.3465,14.8147],
+[44.5603,14.6861],
+[45.2283,14.8147],
+[45.3018,14.8147],
+[46.3412,15.0075],
+[46.5761,15.2647],
+[46.5798,15.329],
+[46.1494,15.5218],
+[45.8551,15.5218],
+[45.8479,15.3933],
+[45.179,15.2647],
+[45.025,15.1361],
+[44.2897,15.1361]
+]
+]
+]}
+}

@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-strathclyde-0960","edge_precision":"unknown","cliopatria_name":"Strathclyde","cliopatria_from_year":960,"cliopatria_to_year":979,"cliopatria_area_km2":9363,"cliopatria_wikidata":"Q124661","cliopatria_wikipedia":"Strathclyde","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.0051,55.9082],
+[-4.9787,55.7031],
+[-4.7947,55.6348],
+[-4.7861,55.5665],
+[-4.6195,55.6348],
+[-4.5939,55.43],
+[-4.3067,55.2255],
+[-3.5769,54.9531],
+[-3.1413,54.9531],
+[-3.1488,55.0211],
+[-3.0616,55.0211],
+[-3.1868,55.3618],
+[-3.3616,55.3618],
+[-3.385,55.5665],
+[-3.6797,55.8398],
+[-4.2484,56.1821],
+[-4.8646,56.1821],
+[-4.8382,55.9766],
+[-5.0051,55.9082]
+]
+]
+]}
+}

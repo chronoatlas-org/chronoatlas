@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-tocco-1407","edge_precision":"unknown","cliopatria_name":"House of Tocco","cliopatria_from_year":1407,"cliopatria_to_year":1414,"cliopatria_area_km2":2210,"cliopatria_wikidata":"Q149846","cliopatria_wikipedia":"County Palatine of Cephalonia and Zakynthos"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.3199,38.1578],
+[20.7865,38.0933],
+[20.7954,38.2869],
+[20.5664,38.416],
+[20.4881,38.416],
+[20.3285,38.3515],
+[20.3199,38.1578]
+]
+],
+[
+[
+[20.4969,38.6097],
+[20.7322,38.6097],
+[20.6659,38.868],
+[20.5874,38.868],
+[20.4969,38.6097]
+]
+],
+[
+[
+[20.6127,37.7062],
+[20.9221,37.6417],
+[20.934,37.8998],
+[20.6213,37.8998],
+[20.6127,37.7062]
+]
+]
+]}
+}

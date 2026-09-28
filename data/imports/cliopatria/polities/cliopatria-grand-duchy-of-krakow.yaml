@@ -1,0 +1,8 @@
+id: cliopatria-grand-duchy-of-krakow
+names:
+  - text: Grand Duchy of Kraków
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Grand Duchy of Kraków"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

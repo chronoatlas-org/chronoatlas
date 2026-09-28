@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-giudicato-of-gallura-1015","edge_precision":"unknown","cliopatria_name":"Giudicato of Gallura","cliopatria_from_year":1015,"cliopatria_to_year":1017,"cliopatria_area_km2":193,"cliopatria_wikidata":"Q2723760","cliopatria_wikipedia":"Judicate of Gallura"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.188,40.6792],
+[9.3465,40.6792],
+[9.3457,40.8088],
+[9.2664,40.8088],
+[9.188,40.6792]
+]
+],
+[
+[
+[9.3473,40.5496],
+[9.3477,40.4849],
+[9.4269,40.4849],
+[9.4265,40.5496],
+[9.3473,40.5496]
+]
+]
+]}
+}

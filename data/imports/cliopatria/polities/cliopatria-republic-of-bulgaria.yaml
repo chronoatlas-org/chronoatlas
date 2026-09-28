@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-bulgaria
+names:
+  - text: Republic of Bulgaria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Bulgaria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

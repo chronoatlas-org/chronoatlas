@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zapotec-civilization-292bce","edge_precision":"unknown","cliopatria_name":"Zapotec Civilization","cliopatria_from_year":-291,"cliopatria_to_year":-92,"cliopatria_area_km2":6447,"cliopatria_wikidata":"Q844750","cliopatria_wikipedia":"Zapotec civilization","cliopatria_seshat_id":"mx_monte_alban_1_late"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-97.4135,17.6433],
+[-97.2333,17.4505],
+[-97.37,17.3862],
+[-97.3485,17.2576],
+[-97.1903,17.1933],
+[-97.1797,17.129],
+[-96.8956,16.7433],
+[-96.5375,16.8076],
+[-96.5583,16.9362],
+[-96.2634,16.9362],
+[-96.3054,17.1933],
+[-96.8644,17.4505],
+[-96.9078,17.7076],
+[-96.9598,17.579],
+[-97.4135,17.6433]
+]
+]
+]}
+}

@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-edessa-1099","edge_precision":"unknown","cliopatria_name":"County of Edessa","cliopatria_from_year":1099,"cliopatria_to_year":1110,"cliopatria_area_km2":17151,"cliopatria_wikidata":"Q232806","cliopatria_wikipedia":"County of Edessa"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[36.6897,36.9326],
+[36.8454,36.9326],
+[36.838,36.8682],
+[36.9012,36.7393],
+[37.2753,36.6105],
+[38.0051,36.8682],
+[39.3439,36.9971],
+[39.5241,37.1904],
+[39.3149,37.3838],
+[39.0192,37.5128],
+[38.8877,37.7062],
+[38.5053,37.7707],
+[38.0829,37.5128],
+[38.0671,37.3838],
+[36.8194,37.3838],
+[36.6897,36.9326]
+]
+]
+]}
+}

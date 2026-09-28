@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-teutonic-order-1236","edge_precision":"unknown","cliopatria_name":"Teutonic Order","cliopatria_from_year":1236,"cliopatria_to_year":1240,"cliopatria_area_km2":3982,"cliopatria_wikidata":"Q48189","cliopatria_wikipedia":"Teutonic Order","cliopatria_seshat_id":"de_empire_2","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.5219,53.2596],
+[18.9282,52.9227],
+[19.0996,52.9227],
+[19.6288,53.1248],
+[19.8159,53.3271],
+[19.7299,53.3271],
+[19.7351,53.3946],
+[19.563,53.3946],
+[19.5732,53.5296],
+[19.4871,53.5296],
+[19.4921,53.5971],
+[19.0614,53.5971],
+[18.9657,53.4621],
+[18.5263,53.3271],
+[18.5219,53.2596]
+]
+]
+]}
+}

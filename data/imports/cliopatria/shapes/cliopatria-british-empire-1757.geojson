@@ -1,0 +1,43 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-british-empire-1757","edge_precision":"unknown","cliopatria_name":"British Empire","cliopatria_from_year":1757,"cliopatria_to_year":1761,"cliopatria_area_km2":4250,"cliopatria_wikidata":"Q8680","cliopatria_wikipedia":"British Empire","cliopatria_seshat_id":"gb_british_emp_1","cliopatria_member_of":"(British Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[72.8402,18.9934],
+[72.9142,18.9934],
+[73.0899,19.2505],
+[72.8679,19.2505],
+[72.8402,18.9934]
+]
+],
+[
+[
+[88.1479,22.272],
+[88.1954,22.0791],
+[88.3531,22.1434],
+[88.4727,22.4648],
+[88.3239,22.4648],
+[88.3057,22.3363],
+[88.1479,22.272]
+]
+],
+[
+[
+[88.1756,23.4934],
+[88.3609,23.2363],
+[88.3883,22.9148],
+[88.6118,22.9148],
+[88.3698,22.7863],
+[88.3421,22.5934],
+[88.491,22.5934],
+[88.5094,22.722],
+[88.6583,22.722],
+[88.705,23.0434],
+[88.4835,23.5577],
+[88.2793,23.6863],
+[88.1756,23.4934]
+]
+]
+]}
+}

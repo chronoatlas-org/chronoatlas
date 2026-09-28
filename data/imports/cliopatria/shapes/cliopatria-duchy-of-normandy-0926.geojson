@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-normandy-0926","edge_precision":"unknown","cliopatria_name":"Duchy of Normandy","cliopatria_from_year":926,"cliopatria_to_year":935,"cliopatria_area_km2":29227,"cliopatria_wikidata":"Q842091","cliopatria_wikipedia":"Duchy of Normandy"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.2454,49.3826],
+[-1.2132,48.9851],
+[-1.0414,48.9189],
+[-1.0829,48.3899],
+[-1,48.3899],
+[-0.5804,48.3238],
+[-0.3413,48.4559],
+[1.065,48.522],
+[1.4719,48.6542],
+[1.6138,49.0513],
+[1.7724,49.1838],
+[1.7603,49.3826],
+[1.8438,49.3826],
+[1.8196,49.7807],
+[1.455,50.246],
+[1.371,50.246],
+[1.0528,49.98],
+[0.2241,49.8471],
+[-0.0124,49.6479],
+[0.007,49.3826],
+[-1.1673,49.4489],
+[-1.2454,49.3826]
+]
+]
+]}
+}

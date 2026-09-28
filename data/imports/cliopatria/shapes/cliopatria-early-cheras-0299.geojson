@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-early-cheras-0299","edge_precision":"unknown","cliopatria_name":"Early Cheras","cliopatria_from_year":299,"cliopatria_to_year":305,"cliopatria_area_km2":25181,"cliopatria_wikidata":"Q877155","cliopatria_wikipedia":"Chera dynasty","cliopatria_seshat_id":"in_cheras_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[75.9854,10.6264],
+[75.9858,10.5999],
+[76.5525,8.9246],
+[77.1465,8.2572],
+[77.2492,8.3869],
+[77.3448,9.5807],
+[77.2334,9.7601],
+[77.4144,10.2065],
+[76.8499,10.4502],
+[76.8924,10.7567],
+[76.7068,10.907],
+[75.9854,10.6264]
+]
+]
+]}
+}

@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-early-cholas-0299","edge_precision":"unknown","cliopatria_name":"Early Cholas","cliopatria_from_year":299,"cliopatria_to_year":305,"cliopatria_area_km2":28856,"cliopatria_wikidata":"Q3532146","cliopatria_wikipedia":"Early Cholas","cliopatria_seshat_id":"in_cholas_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.6815,10.9441],
+[76.9036,10.7691],
+[76.8467,10.4808],
+[77.3991,10.2148],
+[78.9246,10.1605],
+[79.3943,10.323],
+[79.8541,10.2709],
+[79.8677,11.1967],
+[79.8348,11.3566],
+[78.9641,10.839],
+[77.8762,10.9386],
+[77.5908,11.1383],
+[77.0202,11.1694],
+[76.6815,10.9441]
+]
+]
+]}
+}

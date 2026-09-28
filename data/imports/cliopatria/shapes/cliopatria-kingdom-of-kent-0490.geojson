@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-kent-0490","edge_precision":"unknown","cliopatria_name":"Kingdom of Kent","cliopatria_from_year":490,"cliopatria_to_year":533,"cliopatria_area_km2":4349,"cliopatria_wikidata":"Q328818","cliopatria_wikipedia":"Kingdom of Kent","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.0695,51.5134],
+[0.046,51.1124],
+[0.215,51.1124],
+[0.22,51.0457],
+[0.558,51.0457],
+[0.7364,50.9122],
+[0.8208,50.9122],
+[1.3939,51.1792],
+[1.3806,51.3797],
+[0.6135,51.4465],
+[0.5288,51.4465],
+[-0.0695,51.5134]
+]
+]
+]}
+}

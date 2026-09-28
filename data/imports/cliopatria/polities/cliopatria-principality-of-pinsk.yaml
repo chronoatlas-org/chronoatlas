@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-pinsk
+names:
+  - text: Principality of Pinsk
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Pinsk"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

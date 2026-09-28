@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ziyadid-dynasty-1085","edge_precision":"unknown","cliopatria_name":"Ziyadid dynasty","cliopatria_from_year":1085,"cliopatria_to_year":1125,"cliopatria_area_km2":8272,"cliopatria_wikidata":"Q207017","cliopatria_wikipedia":"Ziyadid dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[43.0016,14.3646],
+[43.0566,13.9789],
+[43.2648,13.7218],
+[43.2356,13.0789],
+[43.447,12.886],
+[43.4386,12.6932],
+[43.5852,12.6932],
+[43.7518,13.1432],
+[43.6139,13.336],
+[43.6317,13.7218],
+[43.4971,13.9789],
+[43.5829,14.2361],
+[43.4391,14.3004],
+[43.3751,14.4932],
+[43.0047,14.4289],
+[43.0016,14.3646]
+]
+]
+]}
+}

@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-avanti-451bce","edge_precision":"unknown","cliopatria_name":"Janapada of Avanti","cliopatria_from_year":-450,"cliopatria_to_year":-405,"cliopatria_area_km2":5104,"cliopatria_wikidata":"Q4827705","cliopatria_wikipedia":"Avanti (region)","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[75.304,23.1077],
+[75.453,23.1077],
+[75.5708,22.8506],
+[75.8687,22.8506],
+[75.8843,22.9791],
+[76.198,23.1077],
+[76.23,23.3649],
+[75.948,23.4934],
+[75.9643,23.622],
+[75.666,23.622],
+[75.4846,23.3649],
+[75.4101,23.3649],
+[75.304,23.1077]
+]
+]
+]}
+}

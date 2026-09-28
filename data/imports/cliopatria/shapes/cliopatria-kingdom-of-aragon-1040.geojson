@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-aragon-1040","edge_precision":"unknown","cliopatria_name":"Kingdom of Aragon","cliopatria_from_year":1040,"cliopatria_to_year":1045,"cliopatria_area_km2":2395,"cliopatria_wikidata":"Q199442","cliopatria_wikipedia":"Kingdom of Aragon","cliopatria_seshat_id":"es_aragon_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.3888,42.4962],
+[-1.3802,42.3662],
+[-0.7486,42.4962],
+[-0.761,42.6912],
+[-0.5207,42.6912],
+[-0.4486,42.8213],
+[-0.8579,42.9515],
+[-0.9381,42.9515],
+[-0.9339,42.8864],
+[-1.0141,42.8864],
+[-1.0098,42.8213],
+[-1.3888,42.4962]
+]
+]
+]}
+}

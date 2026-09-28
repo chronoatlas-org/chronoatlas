@@ -1,0 +1,8 @@
+id: cliopatria-french-second-republic
+names:
+  - text: French Second Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Second Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

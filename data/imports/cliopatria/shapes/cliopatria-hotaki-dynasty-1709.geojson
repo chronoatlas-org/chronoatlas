@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hotaki-dynasty-1709","edge_precision":"unknown","cliopatria_name":"Hotaki Dynasty","cliopatria_from_year":1709,"cliopatria_to_year":1712,"cliopatria_area_km2":4858,"cliopatria_wikidata":"Q627449","cliopatria_wikipedia":"Hotak dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[64.7115,31.0791],
+[64.8636,31.0791],
+[64.8402,30.9506],
+[64.9923,30.9506],
+[64.969,30.822],
+[65.273,30.822],
+[65.2965,30.9506],
+[65.6244,31.0791],
+[65.6724,31.3362],
+[65.392,31.4647],
+[65.4164,31.5933],
+[65.1115,31.5933],
+[64.911,31.3362],
+[64.8349,31.3362],
+[64.7115,31.0791]
+]
+]
+]}
+}

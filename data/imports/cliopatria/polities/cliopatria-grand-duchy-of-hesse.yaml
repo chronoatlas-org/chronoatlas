@@ -1,0 +1,8 @@
+id: cliopatria-grand-duchy-of-hesse
+names:
+  - text: Grand Duchy of Hesse
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Grand Duchy of Hesse"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

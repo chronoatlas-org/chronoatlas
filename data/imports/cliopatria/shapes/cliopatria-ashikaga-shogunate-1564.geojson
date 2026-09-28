@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ashikaga-shogunate-1564","edge_precision":"unknown","cliopatria_name":"Ashikaga Shogunate","cliopatria_from_year":1564,"cliopatria_to_year":1571,"cliopatria_area_km2":879,"cliopatria_wikidata":"Q1154406","cliopatria_wikipedia":"Ashikaga shogunate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[135.7551,35.001],
+[135.954,34.9366],
+[136.0966,35.0653],
+[136.1295,35.1297],
+[135.9525,35.3871],
+[135.7551,35.001]
+]
+]
+]}
+}

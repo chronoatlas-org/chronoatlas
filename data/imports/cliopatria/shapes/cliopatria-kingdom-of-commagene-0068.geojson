@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-commagene-0068","edge_precision":"unknown","cliopatria_name":"Kingdom of Commagene","cliopatria_from_year":68,"cliopatria_to_year":77,"cliopatria_area_km2":9769,"cliopatria_wikidata":"Q332137","cliopatria_wikipedia":"Commagene"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[38.3198,38.1578],
+[38.4599,38.0288],
+[38.4272,37.7707],
+[38.7397,37.7707],
+[38.7315,37.7062],
+[39.122,37.7062],
+[39.4597,37.8998],
+[39.4155,38.1578],
+[39.511,38.2869],
+[39.2322,38.5451],
+[39.2496,38.6743],
+[38.9619,38.868],
+[38.7263,38.868],
+[38.3614,38.4806],
+[38.3198,38.1578]
+]
+]
+]}
+}

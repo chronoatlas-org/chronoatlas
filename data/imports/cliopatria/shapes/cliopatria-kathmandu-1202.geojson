@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kathmandu-1202","edge_precision":"unknown","cliopatria_name":"Kathmandu","cliopatria_from_year":1202,"cliopatria_to_year":1743,"cliopatria_area_km2":661,"cliopatria_wikidata":"Q3037","cliopatria_wikipedia":"Kathmandu"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[85.2355,27.6724],
+[85.4484,27.6081],
+[85.5497,27.7367],
+[85.5628,27.8009],
+[85.3632,27.9295],
+[85.2355,27.6724]
+]
+]
+]}
+}

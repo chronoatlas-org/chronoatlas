@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-morgannwg
+names:
+  - text: Kingdom of Morgannwg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Morgannwg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

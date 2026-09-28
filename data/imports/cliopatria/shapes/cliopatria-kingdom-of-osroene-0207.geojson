@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-osroene-0207","edge_precision":"unknown","cliopatria_name":"Kingdom of Osroene","cliopatria_from_year":207,"cliopatria_to_year":214,"cliopatria_area_km2":50069,"cliopatria_wikidata":"Q237234","cliopatria_wikipedia":"Osroene"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[37.958,37.126],
+[38.1762,36.9971],
+[38.1329,35.9664],
+[38.428,35.8377],
+[39.4971,35.7089],
+[39.7527,35.902],
+[40.8089,36.2884],
+[41.2829,36.3528],
+[41.5413,36.546],
+[41.2124,36.9971],
+[41.1778,37.3193],
+[40.1812,37.4483],
+[39.4958,37.5773],
+[39.4597,37.8998],
+[39.122,37.7062],
+[38.3491,37.7707],
+[38.333,37.6417],
+[37.9891,37.3838],
+[37.958,37.126]
+]
+]
+]}
+}

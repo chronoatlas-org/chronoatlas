@@ -1,0 +1,8 @@
+id: cliopatria-greek-city-states
+names:
+  - text: Greek City-States
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Greek City-States"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

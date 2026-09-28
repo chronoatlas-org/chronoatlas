@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-regensberg
+names:
+  - text: Principality of Regensberg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Regensberg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

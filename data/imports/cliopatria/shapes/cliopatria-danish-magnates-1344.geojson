@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-danish-magnates-1344","edge_precision":"unknown","cliopatria_name":"Danish Magnates","cliopatria_from_year":1344,"cliopatria_to_year":1351,"cliopatria_area_km2":4720,"cliopatria_wikidata":"Q350186","cliopatria_wikipedia":"Christopher II of Denmark","cliopatria_seshat_id":"dk_danish_k","cliopatria_member_of":"(Kingdom of Denmark)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.6632,55.4983],
+[9.6635,55.43],
+[9.9264,55.0892],
+[10.6238,55.0211],
+[10.799,55.1573],
+[10.8006,55.43],
+[10.626,55.4983],
+[10.6266,55.6348],
+[9.838,55.6348],
+[9.6632,55.4983]
+]
+],
+[
+[
+[11.6681,54.8851],
+[11.7523,54.6811],
+[12.1012,54.7491],
+[12.1057,55.0211],
+[11.9314,55.0211],
+[11.6681,54.8851]
+]
+]
+]}
+}

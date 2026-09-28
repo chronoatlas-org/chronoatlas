@@ -1,0 +1,8 @@
+id: cliopatria-sultan-of-yogyakarta
+names:
+  - text: Sultan of Yogyakarta
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sultan of Yogyakarta"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

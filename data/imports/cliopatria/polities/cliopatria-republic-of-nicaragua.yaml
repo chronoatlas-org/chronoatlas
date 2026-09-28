@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-nicaragua
+names:
+  - text: Republic of Nicaragua
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Nicaragua"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

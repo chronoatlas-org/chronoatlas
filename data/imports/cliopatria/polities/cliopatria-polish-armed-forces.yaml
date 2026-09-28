@@ -1,0 +1,8 @@
+id: cliopatria-polish-armed-forces
+names:
+  - text: Polish Armed Forces
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Polish Armed Forces"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

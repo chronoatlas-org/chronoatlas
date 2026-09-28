@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-beylik-of-menteshe-1407","edge_precision":"unknown","cliopatria_name":"Beylik of Menteshe","cliopatria_from_year":1407,"cliopatria_to_year":1414,"cliopatria_area_km2":5937,"cliopatria_wikidata":"Q1400572","cliopatria_wikipedia":"Menteshe"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[27.5344,37.3193],
+[27.6124,37.3193],
+[27.598,37.126],
+[28.1383,37.0615],
+[28.0314,36.6749],
+[28.1869,36.6749],
+[28.3571,36.8682],
+[28.4349,36.8682],
+[28.631,37.3838],
+[28.4021,37.4483],
+[28.2663,37.7062],
+[28.027,37.6417],
+[27.9489,37.6417],
+[27.7098,37.5773],
+[27.5392,37.3838],
+[27.5344,37.3193]
+]
+]
+]}
+}

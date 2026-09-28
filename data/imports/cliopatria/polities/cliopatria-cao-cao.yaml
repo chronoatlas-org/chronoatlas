@@ -1,0 +1,8 @@
+id: cliopatria-cao-cao
+names:
+  - text: Cao Cao
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cao Cao"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

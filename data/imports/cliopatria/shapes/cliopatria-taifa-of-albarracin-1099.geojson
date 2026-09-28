@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-albarracin-1099","edge_precision":"unknown","cliopatria_name":"Taifa of Albarracín","cliopatria_from_year":1099,"cliopatria_to_year":1110,"cliopatria_area_km2":8531,"cliopatria_wikidata":"Q2060937","cliopatria_wikipedia":"Taifa of Albarracín","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.7265,40.3554],
+[-0.1443,40.3554],
+[0.1546,40.6792],
+[-0.4113,40.8736],
+[-0.5021,41.068],
+[-0.8991,41.068],
+[-1.5136,40.744],
+[-1.7265,40.3554]
+]
+]
+]}
+}

@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tamna-0936","edge_precision":"unknown","cliopatria_name":"Tamna","cliopatria_from_year":936,"cliopatria_to_year":1271,"cliopatria_area_km2":1959,"cliopatria_wikidata":"Q28057","cliopatria_wikipedia":"Tamna"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[126.1388,33.2002],
+[126.7035,33.2645],
+[126.7801,33.2645],
+[126.9988,33.5859],
+[126.3563,33.5217],
+[126.1388,33.2002]
+]
+]
+]}
+}

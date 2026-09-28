@@ -1,0 +1,8 @@
+id: cliopatria-pro-habsburg-spain
+names:
+  - text: Pro-Habsburg Spain
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Pro-Habsburg Spain"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-dauphine-1272","edge_precision":"unknown","cliopatria_name":"Dauphiné","cliopatria_from_year":1272,"cliopatria_to_year":1313,"cliopatria_area_km2":9291,"cliopatria_wikidata":"Q151999","cliopatria_wikipedia":"Dauphiné","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.3492,45.3659],
+[4.3567,45.1696],
+[5.0883,45.1696],
+[5.0839,45.3004],
+[5.3279,45.3004],
+[5.2658,44.7119],
+[5.756,44.5813],
+[5.837,44.5813],
+[5.8351,44.6466],
+[5.9161,44.6466],
+[5.9143,44.7119],
+[6.3162,44.8426],
+[6.3093,45.1042],
+[6.2173,45.4968],
+[5.8896,45.5623],
+[5.8121,45.4313],
+[5.6493,45.4313],
+[5.478,45.6933],
+[5.2334,45.6933],
+[5.0002,45.3659],
+[4.3492,45.3659]
+]
+]
+]}
+}

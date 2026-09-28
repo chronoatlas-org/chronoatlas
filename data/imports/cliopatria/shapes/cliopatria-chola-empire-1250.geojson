@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-chola-empire-1250","edge_precision":"unknown","cliopatria_name":"Chola Empire","cliopatria_from_year":1250,"cliopatria_to_year":1259,"cliopatria_area_km2":7865,"cliopatria_wikidata":"Q6806806","cliopatria_wikipedia":"Chola Empire","cliopatria_seshat_id":"in_chola_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[78.9985,13.6575],
+[79.811,13.8164],
+[80.2532,13.7367],
+[80.2158,14.8789],
+[80.1641,14.8789],
+[80.1641,14.2807],
+[79.823,14.3091],
+[79.5986,14.5817],
+[79.0043,13.7218],
+[78.9985,13.6575]
+]
+]
+]}
+}

@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-puebloans-chaco-regional-system-0850","edge_precision":"unknown","cliopatria_name":"Puebloans - Chaco Regional System","cliopatria_from_year":850,"cliopatria_to_year":1039,"cliopatria_area_km2":21203,"cliopatria_wikidata":"Q478805","cliopatria_wikipedia":"Ancestral Puebloans","cliopatria_seshat_id":"us_chaco_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-109.5528,35.1172],
+[-108.9434,35.1078],
+[-107.6388,35.3444],
+[-107.7407,35.9886],
+[-108.1631,36.715],
+[-109.1079,36.9365],
+[-109.0305,35.7257],
+[-109.5528,35.1172]
+]
+]
+]}
+}

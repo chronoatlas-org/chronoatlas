@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-achaean-league-257bce","edge_precision":"unknown","cliopatria_name":"Achaean League","cliopatria_from_year":-256,"cliopatria_to_year":-248,"cliopatria_area_km2":2579,"cliopatria_wikidata":"Q244796","cliopatria_wikipedia":"Achaean League"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[21.4124,38.0933],
+[21.9567,38.0288],
+[21.9634,38.1578],
+[22.1199,38.1578],
+[22.2662,37.9643],
+[22.5825,38.0288],
+[22.5859,38.0933],
+[22.4329,38.1578],
+[22.4399,38.2869],
+[22.2798,38.2224],
+[22.2868,38.3515],
+[22.1335,38.416],
+[21.7417,38.416],
+[21.7286,38.1578],
+[21.4156,38.1578],
+[21.4124,38.0933]
+]
+]
+]}
+}

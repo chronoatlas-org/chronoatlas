@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kuwait-1805","edge_precision":"unknown","cliopatria_name":"Kuwait","cliopatria_from_year":1805,"cliopatria_to_year":1819,"cliopatria_area_km2":5316,"cliopatria_wikidata":"Q817","cliopatria_wikipedia":"Kuwait"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[47.4449,29.1509],
+[47.8632,28.8295],
+[48.3164,28.8295],
+[48.3235,28.8938],
+[48.1937,29.0867],
+[48.2154,29.2795],
+[48.0786,29.4081],
+[47.8517,29.4081],
+[47.9419,29.5366],
+[48.0176,29.5366],
+[47.7443,29.7937],
+[47.4805,29.4723],
+[47.4449,29.1509]
+]
+]
+]}
+}

@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-niebla-1028","edge_precision":"unknown","cliopatria_name":"Taifa of Niebla","cliopatria_from_year":1028,"cliopatria_to_year":1055,"cliopatria_area_km2":1405,"cliopatria_wikidata":"Q2668600","cliopatria_wikipedia":"Taifa of Niebla","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-6.9613,37.7707],
+[-6.9456,37.5773],
+[-6.8675,37.5773],
+[-6.8624,37.5128],
+[-6.7063,37.5128],
+[-6.7012,37.4483],
+[-6.6232,37.4483],
+[-6.3992,37.5773],
+[-6.5758,37.8352],
+[-6.9613,37.7707]
+]
+]
+]}
+}

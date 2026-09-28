@@ -1,0 +1,37 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-arles-1040","edge_precision":"unknown","cliopatria_name":"Kingdom of Arles","cliopatria_from_year":1040,"cliopatria_to_year":1055,"cliopatria_area_km2":18169,"cliopatria_wikidata":"Q3271735","cliopatria_wikipedia":"Kingdom of Arles","cliopatria_seshat_id":"fr_capetian_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[3.6018,47.5323],
+[3.6079,47.4006],
+[3.9404,47.3348],
+[3.9491,47.1374],
+[3.8668,47.1374],
+[3.9633,46.8086],
+[3.8841,46.7429],
+[3.802,46.7429],
+[3.8049,46.6772],
+[4.051,46.6772],
+[4.2258,46.4145],
+[4.2312,46.2833],
+[4.5661,46.0865],
+[5.0378,46.6115],
+[5.0354,46.6772],
+[5.5945,47.1374],
+[5.5769,47.6641],
+[5.249,47.5982],
+[4.8212,47.9938],
+[4.573,47.9938],
+[4.5783,47.8619],
+[4.3386,47.6641],
+[4.1735,47.6641],
+[3.9142,47.9278],
+[3.7548,47.7959],
+[3.7668,47.5323],
+[3.6018,47.5323]
+]
+]
+]}
+}

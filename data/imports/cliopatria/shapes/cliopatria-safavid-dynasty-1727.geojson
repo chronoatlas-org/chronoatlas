@@ -1,0 +1,14 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-safavid-dynasty-1727","edge_precision":"unknown","cliopatria_name":"Safavid Dynasty","cliopatria_from_year":1727,"cliopatria_to_year":1733,"cliopatria_area_km2":98,"cliopatria_wikidata":"Q161205","cliopatria_wikipedia":"Safavid dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[54.963,38.0288],
+[55.015,37.8998],
+[55.1194,38.0288],
+[54.963,38.0288]
+]
+]
+]}
+}

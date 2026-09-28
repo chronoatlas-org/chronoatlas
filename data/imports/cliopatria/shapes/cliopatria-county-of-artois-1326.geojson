@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-artois-1326","edge_precision":"unknown","cliopatria_name":"County of Artois","cliopatria_from_year":1326,"cliopatria_to_year":1332,"cliopatria_area_km2":7610,"cliopatria_wikidata":"Q778266","cliopatria_wikipedia":"County of Artois","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.5761,50.9789],
+[1.5804,50.9122],
+[1.8419,50.7788],
+[1.6018,50.5789],
+[1.7827,50.3791],
+[2.5544,50.113],
+[3.7293,50.113],
+[3.726,50.1795],
+[3.6421,50.1795],
+[3.5416,50.5122],
+[3.3733,50.5122],
+[3.296,50.3791],
+[3.2119,50.3791],
+[2.7768,50.6455],
+[2.2714,50.6455],
+[2.2635,50.7788],
+[2.0949,50.7788],
+[2.0745,51.1124],
+[1.99,51.1124],
+[1.5761,50.9789]
+]
+]
+]}
+}

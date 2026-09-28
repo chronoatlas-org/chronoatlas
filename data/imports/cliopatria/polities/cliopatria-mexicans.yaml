@@ -1,0 +1,8 @@
+id: cliopatria-mexicans
+names:
+  - text: Mexicans
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mexicans"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

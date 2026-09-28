@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-kakheti
+names:
+  - text: Kingdom of Kakheti
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Kakheti"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

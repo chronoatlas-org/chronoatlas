@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-grenada-1976","edge_precision":"unknown","cliopatria_name":"Grenada","cliopatria_from_year":1976,"cliopatria_to_year":2023,"cliopatria_area_km2":482,"cliopatria_wikidata":"Q769","cliopatria_wikipedia":"Grenada"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-61.7751,12.0503],
+[-61.5511,11.986],
+[-61.5684,12.2432],
+[-61.715,12.2432],
+[-61.7106,12.1789],
+[-61.7751,12.0503]
+]
+]
+]}
+}

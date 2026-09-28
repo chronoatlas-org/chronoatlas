@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-lesotho-2024","edge_precision":"unknown","cliopatria_name":"Lesotho","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":31559,"cliopatria_wikidata":"Q1013","cliopatria_wikipedia":"Lesotho"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[26.8899,-29.6724],
+[27.2209,-30.1866],
+[27.2317,-30.3794],
+[27.7059,-30.7008],
+[27.9339,-30.7008],
+[28.2107,-30.2509],
+[28.8818,-30.0581],
+[28.9576,-30.0581],
+[29.086,-29.6724],
+[29.3016,-29.4796],
+[29.2866,-29.2225],
+[28.5744,-28.6439],
+[28.1969,-28.6439],
+[28.1281,-28.7725],
+[27.5338,-28.9654],
+[27.2582,-29.4796],
+[26.8899,-29.6724]
+]
+]
+]}
+}

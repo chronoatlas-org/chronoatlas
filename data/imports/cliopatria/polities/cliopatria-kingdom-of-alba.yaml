@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-alba
+names:
+  - text: Kingdom of Alba
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Alba"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

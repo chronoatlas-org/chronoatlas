@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ottoman-empire-1326","edge_precision":"unknown","cliopatria_name":"Ottoman Empire","cliopatria_from_year":1326,"cliopatria_to_year":1332,"cliopatria_area_km2":27118,"cliopatria_wikidata":"Q12560","cliopatria_wikipedia":"Ottoman Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[28.6763,39.7729],
+[28.98,39.6436],
+[31.3446,39.6436],
+[31.6735,39.7729],
+[31.6872,39.9023],
+[32.031,40.1612],
+[32.0021,40.6144],
+[31.9229,40.6144],
+[32.0387,40.9384],
+[31.2452,40.9384],
+[29.4959,40.0964],
+[29.3565,40.2906],
+[29.0525,40.4201],
+[29.0463,40.3554],
+[28.809,40.3554],
+[28.6763,39.7729]
+]
+]
+]}
+}

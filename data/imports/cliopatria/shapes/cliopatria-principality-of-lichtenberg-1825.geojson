@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-lichtenberg-1825","edge_precision":"unknown","cliopatria_name":"Principality of Lichtenberg","cliopatria_from_year":1825,"cliopatria_to_year":1827,"cliopatria_area_km2":179,"cliopatria_wikidata":"Q547629","cliopatria_wikipedia":"Principality of Lichtenberg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.2677,49.5152],
+[7.3527,49.4489],
+[7.4363,49.4489],
+[7.5155,49.6479],
+[7.2677,49.5152]
+]
+]
+]}
+}

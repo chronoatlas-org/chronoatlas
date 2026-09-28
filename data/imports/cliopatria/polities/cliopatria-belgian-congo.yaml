@@ -1,0 +1,8 @@
+id: cliopatria-belgian-congo
+names:
+  - text: Belgian Congo
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Belgian Congo"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

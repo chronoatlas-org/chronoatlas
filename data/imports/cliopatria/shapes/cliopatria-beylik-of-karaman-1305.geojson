@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-beylik-of-karaman-1305","edge_precision":"unknown","cliopatria_name":"Beylik of Karaman","cliopatria_from_year":1305,"cliopatria_to_year":1313,"cliopatria_area_km2":27750,"cliopatria_wikidata":"Q1469100","cliopatria_wikipedia":"Karamanids","cliopatria_seshat_id":"tr_karaman_bey"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[31.763,36.6749],
+[32.0681,36.6105],
+[32.4985,36.224],
+[32.5583,36.0308],
+[33.5848,36.224],
+[33.6624,36.224],
+[33.6098,36.4816],
+[33.7779,36.6105],
+[33.7517,37.126],
+[33.7467,37.8352],
+[33.5837,37.7707],
+[33.5189,37.8998],
+[32.6656,37.9643],
+[32.3274,37.7062],
+[31.9601,37.126],
+[31.7689,36.7393],
+[31.763,36.6749]
+]
+]
+]}
+}

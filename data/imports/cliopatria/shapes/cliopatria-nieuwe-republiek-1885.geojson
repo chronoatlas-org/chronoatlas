@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-nieuwe-republiek-1885","edge_precision":"unknown","cliopatria_name":"Nieuwe Republiek","cliopatria_from_year":1885,"cliopatria_to_year":1889,"cliopatria_area_km2":10205,"cliopatria_wikidata":"Q552157","cliopatria_wikipedia":"Nieuwe Republiek"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[31.6909,-27.7439],
+[32.075,-27.8725],
+[32.1581,-28.0011],
+[32.2334,-28.0011],
+[32.4674,-28.1297],
+[32.6431,-27.2939],
+[32.7823,-27.101],
+[32.7677,-26.8438],
+[32.0164,-26.8438],
+[31.8697,-26.9081],
+[31.8158,-27.2939],
+[31.6909,-27.7439]
+]
+]
+]}
+}

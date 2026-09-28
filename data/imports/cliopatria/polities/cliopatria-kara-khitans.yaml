@@ -1,0 +1,8 @@
+id: cliopatria-kara-khitans
+names:
+  - text: Kara-Khitans
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kara-Khitans"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

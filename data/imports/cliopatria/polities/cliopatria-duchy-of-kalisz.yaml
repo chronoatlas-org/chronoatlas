@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-kalisz
+names:
+  - text: Duchy of Kalisz
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Kalisz"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

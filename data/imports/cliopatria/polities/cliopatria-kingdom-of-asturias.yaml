@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-asturias
+names:
+  - text: Kingdom of Asturias
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Asturias"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

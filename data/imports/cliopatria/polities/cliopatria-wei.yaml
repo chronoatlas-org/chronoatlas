@@ -1,0 +1,8 @@
+id: cliopatria-wei
+names:
+  - text: Wei
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Wei"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

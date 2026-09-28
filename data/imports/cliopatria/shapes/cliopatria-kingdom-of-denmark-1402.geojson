@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-denmark-1402","edge_precision":"unknown","cliopatria_name":"Kingdom of Denmark","cliopatria_from_year":1402,"cliopatria_to_year":1406,"cliopatria_area_km2":73,"cliopatria_wikidata":"Q756617","cliopatria_wikipedia":"Danish Realm","cliopatria_member_of":"(Kingdom of Denmark)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[26.0289,65.6641],
+[26.1254,65.6641],
+[26.1381,65.7376],
+[26.0416,65.7376],
+[26.0289,65.6641]
+]
+],
+[
+[
+[26.1127,65.5905],
+[26.2091,65.5905],
+[26.2219,65.6641],
+[26.1254,65.6641],
+[26.1127,65.5905]
+]
+]
+]}
+}

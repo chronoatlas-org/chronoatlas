@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-latvia
+names:
+  - text: Republic of Latvia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Latvia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

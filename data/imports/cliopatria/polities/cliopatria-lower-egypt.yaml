@@ -1,0 +1,8 @@
+id: cliopatria-lower-egypt
+names:
+  - text: Lower Egypt
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Lower Egypt"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

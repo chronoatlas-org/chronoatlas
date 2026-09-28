@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-israel
+names:
+  - text: Kingdom of Israel
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Israel"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

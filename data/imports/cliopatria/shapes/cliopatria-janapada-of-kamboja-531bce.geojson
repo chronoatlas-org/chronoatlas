@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-kamboja-531bce","edge_precision":"unknown","cliopatria_name":"Janapada of Kamboja","cliopatria_from_year":-530,"cliopatria_to_year":-501,"cliopatria_area_km2":5087,"cliopatria_wikidata":"Q2586782","cliopatria_wikipedia":"Kambojas","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[72.7713,33.4574],
+[72.8177,33.3288],
+[72.9711,33.3288],
+[72.9409,33.2002],
+[73.0942,33.2002],
+[73.0642,33.0716],
+[73.3706,33.0716],
+[73.4008,33.2002],
+[73.539,33.1359],
+[73.5846,33.3288],
+[73.738,33.3288],
+[73.7997,33.5859],
+[73.6462,33.5859],
+[73.6772,33.7146],
+[73.5236,33.7146],
+[73.5548,33.8432],
+[73.3398,33.9075],
+[73.2164,33.7146],
+[73.0782,33.7789],
+[73.032,33.5859],
+[72.8785,33.5859],
+[72.848,33.4574],
+[72.7713,33.4574]
+]
+]
+]}
+}

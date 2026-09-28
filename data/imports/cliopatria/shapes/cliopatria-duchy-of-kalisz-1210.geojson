@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-kalisz-1210","edge_precision":"unknown","cliopatria_name":"Duchy of Kalisz","cliopatria_from_year":1210,"cliopatria_to_year":1215,"cliopatria_area_km2":2841,"cliopatria_wikidata":"Q16570037","cliopatria_wikipedia":"Duchy of Kalisz","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[17.56,51.4465],
+[17.8031,51.246],
+[17.9723,51.246],
+[18.08,51.6472],
+[18.3508,51.9151],
+[18.2821,52.1833],
+[17.7632,52.0492],
+[17.8329,51.7811],
+[17.56,51.4465]
+]
+]
+]}
+}

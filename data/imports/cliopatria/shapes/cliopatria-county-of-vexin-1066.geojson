@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-vexin-1066","edge_precision":"unknown","cliopatria_name":"County of Vexin","cliopatria_from_year":1066,"cliopatria_to_year":1071,"cliopatria_area_km2":4195,"cliopatria_wikidata":"Q1476089","cliopatria_wikipedia":"Vexin","cliopatria_seshat_id":"fr_capetian_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.3888,48.6542],
+[1.5671,48.4559],
+[1.733,48.4559],
+[1.8003,48.7204],
+[2.1251,48.8527],
+[2.1893,49.1838],
+[1.7724,49.1838],
+[1.3888,48.6542]
+]
+],
+[
+[
+[2.9432,49.1175],
+[2.9467,49.0513],
+[3.03,49.0513],
+[3.0334,48.9851],
+[3.4562,48.8527],
+[3.5394,48.8527],
+[3.6194,48.9189],
+[3.6003,49.3163],
+[3.35,49.3163],
+[3.1099,49.1175],
+[2.9432,49.1175]
+]
+]
+]}
+}

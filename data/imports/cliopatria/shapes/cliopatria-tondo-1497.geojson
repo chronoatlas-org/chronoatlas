@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tondo-1497","edge_precision":"unknown","cliopatria_name":"Tondo","cliopatria_from_year":1497,"cliopatria_to_year":1563,"cliopatria_area_km2":4840,"cliopatria_wikidata":"Q1642472","cliopatria_wikipedia":"Tondo (historical polity)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[120.1876,14.8147],
+[120.2415,14.6861],
+[120.3149,14.6861],
+[120.3498,14.4289],
+[120.6436,14.4289],
+[120.6187,14.7504],
+[121.0399,14.6218],
+[121.3535,14.7504],
+[121.3734,14.8789],
+[121.2365,14.9432],
+[121.31,14.9432],
+[121.3201,15.0075],
+[121.2466,15.0075],
+[121.2365,14.9432],
+[120.9627,15.0718],
+[120.722,14.9432],
+[120.5115,15.0075],
+[120.1876,14.8147]
+]
+]
+]}
+}

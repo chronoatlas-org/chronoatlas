@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-kongo
+names:
+  - text: Kingdom of Kongo
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Kongo"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

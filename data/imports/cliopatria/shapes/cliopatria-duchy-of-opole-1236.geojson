@@ -1,0 +1,36 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-opole-1236","edge_precision":"unknown","cliopatria_name":"Duchy of Opole","cliopatria_from_year":1236,"cliopatria_to_year":1240,"cliopatria_area_km2":22526,"cliopatria_wikidata":"Q661980","cliopatria_wikipedia":"Duchy of Opole","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[17.246,50.246],
+[17.9042,49.98],
+[18.3234,49.98],
+[18.3162,49.8471],
+[18.7164,49.5152],
+[19.1304,49.4489],
+[19.3889,49.5816],
+[19.397,49.7143],
+[19.1578,49.9136],
+[19.1861,50.3791],
+[18.7856,50.7121],
+[18.5328,50.7121],
+[18.5445,50.9122],
+[18.7214,51.0457],
+[18.6824,51.7811],
+[18.525,51.9822],
+[18.5377,52.1833],
+[18.2862,52.2505],
+[17.7632,52.0492],
+[17.7555,51.9151],
+[17.8329,51.7811],
+[17.5564,51.3797],
+[17.8068,51.3128],
+[17.8586,50.7121],
+[17.4338,50.6455],
+[17.246,50.246]
+]
+]
+]}
+}

@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-domain-of-rhodes-1241","edge_precision":"unknown","cliopatria_name":"Domain of Rhodes","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":2169,"cliopatria_wikidata":"Q43048","cliopatria_wikipedia":"Rhodes"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[27.6925,36.2884],
+[27.7426,35.902],
+[28.1393,36.0308],
+[28.2502,36.4816],
+[28.0171,36.4816],
+[27.6925,36.2884]
+]
+]
+]}
+}

@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-naples-0960","edge_precision":"unknown","cliopatria_name":"Duchy of Naples","cliopatria_from_year":960,"cliopatria_to_year":979,"cliopatria_area_km2":746,"cliopatria_wikidata":"Q1051600","cliopatria_wikipedia":"Duchy of Naples"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[14.0264,40.9384],
+[14.4219,40.8736],
+[14.4179,40.6792],
+[14.4971,40.6792],
+[14.4985,40.744],
+[14.657,40.744],
+[14.6556,40.6792],
+[14.7349,40.6792],
+[14.7377,40.8088],
+[14.5791,40.8088],
+[14.5039,41.0032],
+[14.4245,41.0032],
+[14.0264,40.9384]
+]
+]
+]}
+}

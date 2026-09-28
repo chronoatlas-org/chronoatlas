@@ -1,0 +1,8 @@
+id: cliopatria-county-of-besalu
+names:
+  - text: County of Besalú
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Besalú"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-haudenosaunee-1778","edge_precision":"unknown","cliopatria_name":"Haudenosaunee","cliopatria_from_year":1778,"cliopatria_to_year":1780,"cliopatria_area_km2":15013,"cliopatria_wikidata":"Q68518","cliopatria_wikipedia":"Iroquois","cliopatria_seshat_id":"us_haudenosaunee_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-78.2328,42.6912],
+[-78.0229,42.4312],
+[-77.8308,42.3662],
+[-76.7912,42.3662],
+[-76.7267,42.5612],
+[-76.5665,42.5612],
+[-76.3259,42.8864],
+[-76.0372,42.9515],
+[-76.0212,43.0816],
+[-76.6333,43.3421],
+[-78.0807,43.3421],
+[-78.0904,42.8864],
+[-78.1706,42.8864],
+[-78.1052,42.7563],
+[-78.2328,42.6912]
+]
+]
+]}
+}

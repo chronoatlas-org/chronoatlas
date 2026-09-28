@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kuwait-2024","edge_precision":"unknown","cliopatria_name":"Kuwait","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":17342,"cliopatria_wikidata":"Q817","cliopatria_wikipedia":"Kuwait"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[46.6888,29.1509],
+[47.575,28.9581],
+[47.616,28.6367],
+[47.8287,28.5081],
+[48.4394,28.5724],
+[48.4464,28.6367],
+[48.2009,29.1509],
+[48.2081,29.2152],
+[48.0786,29.4081],
+[47.8517,29.4081],
+[47.8662,29.5366],
+[48.4035,29.6009],
+[48.4261,29.7937],
+[48.3654,29.9223],
+[48.0623,29.9223],
+[48.0699,29.9865],
+[47.2435,30.0508],
+[46.6888,29.1509]
+]
+]
+]}
+}

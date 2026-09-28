@@ -1,0 +1,8 @@
+id: cliopatria-surakarta-sunanate
+names:
+  - text: Surakarta Sunanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Surakarta Sunanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

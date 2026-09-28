@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-kedah-1895","edge_precision":"unknown","cliopatria_name":"Sultanate of Kedah","cliopatria_from_year":1895,"cliopatria_to_year":1907,"cliopatria_area_km2":9671,"cliopatria_wikidata":"Q1317579","cliopatria_wikipedia":"Kedah Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[100.1497,6.1358],
+[100.284,5.943],
+[100.2653,5.6215],
+[100.2616,5.5572],
+[100.4803,5.5572],
+[100.5315,5.1715],
+[100.6773,5.1715],
+[100.9067,5.3644],
+[100.998,5.6858],
+[101.0938,6.0715],
+[100.6799,6.4573],
+[100.4652,6.5216],
+[100.1536,6.2001],
+[100.1497,6.1358]
+]
+]
+]}
+}

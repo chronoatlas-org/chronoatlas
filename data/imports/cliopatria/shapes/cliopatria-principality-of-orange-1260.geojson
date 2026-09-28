@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-orange-1260","edge_precision":"unknown","cliopatria_name":"Principality of Orange","cliopatria_from_year":1260,"cliopatria_to_year":1271,"cliopatria_area_km2":234,"cliopatria_wikidata":"Q2281221","cliopatria_wikipedia":"Principality of Orange","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.7953,44.2548],
+[4.7975,44.1896],
+[4.7997,44.1243],
+[4.9613,44.1243],
+[5.0378,44.2548],
+[4.7953,44.2548]
+]
+]
+]}
+}

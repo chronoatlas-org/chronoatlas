@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-athens
+names:
+  - text: Duchy of Athens
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Athens"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

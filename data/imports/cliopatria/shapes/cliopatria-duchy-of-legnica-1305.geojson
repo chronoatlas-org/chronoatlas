@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-legnica-1305","edge_precision":"unknown","cliopatria_name":"Duchy of Legnica","cliopatria_from_year":1305,"cliopatria_to_year":1313,"cliopatria_area_km2":5278,"cliopatria_wikidata":"Q570740","cliopatria_wikipedia":"Duchy of Legnica","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Kingdom of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.8571,51.246],
+[16.3618,51.1792],
+[16.5219,50.9789],
+[16.423,50.6455],
+[16.3388,50.6455],
+[16.3359,50.5789],
+[16.4201,50.5789],
+[16.4173,50.5122],
+[16.6698,50.5122],
+[16.6668,50.4457],
+[16.9192,50.4457],
+[17.2853,51.0457],
+[15.9556,51.5803],
+[15.8571,51.246]
+]
+]
+]}
+}

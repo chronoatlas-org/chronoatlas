@@ -1,0 +1,8 @@
+id: cliopatria-oghuz-turks
+names:
+  - text: Oghuz Turks
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Oghuz Turks"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-oldenburg
+names:
+  - text: Duchy of Oldenburg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Oldenburg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

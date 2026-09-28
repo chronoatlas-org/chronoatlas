@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-indus-valley-civilization-3001bce","edge_precision":"unknown","cliopatria_name":"Indus Valley Civilization","cliopatria_from_year":-3000,"cliopatria_to_year":-2701,"cliopatria_area_km2":4998,"cliopatria_wikidata":"Q42534","cliopatria_wikipedia":"Indus Valley Civilisation","cliopatria_seshat_id":"pk_kachi_pre_urban"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[67.9356,26.7723],
+[68.0858,26.7723],
+[68.1991,26.5151],
+[68.4993,26.5151],
+[68.5178,26.6437],
+[68.8369,26.7723],
+[68.875,27.0295],
+[68.5936,27.158],
+[68.613,27.2866],
+[68.3122,27.2866],
+[68.1234,27.0295],
+[68.0482,27.0295],
+[67.9356,26.7723]
+]
+]
+]}
+}

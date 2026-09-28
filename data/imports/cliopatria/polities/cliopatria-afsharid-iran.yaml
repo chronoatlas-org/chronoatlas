@@ -1,0 +1,8 @@
+id: cliopatria-afsharid-iran
+names:
+  - text: Afsharid Iran
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Afsharid Iran"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

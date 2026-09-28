@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hunnic-empire-0666","edge_precision":"unknown","cliopatria_name":"Hunnic Empire","cliopatria_from_year":666,"cliopatria_to_year":673,"cliopatria_area_km2":46,"cliopatria_wikidata":"Q45813","cliopatria_wikipedia":"Huns"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[37.5841,45.5623],
+[37.6655,45.5623],
+[37.6762,45.6278],
+[37.5947,45.6278],
+[37.5841,45.5623]
+]
+]
+]}
+}

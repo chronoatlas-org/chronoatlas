@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-capua-0990","edge_precision":"unknown","cliopatria_name":"Principality of Capua","cliopatria_from_year":990,"cliopatria_to_year":1009,"cliopatria_area_km2":384,"cliopatria_wikidata":"Q1280122","cliopatria_wikipedia":"Principality of Capua"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[13.7918,41.1328],
+[13.9506,41.1328],
+[13.9494,41.068],
+[14.1082,41.068],
+[14.112,41.2625],
+[13.7929,41.1977],
+[13.7918,41.1328]
+]
+]
+]}
+}

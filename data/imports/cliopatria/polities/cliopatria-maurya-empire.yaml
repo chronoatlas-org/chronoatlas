@@ -1,0 +1,8 @@
+id: cliopatria-maurya-empire
+names:
+  - text: Maurya Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Maurya Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

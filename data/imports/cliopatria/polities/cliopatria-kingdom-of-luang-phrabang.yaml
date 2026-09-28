@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-luang-phrabang
+names:
+  - text: Kingdom of Luang Phrabang
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Luang Phrabang"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

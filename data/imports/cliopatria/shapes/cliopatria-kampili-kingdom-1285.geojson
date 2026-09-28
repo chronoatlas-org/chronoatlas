@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kampili-kingdom-1285","edge_precision":"unknown","cliopatria_name":"Kampili Kingdom","cliopatria_from_year":1285,"cliopatria_to_year":1325,"cliopatria_area_km2":5373,"cliopatria_wikidata":"Q1446192","cliopatria_wikipedia":"Kampili Kingdom","cliopatria_seshat_id":"in_kampili_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.476,14.5132],
+[76.7408,14.3617],
+[77.4247,14.6968],
+[77.5494,14.9888],
+[77.3246,15.1368],
+[77.1636,15.0947],
+[76.5074,14.7216],
+[76.476,14.5132]
+]
+]
+]}
+}

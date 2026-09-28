@@ -1,0 +1,8 @@
+id: cliopatria-county-of-pallars-sobira
+names:
+  - text: County of Pallars Sobirà
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Pallars Sobirà"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

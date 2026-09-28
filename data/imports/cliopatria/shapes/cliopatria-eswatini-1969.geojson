@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-eswatini-1969","edge_precision":"unknown","cliopatria_name":"Eswatini","cliopatria_from_year":1969,"cliopatria_to_year":1972,"cliopatria_area_km2":17129,"cliopatria_wikidata":"Q1050","cliopatria_wikipedia":"Eswatini"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[30.7169,-26.3938],
+[30.7427,-26.9081],
+[30.9782,-27.101],
+[30.985,-27.2296],
+[31.5937,-27.3582],
+[31.6689,-27.3582],
+[31.8158,-27.2939],
+[31.8697,-26.9081],
+[32.0164,-26.8438],
+[31.9793,-26.1366],
+[31.7448,-25.9437],
+[31.0641,-25.8152],
+[30.7169,-26.3938]
+]
+]
+]}
+}

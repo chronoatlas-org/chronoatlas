@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-blois-1169","edge_precision":"unknown","cliopatria_name":"County of Blôis","cliopatria_from_year":1169,"cliopatria_to_year":1205,"cliopatria_area_km2":7796,"cliopatria_wikidata":"Q19336869","cliopatria_wikipedia":"County of Blois","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.8246,48.3899],
+[0.9076,48.3899],
+[0.9289,48.0597],
+[1.2763,47.7959],
+[1.1977,47.73],
+[1.3164,47.1374],
+[1.8923,47.1374],
+[1.7681,47.8619],
+[1.6855,47.8619],
+[1.733,48.4559],
+[1.5671,48.4559],
+[1.3888,48.6542],
+[1.3057,48.6542],
+[1.3099,48.5881],
+[1.0607,48.5881],
+[1.065,48.522],
+[0.982,48.522],
+[0.8246,48.3899]
+]
+]
+]}
+}

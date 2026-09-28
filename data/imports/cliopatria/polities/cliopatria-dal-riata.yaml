@@ -1,0 +1,8 @@
+id: cliopatria-dal-riata
+names:
+  - text: Dál Riata
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Dál Riata"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

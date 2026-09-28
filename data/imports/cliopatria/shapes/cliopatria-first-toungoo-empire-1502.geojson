@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-first-toungoo-empire-1502","edge_precision":"unknown","cliopatria_name":"First Toungoo Empire","cliopatria_from_year":1502,"cliopatria_to_year":1528,"cliopatria_area_km2":59140,"cliopatria_wikidata":"Q23039102","cliopatria_wikipedia":"First Toungoo Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[95.29,19.7648],
+[95.3641,19.7648],
+[95.3631,19.2505],
+[95.8059,18.7362],
+[95.9538,18.7362],
+[96.4056,18.2862],
+[96.3869,18.1576],
+[96.5253,18.0933],
+[96.4974,17.9005],
+[97.1619,17.9005],
+[97.1538,18.3505],
+[96.8866,18.5434],
+[97.2348,19.8934],
+[97.4213,20.1505],
+[97.4309,20.2148],
+[97.4597,20.4077],
+[96.917,21.2434],
+[96.7685,21.2434],
+[96.5101,21.5005],
+[96.0644,21.5005],
+[95.849,21.0505],
+[95.3565,20.7291],
+[95.29,19.7648]
+]
+]
+]}
+}

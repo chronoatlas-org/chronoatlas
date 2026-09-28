@@ -1,0 +1,8 @@
+id: cliopatria-county-of-urgell
+names:
+  - text: County of Urgell
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Urgell"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

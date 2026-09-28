@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-antigua-and-barbuda-2024","edge_precision":"unknown","cliopatria_name":"Antigua and Barbuda","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":586,"cliopatria_wikidata":"Q781","cliopatria_wikipedia":"Antigua and Barbuda"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-61.8653,17.1933],
+[-61.8583,17.129],
+[-61.7636,16.9362],
+[-61.6161,16.9362],
+[-61.6441,17.1933],
+[-61.8653,17.1933]
+]
+]
+]}
+}

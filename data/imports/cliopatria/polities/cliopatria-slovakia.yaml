@@ -1,0 +1,8 @@
+id: cliopatria-slovakia
+names:
+  - text: Slovakia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Slovakia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

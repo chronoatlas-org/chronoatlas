@@ -1,0 +1,8 @@
+id: cliopatria-bamana-empire
+names:
+  - text: Bamana Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Bamana Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

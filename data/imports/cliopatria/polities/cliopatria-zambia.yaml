@@ -1,0 +1,8 @@
+id: cliopatria-zambia
+names:
+  - text: Zambia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Zambia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-surakarta-sunanate-1744","edge_precision":"unknown","cliopatria_name":"Surakarta Sunanate","cliopatria_from_year":1744,"cliopatria_to_year":1827,"cliopatria_area_km2":3694,"cliopatria_wikidata":"Q2122499","cliopatria_wikipedia":"Surakarta Sunanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[110.2251,-7.4288],
+[110.3106,-7.6217],
+[110.3835,-7.6217],
+[110.3878,-7.686],
+[110.4608,-7.686],
+[110.4693,-7.8146],
+[110.6153,-7.8146],
+[110.6197,-7.8789],
+[110.6926,-7.8789],
+[110.8172,-7.5574],
+[110.6712,-7.5574],
+[110.5899,-7.4288],
+[110.9589,-7.4931],
+[111.0277,-7.4288],
+[110.9425,-7.236],
+[110.2858,-7.236],
+[110.2251,-7.4288]
+]
+]
+]}
+}

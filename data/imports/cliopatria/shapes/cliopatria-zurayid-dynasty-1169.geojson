@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zurayid-dynasty-1169","edge_precision":"unknown","cliopatria_name":"Zurayid dynasty","cliopatria_from_year":1169,"cliopatria_to_year":1176,"cliopatria_area_km2":3424,"cliopatria_wikidata":"Q230385","cliopatria_wikipedia":"Zurayids"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.3239,12.8217],
+[44.3915,12.6932],
+[44.4648,12.6932],
+[45.0541,12.7575],
+[45.2066,12.886],
+[45.2096,12.9503],
+[44.9252,13.1432],
+[44.8519,13.1432],
+[44.4823,13.0789],
+[44.3239,12.8217]
+]
+]
+]}
+}

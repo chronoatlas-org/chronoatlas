@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-lohara-dynasty-1236","edge_precision":"unknown","cliopatria_name":"Lohara Dynasty","cliopatria_from_year":1236,"cliopatria_to_year":1249,"cliopatria_area_km2":226659,"cliopatria_wikidata":"Q1315339","cliopatria_wikipedia":"Lohara dynasty","cliopatria_seshat_id":"in_lohara_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[69.4543,36.4497],
+[70.1836,35.4356],
+[71.8606,35.7198],
+[72.9123,35.5493],
+[73.964,34.725],
+[74.5325,34.6681],
+[75.057,34.3343],
+[75.4705,35.0661],
+[75.8116,35.3787],
+[75.8969,35.8335],
+[75.8685,37.1979],
+[76.437,37.9369],
+[74.7599,39.5571],
+[73.5945,39.614],
+[72.5997,39.5003],
+[71.7754,39.1307],
+[70.8658,38.6191],
+[70.2813,38.0951],
+[70.3648,37.8445],
+[70.4501,37.276],
+[69.91,36.5654],
+[69.4543,36.4497]
+]
+]
+]}
+}

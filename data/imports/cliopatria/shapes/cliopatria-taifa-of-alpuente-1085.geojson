@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-alpuente-1085","edge_precision":"unknown","cliopatria_name":"Taifa of Alpuente","cliopatria_from_year":1085,"cliopatria_to_year":1098,"cliopatria_area_km2":3023,"cliopatria_wikidata":"Q2670895","cliopatria_wikipedia":"Taifa of Alpuente","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.4891,40.3554],
+[-1.398,40.1612],
+[-1.24,40.1612],
+[-1.236,40.0964],
+[-1.157,40.0964],
+[-1.1532,40.0317],
+[-0.6756,39.967],
+[-0.6077,40.1612],
+[-0.3707,40.1612],
+[-0.1443,40.3554],
+[-1.4891,40.3554]
+]
+]
+]}
+}

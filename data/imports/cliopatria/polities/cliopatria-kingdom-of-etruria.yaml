@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-etruria
+names:
+  - text: Kingdom of Etruria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Etruria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

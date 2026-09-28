@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cao-481bce","edge_precision":"unknown","cliopatria_name":"Cao","cliopatria_from_year":-480,"cliopatria_to_year":-451,"cliopatria_area_km2":3889,"cliopatria_wikidata":"Q204077","cliopatria_wikipedia":"Cao (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.3759,35.194],
+[114.499,34.9366],
+[115.2035,35.3227],
+[114.9554,35.6445],
+[115.0114,35.7733],
+[114.8565,35.7733],
+[114.4081,35.4514],
+[114.3759,35.194]
+]
+]
+]}
+}

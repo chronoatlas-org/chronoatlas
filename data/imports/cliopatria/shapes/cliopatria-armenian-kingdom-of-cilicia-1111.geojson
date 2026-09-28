@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-armenian-kingdom-of-cilicia-1111","edge_precision":"unknown","cliopatria_name":"Armenian Kingdom of Cilicia","cliopatria_from_year":1111,"cliopatria_to_year":1138,"cliopatria_area_km2":20763,"cliopatria_wikidata":"Q335088","cliopatria_wikipedia":"Armenian Kingdom of Cilicia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.0397,37.5128],
+[36.0468,37.4483],
+[36.1543,37.7062],
+[36.3105,37.7062],
+[36.3662,37.5128],
+[36.7489,37.4483],
+[36.9124,37.5128],
+[36.9276,37.6417],
+[36.7791,37.7062],
+[36.7943,37.8352],
+[36.9583,37.8998],
+[36.966,37.9643],
+[36.9894,38.1578],
+[36.9112,38.1578],
+[37.053,38.6743],
+[36.4803,38.4806],
+[36.0884,38.4806],
+[35.821,38.868],
+[35.5854,38.868],
+[35.0843,38.6097],
+[35.0397,37.5128]
+]
+]
+]}
+}

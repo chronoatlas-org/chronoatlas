@@ -1,0 +1,8 @@
+id: cliopatria-french-fifth-republic
+names:
+  - text: French Fifth Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Fifth Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

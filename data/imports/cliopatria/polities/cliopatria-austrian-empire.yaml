@@ -1,0 +1,8 @@
+id: cliopatria-austrian-empire
+names:
+  - text: Austrian Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Austrian Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

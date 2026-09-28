@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-andorra-1936","edge_precision":"unknown","cliopatria_name":"Principality of Andorra","cliopatria_from_year":1936,"cliopatria_to_year":1937,"cliopatria_area_km2":380,"cliopatria_wikidata":"Q228","cliopatria_wikipedia":"Andorra"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4855,42.6262],
+[1.5754,42.4312],
+[1.8123,42.4962],
+[1.8091,42.5612],
+[1.729,42.5612],
+[1.7258,42.6262],
+[1.4855,42.6262]
+]
+]
+]}
+}

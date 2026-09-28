@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-pergamon-280bce","edge_precision":"unknown","cliopatria_name":"Kingdom of Pergamon","cliopatria_from_year":-279,"cliopatria_to_year":-226,"cliopatria_area_km2":7541,"cliopatria_wikidata":"Q2022162","cliopatria_wikipedia":"Kingdom of Pergamon","cliopatria_seshat_id":"tr_pergamon_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[26.7422,39.2557],
+[26.8945,39.1911],
+[26.8793,38.9972],
+[26.9579,38.9972],
+[26.8693,38.868],
+[26.923,38.5451],
+[27.0798,38.5451],
+[27.31,38.4806],
+[27.482,38.6743],
+[27.6389,38.6743],
+[27.8116,38.868],
+[27.8328,39.1265],
+[27.7542,39.1265],
+[27.7703,39.3203],
+[27.4662,39.4496],
+[26.8414,39.5143],
+[26.8362,39.4496],
+[26.7422,39.2557]
+]
+]
+]}
+}

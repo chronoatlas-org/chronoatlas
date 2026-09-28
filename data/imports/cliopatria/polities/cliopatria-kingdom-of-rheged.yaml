@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-rheged
+names:
+  - text: Kingdom of Rheged
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Rheged"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

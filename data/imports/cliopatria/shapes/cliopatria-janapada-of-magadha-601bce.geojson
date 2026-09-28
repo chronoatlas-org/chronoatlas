@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-magadha-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Magadha","cliopatria_from_year":-600,"cliopatria_to_year":-531,"cliopatria_area_km2":5040,"cliopatria_wikidata":"Q234009","cliopatria_wikipedia":"Magadha","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[84.51,25.3579],
+[84.6597,25.3579],
+[84.767,25.1007],
+[85.0662,25.1007],
+[85.0874,25.2293],
+[85.4082,25.3579],
+[85.452,25.615],
+[85.1745,25.7436],
+[85.1969,25.8722],
+[84.8971,25.8722],
+[84.703,25.615],
+[84.6281,25.615],
+[84.51,25.3579]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-hawai-i
+names:
+  - text: Republic of Hawai'i
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Hawai'i"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

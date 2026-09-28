@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-regensberg-1811","edge_precision":"unknown","cliopatria_name":"Principality of Regensberg","cliopatria_from_year":1811,"cliopatria_to_year":1811,"cliopatria_area_km2":6089,"cliopatria_wikidata":"Q701969","cliopatria_wikipedia":"Principality of Regensburg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.2714,49.7143],
+[9.4399,49.5816],
+[9.6907,49.5816],
+[9.6911,49.5152],
+[9.859,49.3826],
+[9.8601,49.1838],
+[9.9435,49.1838],
+[10.1097,49.3163],
+[10.0243,49.7807],
+[10.108,49.7807],
+[10.1071,50.0465],
+[10.4425,50.113],
+[10.4424,50.246],
+[10.1898,50.5122],
+[10.0215,50.5122],
+[9.3522,50.0465],
+[9.2714,49.7143]
+]
+]
+]}
+}

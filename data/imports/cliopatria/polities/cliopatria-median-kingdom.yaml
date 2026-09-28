@@ -1,0 +1,8 @@
+id: cliopatria-median-kingdom
+names:
+  - text: Median Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Median Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

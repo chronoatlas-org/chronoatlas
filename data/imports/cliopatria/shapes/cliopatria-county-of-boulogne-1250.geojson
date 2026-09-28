@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-boulogne-1250","edge_precision":"unknown","cliopatria_name":"County of Boulogne","cliopatria_from_year":1250,"cliopatria_to_year":1259,"cliopatria_area_km2":596,"cliopatria_wikidata":"Q1431527","cliopatria_wikipedia":"County of Boulogne","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4247,50.7121],
+[1.5176,50.5789],
+[1.6018,50.5789],
+[1.8419,50.7788],
+[1.5804,50.9122],
+[1.496,50.9122],
+[1.509,50.7121],
+[1.4247,50.7121]
+]
+]
+]}
+}

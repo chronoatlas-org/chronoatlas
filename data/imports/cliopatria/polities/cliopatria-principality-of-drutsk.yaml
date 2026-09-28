@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-drutsk
+names:
+  - text: Principality of Drutsk
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Drutsk"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

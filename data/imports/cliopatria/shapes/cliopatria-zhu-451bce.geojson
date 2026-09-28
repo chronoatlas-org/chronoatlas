@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zhu-451bce","edge_precision":"unknown","cliopatria_name":"Zhu","cliopatria_from_year":-450,"cliopatria_to_year":-405,"cliopatria_area_km2":5422,"cliopatria_wikidata":"Q227007","cliopatria_wikipedia":"Zhu (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[117.1432,35.5158],
+[117.1571,35.194],
+[117.3116,35.194],
+[117.6077,34.8079],
+[117.6633,34.9366],
+[118.056,35.1297],
+[118.3036,35.5158],
+[117.868,35.5802],
+[117.8967,35.6445],
+[117.1432,35.5158]
+]
+]
+]}
+}

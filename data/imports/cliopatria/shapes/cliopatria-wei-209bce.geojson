@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-wei-209bce","edge_precision":"unknown","cliopatria_name":"Wei","cliopatria_from_year":-208,"cliopatria_to_year":-207,"cliopatria_area_km2":22235,"cliopatria_wikidata":"Q320930","cliopatria_wikipedia":"Eighteen Kingdoms","cliopatria_member_of":"(Eighteen Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[113.4758,35.2584],
+[114.2714,35.1297],
+[114.476,35.0653],
+[114.499,34.9366],
+[114.9939,35.194],
+[115.0765,35.3871],
+[114.8006,35.6445],
+[114.8565,35.7733],
+[115.4059,35.9664],
+[115.4343,36.0308],
+[115.5118,36.0308],
+[115.6753,36.224],
+[115.5977,36.224],
+[115.6067,36.4172],
+[116.123,36.8682],
+[115.1115,36.8682],
+[115.141,36.9326],
+[114.8591,36.9971],
+[114.6547,36.546],
+[114.0108,35.9664],
+[113.4758,35.2584]
+]
+]
+]}
+}

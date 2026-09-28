@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saxe-coburg-and-gotha-1836","edge_precision":"unknown","cliopatria_name":"Saxe-Coburg and Gotha","cliopatria_from_year":1836,"cliopatria_to_year":1839,"cliopatria_area_km2":2942,"cliopatria_wikidata":"Q3462133","cliopatria_wikipedia":"Saxe-Coburg and Gotha"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[10.4423,50.4457],
+[10.4424,50.246],
+[11.2824,50.246],
+[11.3676,50.4457],
+[11.368,50.5122],
+[11.2862,50.9122],
+[11.2018,50.9122],
+[11.2007,50.7121],
+[10.8636,50.7121],
+[10.8633,50.5789],
+[10.6107,50.5789],
+[10.4423,50.4457]
+]
+]
+]}
+}

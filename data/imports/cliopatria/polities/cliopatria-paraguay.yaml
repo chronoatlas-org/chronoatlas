@@ -1,0 +1,8 @@
+id: cliopatria-paraguay
+names:
+  - text: Paraguay
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Paraguay"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

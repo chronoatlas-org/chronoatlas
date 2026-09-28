@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-sussex-0768","edge_precision":"unknown","cliopatria_name":"Kingdom of Sussex","cliopatria_from_year":768,"cliopatria_to_year":771,"cliopatria_area_km2":5458,"cliopatria_wikidata":"Q676184","cliopatria_wikipedia":"Kingdom of Sussex","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.4696,51.0457],
+[-1.3678,50.8455],
+[-1.2835,50.8455],
+[-0.3503,50.7788],
+[-0.266,50.7788],
+[0.7411,50.8455],
+[0.7364,50.9122],
+[0.558,51.0457],
+[0.046,51.1124],
+[-1.1487,51.246],
+[-1.4696,51.0457]
+]
+]
+]}
+}

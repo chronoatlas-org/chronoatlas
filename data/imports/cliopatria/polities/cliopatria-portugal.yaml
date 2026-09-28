@@ -1,0 +1,8 @@
+id: cliopatria-portugal
+names:
+  - text: Portugal
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Portugal"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

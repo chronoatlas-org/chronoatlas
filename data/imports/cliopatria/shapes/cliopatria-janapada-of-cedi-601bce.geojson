@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-cedi-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Cedī","cliopatria_from_year":-600,"cliopatria_to_year":-481,"cliopatria_area_km2":4396,"cliopatria_wikidata":"Q124207979","cliopatria_wikipedia":"Cedī (tribe)","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[81.0021,25.4221],
+[81.1519,25.4221],
+[81.261,25.165],
+[81.5603,25.165],
+[81.5805,25.2936],
+[81.72,25.2293],
+[81.7405,25.3579],
+[81.8153,25.3579],
+[81.6533,25.7436],
+[81.6854,25.9365],
+[81.5355,25.9365],
+[81.2144,25.8079],
+[81.1933,25.6793],
+[81.1184,25.6793],
+[81.0021,25.4221]
+]
+]
+]}
+}

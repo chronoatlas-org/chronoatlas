@@ -1,0 +1,8 @@
+id: cliopatria-scandinavian-minor-kingdoms
+names:
+  - text: Scandinavian minor kingdoms
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Scandinavian minor kingdoms"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

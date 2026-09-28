@@ -1,0 +1,8 @@
+id: cliopatria-guatemala
+names:
+  - text: Guatemala
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Guatemala"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

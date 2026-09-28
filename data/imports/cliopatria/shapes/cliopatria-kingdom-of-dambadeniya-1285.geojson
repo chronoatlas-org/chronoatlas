@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-dambadeniya-1285","edge_precision":"unknown","cliopatria_name":"Kingdom of Dambadeniya","cliopatria_from_year":1285,"cliopatria_to_year":1293,"cliopatria_area_km2":5219,"cliopatria_wikidata":"Q3136869","cliopatria_wikipedia":"Kingdom of Dambadeniya","cliopatria_seshat_id":"sl_dambadeniya"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[79.7413,7.9655],
+[79.8041,7.7155],
+[79.8501,7.2771],
+[80.215,7.2893],
+[80.5631,7.4557],
+[80.5588,7.6283],
+[80.3103,7.933],
+[79.7413,7.9655]
+]
+]
+]}
+}

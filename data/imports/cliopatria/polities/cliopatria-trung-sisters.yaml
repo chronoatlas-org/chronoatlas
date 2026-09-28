@@ -1,0 +1,8 @@
+id: cliopatria-trung-sisters
+names:
+  - text: Trưng sisters
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Trưng sisters"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

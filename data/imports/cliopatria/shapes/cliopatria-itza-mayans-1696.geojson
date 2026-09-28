@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-itza-mayans-1696","edge_precision":"unknown","cliopatria_name":"Itza Mayans","cliopatria_from_year":1696,"cliopatria_to_year":1699,"cliopatria_area_km2":22346,"cliopatria_wikidata":"Q606377","cliopatria_wikipedia":"Itza people"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-90.6024,16.5504],
+[-90.3528,16.3576],
+[-90.3797,16.0361],
+[-90.0116,16.0361],
+[-90.0208,16.1004],
+[-89.994,16.4219],
+[-89.8112,16.679],
+[-89.3786,16.7433],
+[-89.3049,16.7433],
+[-89.3146,16.8076],
+[-89.1672,16.8076],
+[-89.0391,16.9362],
+[-89.1078,17.3862],
+[-89.034,17.3862],
+[-89.168,17.7719],
+[-90.5705,17.7719],
+[-90.6024,16.5504]
+]
+]
+]}
+}

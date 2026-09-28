@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-rosellon-0990","edge_precision":"unknown","cliopatria_name":"County of Rosellón","cliopatria_from_year":990,"cliopatria_to_year":999,"cliopatria_area_km2":4675,"cliopatria_wikidata":"Q13522657","cliopatria_wikipedia":"Roussillon"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.9692,42.5612],
+[2.2954,42.4312],
+[2.8554,42.4312],
+[2.8637,42.2362],
+[3.1141,41.9764],
+[3.1115,42.0413],
+[3.1781,42.3662],
+[3.0099,42.5612],
+[2.9905,43.0165],
+[2.1201,42.7563],
+[2.1231,42.6912],
+[1.9692,42.5612]
+]
+]
+]}
+}

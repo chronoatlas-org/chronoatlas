@@ -1,0 +1,8 @@
+id: cliopatria-samo-s-empire
+names:
+  - text: Samo's Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Samo's Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

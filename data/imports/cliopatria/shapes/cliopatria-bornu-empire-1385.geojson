@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-bornu-empire-1385","edge_precision":"unknown","cliopatria_name":"Bornu Empire","cliopatria_from_year":1385,"cliopatria_to_year":1481,"cliopatria_area_km2":13538,"cliopatria_wikidata":"Q1139762","cliopatria_wikipedia":"Kanem-Bornu Empire","cliopatria_seshat_id":"ni_bornu_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[11.7764,13.0789],
+[12.2874,12.8217],
+[12.3607,12.8217],
+[12.58,12.7575],
+[12.6545,12.886],
+[13.3904,13.1432],
+[13.467,13.4646],
+[13.0306,13.8503],
+[12.0737,13.5289],
+[11.778,13.2718],
+[11.7764,13.0789]
+]
+]
+]}
+}

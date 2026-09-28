@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-kenya
+names:
+  - text: Republic of Kenya
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Kenya"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

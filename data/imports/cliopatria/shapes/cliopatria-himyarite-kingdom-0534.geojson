@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-himyarite-kingdom-0534","edge_precision":"unknown","cliopatria_name":"Himyarite Kingdom","cliopatria_from_year":534,"cliopatria_to_year":576,"cliopatria_area_km2":167,"cliopatria_wikidata":"Q289577","cliopatria_wikipedia":"Himyarite Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[43.7418,18.4791],
+[43.8896,18.4791],
+[43.8971,18.6076],
+[43.8232,18.6076],
+[43.8194,18.5434],
+[43.7455,18.5434],
+[43.7418,18.4791]
+]
+]
+]}
+}

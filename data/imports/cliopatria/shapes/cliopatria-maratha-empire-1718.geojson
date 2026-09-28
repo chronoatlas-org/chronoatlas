@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-maratha-empire-1718","edge_precision":"unknown","cliopatria_name":"Maratha Empire","cliopatria_from_year":1718,"cliopatria_to_year":1720,"cliopatria_area_km2":5540,"cliopatria_wikidata":"Q83618","cliopatria_wikipedia":"Maratha Empire","cliopatria_seshat_id":"in_maratha_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[73.7095,17.4505],
+[73.8571,17.4505],
+[73.9774,17.1933],
+[74.2724,17.1933],
+[74.286,17.3219],
+[74.5948,17.4505],
+[74.6225,17.7076],
+[74.3411,17.8362],
+[74.355,17.9648],
+[74.0596,17.9648],
+[73.8844,17.7076],
+[73.7368,17.7076],
+[73.7095,17.4505]
+]
+],
+[
+[
+[79.8613,10.636],
+[79.8807,10.3446],
+[79.9054,10.2905],
+[79.9206,10.5074],
+[79.9296,10.636],
+[79.8613,10.636]
+]
+]
+]}
+}

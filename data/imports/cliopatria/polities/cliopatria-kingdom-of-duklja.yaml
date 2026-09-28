@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-duklja
+names:
+  - text: Kingdom of Duklja
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Duklja"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

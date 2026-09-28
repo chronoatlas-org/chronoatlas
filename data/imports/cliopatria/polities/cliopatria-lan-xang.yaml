@@ -1,0 +1,8 @@
+id: cliopatria-lan-xang
+names:
+  - text: Lan Xang
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Lan Xang"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

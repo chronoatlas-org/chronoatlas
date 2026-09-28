@@ -1,0 +1,8 @@
+id: cliopatria-empire-of-haiti
+names:
+  - text: Empire of Haiti
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Empire of Haiti"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

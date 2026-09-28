@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-auvergne-1453","edge_precision":"unknown","cliopatria_name":"County of Auvergne","cliopatria_from_year":1453,"cliopatria_to_year":1496,"cliopatria_area_km2":706,"cliopatria_wikidata":"Q1152","cliopatria_wikipedia":"Auvergne","cliopatria_seshat_id":"fr_valois_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4247,50.7121],
+[1.4334,50.5789],
+[1.686,50.5789],
+[1.8419,50.7788],
+[1.7576,50.7788],
+[1.7534,50.8455],
+[1.669,50.8455],
+[1.6648,50.9122],
+[1.496,50.9122],
+[1.509,50.7121],
+[1.4247,50.7121]
+]
+]
+]}
+}

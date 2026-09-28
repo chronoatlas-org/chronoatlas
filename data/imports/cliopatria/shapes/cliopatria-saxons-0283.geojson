@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saxons-0283","edge_precision":"unknown","cliopatria_name":"Saxons","cliopatria_from_year":283,"cliopatria_to_year":454,"cliopatria_area_km2":6335,"cliopatria_wikidata":"Q101985","cliopatria_wikipedia":"Saxons"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.3741,53.8676],
+[8.3818,53.3271],
+[8.9843,53.2596],
+[9.4977,53.6647],
+[9.411,53.7323],
+[9.409,54.0706],
+[9.1474,54.3417],
+[8.974,54.3417],
+[8.9721,54.5453],
+[8.5398,54.4095],
+[8.5415,54.2739],
+[8.8022,54.2061],
+[8.8922,53.8676],
+[8.3741,53.8676]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-sandomierz
+names:
+  - text: Duchy of Sandomierz
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Sandomierz"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

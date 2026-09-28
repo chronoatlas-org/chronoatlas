@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-balinese-kingdom-1519","edge_precision":"unknown","cliopatria_name":"Balinese Kingdom","cliopatria_from_year":1519,"cliopatria_to_year":1608,"cliopatria_area_km2":7719,"cliopatria_wikidata":"Q12491027","cliopatria_wikipedia":"Bali Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.3017,-8.3289],
+[114.9832,-8.6503],
+[114.9302,-8.9075],
+[115.0032,-8.9075],
+[115.3434,-8.586],
+[115.6305,-8.5217],
+[115.6112,-8.2646],
+[115.305,-8.0717],
+[114.356,-8.0717],
+[114.3017,-8.3289]
+]
+]
+]}
+}

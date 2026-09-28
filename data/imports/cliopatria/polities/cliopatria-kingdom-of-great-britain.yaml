@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-great-britain
+names:
+  - text: Kingdom of Great Britain
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Great Britain"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

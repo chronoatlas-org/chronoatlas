@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-pagan-kingdom-0850","edge_precision":"unknown","cliopatria_name":"Pagan Kingdom","cliopatria_from_year":850,"cliopatria_to_year":859,"cliopatria_area_km2":5422,"cliopatria_wikidata":"Q888574","cliopatria_wikipedia":"Pagan Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[94.2628,21.372],
+[94.4113,21.372],
+[94.3925,21.2434],
+[94.4668,21.2434],
+[94.7544,21.1791],
+[94.996,21.3077],
+[95.0149,21.4363],
+[95.1635,21.4363],
+[95.1921,21.6291],
+[95.0531,21.6934],
+[95.0723,21.822],
+[94.9236,21.822],
+[94.9429,21.9505],
+[94.7295,22.0148],
+[94.7199,21.9505],
+[94.4777,21.822],
+[94.4586,21.6934],
+[94.3843,21.6934],
+[94.2628,21.372]
+]
+]
+]}
+}

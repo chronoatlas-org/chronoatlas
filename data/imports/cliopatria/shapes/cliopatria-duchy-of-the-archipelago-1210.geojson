@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-the-archipelago-1210","edge_precision":"unknown","cliopatria_name":"Duchy of the Archipelago","cliopatria_from_year":1210,"cliopatria_to_year":1304,"cliopatria_area_km2":1233,"cliopatria_wikidata":"Q777981","cliopatria_wikipedia":"Duchy of the Archipelago"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[24.2013,37.6417],
+[24.2716,37.5128],
+[24.4316,37.5773],
+[24.3614,37.7062],
+[24.2833,37.7062],
+[24.2013,37.6417]
+]
+],
+[
+[
+[24.6819,37.8352],
+[24.83,37.7062],
+[25.0685,37.7707],
+[24.7724,38.0288],
+[24.6942,38.0288],
+[24.6819,37.8352]
+]
+],
+[
+[
+[25.3308,36.9971],
+[25.5644,36.9971],
+[25.5727,37.126],
+[25.339,37.126],
+[25.3308,36.9971]
+]
+]
+]}
+}

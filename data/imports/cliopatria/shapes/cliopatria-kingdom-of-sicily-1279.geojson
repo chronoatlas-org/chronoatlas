@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-sicily-1279","edge_precision":"unknown","cliopatria_name":"Kingdom of Sicily","cliopatria_from_year":1279,"cliopatria_to_year":1284,"cliopatria_area_km2":548,"cliopatria_wikidata":"Q188586","cliopatria_wikipedia":"Kingdom of Sicily","cliopatria_seshat_id":"it_sicily_k_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[22.874,36.1596],
+[23.1068,36.1596],
+[23.1168,36.3528],
+[22.9649,36.4172],
+[22.8872,36.4172],
+[22.874,36.1596]
+]
+]
+]}
+}

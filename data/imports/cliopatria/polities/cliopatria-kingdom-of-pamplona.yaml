@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-pamplona
+names:
+  - text: Kingdom of Pamplona
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Pamplona"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

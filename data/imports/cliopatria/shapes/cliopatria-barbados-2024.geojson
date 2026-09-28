@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-barbados-2024","edge_precision":"unknown","cliopatria_name":"Barbados","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":735,"cliopatria_wikidata":"Q244","cliopatria_wikipedia":"Barbados"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-59.6675,13.336],
+[-59.5705,13.0146],
+[-59.3552,13.0789],
+[-59.3646,13.2075],
+[-59.4379,13.2075],
+[-59.5208,13.336],
+[-59.6675,13.336]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-iceland
+names:
+  - text: Republic of Iceland
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Iceland"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

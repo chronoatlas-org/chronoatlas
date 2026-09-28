@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-ampuria-1402","edge_precision":"unknown","cliopatria_name":"County of Ampuria","cliopatria_from_year":1402,"cliopatria_to_year":1406,"cliopatria_area_km2":809,"cliopatria_wikidata":"Q1541699","cliopatria_wikipedia":"County of Empúries"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[2.8554,42.4312],
+[2.8637,42.2362],
+[3.029,42.1063],
+[3.0316,42.0413],
+[3.1141,41.9764],
+[3.1008,42.3012],
+[3.1807,42.3012],
+[3.0954,42.4312],
+[3.0927,42.4962],
+[2.8554,42.4312]
+]
+]
+]}
+}

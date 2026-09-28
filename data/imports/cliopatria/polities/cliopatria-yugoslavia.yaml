@@ -1,0 +1,8 @@
+id: cliopatria-yugoslavia
+names:
+  - text: Yugoslavia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Yugoslavia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-french-equatorial-africa
+names:
+  - text: French Equatorial Africa
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Equatorial Africa"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

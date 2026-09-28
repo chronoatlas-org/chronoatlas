@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-naples
+names:
+  - text: Duchy of Naples
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Naples"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

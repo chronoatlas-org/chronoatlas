@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kosovo-2000","edge_precision":"unknown","cliopatria_name":"Kosovo","cliopatria_from_year":2000,"cliopatria_to_year":2005,"cliopatria_area_km2":11249,"cliopatria_wikidata":"Q1246","cliopatria_wikipedia":"Kosovo"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.062,42.5612],
+[20.5205,42.1712],
+[20.5823,41.8465],
+[20.9161,42.1063],
+[21.2356,42.1063],
+[21.567,42.3012],
+[21.6713,42.6912],
+[21.5111,42.6912],
+[20.8244,43.2769],
+[20.6637,43.2769],
+[20.5683,43.0165],
+[20.0726,42.7563],
+[20.062,42.5612]
+]
+]
+]}
+}

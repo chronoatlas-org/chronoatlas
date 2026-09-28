@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hwicce-0587","edge_precision":"unknown","cliopatria_name":"Hwicce","cliopatria_from_year":587,"cliopatria_to_year":591,"cliopatria_area_km2":4839,"cliopatria_wikidata":"Q733799","cliopatria_wikipedia":"Hwicce","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.7106,51.6472],
+[-2.7041,51.5803],
+[-2.3458,51.3797],
+[-2.1104,51.5803],
+[-2.1229,51.7142],
+[-1.7044,51.7811],
+[-1.8389,52.3176],
+[-2.1994,52.5191],
+[-2.4557,52.5191],
+[-2.4425,52.3847],
+[-2.5279,52.3847],
+[-2.3904,51.8481],
+[-2.5539,51.7811],
+[-2.5474,51.7142],
+[-2.6323,51.7142],
+[-2.6258,51.6472],
+[-2.7106,51.6472]
+]
+]
+]}
+}

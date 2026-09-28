@@ -1,0 +1,8 @@
+id: cliopatria-xiongnu
+names:
+  - text: Xiongnu
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Xiongnu"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

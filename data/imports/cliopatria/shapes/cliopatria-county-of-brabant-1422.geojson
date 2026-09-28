@@ -1,0 +1,43 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-brabant-1422","edge_precision":"unknown","cliopatria_name":"County of Brabant","cliopatria_from_year":1422,"cliopatria_to_year":1428,"cliopatria_area_km2":13119,"cliopatria_wikidata":"Q751868","cliopatria_wikipedia":"Landgraviate of Brabant","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.0342,50.7788],
+[4.2058,50.7121],
+[4.299,50.5122],
+[4.6384,50.4457],
+[5.0486,50.7121],
+[5.2171,50.7121],
+[5.2839,51.1792],
+[5.7845,51.3797],
+[5.7799,51.5134],
+[5.6056,51.6472],
+[5.2636,51.7142],
+[5.1735,51.8481],
+[4.8336,51.8481],
+[4.8363,51.7811],
+[4.6664,51.7811],
+[4.2448,51.7142],
+[4.0844,51.5134],
+[4.0875,51.4465],
+[4.2631,51.3128],
+[4.2691,51.1792],
+[4.1062,51.0457],
+[4.0342,50.7788]
+]
+],
+[
+[
+[5.7113,51.0457],
+[5.7274,50.5789],
+[5.9023,50.3791],
+[5.9843,50.4457],
+[6.0684,50.4457],
+[5.9669,50.9789],
+[5.7113,51.0457]
+]
+]
+]}
+}

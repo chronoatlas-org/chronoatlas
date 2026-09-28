@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-nassau-1864","edge_precision":"unknown","cliopatria_name":"Duchy of Nassau","cliopatria_from_year":1864,"cliopatria_to_year":1864,"cliopatria_area_km2":5955,"cliopatria_wikidata":"Q836680","cliopatria_wikipedia":"Duchy of Nassau"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.0696,50.7788],
+[7.1666,50.246],
+[7.3346,50.246],
+[7.7625,49.8471],
+[8.0975,49.8471],
+[8.2629,49.98],
+[8.2607,50.113],
+[8.1768,50.113],
+[8.1757,50.1795],
+[7.9226,50.246],
+[7.9177,50.5122],
+[7.7494,50.5122],
+[7.6611,50.7121],
+[7.9115,50.8455],
+[7.8246,50.9789],
+[7.5727,50.9122],
+[7.4009,51.0457],
+[7.0696,50.7788]
+]
+]
+]}
+}

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-valencia-1241","edge_precision":"unknown","cliopatria_name":"Taifa of Valencia","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":6279,"cliopatria_wikidata":"Q676811","cliopatria_wikipedia":"Taifa of Valencia","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.3704,39.7083],
+[-1.3549,39.4496],
+[-1.1974,39.4496],
+[-1.1112,39.3203],
+[-1.1074,39.2557],
+[-1.0925,38.9972],
+[-0.771,38.868],
+[-0.2316,39.0618],
+[-0.2351,39.1265],
+[-0.3137,39.1265],
+[-0.3207,39.2557],
+[-0.478,39.2557],
+[-0.5893,39.8376],
+[-1.2166,39.7729],
+[-1.3704,39.7083]
+]
+]
+]}
+}

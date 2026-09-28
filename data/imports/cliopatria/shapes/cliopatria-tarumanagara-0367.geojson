@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tarumanagara-0367","edge_precision":"unknown","cliopatria_name":"Tarumanagara","cliopatria_from_year":367,"cliopatria_to_year":533,"cliopatria_area_km2":17409,"cliopatria_wikidata":"Q2247225","cliopatria_wikipedia":"Tarumanagara"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[105.4298,-6.5288],
+[105.4369,-6.6574],
+[105.9439,-6.5931],
+[106.2393,-6.6574],
+[106.2465,-6.786],
+[107.2677,-6.786],
+[107.4828,-6.7217],
+[107.5449,-6.5288],
+[107.6178,-6.5288],
+[107.5377,-6.4002],
+[107.6002,-6.2074],
+[107,-5.8859],
+[106.8542,-5.8859],
+[106.7913,-6.0788],
+[105.9064,-5.8859],
+[105.6976,-6.0788],
+[105.6451,-6.4645],
+[105.4298,-6.5288]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-golconda-sultanate
+names:
+  - text: Golconda Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Golconda Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-byzantine-empire
+names:
+  - text: Byzantine Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Byzantine Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

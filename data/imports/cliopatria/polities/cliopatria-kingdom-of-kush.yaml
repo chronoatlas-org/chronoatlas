@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-kush
+names:
+  - text: Kingdom of Kush
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Kush"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

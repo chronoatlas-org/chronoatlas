@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-albania
+names:
+  - text: Republic of Albania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Albania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

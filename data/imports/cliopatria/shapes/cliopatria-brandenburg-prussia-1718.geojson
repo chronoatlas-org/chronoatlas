@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-brandenburg-prussia-1718","edge_precision":"unknown","cliopatria_name":"Brandenburg-Prussia","cliopatria_from_year":1718,"cliopatria_to_year":1720,"cliopatria_area_km2":1666,"cliopatria_wikidata":"Q157367","cliopatria_wikipedia":"Brandenburg-Prussia","cliopatria_seshat_id":"de_hohenzollern_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.3059,4.7858],
+[-2.233,4.7858],
+[-2.2336,4.7215],
+[-1.8692,4.7215],
+[-1.9395,5.0429],
+[-2.3034,5.1072],
+[-2.3059,4.7858]
+]
+]
+]}
+}

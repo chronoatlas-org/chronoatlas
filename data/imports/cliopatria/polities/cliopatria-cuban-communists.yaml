@@ -1,0 +1,8 @@
+id: cliopatria-cuban-communists
+names:
+  - text: Cuban Communists
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cuban Communists"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

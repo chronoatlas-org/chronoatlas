@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-himyarite-kingdom-111bce","edge_precision":"unknown","cliopatria_name":"Himyarite Kingdom","cliopatria_from_year":-110,"cliopatria_to_year":-67,"cliopatria_area_km2":73041,"cliopatria_wikidata":"Q289577","cliopatria_wikipedia":"Himyarite Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[42.8863,15.0075],
+[43.0566,13.9789],
+[43.2648,13.7218],
+[43.2356,13.0789],
+[43.447,12.886],
+[43.4386,12.6932],
+[43.8023,12.6289],
+[45.0541,12.7575],
+[45.7411,13.336],
+[46.111,13.4003],
+[46.0471,13.5932],
+[46.2003,13.7218],
+[46.1631,14.4289],
+[45.9462,14.4932],
+[45.8163,14.8147],
+[45.0079,14.8147],
+[44.9277,14.6861],
+[44.4166,14.7504],
+[44.2897,15.1361],
+[42.8896,15.0718],
+[42.8863,15.0075]
+]
+]
+]}
+}

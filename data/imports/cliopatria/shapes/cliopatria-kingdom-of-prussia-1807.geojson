@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-prussia-1807","edge_precision":"unknown","cliopatria_name":"Kingdom of Prussia","cliopatria_from_year":1807,"cliopatria_to_year":1808,"cliopatria_area_km2":1787,"cliopatria_wikidata":"Q27306","cliopatria_wikipedia":"Kingdom of Prussia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.9659,55.6348],
+[21.203,55.3618],
+[21.0966,55.1573],
+[21.0903,55.0892],
+[21.4392,55.0892],
+[21.5395,55.2255],
+[21.4522,55.2255],
+[21.4784,55.4983],
+[21.2352,55.7031],
+[21.2482,55.8398],
+[20.9913,55.9082],
+[20.9659,55.6348]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-mauretania
+names:
+  - text: Mauretania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mauretania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

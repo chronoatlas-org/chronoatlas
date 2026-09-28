@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-western-satraps-0480","edge_precision":"unknown","cliopatria_name":"Western Satraps","cliopatria_from_year":480,"cliopatria_to_year":489,"cliopatria_area_km2":55,"cliopatria_wikidata":"Q2086608","cliopatria_wikipedia":"Western Satraps"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[71.2533,20.7934],
+[71.3275,20.7934],
+[71.3343,20.8577],
+[71.2601,20.8577],
+[71.2533,20.7934]
+]
+]
+]}
+}

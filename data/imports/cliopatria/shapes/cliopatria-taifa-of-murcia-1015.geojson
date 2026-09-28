@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-murcia-1015","edge_precision":"unknown","cliopatria_name":"Taifa of Murcia","cliopatria_from_year":1015,"cliopatria_to_year":1033,"cliopatria_area_km2":6348,"cliopatria_wikidata":"Q921067","cliopatria_wikipedia":"Taifa of Murcia","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.0549,38.0288],
+[-1.7308,37.8352],
+[-1.6527,37.8352],
+[-1.3258,37.5773],
+[-1.2477,37.5773],
+[-0.7048,37.6417],
+[-0.8035,38.0288],
+[-0.6539,38.1578],
+[-0.6574,38.2224],
+[-1.5222,38.2869],
+[-1.8279,38.1578],
+[-1.8241,38.0933],
+[-1.9805,38.0933],
+[-1.9767,38.0288],
+[-2.0549,38.0288]
+]
+]
+]}
+}

@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-malta-2024","edge_precision":"unknown","cliopatria_name":"Malta","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":475,"cliopatria_wikidata":"Q233","cliopatria_wikipedia":"Malta"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[14.3368,35.8377],
+[14.5682,35.7733],
+[14.5712,35.9664],
+[14.4171,36.0308],
+[14.3396,36.0308],
+[14.3368,35.8377]
+]
+]
+]}
+}

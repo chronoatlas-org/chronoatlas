@@ -1,0 +1,8 @@
+id: cliopatria-nizhny-novgorod
+names:
+  - text: Nizhny Novgorod
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Nizhny Novgorod"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

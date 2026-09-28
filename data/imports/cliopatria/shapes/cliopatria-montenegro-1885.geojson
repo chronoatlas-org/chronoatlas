@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-montenegro-1885","edge_precision":"unknown","cliopatria_name":"Montenegro","cliopatria_from_year":1885,"cliopatria_to_year":1910,"cliopatria_area_km2":8889,"cliopatria_wikidata":"Q236","cliopatria_wikipedia":"Montenegro"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.4726,42.8213],
+[18.7131,42.8213],
+[18.852,42.3662],
+[18.849,42.3012],
+[19.1563,42.0413],
+[19.2361,42.0413],
+[19.2329,41.9764],
+[19.3127,41.9764],
+[19.3096,41.9114],
+[19.3894,41.9114],
+[19.4151,42.4312],
+[19.6617,42.5612],
+[19.6854,43.0165],
+[18.9788,43.3421],
+[18.6541,43.2769],
+[18.4726,42.8213]
+]
+]
+]}
+}

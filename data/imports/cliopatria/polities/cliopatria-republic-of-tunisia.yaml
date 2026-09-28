@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-tunisia
+names:
+  - text: Republic of Tunisia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Tunisia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

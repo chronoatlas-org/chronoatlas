@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-xu-292bce","edge_precision":"unknown","cliopatria_name":"Xu","cliopatria_from_year":-291,"cliopatria_to_year":-285,"cliopatria_area_km2":3139,"cliopatria_wikidata":"Q2650109","cliopatria_wikipedia":"Xu (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[116.5175,35.3227],
+[116.5885,35.1297],
+[116.743,35.1297],
+[116.7648,35.001],
+[117.0182,34.8723],
+[117.4102,35.0653],
+[117.3116,35.194],
+[117.1571,35.194],
+[117.2132,35.3227],
+[117.0659,35.5158],
+[116.5175,35.3227]
+]
+]
+]}
+}

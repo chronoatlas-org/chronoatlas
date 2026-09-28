@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-qataban-111bce","edge_precision":"unknown","cliopatria_name":"Qataban","cliopatria_from_year":-110,"cliopatria_to_year":-67,"cliopatria_area_km2":11666,"cliopatria_wikidata":"Q748595","cliopatria_wikipedia":"Qataban"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.2897,15.1361],
+[44.4166,14.7504],
+[44.9277,14.6861],
+[45.0079,14.8147],
+[45.5958,14.8147],
+[45.5992,14.8789],
+[46.3412,15.0075],
+[46.5761,15.2647],
+[46.5798,15.329],
+[46.1494,15.5218],
+[45.8551,15.5218],
+[45.8479,15.3933],
+[45.179,15.2647],
+[45.025,15.1361],
+[44.2897,15.1361]
+]
+]
+]}
+}

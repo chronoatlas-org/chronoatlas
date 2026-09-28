@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-maguindanao-1849","edge_precision":"unknown","cliopatria_name":"Sultanate of Maguindanao","cliopatria_from_year":1849,"cliopatria_to_year":1852,"cliopatria_area_km2":373,"cliopatria_wikidata":"Q248572","cliopatria_wikipedia":"Sultanate of Maguindanao"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[125.5889,6.9716],
+[125.8026,6.9073],
+[125.8077,6.9716],
+[125.7452,7.1002],
+[125.5993,7.1002],
+[125.5889,6.9716]
+]
+]
+]}
+}

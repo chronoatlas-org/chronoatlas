@@ -1,0 +1,8 @@
+id: cliopatria-aetolian-league
+names:
+  - text: Aetolian League
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Aetolian League"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

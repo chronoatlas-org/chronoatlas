@@ -1,0 +1,8 @@
+id: cliopatria-kamarupa-kingdom
+names:
+  - text: Kamarupa Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kamarupa Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

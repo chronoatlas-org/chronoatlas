@@ -1,0 +1,8 @@
+id: cliopatria-kutai-kingdom
+names:
+  - text: Kutai Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kutai Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

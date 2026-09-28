@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kakatiya-dynasty-1177","edge_precision":"unknown","cliopatria_name":"Kakatiya Dynasty","cliopatria_from_year":1177,"cliopatria_to_year":1187,"cliopatria_area_km2":255291,"cliopatria_wikidata":"Q2086556","cliopatria_wikipedia":"Kakatiya dynasty","cliopatria_seshat_id":"in_kakatiya_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[77.7658,17.6916],
+[78.2206,16.7536],
+[78.1353,16.2704],
+[78.2342,15.7758],
+[78.7713,15.2187],
+[78.9419,14.7355],
+[79.4251,14.7924],
+[79.823,14.3091],
+[80.1641,14.2807],
+[80.1641,15.1903],
+[80.3347,15.7304],
+[80.7042,15.8725],
+[81.063,15.6593],
+[81.7736,16.3131],
+[82.399,16.5689],
+[83.8397,18.1616],
+[82.5979,19.6529],
+[81.9953,20.1802],
+[81.4325,20.2214],
+[80.826,20.1961],
+[80.2671,20.0793],
+[79.4997,19.6245],
+[78.9312,19.5677],
+[77.7942,19.0844],
+[77.7658,17.6916]
+]
+]
+]}
+}

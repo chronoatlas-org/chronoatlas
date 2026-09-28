@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-adiabene
+names:
+  - text: Kingdom of Adiabene
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Adiabene"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

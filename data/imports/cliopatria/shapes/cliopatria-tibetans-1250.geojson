@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tibetans-1250","edge_precision":"unknown","cliopatria_name":"Tibetans","cliopatria_from_year":1250,"cliopatria_to_year":1259,"cliopatria_area_km2":1740,"cliopatria_wikidata":"Q187985","cliopatria_wikipedia":"Tibetan people"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[85.2793,28.251],
+[85.6563,28.251],
+[85.6699,28.3153],
+[85.2928,28.3153],
+[85.2793,28.251]
+]
+],
+[
+[
+[85.7317,28.251],
+[85.9308,28.1224],
+[85.9659,27.9295],
+[86.13,27.9938],
+[86.1569,28.1224],
+[86.2323,28.1224],
+[86.2871,28.3795],
+[85.7454,28.3153],
+[85.7317,28.251]
+]
+]
+]}
+}

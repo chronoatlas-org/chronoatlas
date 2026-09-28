@@ -1,0 +1,8 @@
+id: cliopatria-colchis
+names:
+  - text: Colchis
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Colchis"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

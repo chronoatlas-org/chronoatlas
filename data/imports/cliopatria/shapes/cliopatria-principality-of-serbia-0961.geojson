@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-serbia-0961","edge_precision":"unknown","cliopatria_name":"Principality of Serbia","cliopatria_from_year":961,"cliopatria_to_year":961,"cliopatria_area_km2":403,"cliopatria_wikidata":"Q1311990","cliopatria_wikipedia":"Principality of Serbia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.1435,42.6262],
+[18.3808,42.5612],
+[18.3122,42.8213],
+[18.1519,42.8213],
+[18.1435,42.6262]
+]
+]
+]}
+}

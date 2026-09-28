@@ -1,0 +1,8 @@
+id: cliopatria-qi-kingdom
+names:
+  - text: Qi Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Qi Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

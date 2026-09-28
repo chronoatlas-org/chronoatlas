@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-silesia-1250","edge_precision":"unknown","cliopatria_name":"Duchy of Silesia","cliopatria_from_year":1250,"cliopatria_to_year":1278,"cliopatria_area_km2":12672,"cliopatria_wikidata":"Q568638","cliopatria_wikipedia":"Duchy of Silesia","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.9229,50.7788],
+[17.246,50.246],
+[17.4338,50.6455],
+[17.9465,50.7788],
+[18.0308,50.7788],
+[18.7013,50.7121],
+[18.7093,50.8455],
+[18.0493,51.1124],
+[17.9723,51.246],
+[17.4752,51.4465],
+[17.0516,51.4465],
+[16.7001,51.1792],
+[15.9309,50.9789],
+[15.9229,50.7788]
+]
+]
+]}
+}

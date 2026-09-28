@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-rajahnate-of-cebu-1564","edge_precision":"unknown","cliopatria_name":"Rajahnate of Cebu","cliopatria_from_year":1564,"cliopatria_to_year":1571,"cliopatria_area_km2":6669,"cliopatria_wikidata":"Q4401071","cliopatria_wikipedia":"Cebu (historical polity)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[123.2592,9.4788],
+[123.4785,9.4788],
+[123.6041,9.9931],
+[123.8506,10.2502],
+[123.9969,10.2502],
+[124.1121,11.2788],
+[123.885,11.2146],
+[123.659,10.5074],
+[123.4119,10.2502],
+[123.2786,9.6717],
+[123.2721,9.6074],
+[123.2592,9.4788]
+]
+]
+]}
+}

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sao-tome-and-principe-2024","edge_precision":"unknown","cliopatria_name":"São Tomé and Príncipe","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":1485,"cliopatria_wikidata":"Q1039","cliopatria_wikipedia":"São Tomé and Príncipe"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[6.2996,0.2857],
+[6.3828,0.0285],
+[6.6612,0.1571],
+[6.6657,0.4142],
+[6.3007,0.35],
+[6.2996,0.2857]
+]
+],
+[
+[
+[7.1934,1.5071],
+[7.339,1.5071],
+[7.3421,1.7],
+[7.2693,1.7],
+[7.1934,1.5071]
+]
+]
+]}
+}

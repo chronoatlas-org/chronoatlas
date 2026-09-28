@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kastamonu-1305","edge_precision":"unknown","cliopatria_name":"Kastamonu","cliopatria_from_year":1305,"cliopatria_to_year":1313,"cliopatria_area_km2":19663,"cliopatria_wikidata":"Q155915","cliopatria_wikipedia":"Kastamonu"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[32.2992,41.1328],
+[32.3787,41.1328],
+[32.5941,40.9384],
+[32.9115,40.9384],
+[32.9039,40.8736],
+[33.7684,40.8088],
+[33.824,40.6144],
+[34.791,40.744],
+[35.7508,40.8088],
+[36.0855,40.9384],
+[35.6441,41.1977],
+[34.4856,41.4571],
+[34.4229,41.5869],
+[33.6266,41.5869],
+[32.2992,41.1328]
+]
+]
+]}
+}

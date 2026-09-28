@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kedah-perlis-district-1908","edge_precision":"unknown","cliopatria_name":"Kedah-Perlis District","cliopatria_from_year":1908,"cliopatria_to_year":1910,"cliopatria_area_km2":1979,"cliopatria_wikidata":"Q213467","cliopatria_wikipedia":"Perlis"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[99.582,6.393],
+[99.651,6.3287],
+[99.6471,6.2644],
+[99.8659,6.2644],
+[99.8817,6.5216],
+[99.582,6.393]
+]
+],
+[
+[
+[100.0156,6.3287],
+[100.0886,6.3287],
+[100.0807,6.2001],
+[100.1536,6.2001],
+[100.4652,6.5216],
+[100.3274,6.6501],
+[100.0276,6.5216],
+[100.0156,6.3287]
+]
+]
+]}
+}

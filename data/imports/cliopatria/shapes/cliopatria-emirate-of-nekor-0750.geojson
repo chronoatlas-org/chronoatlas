@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-emirate-of-nekor-0750","edge_precision":"unknown","cliopatria_name":"Emirate of Nekor","cliopatria_from_year":750,"cliopatria_to_year":792,"cliopatria_area_km2":7368,"cliopatria_wikidata":"Q1709337","cliopatria_wikipedia":"Emirate of Nekor"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-4.6044,35.2584],
+[-4.523,35.194],
+[-4.5841,34.9366],
+[-3.4961,34.8079],
+[-3.419,34.8079],
+[-2.1212,35.0653],
+[-2.8198,35.1297],
+[-2.8379,35.4514],
+[-2.9926,35.4514],
+[-2.9816,35.2584],
+[-3.1324,35.194],
+[-4.6044,35.2584]
+]
+]
+]}
+}

@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-hawai-i-1791","edge_precision":"unknown","cliopatria_name":"Kingdom of Hawaï'i","cliopatria_from_year":1791,"cliopatria_to_year":1795,"cliopatria_area_km2":11830,"cliopatria_wikidata":"Q156418","cliopatria_wikipedia":"Hawaiian Kingdom","cliopatria_seshat_id":"us_kamehameha_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-156.0023,19.7648],
+[-155.93,19.5077],
+[-155.7459,19.3791],
+[-155.6921,19.1862],
+[-155.8401,19.1862],
+[-155.7865,18.9934],
+[-155.5468,18.9291],
+[-155.3783,19.1219],
+[-155.3044,19.1219],
+[-154.8783,19.1862],
+[-154.6894,19.5719],
+[-154.9654,19.7648],
+[-155.0376,20.022],
+[-155.5926,20.1505],
+[-155.7955,20.3434],
+[-155.7968,20.0862],
+[-155.8709,20.0862],
+[-155.7982,19.8291],
+[-156.0023,19.7648]
+]
+]
+]}
+}

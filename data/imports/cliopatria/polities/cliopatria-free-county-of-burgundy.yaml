@@ -1,0 +1,8 @@
+id: cliopatria-free-county-of-burgundy
+names:
+  - text: Free County of Burgundy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Free County of Burgundy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

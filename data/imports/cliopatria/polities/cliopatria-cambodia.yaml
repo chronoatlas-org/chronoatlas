@@ -1,0 +1,8 @@
+id: cliopatria-cambodia
+names:
+  - text: Cambodia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cambodia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

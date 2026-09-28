@@ -1,0 +1,8 @@
+id: cliopatria-norman-england
+names:
+  - text: Norman England
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Norman England"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

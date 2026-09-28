@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-modena-and-reggio-1849","edge_precision":"unknown","cliopatria_name":"Duchy of Modena and Reggio","cliopatria_from_year":1849,"cliopatria_to_year":1858,"cliopatria_area_km2":6678,"cliopatria_wikidata":"Q252580","cliopatria_wikipedia":"Duchy of Modena and Reggio"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.8884,44.2548],
+[9.8886,44.1896],
+[9.9695,44.1896],
+[9.9697,44.1243],
+[10.6159,44.1243],
+[10.8585,44.2548],
+[10.8587,44.3854],
+[11.0206,44.4507],
+[11.1022,44.7119],
+[11.3459,44.8426],
+[11.3464,44.9734],
+[10.4534,44.9734],
+[10.2109,44.5813],
+[10.0489,44.5813],
+[10.0496,44.3854],
+[9.8884,44.2548]
+]
+]
+]}
+}

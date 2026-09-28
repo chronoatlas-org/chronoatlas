@@ -1,0 +1,8 @@
+id: cliopatria-uyunid-emirate
+names:
+  - text: Uyunid Emirate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Uyunid Emirate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

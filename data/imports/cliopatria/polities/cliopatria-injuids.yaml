@@ -1,0 +1,8 @@
+id: cliopatria-injuids
+names:
+  - text: Injuids
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Injuids"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

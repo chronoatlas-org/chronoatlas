@@ -1,0 +1,8 @@
+id: cliopatria-hunnic-empire
+names:
+  - text: Hunnic Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Hunnic Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-qatar-dynasty-1853","edge_precision":"unknown","cliopatria_name":"Qatar Dynasty","cliopatria_from_year":1853,"cliopatria_to_year":1855,"cliopatria_area_km2":7851,"cliopatria_wikidata":"Q846","cliopatria_wikipedia":"Qatar"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[50.7289,25.1007],
+[50.8037,25.1007],
+[50.7926,24.9721],
+[51.0169,24.9721],
+[51.1892,25.2293],
+[51.575,25.3579],
+[51.5809,25.4221],
+[51.6979,25.8722],
+[51.4228,26.1294],
+[51.1229,26.1294],
+[50.9545,25.9365],
+[50.9246,25.615],
+[50.769,25.5507],
+[50.7345,25.165],
+[50.7289,25.1007]
+]
+]
+]}
+}

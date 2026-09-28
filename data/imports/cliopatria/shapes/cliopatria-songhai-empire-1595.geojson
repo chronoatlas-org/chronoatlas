@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-songhai-empire-1595","edge_precision":"unknown","cliopatria_name":"Songhai Empire","cliopatria_from_year":1595,"cliopatria_to_year":1599,"cliopatria_area_km2":112,"cliopatria_wikidata":"Q202687","cliopatria_wikipedia":"Songhai Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.8027,15.779],
+[-3.8017,15.7147],
+[-3.6545,15.7147],
+[-3.6555,15.779],
+[-3.8027,15.779]
+]
+]
+]}
+}

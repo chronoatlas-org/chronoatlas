@@ -1,0 +1,8 @@
+id: cliopatria-saxe-meiningen
+names:
+  - text: Saxe-Meiningen
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Saxe-Meiningen"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

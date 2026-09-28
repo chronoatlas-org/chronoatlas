@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-milan
+names:
+  - text: Duchy of Milan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Milan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

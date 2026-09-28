@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-luxembourg-1429","edge_precision":"unknown","cliopatria_name":"Duchy of Luxembourg","cliopatria_from_year":1429,"cliopatria_to_year":1430,"cliopatria_area_km2":10033,"cliopatria_wikidata":"Q2719360","cliopatria_wikipedia":"Duchy of Luxembourg","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.9932,49.98],
+[5.2546,49.7143],
+[5.3529,49.3163],
+[5.6867,49.3163],
+[5.5963,49.5152],
+[5.9284,49.5816],
+[6.0184,49.3826],
+[5.8536,49.3163],
+[5.858,49.1838],
+[6.3563,49.25],
+[6.2649,49.5152],
+[6.3484,49.5152],
+[6.3405,49.7807],
+[6.5861,49.98],
+[6.5824,50.113],
+[6.0747,50.246],
+[6.4029,50.5122],
+[6.0684,50.4457],
+[5.9843,50.4457],
+[5.9864,50.3791],
+[5.9023,50.3791],
+[5.4796,50.4457],
+[5.2322,50.3125],
+[4.9932,49.98]
+]
+]
+]}
+}

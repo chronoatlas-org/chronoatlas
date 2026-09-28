@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-abkhazia-1727","edge_precision":"unknown","cliopatria_name":"Principality of Abkhazia","cliopatria_from_year":1727,"cliopatria_to_year":1774,"cliopatria_area_km2":8714,"cliopatria_wikidata":"Q1760473","cliopatria_wikipedia":"Principality of Abkhazia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[39.9889,43.4723],
+[40.2192,43.4072],
+[40.4157,43.1467],
+[40.8863,43.0816],
+[40.9666,43.0816],
+[41.4369,43.0165],
+[41.849,42.6262],
+[41.826,42.4962],
+[42.0892,42.6262],
+[42.0673,42.9515],
+[42.3316,43.0816],
+[42.3435,43.1467],
+[42.528,43.2769],
+[41.9536,43.2118],
+[40.736,43.6027],
+[40.1722,43.6027],
+[39.9889,43.4723]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-singhasari
+names:
+  - text: Singhasari
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Singhasari"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-greater-poland-1236","edge_precision":"unknown","cliopatria_name":"Duchy of Greater Poland","cliopatria_from_year":1236,"cliopatria_to_year":1249,"cliopatria_area_km2":15528,"cliopatria_wikidata":"Q1515009","cliopatria_wikipedia":"Duchy of Greater Poland","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.9411,53.1922],
+[16.1065,53.0574],
+[15.9845,52.2505],
+[16.4075,52.1833],
+[16.6534,51.9822],
+[17.2524,52.0492],
+[17.7555,51.9151],
+[17.7632,52.0492],
+[18.2862,52.2505],
+[18.2009,52.2505],
+[18.2133,52.4519],
+[18.1279,52.4519],
+[18.0506,52.5863],
+[17.6272,52.6535],
+[17.5493,52.7881],
+[17.1249,52.8554],
+[16.7963,53.1248],
+[16.7245,53.3946],
+[16.9038,53.5296],
+[16.4767,53.5971],
+[16.3838,53.4621],
+[15.9503,53.3946],
+[15.9411,53.1922]
+]
+]
+]}
+}

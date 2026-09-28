@@ -1,0 +1,8 @@
+id: cliopatria-massina-empire
+names:
+  - text: Massina Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Massina Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

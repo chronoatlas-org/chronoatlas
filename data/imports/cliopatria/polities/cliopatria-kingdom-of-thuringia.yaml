@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-thuringia
+names:
+  - text: Kingdom of Thuringia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Thuringia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

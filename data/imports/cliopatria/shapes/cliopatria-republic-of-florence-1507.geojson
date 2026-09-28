@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-florence-1507","edge_precision":"unknown","cliopatria_name":"Republic of Florence","cliopatria_from_year":1507,"cliopatria_to_year":1546,"cliopatria_area_km2":12041,"cliopatria_wikidata":"Q148540","cliopatria_wikipedia":"Republic of Florence","cliopatria_seshat_id":"it_florence_rep"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[10.2125,43.9286],
+[10.2126,43.8634],
+[10.3742,43.6678],
+[10.5353,43.0816],
+[10.6958,42.9515],
+[10.776,42.9515],
+[10.7766,43.3421],
+[11.0182,43.4723],
+[11.2596,43.4723],
+[11.5807,43.3421],
+[11.6599,43.1467],
+[11.9008,43.1467],
+[11.8219,43.3421],
+[12.1442,43.4072],
+[12.2265,43.6027],
+[11.7447,43.7982],
+[11.6669,44.2548],
+[11.5059,44.3854],
+[10.8585,44.2548],
+[10.6965,43.7982],
+[10.2125,43.9286]
+]
+]
+]}
+}

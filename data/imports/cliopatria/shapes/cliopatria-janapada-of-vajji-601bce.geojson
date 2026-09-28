@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-vajji-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Vajji","cliopatria_from_year":-600,"cliopatria_to_year":-501,"cliopatria_area_km2":5163,"cliopatria_wikidata":"Q605199","cliopatria_wikipedia":"Vajjika League","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[85.3485,26.708],
+[85.3996,26.5794],
+[85.5498,26.5794],
+[85.5259,26.4508],
+[85.676,26.4508],
+[85.6524,26.3222],
+[85.9525,26.3222],
+[85.9762,26.4508],
+[86.3877,26.6437],
+[86.3126,26.6437],
+[86.3494,26.8366],
+[86.1991,26.8366],
+[86.2239,26.9652],
+[86.0736,26.9652],
+[86.0986,27.0938],
+[85.7979,27.0938],
+[85.5982,26.8366],
+[85.3606,26.7723],
+[85.3485,26.708]
+]
+]
+]}
+}

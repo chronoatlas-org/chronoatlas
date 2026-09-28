@@ -1,0 +1,8 @@
+id: cliopatria-livonian-conference
+names:
+  - text: Livonian Conference
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Livonian Conference"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

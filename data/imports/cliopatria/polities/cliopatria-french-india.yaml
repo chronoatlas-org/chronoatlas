@@ -1,0 +1,8 @@
+id: cliopatria-french-india
+names:
+  - text: French India
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French India"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

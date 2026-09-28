@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-emirate-of-nejd-1895","edge_precision":"unknown","cliopatria_name":"Emirate of Nejd","cliopatria_from_year":1895,"cliopatria_to_year":1904,"cliopatria_area_km2":53,"cliopatria_wikidata":"Q146862","cliopatria_wikipedia":"Emirate of Nejd"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[40.5309,28.7652],
+[40.6064,28.7652],
+[40.612,28.8295],
+[40.5364,28.8295],
+[40.5309,28.7652]
+]
+]
+]}
+}

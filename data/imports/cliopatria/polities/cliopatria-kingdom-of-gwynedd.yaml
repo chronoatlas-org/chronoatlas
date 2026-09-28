@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-gwynedd
+names:
+  - text: Kingdom of Gwynedd
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Gwynedd"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,37 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-northern-han-0970","edge_precision":"unknown","cliopatria_name":"Northern Han","cliopatria_from_year":970,"cliopatria_to_year":979,"cliopatria_area_km2":26506,"cliopatria_wikidata":"Q1141471","cliopatria_wikipedia":"Northern Han","cliopatria_seshat_id":"cn_five_dyn","cliopatria_member_of":"(Five Dynasties and Ten Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[110.9537,38.6743],
+[111.0492,38.5451],
+[111.0186,38.4806],
+[111.097,38.4806],
+[111.0362,38.3515],
+[111.1928,38.3515],
+[111.337,38.1578],
+[111.2471,37.9643],
+[111.53,37.8998],
+[111.6651,37.5128],
+[111.8992,37.5128],
+[112.0847,37.5773],
+[112.4502,38.0288],
+[112.8413,38.0288],
+[112.937,37.8998],
+[113.3583,37.9643],
+[113.4484,38.4806],
+[113.8269,38.9326],
+[113.5447,38.9972],
+[113.5768,39.0618],
+[112.7123,39.0618],
+[111.8005,38.8034],
+[111.8317,38.868],
+[111.3761,39.0618],
+[111.2975,39.0618],
+[111.0155,38.8034],
+[110.9537,38.6743]
+]
+]
+]}
+}

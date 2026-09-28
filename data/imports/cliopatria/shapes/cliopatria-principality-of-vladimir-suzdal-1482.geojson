@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-vladimir-suzdal-1482","edge_precision":"unknown","cliopatria_name":"Principality of Vladimir-Suzdal","cliopatria_from_year":1482,"cliopatria_to_year":1486,"cliopatria_area_km2":2972,"cliopatria_wikidata":"Q83546","cliopatria_wikipedia":"Vladimir-Suzdal"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[36.8204,58.2504],
+[37.2345,58.1116],
+[37.3793,57.9731],
+[37.3453,57.8346],
+[37.7746,57.7654],
+[37.6973,58.5282],
+[36.9782,58.5282],
+[36.8204,58.2504]
+]
+]
+]}
+}

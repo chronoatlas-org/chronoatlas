@@ -1,0 +1,8 @@
+id: cliopatria-albanian-principalities
+names:
+  - text: Albanian Principalities
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Albanian Principalities"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

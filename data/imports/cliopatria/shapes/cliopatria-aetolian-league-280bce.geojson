@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-aetolian-league-280bce","edge_precision":"unknown","cliopatria_name":"Aetolian League","cliopatria_from_year":-279,"cliopatria_to_year":-278,"cliopatria_area_km2":7775,"cliopatria_wikidata":"Q245273","cliopatria_wikipedia":"Aetolian League"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[21.2876,38.7389],
+[21.35,38.416],
+[22.4469,38.416],
+[22.5468,38.8034],
+[22.3898,38.8034],
+[22.397,38.9326],
+[22.5615,39.0618],
+[22.5652,39.1265],
+[22.494,39.2557],
+[22.1793,39.2557],
+[22.1721,39.1265],
+[21.7825,39.1911],
+[21.4511,38.868],
+[21.4478,38.8034],
+[21.2876,38.7389]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-gascony
+names:
+  - text: Duchy of Gascony
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Gascony"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

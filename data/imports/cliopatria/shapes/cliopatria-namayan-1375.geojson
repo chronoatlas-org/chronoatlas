@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-namayan-1375","edge_precision":"unknown","cliopatria_name":"Namayan","cliopatria_from_year":1375,"cliopatria_to_year":1496,"cliopatria_area_km2":1128,"cliopatria_wikidata":"Q4401026","cliopatria_wikipedia":"Namayan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[120.8639,14.4289],
+[120.9917,14.3004],
+[121.212,14.3004],
+[121.28,14.7504],
+[121.1232,14.6861],
+[121.0939,14.4932],
+[120.8736,14.4932],
+[120.8639,14.4289]
+]
+]
+]}
+}

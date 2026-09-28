@@ -1,0 +1,8 @@
+id: cliopatria-nguyen-lords
+names:
+  - text: Nguyễn lords
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Nguyễn lords"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

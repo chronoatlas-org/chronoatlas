@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-el-salvador-2024","edge_precision":"unknown","cliopatria_name":"Republic of El Salvador","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":21708,"cliopatria_wikidata":"Q792","cliopatria_wikipedia":"El Salvador"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-90.0794,13.7218],
+[-90.072,13.6575],
+[-89.7567,13.4646],
+[-89.2431,13.4646],
+[-88.8482,13.2075],
+[-87.7412,13.1432],
+[-87.7618,13.336],
+[-87.6885,13.336],
+[-87.7166,13.5932],
+[-87.6433,13.5932],
+[-87.7455,13.8503],
+[-88.4869,13.9146],
+[-88.8997,14.3004],
+[-89.2826,14.4289],
+[-89.4295,14.4289],
+[-89.6766,14.0432],
+[-89.9626,13.9789],
+[-90.0794,13.7218]
+]
+]
+]}
+}

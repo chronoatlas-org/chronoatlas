@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-minsk
+names:
+  - text: Principality of Minsk
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Minsk"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

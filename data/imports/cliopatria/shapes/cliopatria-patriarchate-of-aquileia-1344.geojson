@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-patriarchate-of-aquileia-1344","edge_precision":"unknown","cliopatria_name":"Patriarchate of Aquileia","cliopatria_from_year":1344,"cliopatria_to_year":1362,"cliopatria_area_km2":8355,"cliopatria_wikidata":"Q836894","cliopatria_wikipedia":"Patriarchate of Aquileia","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.411,45.8898],
+[12.4919,45.8243],
+[12.9816,45.8243],
+[13.0614,45.6933],
+[13.1429,45.6933],
+[13.1438,45.7588],
+[13.6333,45.7588],
+[13.5561,46.0209],
+[13.8866,46.2177],
+[13.6468,46.5459],
+[12.91,46.6115],
+[12.582,46.6115],
+[12.5806,46.4802],
+[12.416,46.4145],
+[12.411,45.8898]
+],
+[
+[13.5561,46.0209],
+[13.4744,46.0209],
+[13.31,45.9554],
+[13.313,46.1521],
+[13.4765,46.1521],
+[13.5561,46.0209]
+]
+]
+]}
+}

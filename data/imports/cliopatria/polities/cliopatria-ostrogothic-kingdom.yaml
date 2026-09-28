@@ -1,0 +1,8 @@
+id: cliopatria-ostrogothic-kingdom
+names:
+  - text: Ostrogothic Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ostrogothic Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

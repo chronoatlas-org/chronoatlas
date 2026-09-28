@@ -1,0 +1,8 @@
+id: cliopatria-house-of-savoy
+names:
+  - text: House of Savoy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "House of Savoy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

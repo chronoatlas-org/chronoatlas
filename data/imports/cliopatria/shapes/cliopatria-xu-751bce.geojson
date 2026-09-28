@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-xu-751bce","edge_precision":"unknown","cliopatria_name":"Xu","cliopatria_from_year":-750,"cliopatria_to_year":-451,"cliopatria_area_km2":4786,"cliopatria_wikidata":"Q2650109","cliopatria_wikipedia":"Xu (state)","cliopatria_member_of":"(Spring and Autumn States)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[116.65,34.5506],
+[117.5747,34.5506],
+[117.6741,34.422],
+[117.9657,34.7436],
+[117.6355,34.8723],
+[117.7683,35.001],
+[117.1785,35.0653],
+[116.7045,34.6793],
+[116.65,34.5506]
+]
+]
+]}
+}

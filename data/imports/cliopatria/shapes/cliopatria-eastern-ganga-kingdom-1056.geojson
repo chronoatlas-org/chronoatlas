@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-eastern-ganga-kingdom-1056","edge_precision":"unknown","cliopatria_name":"Eastern Ganga Kingdom","cliopatria_from_year":1056,"cliopatria_to_year":1151,"cliopatria_area_km2":163985,"cliopatria_wikidata":"Q250515","cliopatria_wikipedia":"Eastern Ganga dynasty","cliopatria_seshat_id":"in_ganga_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[81.6658,19.27],
+[82.1364,18.4775],
+[82.8051,18.0317],
+[83.1023,17.4868],
+[84.2663,18.3041],
+[85.1084,19.3691],
+[86.3715,19.8644],
+[86.842,20.2359],
+[87.0897,20.7065],
+[86.8668,21.2266],
+[87.2383,21.4495],
+[86.8916,21.9696],
+[85.7275,22.4649],
+[83.2756,21.2018],
+[82.3097,20.5579],
+[82.1859,19.8644],
+[81.6658,19.27]
+]
+]
+]}
+}

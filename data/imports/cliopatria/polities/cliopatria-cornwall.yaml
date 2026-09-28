@@ -1,0 +1,8 @@
+id: cliopatria-cornwall
+names:
+  - text: Cornwall
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cornwall"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

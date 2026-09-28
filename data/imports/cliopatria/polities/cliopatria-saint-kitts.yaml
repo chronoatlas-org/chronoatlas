@@ -1,0 +1,8 @@
+id: cliopatria-saint-kitts
+names:
+  - text: Saint Kitts
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Saint Kitts"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

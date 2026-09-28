@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-chandela-kingdom-1085","edge_precision":"unknown","cliopatria_name":"Chandela Kingdom","cliopatria_from_year":1085,"cliopatria_to_year":1151,"cliopatria_area_km2":74067,"cliopatria_wikidata":"Q2039087","cliopatria_wikipedia":"Chandelas of Jejakabhukti","cliopatria_seshat_id":"in_chandela_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[78.821,24.3864],
+[79.3101,23.2972],
+[80.5327,23.764],
+[82.5555,23.8752],
+[82.9334,24.2975],
+[83.578,24.342],
+[83.3113,24.542],
+[83.044,24.7682],
+[81.6163,24.8673],
+[81.0219,25.214],
+[80.8237,25.635],
+[80.0109,26.1207],
+[79.5546,25.9425],
+[79.5324,25.6313],
+[78.821,25.0978],
+[78.821,24.3864]
+]
+]
+]}
+}

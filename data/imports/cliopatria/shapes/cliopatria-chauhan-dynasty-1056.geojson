@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-chauhan-dynasty-1056","edge_precision":"unknown","cliopatria_name":"Chauhan Dynasty","cliopatria_from_year":1056,"cliopatria_to_year":1176,"cliopatria_area_km2":149498,"cliopatria_wikidata":"Q1068371","cliopatria_wikipedia":"Chauhan Dynasty","cliopatria_seshat_id":"in_chauhana_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[71.6769,27.2122],
+[71.9025,26.4365],
+[73.2429,25.6376],
+[73.714,25.482],
+[73.893,25.552],
+[74.6562,25.7751],
+[74.8221,25.7034],
+[74.9216,25.3926],
+[76.0098,25.9184],
+[76.5473,26.2581],
+[76.9255,26.6087],
+[77.1777,27.0291],
+[76.9919,27.224],
+[76.6137,27.7068],
+[76.2952,28.4853],
+[75.3861,29.2175],
+[74.5169,29.2175],
+[73.8135,28.9682],
+[73.2296,28.3861],
+[72.6988,27.8711],
+[71.6769,27.2122]
+]
+]
+]}
+}

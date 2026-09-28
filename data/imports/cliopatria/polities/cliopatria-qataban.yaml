@@ -1,0 +1,8 @@
+id: cliopatria-qataban
+names:
+  - text: Qataban
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Qataban"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

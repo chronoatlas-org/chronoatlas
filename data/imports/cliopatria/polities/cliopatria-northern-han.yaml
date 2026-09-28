@@ -1,0 +1,8 @@
+id: cliopatria-northern-han
+names:
+  - text: Northern Han
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Northern Han"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

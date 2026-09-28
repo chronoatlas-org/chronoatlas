@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-arcos-1028","edge_precision":"unknown","cliopatria_name":"Taifa of Arcos","cliopatria_from_year":1028,"cliopatria_to_year":1039,"cliopatria_area_km2":4994,"cliopatria_wikidata":"Q2390604","cliopatria_wikipedia":"Taifa of Arcos","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-6.3447,36.8682],
+[-6.3398,36.8037],
+[-6.238,36.4816],
+[-6.0732,36.3528],
+[-6.0685,36.2884],
+[-5.6805,36.2884],
+[-5.5389,36.4816],
+[-5.3104,36.546],
+[-5.411,36.8682],
+[-5.6444,36.8682],
+[-5.8095,36.9971],
+[-6.3447,36.8682]
+]
+]
+]}
+}

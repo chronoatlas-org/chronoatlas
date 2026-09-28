@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-free-city-of-krakow-1830","edge_precision":"unknown","cliopatria_name":"Free City of Krakow","cliopatria_from_year":1830,"cliopatria_to_year":1833,"cliopatria_area_km2":1467,"cliopatria_wikidata":"Q501303","cliopatria_wikipedia":"Free City of Cracow"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.1578,49.9136],
+[19.2416,49.9136],
+[19.2376,49.8471],
+[19.8239,49.8471],
+[20.2517,49.98],
+[20.2562,50.0465],
+[19.1658,50.0465],
+[19.1578,49.9136]
+]
+]
+]}
+}

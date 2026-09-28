@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-napoleonic-batavia-republic-1871","edge_precision":"unknown","cliopatria_name":"Napoleonic Batavia Republic","cliopatria_from_year":1871,"cliopatria_to_year":1872,"cliopatria_area_km2":5774,"cliopatria_wikidata":"Q4807130","cliopatria_wikipedia":"Dutch Cape Colony"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.9603,4.9787],
+[-2.8874,4.9787],
+[-2.4506,4.9144],
+[-2.2336,4.7215],
+[-1.8692,4.7215],
+[-1.6485,4.9787],
+[-1.2102,5.1072],
+[-1.2087,5.3001],
+[-1.2083,5.3644],
+[-1.6465,5.2358],
+[-1.8666,5.0429],
+[-2.4487,5.1715],
+[-2.523,4.9787],
+[-2.7398,5.2358],
+[-2.9593,5.1072],
+[-2.9603,4.9787]
+]
+]
+]}
+}

@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-luxembourg-1958","edge_precision":"unknown","cliopatria_name":"Luxembourg","cliopatria_from_year":1958,"cliopatria_to_year":2023,"cliopatria_area_km2":2405,"cliopatria_wikidata":"Q2719360","cliopatria_wikipedia":"Luxembourg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[5.7455,50.0465],
+[5.8448,49.5816],
+[6.0998,49.4489],
+[6.3484,49.5152],
+[6.3386,49.8471],
+[6.1669,49.98],
+[6.1628,50.113],
+[6.0789,50.113],
+[6.0768,50.1795],
+[5.7455,50.0465]
+]
+]
+]}
+}

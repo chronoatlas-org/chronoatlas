@@ -1,0 +1,8 @@
+id: cliopatria-akkadian-empire
+names:
+  - text: Akkadian Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Akkadian Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-tenochtitlan
+names:
+  - text: Tenochtitlan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tenochtitlan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

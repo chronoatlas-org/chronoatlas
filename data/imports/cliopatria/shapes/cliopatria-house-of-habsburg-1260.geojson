@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-habsburg-1260","edge_precision":"unknown","cliopatria_name":"House of Habsburg","cliopatria_from_year":1260,"cliopatria_to_year":1271,"cliopatria_area_km2":2740,"cliopatria_wikidata":"Q65968","cliopatria_wikipedia":"House of Habsburg","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.6446,47.4665],
+[7.8957,47.269],
+[7.8146,47.2032],
+[7.8258,46.6115],
+[7.9898,46.6115],
+[7.9863,46.8086],
+[8.3137,46.8743],
+[8.3887,47.3348],
+[8.2228,47.4006],
+[8.0603,47.269],
+[8.1393,47.4665],
+[7.6446,47.4665]
+],
+[
+[7.978,47.269],
+[8.1461,47.0716],
+[8.1472,47.0058],
+[7.9828,47.0058],
+[7.978,47.269]
+]
+]
+]}
+}

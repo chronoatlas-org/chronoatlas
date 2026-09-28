@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-federated-republic-of-mexico-1865","edge_precision":"unknown","cliopatria_name":"Federated Republic of Mexico","cliopatria_from_year":1865,"cliopatria_to_year":1865,"cliopatria_area_km2":166,"cliopatria_wikidata":"Q1109279","cliopatria_wikipedia":"First Mexican Republic"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-87.5266,19.5077],
+[-87.516,19.4434],
+[-87.368,19.4434],
+[-87.3891,19.5719],
+[-87.4632,19.5719],
+[-87.4526,19.5077],
+[-87.5266,19.5077]
+]
+]
+]}
+}

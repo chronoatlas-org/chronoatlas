@@ -1,0 +1,8 @@
+id: cliopatria-tarumanagara
+names:
+  - text: Tarumanagara
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tarumanagara"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

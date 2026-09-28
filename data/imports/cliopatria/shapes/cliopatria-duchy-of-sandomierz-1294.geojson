@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-sandomierz-1294","edge_precision":"unknown","cliopatria_name":"Duchy of Sandomierz","cliopatria_from_year":1294,"cliopatria_to_year":1304,"cliopatria_area_km2":25686,"cliopatria_wikidata":"Q16933165","cliopatria_wikipedia":"Duchy of Sandomierz","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.2089,50.5789],
+[20.8925,50.7121],
+[21.0358,50.3791],
+[21.288,50.3791],
+[21.5246,50.1795],
+[21.5143,50.0465],
+[21.9911,49.7143],
+[22.1585,49.7143],
+[22.2583,49.9136],
+[22.946,50.113],
+[22.9636,50.3125],
+[22.9091,50.6455],
+[22.5898,50.8455],
+[22.6016,50.9789],
+[22.2872,51.246],
+[22.2441,51.7142],
+[22.3534,51.9822],
+[22.1042,52.0492],
+[20.9598,51.5803],
+[20.3917,50.7788],
+[20.2183,50.7121],
+[20.2089,50.5789]
+]
+]
+]}
+}

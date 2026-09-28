@@ -1,0 +1,8 @@
+id: cliopatria-iraqi-republic
+names:
+  - text: Iraqi Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Iraqi Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

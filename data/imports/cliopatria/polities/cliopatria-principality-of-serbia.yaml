@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-serbia
+names:
+  - text: Principality of Serbia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Serbia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

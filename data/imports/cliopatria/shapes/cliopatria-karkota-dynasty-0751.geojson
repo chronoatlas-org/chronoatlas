@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-karkota-dynasty-0751","edge_precision":"unknown","cliopatria_name":"Karkota Dynasty","cliopatria_from_year":751,"cliopatria_to_year":771,"cliopatria_area_km2":122721,"cliopatria_wikidata":"Q466433","cliopatria_wikipedia":"Karkota dynasty","cliopatria_seshat_id":"in_karkota_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[72.8365,33.8802],
+[72.9957,33.7037],
+[73.9112,33.1907],
+[74.6876,32.5966],
+[75.3198,33.0328],
+[75.6553,33.0651],
+[76.2452,32.403],
+[76.5586,32.611],
+[76.7978,33.8416],
+[76.6916,35.2462],
+[76.2802,35.549],
+[75.8423,35.6462],
+[74.847,36.3173],
+[74.6877,36.7066],
+[74.137,36.7758],
+[73.8849,36.9775],
+[73.2545,36.9828],
+[73.2943,36.4936],
+[73.155,36.1461],
+[73.2744,35.8992],
+[73.3009,35.3382],
+[73.0156,35.1594],
+[72.8365,33.8802]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-zapotec-civilization
+names:
+  - text: Zapotec Civilization
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Zapotec Civilization"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

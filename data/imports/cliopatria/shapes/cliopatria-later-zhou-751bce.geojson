@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-later-zhou-751bce","edge_precision":"unknown","cliopatria_name":"Later Zhou","cliopatria_from_year":-750,"cliopatria_to_year":-451,"cliopatria_area_km2":9656,"cliopatria_wikidata":"Q1154556","cliopatria_wikipedia":"Later Zhou","cliopatria_member_of":"(Spring and Autumn States)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[112.1066,34.9366],
+[112.1837,34.9366],
+[112.1548,34.4863],
+[112.617,34.4863],
+[113.0303,34.7436],
+[113.0567,34.8079],
+[113.1339,34.8079],
+[113.1604,34.8723],
+[113.2376,34.8723],
+[113.2642,34.9366],
+[113.3414,34.9366],
+[113.5301,35.3871],
+[112.3199,35.4514],
+[112.1066,34.9366]
+]
+]
+]}
+}

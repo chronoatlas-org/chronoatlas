@@ -1,0 +1,8 @@
+id: cliopatria-mali-federation
+names:
+  - text: Mali Federation
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mali Federation"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

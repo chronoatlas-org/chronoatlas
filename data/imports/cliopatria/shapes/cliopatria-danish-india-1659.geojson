@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-danish-india-1659","edge_precision":"unknown","cliopatria_name":"Danish India","cliopatria_from_year":1659,"cliopatria_to_year":1733,"cliopatria_area_km2":976,"cliopatria_wikidata":"Q912382","cliopatria_wikipedia":"Danish India"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.2102,5.1072],
+[-1.0645,5.1072],
+[-1.0625,5.3644],
+[-1.2083,5.3644],
+[-1.2102,5.1072]
+]
+],
+[
+[
+[-0.1863,5.5572],
+[0.0329,5.6215],
+[-0.0386,5.8144],
+[-0.1844,5.8144],
+[-0.1863,5.5572]
+]
+]
+]}
+}

@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-roman-kingdom-501bce","edge_precision":"unknown","cliopatria_name":"Roman Kingdom","cliopatria_from_year":-500,"cliopatria_to_year":-481,"cliopatria_area_km2":859,"cliopatria_wikidata":"Q201038","cliopatria_wikipedia":"Roman Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[11.9725,42.1063],
+[12.1311,41.9764],
+[12.1305,41.9114],
+[12.4482,41.7816],
+[12.4517,42.1063],
+[11.9725,42.1063]
+]
+]
+]}
+}

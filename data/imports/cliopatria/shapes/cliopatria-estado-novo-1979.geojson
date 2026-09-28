@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-estado-novo-1979","edge_precision":"unknown","cliopatria_name":"Estado Novo","cliopatria_from_year":1979,"cliopatria_to_year":2023,"cliopatria_area_km2":6894,"cliopatria_wikidata":"Q824489","cliopatria_wikipedia":"Estado Novo (Portugal)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[11.9287,-5.0502],
+[11.9288,-5.1145],
+[12.0752,-5.3716],
+[12.0028,-5.6288],
+[12.0031,-5.7574],
+[12.076,-5.7574],
+[12.0762,-5.8217],
+[12.4402,-5.6288],
+[12.4386,-4.9859],
+[12.9479,-4.6645],
+[12.6557,-4.4073],
+[11.9287,-5.0502]
+]
+]
+]}
+}

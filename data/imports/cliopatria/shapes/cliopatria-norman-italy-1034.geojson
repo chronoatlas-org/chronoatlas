@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-norman-italy-1034","edge_precision":"unknown","cliopatria_name":"Norman Italy","cliopatria_from_year":1034,"cliopatria_to_year":1039,"cliopatria_area_km2":120,"cliopatria_wikidata":"Q74011","cliopatria_wikipedia":"Norman conquest of southern Italy"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[14.0264,40.9384],
+[14.1058,40.9384],
+[14.2632,40.8736],
+[14.2658,41.0032],
+[14.0264,40.9384]
+]
+]
+]}
+}

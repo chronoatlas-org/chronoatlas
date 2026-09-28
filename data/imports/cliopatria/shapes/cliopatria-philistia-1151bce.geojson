@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-philistia-1151bce","edge_precision":"unknown","cliopatria_name":"Philistia","cliopatria_from_year":-1150,"cliopatria_to_year":-1001,"cliopatria_area_km2":10967,"cliopatria_wikidata":"Q7185566","cliopatria_wikipedia":"Philistia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[34.3076,31.4005],
+[34.3579,31.0791],
+[35.0638,31.3362],
+[35.0038,31.529],
+[35.0092,31.5933],
+[35.2487,31.7218],
+[35.2878,32.1717],
+[35.4633,32.4288],
+[35.41,32.6859],
+[35.5985,33.0716],
+[35.6044,33.1359],
+[35.2213,33.1359],
+[35.2154,33.0716],
+[35.0563,33.0073],
+[35.0218,32.6216],
+[34.7698,32.3645],
+[34.813,31.9789],
+[34.5733,31.8503],
+[34.6334,31.6575],
+[34.3076,31.4005]
+]
+]
+]}
+}

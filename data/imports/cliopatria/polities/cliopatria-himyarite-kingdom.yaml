@@ -1,0 +1,8 @@
+id: cliopatria-himyarite-kingdom
+names:
+  - text: Himyarite Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Himyarite Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

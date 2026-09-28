@@ -1,0 +1,8 @@
+id: cliopatria-kuwait
+names:
+  - text: Kuwait
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kuwait"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

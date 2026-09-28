@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-malacca-1459","edge_precision":"unknown","cliopatria_name":"Sultanate of Malacca","cliopatria_from_year":1459,"cliopatria_to_year":1511,"cliopatria_area_km2":6939,"cliopatria_wikidata":"Q46652","cliopatria_wikipedia":"Malacca Sultanate","cliopatria_seshat_id":"my_malacca_sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[102.9912,1.6357],
+[103.2753,1.4428],
+[103.2707,1.3143],
+[103.5641,1.3786],
+[103.6323,1.25],
+[103.8507,1.25],
+[103.9281,1.3786],
+[104.2192,1.3786],
+[104.1632,1.8286],
+[103.1416,1.7643],
+[103.0688,1.7643],
+[102.9912,1.6357]
+]
+],
+[
+[
+[103.7668,0.9285],
+[104.0601,0.9928],
+[104.0668,1.1857],
+[103.9235,1.25],
+[103.7734,1.1214],
+[103.7668,0.9285]
+]
+]
+]}
+}

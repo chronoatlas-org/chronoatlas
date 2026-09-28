@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-legnica
+names:
+  - text: Duchy of Legnica
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Legnica"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

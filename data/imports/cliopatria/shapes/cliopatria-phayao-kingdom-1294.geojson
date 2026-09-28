@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-phayao-kingdom-1294","edge_precision":"unknown","cliopatria_name":"Phayao Kingdom","cliopatria_from_year":1294,"cliopatria_to_year":1332,"cliopatria_area_km2":5148,"cliopatria_wikidata":"Q4202088","cliopatria_wikipedia":"Phayao Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[99.9411,19.1862],
+[100.1877,18.8648],
+[100.5673,18.9291],
+[100.5872,19.0577],
+[100.745,19.1219],
+[100.6269,19.3148],
+[100.6667,19.5719],
+[100.5186,19.5719],
+[100.4644,19.7005],
+[100.0645,19.5077],
+[99.9904,19.5077],
+[99.9411,19.1862]
+]
+]
+]}
+}

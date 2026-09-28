@@ -1,0 +1,8 @@
+id: cliopatria-french-first-republic
+names:
+  - text: French First Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French First Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

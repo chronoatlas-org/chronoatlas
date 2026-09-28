@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-champasak
+names:
+  - text: Kingdom of Champasak
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Champasak"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

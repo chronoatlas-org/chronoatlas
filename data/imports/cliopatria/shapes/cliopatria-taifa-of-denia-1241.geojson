@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-denia-1241","edge_precision":"unknown","cliopatria_name":"Taifa of Dénia","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":7204,"cliopatria_wikidata":"Q252323","cliopatria_wikipedia":"Taifa of Dénia","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.3693,38.3515],
+[-0.9634,38.0933],
+[-0.9494,37.8352],
+[-0.7116,37.7707],
+[-0.715,37.8352],
+[-0.7931,37.8352],
+[-0.8035,38.0288],
+[-0.6609,38.2869],
+[0.0994,38.7389],
+[-0.2282,38.9972],
+[-0.2316,39.0618],
+[-0.771,38.868],
+[-0.8388,38.6743],
+[-1.2347,38.7389],
+[-1.3693,38.3515]
+]
+]
+]}
+}

@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-mercia-0899","edge_precision":"unknown","cliopatria_name":"Kingdom of Mercia","cliopatria_from_year":899,"cliopatria_to_year":921,"cliopatria_area_km2":44,"cliopatria_wikidata":"Q105092","cliopatria_wikipedia":"Mercia","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.7304,51.8481],
+[-2.7238,51.7811],
+[-2.6388,51.7811],
+[-2.6454,51.8481],
+[-2.7304,51.8481]
+]
+]
+]}
+}

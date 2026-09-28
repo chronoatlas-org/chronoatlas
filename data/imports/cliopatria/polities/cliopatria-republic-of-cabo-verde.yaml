@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-cabo-verde
+names:
+  - text: Republic of Cabo Verde
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Cabo Verde"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

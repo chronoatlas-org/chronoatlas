@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-osroene
+names:
+  - text: Kingdom of Osroene
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Osroene"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

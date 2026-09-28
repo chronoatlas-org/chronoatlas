@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-liechtenstein-1721","edge_precision":"unknown","cliopatria_name":"Principality of Liechtenstein","cliopatria_from_year":1721,"cliopatria_to_year":1813,"cliopatria_area_km2":114,"cliopatria_wikidata":"Q347","cliopatria_wikipedia":"Liechtenstein"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.4601,47.269],
+[9.4613,47.1374],
+[9.6258,47.1374],
+[9.543,47.2032],
+[9.5425,47.269],
+[9.4601,47.269]
+]
+]
+]}
+}

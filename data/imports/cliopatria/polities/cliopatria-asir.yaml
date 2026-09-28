@@ -1,0 +1,8 @@
+id: cliopatria-asir
+names:
+  - text: Asir
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Asir"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

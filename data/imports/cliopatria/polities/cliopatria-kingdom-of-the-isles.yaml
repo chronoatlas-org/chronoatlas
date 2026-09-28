@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-the-isles
+names:
+  - text: Kingdom of the Isles
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of the Isles"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

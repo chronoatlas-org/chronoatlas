@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-banate-of-bosnia-1241","edge_precision":"unknown","cliopatria_name":"Banate of Bosnia","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":18025,"cliopatria_wikidata":"Q3627069","cliopatria_wikipedia":"Banate of Bosnia","cliopatria_seshat_id":"ba_bosnia_banate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[17.3363,44.516],
+[17.4068,44.2548],
+[17.7999,43.9938],
+[17.8695,43.733],
+[18.1028,43.5375],
+[18.011,43.2769],
+[18.4159,43.3421],
+[18.5053,43.5375],
+[18.8336,43.6678],
+[19.0043,43.8634],
+[19.0075,43.9286],
+[19.0979,44.1243],
+[19.2628,44.1896],
+[19.1077,44.3201],
+[19.1175,44.516],
+[19.2929,44.7773],
+[19.1373,44.908],
+[18.8906,44.8426],
+[18.0039,44.9734],
+[17.4225,44.6466],
+[17.3363,44.516]
+]
+]
+]}
+}

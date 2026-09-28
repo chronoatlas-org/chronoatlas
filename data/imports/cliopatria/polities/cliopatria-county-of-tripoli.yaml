@@ -1,0 +1,8 @@
+id: cliopatria-county-of-tripoli
+names:
+  - text: County of Tripoli
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Tripoli"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-gurjara-pratihara-dynasty-0980","edge_precision":"unknown","cliopatria_name":"Gurjara-Pratihara Dynasty","cliopatria_from_year":980,"cliopatria_to_year":1033,"cliopatria_area_km2":29274,"cliopatria_wikidata":"Q5324","cliopatria_wikipedia":"Gurjara-Pratihara dynasty","cliopatria_seshat_id":"in_gurjara_pratihara_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[78.2364,26.8366],
+[78.2865,26.6463],
+[78.7502,26.3222],
+[78.7257,26.1294],
+[78.858,26.0651],
+[78.7213,25.6793],
+[78.851,25.5507],
+[78.8307,25.3579],
+[78.9611,25.2936],
+[79.5324,25.6313],
+[79.5546,25.9425],
+[79.9895,26.1064],
+[80.0393,26.8366],
+[79.9232,27.0295],
+[79.9578,27.2223],
+[79.6404,27.5438],
+[78.6621,27.5438],
+[78.2474,26.9009],
+[78.2364,26.8366]
+]
+]
+]}
+}

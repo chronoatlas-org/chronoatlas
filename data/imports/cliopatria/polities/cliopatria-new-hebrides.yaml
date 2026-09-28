@@ -1,0 +1,8 @@
+id: cliopatria-new-hebrides
+names:
+  - text: New Hebrides
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "New Hebrides"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

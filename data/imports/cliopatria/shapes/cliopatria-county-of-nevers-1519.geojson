@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-nevers-1519","edge_precision":"unknown","cliopatria_name":"County of Nevers","cliopatria_from_year":1519,"cliopatria_to_year":1520,"cliopatria_area_km2":12559,"cliopatria_wikidata":"Q2070440","cliopatria_wikipedia":"County of Nevers","cliopatria_seshat_id":"fr_valois_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[2.3682,47.4665],
+[2.7048,47.3348],
+[2.896,46.8086],
+[3.0697,46.6115],
+[3.7286,46.5459],
+[3.802,46.7429],
+[3.9633,46.8086],
+[3.8668,47.1374],
+[3.9491,47.1374],
+[3.9404,47.3348],
+[3.6079,47.4006],
+[3.6018,47.5323],
+[3.7668,47.5323],
+[3.7548,47.7959],
+[3.5834,47.9278],
+[3.084,47.9938],
+[3.0079,47.8619],
+[2.7634,47.7959],
+[2.4293,47.8619],
+[2.3682,47.4665]
+]
+]
+]}
+}

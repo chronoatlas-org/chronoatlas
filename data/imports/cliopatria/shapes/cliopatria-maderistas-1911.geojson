@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-maderistas-1911","edge_precision":"unknown","cliopatria_name":"Maderistas","cliopatria_from_year":1911,"cliopatria_to_year":1911,"cliopatria_area_km2":34589,"cliopatria_wikidata":"Q5428692","cliopatria_wikipedia":"List of factions in the Mexican Revolution"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-107.8572,28.9581],
+[-107.5812,28.3795],
+[-107.1296,27.9295],
+[-106.4027,27.5438],
+[-105.5547,27.4795],
+[-105.2941,27.6081],
+[-105.3214,27.9295],
+[-105.2461,27.9295],
+[-105.3841,28.1224],
+[-105.4052,28.1867],
+[-105.9681,28.9581],
+[-106.1192,28.9581],
+[-106.5579,29.3438],
+[-107.3376,29.4081],
+[-107.617,29.3438],
+[-107.8272,29.0867],
+[-107.7816,28.9581],
+[-107.8572,28.9581]
+]
+]
+]}
+}

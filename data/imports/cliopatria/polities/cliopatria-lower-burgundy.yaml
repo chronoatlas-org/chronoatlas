@@ -1,0 +1,8 @@
+id: cliopatria-lower-burgundy
+names:
+  - text: Lower Burgundy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Lower Burgundy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

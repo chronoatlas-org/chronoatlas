@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-wihtgar-0523","edge_precision":"unknown","cliopatria_name":"Wihtgar","cliopatria_from_year":523,"cliopatria_to_year":660,"cliopatria_area_km2":508,"cliopatria_wikidata":"Q3568009","cliopatria_wikipedia":"Wihtwara"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.525,50.7121],
+[-1.5134,50.5789],
+[-1.2608,50.5789],
+[-1.098,50.6455],
+[-1.1092,50.7788],
+[-1.525,50.7121]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-yemen
+names:
+  - text: Republic of Yemen
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Yemen"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

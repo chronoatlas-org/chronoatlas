@@ -1,0 +1,8 @@
+id: cliopatria-yin
+names:
+  - text: Yin
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Yin"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

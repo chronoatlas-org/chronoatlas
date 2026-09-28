@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-hohenzollern-sigmaringen-1849","edge_precision":"unknown","cliopatria_name":"Principality of Hohenzollern-Sigmaringen","cliopatria_from_year":1849,"cliopatria_to_year":1852,"cliopatria_area_km2":1310,"cliopatria_wikidata":"Q157013","cliopatria_wikipedia":"Hohenzollern-Sigmaringen"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.5359,48.522],
+[8.6198,48.4559],
+[8.8688,48.4559],
+[9.037,48.2578],
+[8.9573,47.9938],
+[9.1228,47.9938],
+[9.1213,48.1257],
+[9.2882,47.9938],
+[9.4525,48.1257],
+[9.1177,48.4559],
+[8.5359,48.522]
+]
+]
+]}
+}

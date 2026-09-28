@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-lippe
+names:
+  - text: Principality of Lippe
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Lippe"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-vanuatu
+names:
+  - text: Vanuatu
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Vanuatu"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

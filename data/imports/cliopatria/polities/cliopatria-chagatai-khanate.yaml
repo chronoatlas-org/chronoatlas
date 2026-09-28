@@ -1,0 +1,8 @@
+id: cliopatria-chagatai-khanate
+names:
+  - text: Chagatai Khanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Chagatai Khanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

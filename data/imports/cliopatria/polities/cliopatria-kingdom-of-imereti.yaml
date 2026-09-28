@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-imereti
+names:
+  - text: Kingdom of Imereti
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Imereti"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

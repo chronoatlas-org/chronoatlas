@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-axum
+names:
+  - text: Kingdom of Axum
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Axum"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

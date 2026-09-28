@@ -1,0 +1,8 @@
+id: cliopatria-rio-de-la-plata
+names:
+  - text: Río de la Plata
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Río de la Plata"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-portuguese-colonies-1582","edge_precision":"unknown","cliopatria_name":"Portuguese Colonies","cliopatria_from_year":1582,"cliopatria_to_year":1599,"cliopatria_area_km2":1189,"cliopatria_wikidata":"Q200464","cliopatria_wikipedia":"Portuguese Empire","cliopatria_member_of":"(Portuguese Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[72.8402,18.9934],
+[72.9882,18.9934],
+[73.076,19.1219],
+[73.1038,19.3791],
+[72.8748,19.3148],
+[72.8402,18.9934]
+]
+],
+[
+[
+[72.8976,20.2148],
+[72.9579,20.0862],
+[73.1802,20.0862],
+[73.1871,20.1505],
+[72.8976,20.2148]
+]
+],
+[
+[
+[72.9183,20.4077],
+[72.9924,20.4077],
+[72.9994,20.472],
+[72.9252,20.472],
+[72.9183,20.4077]
+]
+]
+]}
+}

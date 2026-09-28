@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-vermandois-1188","edge_precision":"unknown","cliopatria_name":"County of Vermandois","cliopatria_from_year":1188,"cliopatria_to_year":1209,"cliopatria_area_km2":19510,"cliopatria_wikidata":"Q26385","cliopatria_wikipedia":"Vermandois","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4464,50.3791],
+[1.455,50.246],
+[1.8196,49.7807],
+[1.7724,49.1838],
+[2.4394,49.1838],
+[2.6135,49.0513],
+[3.0334,48.9851],
+[3.373,48.8527],
+[3.6194,48.9189],
+[3.6035,49.25],
+[3.8476,49.3826],
+[3.8383,49.5816],
+[4.0831,49.7143],
+[4.1548,49.98],
+[3.9872,49.98],
+[3.9841,50.0465],
+[3.8163,50.0465],
+[3.8132,50.113],
+[2.5544,50.113],
+[1.9508,50.3791],
+[1.623,50.246],
+[1.6145,50.3791],
+[1.4464,50.3791]
+]
+]
+]}
+}

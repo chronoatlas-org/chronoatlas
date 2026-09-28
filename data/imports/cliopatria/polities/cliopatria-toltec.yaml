@@ -1,0 +1,8 @@
+id: cliopatria-toltec
+names:
+  - text: Toltec
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Toltec"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

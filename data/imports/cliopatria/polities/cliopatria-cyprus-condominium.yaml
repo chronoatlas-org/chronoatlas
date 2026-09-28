@@ -1,0 +1,8 @@
+id: cliopatria-cyprus-condominium
+names:
+  - text: Cyprus Condominium
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cyprus Condominium"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

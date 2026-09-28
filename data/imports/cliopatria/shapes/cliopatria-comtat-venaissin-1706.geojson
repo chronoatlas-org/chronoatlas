@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-comtat-venaissin-1706","edge_precision":"unknown","cliopatria_name":"Comtat Venaissin","cliopatria_from_year":1706,"cliopatria_to_year":1787,"cliopatria_area_km2":2132,"cliopatria_wikidata":"Q1122980","cliopatria_wikipedia":"Comtat Venaissin"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.6313,44.3201],
+[4.7121,44.3201],
+[5.0378,44.2548],
+[4.9613,44.1243],
+[4.7997,44.1243],
+[4.7301,43.7982],
+[4.9742,43.733],
+[5.0484,43.9286],
+[5.2885,43.9938],
+[5.1101,44.516],
+[4.9526,44.3854],
+[4.7076,44.4507],
+[4.6313,44.3201]
+]
+]
+]}
+}

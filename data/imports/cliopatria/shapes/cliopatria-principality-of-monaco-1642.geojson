@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-monaco-1642","edge_precision":"unknown","cliopatria_name":"Principality of Monaco","cliopatria_from_year":1642,"cliopatria_to_year":1644,"cliopatria_area_km2":141,"cliopatria_wikidata":"Q235","cliopatria_wikipedia":"Monaco"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.2296,43.7982],
+[7.2308,43.733],
+[7.3114,43.733],
+[7.3102,43.7982],
+[7.2296,43.7982]
+]
+],
+[
+[
+[7.309,43.8634],
+[7.3102,43.7982],
+[7.4715,43.7982],
+[7.4703,43.8634],
+[7.309,43.8634]
+]
+]
+]}
+}

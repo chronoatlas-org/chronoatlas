@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-khanates-of-the-caucasus-1796","edge_precision":"unknown","cliopatria_name":"Khanates of the Caucasus","cliopatria_from_year":1796,"cliopatria_to_year":1796,"cliopatria_area_km2":48,"cliopatria_wikidata":"Q406684","cliopatria_wikipedia":"Khanates of the Caucasus","cliopatria_seshat_id":"az_caucasus_khanates"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.2124,40.6792],
+[44.2917,40.6792],
+[44.3031,40.744],
+[44.2239,40.744],
+[44.2124,40.6792]
+]
+]
+]}
+}

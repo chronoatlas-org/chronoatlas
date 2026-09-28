@@ -1,0 +1,8 @@
+id: cliopatria-fihrids
+names:
+  - text: Fihrids
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Fihrids"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-first-bulgarian-empire
+names:
+  - text: First Bulgarian Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "First Bulgarian Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

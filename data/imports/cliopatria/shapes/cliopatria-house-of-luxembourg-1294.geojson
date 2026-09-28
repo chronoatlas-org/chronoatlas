@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-luxembourg-1294","edge_precision":"unknown","cliopatria_name":"House of Luxembourg","cliopatria_from_year":1294,"cliopatria_to_year":1362,"cliopatria_area_km2":5715,"cliopatria_wikidata":"Q122293","cliopatria_wikipedia":"House of Luxembourg","cliopatria_seshat_id":"de_empire_3","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[5.2571,49.6479],
+[5.3408,49.6479],
+[5.5128,49.5152],
+[5.9284,49.5816],
+[6.1833,49.4489],
+[6.3484,49.5152],
+[6.3386,49.8471],
+[6.169,49.9136],
+[6.0726,50.3125],
+[5.5637,50.4457],
+[5.5684,50.3125],
+[5.4027,50.246],
+[5.2571,49.6479]
+]
+]
+]}
+}

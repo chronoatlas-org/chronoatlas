@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-pontianak-kadriyah-sultanate-1772","edge_precision":"unknown","cliopatria_name":"Pontianak Kadriyah Sultanate","cliopatria_from_year":1772,"cliopatria_to_year":1824,"cliopatria_area_km2":4061,"cliopatria_wikidata":"Q3048747","cliopatria_wikipedia":"Pontianak Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[108.9291,-0.5501],
+[109.2214,-0.6144],
+[109.2239,-0.7429],
+[109.5137,-0.6786],
+[109.5784,-0.2286],
+[108.9928,0.0285],
+[108.9931,-0.0358],
+[108.9291,-0.5501]
+]
+]
+]}
+}

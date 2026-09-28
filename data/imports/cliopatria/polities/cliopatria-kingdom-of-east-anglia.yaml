@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-east-anglia
+names:
+  - text: Kingdom of East Anglia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of East Anglia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

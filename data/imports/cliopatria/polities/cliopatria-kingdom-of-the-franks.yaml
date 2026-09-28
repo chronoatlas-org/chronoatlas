@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-the-franks
+names:
+  - text: Kingdom of the Franks
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of the Franks"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

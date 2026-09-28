@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-the-gambia-2024","edge_precision":"unknown","cliopatria_name":"Republic of The Gambia","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":11217,"cliopatria_wikidata":"Q1005","cliopatria_wikipedia":"The Gambia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-16.8308,13.4003],
+[-16.8229,13.0789],
+[-15.8711,13.1432],
+[-15.7259,13.2075],
+[-15.7289,13.336],
+[-15.3621,13.336],
+[-15.1466,13.5289],
+[-14.9265,13.5289],
+[-14.4805,13.2718],
+[-14.4071,13.2718],
+[-14.039,13.2075],
+[-13.7512,13.4646],
+[-14.2647,13.4646],
+[-14.7828,13.6575],
+[-14.8592,13.7861],
+[-15.2262,13.7861],
+[-15.515,13.5932],
+[-15.8803,13.5289],
+[-16.5423,13.5932],
+[-16.5406,13.5289],
+[-16.8308,13.4003]
+]
+]
+]}
+}

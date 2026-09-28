@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-emirate-of-diriyah-1763","edge_precision":"unknown","cliopatria_name":"Emirate of Diriyah","cliopatria_from_year":1763,"cliopatria_to_year":1768,"cliopatria_area_km2":27268,"cliopatria_wikidata":"Q146871","cliopatria_wikipedia":"Emirate of Diriyah"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.9686,26.0651],
+[45.2581,25.9365],
+[45.3874,25.6793],
+[45.174,24.8435],
+[45.3189,24.7792],
+[45.3659,24.3935],
+[45.5199,24.4578],
+[46.0945,24.1363],
+[46.407,24.3292],
+[46.5517,24.2649],
+[46.7199,24.5221],
+[46.4549,24.9721],
+[46.4598,25.0364],
+[46.4361,25.6793],
+[46.3612,25.6793],
+[46.4681,26.0651],
+[46.2596,26.258],
+[45.1397,26.3222],
+[44.9791,26.1937],
+[44.9686,26.0651]
+]
+]
+]}
+}

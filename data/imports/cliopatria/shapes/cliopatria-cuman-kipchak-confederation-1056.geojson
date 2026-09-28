@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cuman-kipchak-confederation-1056","edge_precision":"unknown","cliopatria_name":"Cuman-Kipchak Confederation","cliopatria_from_year":1056,"cliopatria_to_year":1065,"cliopatria_area_km2":315,"cliopatria_wikidata":"Q1122052","cliopatria_wikipedia":"Cumania"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[26.1407,48.5881],
+[26.3899,48.5881],
+[26.3967,48.6542],
+[26.3136,48.6542],
+[26.3273,48.7865],
+[26.161,48.7865],
+[26.1407,48.5881]
+]
+]
+]}
+}

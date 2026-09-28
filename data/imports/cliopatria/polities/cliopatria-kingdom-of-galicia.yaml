@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-galicia
+names:
+  - text: Kingdom of Galicia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Galicia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.
