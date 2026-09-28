@@ -205,7 +205,10 @@ LTS, and the GitHub CLI are installed.
 - **`end` is exclusive:** it's the first day a statement no longer applied, or `ongoing`, or
   `unknown`. Convert sources that give the *last* day. CShapes' `gwedate` is inclusive, so add
   one day.
-- **OpenHistoricalMap import:** admin_level=2 boundaries become `administers` assertions. Every
+- **OpenHistoricalMap import:** admin_level=2 boundaries become `administers` assertions. How
+  contributors trace a border in OHM so this import reads it is in `docs/tracing-guide.md`; keep
+  it in step with `scripts/import-ohm.ts`. The query filters on plain `start_date`, so a relation
+  with only `start_date:edtf` is never downloaded. Every
   interpretation decision is in `data/imports/openhistoricalmap/manifest.json`. Changing one is
   the maintainer's call. Re-importing replaces the OHM-sourced names in `data/polities/` and keeps
   all other names and fields. Polity IDs are fixed in `polity-ids.json`.

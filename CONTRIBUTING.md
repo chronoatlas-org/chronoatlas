@@ -38,7 +38,7 @@ The forms ask for the place, the date or date range (as an [EDTF date](docs/data
 what's wrong, and **a source** that supports the correction (see below). A link to the map view
 helps too: copy it from the address bar or with the site's "Copy link" button.
 
-Later, every territory on the map will have a "Report a problem with this border" button that
+Every territory on the map has a "Report a problem with this border" button in its panel that
 fills most of this in for you.
 
 Conduct problems are reported privately, never in a public issue: see the
@@ -131,7 +131,9 @@ whole OHM community benefits.
 - **We never hand-edit imported geometry** in this repository, because the next import would
   undo the fix.
 
-A step-by-step guide will be added in Phase 4. If you're unsure, open an issue and ask.
+Step by step: [docs/tracing-guide.md](docs/tracing-guide.md) explains how to trace a border in OHM
+from a dated public-domain map, how to tag it so our import reads it, and how maintainers
+re-import it. If you're unsure, open an issue and ask.
 
 ## Figures (statistics)
 

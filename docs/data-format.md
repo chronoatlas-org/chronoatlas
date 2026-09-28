@@ -126,7 +126,8 @@ longitude/latitude. Required properties: `id` and `edge_precision` (`treaty-line
 clockwise.
 
 **Most borders are drawn in OpenHistoricalMap and imported**, not added here. See
-[architecture](architecture.md#where-borders-are-drawn).
+[architecture](architecture.md#where-borders-are-drawn), and the
+[tracing guide](tracing-guide.md) for how to trace one so that our import reads it.
 
 ## Events: `data/events/<id>.yaml`
 

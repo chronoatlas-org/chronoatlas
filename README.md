@@ -99,7 +99,10 @@ You can follow each run in the repository's **Actions** tab.
 Corrections are welcome, especially from people who know a region's history and sources well.
 Because borders are politically sensitive, every change goes through a transparent, sourced review.
 Read [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to report a problem or propose a change, and
-what counts as a source. Everyone taking part follows our [Code of Conduct](CODE_OF_CONDUCT.md).
+what counts as a source. To draw or fix a border, see
+[docs/tracing-guide.md](docs/tracing-guide.md): borders are traced in OpenHistoricalMap from dated
+public-domain maps, then imported. Everyone taking part follows our
+[Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Licenses
 
@@ -118,3 +121,5 @@ what counts as a source. Everyone taking part follows our [Code of Conduct](CODE
   precision, format, license), including statistics datasets.
 - [docs/phase-2-plan.md](docs/phase-2-plan.md): the plan for Phase 2 (approved 2026-09-27),
   with progress and open questions.
+- [docs/tracing-guide.md](docs/tracing-guide.md): how to trace a border in OpenHistoricalMap
+  from a dated public-domain map so that our import picks it up.
