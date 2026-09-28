@@ -36,7 +36,9 @@ jobs:
       - run: npm run validate # checks every data file (schemas, references, dates, geometry)
       - run: npm test # runs the automated tests; a failure stops the deploy
       - run: npm run build # type-checks, then builds the site into dist/
-      - if: github.event_name != 'pull_request'
+      # Only what will be published: main, not pull requests or a build started on another branch
+      # (the re-import workflow starts one on its branch).
+      - if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist

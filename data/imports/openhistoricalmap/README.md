@@ -19,8 +19,11 @@ carry it.
 **Don't edit these files by hand.** The next import would overwrite your change.
 
 1. Fix the boundary or its dates in OpenHistoricalMap itself, citing your source there.
-2. Run `npm run import:ohm` and review the diff: GitHub shows changed `.geojson` files as maps.
-3. Open a pull request.
+2. Re-import: a maintainer presses **Run workflow** on the "Re-import OpenHistoricalMap" workflow
+   (the Actions tab), which opens a pull request. Or run `npm run import:ohm` and open a pull
+   request yourself.
+3. Review it: the data-change summary on the pull request says what changed in words, and GitHub
+   shows changed `.geojson` files as maps.
 
 If the problem is in how we *interpret* OHM (for example, whether something counts as
 administration), open an issue instead. Those decisions are listed in `manifest.json`.
