@@ -28,9 +28,6 @@
     - polity: united-states-military-government-of-the-philippine-islands
       kind: dependency
       why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
-    - polity: us-philippines
-      kind: dependency
-      why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
     - polity: commonwealth-of-the-philippines
       kind: dependency
       why: CShapes codes the Philippines (840) as a colony of the United States until 1946-07-03.
