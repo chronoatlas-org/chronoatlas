@@ -216,12 +216,13 @@ each step. The ones that affect everyday work:
     (`compareOverTime`), rounded to 3 significant figures as the site shows them.
   - `loadDataset(dir)` names files from the folder holding that copy (`data/…`) and sets `root`;
     the build reads an import's manifest from `ds.root`.
-- **Re-import button:** `.github/workflows/reimport-ohm.yml` (workflow_dispatch, main only)
-  re-imports OpenHistoricalMap, commits as `github-actions[bot]` in UTC on
-  `import/openhistoricalmap-<date>-<run>`, opens a pull request, posts the summary, and starts
-  "Build and deploy" on the branch with `gh workflow run` (a workflow's pull request starts no
-  workflows, but a dispatch does). It needs "Allow GitHub Actions to create and approve pull
-  requests". CShapes and Cliopatria stay pinned and are updated by hand.
+- **Re-import button:** `.github/workflows/reimport.yml` ("Re-import a dataset",
+  workflow_dispatch, main only) runs the import chosen in `dataset` (`openhistoricalmap` by
+  default, or the pinned `cshapes-2-0` or `cliopatria`; Phase 5 decision 13), commits as
+  `github-actions[bot]` in UTC on `import/<dataset>-<date>-<run>`, opens a pull request, posts the
+  summary, and starts "Build and deploy" on the branch with `gh workflow run` (a workflow's pull
+  request starts no workflows, but a dispatch does). It needs "Allow GitHub Actions to create and
+  approve pull requests". A new version of a pinned dataset is still reviewed and re-pinned by hand.
 - **Reviewer guide:** `docs/reviewing.md` (reading the summary, checking sources, each kind of
   change, sensitive changes, privacy, merging by fast-forward, and the repository settings).
   Keep it in step with the workflows and forms.
@@ -240,8 +241,13 @@ with an effort setting for each step. The ones that affect everyday work:
 - **Cliopatria is the baseline** outside OpenHistoricalMap's area and years: filled, on its own
   layer and tile set (never mixed with another license in one file), credited whenever shown,
   and described as approximate and yearly. Inside the area it stays the second opinion.
-- **Tiles are split into eras** (about 3 MB of shapes each, following the data), with a change
-  index per era; empty tiles aren't written. Every tile set is split the same way.
+- **Tiles are split into eras** (about 6 MB of shapes, fills and lines, each; decision 10),
+  following the data, with a change index per era; empty tiles aren't written (MapLibre draws
+  nothing for a missing tile, measured in step 2). Every tile set is split the same way.
+- **Coasts:** Cliopatria's fills aren't cut at the coast; the detailed sea and coastline are drawn
+  over them from zoom 4. OpenHistoricalMap keeps its exact cut (`coastCut`).
+- **Cliopatria IDs:** `cliopatria-<name>-<year>`, `…-<year>bce` for BCE rows, and `-2`, `-3`, … for
+  further rows with the same name and first year (decision 12).
 - **CShapes covers the world** (1886–2019), still isolated. **Contested areas** are computed only
   where a crosswalk has been reviewed for those years (Europe 1914–1950 first); the panel says
   "Not yet checked against legal borders here" elsewhere. Crosswalk suggestions are never

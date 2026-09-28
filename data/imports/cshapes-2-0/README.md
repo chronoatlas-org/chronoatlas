@@ -1,8 +1,8 @@
-# CShapes 2.0 import (East Asia, 1900–1950)
+# CShapes 2.0 import (worldwide, 1886–2019)
 
 Legally recognized (de jure) borders of states and their dependencies from
-[CShapes 2.0](https://icr.ethz.ch/data/cshapes/), for the import area 10–55°N, 73–150°E, covering
-1900–1950. **Non-commercial and share-alike: read [LICENSE.md](LICENSE.md) first.** Nothing
+[CShapes 2.0](https://icr.ethz.ch/data/cshapes/), worldwide and for every year it covers, 1886–2019
+(the import area was East Asia, 1900–1950, until Phase 5 widened it). **Non-commercial and share-alike: read [LICENSE.md](LICENSE.md) first.** Nothing
 derived from these files may leave this folder.
 
 | File | Contents |
@@ -49,6 +49,8 @@ These come from its codebook (`raw/CShapes-2.0_Codebook.pdf`, from the dataset p
   Review what changed, update the pinned checksum in `scripts/import-cshapes.ts`, run
   `npm run import:cshapes`, and review the diff.
 - **To re-run it on the last download:** `npm run import:cshapes -- --offline`.
+- **To re-run it on GitHub:** the Actions tab → **Re-import a dataset** → **Run workflow**, with
+  the dataset `cshapes-2-0`. It opens a pull request with the data-change summary.
 - **An error in CShapes itself:** report it to the CShapes authors (see the dataset page). We
   don't correct their data here.
 - **A disagreement with how we interpret CShapes** (the table above, or a crosswalk match): open

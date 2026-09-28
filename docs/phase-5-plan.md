@@ -269,7 +269,8 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     (`…--0041`) break the ID rule; one pair of rows shares a name and a first year, and so an ID.
   - **Blocked from this environment:** CShapes' download server and OpenHistoricalMap's query
     service. Cliopatria downloads fine.
-  - **Changes these call for,** put to the maintainers before step 3:
+  - **Changes these call for,** put to the maintainers before step 3 and approved (decisions
+    10–13):
     1. **Era budget:** 6 MB rather than 3 MB. Both keep every view under 1 MB; 6 MB halves the
        number of files the site publishes (65,000 rather than 133,000 for the baseline alone),
        which keeps deployments quick.
@@ -342,3 +343,16 @@ The maintainers approved the plan with the recommended answer to each question.
 8. **More OpenHistoricalMap regions:** its coverage is measured first, then the maintainers choose.
 9. **Translations** are published only after a native speaker's review, starting with whichever of
    Chinese, Japanese, or Korean has a volunteer first.
+
+Decided later on 2026-09-28, after step 2's measurements (the maintainers approved its four
+proposed changes):
+
+10. **Era budget: about 6 MB** of shapes (fills and lines) per era, rather than 3 MB: 18 eras for
+    Cliopatria, every view under 1 MB, and half as many files to publish.
+11. **Coasts:** Cliopatria's fills aren't cut at the coast (about 77 minutes per build); from zoom
+    4 the detailed sea and coastline are drawn over them. OpenHistoricalMap keeps its exact cut.
+12. **IDs for BCE rows:** `cliopatria-<name>-<year>bce` (for example `…-41bce`), and `-2`, `-3`, …
+    for further rows with the same name and first year. Existing IDs don't change.
+13. **The re-import button re-runs any pinned import** (OpenHistoricalMap, CShapes, or Cliopatria).
+    The pins still hold: an import stops if a file's checksum changes, and a new version is still
+    reviewed by hand.

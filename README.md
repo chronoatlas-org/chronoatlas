@@ -107,8 +107,8 @@ The data format is documented in [docs/data-format.md](docs/data-format.md).
 it to GitHub Pages. The same workflow builds every pull request as a check, without publishing it.
 You can follow each run in the repository's **Actions** tab. Two more workflows help review:
 [data-summary.yml](.github/workflows/data-summary.yml) posts the data-change summary on pull
-requests, and [reimport-ohm.yml](.github/workflows/reimport-ohm.yml) is the "Re-import
-OpenHistoricalMap" button.
+requests, and [reimport.yml](.github/workflows/reimport.yml) is the "Re-import a dataset" button
+(OpenHistoricalMap by default, or a pinned import).
 
 ## Contributing
 

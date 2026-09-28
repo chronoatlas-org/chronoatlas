@@ -1,13 +1,14 @@
-# Cliopatria import (East Asia, 1900–1950)
+# Cliopatria import (worldwide, 3400 BCE–2024)
 
 The territory each polity held, year by year, as
 [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) (Seshat Global History
-Databank) maps it, for the import area 10–55°N, 73–150°E, covering 1900–1950. Shown on the site as a
-"second opinion" beside OpenHistoricalMap. **CC BY 4.0: see [LICENSE.md](LICENSE.md).**
+Databank) maps it, worldwide and for every year it covers (the import area was East Asia,
+1900–1950, until Phase 5 widened it). Shown on the site as the baseline outside OpenHistoricalMap's
+area, and as a "second opinion" inside it. **CC BY 4.0: see [LICENSE.md](LICENSE.md).**
 
 | File | Contents |
 |---|---|
-| `shapes/cliopatria-<name>-<year>.geojson` | One shape per Cliopatria row (simplified and trimmed; see the manifest). Its properties keep Cliopatria's own values: name, years, area, Wikidata, Wikipedia, and Seshat IDs. |
+| `shapes/cliopatria-<name>-<year>.geojson` (`…-<n>bce` before 1 CE) | One shape per Cliopatria row (simplified and trimmed; see the manifest). Its properties keep Cliopatria's own values: name, years, area, Wikidata, Wikipedia, and Seshat IDs. |
 | `assertions.yaml` | "According to Cliopatria, <polity> controlled <shape> from <year> to <year>", with notes |
 | `polities/cliopatria-<name>.yaml` | Cliopatria's own polities, with their Cliopatria names. They stay in this folder. |
 | `polity-crosswalk.yaml` | **Hand-written, and reviewed like any data change.** Which of our polities is the same as each Cliopatria polity, and the evidence for it. |
@@ -35,6 +36,8 @@ Databank) maps it, for the import area 10–55°N, 73–150°E, covering 1900–
 - **A new Cliopatria release:** pin its commit and checksum in `scripts/import-cliopatria.ts`, run
   `npm run import:cliopatria`, and review the diff.
 - **To re-run it on the last download:** `npm run import:cliopatria -- --offline`.
+- **To re-run it on GitHub:** the Actions tab → **Re-import a dataset** → **Run workflow**, with
+  the dataset `cliopatria`. It opens a pull request with the data-change summary.
 - **An error in Cliopatria itself:** report it to the Seshat team (see its README). They review
   reported errors with historians.
 - **A disagreement with how we interpret Cliopatria** (the notes above, or a crosswalk match): open

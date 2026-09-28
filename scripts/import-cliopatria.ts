@@ -1,5 +1,7 @@
-// Imports Cliopatria (Seshat Global History Databank) for the East Asia showcase, as a "second
-// opinion" layer: the territory each polity held, year by year, as Cliopatria maps it.
+// Imports Cliopatria (Seshat Global History Databank): the territory each polity held, year by
+// year, as Cliopatria maps it, worldwide and for every year it covers (3400 BCE–2024). The site
+// shows it as the baseline outside OpenHistoricalMap's area, and as a "second opinion" inside it
+// (Phase 5 decisions 2–3).
 //
 // Run with:  npm run import:cliopatria              (downloads the pinned file, checks its checksum)
 //            npm run import:cliopatria -- --offline  (re-processes the last download in raw/)
@@ -10,7 +12,7 @@
 // What it does, in order:
 //   1. Downloads cliopatria.geojson.zip from the GitHub repository at a pinned commit, checks its
 //      checksum, and unpacks the GeoJSON inside.
-//   2. Keeps POLITY rows that overlap 1900–1950 and have land in the import area. It skips grouping
+//   2. Keeps POLITY rows that overlap the configured years and area (all of them). It skips grouping
 //      rows (names in parentheses that list their Components, such as "(British Empire)"), whose
 //      land is already covered by the rows they group.
 //   3. Simplifies and trims their borders the same way as the other imports, and writes:
@@ -28,15 +30,19 @@ import { stringify as stringifyYaml } from 'yaml';
 import { DATA_DIR } from './lib/data.ts';
 import { cleanMultiPolygon, formatFeature, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon, Position } from './lib/geometry.ts';
+import { numberDuplicates, rowId } from './lib/cliopatria.ts';
 import { readZipEntry } from './lib/zip.ts';
 import type { Assertion, Polity } from './lib/types.ts';
 
 const CONFIG = {
-  /** Import area: south, west, north, east (degrees). The same as the other imports. */
-  bbox: { south: 10, west: 73, north: 55, east: 150 },
-  /** Keep rows that overlap these years. */
-  fromYear: 1900,
-  toYear: 1950,
+  /**
+   * Import area: south, west, north, east (degrees). The whole world since Phase 5 (decision 3),
+   * where Cliopatria is the baseline outside OpenHistoricalMap's area.
+   */
+  bbox: { south: -90, west: -180, north: 90, east: 180 },
+  /** Keep rows that overlap these (astronomical) years: every row, since the data runs from 3400 BCE to 2024. */
+  fromYear: -4000,
+  toYear: 2100,
   /** Douglas–Peucker tolerance in degrees (0.005° is about 500 m), as for the other imports. */
   simplifyTolerance: 0.005,
   /** Decimal places kept in coordinates (4 is about 11 m). */
@@ -80,7 +86,7 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-/** A year as EDTF: four digits, or a minus sign for BCE (not needed for 1900–1950). */
+/** A year as EDTF: four digits, with a minus sign before 1 CE (astronomical: -0040 is 41 BCE). */
 const edtfYear = (year: number) => (year < 0 ? `-${String(-year).padStart(4, '0')}` : String(year).padStart(4, '0'));
 
 /** Simplifies each ring on its own, trims to the import area, and rounds. */
@@ -154,8 +160,10 @@ async function main(): Promise<void> {
   mkdirSync(join(OUT, 'shapes'), { recursive: true });
   const assertions: Assertion[] = [];
   const units = new Map<string, string>();
-  for (const row of rows) {
-    const id = `${unitId(row.name)}-${edtfYear(row.from)}`;
+  // IDs are permanent: <unit>-<year> (…-41bce before 1 CE), numbered when a name and first year repeat.
+  const ids = numberDuplicates(rows.map((row) => rowId(unitId(row.name), row.from)));
+  for (const [i, row] of rows.entries()) {
+    const id = ids[i];
     units.set(unitId(row.name), row.name);
     writeFileSync(
       join(OUT, 'shapes', `${id}.geojson`),
@@ -243,11 +251,12 @@ async function main(): Promise<void> {
         'Assertions name Cliopatria\'s own polities (cliopatria-<name>), with records in polities/ that stay in this folder. They are not matched to our polities by Wikidata ID, because some of Cliopatria\'s IDs are wrong for this period: its "Republic of China" rows carry Q148 (the People\'s Republic of China) and its "Republic of Korea" row carries Q423 (North Korea). The hand-written polity-crosswalk.yaml links them to our polities, and says on what evidence.',
       dates:
         'FromYear and ToYear are whole years, inclusive (per Cliopatria\'s README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as "ongoing".',
-      bce: 'Cliopatria\'s README says negative years are BCE, but not whether year 0 exists. That must be checked before any BCE import; it does not affect 1900–1950.',
+      bce: 'Cliopatria\'s README says negative years are BCE, but not whether year 0 exists. Its data has one: six rows end in year 0, and each is followed by a row of the same polity starting in year 1 (checked 2026-09-28). So its years are read as astronomical, as EDTF\'s are: -40 is 41 BCE. IDs use the BCE year a reader sees (…-41bce).',
       geometry: `Each ring is simplified (Douglas–Peucker, ${CONFIG.simplifyTolerance}°), trimmed to the import area, and rounded to ${CONFIG.coordinateDecimals} decimal places. Edge precision is "unknown". Cliopatria's own area (km², equal-area projection) is kept in each shape's properties.`,
       puppet_states:
         'Cliopatria folds some governments into their patrons (for example, there is no separate Manchukuo; its land is inside the Empire of Japan). That is Cliopatria\'s view, shown attributed, not an error to correct.',
-      selection: `POLITY rows that overlap ${CONFIG.fromYear}–${CONFIG.toYear} and have land in the import area after trimming.`,
+      selection: `POLITY rows that overlap the years ${CONFIG.fromYear} to ${CONFIG.toYear} (astronomical; that is every row) and have land in the import area after trimming.`,
+      ids: 'Each row\'s ID is <unit>-<first year>, with four digits from 1 CE and <n>bce before that; when two rows share a name and a first year, the later one (in the file\'s order) gets -2 (Phase 5 decision 12).',
     },
     skipped,
   };

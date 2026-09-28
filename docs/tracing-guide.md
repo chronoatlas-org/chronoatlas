@@ -260,7 +260,8 @@ This is what `scripts/import-ohm.ts` actually does, with the settings recorded i
 After someone traces a border in OHM, a maintainer brings it into this repository.
 
 **The easy way, on GitHub's website:** open the repository's **Actions** tab, choose
-**Re-import OpenHistoricalMap**, press **Run workflow** (on `main`), and optionally say why (a
+**Re-import a dataset**, press **Run workflow** (on `main`, with the dataset
+`openhistoricalmap`, the default), and optionally say why (a
 link to the OHM change or the issue). Start it while signed in as the project account, because
 the run page shows who started it. A few minutes later it opens a pull request with the
 re-imported data, with the data-change summary as its first comment, and starts the build check on

@@ -14,8 +14,9 @@
 //   2. Reads each row's borders and dates from the GeoJSON, and its status (independent, colony,
 //      protectorate, mandate, occupied), ruling state, and "borders defined" flag from the R
 //      package's data file. Only the package has those columns; every row matches one-to-one.
-//   3. Keeps rows that overlap 1900–1950 and have land in the import area, simplifies and trims
-//      their borders the same way as the OpenHistoricalMap import, and writes:
+//   3. Keeps rows that overlap the configured years and have land in the import area (the whole
+//      world, 1886–2019), simplifies and trims their borders the same way as the
+//      OpenHistoricalMap import, and writes:
 //        data/imports/cshapes-2-0/shapes/*.geojson   one shape per CShapes row
 //        data/imports/cshapes-2-0/assertions.yaml    who was sovereign (or occupying), when
 //        data/imports/cshapes-2-0/polities/*.yaml    CShapes' own units (cshapes-<gwcode>)
@@ -39,11 +40,11 @@ import type { Assertion, Polity } from './lib/types.ts';
 const { XzReadableStream } = createRequire(import.meta.url)('xz-decompress') as typeof import('xz-decompress');
 
 const CONFIG = {
-  /** Import area: south, west, north, east (degrees). The same as the OpenHistoricalMap import. */
-  bbox: { south: 10, west: 73, north: 55, east: 150 },
-  /** Keep rows that overlap these years. */
-  fromYear: 1900,
-  toYear: 1950,
+  /** Import area: south, west, north, east (degrees). The whole world since Phase 5 (decision 4). */
+  bbox: { south: -90, west: -180, north: 90, east: 180 },
+  /** Keep rows that overlap these years: all of CShapes 2.0, which runs from 1886 to 2019. */
+  fromYear: 1886,
+  toYear: 2019,
   /** Douglas–Peucker tolerance in degrees (0.005° is about 500 m), as for OpenHistoricalMap. */
   simplifyTolerance: 0.005,
   /** Decimal places kept in coordinates (4 is about 11 m). */

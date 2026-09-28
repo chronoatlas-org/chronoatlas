@@ -82,6 +82,13 @@ OpenHistoricalMap", often opened by the workflow):
   that it's what the relation's source says.
 - A problem is fixed in OpenHistoricalMap and re-imported, never by editing the files here.
 
+**A pinned dataset re-run** (CShapes or Cliopatria, a pull request titled "Re-import CShapes 2.0"
+or "Re-import Cliopatria"): the downloaded files are the same version, checked by their checksum,
+so every change comes from the import's settings (its area and years, in the manifest) or its
+script. Check that the manifest's settings changed as intended, and look at the counts of rows
+added, changed, and skipped. A new version of either dataset is a license and interpretation
+review, done by hand.
+
 **A crosswalk change** (`polity-crosswalk.yaml` in an import folder): a crosswalk says which of an
 import's units is the same state as one of ours. It decides where the map shows "contested", so:
 

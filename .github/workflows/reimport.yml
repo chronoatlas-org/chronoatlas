@@ -1,6 +1,7 @@
-# A "Run workflow" button (Actions tab → "Re-import OpenHistoricalMap") that re-imports the borders
-# from OpenHistoricalMap and opens a pull request with the changes, to be reviewed like any other.
-# Nothing is merged automatically. See docs/phase-4-plan.md (section 4) and docs/reviewing.md.
+# A "Run workflow" button (Actions tab → "Re-import a dataset") that re-runs one of our imports
+# (OpenHistoricalMap by default; CShapes or Cliopatria by choice) and opens a pull request with the
+# changes, to be reviewed like any other. Nothing is merged automatically. See
+# docs/phase-4-plan.md (section 4), docs/phase-5-plan.md (decision 13), and docs/reviewing.md.
 #
 # - Only people with write access to the repository can start it, and only on main. Start it while
 #   signed in as the project account: the run page shows who started it.
@@ -9,14 +10,24 @@
 #   fails, and the run says so.
 # - A pull request opened by a workflow doesn't start other workflows (GitHub prevents loops), so
 #   this workflow posts the data-change summary itself and starts the build check on the branch.
-# - CShapes and Cliopatria are pinned to exact versions and have no button: a new version is a
-#   license and interpretation review, done by hand.
+# - CShapes and Cliopatria are pinned to exact files: their imports stop if a file's checksum
+#   changes. Re-running them applies changed settings to the same version; a new version is still
+#   a license and interpretation review, done by hand.
 
-name: Re-import OpenHistoricalMap
+name: Re-import a dataset
 
 on:
   workflow_dispatch:
     inputs:
+      dataset:
+        description: 'Which import to run'
+        required: true
+        type: choice
+        default: openhistoricalmap
+        options:
+          - openhistoricalmap
+          - cshapes-2-0
+          - cliopatria
       reason:
         description: 'Why (optional): for example, a link to the OpenHistoricalMap change or the issue it fixes'
         required: false
@@ -27,7 +38,7 @@ permissions: {}
 
 # One re-import at a time; a second waits instead of cancelling the first.
 concurrency:
-  group: reimport-ohm
+  group: reimport
   cancel-in-progress: false
 
 jobs:
@@ -42,6 +53,7 @@ jobs:
       actions: write # to start the build check on the new branch
     env:
       TZ: UTC # commit times in UTC, as for every commit in this project
+      DATASET: ${{ inputs.dataset }} # one of the choices above; GitHub rejects anything else
     steps:
       # Keeps the token (the default), to push the branch. Only main's code runs in this job.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -50,14 +62,20 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Re-import from OpenHistoricalMap
-        run: npm run import:ohm
+      - name: Re-import
+        run: |
+          case "$DATASET" in
+            openhistoricalmap) npm run import:ohm ;;
+            cshapes-2-0) npm run import:cshapes ;;
+            cliopatria) npm run import:cliopatria ;;
+            *) echo "::error::Unknown dataset: $DATASET"; exit 1 ;;
+          esac
       - name: See whether anything changed
         id: changes
         run: |
           if [ -z "$(git status --porcelain -- data)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Nothing changed in OpenHistoricalMap's data for our area and years since the last import, so there's no pull request." >> "$GITHUB_STEP_SUMMARY"
+            echo "Nothing changed in ${DATASET}'s data since the last import, so there's no pull request." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
@@ -84,25 +102,30 @@ jobs:
           BASE: ${{ github.event.repository.default_branch }}
         run: |
           day="$(date -u +%Y-%m-%d)"
-          branch="import/openhistoricalmap-${day}-${GITHUB_RUN_ID}"
+          case "$DATASET" in
+            openhistoricalmap) title="OpenHistoricalMap"; fix="Fix them in OpenHistoricalMap and re-import, rather than editing these files."; others="other people edit OpenHistoricalMap too, so look at every changed border, not only the one you expected" ;;
+            cshapes-2-0) title="CShapes 2.0"; fix="Fix the import's settings or script, rather than editing these files."; others="the files are pinned, so changes come from the import's settings or script" ;;
+            cliopatria) title="Cliopatria"; fix="Fix the import's settings or script, rather than editing these files."; others="the files are pinned, so changes come from the import's settings or script" ;;
+          esac
+          branch="import/${DATASET}-${day}-${GITHUB_RUN_ID}"
           git switch -c "$branch"
           git add -- data
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit -q -m "Re-import OpenHistoricalMap (${day})" -m "Made by the Re-import OpenHistoricalMap workflow: ${RUN_URL}"
+            commit -q -m "Re-import ${title} (${day})" -m "Made by the Re-import a dataset workflow: ${RUN_URL}"
           git push -q origin "$branch"
           {
-            echo "Re-imported from OpenHistoricalMap by the **Re-import OpenHistoricalMap** workflow ([run](${RUN_URL}))."
+            echo "Re-imported ${title} with the **Re-import a dataset** workflow ([run](${RUN_URL}))."
             echo
             if [ -n "$REASON" ]; then printf '**Why:** %s\n\n' "$REASON"; fi
             if [ "$VALIDATE" = "success" ]; then
               echo '**Checks:** `npm run validate` passed. The build check runs on this branch too.'
             else
-              echo '**Checks:** ❌ `npm run validate` found problems; see the run above. Fix them in OpenHistoricalMap and re-import, rather than editing these files.'
+              echo "**Checks:** ❌ \`npm run validate\` found problems; see the run above. ${fix}"
             fi
             echo
-            echo 'The data-change summary is in the first comment. Review this like any data change ([how review works](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#how-review-works)): other people edit OpenHistoricalMap too, so look at every changed border, not only the one you expected. Nothing is merged automatically.'
+            echo "The data-change summary is in the first comment. Review this like any data change ([how review works](https://github.com/chronoatlas-org/chronoatlas/blob/main/CONTRIBUTING.md#how-review-works)): ${others}. Nothing is merged automatically."
           } > summary/body.md
-          if ! url="$(gh pr create --base "$BASE" --head "$branch" --title "Re-import OpenHistoricalMap (${day})" --body-file summary/body.md)"; then
+          if ! url="$(gh pr create --base "$BASE" --head "$branch" --title "Re-import ${title} (${day})" --body-file summary/body.md)"; then
             # Don't leave the branch behind when the pull request can't be opened.
             git push -q origin --delete "$branch"
             echo "::error::Couldn't open the pull request. Check that \"Allow GitHub Actions to create and approve pull requests\" is ticked and saved in both the organization's and the repository's Settings → Actions → General (docs/reviewing.md, section 7), then run this again."
