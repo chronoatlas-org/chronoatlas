@@ -1,0 +1,49 @@
+# Posts a plain-language summary of each pull request's changes to data/ as a comment, and keeps
+# it up to date on every push (docs/phase-4-plan.md, section 3; docs/reviewing.md explains it).
+#
+# Why it's built this way (safety): a pull request can come from anyone, and can change any code
+# in it. So this workflow never runs a pull request's code. It starts after the "Build and deploy"
+# check finishes (which, for a first-time contributor, waits for a maintainer's "Approve and
+# run"). It runs main's own code, which takes only the pull request's data files (read, never run)
+# and writes the summary itself. Only this job may comment, and it has no other write access.
+
+name: Data-change summary
+
+on:
+  workflow_run:
+    workflows: ['Build and deploy']
+    types: [completed]
+
+# Nothing by default; the job below asks for what it needs.
+permissions: {}
+
+# One summary at a time per pull-request branch; a newer push replaces an older run.
+concurrency:
+  group: data-summary-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  summarize:
+    # Only for pull requests, and not for a check that was cancelled by a newer push.
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read # to read the repository and the pull request's test merge
+      pull-requests: write # to post and update the summary comment
+    steps:
+      # main's code: a workflow_run workflow always runs from the default branch.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false # git only needs to read, and the repository is public
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci # main's package-lock.json, never the pull request's
+      # Event details are read by the script from the event file, never pasted into this command,
+      # so a branch name can't inject a command.
+      - run: node --max-old-space-size=4096 scripts/post-summary.ts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

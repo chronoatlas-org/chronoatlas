@@ -192,9 +192,18 @@ step 9 (claims) is on the showcase data track. The plan and its decisions are in
 each step. The ones that affect everyday work:
 
 - **Data-change summary:** `scripts/summarize-changes.ts` compares `main`'s data with a pull
-  request's and writes Markdown. The read-only check saves it as an artifact; a separate
-  `workflow_run` workflow posts it as one comment, updated in place, and never runs the pull
-  request's code.
+  request's and writes Markdown. `.github/workflows/data-summary.yml` (`workflow_run`, after
+  "Build and deploy" finishes on a pull request) runs **main's** code (`scripts/post-summary.ts`),
+  which takes only the pull request's `data/` from GitHub's test merge (`refs/pull/N/merge`; first
+  parent = base) as files, summarizes it, and posts one comment, updated in place. It never runs
+  the pull request's code, so the summary can't be forged (a change from the plan's artifact
+  design, step 3). Never interpolate event fields into a `run:` command; the script reads the
+  event file.
+  - The comment is found by author `github-actions[bot]` plus `SUMMARY_MARKER`; decisions are in
+    `scripts/lib/pr-comment.ts` (tested). The full summary goes on the run's summary page.
+  - Symbolic links in the extracted data are deleted before reading (`removeLinks`).
+  - `workflow_run` workflows run only from the default branch's copy, so a change to them takes
+    effect once it's on main.
   - The comparing and wording are in `scripts/lib/summary.ts` (pure, tested). Dates, relations,
     sources, and border-line words reuse the panel's (`describePeriod`, `sourceLink`, `t()`).
   - Everything a pull request wrote goes through `plain()` (escaped, one line, length-capped) or

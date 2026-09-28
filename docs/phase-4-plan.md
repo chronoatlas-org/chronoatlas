@@ -273,6 +273,27 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     links, images, HTML, or mentions (tested).
   - A small change to the data loader: it can read a second copy of `data/` from another folder,
     which is how main's copy is compared.
+- **Step 3 (2026-09-28): built; checked on a test pull request once it's on main** (a
+  `workflow_run` workflow only runs from main's copy).
+  - **A change from section 3, for safety:** instead of the pull request's own check writing the
+    summary and a second workflow posting it, the second workflow writes it too, with **main's**
+    code. It takes only the pull request's data files (read as YAML and JSON, never run) from
+    GitHub's test merge of the pull request, whose first parent is the base branch. So a pull
+    request that changes the summary script can't change what its summary says, and no artifact
+    passes between the two. It still starts only after the build check finishes, so a first-time
+    contributor's pull request waits for a maintainer's "Approve and run" here too.
+  - `.github/workflows/data-summary.yml` has permission to read and to comment on pull requests,
+    nothing else. The script reads the event from GitHub's event file, never from text pasted into
+    a command, so a branch name can't inject one. Symbolic links in the pull request's data are
+    deleted before anything is read.
+  - One comment per pull request, found by its author (`github-actions[bot]`) and a hidden marker,
+    and updated on each push, including to "changes nothing in `data/`" if a change is undone. A
+    pull request that never changes `data/` gets no comment.
+  - The full summary is on the workflow run's summary page, which the comment links to when a
+    section is cut short.
+  - Checked here: the test merge of a real pull request fetched and summarized, and the GitHub
+    calls against a stand-in server (it found the right pull request, ignored a look-alike comment
+    by someone else, and updated its own).
 
 ## 9. Questions for the maintainers
 

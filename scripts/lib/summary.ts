@@ -296,7 +296,8 @@ function safely(describe: () => string, fallback: unknown): string {
 }
 
 export interface SummaryContext {
-  /** main's commit, for the heading. */
+  /** The branch compared with (default main), and its commit, for the heading. */
+  baseName?: string;
   baseLabel?: string;
   /** The validator's result on the pull request's data. */
   problems?: readonly Problem[];
@@ -411,7 +412,7 @@ export function renderSummary(base: Dataset, head: Dataset, changes: DataChanges
 
   // Intro and the validator's result.
   out.push(
-    `What this pull request changes in ${code('data/')}${context.baseLabel ? `, compared with main at ${code(context.baseLabel)}` : ', compared with main'}. ` +
+    `What this pull request changes in ${code('data/')}, compared with ${plain(context.baseName ?? 'main', 60)}${context.baseLabel ? ` at ${code(context.baseLabel)}` : ''}. ` +
       'Written automatically from the files, which are what counts; end dates are the first day a record no longer applied, as in the data.',
     '',
   );

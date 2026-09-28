@@ -14,7 +14,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, lstatSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join, relative } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -69,13 +69,36 @@ function hashFiles(dataDir: string): FileHashes {
   return hashes;
 }
 
-/** main's data/, taken from Git into a temporary folder. */
-function extractBase(ref: string): string {
+/** A commit's data/, taken from Git into a temporary folder (only read, never run). */
+export function extractData(ref: string): string {
   const dir = mkdtempSync(join(tmpdir(), 'chronoatlas-base-'));
   const archive = join(dir, 'base.tar');
   execFileSync('git', ['archive', '--format=tar', '-o', archive, ref, 'data'], { cwd: ROOT });
   execFileSync('tar', ['-xf', archive, '-C', dir]);
+  removeLinks(join(dir, 'data'));
   return join(dir, 'data');
+}
+
+/**
+ * Deletes symbolic links from a folder taken from Git. Data files are plain files, and a link in a
+ * pull request could point at a file on the machine running the summary, which would then be read
+ * (and could end up quoted in an error message in the comment).
+ */
+export function removeLinks(dir: string): string[] {
+  const removed: string[] = [];
+  if (!existsSync(dir)) return removed;
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    const info = lstatSync(full);
+    if (info.isSymbolicLink()) {
+      unlinkSync(full);
+      removed.push(full);
+      console.error(`Ignored a symbolic link in the data: ${full}`);
+    } else if (info.isDirectory()) {
+      removed.push(...removeLinks(full));
+    }
+  }
+  return removed;
 }
 
 /** The area a changed shape gained and lost, and the box around both. */
@@ -117,35 +140,36 @@ function sideEffects(base: Dataset, head: Dataset, touched: string[]): SideEffec
   return side;
 }
 
-function main(): void {
-  const { values } = parseArgs({
-    options: {
-      base: { type: 'string' },
-      'base-ref': { type: 'string', default: 'origin/main' },
-      head: { type: 'string', default: DATA_DIR },
-      out: { type: 'string' },
-      full: { type: 'string' },
-      'full-url': { type: 'string' },
-      'no-side': { type: 'boolean', default: false },
-    },
-  });
-  const baseDir = values.base ?? extractBase(values['base-ref']!);
-  const headDir = values.head!;
-  let baseLabel: string | undefined;
-  try {
-    baseLabel = execFileSync('git', ['rev-parse', '--short', values['base-ref']!], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-  } catch {
-    baseLabel = undefined;
-  }
+export interface SummarizeOptions {
+  /** main's copy of data/ (or the base branch's). */
+  baseDir: string;
+  /** The copy to summarize. */
+  headDir: string;
+  /** The branch compared with (default main), and its commit. */
+  baseName?: string;
+  baseLabel?: string;
+  /** Where the full summary can be read, for links in the comment. */
+  fullSummaryUrl?: string;
+  /** Don't recompute contested areas, "sources differ", and land areas. */
+  noSide?: boolean;
+}
 
+/**
+ * The summary of what `headDir` changes compared with `baseDir`: `comment` for a pull request
+ * (sections cut short, within GitHub's limit) and `full`. Only reads the two folders' files: it
+ * never runs anything from them, which is what lets the commenting workflow use it on a pull
+ * request's data.
+ */
+export function summarize(options: SummarizeOptions): { comment: string; full: string; changed: boolean; count: number } {
+  const { baseDir, headDir } = options;
   const base = loadDataset(baseDir);
   const head = loadDataset(headDir);
   const changes = compareDatasets(base, head, { base: hashFiles(baseDir), head: hashFiles(headDir) });
 
-  // Only the pull request's data is checked; main's already passed.
-  const problems = [...head.problems, ...validateDataset(head)];
+  // Only the new copy is checked; the base already passed.
+  const problems = validateDataset(head);
   const touched = mapFilesTouched(changes);
-  const side = values['no-side'] || touched.length === 0 ? undefined : sideEffects(base, head, touched);
+  const side = options.noSide || touched.length === 0 ? undefined : sideEffects(base, head, touched);
   const land = changes.shapes.length > 0 ? loadLand(head) : undefined;
   const manifests = new Map(
     changes.otherFiles
@@ -164,10 +188,11 @@ function main(): void {
       }),
   );
   const context = {
-    baseLabel,
+    baseName: options.baseName,
+    baseLabel: options.baseLabel,
     problems,
     side,
-    skippedSide: !values['no-side'] && touched.length === 0,
+    skippedSide: !options.noSide && touched.length === 0,
     areaKm2,
     ...(land ? { landKm2: (shape: MultiPolygon) => areaKm2(landPart(shape, land)) } : {}),
     shapeDiff,
@@ -177,10 +202,38 @@ function main(): void {
 
   const full = fitComment(renderSummary(base, head, changes, context), FULL_LIMIT);
   const comment = fitComment(
-    renderSummary(base, head, changes, context, { maxLines: COMMENT_MAX_LINES, fullSummaryUrl: values['full-url'] }),
+    renderSummary(base, head, changes, context, { maxLines: COMMENT_MAX_LINES, fullSummaryUrl: options.fullSummaryUrl }),
     65_536,
-    values['full-url'],
+    options.fullSummaryUrl,
   );
+  return { comment, full, changed: hasChanges(changes), count: Object.values(changes).reduce((n, list) => n + list.length, 0) };
+}
+
+function main(): void {
+  const { values } = parseArgs({
+    options: {
+      base: { type: 'string' },
+      'base-ref': { type: 'string', default: 'origin/main' },
+      head: { type: 'string', default: DATA_DIR },
+      out: { type: 'string' },
+      full: { type: 'string' },
+      'full-url': { type: 'string' },
+      'no-side': { type: 'boolean', default: false },
+    },
+  });
+  let baseLabel: string | undefined;
+  try {
+    baseLabel = execFileSync('git', ['rev-parse', '--short', values['base-ref']!], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    baseLabel = undefined;
+  }
+  const { comment, full, changed, count } = summarize({
+    baseDir: values.base ?? extractData(values['base-ref']!),
+    headDir: values.head!,
+    baseLabel,
+    fullSummaryUrl: values['full-url'],
+    noSide: values['no-side'],
+  });
   const write = (file: string, text: string) => {
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, `${text}\n`);
@@ -188,8 +241,8 @@ function main(): void {
   if (values.out) write(values.out, comment);
   if (values.full) write(values.full, full);
   if (!values.out && !values.full) console.log(full);
-  const total = Object.values(changes).reduce((n, list) => n + list.length, 0);
-  console.error(hasChanges(changes) ? `Data-change summary: ${total} change(s) in data/.` : 'Data-change summary: nothing in data/ changed.');
+  console.error(changed ? `Data-change summary: ${count} change(s) in data/.` : 'Data-change summary: nothing in data/ changed.');
 }
 
-main();
+// Run only when executed directly (not when imported by the commenting script or tests).
+if (import.meta.filename === process.argv[1]) main();

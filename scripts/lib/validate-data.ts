@@ -55,7 +55,9 @@ export interface ValidateOptions {
 }
 
 export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Problem[] {
-  const fileExists = options.fileExists ?? ((p: string) => existsSync(join(ROOT, p)));
+  // Paths are relative to the folder holding this copy of data/ (the repository, unless it's
+  // another copy, as in the data-change summary).
+  const fileExists = options.fileExists ?? ((p: string) => existsSync(join(ds.root ?? ROOT, p)));
   const problems: Problem[] = [...ds.problems];
   const report = (file: string, message: string) => problems.push({ file, message });
   const schemas = loadSchemas();
