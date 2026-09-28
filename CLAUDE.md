@@ -233,8 +233,22 @@ each step. The ones that affect everyday work:
 - **Testing a workflow locally:** a `git fetch --depth=…` into this clone makes it shallow and
   breaks later pushes; undo with `git fetch --unshallow origin`.
 
-**Phase 5 plan drafted (2026-09-28), not yet approved:** [docs/phase-5-plan.md](docs/phase-5-plan.md)
-(the worldwide map). Write no Phase 5 code until the maintainers approve it.
+**Phase 5 plan approved (2026-09-28)**, with all its recommendations; Phase 4 is closed. The
+plan and its decisions are in [docs/phase-5-plan.md](docs/phase-5-plan.md#12-decisions-2026-09-28),
+with an effort setting for each step. The ones that affect everyday work:
+
+- **Cliopatria is the baseline** outside OpenHistoricalMap's area and years: filled, on its own
+  layer and tile set (never mixed with another license in one file), credited whenever shown,
+  and described as approximate and yearly. Inside the area it stays the second opinion.
+- **Tiles are split into eras** (about 3 MB of shapes each, following the data), with a change
+  index per era; empty tiles aren't written. Every tile set is split the same way.
+- **CShapes covers the world** (1886–2019), still isolated. **Contested areas** are computed only
+  where a crosswalk has been reviewed for those years (Europe 1914–1950 first); the panel says
+  "Not yet checked against legal borders here" elsewhere. Crosswalk suggestions are never
+  accepted without a maintainer's review.
+- **Cliopatria's shapes keep `edge_precision: unknown`;** land areas for its polities come from
+  its own `Area`, credited to it.
+- **Translations** are published only after a native speaker's review.
 
 **CShapes decisions (2026-09-27)**, made while importing it:
 

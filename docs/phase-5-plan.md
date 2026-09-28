@@ -1,8 +1,7 @@
 # Phase 5 plan: the worldwide map
 
-> **Status: draft, 2026-09-28, waiting for the maintainers' review.** No Phase 5 code is written
-> until it's approved. Every question has a recommended answer, in
-> [section 11](#11-questions-for-the-maintainers).
+> **Status: approved by the maintainers on 2026-09-28**, with the recommended answer to every
+> question. The decisions are recorded in [section 12](#12-decisions-2026-09-28).
 
 Phases 1–4 built the map, taught it to say how sure it is, and made it safe for others to improve.
 All of that works on one region: East Asia, 1900–1950. Phase 5 makes the map **worldwide, from
@@ -34,6 +33,7 @@ Sections:
 9. [Sizes, limits, and speed](#9-sizes-limits-and-speed)
 10. [Order of work](#10-order-of-work)
 11. [Questions for the maintainers](#11-questions-for-the-maintainers)
+12. [Decisions (2026-09-28)](#12-decisions-2026-09-28)
 
 ---
 
@@ -245,6 +245,11 @@ recommended effort setting.
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing.
 
+### Progress
+
+- **Step 1 (2026-09-28): done.** The plan was approved with every recommendation (section 12),
+  and Phase 4 was closed.
+
 **Left out of Phase 5:**
 
 - **A search box** ("find a territory"): useful on a world map, but it needs a name index for
@@ -279,3 +284,25 @@ Each has a recommended answer. "Approve with the recommendations" answers them a
    yes.*
 9. **Translations** only with a native speaker's review, starting with whichever of Chinese,
    Japanese, and Korean has a volunteer first? *Recommended: yes.*
+
+## 12. Decisions (2026-09-28)
+
+The maintainers approved the plan with the recommended answer to each question.
+
+1. **Phase 4 is closed.** The repository settings and pull request 24 (the first re-import) are
+   left to the maintainers.
+2. **Cliopatria is the filled baseline** outside OpenHistoricalMap's area and years, on its own
+   layer and credited. OpenHistoricalMap stays the main map where it has data, with Cliopatria as
+   its second opinion there.
+3. **All of Cliopatria at once:** 3400 BCE–2024, worldwide.
+4. **CShapes worldwide** (1886–2019) is the de jure view, still isolated under CC BY-NC-SA 4.0.
+5. **Cliopatria's line precision** stays `unknown` on each shape; the legend and panel describe
+   its borders as approximate and yearly.
+6. **Contested areas region by region,** from crosswalks the maintainers review, helped by a
+   suggestion tool; "Not yet checked against legal borders here" elsewhere. **Europe 1914–1950
+   first.**
+7. **Land areas for Cliopatria's polities** come from Cliopatria's own `Area`, credited to it;
+   OpenHistoricalMap's polities keep our own measurement.
+8. **More OpenHistoricalMap regions:** its coverage is measured first, then the maintainers choose.
+9. **Translations** are published only after a native speaker's review, starting with whichever of
+   Chinese, Japanese, or Korean has a volunteer first.

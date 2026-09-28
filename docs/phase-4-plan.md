@@ -1,7 +1,10 @@
 # Phase 4 plan: the contribution pipeline
 
-> **Status: approved by the maintainers on 2026-09-28**, with the recommended answer to every
-> question. The decisions are recorded in [section 10](#10-decisions-2026-09-28).
+> **Status: closed on 2026-09-28.** Approved by the maintainers on 2026-09-28, with the
+> recommended answer to every question; the decisions are recorded in
+> [section 10](#10-decisions-2026-09-28). Steps 1–8 are done. The repository settings and the first
+> re-import's review (pull request 24) are left to the maintainers
+> ([Phase 5 plan](phase-5-plan.md), decision 1).
 
 Phases 1–3 built the map. Phase 4 makes it **easy and safe for other people to improve it**, and
 for the maintainers, who aren't full-time programmers, to review what they send:
