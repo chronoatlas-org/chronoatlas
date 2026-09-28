@@ -6,5 +6,6 @@ url: https://www.naturalearthdata.com/
 license: Public domain
 attribution: Made with Natural Earth.
 notes: >-
-  Physical base map only (land, lakes, rivers at 1:50m). See
+  Physical base map (land, lakes, rivers at 1:50m). The build also uses the 1:10m land to
+  measure each territory's land area (Phase 2 step 11); the site never loads that file. See
   data/imports/natural-earth/manifest.json for the release and processing.

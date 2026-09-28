@@ -330,7 +330,8 @@ editor shares each line between the neighbors on both sides, so one correction f
 OHM's community benefits too. This repo holds imported snapshots, plus the interpretation layered
 on top: claims, recognition, contested status, events, and figures. Imported geometry is never
 hand-edited here. A problem in an imported snapshot is fixed upstream and re-imported. `data/shapes/`
-is only for geometry OHM can't hold, and each case is documented.
+is only for geometry OHM can't hold, and each case is documented. How to trace a border in OHM so
+that our import reads it is in the [tracing guide](tracing-guide.md).
 
 ## Translation (i18n)
 
@@ -395,14 +396,18 @@ and 100 GB/month bandwidth as a soft limit):
   import, in its own folder, with the crosswalk), and step 9 ✅ (the de jure view, and contested
   areas computed at build time), and step 10 ✅ (Cliopatria as a second opinion, with a reviewed
   crosswalk), and step 11 ✅ (the first Figure: each territory's land area, computed from its
-  borders and Natural Earth's coastline, with its method and sources). The goals:
+  borders and Natural Earth's coastline, with its method and sources). Step 12 is proposed
+  (seven sourced events for Manchuria 1931–33, in pull requests #1–#7, awaiting review; no map
+  locations until a gazetteer is chosen). Step 13's guide is done
+  ([tracing-guide.md](tracing-guide.md)); the first traced border is still to come, because
+  people do the tracing in OpenHistoricalMap. The goals:
   - Territory panel with a "Figures" section (each number with its source and date) and a
     "Report a problem with this border" button.
   - Evaluate statistics datasets (coverage, basis, license) before importing any.
   - Events on the timeline, a pulse on the map, and transitions linked to events.
   - A "world around this date" panel.
   - CShapes (de jure) and Cliopatria (second opinion) layers.
-  - First borders traced from public-domain maps.
+  - First borders traced from public-domain maps (the guide is written; the tracing is next).
 - **Phase 3, contested and uncertain borders:** the full visual language, soft edges, a
   compare-sources view, and "no state" vs "no data". Optionally, map coloring by a figure (for
   example population), keeping "no data" visually distinct. It also includes:
@@ -425,7 +430,7 @@ and 100 GB/month bandwidth as a soft limit):
 - **Phase 4, contribution pipeline:**
   - Refine the issue forms and pull request template from experience.
   - A bot comment summarizing each data change.
-  - A reviewer guide, and an upstream-to-OHM guide.
+  - A reviewer guide. (The guide to tracing in OHM was written early, in Phase 2 step 13.)
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,
   and more UI translations (the translation system itself exists from Phase 1).
 

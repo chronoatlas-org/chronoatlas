@@ -598,9 +598,37 @@ Small steps, each committed, explained, and viewable locally and online, as in P
 12. **First sourced events** for Manchuria 1931–33, once citable sources are located (see
     [section 2](#candidate-events-for-the-first-showcase-stage-manchuria-19311933)). Each is proposed as
     its own pull request, with sources for review.
+    *Proposed 2026-09-28: seven events, in pull requests #1–#7, awaiting review.*
+    - **The events:** the Mukden incident (1931-09-18), the US non-recognition note (1932-01-07),
+      the proclamation of Manchukuo (1932-03-01), the Japan–Manchukuo Protocol (1932-09-15), the
+      League Assembly's report (1933-02-24), Japan's notice of withdrawal from the League
+      (1933-03-27), and the Tangku Truce (1933-05-31).
+    - **Sources:** *Foreign Relations of the United States, Japan, 1931–1941, Volume I* (public
+      domain, a US government work), cited by document number and printed page; and the Lytton
+      report (League of Nations document C. 663. M. 320. 1932. VII), cited by printed page.
+      Summaries are in our own words.
+    - **Who is speaking:** each citation's `note` says whose account it is (for example, a
+      government's statement, or what a US diplomat reported), and the panel shows it on its own
+      line, so no one side's account reads as settled fact.
+    - **Links:** a FRUS "document N" locator links to that document on history.state.gov.
+    - **No map locations yet:** events have no `place` until we choose a gazetteer for their
+      coordinates ([open question 3](#open-questions-found-during-the-work)), so they don't
+      pulse on the map yet.
+    - Each pull request passed its build check (2026-09-28).
 13. **First borders traced from public-domain maps.** Write a short guide to tracing in
     OpenHistoricalMap from a dated public-domain map, then import the result. The tracing itself is
     done by people in OHM, not in this repository.
+    - ✅ **The guide:** [tracing-guide.md](tracing-guide.md). *Done 2026-09-28.* It covers choosing a
+      dated map and recording why it's public domain, georeferencing (Map Warper, Allmaps),
+      tracing and tagging so our import reads the result, never copying from OpenStreetMap or
+      copyrighted maps, how a maintainer re-imports, and how to report a problem instead. It
+      cites OHM's own pages for everything about OHM. Those pages couldn't be opened directly
+      from the environment it was written in, so they were checked through search results
+      quoting them; the guide says so, and they should be re-read once.
+    - **Found while writing it:** the import's query filters on the plain `start_date` tag, so an
+      OHM boundary with only `start_date:edtf` would never be downloaded. OHM's own guidance is to
+      set both, and the guide asks for both.
+    - **Still to come:** the first traced border and its import. People do the tracing in OHM.
 
 Steps 1–7 need no new data licenses. Steps 8–11 each add a data source, and each is reviewed for
 licensing before its data is committed.
@@ -650,6 +678,22 @@ These came up while building. None blocks the current steps; each needs the main
      1. Leave it: the map and the figures already handle overlaps.
      2. Check each one in OHM and correct the dates there if they're slips, then re-import.
         Editing OHM is outward-facing, so that's the maintainer's call (or a contributor's).
+
+3. **Which gazetteer should supply event coordinates?** (found in step 12)
+   - **Why it's needed:** an event's `place` needs coordinates from a named source (ground rule
+     1), with a precision. The step 12 events have none yet.
+   - **Candidates to evaluate.** Each license must be checked on the provider's own site before
+     any is used; the notes below are what's known so far, not a finished check:
+     - **NGA GEOnet Names Server** (the US National Geospatial-Intelligence Agency's names
+       database): license not yet checked.
+     - **Wikidata:** CC0, but its coordinates often have weak or no references (the same
+       problem found with its dates in section 2).
+     - **GeoNames:** CC BY 4.0, which isn't compatible with our CC0 data, so its coordinates
+       couldn't go into `data/events/`.
+     - **OpenHistoricalMap place nodes:** CC0, but there are almost none yet for the places we
+       need (Mukden, Hsinking, Tangku).
+   - **Also to decide:** whether a place's historical name (Mukden, Hsinking) must be matched to
+     a coordinate by a source, rather than by us.
 
 ## 7. Decisions (2026-09-27)
 
