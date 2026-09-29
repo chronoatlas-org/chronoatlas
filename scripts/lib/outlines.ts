@@ -109,12 +109,30 @@ export function alongBoxEdge([x1, y1]: Position, [x2, y2]: Position, [w, s, e, n
   return on(x1, x2, w) || on(x1, x2, e) || on(y1, y2, s) || on(y1, y2, n);
 }
 
+/** Pieces a stretch is tested in, for `inlandKm` (about 2 km, in degrees of latitude). */
+const PIECE_DEGREES = 0.018;
+
+/**
+ * Whether a piece of a coarse outline is a land border: on land, and more than `km` from the
+ * coast. Its middle is tested, and for a long piece its ends too.
+ */
+function inland(a: Position, b: Position, land: LandDistance, km: number): boolean {
+  const middle: Position = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+  return [middle, a, b].every((p) => land.isLand(p) && land.distanceKm(p) > km);
+}
+
 /**
  * A shape's outline as lines, without the stretches along the import's area edge (`box`) and,
  * when `land` is given, without the stretches at sea. A stretch counts as at sea when its middle
  * and one of its ends are both farther than SEA_DISTANCE_KM from land.
+ *
+ * With `inlandKm` (for coarse shapes, such as Cliopatria's; Phase 5 step 7), only land borders are
+ * kept: stretches on land and more than `inlandKm` from the coast, tested in pieces of about 2 km.
+ * A coarse shape's edge along a coast wanders a few kilometres either side of the real coastline,
+ * which the map draws anyway, so drawing it too made a rough second coastline, and straight
+ * stretches from island to island.
  */
-export function borderLines(shape: MultiPolygon, box: Box | undefined, land: LandDistance | undefined, cuts: readonly Box[] = []): Position[][] {
+export function borderLines(shape: MultiPolygon, box: Box | undefined, land: LandDistance | undefined, cuts: readonly Box[] = [], inlandKm?: number): Position[][] {
   const lines: Position[][] = [];
   for (const polygon of shape) {
     for (const ring of polygon) {
@@ -128,6 +146,32 @@ export function borderLines(shape: MultiPolygon, box: Box | undefined, land: Lan
         const a = ring[i - 1];
         const b = ring[i];
         const cut = (box !== undefined && alongBoxEdge(a, b, box)) || cuts.some((c) => alongBoxEdge(a, b, c));
+        if (!cut && land !== undefined && inlandKm !== undefined) {
+          // Clearly inland (its middle and ends far from any coast): kept whole. Otherwise piece by piece.
+          if (inland(a, b, land, Math.max(inlandKm, 5))) {
+            if (current.length === 0) current.push(a);
+            current.push(b);
+            continue;
+          }
+          const count = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / PIECE_DEGREES));
+          const at = (t: number): Position => (t === 0 ? a : t === count ? b : [a[0] + ((b[0] - a[0]) * t) / count, a[1] + ((b[1] - a[1]) * t) / count]);
+          // Kept pieces in a row are one straight stretch: only where it starts and stops become
+          // points, so the lines are no bigger than the shape's own outline.
+          let keptBefore = false;
+          for (let k = 0; k < count; k++) {
+            const [p, q] = [at(k), at(k + 1)];
+            if (!inland(p, q, land, inlandKm)) {
+              flush();
+              keptBefore = false;
+              continue;
+            }
+            if (current.length === 0) current.push(p);
+            if (keptBefore) current[current.length - 1] = q;
+            else current.push(q);
+            keptBefore = true;
+          }
+          continue;
+        }
         const atSea =
           !cut &&
           land !== undefined &&

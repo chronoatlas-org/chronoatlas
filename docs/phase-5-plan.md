@@ -422,6 +422,29 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     (no polity files); Ming in 1500 shows Cliopatria's area; Qing's link opens its article; no
     errors. A file that fails to load now says so, rather than "no border changes".
 
+- **Question 14 (2026-09-29): approved.** Cliopatria's polities without an ID of ours link the
+  English article Cliopatria's `Wikipedia` column gives for the row in effect (12 of its 1,540
+  polities give different articles for different periods, such as "Tibet" and "History of
+  Tibet"), and the panel says it's the article Cliopatria links.
+- **Step 7 (2026-09-29): done.** Coasts worldwide.
+  - **The coast tiles** already covered the world: they follow the imports' areas, and
+    Cliopatria's has been the world since step 3.
+  - **What was left** showed up close: Cliopatria's border lines ran along every coast a few
+    kilometres from the real coastline (which the map draws anyway), making a rough second
+    coastline, and straight lines from island to island. About a quarter of its outline length
+    (measured on a twelfth of its shapes) is coastal or at sea.
+  - **Now** Cliopatria's layers draw only land borders: stretches on land more than 3 km from the
+    coast, tested in pieces of about 2 km (`COARSE_INLAND_KM`). A first version wrote a point for
+    every piece tested, which made the lines bigger and the eras more (52); points now go only
+    where a line starts or stops. OpenHistoricalMap's precise lines are unchanged.
+  - **The build** now writes 24 eras, 189,579 tiles, 392.8 MB (404.7 MB before), in about 8½
+    minutes, as before.
+  - **Left as they are:** thin "no data" slivers where Cliopatria's coarse shapes stop short of
+    the real coast. That land isn't inside any of its borders, so it's shown as a gap rather than
+    filled in (ground rule 1).
+  - **Checked** in the browser: Italy in 117 CE, the Aegean in 1500, Europe in 1914, the edge at
+    73°E in 1937, all without errors.
+
 **Left out of Phase 5:**
 
 - **A search box** ("find a territory"): useful on a world map, but it needs a name index for
@@ -462,7 +485,7 @@ Added on 2026-09-29, with the link to Wikipedia the maintainers asked for (secti
 14. **Wikipedia links for Cliopatria's unmatched polities** (about 1,500): use Cliopatria's own
     `Wikipedia` column, worded "as Cliopatria links it", or show links only where our own reviewed
     IDs give one (our polities, and Cliopatria's 26 matched ones)? *Recommended: use Cliopatria's
-    column, attributed.* Its authors chose each article for the row, and it's right where its
+    column, attributed.* **Approved 2026-09-29 (decision 14).** Its authors chose each article for the row, and it's right where its
     Wikidata IDs are wrong (the "Republic of China" rows); without it, the world outside East Asia
     would have almost no links. A wrong one is reported like any other problem, and fixed by a
     note in the build until Cliopatria fixes it upstream.
@@ -503,3 +526,10 @@ proposed changes):
 13. **The re-import button re-runs any pinned import** (OpenHistoricalMap, CShapes, or Cliopatria).
     The pins still hold: an import stops if a file's checksum changes, and a new version is still
     reviewed by hand.
+
+Decided on 2026-09-29 (the maintainers approved question 14):
+
+14. **Wikipedia links for Cliopatria's unmatched polities** come from Cliopatria's own `Wikipedia`
+    column, for the row in effect on the day shown, and say "The article Cliopatria links for
+    this polity". Not from its Wikidata IDs. A polity with a Wikidata ID of ours (or matched to one
+    of ours as the same state) keeps that link.

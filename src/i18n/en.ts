@@ -94,6 +94,8 @@ export const en = {
   // A link to the polity's Wikipedia article (by its Wikidata ID); nothing from it is shown here.
   'panel.wikipedia': 'Read about it on Wikipedia',
   'panel.wikipediaNote': 'An outside site, written by others; this map hasn’t checked what it says.',
+  // When the article is the one a source links (Cliopatria's Wikipedia column), not our Wikidata ID.
+  'panel.wikipediaVia': 'The article {source} links for this polity. An outside site, written by others; this map hasn’t checked what it says.',
   'panel.eventLabel': 'Event',
   'panel.date': 'Date',
   'panel.locationWithin': 'Place: within about {km} km of the point marked on the map.',

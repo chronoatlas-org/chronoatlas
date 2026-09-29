@@ -262,7 +262,15 @@ export interface OutlineContext {
   land?: LandDistance;
   /** The land polygons themselves, to cut the default map's fills at the coast. */
   landPolygons?: LandIndex;
+  /** For coarse shapes: keep only land borders, this far (km) from the coast (see borderLines). */
+  inlandKm?: number;
 }
+
+/**
+ * How far from the coast a coarse shape's border line must be to be drawn (Phase 5 step 7):
+ * Cliopatria's edges along a coast wander a few kilometres from Natural Earth's coastline.
+ */
+export const COARSE_INLAND_KM = 3;
 
 /**
  * How precise a border line is, as the tiles carry it (only when it's not a plain line): 1 for an
@@ -403,9 +411,12 @@ export function buildBaseline(ds: Dataset, outlines?: OutlineContext, colors?: R
   return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true, undefined, colors);
 }
 
-/** The outline context with the coverage boxes' edges as cuts too. */
+/**
+ * The outline context for Cliopatria's layers: the coverage boxes' edges as cuts too, and only
+ * land borders drawn, since its shapes are coarse along the coasts (Phase 5 step 7).
+ */
 const cutAt = (outlines: OutlineContext | undefined, coverage: readonly ReviewedScope[]): OutlineContext | undefined =>
-  outlines && { ...outlines, cuts: [...(outlines.cuts ?? []), ...coverage.map((c) => c.box)] };
+  outlines && { ...outlines, cuts: [...(outlines.cuts ?? []), ...coverage.map((c) => c.box)], inlandKm: COARSE_INLAND_KM };
 
 /**
  * One source's borders: the fills (`collection`), and the lines (`lines`) drawn apart from them,
@@ -487,7 +498,7 @@ function buildBorderLayer(
       let coordinates = outlineOf.get(key);
       if (!coordinates) {
         const area = folder ? outlines?.areas.get(folder) : undefined;
-        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts);
+        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts, outlines?.inlandKm);
         outlineOf.set(key, coordinates);
       }
       if (coordinates.length === 0) return [];
@@ -1123,11 +1134,18 @@ export function buildPolityFiles(
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
   const km2 = new Map([...shapes].map(([id, geometry]) => [id, areaKm2(geometry)]));
   const edges = new Map(ds.shapes.map(({ value }) => [value.properties.id, value.properties.edge_precision]));
+  const shapeProperties = new Map(ds.shapes.map(({ value }) => [value.properties.id, value.properties]));
   // The area Cliopatria gives for each of its shapes (its `Area` column), in km².
   const givenAreas = new Map(
     ds.shapes.flatMap(({ value }) => (typeof value.properties.cliopatria_area_km2 === 'number' ? [[value.properties.id, value.properties.cliopatria_area_km2] as const] : [])),
   );
   const links = crosswalkLinks(ds);
+  // The Wikipedia article Cliopatria links for each of its records (its `Wikipedia` column).
+  const articleOf = new Map<string, string>();
+  for (const a of ds.assertions.flatMap(({ value }) => value)) {
+    const title = a.shape ? shapeProperties.get(a.shape)?.cliopatria_wikipedia : undefined;
+    if (typeof title === 'string' && title !== '') articleOf.set(a.id, title);
+  }
 
   /** Whether two territorial records share land (at least CShapes' 10,000 km²) on the same days. */
   const shareLand = (a: Assertion, b: Assertion) => {
@@ -1274,6 +1292,17 @@ export function buildPolityFiles(
     // different IDs (a CShapes unit spanning several of our states).
     const matched = new Set(links.filter((l) => l.unit === p.id && l.kind === 'same-state').map((l) => polities.get(l.polity)?.wikidata));
     const wikidata = p.wikidata ?? (matched.size === 1 ? [...matched][0] : undefined);
+    // Without an ID: the article a source links for each of this polity's rows (Cliopatria's
+    // `Wikipedia` column, decision 14), with back-to-back rows linking the same article merged.
+    const articles: NonNullable<PolityFile['articles']> = [];
+    if (!wikidata) {
+      for (const r of own.filter((r) => r.subject === p.id && articleOf.has(r.id)).sort((a, b) => a.s0 - b.s0)) {
+        const title = articleOf.get(r.id)!;
+        const last = articles.at(-1);
+        if (last && last.title === title && last.e0 >= r.s0) last.e0 = Math.max(last.e0, r.e0);
+        else articles.push({ title, source: r.sources[0].source, s0: r.s0, e0: r.e0 });
+      }
+    }
     return {
       id: p.id,
       ...(wikidata ? { wikidata } : {}),
@@ -1291,6 +1320,7 @@ export function buildPolityFiles(
       ...(differences.length > 0 ? { differ: differences } : {}),
       ...(p.notes ? { notes: p.notes } : {}),
       ...(others.size > 0 ? { related } : {}),
+      ...(articles.length > 0 ? { articles } : {}),
     };
   });
 }

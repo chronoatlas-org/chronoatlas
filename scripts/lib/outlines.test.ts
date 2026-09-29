@@ -43,6 +43,25 @@ describe('borderLines', () => {
     ]);
   });
 
+  it('for a coarse shape, keeps only the land border, away from the coast', () => {
+    // A made-up polity holding the island's west half, its outline drawn a little off the coast.
+    const west: MultiPolygon = [[[[9.99, 9.99], [10.5, 9.99], [10.5, 11.01], [9.99, 11.01], [9.99, 9.99]]]];
+    const lines = borderLines(west, undefined, land, [], 3);
+    const points = lines.flat();
+    expect(lines).toHaveLength(1);
+    // One straight stretch: its two ends only, not a point for every piece tested.
+    expect(lines[0]).toHaveLength(2);
+    // Only the line across the island at 10.5°E, stopping about 3 km short of each coast.
+    expect(points.every(([x]) => x === 10.5)).toBe(true);
+    const ys = points.map(([, y]) => y);
+    expect(Math.min(...ys)).toBeGreaterThan(10.02);
+    expect(Math.min(...ys)).toBeLessThan(10.06);
+    expect(Math.max(...ys)).toBeGreaterThan(10.94);
+    expect(Math.max(...ys)).toBeLessThan(10.98);
+    // Without the option, its coastal edges are kept too.
+    expect(borderLines(west, undefined, land).flat().some(([x]) => x < 10.5)).toBe(true);
+  });
+
   it('knows a cut along the area edge from a border', () => {
     expect(alongBoxEdge([11, 10], [11, 11], [0, 0, 11, 20])).toBe(true);
     expect(alongBoxEdge([10, 10], [11, 10], [0, 0, 11, 20])).toBe(false);
