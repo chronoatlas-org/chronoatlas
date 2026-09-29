@@ -234,7 +234,8 @@ each step. The ones that affect everyday work:
 - **Testing a workflow locally:** a `git fetch --depth=…` into this clone makes it shallow and
   breaks later pushes; undo with `git fetch --unshallow origin`.
 
-**Phase 5 plan approved (2026-09-28)**, with all its recommendations; Phase 4 is closed. The
+**Phase 5 plan approved (2026-09-28)**, with all its recommendations; Phase 4 is closed. **Phase 5
+was closed on 2026-09-29** (decision 15); the next OpenHistoricalMap region is Europe. The
 plan and its decisions are in [docs/phase-5-plan.md](docs/phase-5-plan.md#12-decisions-2026-09-28),
 with an effort setting for each step. The ones that affect everyday work:
 

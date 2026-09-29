@@ -6,9 +6,9 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: Phase 5 done, waiting for the maintainers to close it** (the worldwide map;
-> [plan](docs/phase-5-plan.md); Phases [2](docs/phase-2-plan.md), [3](docs/phase-3-plan.md), and
-> [4](docs/phase-4-plan.md) are done). Borders cover the whole world, from 3400 BCE to today, and
+> **Status: Phase 5 is closed** (the worldwide map; [plan](docs/phase-5-plan.md); Phases
+> [2](docs/phase-2-plan.md), [3](docs/phase-3-plan.md), and [4](docs/phase-4-plan.md) are done
+> too). Next: importing Europe from OpenHistoricalMap. Borders cover the whole world, from 3400 BCE to today, and
 > change as you move the timeline: from OpenHistoricalMap in East Asia, 1900–1950, and from
 > Cliopatria (approximate and year by year) everywhere else.
 >

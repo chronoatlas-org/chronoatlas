@@ -500,9 +500,10 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     ("-222 to -219"), beside dates written "223 BCE". It's what the source's fields say, but a
     change to the import could write "223 BCE to 220 BCE" instead.
 
-**Proposed: close Phase 5** (question 15, for the maintainers). Every step is done. Europe after
-1944 and more contested regions, the next OpenHistoricalMap region, and translations continue as
-data work, as the showcase data track did after Phase 3.
+**Phase 5 is closed (2026-09-29, decision 15).** Every step is done. Europe after 1944 and more
+contested regions, the next OpenHistoricalMap region, and translations continue as data work, as
+the showcase data track did after Phase 3. The maintainers chose Europe as the next
+OpenHistoricalMap region.
 
 **Left out of Phase 5:**
 
@@ -553,6 +554,7 @@ Added on 2026-09-29, after step 11:
 
 15. **Close Phase 5,** with Europe after 1944, more contested regions, the next OpenHistoricalMap
     region (decision 8), and translations continuing as data work? *Recommended: yes.*
+    **Approved 2026-09-29 (decision 15).**
 
 (Questions 10–13 were step 2's proposed changes, decided as decisions 10–13 below.)
 
@@ -597,3 +599,9 @@ Decided on 2026-09-29 (the maintainers approved question 14):
     column, for the row in effect on the day shown, and say "The article Cliopatria links for
     this polity". Not from its Wikidata IDs. A polity with a Wikidata ID of ours (or matched to one
     of ours as the same state) keeps that link.
+
+Decided on 2026-09-29 (the maintainers approved question 15):
+
+15. **Phase 5 is closed.** Europe after 1944, more contested regions, the next OpenHistoricalMap
+    region, and translations continue as data work. The next OpenHistoricalMap region is
+    **Europe**, chosen from step 9's measurement (it has the most boundaries in every period).
