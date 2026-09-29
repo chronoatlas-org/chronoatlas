@@ -27,6 +27,11 @@ export function supportedLocales(): string[] {
   return Object.keys(CATALOGS);
 }
 
+/** Every catalog by language, for the completeness test (check.ts). */
+export function catalogs(): Readonly<Record<string, Catalog>> {
+  return CATALOGS;
+}
+
 /**
  * Picks the best supported language from a list in preference order (such as the browser's
  * `navigator.languages`). "ja-JP" matches a "ja" catalog. Falls back to English.

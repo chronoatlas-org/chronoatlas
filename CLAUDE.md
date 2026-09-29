@@ -463,6 +463,11 @@ some environments, so the "Measure OpenHistoricalMap's coverage" workflow runs i
 - **Translation:** never hard-code on-screen text. Add a key to `src/i18n/en.ts` and use
   `t('key', { placeholder })`. Static HTML text uses `data-i18n="key"`, which `src/main.ts`
   fills in. Date wording goes through `src/dates/format.ts`, which uses the catalogs.
+  - **Other languages** (Phase 5 step 10): `docs/translating.md` is the translator's guide and the
+    glossary of words that need care ("contested", "occupied", "sources differ", …). `npm test`
+    checks every catalog listed in `src/i18n/index.ts` against English (`catalogProblems`,
+    `src/i18n/check.ts`): every key, no unknown keys, nothing empty, the same placeholders. A
+    catalog is merged only after a second native speaker's review (Phase 5 decision 9).
 - **Timeline:** `src/timeline/scale.ts` holds the pure logic (tick units, calendar-aligned
   ticks, keyboard steps) and is tested. `src/timeline/timeline.ts` holds the DOM, canvas, and
   input. The design is in docs/architecture.md#the-timeline. Event markers' logic (which show

@@ -464,6 +464,15 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     Wars' occupations, the Soviet annexations of 1940, Vichy France, the Independent State of
     Croatia; and some that point at a gap, such as Cliopatria having no postwar Poland).
 
+- **Step 9 (2026-09-29): the tool is done; the measurement runs on GitHub.** `npm run
+  measure-ohm` counts OpenHistoricalMap's country-level boundaries by region and period. Its
+  server can't be reached from this environment, so a read-only "Measure OpenHistoricalMap's
+  coverage" button runs it; the results go into [data-sources.md](data-sources.md).
+- **Step 10 (2026-09-29): done.** [The translator's guide](translating.md), with the glossary of
+  words that need the most care, and a test (`catalogProblems`) that every catalog has every
+  English key, no unknown keys, nothing empty, and the same placeholders. CONTRIBUTING.md links
+  it. No other language yet: each waits for a volunteer and a second native speaker's review.
+
 **Left out of Phase 5:**
 
 - **A search box** ("find a territory"): useful on a world map, but it needs a name index for

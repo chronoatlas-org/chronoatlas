@@ -58,6 +58,12 @@ sources are present. The data format is described in [docs/data-format.md](docs/
 The [README](README.md#running-it-on-your-computer) explains how to run the site on your computer.
 Discussion on issues is very welcome too.
 
+### Translate the site
+
+The site's own words can be translated into your language: [docs/translating.md](docs/translating.md)
+explains how, and which words need the most care (such as "contested" and "occupied"). A
+translation is published once a second native speaker has reviewed it.
+
 ## What counts as a source
 
 Every citation needs **enough detail to find it** (author, title, year, and a publisher, URL, DOI,
