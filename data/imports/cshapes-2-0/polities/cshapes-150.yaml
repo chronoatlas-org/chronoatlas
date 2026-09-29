@@ -1,0 +1,9 @@
+id: cshapes-150
+type: state
+names:
+  - text: Paraguay
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 150
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 150).

@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cshapes-830-1965-08-09","edge_precision":"unknown","cshapes_gwcode":830,"cshapes_name":"Singapore","cshapes_first_day":"1965-08-09","cshapes_last_day":"2019-12-31","cshapes_status":"independent","cshapes_owner":830,"cshapes_borders_defined":true},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[103.6421,1.3249],
+[103.6469,1.3047],
+[103.7983,1.2594],
+[103.8419,1.259],
+[103.96,1.3208],
+[103.9896,1.3497],
+[103.9942,1.3766],
+[103.894,1.4075],
+[103.8233,1.4444],
+[103.8041,1.445],
+[103.7064,1.4265],
+[103.6761,1.4003],
+[103.6421,1.3249]
+]
+]
+]}
+}

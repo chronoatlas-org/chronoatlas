@@ -1,0 +1,9 @@
+id: cshapes-481
+type: state
+names:
+  - text: Gabon
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 481
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 481).

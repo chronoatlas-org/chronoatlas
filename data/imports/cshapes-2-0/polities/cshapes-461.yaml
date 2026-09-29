@@ -1,0 +1,9 @@
+id: cshapes-461
+type: state
+names:
+  - text: Togo
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 461
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 461).

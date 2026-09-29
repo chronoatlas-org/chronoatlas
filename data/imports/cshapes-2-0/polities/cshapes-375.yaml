@@ -1,0 +1,9 @@
+id: cshapes-375
+type: state
+names:
+  - text: Finland
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 375
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 375).

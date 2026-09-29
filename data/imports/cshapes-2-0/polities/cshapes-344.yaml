@@ -1,0 +1,9 @@
+id: cshapes-344
+type: state
+names:
+  - text: Croatia
+    lang: en
+    sources:
+      - source: cshapes-2-0
+        locator: gwcode 344
+notes: A state as CShapes 2.0 identifies it (Gleditsch and Ward code 344).
