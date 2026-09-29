@@ -429,7 +429,8 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
 - **Vite and the tiles:** `vite.config.ts` answers "404" for a missing `.pbf` under `/data/` (as
   GitHub Pages does; otherwise Vite answers with the page itself), and doesn't watch
   `public/data/` (a worldwide build has over 100,000 tiles, more than a system may allow to be
-  watched). Reload the page after `npm run build-data`.
+  watched). Restart `npm run dev` after `npm run build-data`: unwatched, Vite never learns of files
+  the build adds (new tile versions, `changes/…`), and answers them with the page itself.
 - MapLibre's worker is bundled by Vite (`?worker&url`) and registered with `setWorkerUrl()` in
   `src/main.ts`. Without that, the worker fails to load in both dev and production.
 - In dev mode the map, timeline, historical layers, and panel are exposed as `window.map`,

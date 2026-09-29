@@ -687,15 +687,25 @@ export class TerritoryPanel {
         const state = version ? this.nearby.get(version) : undefined;
         return typeof state === 'object' ? state : undefined;
       };
+      let failed = false;
       const needed = eras
         ? nearbyEras(eras, this.day, range, (i) => {
             const version = eras[i].nearby;
-            const state = version ? this.nearby.get(version) : 'failed';
-            return state === 'failed' ? [] : fileOf(version)?.changes;
+            if (!version) return []; // an era with no file has no changes
+            if (this.nearby.get(version) === 'failed') failed = true;
+            return failed ? [] : fileOf(version)?.changes;
           })
         : null;
       for (const i of needed?.missing ?? []) this.loadNearby(eras![i].nearby!);
-      if (!needed || needed.missing.length > 0 || !this.sources) {
+      if (failed) {
+        // Never "no border changes" when the list couldn't be read.
+        this.show(
+          `failed ${this.sheet}`,
+          <Shell title={t('panel.loadFailedTitle')} {...shell}>
+            <p class="panel-empty">{t('panel.loadFailed')}</p>
+          </Shell>,
+        );
+      } else if (!needed || needed.missing.length > 0 || !this.sources) {
         this.show(`loading ${this.sheet}`, <Shell title={t('panel.loading')} {...shell}>{null}</Shell>);
       } else {
         // Names from the era files, which carry those of the polities they list.

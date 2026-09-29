@@ -404,6 +404,24 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
   - **Both builds and the deploy passed;** the live site is worldwide. The Cliopatria deploy took
     about 7 minutes, most of it the data build.
 
+- **Step 6 (2026-09-29): done.** The panel and its files, for the worldwide map.
+  - **"Around this date"** read one `changes.json` of every change: 5.8 MB with the whole world.
+    Now each era has its own file (`changes/<version>.json`, listed in `tiles.json`), with the
+    names of the polities it lists, so no polity file is loaded just for a name. The panel loads
+    the era holding the day first, and the others only while they could hold one of the 25
+    nearest changes. A record that ends the day the next one of the same polity begins is listed
+    once, as "Border changes", instead of an end and a start: that halves Cliopatria's yearly rows
+    (14,934 entries instead of 25,457; 4.3 MB over 23 eras, the largest 0.47 MB).
+  - **Cliopatria's areas** (decision 7): each of its records shows the area Cliopatria gives for
+    its shape, as "Area" (not "Land area"), credited to Cliopatria and marked as not measured by
+    us.
+  - **The link to Wikipedia** (section 7): "Read about it on Wikipedia", for our polities with a
+    Wikidata ID and the import units matched to one of them as the same state, marked as an
+    outside site the map hasn't checked. Cliopatria's other polities wait on question 14.
+  - **Checked** in the browser on the worldwide build: "Around this date" in 1500 loads one file
+    (no polity files); Ming in 1500 shows Cliopatria's area; Qing's link opens its article; no
+    errors. A file that fails to load now says so, rather than "no border changes".
+
 **Left out of Phase 5:**
 
 - **A search box** ("find a territory"): useful on a world map, but it needs a name index for
