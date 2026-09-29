@@ -6,35 +6,33 @@ redraws for that date. Every border and event on the map is traced to a named so
 
 **Live site: https://chronoatlas-org.github.io/chronoatlas/**
 
-> **Status: Phase 5 in progress** (the worldwide map; [plan](docs/phase-5-plan.md); Phases
-> [2](docs/phase-2-plan.md), [3](docs/phase-3-plan.md), and [4](docs/phase-4-plan.md) are done). Country borders for East Asia,
-> 1900–1950, imported from OpenHistoricalMap, change as you move the timeline. Everywhere else
-> shows "no data yet".
+> **Status: Phase 5 done, waiting for the maintainers to close it** (the worldwide map;
+> [plan](docs/phase-5-plan.md); Phases [2](docs/phase-2-plan.md), [3](docs/phase-3-plan.md), and
+> [4](docs/phase-4-plan.md) are done). Borders cover the whole world, from 3400 BCE to today, and
+> change as you move the timeline: from OpenHistoricalMap in East Asia, 1900–1950, and from
+> Cliopatria (approximate and year by year) everywhere else.
 >
 > - Click a territory to open a panel with its names over time, every record with its dates and
->   sources, and what isn't in our data yet. The panel has a button to report a problem with that
->   border.
-> - "Around this date" lists the border changes near the selected date.
-> - A switch shows the borders as administered (OpenHistoricalMap) or as legally recognized
->   (CShapes 2.0, non-commercial). A cross-hatch marks contested areas, administered by one state
->   and legally recognized as another's, and the panel says so in words.
-> - A "Second opinion" toggle lays Cliopatria's borders over either view as dotted outlines.
-> - The map shows how sure the sources are: a border whose start or end is known only to the
->   month or year is drawn lighter for that stretch, and a contested area that depends on such a
->   date is hatched more faintly ("Possibly contested").
-> - Territory names, "Contested", and the edge of the imported data are written on the map.
->   Borders no longer run around islands out at sea, and up close the fills stop at a detailed
->   coastline, with the source's coastal waters as a faint tint.
-> - Clicking the map shows, in the panel, what each source records at that spot on that date,
->   side by side.
-> - The panel shows each territory's land area on the selected date, computed from its borders
->   and a coastline, with how it was measured and its sources.
-> - Seven sourced events for Manchuria, 1931–33, are marked on the timeline. Each opens in the
->   panel with our summary, its sources, and who is speaking in each source.
+>   sources, its area, a link to its Wikipedia article, and what isn't in our data yet. The panel
+>   has a button to report a problem with that border.
+> - A switch shows the borders as administered or as legally recognized (CShapes 2.0, 1886–2019,
+>   non-commercial). A cross-hatch marks contested areas, administered by one state and legally
+>   recognized as another's, in East Asia 1900–1950 and Europe 1914–1944, where the maintainers
+>   have reviewed which states in the two sources are the same; elsewhere the panel says "Not yet
+>   checked against legal borders here".
+> - A "Second opinion" toggle lays Cliopatria's borders over OpenHistoricalMap's as dotted outlines,
+>   and shows where the two sources differ.
+> - The map shows how sure the sources are: a border whose start or end is known only to the month
+>   or year is drawn lighter for that stretch, and a contested area that depends on such a date is
+>   hatched more faintly ("Possibly contested").
+> - "Around this date" lists the border changes and events near the selected date.
+> - Clicking the map shows, in the panel, what each source records at that spot on that date, side
+>   by side.
+> - Seven sourced events for Manchuria, 1931–33, are marked on the timeline.
 > - The address bar always links to the exact date, view, and selection, so you can share it.
-> - For contributors: every pull request that changes the data gets a plain-language summary of
->   what it changes, as a comment; a border fixed in OpenHistoricalMap can be re-imported with a
->   button on GitHub; and reviewers have a [guide](docs/reviewing.md).
+> - For contributors: every pull request that changes the data gets a plain-language summary as a
+>   comment; a dataset can be re-imported with a button on GitHub; reviewers have a
+>   [guide](docs/reviewing.md), and translators a [guide and glossary](docs/translating.md).
 >
 > See the [roadmap](docs/architecture.md#roadmap).
 

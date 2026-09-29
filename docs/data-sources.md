@@ -10,8 +10,8 @@ description. Re-check before relying on anything here, because datasets change.
 | Dataset | Coverage | Precision | Format | License | Decision |
 |---|---|---|---|---|---|
 | OpenHistoricalMap (OHM) | Global, crowd-sourced, uneven | Set per feature; many exact to the day | OSM data model: planet dumps, Overpass API, vector tiles with decimal-year dates | CC0 1.0 (some features CC BY/BY-SA via `license=*`) | **Use** (Phase 1 import) |
-| CShapes 2.0 | Independent states and dependencies, 1886–2019 | Start and end dates to the day (see caveats) | CSV, GeoJSON (25 MB), Shapefile, R package | CC BY-NC-SA 4.0 | **Use**, as an isolated de jure layer |
-| Cliopatria (Seshat) | ~1,800 polities, 3400 BCE–2024 CE | Years; ~40 km² spatial resolution | One GeoJSON (158 MB unzipped, 44 MB zipped) | CC BY 4.0 | **Use** (second opinion; global baseline later) |
+| CShapes 2.0 | Independent states and dependencies, 1886–2019 | Start and end dates to the day (see caveats) | CSV, GeoJSON (25 MB), Shapefile, R package | CC BY-NC-SA 4.0 | **Use**, as an isolated de jure layer (worldwide since Phase 5) |
+| Cliopatria (Seshat) | ~1,800 polities, 3400 BCE–2024 CE | Years; ~40 km² spatial resolution | One GeoJSON (158 MB unzipped, 44 MB zipped) | CC BY 4.0 | **Use** (the map outside OpenHistoricalMap's area and years; second opinion inside) |
 | Natural Earth | Present day: physical features plus admin boundaries, ~100 disputed or breakaway areas, ~30 national "point of view" versions | 1:10m, 1:50m, 1:110m | Shapefile, GeoJSON | Public domain | **Use** (base map; model for modern disputes) |
 | Wikidata | IDs for polities and events; dates stored with precision and calendar model | Varies by statement | API, SPARQL, dumps | CC0 1.0 | **Use** (identifiers only, not as a source by itself) |
 | aourednik/historical-basemaps | 54 global snapshots, 123,000 BCE–2010 | One snapshot per chosen year; `BORDERPRECISION` 1–3 | GeoJSON, ~1.5 MB per year | GPL-3.0 | **Skip** |
@@ -36,6 +36,30 @@ description. Re-check before relying on anything here, because datasets change.
     Republic of China, no Wang Jingwei regime, and no Mengjiang (searched by name).
   - **Sources:** most of these relations have no feature-level `source` tag. We couldn't check
     changeset-level sources because the OHM API refused our requests.
+- **Coverage worldwide** (Phase 5 step 9, measured 2026-09-29 with `npm run measure-ohm`, through
+  the "Measure OpenHistoricalMap's coverage" workflow): 4,112 relations tagged
+  `boundary=administrative` and `admin_level=2`, counted in the region holding the middle of their
+  bounding box, and in every period their dates overlap. A count says how many boundaries were
+  drawn, not how complete or how good they are.
+
+  | Region | before 1500 | 1500–1799 | 1800–1899 | 1900–1949 | 1950–1999 | 2000 on | All |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | East Asia (our import's area) | 151 | 200 | 98 | 102 | 70 | 22 | 546 |
+  | Europe | 531 | 249 | 297 | 256 | 117 | 63 | 1,338 |
+  | North Africa and West Asia | 79 | 94 | 68 | 122 | 135 | 37 | 428 |
+  | Sub-Saharan Africa | 30 | 50 | 130 | 133 | 189 | 50 | 416 |
+  | Central and South Asia | 10 | 24 | 34 | 12 | 15 | 11 | 73 |
+  | Northern Asia | 5 | 17 | 0 | 0 | 0 | 0 | 20 |
+  | Southeast Asia and Oceania | 5 | 29 | 75 | 65 | 51 | 16 | 189 |
+  | North America | 5 | 174 | 138 | 53 | 18 | 10 | 362 |
+  | Central America and the Caribbean | 71 | 183 | 137 | 45 | 82 | 33 | 435 |
+  | South America | 13 | 61 | 106 | 36 | 24 | 11 | 206 |
+  | Elsewhere | 1 | 9 | 28 | 24 | 34 | 18 | 82 |
+
+  Left out: 11 with a date that doesn't parse, 6 without bounds. The regions' boxes are in
+  `scripts/lib/coverage.ts`. Europe has the most boundaries in every period, 256 of them in
+  1900–1949 (East Asia, already imported, has 102); Northern Asia has almost none after 1800,
+  where Russia's single boundary counts in Europe or Central Asia by its middle.
 
 ## CShapes 2.0
 
@@ -71,6 +95,11 @@ description. Re-check before relying on anything here, because datasets change.
     1 January 1886). The separate year, month, and day columns are right.
   - **Status values** across the whole dataset: independent (365 rows), colony (219), protectorate
     (62), occupied (39), mandate (23), and N/A (2, both Morocco).
+- **Worldwide since 2026-09-29** (Phase 5): all 1886–2019, 706 of its 710 rows. Skipped and listed
+  in the manifest: Danzig and West Irian (owner codes 0 and 1, which aren't states in CShapes;
+  the codebook should say what they stand for) and Morocco 1904–1912 (no status). Contested areas
+  are worked out only where the crosswalk has been reviewed: East Asia 1900–1950, and Europe
+  (25°W–45°E, 34–72°N) 1914–1944 (docs/crosswalk-review/).
 
 ## Cliopatria (Seshat Global History Databank)
 
@@ -98,6 +127,18 @@ description. Re-check before relying on anything here, because datasets change.
   - **Wrong Wikidata IDs:** some are wrong for this period. "Republic of China" carries Q148
     (the People's Republic of China), and "Republic of Korea" carries Q423 (North Korea). So
     polities are matched by a reviewed crosswalk, never automatically by Wikidata ID.
+- **Worldwide since 2026-09-29** (Phase 5): all years (3400 BCE–2024), 12,043 rows and 1,540
+  polities, 91 MB in the repository. It's the map (the "baseline") outside OpenHistoricalMap's
+  area and years, and the second opinion inside them. Found on the way:
+  - **Year 0 exists** (six rows end in it), so its years are astronomical: -40 is 41 BCE.
+  - **Its `Wikipedia` column is right where its Wikidata IDs are wrong** ("Republic of China
+    (1912-1949)" beside Q148), so the panel's Wikipedia link uses the column (decision 14).
+  - **Its `Area`** is used as each row's area, credited to it (decision 7).
+  - **Gaps after 1945** in Europe: no postwar Poland, and no Hungary, Bulgaria, or Czechoslovakia
+    in 1945–1947, so the Soviet Union's shape covers them. That's why Europe's contested areas are
+    reviewed only to 1944. Worth reporting upstream.
+  - **Coarse coasts:** its shapes stop a few kilometres short of the real coastline in places, so
+    thin "no data" slivers show there up close; its border lines are drawn only on land (step 7).
 
 ## Natural Earth
 

@@ -502,7 +502,25 @@ and 100 GB/month bandwidth as a soft limit):
 - **Phase 5, worldwide:** Cliopatria as the global baseline with era-grouped tiles, more regions,
   and more UI translations (the translation system itself exists from Phase 1). Detailed plan:
   [phase-5-plan.md](phase-5-plan.md), approved 2026-09-28 (Phase 4 closed the same day), with
-  measurements of Cliopatria worldwide.
+  measurements of Cliopatria worldwide. All eleven steps done on 2026-09-29, waiting for the
+  maintainers to close the phase:
+  - ✅ Cliopatria and CShapes imported worldwide (steps 2–3), and the tiles split into eras of
+    about 6 MB each (step 4: 24 eras, about 190,000 tiles, 393 MB published).
+  - ✅ Cliopatria as the filled baseline outside OpenHistoricalMap's area and years, one color per
+    state across the edge (steps 5, and the maintainers' first look).
+  - ✅ The panel for the worldwide map (step 6): "Around this date" by era, Cliopatria's own areas,
+    and a link to each polity's Wikipedia article.
+  - ✅ Coasts worldwide (step 7): Cliopatria's lines drawn only on land.
+  - ✅ Contested areas region by region (step 8): a suggestion tool, "Not yet checked against
+    legal borders here", and Europe 1914–1944 reviewed.
+  - ✅ OpenHistoricalMap's coverage measured by region (step 9), for choosing the next region.
+  - ✅ The translator's guide, glossary, and catalog check (step 10).
+  - ✅ A phone check and the docs (step 11): the opening view downloads about 0.85 MB
+    compressed, crossing into another era about 0.4 MB, with no errors.
+- **Next (for the maintainers to choose):** the next OpenHistoricalMap region to import (Europe has
+  the most boundaries; [data-sources.md](data-sources.md#openhistoricalmap)); contested areas
+  for more regions and for Europe after 1944; the showcase data track (China 1937–45, claims);
+  translations as volunteers come forward; and a search box, left out of Phase 5.
 
 ## Showcase: East Asia 1931–1945
 

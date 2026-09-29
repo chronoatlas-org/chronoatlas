@@ -472,14 +472,37 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     Wars' occupations, the Soviet annexations of 1940, Vichy France, the Independent State of
     Croatia; and some that point at a gap, such as Cliopatria having no postwar Poland).
 
-- **Step 9 (2026-09-29): the tool is done; the measurement runs on GitHub.** `npm run
-  measure-ohm` counts OpenHistoricalMap's country-level boundaries by region and period. Its
-  server can't be reached from this environment, so a read-only "Measure OpenHistoricalMap's
-  coverage" button runs it; the results go into [data-sources.md](data-sources.md).
+- **Step 9 (2026-09-29): done.** `npm run measure-ohm` counts OpenHistoricalMap's country-level
+  boundaries by region and period; its server can't be reached from this environment, so a
+  read-only "Measure OpenHistoricalMap's coverage" button runs it on GitHub. First run: 4,112
+  boundaries, Europe with the most in every period (1,338 in all, 256 in 1900–1949; East Asia
+  has 546). The table is in [data-sources.md](data-sources.md#openhistoricalmap); choosing the
+  next region is the maintainers' call (decision 8).
 - **Step 10 (2026-09-29): done.** [The translator's guide](translating.md), with the glossary of
   words that need the most care, and a test (`catalogProblems`) that every catalog has every
   English key, no unknown keys, nothing empty, and the same placeholders. CONTRIBUTING.md links
   it. No other language yet: each waits for a volunteer and a second native speaker's review.
+
+- **Step 11 (2026-09-29): done.** A phone check (390×844, touch) of the finished map, and the docs.
+  - **Downloads:** the opening view takes 2.33 MB uncompressed, 2.2 MB of it the base map's
+    land, rivers, and lakes; GitHub Pages compresses those (the land file from 1.26 MB to 422 KB,
+    measured in Phase 1), so about 0.85 MB, under the 1 MB target. Crossing into another era
+    (1937 → 222 BCE) took 3.1 seconds in the test browser (software drawing, no graphics chip)
+    and 0.4 MB.
+  - **Fixed:** a long date ("10 August 222 BCE") was cut off beside the timeline's buttons; on
+    phones it now wraps onto a second line. Long event titles in "Around this date" were
+    centred; they're left-aligned now.
+  - **Checked:** the bottom sheet, "Around this date", the map key, and the date switch, with no
+    errors and no sideways scrolling.
+  - **Docs:** README (the status), the roadmap in architecture.md, data-sources.md (both
+    imports worldwide, and OpenHistoricalMap's coverage), CLAUDE.md.
+  - **Noticed, left for later:** Cliopatria's source line for ancient rows quotes its own years
+    ("-222 to -219"), beside dates written "223 BCE". It's what the source's fields say, but a
+    change to the import could write "223 BCE to 220 BCE" instead.
+
+**Proposed: close Phase 5** (question 15, for the maintainers). Every step is done. Europe after
+1944 and more contested regions, the next OpenHistoricalMap region, and translations continue as
+data work, as the showcase data track did after Phase 3.
 
 **Left out of Phase 5:**
 
@@ -525,6 +548,11 @@ Added on 2026-09-29, with the link to Wikipedia the maintainers asked for (secti
     Wikidata IDs are wrong (the "Republic of China" rows); without it, the world outside East Asia
     would have almost no links. A wrong one is reported like any other problem, and fixed by a
     note in the build until Cliopatria fixes it upstream.
+
+Added on 2026-09-29, after step 11:
+
+15. **Close Phase 5,** with Europe after 1944, more contested regions, the next OpenHistoricalMap
+    region (decision 8), and translations continuing as data work? *Recommended: yes.*
 
 (Questions 10–13 were step 2's proposed changes, decided as decisions 10–13 below.)
 

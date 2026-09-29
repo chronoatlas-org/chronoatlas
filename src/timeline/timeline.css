@@ -122,8 +122,15 @@
     width: 44px;
   }
 
+  /* Long dates ("30 September 221 BCE") wrap onto a second line rather than being cut off. */
   .timeline-date {
     font-size: 0.95rem;
+    line-height: 1.15;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 }
 
