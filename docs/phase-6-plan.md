@@ -14,8 +14,8 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 - **it holds up close**: borders and coasts line up as far in as the sources can honestly support,
   and the map says so where they can't;
 - **you can type a date and travel to it**, watching the map change on the way;
-- **a first-time visitor knows what to do:** a play button, a short "start here", search by name,
-  and a lens that shows how sure each part of the map is;
+- **a first-time visitor knows what to do:** a play button, search by name, and a lens that shows
+  how sure each part of the map is; and events, chosen by what the map needs (section 9);
 - **water has names** (oceans, seas, lakes, rivers), attributed like every other name;
 - **a polity can show its flag**, where a source records one for that period;
 - **stretch goal:** a "local area" card for any place: which states held it over time, and the
@@ -70,7 +70,7 @@ anything is changed.
 | A detailed view of my local area (not street level) | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) a "local area" card: which states held the place over time, and events near it (section 10). |
 | Fill all the way to the ocean | **Yes, without changing the rule, but it's a decision** | The gap is mostly Cliopatria's coarse resolution, not a claim that nobody held the land. An approximate margin, drawn only in the build and flagged as such, keeps rule 1 (section 5, option B); it still draws colour where no source did, so it is the maintainers' call. See question 3. |
 | Go-to-date box | **Yes** | Depends on the smooth-era work. Very long jumps (thousands of years) will skip time quickly, not play every year. |
-| Play button, "start here", search by name | **Yes** | Stories can only use what the data already has (sourced events); the first ones may be few (section 9). |
+| Play button, search by name, more events | **Yes** | Events are written by people from cited sources, so how many there are depends on the data track, not the code (section 9). |
 | A lens that shows how sure the map is | **Yes** | Today it can show date precision and each source's resolution; edge precision fills in only as real data records it (section 9). |
 | Names for oceans, rivers, lakes | **Yes** | Present-day names only, attributed. Some are disputed (the sea between Korea and Japan, the Persian/Arabian Gulf, others): see section 7. |
 | Flags | **Yes, for a subset** | Flags are modern. Most polities before about 1800 had none, or none anyone recorded; flags need a source with dates, and their images carry licenses. Default is "no flag on record". |
@@ -214,16 +214,17 @@ phase; the rest are candidates for Phase 7 (question 9).
 
 **In this phase**
 
-- **A play button and a "start here" (step 7).** The timeline can already advance at a set speed
+- **A play button and the basics (step 7).** The timeline can already advance at a set speed
   (measured in Phase 1); this makes playing the obvious first action, from a good opening view.
-  "Start here" offers two or three short stories that set the date, place and speed for you and
-  show an event's sourced summary as they go. Stories are built only from events already in the
-  data, with wording from their cited sources; if there are too few, the first ones are short and
-  more wait on the data track. No fake events (project rule). The same step adds the basics a new
+  The map itself is the storyteller, so there are no scripted tours. The same step adds what a new
   visitor looks for: an About page (what this is, where the data comes from, that it is run by
   one maintainer, that it was built with AI help and every claim is sourced), a Contribute page
   that links the existing report link and issue forms, and a preview image and title for shared
-  links (one generic preview: a static site can't make a different one for each date and place).
+  links. The link itself already carries the date, map view, selection and view
+  (`#d=…&m=…&sel=…`), so a shared link opens at that time and place; only the *preview* (the image
+  and title chat apps show) is one generic picture, because the part of a link after `#` never
+  reaches a server, so a static site can't make a different preview for each. This step also
+  writes an **events-gap report** (below).
 - **Search by name (step 8).** Type "Kingdom of Sardinia" or an event's name, and the map goes to
   its years and area. The build writes a small name index (with each name's language and script),
   loaded only when the search box is used. Place search over Natural Earth's towns and cities can
@@ -235,6 +236,37 @@ phase; the rest are candidates for Phase 7 (question 9).
   says so rather than pretend. Like every other style here it doesn't rely on colour alone:
   patterns and text labels go with it. It turns the project's honesty into something a visitor
   can see.
+
+**Which events to add, and why.** Events are the "why" behind a border change, and the timeline's
+markers and "Around this date" both use them. They are written from cited sources, so they are the
+data track's work; this phase only makes it easier to choose well. The rules of thumb:
+
+1. **Start from what the map shows.** The change index already lists every day a border changes.
+   The **events-gap report** (step 7, a script like the data-change summary) lists those days with
+   no event linked through `effects`, largest areas and most polities first, so the events worth
+   adding are the ones that explain changes a visitor can already see.
+2. **Border-changing events first:** treaties and peace settlements, declarations of independence,
+   annexations, partitions, unions and dissolutions, handovers of colonies, plebiscites, and the
+   start and end of occupations. A battle is worth an event when it changed control.
+3. **Where sources can be cited and read.** Treaties, official documents, and open collections
+   (as the Manchukuo events use *Foreign Relations of the United States* and the League of
+   Nations' papers) make the best events, because a reviewer can check them. An important event we
+   can't source well waits.
+4. **Spread them out.** Cover the regions and eras the map has data for (East Asia and Europe,
+   1900–1950 first), then the baseline as sources allow, so each visitor finds something near
+   their own place. Prefer fewer, well-sourced events (on the order of a dozen per region and
+   era) to many thin ones: too many markers clutter the timeline, and `importance` (1–5) decides
+   which show when zoomed out.
+5. **Contested events get every side.** Attribute each account, and give each citation a `note`
+   saying who is speaking (as the Mukden incident does).
+6. **Leads, not data.** Topics worth researching for the covered period include the 1919–1923
+   settlements after the First World War, the Russian revolution and its treaties, the creation
+   of Poland and Ireland's independence, the 1938–1940 changes in central and eastern Europe,
+   the wartime occupation zones, the postwar border changes, and in East Asia the annexation of
+   Korea and the Chinese revolution of 1911. Dates and details are deliberately left out: they
+   must come from the cited sources, never from this list.
+7. **Anyone can suggest.** The "missing event" issue form already asks for the sources; the
+   Contribute page (step 7) points to it, with the gap report's list as "events we'd like".
 
 **Candidates for Phase 7** (each independent, none started)
 
@@ -289,8 +321,9 @@ It is only started if steps 2–11 leave room, and it can be a Phase 7 headline 
    search.*
 8. **Data-saver behaviour:** no background prefetch when the browser reports a data-saver
    connection? *Recommended: yes.*
-9. **First-time visitor features** (section 9): play button and "start here", search by name, and
-   the lens in this phase; compare, cite, embed, clip export and downloads in Phase 7? *Recommended:
+9. **First-time visitor features** (section 9): play button, search by name, and the lens in this
+   phase, with no scripted tours; compare, cite, embed, clip export and downloads in Phase 7? And
+   is choosing events by the gap report and the rules of thumb in section 9 right? *Recommended:
    yes.*
 10. **New requests** the maintainers add before approval are placed in the order in section 12 by
    the same rule: measure first, then what changes tile size or speed, then what adds on top.
@@ -309,7 +342,7 @@ add features on top**, so nothing is built twice.
 | 4 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3), with the check of how Cliopatria's shapes were made. | high |
 | 5 | **Smooth era changes:** keep old tiles until new ones are ready, prefetch neighbours, blend. | high |
 | 6 | **Go to a date:** the box, travel animation, address, and phone layout. | medium |
-| 7 | **Welcome:** the play button, "start here" (stories from existing sourced events), the About and Contribute pages, and the share preview. | medium |
+| 7 | **Welcome:** the play button, the About and Contribute pages, the share preview, and the events-gap report (border changes no event explains). | medium |
 | 8 | **Search by name:** the name index and the search box. | medium |
 | 9 | **The "how sure are we?" lens.** | medium |
 | 10 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
@@ -347,4 +380,5 @@ The vision is large on purpose. These are the levers, in the order to reach for 
 *Recorded here when the maintainers approve the plan.* Settled before approval (2026-09-29):
 
 - **Coast gaps:** the maintainers lean toward option B (a flagged, build-only approximate margin).
+- **No scripted stories:** the map is the storyteller; events are chosen by what the map needs.
 - **Report by drawing:** considered and not added; the existing "Report a problem" link is enough.
