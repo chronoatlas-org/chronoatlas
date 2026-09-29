@@ -129,6 +129,11 @@ export interface PolityFile {
   /** Where the second opinion (Cliopatria) names a different holder over this territory: "sources differ". */
   differ?: ContestedEntry[];
   figures?: FigureEntry[];
+  /**
+   * Without a Wikidata ID: the English Wikipedia articles a source links for this polity's rows
+   * (Cliopatria's `Wikipedia` column, Phase 5 decision 14), each for the days it applies, by start.
+   */
+  articles?: { title: string; source: string; s0: number; e0: number }[];
 }
 
 /** public/data/events/<id>.json */
@@ -315,8 +320,25 @@ export interface TerritoryView {
   smallTerritory?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
-  /** The address of the polity's Wikipedia article (wikipediaLink), when its file has a Wikidata ID. */
+  /** The address of the polity's Wikipedia article, from its Wikidata ID or a source's `articles`. */
   wikipedia?: string;
+  /** The source that links that article, when it isn't our Wikidata ID (e.g. "Cliopatria"). */
+  wikipediaVia?: string;
+}
+
+/**
+ * The polity's link to Wikipedia: from its Wikidata ID; otherwise the article a source links for
+ * the row in effect on the day (or the nearest row), credited to that source.
+ */
+function wikipediaFor(file: PolityFile, sources: SourcesFile['sources'], day: number, locale: string): Pick<TerritoryView, 'wikipedia' | 'wikipediaVia'> {
+  const byId = file.wikidata ? wikipediaLink(file.wikidata, locale) : undefined;
+  if (byId) return { wikipedia: byId };
+  const articles = file.articles ?? [];
+  if (articles.length === 0) return {};
+  const distance = (a: { s0: number; e0: number }) => (day < a.s0 ? a.s0 - day : day >= a.e0 ? day - a.e0 + 1 : 0);
+  const article = articles.reduce((best, a) => (distance(a) < distance(best) ? a : best));
+  const url = articleLink(article.title);
+  return url ? { wikipedia: url, wikipediaVia: sources[article.source]?.title ?? article.source } : {};
 }
 
 /**
@@ -329,6 +351,15 @@ export function wikipediaLink(wikidata: string, locale: string): string | undefi
   if (!/^Q[1-9][0-9]*$/.test(wikidata)) return undefined;
   const lang = locale.split('-')[0].toLowerCase();
   return `https://www.wikidata.org/wiki/Special:GoToLinkedPage/${/^[a-z]{2,3}$/.test(lang) ? lang : 'en'}wiki/${wikidata}`;
+}
+
+/**
+ * The address of an English Wikipedia article by its title, as a source gives it. Undefined for a
+ * title with characters no Wikipedia title has, since it comes from outside data.
+ */
+export function articleLink(title: string): string | undefined {
+  if (!/^[^\u0000-\u001f<>[\]{}|#]{1,255}$/.test(title)) return undefined;
+  return `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replaceAll(' ', '_'))}`;
 }
 
 /** "What each source says at the spot you clicked": one group per source layer. */
@@ -757,7 +788,7 @@ export function describeTerritory(
     differ,
     figures: figureLines,
     ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
-    ...(file.wikidata && wikipediaLink(file.wikidata, locale) ? { wikipedia: wikipediaLink(file.wikidata, locale) } : {}),
+    ...wikipediaFor(file, sources, day, locale),
     credits: creditsFor(
       [
         ...file.records.flatMap((r) => r.sources),

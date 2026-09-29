@@ -596,6 +596,24 @@ describe('land areas', () => {
       },
     ]);
   });
+
+  it('lists the Wikipedia articles a source links for a polity\'s rows, merging back-to-back ones', () => {
+    // Made-up Testland rows, each with a made-up article title.
+    const cite = [{ source: 'cliopatria', locator: 'row' }];
+    const row = (id: string, start: string, end: string) => ({ id, relation: 'controls' as const, subject: 'testland', shape: id, start, end, sources: cite });
+    const shape = (id: string, title: string) => ({ file: id, value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown', cliopatria_wikipedia: title }, geometry: { type: 'Polygon' as const, coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] } } });
+    const withTitles: Dataset = {
+      ...ds,
+      polities: ds.polities.map((p) => ({ ...p, value: { ...p.value, wikidata: undefined } })),
+      assertions: [{ file: 'data/imports/cliopatria/assertions.yaml', value: [row('a', '1901', '1903'), row('b', '1903', '1905'), row('c', '1905', '1907')] }],
+      shapes: [shape('a', 'Testland'), shape('b', 'Testland'), shape('c', 'Later Testland')],
+    };
+    const file = buildPolityFiles(withTitles).find((f) => f.id === 'testland')!;
+    expect(file.articles).toEqual([
+      { title: 'Testland', source: 'cliopatria', s0: civilToJdn(1901, 1, 1), e0: civilToJdn(1905, 1, 1) },
+      { title: 'Later Testland', source: 'cliopatria', s0: civilToJdn(1905, 1, 1), e0: civilToJdn(1907, 1, 1) },
+    ]);
+  });
 });
 
 describe('eras in the build', () => {

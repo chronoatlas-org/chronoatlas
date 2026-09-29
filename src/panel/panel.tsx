@@ -304,7 +304,9 @@ function Territory({ view, alsoHere, spot, reportUrl, onGoToDay, onSelectOther }
             <a href={view.wikipedia} target="_blank" rel="noopener">
               {t('panel.wikipedia')}
             </a>{' '}
-            <span class="panel-report-note">{t('panel.wikipediaNote')}</span>
+            <span class="panel-report-note">
+              {view.wikipediaVia ? t('panel.wikipediaVia', { source: view.wikipediaVia }) : t('panel.wikipediaNote')}
+            </span>
           </p>
         )}
         <p class="panel-report">

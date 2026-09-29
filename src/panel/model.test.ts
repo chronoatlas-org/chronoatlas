@@ -2,7 +2,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeSpot, describeTerritory, languageName, nearbyEras, otherPolitiesAtSpot, sourceLink, wikipediaLink } from './model.ts';
+import { articleLink, describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeSpot, describeTerritory, languageName, nearbyEras, otherPolitiesAtSpot, sourceLink, wikipediaLink } from './model.ts';
 import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile, SpotSet } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
@@ -377,6 +377,31 @@ describe('wikipediaLink', () => {
   it('gives no link for anything that isn\'t a Wikidata item ID', () => {
     expect(wikipediaLink('Q12/../x', 'en')).toBeUndefined();
     expect(wikipediaLink('', 'en')).toBeUndefined();
+  });
+
+  it('without an ID, links the article a source gives for the row in effect, credited to it', () => {
+    // Made-up article titles for Testland's two periods.
+    const file: PolityFile = {
+      ...testland,
+      wikidata: undefined,
+      articles: [
+        { title: 'Early Testland (1901–1903)', source: 'test-source', s0: day(1901, 1, 1), e0: day(1904, 1, 1) },
+        { title: 'Testland', source: 'test-source', s0: day(1904, 1, 1), e0: day(1910, 1, 1) },
+      ],
+    };
+    const early = describeTerritory(file, sources, day(1902, 1, 1), 'en');
+    expect(early.wikipedia).toBe('https://en.wikipedia.org/wiki/Early_Testland_(1901%E2%80%931903)');
+    expect(early.wikipediaVia).toBe(sources['test-source'].title);
+    // After the last row: the nearest one.
+    expect(describeTerritory(file, sources, day(1950, 1, 1), 'en').wikipedia).toBe('https://en.wikipedia.org/wiki/Testland');
+    // A Wikidata ID comes first.
+    expect(describeTerritory({ ...file, wikidata: 'Q1234567' }, sources, day(1902, 1, 1), 'en').wikipediaVia).toBeUndefined();
+  });
+
+  it('gives no article link for a title no Wikipedia article could have', () => {
+    expect(articleLink('Testland')).toBe('https://en.wikipedia.org/wiki/Testland');
+    expect(articleLink('Test<script>')).toBeUndefined();
+    expect(articleLink('')).toBeUndefined();
   });
 
   it('is in the territory view only when the file has an ID', () => {
