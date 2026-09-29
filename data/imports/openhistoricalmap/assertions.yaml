@@ -26,16 +26,25 @@
   end: 1942-05
   sources:
     - source: openhistoricalmap
-      locator: relation 2848255, version 8
+      locator: relation 2848255, version 9
 - id: ohm-r2801016
   relation: administers
   subject: british-burma
   shape: ohm-r2801016
   start: 1945-08-19
+  end: 1946-01-01
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2801016, version 21
+- id: ohm-r2961561
+  relation: administers
+  subject: british-burma
+  shape: ohm-r2961561
+  start: 1946-01-01
   end: 1948-01-04
   sources:
     - source: openhistoricalmap
-      locator: relation 2801016, version 20
+      locator: relation 2961561, version 1
 - id: ohm-r2901233
   relation: administers
   subject: british-concession-in-tianjin
@@ -166,11 +175,11 @@
   relation: administers
   subject: cambodia
   shape: ohm-r2746209
-  start: 1945-03-13
+  start: 1945-03-10
   end: 1946-11-17
   sources:
     - source: openhistoricalmap
-      locator: relation 2746209, version 18
+      locator: relation 2746209, version 19
 - id: ohm-r2746263
   relation: administers
   subject: cambodia
@@ -476,7 +485,7 @@
   end: 1945-03-10
   sources:
     - source: openhistoricalmap
-      locator: relation 2745895, version 38
+      locator: relation 2745895, version 39
 - id: ohm-r2920530
   relation: administers
   subject: indochinese-union
@@ -509,10 +518,19 @@
   subject: indochinese-union
   shape: ohm-r2948946
   start: 1939-04-09
-  end: 1941-05-08
+  end: 1941-03
   sources:
     - source: openhistoricalmap
-      locator: relation 2948946, version 1
+      locator: relation 2948946, version 2
+- id: ohm-r2961509
+  relation: administers
+  subject: indochinese-union
+  shape: ohm-r2961509
+  start: 1941-03
+  end: 1941-05-09
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2961509, version 1
 - id: ohm-r2694478
   relation: administers
   subject: japan-1947-1947
@@ -581,10 +599,10 @@
   subject: laos
   shape: ohm-r2746245
   start: 1945-04-08
-  end: 1946-11-16
+  end: 1946-11-17
   sources:
     - source: openhistoricalmap
-      locator: relation 2746245, version 21
+      locator: relation 2746245, version 22
 - id: ohm-r2747289
   relation: administers
   subject: laos
@@ -764,7 +782,7 @@
   end: "1905"
   sources:
     - source: openhistoricalmap
-      locator: relation 2851153, version 116
+      locator: relation 2851153, version 117
 - id: ohm-r2851152
   relation: administers
   subject: russian-empire
@@ -773,7 +791,7 @@
   end: "1908"
   sources:
     - source: openhistoricalmap
-      locator: relation 2851152, version 119
+      locator: relation 2851152, version 120
 - id: ohm-r2849760
   relation: administers
   subject: russian-empire
@@ -782,7 +800,7 @@
   end: 1914-04-17
   sources:
     - source: openhistoricalmap
-      locator: relation 2849760, version 125
+      locator: relation 2849760, version 126
 - id: ohm-r2851294
   relation: administers
   subject: russian-empire
@@ -791,7 +809,7 @@
   end: 1916-09-20
   sources:
     - source: openhistoricalmap
-      locator: relation 2851294, version 120
+      locator: relation 2851294, version 121
 - id: ohm-r2851158
   relation: administers
   subject: russian-empire
@@ -800,7 +818,7 @@
   end: 1917-09-14
   sources:
     - source: openhistoricalmap
-      locator: relation 2851158, version 121
+      locator: relation 2851158, version 122
 - id: ohm-r2869933
   relation: administers
   subject: russian-republic
@@ -809,7 +827,7 @@
   end: 1917-11-07
   sources:
     - source: openhistoricalmap
-      locator: relation 2869933, version 73
+      locator: relation 2869933, version 74
 - id: ohm-r2852344
   relation: administers
   subject: russian-soviet-federative-socialist-republic
@@ -968,10 +986,10 @@
   subject: siam
   shape: ohm-r2874871
   start: 1907-03-23
-  end: 1932-06-24
+  end: 1939-06-24
   sources:
     - source: openhistoricalmap
-      locator: relation 2874871, version 9
+      locator: relation 2874871, version 10
 - id: ohm-r2694475
   relation: administers
   subject: south-korea
@@ -998,7 +1016,7 @@
   end: 1925-01-20
   sources:
     - source: openhistoricalmap
-      locator: relation 2800978, version 111
+      locator: relation 2800978, version 112
 - id: ohm-r2851271
   relation: administers
   subject: soviet-union
@@ -1007,7 +1025,7 @@
   end: "1926"
   sources:
     - source: openhistoricalmap
-      locator: relation 2851271, version 88
+      locator: relation 2851271, version 89
 - id: ohm-r2851157
   relation: administers
   subject: soviet-union
@@ -1016,7 +1034,7 @@
   end: 1939-10-06
   sources:
     - source: openhistoricalmap
-      locator: relation 2851157, version 92
+      locator: relation 2851157, version 93
 - id: ohm-r2848248
   relation: administers
   subject: soviet-union
@@ -1025,7 +1043,7 @@
   end: 1939-10-28
   sources:
     - source: openhistoricalmap
-      locator: relation 2848248, version 95
+      locator: relation 2848248, version 96
 - id: ohm-r2848241
   relation: administers
   subject: soviet-union
@@ -1034,7 +1052,7 @@
   end: 1940-03-12
   sources:
     - source: openhistoricalmap
-      locator: relation 2848241, version 99
+      locator: relation 2848241, version 100
 - id: ohm-r2851878
   relation: administers
   subject: soviet-union
@@ -1043,7 +1061,7 @@
   end: 1940-06-28
   sources:
     - source: openhistoricalmap
-      locator: relation 2851878, version 85
+      locator: relation 2851878, version 86
 - id: ohm-r2848258
   relation: administers
   subject: soviet-union
@@ -1052,7 +1070,7 @@
   end: 1940-08-03
   sources:
     - source: openhistoricalmap
-      locator: relation 2848258, version 97
+      locator: relation 2848258, version 98
 - id: ohm-r2848256
   relation: administers
   subject: soviet-union
@@ -1061,7 +1079,7 @@
   end: 1940-08-05
   sources:
     - source: openhistoricalmap
-      locator: relation 2848256, version 100
+      locator: relation 2848256, version 101
 - id: ohm-r2848811
   relation: administers
   subject: soviet-union
@@ -1070,7 +1088,7 @@
   end: 1940-08-06
   sources:
     - source: openhistoricalmap
-      locator: relation 2848811, version 97
+      locator: relation 2848811, version 98
 - id: ohm-r2848812
   relation: administers
   subject: soviet-union
@@ -1079,7 +1097,7 @@
   end: 1941-07-17
   sources:
     - source: openhistoricalmap
-      locator: relation 2848812, version 97
+      locator: relation 2848812, version 98
 - id: ohm-r2851156
   relation: administers
   subject: soviet-union
@@ -1088,7 +1106,7 @@
   end: 1944-09-19
   sources:
     - source: openhistoricalmap
-      locator: relation 2851156, version 93
+      locator: relation 2851156, version 94
 - id: ohm-r2852346
   relation: administers
   subject: soviet-union
@@ -1097,7 +1115,7 @@
   end: 1944-10-11
   sources:
     - source: openhistoricalmap
-      locator: relation 2852346, version 80
+      locator: relation 2852346, version 81
 - id: ohm-r2957472
   relation: administers
   subject: soviet-union
@@ -1106,7 +1124,7 @@
   end: 1945-08-01
   sources:
     - source: openhistoricalmap
-      locator: relation 2957472, version 18
+      locator: relation 2957472, version 19
 - id: ohm-r2851943
   relation: administers
   subject: soviet-union
@@ -1115,7 +1133,7 @@
   end: 1945-08-25
   sources:
     - source: openhistoricalmap
-      locator: relation 2851943, version 90
+      locator: relation 2851943, version 91
 - id: ohm-r2851275
   relation: administers
   subject: soviet-union
@@ -1124,7 +1142,7 @@
   end: 1945-09-02
   sources:
     - source: openhistoricalmap
-      locator: relation 2851275, version 114
+      locator: relation 2851275, version 115
 - id: ohm-r2851155
   relation: administers
   subject: soviet-union
@@ -1133,7 +1151,7 @@
   end: 1946-01-30
   sources:
     - source: openhistoricalmap
-      locator: relation 2851155, version 119
+      locator: relation 2851155, version 120
 - id: ohm-r2958981
   relation: administers
   subject: soviet-union
@@ -1142,7 +1160,7 @@
   end: 1947-04-18
   sources:
     - source: openhistoricalmap
-      locator: relation 2958981, version 14
+      locator: relation 2958981, version 15
 - id: ohm-r2959038
   relation: administers
   subject: soviet-union
@@ -1151,7 +1169,7 @@
   end: 1948-09-09
   sources:
     - source: openhistoricalmap
-      locator: relation 2959038, version 12
+      locator: relation 2959038, version 13
 - id: ohm-r2742312
   relation: administers
   subject: soviet-union
@@ -1160,52 +1178,79 @@
   end: 1956-01-26
   sources:
     - source: openhistoricalmap
-      locator: relation 2742312, version 125
+      locator: relation 2742312, version 126
 - id: ohm-r2848253
   relation: administers
   subject: state-of-burma
   shape: ohm-r2848253
   start: 1943-08-01
+  end: 1943-08-18
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2848253, version 8
+- id: ohm-r2961562
+  relation: administers
+  subject: state-of-burma
+  shape: ohm-r2961562
+  start: 1943-08-01
   end: 1945-08-19
   sources:
     - source: openhistoricalmap
-      locator: relation 2848253, version 7
+      locator: relation 2961562, version 1
 - id: ohm-r2801980
   relation: administers
   subject: thailand
   shape: ohm-r2801980
-  start: "1939"
-  end: 1943-10-18
+  start: 1939-06-24
+  end: 1941-03
   sources:
     - source: openhistoricalmap
-      locator: relation 2801980, version 23
+      locator: relation 2801980, version 24
 - id: ohm-r2874870
   relation: administers
   subject: thailand
   shape: ohm-r2874870
   start: 1941-03
+  end: 1943-08-18
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2874870, version 12
+- id: ohm-r2961563
+  relation: administers
+  subject: thailand
+  shape: ohm-r2961563
+  start: 1943-08-18
   end: 1943-10-18
   sources:
     - source: openhistoricalmap
-      locator: relation 2874870, version 10
+      locator: relation 2961563, version 2
 - id: ohm-r2848473
   relation: administers
   subject: thailand
   shape: ohm-r2848473
   start: 1943-10-18
-  end: 1945-09-02
+  end: 1946-01-01
   sources:
     - source: openhistoricalmap
-      locator: relation 2848473, version 13
-- id: ohm-r2848474
+      locator: relation 2848473, version 15
+- id: ohm-r2961511
   relation: administers
   subject: thailand
-  shape: ohm-r2848474
-  start: 1945-09-02
+  shape: ohm-r2961511
+  start: 1946-01-01
+  end: 1946-11-17
+  sources:
+    - source: openhistoricalmap
+      locator: relation 2961511, version 2
+- id: ohm-r2961510
+  relation: administers
+  subject: thailand
+  shape: ohm-r2961510
+  start: 1946-11-17
   end: 1966-10-06
   sources:
     - source: openhistoricalmap
-      locator: relation 2848474, version 10
+      locator: relation 2961510, version 1
 - id: ohm-r2828810
   relation: administers
   subject: tibet

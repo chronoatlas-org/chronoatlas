@@ -549,7 +549,7 @@ names:
   - text: ປະເທດລາວ
     lang: lo
     start: 1945-04-08
-    end: 1946-11-16
+    end: 1946-11-17
     sources:
       - source: openhistoricalmap
         locator: name tags on relation 2746245
