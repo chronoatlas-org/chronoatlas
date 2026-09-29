@@ -92,6 +92,9 @@
     - polity: cliopatria-french-third-republic
       kind: same-state
       why: Cliopatria's "French Third Republic" held 97% of CShapes' "France" (its own unit), and 96% of it lay there (1 July, 1914–1940). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-vichy-france
+      kind: same-state
+      why: Cliopatria's "Vichy France" lay 99% inside CShapes' "France" and held 48% of it (1 July, 1940–1943); listed under "Look closer" by npm run suggest-crosswalk, and linked as the same state by the maintainers' decision on 2026-09-29.
 
 - unit: cshapes-365 # Russia (Soviet Union)
   matches:
@@ -118,6 +121,9 @@
     - polity: cliopatria-union-of-soviet-socialist-republics
       kind: dependency
       why: Cliopatria's "Union of Soviet Socialist Republics" held 86% of CShapes' "German Democratic Republic" (a dependency of "Russia (Soviet Union)"), and 1% of it lay there (1 July, 1945–1949). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-russian-republic
+      kind: same-state
+      why: Cliopatria's "Russian Republic" lay 92% inside CShapes' "Russia (Soviet Union)" and held 49% of it (1 July, 1917–1920); listed under "Look closer" by npm run suggest-crosswalk, and linked as the same state by the maintainers' decision on 2026-09-29.
 
 - unit: cshapes-700 # Afghanistan
   matches:
@@ -232,9 +238,11 @@
 
 # Europe 1914–1950 (Phase 5 step 8): where Cliopatria is the map, its polities are matched
 # directly. Suggested by `npm run suggest-crosswalk` (docs/crosswalk-review/europe-1914-1950.md)
-# and accepted by the maintainers on 2026-09-29: all 75 suggested links. Its "Look closer" list
-# (breakaway states, rival governments, occupation zones, occupiers of other states' units) is
-# left unmatched on purpose, so the build shows them as contested.
+# and accepted by the maintainers on 2026-09-29: all 75 suggested links, and from its "Look closer"
+# list only Vichy France (with France) and the Russian Republic (with Russia), in the entries for
+# those units above. The rest of that list (breakaway states, rival governments, occupation zones,
+# occupiers of other states' units) is left unmatched on purpose, so the build shows them as
+# contested.
 - unit: cshapes-205 # Ireland
   matches:
     - polity: cliopatria-eire

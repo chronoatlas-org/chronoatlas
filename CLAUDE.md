@@ -277,7 +277,7 @@ with an effort setting for each step. The ones that affect everyday work:
 - **Cliopatria IDs:** `cliopatria-<name>-<year>`, `…-<year>bce` for BCE rows, and `-2`, `-3`, … for
   further rows with the same name and first year (decision 12).
 - **CShapes covers the world** (1886–2019), still isolated. **Contested areas** are computed only
-  where a crosswalk has been reviewed for those years (Europe 1914–1950 first); the panel says
+  where a crosswalk has been reviewed for those years (East Asia 1900–1950, Europe 1914–1944); the panel says
   "Not yet checked against legal borders here" elsewhere. Crosswalk suggestions are never
   accepted without a maintainer's review.
   - The reviewed places and years are listed in a hand-written `crosswalk-reviewed.yaml` beside
@@ -296,8 +296,9 @@ with an effort setting for each step. The ones that affect everyday work:
     most of one of its main holder's units; breakaway states, rival governments, occupation zones,
     and occupiers of other states' units go under "Look closer", never suggested. `--trial` lists
     the contested areas if every suggestion were accepted. Reports and how to review them are in
-    `docs/crosswalk-review/`. Europe 1914–1950: all 75 suggested links accepted (2026-09-29) and
-    in the crosswalk; its reviewed region and years are still to be decided.
+    `docs/crosswalk-review/`. **Europe** (25°W–45°E, 34–72°N) is reviewed for 1914–1944
+    (2026-09-29: the 75 suggested links, plus Vichy France and the Russian Republic); 1945–1950
+    waits for Cliopatria's postwar gaps. Areas cut by a scope's edge below 10,000 km² are dropped.
   - The CShapes import skips dependencies whose owner code isn't a state in CShapes (codes 0 and
     1: Danzig 1919–1938, West Irian 1962–63) and lists them in its manifest; what those codes
     stand for is for the maintainers to check in the codebook.

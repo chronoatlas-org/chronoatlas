@@ -11,3 +11,14 @@
     The East Asia showcase: the crosswalk was written and reviewed for the CShapes units imported
     for this area and these years in Phase 2 (contested areas, step 9), and says on what evidence
     for each link.
+- area: { south: 34, west: -25, north: 72, east: 45 }
+  from: "1914"
+  until: "1945"
+  reviewed: 2026-09-29
+  notes: >-
+    Europe, the North African coast, and the Levant, 1914–1944, where Cliopatria is the map:
+    reviewed with npm run suggest-crosswalk (docs/crosswalk-review/europe-1914-1950.md). The
+    maintainers accepted all 75 suggested links and linked Vichy France and the Russian Republic
+    from its "Look closer" list. Stopped before 1945, because Cliopatria has gaps after the war
+    (no postwar Poland; Hungary, Bulgaria, and Czechoslovakia missing in 1945–1947) that would
+    show as false disputes.

@@ -888,7 +888,9 @@ export function buildContested(ds: Dataset): ContestedArea[] {
     ...computeContested(defaultMap, dejure, byUnit),
     ...computeContested(baseline, dejure, byUnit, MIN_DISAGREEMENT_KM2, DIFFER_MIN_WIDTH_KM),
   ];
-  return scopes ? withinScopes(areas, scopes) : areas;
+  // Cut to the reviewed places and years, the size threshold holds again: an area cut by a
+  // scope's edge down to a sliver says nothing CShapes would code.
+  return scopes ? withinScopes(areas, scopes).filter((a) => a.km2 >= MIN_DISAGREEMENT_KM2) : areas;
 }
 
 /** The reviewed scopes (crosswalk-reviewed.yaml) of the import folders `include` accepts, as boxes and days. */

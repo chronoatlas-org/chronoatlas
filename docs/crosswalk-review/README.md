@@ -28,7 +28,8 @@ in the data yet.
 
 ## Reviews
 
-- [Europe 1914–1950](europe-1914-1950.md) (Phase 5 step 8): **all 75 suggested links accepted**
-  by the maintainers on 2026-09-29 and added to the crosswalk. Still to decide before contested
-  areas are shown there: whether to link anything from "Look closer", and which region and years
-  to mark as reviewed.
+- [Europe 1914–1950](europe-1914-1950.md) (Phase 5 step 8), **reviewed 2026-09-29:** the
+  maintainers accepted all 75 suggested links, linked Vichy France (with France) and the Russian
+  Republic (with Russia) from "Look closer", and marked 25°W–45°E, 34–72°N, **1914–1944** as
+  reviewed. 1945–1950 is left unchecked: Cliopatria has no postwar Poland, and Hungary, Bulgaria,
+  and Czechoslovakia are missing in 1945–1947, which would show as false disputes.

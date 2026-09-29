@@ -504,6 +504,12 @@ describe('contested areas where Cliopatria is the map (Phase 5 step 8)', () => {
     expect(areas[0].km2).toBeGreaterThan(40_000);
   });
 
+  it('drops what a reviewed scope\'s edge cuts down below the size threshold', () => {
+    const edge = ds([]);
+    edge.crosswalkScopes![0].value[0].area.east = 0.1; // about 2,400 km² of the square is inside
+    expect(buildContested(edge)).toEqual([]);
+  });
+
   it('isn\'t contested once the crosswalk says they are the same state, nor anywhere unreviewed', () => {
     expect(buildContested(ds([{ polity: 'cliopatria-testland', kind: 'same-state' }]))).toEqual([]);
     expect(buildContested(ds([], false))).toEqual([]);
