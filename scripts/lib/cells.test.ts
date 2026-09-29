@@ -37,6 +37,15 @@ describe('CoverCount', () => {
     counter.remove(whole);
     expect(counter.uncovered).toBe(100);
   });
+
+  it('gives the box around the cells left uncovered', () => {
+    const counter = new CoverCount(shapeCellSet([square(0, 0, 1)]));
+    counter.add(counter.overlap(shapeCellSet([square(-1, 0, 1.5)]))); // covers x < 0.5
+    const [w, s, e, n] = counter.uncoveredBox()!;
+    expect([w, s, e, n].map((v) => Math.round(v * 100) / 100)).toEqual([0.55, 0.05, 0.95, 0.95]);
+    counter.add(counter.overlap(shapeCellSet([square(0, 0, 1)])));
+    expect(counter.uncoveredBox()).toBeUndefined();
+  });
 });
 
 describe('uncoveredCount', () => {

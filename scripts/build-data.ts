@@ -754,11 +754,20 @@ function computeBaseline(ds: Dataset, scopes: readonly ReviewedScope[]): Dataset
         active = next;
         let gap: MultiPolygon = [];
         if (counter.uncovered >= GAP_MIN_CELLS) {
-          const covers = cover.map((d) => d.record).join(' ');
-          if (!exact.has(covers)) {
-            exact.set(covers, gapPieces(cover.length === 0 ? geometry : polygonClipping.difference(geometry as never, ...(cover.map((d) => d.geometry) as never[]))));
+          // Cut only around the uncovered cells (with half a degree to spare), and only by the
+          // records that share cells with this one there: one that shares none can only take
+          // off a strip narrower than a cell, which its own fill covers anyway.
+          const [w, s, e, n] = counter.uncoveredBox()!;
+          const window: Box = [Math.max(w - 0.5, box[0]), Math.max(s - 0.5, box[1]), Math.min(e + 0.5, box[2]), Math.min(n + 0.5, box[3])];
+          const cutters = cover.filter((d) => overlapOf.get(d)!.length > 0 && overlaps(d.box, window));
+          const key = `${window.join(',')} ${cutters.map((d) => d.record).join(' ')}`;
+          if (!exact.has(key)) {
+            const whole = window[0] <= box[0] && window[1] <= box[1] && window[2] >= box[2] && window[3] >= box[3];
+            const [ww, ws, we, wn] = window;
+            const part = whole ? geometry : (polygonClipping.intersection(geometry as never, [[[[ww, ws], [we, ws], [we, wn], [ww, wn], [ww, ws]]]] as never) as MultiPolygon);
+            exact.set(key, gapPieces(cutters.length === 0 ? part : polygonClipping.difference(part as never, ...(cutters.map((d) => d.geometry) as never[]))));
           }
-          gap = exact.get(covers)!;
+          gap = exact.get(key)!;
         }
         if (gap.length === 0) {
           last = undefined;

@@ -46,12 +46,18 @@ export function shapeCellSet(shape: MultiPolygon, size = CELL_DEGREES): Set<numb
  */
 export class CoverCount {
   private readonly index = new Map<number, number>();
+  private readonly cells: number[] = [];
   private readonly counts: Uint16Array;
+  private readonly size: number;
   /** Cells no cover now has. */
   uncovered: number;
 
-  constructor(cells: ReadonlySet<number>) {
-    for (const cell of cells) this.index.set(cell, this.index.size);
+  constructor(cells: ReadonlySet<number>, size = CELL_DEGREES) {
+    this.size = size;
+    for (const cell of cells) {
+      this.index.set(cell, this.index.size);
+      this.cells.push(cell);
+    }
     this.counts = new Uint16Array(cells.size);
     this.uncovered = cells.size;
   }
@@ -73,6 +79,19 @@ export class CoverCount {
 
   remove(positions: readonly number[]): void {
     for (const p of positions) if (--this.counts[p] === 0) this.uncovered++;
+  }
+
+  /** The box (west, south, east, north) around the centres of the cells no cover now has. */
+  uncoveredBox(): [number, number, number, number] | undefined {
+    const columns = Math.round(360 / this.size);
+    let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
+    this.counts.forEach((count, p) => {
+      if (count > 0) return;
+      const x = ((this.cells[p] % columns) + 0.5) * this.size - 180;
+      const y = (Math.floor(this.cells[p] / columns) + 0.5) * this.size - 90;
+      [w, s, e, n] = [Math.min(w, x), Math.min(s, y), Math.max(e, x), Math.max(n, y)];
+    });
+    return w <= e ? [w, s, e, n] : undefined;
   }
 }
 
