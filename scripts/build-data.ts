@@ -37,7 +37,8 @@ import { civilToJdn, parseEdtfDate } from '../src/dates/index.ts';
 import { formatDayForUrl } from '../src/url/state.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset, Loaded } from './lib/data.ts';
-import { boundingBox, computeContested, MIN_DISAGREEMENT_KM2, withinScopes } from './lib/contested.ts';
+import { boundingBox, computeContested, meanWidthKm, MIN_DISAGREEMENT_KM2, withinScopes } from './lib/contested.ts';
+import { CoverCount, shapeCellSet } from './lib/cells.ts';
 import { chooseEras, inEra } from './lib/eras.ts';
 import type { Era, EraItem } from './lib/eras.ts';
 import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
@@ -220,7 +221,7 @@ export function mapColors(ds: Dataset): Map<string, number> {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const records = [
     { data: splitAtCoverage(ds, onDefaultMap, coverage, 'during'), include: onDefaultMap },
-    { data: splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), include: isSecondOpinion },
+    { data: baselineData(ds, coverage), include: isSecondOpinion },
   ].flatMap(({ data, include }) => {
     const pieces = new Map(data.shapes.map(({ value }) => [value.properties.id, value]));
     return data.assertions
@@ -408,7 +409,7 @@ export function buildSecondOpinion(ds: Dataset, outlines?: OutlineContext) {
  */
 export function buildBaseline(ds: Dataset, outlines?: OutlineContext, colors?: ReadonlyMap<string, number>) {
   const coverage = defaultCoverage(ds);
-  return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true, undefined, colors);
+  return buildBorderLayer(baselineData(ds, coverage), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true, undefined, colors);
 }
 
 /**
@@ -590,8 +591,11 @@ export function splitAtCoverage(ds: Dataset, include: (file: string) => boolean,
   if (scopes.length === 0) return mode === 'inside' ? { ...ds, assertions: ds.assertions.filter(({ file }) => !include(file)) } : ds;
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const cutShapes = new Map<string, Loaded<ShapeFeature>>();
+  // A cut's ID names its scope after the first ("~in2" for the second), so a shape crossing two
+  // scopes gets a piece for each.
   const cut = (shape: ShapeFeature, file: string, box: Box, how: 'out' | 'in'): string | undefined => {
-    const id = `${shape.properties.id}~${how}`;
+    const index = scopes.findIndex((scope) => scope.box === box);
+    const id = `${shape.properties.id}~${how}${index > 0 ? index + 1 : ''}`;
     if (!cutShapes.has(id)) {
       const geometry = asMultiPolygon(shape.geometry);
       const [w, s, e, n] = box;
@@ -666,6 +670,127 @@ export function splitAtCoverage(ds: Dataset, include: (file: string) => boolean,
     return { file, value: pieces };
   });
   return { ...ds, assertions, shapes: [...ds.shapes, ...cutShapes.values()] };
+}
+
+/**
+ * Gaps in the default map are filled from the baseline only where a piece is at least this large
+ * and this wide: Cliopatria's coarse borders don't meet OpenHistoricalMap's exactly, so thin strips
+ * along every border and coast would otherwise come through (the rule of "sources differ").
+ */
+export const GAP_MIN_KM2 = 1_000;
+export const GAP_MIN_WIDTH_KM = 10;
+/**
+ * The quick test's threshold, in grid cells of 0.1° (80–120 km² in Europe): a piece of 1,000 km²
+ * holds about ten cell centres, and a strip 10 km wide about one for every 11 km of its length.
+ */
+const GAP_MIN_CELLS = 4;
+
+/**
+ * The baseline as the map draws it (2026-09-29, at the maintainers' request): Cliopatria outside
+ * the default map's coverage (splitAtCoverage 'outside'), and inside it wherever the default map has
+ * no record on a day, so a gap in OpenHistoricalMap shows Cliopatria's borders, credited as
+ * elsewhere, rather than "no data".
+ *
+ * Inside a coverage scope, each of Cliopatria's records is compared with the default map's records
+ * that reach it, over each stretch of days in which the same ones apply; what they leave uncovered
+ * (pieces of at least GAP_MIN_KM2 and GAP_MIN_WIDTH_KM) is kept, for those days. Pieces keep their
+ * record's ID; their shapes get build-only IDs ("<shape>~gap<day>").
+ */
+export function baselineData(ds: Dataset, scopes: readonly ReviewedScope[] = defaultCoverage(ds)): Dataset {
+  // Worked out once per dataset and coverage: the colors, the layer, and contested areas all use it.
+  const key = JSON.stringify(scopes);
+  const cached = baselineCache.get(ds)?.get(key);
+  if (cached) return cached;
+  const result = computeBaseline(ds, scopes);
+  baselineCache.set(ds, (baselineCache.get(ds) ?? new Map()).set(key, result));
+  return result;
+}
+const baselineCache = new WeakMap<Dataset, Map<string, Dataset>>();
+
+function computeBaseline(ds: Dataset, scopes: readonly ReviewedScope[]): Dataset {
+  const outside = splitAtCoverage(ds, isSecondOpinion, scopes, 'outside');
+  if (scopes.length === 0) return outside;
+  const inside = splitAtCoverage(ds, isSecondOpinion, scopes, 'inside');
+  const insideShapes = new Map(inside.shapes.map(({ value }) => [value.properties.id, value]));
+  const drawn = timedShapes(splitAtCoverage(ds, onDefaultMap, scopes, 'during'), onDefaultMap, TERRITORIAL_RELATIONS);
+  const overlaps = (a: Box, b: Box) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
+  /** What's left that's large and wide enough to show. */
+  const gapPieces = (left: unknown) =>
+    cleanMultiPolygon(left as MultiPolygon, 4).filter((polygon) => areaKm2([polygon]) >= GAP_MIN_KM2 && meanWidthKm(polygon) >= GAP_MIN_WIDTH_KM);
+  /** Each shape's grid cells (scripts/lib/cells.ts), worked out once. */
+  const cellSets = new Map<string, Set<number>>();
+  const cellsOf = (id: string, geometry: MultiPolygon) => {
+    if (!cellSets.has(id)) cellSets.set(id, shapeCellSet(geometry));
+    return cellSets.get(id)!;
+  };
+  const pieces: Loaded<Assertion[]>[] = [];
+  const gapShapes: Loaded<ShapeFeature>[] = [];
+  for (const { file, value } of inside.assertions) {
+    if (!isSecondOpinion(file)) continue;
+    const kept: Assertion[] = [];
+    for (const a of value) {
+      const shape = a.shape ? insideShapes.get(a.shape) : undefined;
+      if (!shape || !TERRITORIAL_RELATIONS.includes(a.relation)) continue;
+      const geometry = asMultiPolygon(shape.geometry);
+      const box = boundingBox(geometry);
+      const { s0, e1 } = dayRanges(a.start, a.end);
+      const near = drawn.filter((d) => d.s0 < e1 && d.e0 > s0 && overlaps(d.box, box));
+      // The stretches of days in which the same default-map records apply.
+      const days = [...new Set([s0, e1, ...near.flatMap((d) => [d.s0, d.e0]).filter((d) => d > s0 && d < e1)])].sort((x, y) => x - y);
+      // First by grid cells (about 10 km), which is quick: a piece large and wide enough to show
+      // holds at least a few cell centres. The count follows the default map's records as they
+      // come and go. The exact cut only where the cells find a gap, once for each set of records.
+      const counter = new CoverCount(cellsOf(a.shape!, geometry));
+      const overlapOf = new Map(near.map((d) => [d, counter.overlap(cellsOf(d.shape, d.geometry))]));
+      const exact = new Map<string, MultiPolygon>();
+      let active = new Set<TimedShape>();
+      let last: { assertion: Assertion; key: string } | undefined;
+      for (let k = 0; k + 1 < days.length; k++) {
+        const [d0, d1] = [days[k], days[k + 1]];
+        const cover = near.filter((d) => d.s0 <= d0 && d.e0 >= d1);
+        const next = new Set(cover);
+        for (const d of active) if (!next.has(d)) counter.remove(overlapOf.get(d)!);
+        for (const d of next) if (!active.has(d)) counter.add(overlapOf.get(d)!);
+        active = next;
+        let gap: MultiPolygon = [];
+        if (counter.uncovered >= GAP_MIN_CELLS) {
+          // Cut only around the uncovered cells (with half a degree to spare), and only by the
+          // records that share cells with this one there: one that shares none can only take
+          // off a strip narrower than a cell, which its own fill covers anyway.
+          const [w, s, e, n] = counter.uncoveredBox()!;
+          const window: Box = [Math.max(w - 0.5, box[0]), Math.max(s - 0.5, box[1]), Math.min(e + 0.5, box[2]), Math.min(n + 0.5, box[3])];
+          const cutters = cover.filter((d) => overlapOf.get(d)!.length > 0 && overlaps(d.box, window));
+          const key = `${window.join(',')} ${cutters.map((d) => d.record).join(' ')}`;
+          if (!exact.has(key)) {
+            const whole = window[0] <= box[0] && window[1] <= box[1] && window[2] >= box[2] && window[3] >= box[3];
+            const [ww, ws, we, wn] = window;
+            const part = whole ? geometry : (polygonClipping.intersection(geometry as never, [[[[ww, ws], [we, ws], [we, wn], [ww, wn], [ww, ws]]]] as never) as MultiPolygon);
+            exact.set(key, gapPieces(cutters.length === 0 ? part : polygonClipping.difference(part as never, ...(cutters.map((d) => d.geometry) as never[]))));
+          }
+          gap = exact.get(key)!;
+        }
+        if (gap.length === 0) {
+          last = undefined;
+          continue;
+        }
+        const key = JSON.stringify(gap);
+        const start = d0 === s0 ? a.start : formatDayForUrl(d0);
+        const end = d1 === e1 ? a.end : formatDayForUrl(d1);
+        // The same piece on the next stretch of days: one record, running on.
+        if (last && last.key === key) {
+          last.assertion.end = end;
+          continue;
+        }
+        const id = `${shape.properties.id}~gap${d0}`;
+        gapShapes.push({ file, value: { ...shape, properties: { ...shape.properties, id }, geometry: { type: 'MultiPolygon', coordinates: gap } } });
+        const assertion = { ...a, start, end, shape: id };
+        kept.push(assertion);
+        last = { assertion, key };
+      }
+    }
+    if (kept.length > 0) pieces.push({ file, value: kept });
+  }
+  return { ...outside, assertions: [...outside.assertions, ...pieces], shapes: [...outside.shapes, ...gapShapes] };
 }
 
 export interface CrosswalkLink extends Link {
@@ -921,7 +1046,7 @@ export function buildContested(ds: Dataset): ContestedArea[] {
   // kilometres, so its thin strips don't count, as for "sources differ".
   const coverage = defaultCoverage(ds);
   const defaultMap = timedShapes(splitAtCoverage(ds, onDefaultMap, coverage, 'during'), onDefaultMap, ['administers', 'controls', 'occupies']).filter((t) => inScope(t, t.source));
-  const baseline = timedShapes(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, ['controls']).filter((t) => inScope(t, t.source));
+  const baseline = timedShapes(baselineData(ds, coverage), isSecondOpinion, ['controls']).filter((t) => inScope(t, t.source));
   const areas = [
     ...computeContested(defaultMap, dejure, byUnit),
     ...computeContested(baseline, dejure, byUnit, MIN_DISAGREEMENT_KM2, DIFFER_MIN_WIDTH_KM),

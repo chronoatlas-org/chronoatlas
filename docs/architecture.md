@@ -172,7 +172,12 @@ sovereign: China (per CShapes)".
 - **Also supported:** unspecified digits (`193X` = the 1930s, `19XX`, `1985-04-XX`) and years
   beyond four digits (`Y-12000`). **Not supported yet:** seasons (`2001-21`), because EDTF level
   1 doesn't say which months or hemisphere a season means; use a month range such as
-  `1938-03/1938-05` instead. Times of day aren't supported either.
+  `1938-03/1938-05` instead.
+- **Two more forms, accepted since 2026-09-29** (OpenHistoricalMap's tags use them): a date with a
+  time of day (`1949-04-23T06:00:00+01:00`) keeps its day as written, in its own time zone, and
+  drops the time; and "one of a set" (`[1908-10-04..1908-10-06]`, `[1667,1668]`) is one of those
+  dates, not known which, so it becomes the range from the first to the last, marked uncertain, and
+  reads "4 October 1908 to 6 October 1908, not known which".
 - **Approximate (`~`) and uncertain (`?`)** are flags. They don't widen a date's range, because
   EDTF doesn't say by how much; the map shows them through styling instead.
 - **Internally:** the date library (`src/dates/`) converts every date into a range of whole day

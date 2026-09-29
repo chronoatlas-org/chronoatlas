@@ -373,6 +373,8 @@ async function main(): Promise<void> {
         'OHM end_date is read as the first day the boundary no longer applied: OHM chains successive boundaries with the same date as one end_date and the next start_date. On a changeover day we show the successor. (OHM\'s own viewer shows both on that day.)',
       no_end_date: 'A relation without end_date is imported with end "ongoing".',
       edtf_tags: 'Where start_date:edtf or end_date:edtf exist, they are used instead of start_date/end_date.',
+      date_forms:
+        'Since 2026-09-29: a date with a time of day (1949-04-23T06:00:00+01:00) keeps its day as written, in its own time zone, without the time; "one of a set" ([1908-10-04..1908-10-06]) is one of those days, not known which, and is kept as written (uncertain from the first to the last).',
       polities:
         'Relations are grouped into one polity by their Wikidata ID, or by English name when there is none. Polity IDs are permanent and recorded in polity-ids.json.',
       names: 'The name and name:<language> tags of each relation are copied, with the dates of the relations that carry them. Tagged "name" without a language is recorded as lang "und" (the local name).',

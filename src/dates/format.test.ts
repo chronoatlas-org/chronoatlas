@@ -35,6 +35,13 @@ describe('formatDate', () => {
     expect(show('19XX')).toBe('1900 – 1999');
     expect(show('-02XX')).toBe('300–201 BCE');
   });
+
+  it('shows a date with a time of day as its day, and "one of a set" as its range', () => {
+    expect(show('2004-01-01T10:10:10+05:00')).toBe('1 January 2004');
+    expect(show('[1760-12-03..1760-12-05]')).toBe('3 December 1760 to 5 December 1760, not known which');
+    expect(show('[1667,1668,1670..1672]')).toBe('1667 to 1672, not known which');
+    expect(show('[1760-12-03]')).toBe('3 December 1760');
+  });
 });
 
 describe('formatDay', () => {

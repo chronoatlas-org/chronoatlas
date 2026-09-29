@@ -259,6 +259,13 @@ with an effort setting for each step. The ones that affect everyday work:
     the default map and the baseline together, and a Cliopatria polity its reviewed crosswalk matches
     (same-state) takes our polity's color, so a state keeps its color across the edge of
     OpenHistoricalMap's area (2026-09-29, at the maintainer's request).
+  - **Gaps in the default map** (2026-09-29, at the maintainers' request): inside
+    OpenHistoricalMap's areas and years, Cliopatria's baseline also fills whatever land has no
+    OpenHistoricalMap border on a day (`baselineData`, `scripts/build-data.ts`), in pieces of at
+    least `GAP_MIN_KM2` (1,000) and `GAP_MIN_WIDTH_KM` (10) wide, so the coarse borders' strips
+    along every edge don't come through. A quick test on 0.1° grid cells (`scripts/lib/cells.ts`)
+    finds the stretches of days worth an exact cut. Pieces keep their record IDs; their shapes are
+    `<shape>~gap<day>`. Colors, the baseline layer, and contested areas all use `baselineData`.
   - **Lighter fills** (uncertain dates) have plain land under them (`borders-under`,
     `baseline-under`, …), so they read as a paler color, never with the "no data" hatch showing
     through.
@@ -465,7 +472,9 @@ some environments, so the "Measure OpenHistoricalMap's coverage" workflow runs i
 - **Dates:** use `src/dates` for everything: `parseEdtf`, `civilToJdn`/`jdnToCivil`,
   `formatDate`. Every date is a JDN range `[earliest, latest]`. "Approximate" and "uncertain"
   are flags that never widen the range. Seasons (`2001-21`) are rejected until we define their
-  months. Tests cross-check against documented reference days and against JavaScript `Date`,
+  months. Since 2026-09-29 (maintainers' decision) a date with a time of day keeps its day as
+  written, and "one of a set" (`[1908-10-04..1908-10-06]`) is the range from its first to last
+  date, uncertain (`oneOf`), shown as "… to …, not known which". Tests cross-check against documented reference days and against JavaScript `Date`,
   which is allowed in tests only.
 - **Vite and the tiles:** `vite.config.ts` answers "404" for a missing `.pbf` under `/data/` (as
   GitHub Pages does; otherwise Vite answers with the page itself), and doesn't watch
