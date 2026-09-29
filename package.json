@@ -21,6 +21,7 @@
     "import:cliopatria": "node --max-old-space-size=4096 scripts/import-cliopatria.ts",
     "validate": "node scripts/validate.ts",
     "summarize-changes": "node --max-old-space-size=4096 scripts/summarize-changes.ts",
+    "suggest-crosswalk": "node --max-old-space-size=4096 scripts/suggest-crosswalk.ts",
     "build-data": "node scripts/build-data.ts",
     "predev": "npm run build-data",
     "prebuild": "npm run build-data"
