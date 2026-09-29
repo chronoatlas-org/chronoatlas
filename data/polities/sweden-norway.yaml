@@ -1,0 +1,17 @@
+id: sweden-norway
+wikidata: Q62589
+names:
+  - text: Sweden–Norway
+    lang: en
+    start: 1814-01-14
+    end: 1905-10-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2956665
+  - text: Svensk-norska
+    lang: und
+    start: 1814-01-14
+    end: 1905-10-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2956665

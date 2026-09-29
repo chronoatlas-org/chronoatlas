@@ -1,0 +1,234 @@
+id: cyprus-protectorate
+wikidata: Q15240466
+names:
+  - text: قبرص البريطانية
+    lang: ar
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Британски Кипър
+    lang: bg
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Britisch-Zypern
+    lang: de
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Αγγλοκρατία στην Κύπρο (1878-1960)
+    lang: el
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Αγγλοκρατία στην Κύπρο
+    lang: el
+    start: 1925-05-01
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801349
+  - text: Chipre británica
+    lang: es
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: قبرس بریتانیا
+    lang: fa
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Brittiläinen Kypros
+    lang: fi
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Colonie britannique de Chypre
+    lang: fr
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: קפריסין הבריטית
+    lang: he
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Siprus Britania
+    lang: id
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Cipro britannica
+    lang: it
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: イギリス領キプロス
+    lang: ja
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: 영국령 키프로스
+    lang: ko
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Cyprus
+    lang: la
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Britu Kipra
+    lang: lv
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Британски Кипар
+    lang: mk
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Britisk Kypros
+    lang: nb
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Brits Cyprus
+    lang: nl
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Chipre britânico
+    lang: pt
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Британский Кипр
+    lang: ru
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Британски Кипар
+    lang: sr
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Brittiska Cypern
+    lang: sv
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Britanya Kıbrısı
+    lang: tr
+    start: "1878"
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2801349, 2848135, 2848136
+  - text: Кіпр у складі Британської імперії
+    lang: uk
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Cyprus Protectorate
+    lang: und
+    start: "1878"
+    end: "1914"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848136
+  - text: British Occupation of Cyprus
+    lang: und
+    start: "1914"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848135
+  - text: British Cyprus
+    lang: und
+    start: 1925-05-01
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801349
+  - text: برطانوی قبرص
+    lang: ur
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Britaniya Qibrisi
+    lang: uz
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: Síp thuộc Anh
+    lang: vi
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: 英属塞浦路斯
+    lang: zh
+    start: "1878"
+    end: 1925-05-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848135, 2848136
+  - text: 英屬賽普勒斯
+    lang: zh
+    start: 1925-05-01
+    end: 1960-08-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801349

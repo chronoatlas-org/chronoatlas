@@ -3,32 +3,48 @@
   "source_id": "openhistoricalmap",
   "license": "CC0 1.0 (public domain dedication); see LICENSE.md",
   "endpoint": "https://overpass-api.openhistoricalmap.org/api/interpreter",
-  "query": "[out:json][timeout:900];\nrelation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"](10,73,55,150)(if: t[\"start_date\"] < \"1951\" && (!is_tag(\"end_date\") || t[\"end_date\"] > \"1900\"));\nout meta;\nway(r);\nout skel qt;\nnode(w);\nout skel qt;",
-  "retrieved": "2026-09-28T21:29:08.135Z",
-  "data_as_of": "2026-09-28T21:20:00Z",
+  "query": "[out:json][timeout:900];\n(\n  relation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"](10,73,55,150)(if: t[\"start_date\"] < \"1951\" && (!is_tag(\"end_date\") || t[\"end_date\"] > \"1900\"));\n  relation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"](34,-25,72,45)(if: t[\"start_date\"] < \"1951\" && (!is_tag(\"end_date\") || t[\"end_date\"] > \"1900\"));\n);\nout meta;\nway(r);\nout skel qt;\nnode(w);\nout skel qt;",
+  "retrieved": "2026-09-29T07:03:44.833Z",
+  "data_as_of": "2026-09-29T05:42:51Z",
   "raw_download": {
     "file": "raw/overpass.json (not committed)",
-    "bytes": 106345386,
-    "sha256": "6403fa211f0c4a6ad733c18d545561833a7267692f4b562e3c8f39c59c624137"
+    "bytes": 200385608,
+    "sha256": "34fe7f8e75d5674c9f532b44e282b5aaa8d21ca2e2557e1e87254d5643079396"
   },
   "settings": {
-    "bbox": {
-      "south": 10,
-      "west": 73,
-      "north": 55,
-      "east": 150
-    },
-    "fromYear": 1900,
-    "toYear": 1950,
+    "areas": [
+      {
+        "name": "East Asia",
+        "bbox": {
+          "south": 10,
+          "west": 73,
+          "north": 55,
+          "east": 150
+        },
+        "fromYear": 1900,
+        "toYear": 1950
+      },
+      {
+        "name": "Europe",
+        "bbox": {
+          "south": 34,
+          "west": -25,
+          "north": 72,
+          "east": 45
+        },
+        "fromYear": 1900,
+        "toYear": 1950
+      }
+    ],
     "adminLevel": "2",
     "simplifyTolerance": 0.005,
     "coordinateDecimals": 4
   },
   "counts": {
-    "relations_downloaded": 167,
-    "imported": 167,
-    "skipped": 0,
-    "polities": 62
+    "relations_downloaded": 476,
+    "imported": 464,
+    "skipped": 12,
+    "polities": 206
   },
   "decisions": {
     "relation": "OHM boundary=administrative + admin_level=2 relations are imported as \"administers\" (de facto administration). OHM does not distinguish de facto control from de jure sovereignty, so no sovereignty claim is imported. Labelled \"per OpenHistoricalMap\".",
@@ -37,9 +53,70 @@
     "edtf_tags": "Where start_date:edtf or end_date:edtf exist, they are used instead of start_date/end_date.",
     "polities": "Relations are grouped into one polity by their Wikidata ID, or by English name when there is none. Polity IDs are permanent and recorded in polity-ids.json.",
     "names": "The name and name:<language> tags of each relation are copied, with the dates of the relations that carry them. Tagged \"name\" without a language is recorded as lang \"und\" (the local name).",
-    "geometry": "Each OHM way is simplified once (Douglas–Peucker, 0.005°), so shared borders stay aligned; rings are then assembled, trimmed to the import area, and rounded to 4 decimal places. Edge precision is \"unknown\" because OHM doesn't record it.",
+    "geometry": "Each OHM way is simplified once (Douglas–Peucker, 0.005°), so shared borders stay aligned; rings are then assembled, trimmed to the import areas whose box they reach and whose years they overlap, and rounded to 4 decimal places. Edge precision is \"unknown\" because OHM doesn't record it.",
     "coverage": "No coverage is asserted: OHM does not claim to be complete, so land with no imported boundary is shown as \"no data\", never as \"no state\".",
     "bce": "This import contains no BCE dates. OHM's convention for negative years has not been verified yet."
   },
-  "skipped": []
+  "skipped": [
+    {
+      "relation": 2694422,
+      "name": "Boundary  Finland-USSR 1917-1940, 1944",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2694430,
+      "name": "Граница СССР-Финляндия",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2695683,
+      "name": "General Government of Lublin",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2695684,
+      "name": "Regency Kingdom of Poland",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2746402,
+      "name": "Austria-Hungary",
+      "reason": "Invalid date \"[1908-10-04..1908-10-06]\": expected a form like 1937-07-07, 1937-07, 1937, -0220, or 193X"
+    },
+    {
+      "relation": 2839234,
+      "name": "German Occupation",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2855669,
+      "name": "Poland",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2855670,
+      "name": "Poland",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2855671,
+      "name": "Poland",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2855675,
+      "name": "Poland",
+      "reason": "border lines do not join into closed rings"
+    },
+    {
+      "relation": 2883430,
+      "name": "Kingdom of the Netherlands",
+      "reason": "Invalid date \"1949-04-23T06:00:00+01:00\": times of day are not supported; give the date only (YYYY-MM-DD)"
+    },
+    {
+      "relation": 2888164,
+      "name": "Kingdom of the Netherlands",
+      "reason": "Invalid date \"1949-04-23T06:00:00+01:00\": times of day are not supported; give the date only (YYYY-MM-DD)"
+    }
+  ]
 }

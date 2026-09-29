@@ -1,0 +1,213 @@
+id: romanian-people-s-republic
+wikidata: Q2685298
+names:
+  - text: Народна република Румъния
+    lang: bg
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumunská lidová republika
+    lang: cs
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumänische Volksrepublik
+    lang: de
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Λαϊκή Δημοκρατία της Ρουμανίας
+    lang: el
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Romanian People's Republic
+    lang: en
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: República Popular de Rumania
+    lang: es
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Romanian kansantasavalta
+    lang: fi
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: République populaire roumaine
+    lang: fr
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: República Popular Romanesa
+    lang: gl
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Narodna Republika Rumunjska
+    lang: hr
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Román Népköztársaság
+    lang: hu
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Repubblica Popolare Romena
+    lang: it
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: ルーマニア人民共和国
+    lang: ja
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: 루마니아 인민공화국
+    lang: ko
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumunijos Liaudies Respublika
+    lang: lt
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumānijas Tautas Republika
+    lang: lv
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Volksrepubliek Roemenië
+    lang: nl
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Republica Populară Română
+    lang: ro
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Румы́нская Наро́дная Респу́блика
+    lang: ru
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Narodna Republika Rumunjska / Народна Република Румуњска
+    lang: sh
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Народна Република Румуњска
+    lang: sh-Cyrl
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Narodna Republika Rumunjska
+    lang: sh-Latn
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumunská ľudová republika
+    lang: sk
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Народна Република Румунија
+    lang: sr
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Narodna Republika Rumunija
+    lang: sr-Latn
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Rumänska folkrepubliken
+    lang: sv
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Румыния Социалистик Җөмһүрияте
+    lang: tt
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Румунська Народна Республік
+    lang: uk
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: Republica Populară Română
+    lang: und
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964
+  - text: 羅馬尼亞人民共和國
+    lang: zh
+    start: 1947-12-30
+    end: "1958"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2877964

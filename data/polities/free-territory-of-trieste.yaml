@@ -1,0 +1,458 @@
+id: free-territory-of-trieste
+wikidata: Q391980
+names:
+  - text: Territorio libre de Trieste
+    lang: an
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: إقليم ترييستي المستقل
+    lang: ar
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territoriu llibre de Trieste
+    lang: ast
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Triest azad zonası
+    lang: az
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Свабодная тэрыторыя Трыест
+    lang: be
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Свабодная тэрыторыя Трыест
+    lang: be-tarask
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Свободна територия Триест
+    lang: bg
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Tiriad Dieub Trieste
+    lang: br
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Slobodna teritorija Trsta
+    lang: bs
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territori Lliure de Trieste
+    lang: ca
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Svobodné území Terst
+    lang: cs
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Tiriogaeth Rydd Trieste
+    lang: cy
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Fristaten Trieste
+    lang: da
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Freies Territorium Triest
+    lang: de
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Ελεύθερη Επικράτεια της Τεργέστης
+    lang: el
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Free Territory of Trieste
+    lang: en
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Free Territory of Trieste
+    lang: en-ca
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Free Territory of Trieste
+    lang: en-gb
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Libera Teritorio Triesto
+    lang: eo
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorio libre de Trieste
+    lang: es
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Trieste Vaba Territoorium
+    lang: et
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Triesteko Lurralde Askea
+    lang: eu
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: قلمروی آزاد تریسته
+    lang: fa
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Triesten vapaa-alue
+    lang: fi
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territoire libre de Trieste
+    lang: fr
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorio Libre de Trieste
+    lang: gl
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: האזור החופשי של טריאסטה
+    lang: he
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Slobodni teritorij Trsta
+    lang: hr
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Teritori Bebas Trieste
+    lang: id
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorio Libero di Trieste
+    lang: it
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: トリエステ自由地域
+    lang: ja
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: ტრიესტის თავისუფალი ტერიტორია
+    lang: ka
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 트리에스테 자유 지구
+    lang: ko
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorium Liberum Tergestis
+    lang: la
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territori Liber de Triest
+    lang: lmo
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Triesto laisvoji teritorija
+    lang: lt
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Triestes brīvā teritorija
+    lang: lv
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Слободна територија Трст
+    lang: mk
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Wilayah Bebas Trieste
+    lang: ms
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorio libero di Trieste
+    lang: nb
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Vrije Zone Triëst
+    lang: nl
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Wolne Terytorium Triestu
+    lang: pl
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Território Livre de Trieste
+    lang: pt
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Território Livre de Trieste
+    lang: pt-br
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Teritoriul Liber al Triestului
+    lang: ro
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Свободная территория Триест
+    lang: ru
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territòriu Lìberu de Trieste
+    lang: sc
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Slobodna Teritorija Trsta
+    lang: sh
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Slobodné územie Terst
+    lang: sk
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Svobodno tržaško ozemlje
+    lang: sl
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Слободна Територија Трста
+    lang: sr
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Слободна Територија Трста
+    lang: sr-ec
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Slobodna Teritorija Trsta
+    lang: sr-el
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Fria territoriet Trieste
+    lang: sv
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: ดินแดนเสรีตรีเยสเต
+    lang: th
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Trieste Serbest Bölgesi
+    lang: tr
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Вільна територія Трієста
+    lang: uk
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Territorio Libero di Trieste
+    lang: und
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: Teritòrio Lìbaro de Trieste
+    lang: vec
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 的里雅斯特自由区
+    lang: wuu
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 第里雅斯特自由區
+    lang: yue
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 的里雅斯特自由區
+    lang: zh
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 的里雅斯特自由区
+    lang: zh-cn
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 的里雅斯特自由区
+    lang: zh-hans
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910
+  - text: 的里雅斯特自由區
+    lang: zh-hant
+    start: 1947-01-10
+    end: 1954-10-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2742910

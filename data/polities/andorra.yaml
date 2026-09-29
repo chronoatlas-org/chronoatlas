@@ -1,0 +1,626 @@
+id: andorra
+wikidata: Q228
+names:
+  - text: Андорра
+    lang: ab
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: አንዶራ
+    lang: am
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: أندورا
+    lang: ar
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андор
+    lang: av
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: ba
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андора
+    lang: be
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андора
+    lang: bg
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: अंडोरा
+    lang: bh
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: অ্যান্ডোরা
+    lang: bn
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ཨན་ཌོར་ར།
+    lang: bo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: bs
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: ce
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андора
+    lang: cu
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: cv
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andorra
+    lang: de
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: އެންޑޯރާ
+    lang: dv
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Ανδόρρα
+    lang: el
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andorra
+    lang: en
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andoro
+    lang: eo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: آندورا
+    lang: fa
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Anndoora
+    lang: ff
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andorre
+    lang: fr
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andóra
+    lang: ga
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andórra
+    lang: gn
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: એન્ડોરા
+    lang: gu
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: אנדורה
+    lang: he
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: अण्डोरा
+    lang: hi
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: hr
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andò
+    lang: ht
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Անդորրա
+    lang: hy
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: io
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andorra
+    lang: it
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: アンドラ
+    lang: ja
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ანდორა
+    lang: ka
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: kg
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: kk
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: អង់ដូរ៉ា
+    lang: km
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ಅಂಡೋರ
+    lang: kn
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: 안도라
+    lang: ko
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: kv
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: ky
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: ln
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ປະເທດອັງໂດລາ
+    lang: lo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: lt
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: lv
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andôra
+    lang: mg
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Ānatōra
+    lang: mi
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андора
+    lang: mk
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: അൻഡോറ
+    lang: ml
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: mn
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: आंदोरा
+    lang: mr
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: အင်ဒိုရာနိုင်ငံ
+    lang: my
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: एन्डोरा
+    lang: ne
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andòrra
+    lang: oc
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andooraa
+    lang: om
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ଆଣ୍ଡୋରା
+    lang: or
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андоррæ
+    lang: os
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ਅੰਡੋਰਾ
+    lang: pa
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: pl
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: اندورا
+    lang: ps
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Anthura
+    lang: qu
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: ru
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: rw
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: अण्डोरा
+    lang: sa
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: انڊورا
+    lang: sd
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andôro
+    lang: sg
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ඇන්ඩෝරාව
+    lang: si
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: sl
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Anatora
+    lang: sm
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andora
+    lang: sn
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андора
+    lang: sr
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: IYandola
+    lang: ss
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: அந்தோரா
+    lang: ta
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: అండొర్రా
+    lang: te
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: tg
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ประเทศอันดอร์รา
+    lang: th
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ʻAnitola
+    lang: to
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: tt
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: ئاندوررا
+    lang: ug
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Андорра
+    lang: uk
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andorra
+    lang: und
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: انڈورا
+    lang: ur
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Landorän
+    lang: vo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andôre
+    lang: wa
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Andoor
+    lang: wo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: אנדארע
+    lang: yi
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: Àndórà
+    lang: yo
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: 安道尔
+    lang: zh
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874
+  - text: I-Andora
+    lang: zu
+    start: "1278"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2739874

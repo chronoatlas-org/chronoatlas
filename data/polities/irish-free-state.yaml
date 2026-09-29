@@ -1,0 +1,430 @@
+id: irish-free-state
+wikidata: Q31747
+names:
+  - text: Ierse Vrystaat
+    lang: af
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: الدولة الأيرلندية الحرة
+    lang: ar
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Estáu Llibre Irlandés
+    lang: ast
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Azad İrland dövləti
+    lang: az
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ірландская Свабодная дзяржава
+    lang: be
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ирландска свободна държава
+    lang: bg
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Estat Lliure d'Irlanda
+    lang: ca
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irský svobodný stát
+    lang: cs
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Gwladwriaeth Rydd Iwerddon
+    lang: cy
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Den irske fristat
+    lang: da
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irischer Freistaat
+    lang: de
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ιρλανδικό Ελεύθερο Κράτος
+    lang: el
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irish Free State
+    lang: en
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irlanda Libera Ŝtato
+    lang: eo
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Estado Libre Irlandés
+    lang: es
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Iiri Vaba Riik
+    lang: et
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irlandako Estatu Askea
+    lang: eu
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: دولت آزاد ایرلند
+    lang: fa
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irlannin vapaavaltio
+    lang: fi
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: État libre d'Irlande
+    lang: fr
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Iirsk Freistoot
+    lang: frr
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Saorstát Éireann
+    lang: ga
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Saor-stàit na h-Èireann
+    lang: gd
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Estado Libre Irlandés
+    lang: gl
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Steat Seyr Nerin
+    lang: gv
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: מדינת אירלנד החופשית
+    lang: he
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: आयरिश मुक्त राज्य
+    lang: hi
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irska Slobodna Država
+    lang: hr
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ír Szabadállam
+    lang: hu
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Negara Bebas Irlandia
+    lang: id
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Libera Stato Irlando
+    lang: io
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Írska fríríkið
+    lang: is
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Stato Libero d'Irlanda
+    lang: it
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: アイルランド自由国
+    lang: ja
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Negara Bébas Irlandia
+    lang: jv
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: 아일랜드 자유국
+    lang: ko
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Īrijas Brīvvalsts
+    lang: lv
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Слободна Држава Ирска
+    lang: mk
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Negara Bebas Ireland
+    lang: ms
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Den irske fristaten
+    lang: nb
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ierse Vrijstaat
+    lang: nl
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Den irske fristaten
+    lang: nn
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Den irske fristaten
+    lang: no
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Wolne Państwo Irlandzkie
+    lang: pl
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Estado Livre Irlandês
+    lang: pt
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Statul Liber Irlandez
+    lang: ro
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ирландское Свободное государство
+    lang: ru
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Erse Free State
+    lang: sco
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: آئرش آزاد رياست
+    lang: sd
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irska Slobodna Država
+    lang: sh
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Írsky slobodný štát
+    lang: sk
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Shteti i Lirë Irlandez
+    lang: sq
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ирска Слободна Држава
+    lang: sr
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Irländska fristaten
+    lang: sv
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: เสรีรัฐไอริช
+    lang: th
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Özgür İrlanda Devleti
+    lang: tr
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Ірландська Вільна держава
+    lang: uk
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Saorstát Éireann / Irish Free State
+    lang: und
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: آئرش آزاد ریاست
+    lang: ur
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: Nhà nước tự do Ireland
+    lang: vi
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727
+  - text: 爱尔兰自由邦
+    lang: zh
+    start: 1922-12-06
+    end: 1937-12-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697727

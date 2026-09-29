@@ -1,0 +1,381 @@
+id: italian-social-republic
+wikidata: Q153660
+names:
+  - text: الجمهورية الإيطالية الاشتراكية
+    lang: ar
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: İtaliya Sosial Respublikası
+    lang: az
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Італьянская сацыяльная рэспубліка
+    lang: be
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Италианска социална република
+    lang: bg
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: ইতালীয় সমাজতান্ত্রিক প্রজাতন্ত্র
+    lang: bn
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: República Social Italiana
+    lang: ca
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italská sociální republika
+    lang: cs
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Сало Республики
+    lang: cv
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Salò-republikken
+    lang: da
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italienische Sozialrepublik
+    lang: de
+    start: 1943-09-23
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2794957, 2794958
+  - text: Ιταλική Κοινωνική Δημοκρατία
+    lang: el
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italian Social Republic
+    lang: en
+    start: 1943-09-23
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2794957, 2794958
+  - text: Itala Socia Respubliko
+    lang: eo
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: República Social Italiana
+    lang: es
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italiako Errepublika Soziala
+    lang: eu
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: جمهوری سوسیال ایتالیا
+    lang: fa
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italian sosiaalinen tasavalta
+    lang: fi
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: République sociale italienne
+    lang: fr
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: República Social Italiana
+    lang: gl
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: הרפובליקה הסוציאלית האיטלקית
+    lang: he
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Talijanska Socijalna Republika
+    lang: hr
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Olasz Szociális Köztársaság
+    lang: hu
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Republik Sosial Italia
+    lang: id
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Sósíal-fasíska lýðveldið
+    lang: is
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Repubblica Sociale Italiana
+    lang: it
+    start: 1943-09-23
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2794957, 2794958
+  - text: イタリア社会共和国
+    lang: ja
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: იტალიის სოციალური რესპუბლიკა
+    lang: ka
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: 이탈리아 사회공화국
+    lang: ko
+    start: 1943-09-23
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2794957, 2794958
+  - text: Res Publica Socialis Italica
+    lang: la
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italijos socialinė respublika
+    lang: lt
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Itālijas Sociālā Republika
+    lang: lv
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Италијанска Социјална Република
+    lang: mk
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Republik Sosial Itali
+    lang: ms
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Den italienske sosialrepublikk
+    lang: nb
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italiaanse Sociale Republiek
+    lang: nl
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italien
+    lang: pdt
+    start: 1943-09-23
+    end: 1944-08-25
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794958
+  - text: Włoska Republika Socjalna
+    lang: pl
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: اېټاليا سوسيال جمهوريت
+    lang: ps
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: República Social Italiana
+    lang: pt
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Republica Socială Italiană
+    lang: ro
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Итальянская социальная республика
+    lang: ru
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Repùblica Sotziale Italiana
+    lang: sc
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Talianska sociálna republika
+    lang: sk
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Italijanska socialna republika
+    lang: sl
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Republika Sociale Italiane
+    lang: sq
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Италијанска Социјална Република
+    lang: sr
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Salòrepubliken
+    lang: sv
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: สาธารณรัฐสังคมอิตาลี
+    lang: th
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: İtalyan Sosyal Cumhuriyeti
+    lang: tr
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Італійська Соціальна Республіка
+    lang: uk
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Repubblica Sociale Italiana
+    lang: und
+    start: 1943-09-23
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2794957, 2794958
+  - text: اطالوی معاشرتی جمہوریہ
+    lang: ur
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: Cộng hòa Xã hội Ý
+    lang: vi
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957
+  - text: 意大利社会共和国
+    lang: zh
+    start: 1944-08-25
+    end: 1945-04-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2794957

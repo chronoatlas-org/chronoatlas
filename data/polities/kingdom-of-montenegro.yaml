@@ -1,0 +1,395 @@
+id: kingdom-of-montenegro
+wikidata: Q386496
+names:
+  - text: مملكة الجبل الأسود
+    lang: ar
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Monteneqro krallığı
+    lang: az
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Черногория короллеге
+    lang: ba
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Каралеўства Чарнагорыя
+    lang: be
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Кралство Черна гора
+    lang: bg
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Crna Gora
+    lang: bs
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Regne de Montenegro
+    lang: ca
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Crna Gora
+    lang: cnr
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Černohorské království
+    lang: cs
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kongeriget Montenegro
+    lang: da
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Königreich Montenegro
+    lang: de
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Βασίλειο του Μαυροβουνίου
+    lang: el
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kingdom of Montenegro
+    lang: en
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Reino de Montenegro
+    lang: es
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Montenegro Kuningriik
+    lang: et
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Montenegroko Erresuma
+    lang: eu
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: پادشاهی مونته‌نگرو
+    lang: fa
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Montenegron kuningaskunta
+    lang: fi
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Royaume du Monténégro
+    lang: fr
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Reino de Montenegro
+    lang: gl
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: ממלכת מונטנגרו
+    lang: he
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Crna Gora
+    lang: hr
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Չեռնոգորիայի թագավորություն
+    lang: hy
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Regno de Montenegro
+    lang: ia
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kerajaan Montenegro
+    lang: id
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Regno del Montenegro
+    lang: it
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: モンテネグロ王国
+    lang: ja
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: ჩერნოგორიის სამეფო
+    lang: ka
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: 몬테네그로 왕국
+    lang: ko
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Juodkalnijos karalystė
+    lang: lt
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Melnkalnes Karaliste
+    lang: lv
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Кралство Црна Гора
+    lang: mk
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kerajaan Montenegro
+    lang: ms
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kongeriket Montenegro
+    lang: nb
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Koninkrijk Montenegro
+    lang: nl
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Черногорийы къаролад
+    lang: os
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Królestwo Czarnogóry
+    lang: pl
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Reino de Montenegro
+    lang: pt
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Regatul Muntenegrului
+    lang: ro
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Королевство Черногорія
+    lang: ru
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Королевство Черногория
+    lang: ru-luna1918
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Rennu de Montenegru
+    lang: sc
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Краљевина Црна Гора
+    lang: sh-Cyrl
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Crna Gora
+    lang: sh-Latn
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Čiernohorské kráľovstvo
+    lang: sk
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Črna gora
+    lang: sl
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Mbretëria e Malit të Zi
+    lang: sq
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Краљевина Црна Гора
+    lang: sr
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kraljevina Crna Gora
+    lang: sr-Latn
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Kungariket Montenegro
+    lang: sv
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: ราชอาณาจักรมอนเตเนโกร
+    lang: th
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Karadağ Krallığı
+    lang: tr
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Королівство Чорногорія
+    lang: uk
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Краљевина Црна Горa
+    lang: und
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: Vương quốc Montenegro
+    lang: vi
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264
+  - text: 黑山王国
+    lang: zh
+    start: 1910-08-28
+    end: 1918-11-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2739656, 2958264

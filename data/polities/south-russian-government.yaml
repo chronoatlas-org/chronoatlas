@@ -1,0 +1,24 @@
+id: south-russian-government
+wikidata: Q2802175
+names:
+  - text: South Russian Government
+    lang: en
+    start: 1920-03
+    end: 1920-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957566
+  - text: Южнорусское Правительство
+    lang: ru
+    start: 1920-03
+    end: 1920-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957566
+  - text: Южнорусское Правительство
+    lang: und
+    start: 1920-03
+    end: 1920-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957566

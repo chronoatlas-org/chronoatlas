@@ -1,0 +1,171 @@
+id: state-of-syria
+wikidata: Q146880
+names:
+  - text: دولة سوريا
+    lang: ar
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Estat de Síria
+    lang: ca
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Staat Syrien
+    lang: de
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: State of Syria
+    lang: en
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Estado de Siria
+    lang: es
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: دولت سوریه
+    lang: fa
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: État de Syrie
+    lang: fr
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: מדינת סוריה
+    lang: he
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Սիրիայի պետություն
+    lang: hy
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Stato di Siria
+    lang: it
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: シリア国
+    lang: ja
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: 시리아국
+    lang: ko
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Sīrijas valsts
+    lang: lv
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Staat Syrië
+    lang: nl
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Estado da Síria
+    lang: pt
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Государство Сирия
+    lang: ru
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Staten Syrien
+    lang: sv
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Давлати Сурия
+    lang: tg
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Suriye Devleti
+    lang: tr
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Держава Сирія
+    lang: uk
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: État de Syrie
+    lang: und
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: ریاست سوریہ
+    lang: ur
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: Quốc gia Syria
+    lang: vi
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991
+  - text: 敘利亞國
+    lang: zh
+    start: 1925-01-01
+    end: 1930-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863991

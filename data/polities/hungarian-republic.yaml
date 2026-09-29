@@ -1,0 +1,1550 @@
+id: hungarian-republic
+wikidata: Q940741
+names:
+  - text: Венгриа
+    lang: ab
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongaria
+    lang: ace
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Хунгарие
+    lang: ady
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongarye
+    lang: af
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: als
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: ami
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongría
+    lang: an
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungerland
+    lang: ang
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ọngari
+    lang: ann
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungría
+    lang: ast
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мажар
+    lang: av
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Magyara
+    lang: avk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hunkariya
+    lang: ay
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Macarıstan
+    lang: az
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мажарстан
+    lang: ba
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: bar
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Vingrėjė
+    lang: bat-smg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: bbc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungriya
+    lang: bcl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгрыя
+    lang: be
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Honggari
+    lang: bew
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Унгария
+    lang: bg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hangari
+    lang: bi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: br
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mađarska
+    lang: bs
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Унгар
+    lang: bxr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongria
+    lang: ca
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungría
+    lang: cbk-zam
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hṳ̆ng-ngà-lé
+    lang: cdo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мажаройчоь
+    lang: ce
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unggriya
+    lang: ceb
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hunggria
+    lang: ch
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungheria
+    lang: co
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Macaristan
+    lang: crh
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Maďarsko
+    lang: cs
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Madżarskô
+    lang: csb
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ѫгри
+    lang: cu
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Хункăри
+    lang: cv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hwngari
+    lang: cy
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: da
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: dag
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarische Republik
+    lang: de
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Macarıstan
+    lang: diq
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungorska
+    lang: dsb
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: ee
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ουγγαρία
+    lang: el
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungherî
+    lang: eml
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungarian Republic
+    lang: en
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungario
+    lang: eo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungría
+    lang: es
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungari
+    lang: et
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: eu
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungria
+    lang: ext
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hunngariya
+    lang: ff
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unkari
+    lang: fi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungari
+    lang: fiu-vro
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: fo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongrie
+    lang: fr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongries
+    lang: frp
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: frr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongjarie
+    lang: fur
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongarije
+    lang: fy
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: An Ungáir
+    lang: ga
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungariya
+    lang: gag
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongri
+    lang: gcr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: An Ungair
+    lang: gd
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungría
+    lang: gl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungyria
+    lang: gn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: 𐌿𐌲𐌲𐌰𐍂𐌻𐌰𐌽𐌳
+    lang: got
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Yn Ungaar
+    lang: gv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungariya
+    lang: ha
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hiûng-ngà-li
+    lang: hak
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hunakalia
+    lang: haw
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: hif
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mađarska
+    lang: hr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Madźarska
+    lang: hsb
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongri
+    lang: ht
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Magyarország
+    lang: hu
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: ia
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungari
+    lang: iba
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: id
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: ie
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: ig
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Makiaruusaaq
+    lang: ik
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: ilo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Маджарче
+    lang: inh
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: io
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungverjaland
+    lang: is
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungheria
+    lang: it
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Onggari
+    lang: jam
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: madjiar
+    lang: jbo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Honggari
+    lang: jv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Vengriya
+    lang: kaa
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Maǧar
+    lang: kab
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мэжарей
+    lang: kbd
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hɔŋirii
+    lang: kbp
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Honggi̱ri
+    lang: kcg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongrie
+    lang: kg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hangarĩ
+    lang: ki
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мажарстан
+    lang: kk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: knc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: 헝가리
+    lang: ko
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мадьярму
+    lang: koi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Маджар
+    lang: krc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mecaristan
+    lang: ku
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Маддяр Му
+    lang: kv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungari
+    lang: kw
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мажарстан
+    lang: ky
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: la
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Madjaristan
+    lang: lad
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: lb
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгрия
+    lang: lez
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Magiar
+    lang: lfn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: lg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongarieë
+    lang: li
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungherîa
+    lang: lij
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungaria
+    lang: lld
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Üngheria
+    lang: lmo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungri
+    lang: ln
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Vengrija
+    lang: lt
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Vengreja
+    lang: ltg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungārija
+    lang: lv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongaria
+    lang: mad
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongaria
+    lang: map-bms
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мадярмастор
+    lang: mdf
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hôngria
+    lang: mg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгрий
+    lang: mhr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hanekeria
+    lang: mi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: min
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Унгарија
+    lang: mk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: ms
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungerija
+    lang: mt
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungrie
+    lang: mwl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мадьяронь Мастор
+    lang: myv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungaria
+    lang: nap
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: nds
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongaarnlaand
+    lang: nds-nl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongarije
+    lang: nl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: nn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: no
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: nov
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongrie
+    lang: nrm
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Azeedíchʼííʼ Dineʼé Bikéyah
+    lang: nv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongria
+    lang: oc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Vengrii
+    lang: olo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hangaarii
+    lang: om
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгри
+    lang: os
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: pag
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unggría
+    lang: pam
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungria
+    lang: pap
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongrie
+    lang: pcd
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: pdc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Węgry
+    lang: pl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungherìa
+    lang: pms
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ουγγαρία
+    lang: pnt
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungria
+    lang: pt
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unqarya
+    lang: qu
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungaria
+    lang: rm
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungariya
+    lang: rmy
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungaria
+    lang: ro
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungãrii
+    lang: roa-rup
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungherie
+    lang: roa-tara
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгрия
+    lang: ru
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мадярьско
+    lang: rue
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongiriya
+    lang: rw
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Биэнгирийэ
+    lang: sah
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungheria
+    lang: sc
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unghirìa
+    lang: scn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: sco
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungára
+    lang: se
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mađarska
+    lang: sh
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungarya
+    lang: shi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Maďarsko
+    lang: sk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Madžarska
+    lang: sl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hanikeri
+    lang: sm
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Uŋgar
+    lang: smn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungariya
+    lang: sn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungariya
+    lang: so
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: sq
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Мађарска
+    lang: sr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ogarnikondre
+    lang: srn
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: IHangareyi
+    lang: ss
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: st
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungarn
+    lang: stq
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: su
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungern
+    lang: sv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungaria
+    lang: sw
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Madźary
+    lang: szl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: szy
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: tay
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ungria
+    lang: tet
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Маҷористон
+    lang: tg
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Wengriýa
+    lang: tk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Unggriya
+    lang: tl
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mačaryston
+    lang: tly
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungakalia
+    lang: to
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: ma Mosijo
+    lang: tok
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hangari
+    lang: tpi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Macaristan
+    lang: tr
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: trv
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: ts
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Маҗарстан
+    lang: tt
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: tum
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: tw
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Венгрия
+    lang: udm
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Угорщина
+    lang: uk
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Magyar Köztársaság
+    lang: und
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mojariston
+    lang: uz
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongarìa
+    lang: vec
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Mad'jaranma
+    lang: vep
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungary
+    lang: vi
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongareye
+    lang: vls
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Macarän
+    lang: vo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hongreye
+    lang: wa
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hungarya
+    lang: war
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Ongiri
+    lang: wo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Húngárì
+    lang: yo
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Yunghyazleih
+    lang: za
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Honharije
+    lang: zea
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: Hông-gâ-lī
+    lang: zh-min-nan
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067
+  - text: IHungariya
+    lang: zu
+    start: 1945-02-01
+    end: 1949-08-20
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2878067

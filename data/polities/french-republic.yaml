@@ -1,0 +1,395 @@
+id: french-republic
+wikidata: Q70802
+names:
+  - text: República Francesa
+    lang: ast
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Fransa Respublikası
+    lang: az
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: французская рэспубліка
+    lang: be
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: френска република
+    lang: bg
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republik c'hall
+    lang: br
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francuska Republika
+    lang: bs
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: República Francesa
+    lang: ca
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francouzská republika
+    lang: cs
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Franske republik
+    lang: da
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Frankreich
+    lang: de
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Γαλλική Δημοκρατία
+    lang: el
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: French Republic
+    lang: en
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Respubliko de Francio
+    lang: eo
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: República francesa
+    lang: es
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Prantsuse Vabariik
+    lang: et
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Frantziako Errepublika
+    lang: eu
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Ranskan tasavalta
+    lang: fi
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: République française
+    lang: fr
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: An Phoblacht Fhrancach
+    lang: ga
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Poblachd na Frainge
+    lang: gd
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: República Francesa
+    lang: gl
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francuska Republika
+    lang: hr
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francia Köztársaság
+    lang: hu
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republik Prancis
+    lang: id
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Franca Republiko
+    lang: io
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Franska lýðveldið
+    lang: is
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Repubblica francese
+    lang: it
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: 프랑스 공화국
+    lang: ko
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Respublica Francica
+    lang: la
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francijas republika
+    lang: lv
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Француска Република
+    lang: mk
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republik Perancis
+    lang: ms
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Den franske republikk
+    lang: nb
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Franse Republiek
+    lang: nl
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Den franske republikken
+    lang: nn
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Den franske republikk
+    lang: no
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Fraunkrikj
+    lang: pdt
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republika Francuska
+    lang: pl
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: República Francesa
+    lang: pt
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republică Franceză
+    lang: ro
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Французская республика
+    lang: ru
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Ripubbrica francisa
+    lang: scn
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: French Republic
+    lang: sco
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francuska Republika / француска република
+    lang: sh
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: француска република
+    lang: sh-Cyrl
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francuska Republika
+    lang: sh-Latn
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francúzska republika
+    lang: sk
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francoska republika
+    lang: sl
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Republika Franceze
+    lang: sq
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: француска република
+    lang: sr
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Francuska Republika
+    lang: sr-Latn
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Franska republiken
+    lang: sv
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Fransız Cumhuriyeti
+    lang: tr
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: французька республіка
+    lang: uk
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: République française
+    lang: und
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012
+  - text: Repùblega franseze
+    lang: vec
+    start: "1890"
+    end: 1940-06-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2696299, 2866012

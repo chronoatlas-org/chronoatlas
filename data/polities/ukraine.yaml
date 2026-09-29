@@ -1,0 +1,51 @@
+id: ukraine
+names:
+  - text: Ukraine
+    lang: de
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: Ukraine
+    lang: en
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: Ucrania
+    lang: es
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: 우크라이나
+    lang: ko
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: Ucraina
+    lang: ro
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: Україна
+    lang: uk
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815
+  - text: Україна
+    lang: und
+    start: 1918-02-09
+    end: 1919-01-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694815

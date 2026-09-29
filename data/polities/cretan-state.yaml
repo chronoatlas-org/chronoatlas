@@ -1,0 +1,248 @@
+id: cretan-state
+wikidata: Q72785
+names:
+  - text: دولة كريت
+    lang: ar
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Крыцкая дзяржава
+    lang: be
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Критска държава
+    lang: bg
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: República de Creta
+    lang: ca
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Krétský stát
+    lang: cs
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Staten Kreta
+    lang: da
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Kretischer Staat
+    lang: de
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Κρητική Πολιτεία
+    lang: el
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Estado de Creta
+    lang: es
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Kreeta Riik
+    lang: et
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: دولت کرت
+    lang: fa
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Kreetan valtio
+    lang: fi
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Crète autonome
+    lang: fr
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: מדינת כרתים
+    lang: he
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Kretska Država
+    lang: hr
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Krétai Állam
+    lang: hu
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Stato Creta
+    lang: ia
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Negara Kreta
+    lang: id
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Stato di Creta
+    lang: it
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: 크레타국
+    lang: ko
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Res Publica Cretica
+    lang: la
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Критска држава
+    lang: mk
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Den kretiske stat
+    lang: nb
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Kretenzische Staat
+    lang: nl
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Den kretiske staten
+    lang: nn
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Państwo Kreteńskie
+    lang: pl
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Estado de Creta
+    lang: pt
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Критское государство
+    lang: ru
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Критска држава
+    lang: sr
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Staten Kreta
+    lang: sv
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Girit Devleti
+    lang: tr
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Критська держава
+    lang: uk
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: Cretan State
+    lang: und
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: ریاست کریٹ
+    lang: ur
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586
+  - text: 克里特国
+    lang: zh
+    start: "1898"
+    end: "1913"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692586

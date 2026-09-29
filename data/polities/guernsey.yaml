@@ -1,0 +1,787 @@
+id: guernsey
+wikidata: Q25230
+names:
+  - text: Guernsey
+    lang: ace
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: af
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernési
+    lang: an
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ang
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: غيرنزي
+    lang: ar
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guérnesei
+    lang: ast
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsi
+    lang: az
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: قوئرنسی
+    lang: azb
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ban
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гернсі
+    lang: be
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гърнзи
+    lang: bg
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: গার্নসি
+    lang: bn
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gwernenez
+    lang: br
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: bs
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ca
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsi
+    lang: crh
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: cs
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Ynys y Garn
+    lang: cy
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: da
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: de
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: de-at
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: de-ch
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Γκέρνσεϊ
+    lang: el
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: en
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: en-ca
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: en-gb
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernezejo
+    lang: eo
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: es
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: et
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernesey
+    lang: eu
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: گرنزی
+    lang: fa
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: fi
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: fo
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernesey
+    lang: fr
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guèrneseyi
+    lang: frp
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: frr
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: fy
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Geansaí
+    lang: ga
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Geàrnsaidh
+    lang: gd
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: gl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: gv
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ha
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: גרנזי
+    lang: he
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: hr
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: hsb
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: hu
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: id
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ie
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: io
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: is
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: it
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: ガーンジー島
+    lang: ja
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: jv
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsi
+    lang: kaa
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: ಗರ್ನ್ಸಿ
+    lang: kn
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: 건지섬
+    lang: ko
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ku
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsi
+    lang: kw
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Sarnia
+    lang: la
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: lb
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsi
+    lang: lfn
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: li
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: lij
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gernsis
+    lang: lt
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gērnsija
+    lang: lv
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гэрнси
+    lang: mdf
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гернзи
+    lang: mk
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ms
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: mt
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nan
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nb
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nds
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nds-nl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nn
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: nov
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernési
+    lang: nrm
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernesey
+    lang: oc
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernesey
+    lang: pcd
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: pl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: pt
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: pt-br
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: ro
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гернси
+    lang: ru
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Gwasi
+    lang: rw
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sco
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: گرنزي
+    lang: sd
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sh
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: ၵႂၢၼ်းသီ
+    lang: shn
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sk
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sq
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гернзи
+    lang: sr
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: su
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sv
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: sw
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: గెర్నెసీ
+    lang: te
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: เกิร์นซีย์
+    lang: th
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: tl
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: tr
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: tum
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Гернсі
+    lang: uk
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: und
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: گرنزی
+    lang: ur
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: vi
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: war
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: yo
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: Guernsey
+    lang: zea
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: 根西岛
+    lang: zh
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: 根西岛
+    lang: zh-hans
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: 根西
+    lang: zh-hant
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270
+  - text: 根西
+    lang: zh-tw
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828270

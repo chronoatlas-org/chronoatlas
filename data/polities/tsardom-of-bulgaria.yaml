@@ -1,0 +1,416 @@
+id: tsardom-of-bulgaria
+wikidata: Q147909
+names:
+  - text: قيصرية بلغاريا
+    lang: ar
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Bolqarıstan çarlığı
+    lang: az
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Өсөнсө Болгар батшалығы
+    lang: ba
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Трэцяе Балгарскае царства
+    lang: be
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Царство България
+    lang: bg
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Rouantelezh Bulgaria
+    lang: br
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Regne de Bulgària
+    lang: ca
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bulharské carství
+    lang: cs
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kongeriget Bulgarien
+    lang: da
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Zarentum Bulgarien
+    lang: de
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Βασίλειο της Βουλγαρίας
+    lang: el
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Tsardom of Bulgaria
+    lang: en
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Reino de Bulgaria
+    lang: es
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bulgaaria Kuningriik
+    lang: et
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bulgariako Erresuma
+    lang: eu
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: پادشاهی بلغارستان
+    lang: fa
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Bulgarian kuningaskunta
+    lang: fi
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Royaume de Bulgarie
+    lang: fr
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: ממלכת בולגריה
+    lang: he
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Kraljevina Bugarska
+    lang: hr
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bolgár Cárság
+    lang: hu
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Բուլղարիայի թագավորություն
+    lang: hy
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Regno de Bulgaria
+    lang: ia
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kerajaan Bulgaria
+    lang: id
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Cario Bulgaria
+    lang: io
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Regno di Bulgaria
+    lang: it
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: ブルガリア王国
+    lang: ja
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: ბულგარეთის სამეფო
+    lang: ka
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: 불가리아 차르국
+    lang: ko
+    start: 1908-10-05
+    end: 1944-08-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848878, 2855603, 2920397
+  - text: 불가리아 왕국
+    lang: ko
+    start: 1944-08-26
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848877
+  - text: Keyaniya Bulgaristanê
+    lang: ku
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Regnum Bulgariae
+    lang: la
+    start: 1913-08-10
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bulgārijas Karaliste
+    lang: lv
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Царство Бугарија
+    lang: mk
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kerajaan Beraja Bulgaria
+    lang: ms
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Koninkrijk Bulgarije
+    lang: nl
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Carstwo Bułgarii
+    lang: pl
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Reino da Bulgária
+    lang: pt
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Regatul Bulgariei
+    lang: ro
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Третье Болгарское царство
+    lang: ru
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Третє болгарьске царьство
+    lang: rue
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Regnu de Bulgaria
+    lang: sc
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kraljevina Bugarska / Краљевина Бугарска
+    lang: sh
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Краљевина Бугарска
+    lang: sh-Cyrl
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kraljevina Bugarska
+    lang: sh-Latn
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Bulharské cárstvo
+    lang: sk
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kraljevina Bolgarija
+    lang: sl
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Mbretëria e Bullgarisë
+    lang: sq
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Краљевина Бугарска
+    lang: sr
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kraljevina Bugarska
+    lang: sr-Latn
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Kungariket Bulgarien
+    lang: sv
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: ราชอาณาจักรบัลแกเรีย
+    lang: th
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Bulgaristan Krallığı
+    lang: tr
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Третє болгарське царство
+    lang: uk
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Царство България
+    lang: und
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: مملکت بلغاریہ
+    lang: ur
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: Regno de Bulgaria
+    lang: vec
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2848878, 2855603, 2920397
+  - text: Vương quốc Bulgaria
+    lang: vi
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397
+  - text: 保加利亞王國
+    lang: zh
+    start: 1908-10-05
+    end: 1946-09-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695478, 2742283, 2746680, 2848877, 2855603, 2920397

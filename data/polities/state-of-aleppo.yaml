@@ -1,0 +1,192 @@
+id: state-of-aleppo
+wikidata: Q146872
+names:
+  - text: دولة حلب
+    lang: ar
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Държавата Халеб
+    lang: bg
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Estat d'Alep
+    lang: ca
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Stát Aleppo
+    lang: cs
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Staat Aleppo
+    lang: de
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: State of Aleppo
+    lang: en
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Estado de Alepo
+    lang: es
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: دولت حلب
+    lang: fa
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: État d'Alep
+    lang: fr
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: מדינת חלב
+    lang: he
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Հալեպի պետություն
+    lang: hy
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Negara Aleppo
+    lang: id
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Stato di Aleppo
+    lang: it
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: アレッポ国
+    lang: ja
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: 알레포국
+    lang: ko
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Alepo valstybė
+    lang: lt
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Alepo valsts
+    lang: lv
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Државата Алепо
+    lang: mk
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Staat Aleppo
+    lang: nl
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Okręg Aleppo
+    lang: pl
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Estado de Alepo
+    lang: pt
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Государство Алеппо
+    lang: ru
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Кишвари Ҳалаб
+    lang: tg
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Halep Devleti
+    lang: tr
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: Держава Алеппо
+    lang: uk
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: État d'Alep
+    lang: und
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000
+  - text: ریاست حلب
+    lang: ur
+    start: 1920-09-01
+    end: 1922-06-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864000

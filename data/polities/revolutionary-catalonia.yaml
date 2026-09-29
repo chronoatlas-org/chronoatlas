@@ -1,0 +1,93 @@
+id: revolutionary-catalonia
+names:
+  - text: النقابية الثورية في كتالونيا خلال الحرب الأهلية الإسبانية
+    lang: ar
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Anarcosindicalisme a Catalunya durant la Guerra Civil espanyola
+    lang: ca
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Anarkistisk Catalonien
+    lang: da
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Revolutionary Catalonia
+    lang: en
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Anarcosindicalismo en Cataluña durante la guerra civil española
+    lang: es
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: کاتالونیای انقلابی
+    lang: fa
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: 혁명 카탈루냐
+    lang: ko
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Catalunha Revolucionária
+    lang: pt
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Революционная Каталония
+    lang: ru
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Революційна Каталонія
+    lang: uk
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: Catalunya revolucionària
+    lang: und
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: انقلابی کاتالونیا
+    lang: ur
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597
+  - text: 西班牙内战中的无政府主义加泰罗尼亚
+    lang: zh
+    start: 1936-07-21
+    end: 1937-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2862597

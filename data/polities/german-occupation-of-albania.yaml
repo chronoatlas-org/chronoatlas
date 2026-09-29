@@ -1,0 +1,52 @@
+id: german-occupation-of-albania
+wikidata: Q131744754
+names:
+  - text: Albanisches Königreich
+    lang: de
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: German occupation of Albania
+    lang: en
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: Occupazione tedesca del Regno d'Albania
+    lang: it
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: 독일 점령하의 알바니아
+    lang: ko
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: Dietsche besetting von Albanien
+    lang: pdt
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: Mbretëria Shqiptare
+    lang: sq
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553
+  - text: Albanisches Königreich
+    lang: und
+    start: 1943-09-08
+    end: 1944-11-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800553

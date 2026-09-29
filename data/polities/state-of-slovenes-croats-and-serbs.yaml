@@ -1,0 +1,332 @@
+id: state-of-slovenes-croats-and-serbs
+wikidata: Q718374
+names:
+  - text: دولة السلوفينيين والكروات والصرب
+    lang: ar
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Slovenlər, Xorvatlar və Serblər dövləti
+    lang: az
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Дзяржава славенцаў, харватаў і сербаў
+    lang: be
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba
+    lang: bs
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Estat dels Eslovens, Croats i Serbis
+    lang: ca
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Stát Slovinců, Chorvatů a Srbů
+    lang: cs
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Staten af slovenere, kroater og serbere
+    lang: da
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Staat der Slowenen, Kroaten und Serben
+    lang: de
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Κράτος των Σλοβένων, Κροατών και Σέρβων
+    lang: el
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: State of Slovenes, Croats and Serbs
+    lang: en
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Estado de los Eslovenos, Croatas y Serbios
+    lang: es
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Esloveniarren, Kroaziarren eta Serbiarren Estatua
+    lang: eu
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: État des Slovènes, Croates et Serbes
+    lang: fr
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Estado dos Eslovenos, Croatas e Serbios
+    lang: gl
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: מדינת הסלובנים, הקרואטים והסרבים
+    lang: he
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba
+    lang: hr
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Szlovén–Horvát–Szerb Állam
+    lang: hu
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Negara Slovenia, Kroasia, dan Serbia
+    lang: id
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Stato degli Sloveni, Croati e Serbi
+    lang: it
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: スロベニア人・クロアチア人・セルビア人国
+    lang: ja
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: სლოვენების, ხორვატების და სერბების სახელმწიფო
+    lang: ka
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Словендер, хорваттар және сербтер мемлекеті
+    lang: kk
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: 슬로벤인 크로아트인 세르브인국
+    lang: ko
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Slovēņu, horvātu un serbu valsts
+    lang: lv
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Држава на Словенци, Хрвати и Срби
+    lang: mk
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Negara Slovene, Croat dan Serb
+    lang: ms
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Staat van Slovenen, Kroaten en Serven
+    lang: nl
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Państwo Słoweńców, Chorwatów i Serbów
+    lang: pl
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Estado dos Eslovenos, Croatas e Sérvios
+    lang: pt
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Statul slovenilor, croaților și sârbilor
+    lang: ro
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Государство словенцев, хорватов и сербов
+    lang: ru
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba / Држава Словенаца, Хрвата и Срба
+    lang: sh
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Држава Словенаца, Хрвата и Срба
+    lang: sh-Cyrl
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba
+    lang: sh-Latn
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: ස්ලෝවේනියානු, ක්‍රෝඒෂියානු සහ සර්බියානු රාජ්‍යය
+    lang: si
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Štát Slovincov, Chorvátov a Srbov
+    lang: sk
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovencev, Hrvatov in Srbov
+    lang: sl
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Shteti i Sllovenëve, Kroatëve dhe Serbëve
+    lang: sq
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Држава Словенаца, Хрвата и Срба
+    lang: sr
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba
+    lang: sr-Latn
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Slovenernas, kroaternas och serbernas stat
+    lang: sv
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: รัฐแห่งชาวสโลวีน โครแอต และเซิร์บ
+    lang: th
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Sloven, Hırvat ve Sırp Devleti
+    lang: tr
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Держава Словенців, Хорватів і Сербів
+    lang: uk
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Država Slovenaca, Hrvata i Srba
+    lang: und
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: Nhà nước Slovene, Croat và Serb
+    lang: vi
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879
+  - text: 斯洛文尼亚人、克罗地亚人和塞尔维亚人国
+    lang: zh
+    start: 1918-10-29
+    end: 1918-12-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747878, 2747879

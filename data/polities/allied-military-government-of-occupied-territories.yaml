@@ -1,0 +1,17 @@
+id: allied-military-government-of-occupied-territories
+wikidata: Q2838298
+names:
+  - text: 점령지 연합군 정부
+    lang: ko
+    start: 1943-09-17
+    end: 1944-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800536
+  - text: Allied Military Government of Occupied Territories
+    lang: und
+    start: 1943-09-17
+    end: 1944-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800536

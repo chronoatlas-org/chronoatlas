@@ -1,0 +1,1018 @@
+id: latvia
+wikidata: Q211
+names:
+  - text: Латвиа
+    lang: ab
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letland
+    lang: af
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ላትቪያ
+    lang: am
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: an
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: لاتفيا
+    lang: ar
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: av
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latviya
+    lang: az
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: ba
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвія
+    lang: be
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: bg
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: लैटविया
+    lang: bh
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: bi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: লাতভিয়া
+    lang: bn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ལ་ཊ་ཝིཡ།
+    lang: bo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: br
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letònia
+    lang: ca
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латви
+    lang: ce
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: ch
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonia
+    lang: co
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lotyšsko
+    lang: cs
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвїꙗ
+    lang: cu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латви
+    lang: cv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latfia
+    lang: cy
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letland
+    lang: da
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettland
+    lang: de
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ލެޓުވިއާ
+    lang: dv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ལེཊི་བི་ཡ
+    lang: dz
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ee
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Λετονία
+    lang: el
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: en
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvio
+    lang: eo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: es
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Läti
+    lang: et
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: eu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: لتونی
+    lang: fa
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ff
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: fi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettland
+    lang: fo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonie
+    lang: fr
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letlân
+    lang: fy
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: An Laitvia
+    lang: ga
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: An Laitbhe
+    lang: gd
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: gl
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letóña
+    lang: gn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: લાટવિયા
+    lang: gu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Yn Latvey
+    lang: gv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Laitfiya
+    lang: ha
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: לטביה
+    lang: he
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: लातविया
+    lang: hi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letoni
+    lang: ht
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettország
+    lang: hu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Լատվիա
+    lang: hy
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonia
+    lang: ia
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: id
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ie
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ig
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: io
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettland
+    lang: is
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonia
+    lang: it
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ラトビア
+    lang: ja
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lètlan
+    lang: jv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ლატვია
+    lang: ka
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: kg
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: kk
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ឡេតូនី
+    lang: km
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ಲಾಟ್ವಿಯ
+    lang: kn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: 라트비아
+    lang: ko
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonya
+    lang: ku
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: kv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvi
+    lang: kw
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: ky
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonia
+    lang: la
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettland
+    lang: lb
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: lg
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letland
+    lang: li
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letoni
+    lang: ln
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ປະເທດລັດເວຍ
+    lang: lo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvija
+    lang: lv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letônia
+    lang: mg
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Rāwhia
+    lang: mi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвија
+    lang: mk
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ലാത്വിയ
+    lang: ml
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латви
+    lang: mn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: लात्व्हिया
+    lang: mr
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ms
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvja
+    lang: mt
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: လတ်ဗီယာနိုင်ငံ
+    lang: my
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: nb
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: लात्भिया
+    lang: ne
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letland
+    lang: nl
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: nn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Dahńdzílgaiʼnii Bikéyah
+    lang: nv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letònia
+    lang: oc
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Laativiyaa
+    lang: om
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латви
+    lang: os
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ਲਾਤਵੀਆ
+    lang: pa
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Łotwa
+    lang: pl
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: لاتويا
+    lang: ps
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letónia
+    lang: pt
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Litunya
+    lang: qu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettonia
+    lang: rm
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: ro
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: ru
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lativiya
+    lang: rw
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: लाट्विया
+    lang: sa
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letònia
+    lang: sc
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ليٽويا
+    lang: sd
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Látvia
+    lang: se
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ලැට්වියාව
+    lang: si
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lotyšsko
+    lang: sk
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lativia
+    lang: sm
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Rativhiya
+    lang: sn
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latfiya
+    lang: so
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonia
+    lang: sq
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Летонија
+    lang: sr
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ILathiviya
+    lang: ss
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: st
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: su
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lettland
+    lang: sv
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: sw
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: லாத்வியா
+    lang: ta
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: లాట్వియా
+    lang: te
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: tg
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ประเทศลัตเวีย
+    lang: th
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latwiýa
+    lang: tk
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonya
+    lang: tl
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Lativia
+    lang: to
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letonya
+    lang: tr
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: ts
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвия
+    lang: tt
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: tw
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: لاتۋىيە
+    lang: ug
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Латвія
+    lang: uk
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvija
+    lang: und
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: لٹویا
+    lang: ur
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latviya
+    lang: uz
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: vi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latviyän
+    lang: vo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letoneye
+    lang: wa
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Letóoni
+    lang: wo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: לעטלאנד
+    lang: yi
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Látfíà
+    lang: yo
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: Latvia
+    lang: za
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: 拉脫維亞
+    lang: zh
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702
+  - text: ILatviya
+    lang: zu
+    start: 1920-01-01
+    end: 1940-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2704702

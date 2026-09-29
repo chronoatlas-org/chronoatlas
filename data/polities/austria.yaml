@@ -1,0 +1,332 @@
+id: austria
+wikidata: Q40
+names:
+  - text: Аўстрыя
+    lang: be
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Австрия
+    lang: bg
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Aostria
+    lang: br
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austrija
+    lang: bs
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Àustria
+    lang: ca
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Rakousko
+    lang: cs
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Awstria
+    lang: cy
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Østrig
+    lang: da
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Österreich
+    lang: de
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Αυστρία
+    lang: el
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austria
+    lang: en
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austria
+    lang: es
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Autriche
+    lang: fr
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: An Ostair
+    lang: ga
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: An Ostair
+    lang: gd
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Yn Austeyr
+    lang: gv
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austrija
+    lang: hr
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Ausztria (1920-1921)
+    lang: hu
+    start: 1920-07-16
+    end: 1921-11-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692711
+  - text: Ausztria (1921-1922)
+    lang: hu
+    start: 1921-11-10
+    end: 1922-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695634
+  - text: Ausztria (1922-1938)
+    lang: hu
+    start: 1922-10-01
+    end: 1938-03-13
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2858751
+  - text: Ausztria (1945-1960)
+    lang: hu
+    start: 1945-04-27
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692360
+  - text: Austria (1920-1921)
+    lang: it
+    start: 1920-07-16
+    end: 1921-11-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692711
+  - text: Austria (1921-1922)
+    lang: it
+    start: 1921-11-10
+    end: 1922-10-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695634
+  - text: Austria (1922-1938)
+    lang: it
+    start: 1922-10-01
+    end: 1938-03-13
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2858751
+  - text: Austria (1945-1960)
+    lang: it
+    start: 1945-04-27
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692360
+  - text: 오스트리아
+    lang: ko
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Ostri
+    lang: kw
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Østerrike
+    lang: nb
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Oostenrijk
+    lang: nl
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austerrike
+    lang: nn
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Østerrike
+    lang: no
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Àustria
+    lang: oc
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austria
+    lang: pl
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Áustria
+    lang: pt
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austria
+    lang: ro
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Австрия
+    lang: ru
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austrija / Аустрија
+    lang: sh
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Аустрија
+    lang: sh-Cyrl
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austrija
+    lang: sh-Latn
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Rakúsko
+    lang: sk
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Avstrija
+    lang: sl
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Аустрија
+    lang: sr
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Austrija
+    lang: sr-Latn
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Österrike
+    lang: sv
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Avusturya
+    lang: tr
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Австрія
+    lang: uk
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751
+  - text: Österreich
+    lang: und
+    start: 1920-07-16
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692360, 2692711, 2695634, 2858751

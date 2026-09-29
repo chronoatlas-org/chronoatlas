@@ -1,0 +1,45 @@
+id: lithuanian-ssr
+wikidata: Q173761
+names:
+  - text: Litauische SSR
+    lang: de
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785
+  - text: Lithuanian SSR
+    lang: en
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785
+  - text: 리투아니아 소비에트 사회주의 공화국
+    lang: ko
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785
+  - text: Lietuvos TSR
+    lang: lt
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785
+  - text: Литовская ССР
+    lang: ru
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785
+  - text: Lietuvos TSR
+    lang: und
+    start: 1940-07-21
+    end: 1940-08-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694785

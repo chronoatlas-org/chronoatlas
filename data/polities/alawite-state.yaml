@@ -1,0 +1,192 @@
+id: alawite-state
+wikidata: Q130802
+names:
+  - text: دولة العلويين
+    lang: ar
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Estat dels Alauites
+    lang: ca
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alawitenstaat
+    lang: de
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alawite State
+    lang: en
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Estado alauita
+    lang: es
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: دولت العلویین
+    lang: fa
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: État des Alaouites
+    lang: fr
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: מדינת העלווים
+    lang: he
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Negara Alawi
+    lang: id
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Stato alawita
+    lang: it
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: アラウイ自治地区
+    lang: ja
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: 알라위국
+    lang: ko
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alavitų valstybė
+    lang: lt
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alavītu valsts
+    lang: lv
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Staat der Alawieten
+    lang: nl
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alawittarstaten
+    lang: nn
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Państwo Alawitów
+    lang: pl
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alauíta
+    lang: pt
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Statul alawit
+    lang: ro
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Государство Алавитов
+    lang: ru
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alawitiska staten
+    lang: sv
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Alevi Devleti
+    lang: tr
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Алавітська держава
+    lang: uk
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: État des Alaouites
+    lang: und
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: ریاست علويين
+    lang: ur
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: Quốc gia Alawite
+    lang: vi
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987
+  - text: 阿拉维国
+    lang: zh
+    start: 1925-01-01
+    end: 1936-09-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2863987

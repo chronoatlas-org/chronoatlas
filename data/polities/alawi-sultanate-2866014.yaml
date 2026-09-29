@@ -1,0 +1,37 @@
+id: alawi-sultanate-2866014
+names:
+  - text: السلطنة الشريفة
+    lang: ar
+    start: 1907-08-07
+    end: 1912-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2866014
+  - text: Alawi Sultanate
+    lang: en
+    start: 1907-08-07
+    end: 1912-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2866014
+  - text: sultanato alauí
+    lang: es
+    start: 1907-08-07
+    end: 1912-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2866014
+  - text: 알라위 술탄국
+    lang: ko
+    start: 1907-08-07
+    end: 1912-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2866014
+  - text: السلطنة الشريفة
+    lang: und
+    start: 1907-08-07
+    end: 1912-03-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2866014

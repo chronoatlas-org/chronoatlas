@@ -1,0 +1,10 @@
+id: reichskommissariat-belgien-nordfrankreich
+wikidata: Q17015178
+names:
+  - text: Reichskommissariat Belgien-Nordfrankreich
+    lang: und
+    start: 1944-07-18
+    end: 1944-09-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748552

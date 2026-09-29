@@ -1,0 +1,31 @@
+id: transcaucasian-commissariat
+wikidata: Q2630860
+names:
+  - text: Transcaucasian Commissariat
+    lang: en
+    start: 1917-11-15
+    end: 1918-04-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957453
+  - text: ამიერკავკასიის კომისარიატი
+    lang: ka
+    start: 1917-11-15
+    end: 1918-04-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957453
+  - text: Закавказский комиссариат
+    lang: ru
+    start: 1917-11-15
+    end: 1918-04-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957453
+  - text: Закавказский комиссариат
+    lang: und
+    start: 1917-11-15
+    end: 1918-04-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2957453

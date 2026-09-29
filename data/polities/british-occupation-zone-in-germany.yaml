@@ -1,0 +1,38 @@
+id: british-occupation-zone-in-germany
+wikidata: Q55306
+names:
+  - text: Britische Besatzungszone
+    lang: de
+    start: 1945-05-08
+    end: 1949-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852444, 2856522, 2856524, 2899607
+  - text: British occupation zone in Germany
+    lang: en
+    start: 1945-05-08
+    end: 1949-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852444, 2856522, 2856524, 2899607
+  - text: Zona de ocupación británica
+    lang: es
+    start: 1945-05-08
+    end: 1949-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852444, 2856522, 2856524, 2899607
+  - text: 영국 점령하의 독일
+    lang: ko
+    start: 1945-05-08
+    end: 1949-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852444, 2856522, 2856524, 2899607
+  - text: British occupation zone in Germany
+    lang: und
+    start: 1945-05-08
+    end: 1949-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852444, 2856522, 2856524, 2899607

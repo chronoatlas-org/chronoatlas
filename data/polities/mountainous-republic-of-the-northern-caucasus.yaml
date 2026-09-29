@@ -1,0 +1,101 @@
+id: mountainous-republic-of-the-northern-caucasus
+wikidata: Q1639475
+names:
+  - text: جمهورية شمال القوقاز الجبلية
+    lang: ar
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Bergrepublik
+    lang: de
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Mountainous Republic of the Northern Caucasus
+    lang: en
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: República de las Montañas del Cáucaso Septentrional
+    lang: es
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: République montagnarde du Caucase du Nord
+    lang: fr
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Repubblica delle Montagne del Caucaso Settentrionale
+    lang: it
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: 北カフカース山岳共和国
+    lang: ja
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: 북캅카스 산악공화국
+    lang: ko
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Bergrepubliek van de Noordelijke Kaukasus
+    lang: nl
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: República Montanhosa do Norte do Cáucaso
+    lang: pt
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Горская республика
+    lang: ru
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Республіка Горців Кавказу
+    lang: uk
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: Горская республика
+    lang: und
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769
+  - text: 北高加索山
+    lang: zh
+    start: 1918-05-11
+    end: 1919-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2891769

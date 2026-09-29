@@ -1,0 +1,206 @@
+id: governorate-of-montenegro
+wikidata: Q616992
+names:
+  - text: محافظة الجبل الأسود الإيطالية
+    lang: ar
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Monteneqro krallığı
+    lang: az
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Каралеўства Чарнагорыя
+    lang: be
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Kraljevina Crna Gora
+    lang: bs
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Království Černá Hora
+    lang: cs
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Unabhängiger Staat Montenegro
+    lang: de
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Ιταλικό κυβερνείο του Μαυροβουνίου
+    lang: el
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Governorate of Montenegro
+    lang: en
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Sendependa Ŝtato Montenegro
+    lang: eo
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Estado Independiente de Montenegro
+    lang: es
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Montenegroko Erresuma
+    lang: eu
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Gouvernorat italien du Monténégro
+    lang: fr
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Reino de Montenegro
+    lang: gl
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Kraljevina Crna Gora
+    lang: hr
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Kegubernuran Montenegro Italia
+    lang: id
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Governatorato del Montenegro
+    lang: it
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: イタリア支配下のモンテネグロ
+    lang: ja
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: 몬테네그로주
+    lang: ko
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Onafhankelijke Staat Montenegro
+    lang: nl
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Niezależne Państwo Czarnogórskie
+    lang: pl
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Estado Independente do Montenegro
+    lang: pt
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Губернаторство Черногория
+    lang: ru
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Shteti i Pavarur i Malit të Zi
+    lang: sq
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Италијански гувернаторат за Црну Гору
+    lang: sr
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: เขตผู้ว่าราชการมอนเตเนโกรของอิตาลี
+    lang: th
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: İtalyan Karadağ Valiliği
+    lang: tr
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Королівство Чорногорія
+    lang: uk
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: Governatorato del Montenegro
+    lang: und
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479
+  - text: 蒙特內哥羅總督轄區
+    lang: zh
+    start: 1941-10-03
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695479

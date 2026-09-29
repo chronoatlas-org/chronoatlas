@@ -1,0 +1,255 @@
+id: ottoman-empire
+wikidata: Q12560
+names:
+  - text: الدولة العثمانية
+    lang: ar
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Det Osmanniske Rige
+    lang: da
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Osmanisches Reich
+    lang: de
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Οθωμανική Αυτοκρατορία
+    lang: el
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Ottoman Empire
+    lang: en
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Imperio otomano
+    lang: es
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: امپراتوری عثمانی
+    lang: fa
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Empire Ottoman
+    lang: fr
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Osmaansk Rik
+    lang: frr
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Osmaanske Ryk
+    lang: fy
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: An Impireacht Otamánach
+    lang: ga
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Impireachd nan Otomanach
+    lang: gd
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: האימפריה העות'מאנית
+    lang: he
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: उस्मानी साम्राज्य
+    lang: hi
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Ósmanska ríkið
+    lang: is
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Impero Ottomano
+    lang: it
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: オスマン帝国
+    lang: ja
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Осман империясы
+    lang: kk
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: 오스만 제국
+    lang: ko
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Imperium Ottomanicum
+    lang: la
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Det osmanske riket
+    lang: nb
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Osmaansch Riek
+    lang: nds
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Ottomaanse Rijk
+    lang: nl
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Det osmanske riket
+    lang: nn
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Det osmanske riket
+    lang: no
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: دولتْ علیّه عثمانیّه
+    lang: ota
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Devlet-i ʿAlīye-i ʿOs̱mānīye
+    lang: ota-Latn
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Imperium Osmańskie
+    lang: pl
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Império Otomano
+    lang: pt
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Imperiul Otoman
+    lang: ro
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Османская империя
+    lang: ru
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Milki ya Osmani
+    lang: sw
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: Osmanlı İmparatorluğu
+    lang: tr
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: دولتْ علیّه عثمانیّه
+    lang: und
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: سلطنت عثمانیہ
+    lang: ur
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040
+  - text: 奥斯曼帝国
+    lang: zh
+    start: "1898"
+    end: 1922-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692584, 2746682, 2849728, 2863740, 2920989, 2958040

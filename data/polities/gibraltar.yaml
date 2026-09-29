@@ -1,0 +1,535 @@
+id: gibraltar
+wikidata: Q1410
+names:
+  - text: ጅብራልታር
+    lang: am
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Chibraltar
+    lang: an
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: جبل طارق
+    lang: ar
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Cəbəllüttariq
+    lang: az
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: ba
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гібралтар
+    lang: be
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: bg
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: জিব্রাল্টার
+    lang: bn
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Jibraltar
+    lang: br
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: cv
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltar
+    lang: de
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ޖަބަލްޠާރިޤު
+    lang: dv
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Γιβραλτάρ
+    lang: el
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltar
+    lang: en
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Ĝibraltaro
+    lang: eo
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltar
+    lang: es
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: جبل‌الطارق
+    lang: fa
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltar
+    lang: fr
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Giobráltar
+    lang: ga
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Giobraltair
+    lang: gd
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Xibraltar
+    lang: gl
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: જિબ્રાલ્ટર
+    lang: gu
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraaltar
+    lang: gv
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: גיברלטר
+    lang: he
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: जिब्राल्टर
+    lang: hi
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltár (brit tengerentúli terület)
+    lang: hu
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Ջիբրալթար
+    lang: hy
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gíbraltar
+    lang: is
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibilterra
+    lang: it
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ジブラルタル
+    lang: ja
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: გიბრალტარი
+    lang: ka
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: kk
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: 지브롤터
+    lang: ko
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Cîbraltar
+    lang: ku
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Jibraltar
+    lang: kw
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: ky
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltaria
+    lang: la
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ກິບຣາທາ
+    lang: lo
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltaras
+    lang: lt
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltārs
+    lang: lv
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltara
+    lang: mg
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Kāmaka
+    lang: mi
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: mk
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ജിബ്രാൾട്ടർ
+    lang: ml
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: mn
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: जिब्राल्टर
+    lang: mr
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Ġibiltà
+    lang: mt
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ဂျီဘရော်လ်တာ
+    lang: my
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: जिब्राल्टार
+    lang: ne
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibartar
+    lang: oc
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ଜିବ୍ରାଲ୍ଟର
+    lang: or
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: os
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ਜਿਬਰਾਲਟਰ
+    lang: pa
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: جبل الطارق
+    lang: ps
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: ru
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Giburalitari
+    lang: rw
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: جبل الطارق
+    lang: sd
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ජිබ්‍රෝල්ටාව
+    lang: si
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltár
+    lang: sk
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Jibraltaar
+    lang: so
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gjibraltari
+    lang: sq
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: sr
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ஜிப்ரால்ட்டர்
+    lang: ta
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: జిబ్రాల్టర్
+    lang: te
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Ҷабалутториқ
+    lang: tg
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: ยิบรอลตาร์
+    lang: th
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Cebelitarık
+    lang: tr
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гибралтар
+    lang: tt
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Гібралтар
+    lang: uk
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gibraltar
+    lang: und
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: جبل‌الطارق
+    lang: ur
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Djibraltar
+    lang: wa
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Jibraltaar
+    lang: wo
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: Gilbhraltha
+    lang: xh
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: גיבראלטאר
+    lang: yi
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855
+  - text: 直布罗陀
+    lang: zh
+    start: "1713"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692855

@@ -1,0 +1,423 @@
+id: east-germany
+wikidata: Q16957
+names:
+  - text: ምሥራቅ ጀርመን
+    lang: am
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: ألمانيا الشرقية
+    lang: ar
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Германия Демократик Республикаһы
+    lang: ba
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Jerman Kangin
+    lang: ban
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Германска демократична република
+    lang: bg
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: পূর্ব জার্মানি
+    lang: bn
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Istočna Njemačka
+    lang: bs
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: East Alemanya
+    lang: ceb
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Østtyskland
+    lang: da
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Ostdeutschland
+    lang: de
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Ανατολική Γερμανία
+    lang: el
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: East Germany
+    lang: en
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Orienta Germanio
+    lang: eo
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Alemania Oriental
+    lang: es
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: آلمان شرقی
+    lang: fa
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Eysturtýskland
+    lang: fo
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Allemagne de l'Est
+    lang: fr
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: An Ghearmáin Thoir
+    lang: ga
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: A' Ghearmailt an Ear
+    lang: gd
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Yn Ghermaan Hiar
+    lang: gv
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: גרמניה המזרחית
+    lang: he
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: पूर्व जर्मनी
+    lang: hi
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Jerman Timur
+    lang: id
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Estal Germania
+    lang: io
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Austur-Þýskaland
+    lang: is
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: 東ドイツ
+    lang: ja
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Jerman Wétan
+    lang: jv
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: გერმანიის დემოკრატიული რესპუბლიკა
+    lang: ka
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: 동독
+    lang: ko
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Источна Германија
+    lang: mk
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: കിഴക്കൻ ജർമ്മനി
+    lang: ml
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Зүүн Герман
+    lang: mn
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: पूर्व जर्मनी
+    lang: mr
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Jerman Timur
+    lang: ms
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: ဂျာမန်ဒီမိုကရက်တစ်သမ္မတနိုင်ငံ
+    lang: my
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Øst-Tyskland
+    lang: nb
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: पूर्व जर्मनी
+    lang: ne
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Øst-Tyskland
+    lang: no
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: ਪੂਰਬੀ ਜਰਮਨੀ
+    lang: pa
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: ختيځ جرمني
+    lang: ps
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Alemanha Oriental
+    lang: pt
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: East Germany
+    lang: sco
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Istočna Njemačka
+    lang: sh-Latn
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Nemška demokratična republika
+    lang: sl
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Gjermania Lindore
+    lang: sq
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Источна Немачка
+    lang: sr
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Aast-Düütsklound
+    lang: stq
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Östtyskland
+    lang: sv
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: తూర్పు జర్మనీ
+    lang: te
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: ประเทศเยอรมนีตะวันออก
+    lang: th
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Silangang Alemanya
+    lang: tl
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Doğu Almanya
+    lang: tr
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Ostdeutschland
+    lang: und
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: مشرقی جرمنی
+    lang: ur
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Almagne do Levant
+    lang: wa
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Sinirangan Alemanya
+    lang: war
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: מזרח דייטשלאנד
+    lang: yi
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Ìlàoòrùn Jẹ́mánì
+    lang: yo
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: Oôst-Duutsland
+    lang: zea
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015
+  - text: 東德
+    lang: zh
+    start: 1949-10-07
+    end: 1951-06-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695015

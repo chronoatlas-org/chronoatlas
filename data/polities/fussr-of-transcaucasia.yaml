@@ -1,0 +1,149 @@
+id: fussr-of-transcaucasia
+names:
+  - text: ট্রান্সককেশীয় সমাজতান্ত্রিক যুক্তরাষ্ট্রীয় সোভিয়েত প্রজাতন্ত্র
+    lang: bn
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: RSKS Treuzkaokazek
+    lang: br
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Transkaukasische FUSSR
+    lang: de
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: FUSSR of Transcaucasia
+    lang: en
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: RSFS de Transcaucasia
+    lang: es
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Taga-Kaukaasia SFNV
+    lang: et
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Transkaukasiako Errepublikak
+    lang: eu
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: جمهوری فدراتیو سوسیالیستی قفقاز جنوبی شوروی
+    lang: fa
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Repúblicas Transcaucásicas
+    lang: gl
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: הרפובליקה הסובייטית הפדרלית הסוציאליסטית עבר-הקווקז
+    lang: he
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: ザカフカース社会主義連邦ソビエト共和国
+    lang: ja
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: ამიერკავკასიის სოციალისტური ფედერაციული საბჭოთა რესპუბლიკა
+    lang: ka
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: 자캅카스 사회주의 연방 소비에트 공화국
+    lang: ko
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Užkaukazės TFSR
+    lang: lt
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Aizkaukāza SFPR
+    lang: lv
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: ФСССР Закавказья
+    lang: ru
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: Transkaukasiska SFSR
+    lang: sv
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: สหพันธ์สาธารณรัฐสังคมนิยมโซเวียตทรานส์คอเคซัส
+    lang: th
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: ФССРР Закавказзя
+    lang: uk
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: ФСССР Закавказья
+    lang: und
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093
+  - text: 外高加索社会主义联邦苏维埃共和国
+    lang: zh
+    start: 1922-03-12
+    end: 1922-12-30
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698093

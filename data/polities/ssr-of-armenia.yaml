@@ -1,0 +1,79 @@
+id: ssr-of-armenia
+names:
+  - text: RSS d'Armènia
+    lang: ca
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: Armenische SSR
+    lang: de
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: SSR of Armenia
+    lang: en
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: RSS de Armenia
+    lang: es
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: Armeniako Sobietar Errepublika Sozialista
+    lang: eu
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: RSS de Armenia
+    lang: gl
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: Հայկական ՍՍՌ
+    lang: hy
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: 아르메니아 소비에트 사회주의 공화국
+    lang: ko
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: ССР Армении
+    lang: ru
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: СРР Вірменії
+    lang: uk
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022
+  - text: ССР Армении
+    lang: und
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698022

@@ -1,0 +1,16 @@
+id: german-occupation-of-italy
+names:
+  - text: German occupation of Italy
+    lang: en
+    start: 1943-09-10
+    end: 1945-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961564
+  - text: German occupation of Italy
+    lang: und
+    start: 1943-09-10
+    end: 1945-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961564

@@ -1,0 +1,45 @@
+id: portugal
+wikidata: Q45
+names:
+  - text: Portugal
+    lang: de
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009
+  - text: Portugal
+    lang: en
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009
+  - text: Portogallo
+    lang: it
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009
+  - text: 포르투갈
+    lang: ko
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009
+  - text: Portugal
+    lang: pt
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009
+  - text: Portugal
+    lang: und
+    start: "1910"
+    end: "1951"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2807009

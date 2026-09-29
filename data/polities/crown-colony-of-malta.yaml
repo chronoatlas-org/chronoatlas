@@ -1,0 +1,115 @@
+id: crown-colony-of-malta
+wikidata: Q6744657
+names:
+  - text: Crown Colony of Malta
+    lang: en
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Malta británica
+    lang: es
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Maltan kruununsiirtomaa
+    lang: fi
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Colonie de Malte et dépendances
+    lang: fr
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Koloni Mahkota Malta
+    lang: id
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Colonia di Malta
+    lang: it
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: მალტის გვირგვინის კოლონია
+    lang: ka
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: 몰타 왕령 식민지
+    lang: ko
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Kolonja ta' Malta
+    lang: mt
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Malta
+    lang: pl
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Colônia da Coroa de Malta
+    lang: pt
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Коронная колония Мальта
+    lang: ru
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Malta Kolonisi
+    lang: tr
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Коронна колонія Мальта
+    lang: uk
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: Colony of Malta
+    lang: und
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185
+  - text: 马耳他直辖殖民地
+    lang: zh
+    start: 1814-05-30
+    end: 1964-09-21
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801185

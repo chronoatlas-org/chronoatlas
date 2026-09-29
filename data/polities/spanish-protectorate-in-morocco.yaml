@@ -1,0 +1,73 @@
+id: spanish-protectorate-in-morocco
+wikidata: Q457242
+names:
+  - text: الحماية الإسبانية في المغرب
+    lang: ar
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: Spanisch-Marokko
+    lang: de
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: Spanish protectorate in Morocco
+    lang: en
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: Protectorado español de Marruecos
+    lang: es
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: protectorat espagnol au Maroc
+    lang: fr
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: Marocco spagnolo
+    lang: it
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: スペイン領モロッコ
+    lang: ja
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: 스페인령 모로코
+    lang: ko
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: Protectorado español en Marruecos
+    lang: und
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424
+  - text: 西属摩洛哥
+    lang: zh
+    start: 1912-11-27
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860421, 2860422, 2860423, 2860424

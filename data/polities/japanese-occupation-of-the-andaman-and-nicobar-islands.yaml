@@ -1,0 +1,17 @@
+id: japanese-occupation-of-the-andaman-and-nicobar-islands
+wikidata: Q4065239
+names:
+  - text: Japanese occupation of the Andaman and Nicobar Islands
+    lang: en
+    start: 1942-03-23
+    end: 1945-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961652
+  - text: Japanese occupation of the Andaman and Nicobar Islands
+    lang: und
+    start: 1942-03-23
+    end: 1945-10-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2961652

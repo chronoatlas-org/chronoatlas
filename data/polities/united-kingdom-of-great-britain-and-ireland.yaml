@@ -1,0 +1,570 @@
+id: united-kingdom-of-great-britain-and-ireland
+wikidata: Q174193
+names:
+  - text: Verenigde Koninkryk van Groot-Brittanje en Ierland
+    lang: af
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reino Uniu de Gran Bretanya y Irlanda
+    lang: an
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: المملكة المتحدة لبريطانيا العظمى وأيرلندا
+    lang: ar
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reinu Xuníu de Gran Bretaña ya Irlanda
+    lang: ast
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Böyük Britaniya və İrlandiya Birləşmiş Krallığı
+    lang: az
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Злучанае Каралеўства Вялікабрытаніі і Ірландыі
+    lang: be
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Обединено кралство Великобритания и Ирландия
+    lang: bg
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Rouantelezh Unanet Breizh-Veur hag Iwerzhon
+    lang: br
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ujedinjeno Kraljevstvo Velike Britanije i Irske
+    lang: bs
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regne Unit de la Gran Bretanya i Irlanda
+    lang: ca
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ujedinjeno Kraljevstvo Velike Britanije i Irske
+    lang: cnr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Spojené království Velké Británie a Irska
+    lang: cs
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Teyrnas Unedig Prydain Fawr ac Iwerddon
+    lang: cy
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Det Forenede Kongerige Storbritannien og Irland
+    lang: da
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Vereinigtes Königreich Großbritannien und Irland
+    lang: de
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Qraliya Yewbiyayiya Britanya Gırde u İrlanda
+    lang: diq
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ηνωμένο Βασίλειο της Μεγάλης Βρετανίας και της Ιρλανδίας
+    lang: el
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: United Kingdom of Great Britain and Ireland
+    lang: en
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Unuiĝinta Reĝlando de Granda Britio kaj Irlando
+    lang: eo
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reino Unido de Gran Bretaña e Irlanda
+    lang: es
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Suurbritannia ja Iirimaa Ühendkuningriik
+    lang: et
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Britainia Handia eta Irlandako Erresuma Batua
+    lang: eu
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: پادشاهی متحد بریتانیای کبیر و ایرلند
+    lang: fa
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ison-Britannian ja Irlannin yhdistynyt kuningaskunta
+    lang: fi
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Royaume-Uni de Grande-Bretagne et d'Irlande
+    lang: fr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Feriene Keninkryk fan Grut-Brittanje en Ierlân
+    lang: fy
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ríocht Aontaithe na Breataine Móire agus na hÉireann
+    lang: ga
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: An Rìoghachd Aonaichte na Breatainne Mòire is na h-Èireann
+    lang: gd
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reino Unido de Gran Bretaña e Irlanda
+    lang: gl
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reeriaght Unnaneysit y Vretyn Vooar as Nerin
+    lang: gv
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Hadaddiyar Masarautar Burtaniya Mai Girma da Ireland
+    lang: ha
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Thai Britain lâu Ireland Lièn-ha̍p Vòng-koet
+    lang: hak
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: הממלכה המאוחדת של בריטניה הגדולה ואירלנד
+    lang: he
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: ग्रेट ब्रिटेन और आयरलैंड का यूनाइटेड किंगडम
+    lang: hi
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ujedinjeno Kraljevstvo Velike Britanije i Irske
+    lang: hr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Wayòm Ini Grann Bretay ak Iland
+    lang: ht
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Nagy-Britannia és Írország Egyesült Királysága
+    lang: hu
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Մեծ Բրիտանիայի և Իռլանդիայի միացյալ թագավորություն
+    lang: hy
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Perserikatan Kerajaan Britania Raya dan Irlandia
+    lang: id
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Unit Reyatu de Grande Britannia e Irland
+    lang: ie
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regno Unito di Gran Bretagna e Irlanda
+    lang: it
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: グレートブリテン及びアイルランド連合王国
+    lang: ja
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ұлыбритания және Ирландия біріккен патшалығы
+    lang: kk
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: 그레이트브리튼 아일랜드 연합왕국
+    lang: ko
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regnum Unitum Magnae Britanniae et Hiberniae
+    lang: la
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regn Unid
+    lang: lmo
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Jungtinė Didžiosios Britanijos ir Airijos karalystė
+    lang: lt
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Lielbritānijas un Īrijas Apvienotā Karaliste
+    lang: lv
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: ग्रेट ब्रिटन व आयर्लंडचे संयुक्त राजतंत्र
+    lang: mr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Det forente kongerike Storbritannia og Irland
+    lang: nb
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Verenigd Koninkrijk van Groot-Brittannië en Ierland
+    lang: nl
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Det sameinte kongeriket Storbritannia og Irland
+    lang: nn
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Det forente kongerike Storbritannia og Irland
+    lang: no
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: ਗ੍ਰੇਟ ਬ੍ਰਿਟੇਨ ਅਤੇ ਆਇਰਲੈਂਡ ਦਾ ਸੰਯੁਕਤ ਸਾਮਰਾਜ
+    lang: pa
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Zjednoczone Królestwo Wielkiej Brytanii i Irlandii
+    lang: pl
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: د برېتانيا او ايرلينډ متحده پاچايي
+    lang: ps
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Reino Unido da Grã-Bretanha e Irlanda
+    lang: pt
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regatul Unit al Marii Britanii și Irlandei
+    lang: ro
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Соединённое королевство Великобритании и Ирландии
+    lang: ru
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Споене кральовство Великой Британии и Ирландии
+    lang: rue
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Regnu Unidu de Bretagna Manna e Irlanda
+    lang: sc
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Unitit Kinrick o Great Breetain an Ireland
+    lang: sco
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: عظيم برطانيا ۽ آئرلينڊ جي گڏيل بادشاھت
+    lang: sd
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Уједињено Краљевство Велике Британије и Ирске
+    lang: sh-Cyrl
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ujedinjeno Kraljevstvo Velike Britanije i Irske
+    lang: sh-Latn
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Spojené kráľovstvo Veľkej Británie a Írska
+    lang: sk
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Združeno kraljestvo Velike Britanije in Irske
+    lang: sl
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Mbretëria e Bashkuar e Britanisë së Madhe dhe Irlandës
+    lang: sq
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Уједињено Краљевство Велике Британије и Ирске
+    lang: sr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ujedinjeno Kraljevstvo Velike Britanije i Irske
+    lang: sr-Latn
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Förenade kungariket Storbritannien och Irland
+    lang: sv
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: பெரிய பிரித்தானியா மற்றும் அயர்லாந்தின் ஐக்கிய இராச்சியம்
+    lang: ta
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: యు.కె. గ్రేట్ బ్రిటన్ (ఉత్తర ఐర్లాండ్)
+    lang: te
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: สหราชอาณาจักรบริเตนใหญ่และไอร์แลนด์
+    lang: th
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Büyük Britanya ve İrlanda Birleşik Krallığı
+    lang: tr
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Сполучене Королівство Великої Британії та Ірландії
+    lang: uk
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: United Kingdom of Great Britain and Ireland
+    lang: und
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: متحدہ مملکت برطانیہ عظمی و آئر لینڈ
+    lang: ur
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Vương quốc Liên hiệp Anh và Ireland
+    lang: vi
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: Ilẹ̀ọba Aṣọ̀kan Brítánì Olókìkí àti Írẹ́lándì
+    lang: yo
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388
+  - text: 大不列颠及爱尔兰联合王国
+    lang: zh
+    start: 1801-01-01
+    end: 1922-12-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828388

@@ -1,0 +1,24 @@
+id: jersey
+wikidata: Q785
+names:
+  - text: Jersey
+    lang: en
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828299
+  - text: 저지섬
+    lang: ko
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828299
+  - text: Jersey
+    lang: und
+    start: "1290"
+    end: 1987-05-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2828299

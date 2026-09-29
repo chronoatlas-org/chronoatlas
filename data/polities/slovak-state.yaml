@@ -1,0 +1,696 @@
+id: slovak-state
+wikidata: Q154401
+names:
+  - text: Slowaakse Staat
+    lang: af
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: الجمهورية السلوفاكية
+    lang: ar
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: جمهورية سلوفاكيا
+    lang: ar
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Estáu Eslovacu
+    lang: ast
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovakiya Respublikası
+    lang: az
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Словакия республикаһы
+    lang: ba
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Першая Славацкая рэспубліка
+    lang: be
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Першая Славацкая Рэспубліка
+    lang: be
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Първа словашка република
+    lang: bg
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: Republik Slovak
+    lang: br
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Republika Slovačka
+    lang: bs
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: República Eslovaca
+    lang: ca
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovenský stát
+    lang: cs
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovenská republika
+    lang: cs
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Gweriniaeth Slofacia
+    lang: cy
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovakiske Stat
+    lang: da
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Den Slovakiske Republik
+    lang: da
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slowakischer Staat
+    lang: de
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slowakische Republik
+    lang: de
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Σλοβακική Δημοκρατία
+    lang: el
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: Slovak State
+    lang: en
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovak Republic
+    lang: en
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovaka ŝtato
+    lang: eo
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: Estado Eslovaco
+    lang: es
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: República Eslovaca
+    lang: es
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovaki Riik
+    lang: et
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovaki Vabariik
+    lang: et
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Eslovakiar Errepublika
+    lang: eu
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: جمهوری اسلواکی
+    lang: fa
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovakian tasavalta
+    lang: fi
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: État slovaque
+    lang: fr
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: République slovaque
+    lang: fr
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Poblacht na Slóvaice
+    lang: ga
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Poblachd na Slòbhaic
+    lang: gd
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Pobblaght y Clovack
+    lang: gv
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: הרפובליקה הסלובקית הראשונה
+    lang: he
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: Slovačka Republika
+    lang: hr
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Szlovák Állam
+    lang: hu
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Szlovák Köztársaság
+    lang: hu
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Սլովակիայի հանրապետություն
+    lang: hy
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Negara Slowakia
+    lang: id
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republik Slowakia
+    lang: id
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slóvakíska lýðveldið
+    lang: is
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Repubblica Slovacca
+    lang: it
+    start: 1939-03-14
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2692769, 2747847
+  - text: スロバキア国
+    lang: ja
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: スロバキア共和国
+    lang: ja
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: სლოვაკეთის პირველი რესპუბლიკა
+    lang: ka
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: 슬로바키아국
+    lang: ko
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: 슬로바키아 공화국
+    lang: ko
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovakijos respublika
+    lang: lt
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovākijas republika
+    lang: lv
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Словачка Република
+    lang: mk
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Negara Slovakia
+    lang: ms
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republik Slovakia
+    lang: ms
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slo-va-khia Kok
+    lang: nan
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republikken Slovakia
+    lang: nb
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slowaaksche Republiek
+    lang: nds
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slowaakse Staat
+    lang: nl
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slowaakse Republiek
+    lang: nl
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Den slovakiske republikken
+    lang: nn
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Den slovakiske stat
+    lang: no
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republikken Slovakia
+    lang: no
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slowaakische Republik
+    lang: pdc
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Państwo słowackie
+    lang: pl
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republika Słowacka
+    lang: pl
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Estado Eslovaco
+    lang: pt
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: República Eslovaca
+    lang: pt
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Statul Slovac
+    lang: ro
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Republica Slovacă
+    lang: ro
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Первая Словацкая республика
+    lang: ru
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Словацкая республика
+    lang: ru
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovak Republic
+    lang: sco
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Republika Slovačka / Словачка Република
+    lang: sh
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Republika Slovačka
+    lang: sh-Latn
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovenský štát
+    lang: sk
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovenská republika
+    lang: sk
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Republika Sllovake
+    lang: sq
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Прва словачка република
+    lang: sr
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Словачка Република
+    lang: sr
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovačka Republika
+    lang: sr-Latn
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovakiska staten
+    lang: sv
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovakiska republiken
+    lang: sv
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Jamhuri ya Kislovakia (1939–1945)
+    lang: sw
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: รัฐสโลวัก
+    lang: th
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: สาธารณรัฐสโลวักที่ 1
+    lang: th
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Birinci Slovak Cumhuriyeti
+    lang: tr
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovak Cumhuriyeti
+    lang: tr
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Перша Словацька Республіка
+    lang: uk
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Словацька республіка
+    lang: uk
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovenský štát
+    lang: und
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Slovenská republika
+    lang: und
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: جمہوریہ سلاواک
+    lang: ur
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovakiya Respublikasi
+    lang: uz
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Nhà nước Slovakia
+    lang: vi
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: Cộng hòa Slovakia
+    lang: vi
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: Slovoaksche Republiek
+    lang: vls
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847
+  - text: 斯洛伐克國
+    lang: yue
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: 斯洛伐克国
+    lang: zh
+    start: 1939-03-14
+    end: 1939-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692769
+  - text: 斯洛伐克共和國
+    lang: zh
+    start: 1939-04-04
+    end: 1945-04-04
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692768, 2747847

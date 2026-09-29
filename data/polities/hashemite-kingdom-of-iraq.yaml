@@ -1,0 +1,289 @@
+id: hashemite-kingdom-of-iraq
+names:
+  - text: የኢራቅ መንግሥት
+    lang: am
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: المملكة العراقية
+    lang: ar
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: İraq krallığı
+    lang: az
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Ираҡ короллеге
+    lang: ba
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Каралеўства Ірак
+    lang: be
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: ইরাক রাজতন্ত্র
+    lang: bn
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Regne de l'Iraq
+    lang: ca
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Irácké království
+    lang: cs
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Königreich Irak
+    lang: de
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Βασίλειο του Ιράκ
+    lang: el
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Hashemite Kingdom of Iraq
+    lang: en
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Reĝlando Irako
+    lang: eo
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Reino de Irak
+    lang: es
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Iraagi Kuningriik
+    lang: et
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Irakeko Erresuma
+    lang: eu
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: پادشاهی عراق
+    lang: fa
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Irakin hašemiittinen kuningaskunta
+    lang: fi
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Royaume d'Irak
+    lang: fr
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: ממלכת עיראק
+    lang: he
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Իրաքի թագավորություն
+    lang: hy
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Kerajaan Irak
+    lang: id
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Regno dell'Iraq
+    lang: it
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: イラク王国
+    lang: ja
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: 이라크 왕국
+    lang: ko
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Keyaniya Iraqê
+    lang: ku
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Кралство Ирак
+    lang: mk
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Kongeriket Irak
+    lang: nb
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Koninkrijk Irak
+    lang: nl
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Królestwo Iraku
+    lang: pl
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: د عراق پاچاهي
+    lang: ps
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Reino do Iraque
+    lang: pt
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Regatul Irakului
+    lang: ro
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Королевство Ирак
+    lang: ru
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Kungariket Irak
+    lang: sv
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: ราชอาณาจักรอิรัก
+    lang: th
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Irak Krallığı
+    lang: tr
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Іракське королівство
+    lang: uk
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: المملكة العراقية الهاشمية
+    lang: und
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: مملکت عراق
+    lang: ur
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: Vương quốc Iraq
+    lang: vi
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466
+  - text: 伊拉克王國
+    lang: zh
+    start: 1932-10-03
+    end: 1958-07-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839466

@@ -1,0 +1,52 @@
+id: germany-luxembourg-condominium
+wikidata: Q1500976
+names:
+  - text: Gemeinsames deutsch-luxemburgisches Hoheitsgebiet
+    lang: de
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: Germany-Luxembourg condominium
+    lang: en
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: Condominium germano-luxembourgeois
+    lang: fr
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: ドイツ＝ルクセンブルク共同主権領域
+    lang: ja
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: 독일-룩셈부르크 공동주권영역
+    lang: ko
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: Gemeinsame Lëtzebuergesch-Däitsche Souveränitéitsgebitt
+    lang: lb
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937
+  - text: Vokietijos-Liuksemburgo kondominiumas
+    lang: lt
+    start: "1945"
+    end: ongoing
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747937

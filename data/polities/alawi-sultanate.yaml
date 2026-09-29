@@ -1,0 +1,38 @@
+id: alawi-sultanate
+wikidata: Q131429368
+names:
+  - text: السلطنة الشريفة
+    lang: ar
+    start: "1666"
+    end: 1907-08-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2861416
+  - text: Alawi Sultanate
+    lang: en
+    start: "1666"
+    end: 1907-08-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2861416
+  - text: Sultanato alauí
+    lang: es
+    start: "1666"
+    end: 1907-08-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2861416
+  - text: 알라위 술탄국
+    lang: ko
+    start: "1666"
+    end: 1907-08-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2861416
+  - text: السلطنة الشريفة
+    lang: und
+    start: "1666"
+    end: 1907-08-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2861416

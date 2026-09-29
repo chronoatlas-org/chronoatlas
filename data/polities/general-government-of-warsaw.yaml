@@ -1,0 +1,80 @@
+id: general-government-of-warsaw
+wikidata: Q3496993
+names:
+  - text: Generální gouvernement Varšava
+    lang: cs
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Generalgouvernement Warschau
+    lang: de
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Γενικό Κυβερνείο της Βαρσοβίας
+    lang: el
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: General Government of Warsaw
+    lang: en
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Gobierno General de Varsovia
+    lang: es
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Gouvernement général de Varsovie
+    lang: fr
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Varšuvos generalgubernija
+    lang: lt
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Владиниот генерал на Варшава
+    lang: mk
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Generalne Gubernatorstwo Warszawskie
+    lang: pl
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Генерал-губернаторство Варшава
+    lang: ru
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
+  - text: Generalgouvernement Warschau
+    lang: und
+    start: 1915-10-18
+    end: 1916-11-05
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695682
