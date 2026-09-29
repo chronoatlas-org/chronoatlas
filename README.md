@@ -95,6 +95,7 @@ file. Stop the server with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 | `npm run validate` | Checks every data file: format, references, dates, geometry, licenses |
 | `npm run summarize-changes` | Describes, in words, what your copy of `data/` changes compared with `main` (records, borders, events, licenses, and what that does to contested areas and land areas). Pull requests get the same summary as a comment |
 | `npm run suggest-crosswalk -- --region=W,S,E,N --years=FROM,TO --out=report.md --trial` | Suggests which CShapes units are the same state as Cliopatria's polities in a region and period, for the maintainers to review before contested areas are shown there (see `docs/crosswalk-review/`). Changes nothing in `data/` |
+| `npm run measure-ohm` | Counts OpenHistoricalMap's country-level boundaries by region and period, to choose the next region to import. The "Measure OpenHistoricalMap's coverage" button in the Actions tab runs it on GitHub. Changes nothing in `data/` |
 | `npm run build-data` | Compiles `data/` into the files the site loads (`public/data/`); runs automatically before `dev` and `build` |
 | `npm run import:ohm` | Re-imports the OpenHistoricalMap borders (see [data/imports/openhistoricalmap](data/imports/openhistoricalmap/README.md)) |
 | `npm run import:cshapes` | Re-imports CShapes 2.0 from its pinned files (non-commercial; see [data/imports/cshapes-2-0](data/imports/cshapes-2-0/README.md)) |

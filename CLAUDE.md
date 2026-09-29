@@ -328,6 +328,8 @@ LTS, and the GitHub CLI are installed.
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
 `npm run validate`, `npm run summarize-changes` (compares `data/` with `origin/main`; options at the
 top of the script), `npm run suggest-crosswalk` (options at the top of the script),
+`npm run measure-ohm` (OpenHistoricalMap's boundaries by region and period; its server is blocked in
+some environments, so the "Measure OpenHistoricalMap's coverage" workflow runs it on GitHub),
 `npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
 `npm run import:cliopatria` (add `-- --offline` to reprocess the last download),
 `npm run import:natural-earth`.

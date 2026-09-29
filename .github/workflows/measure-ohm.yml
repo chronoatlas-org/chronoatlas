@@ -1,0 +1,31 @@
+# A "Run workflow" button (Actions tab → "Measure OpenHistoricalMap's coverage") that counts
+# OpenHistoricalMap's country-level boundaries by region and period (scripts/measure-ohm.ts) and
+# shows the table on the run's page, so the maintainers can choose the next region to import
+# (docs/phase-5-plan.md, step 9 and decision 8). It reads only: it changes nothing in the
+# repository, and needs no permission beyond reading the code.
+
+name: Measure OpenHistoricalMap's coverage
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Measure
+        run: |
+          npm run measure-ohm -- --out coverage.md
+          cat coverage.md >> "$GITHUB_STEP_SUMMARY"
