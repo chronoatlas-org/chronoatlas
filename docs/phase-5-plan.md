@@ -359,6 +359,15 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     Cliopatria doesn't cover, shown as "no data".
   - **Today's data** (before the worldwide imports are merged) gets a baseline of 25 pieces: the
     years before 1900 and after 1950 of the East Asian Cliopatria rows.
+- **Worldwide data merged (2026-09-29).** Both imports were regenerated on the current main with
+  the "Re-import a dataset" button, checked (build, validation, and the posted summary), and
+  brought onto main by fast-forward; the earlier pull requests, made from an older main, were
+  closed.
+  - **Cliopatria** (pull request 40): 11,757 records, 11,757 borders, and 1,493 polities added,
+    all inside `data/imports/cliopatria/` (91 MB on disk, no file near GitHub's 100 MB limit).
+    Its only effect on today's views: 10 "sources differ" entries in 1900 grew or appeared,
+    because Cliopatria's rows that end "in 1900" (year only) now exist and stay on the map until
+    the last day they could have ended (Phase 3 decision 1), beside the rows starting in 1900.
 
 **Left out of Phase 5:**
 
