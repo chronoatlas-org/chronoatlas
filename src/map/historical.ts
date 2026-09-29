@@ -300,6 +300,9 @@ export class HistoricalLayers {
     };
     show(
       [
+        'borders-under',
+        'borders-under-inland',
+        'borders-land-under',
         'borders-fill',
         'borders-land',
         'borders-line',
@@ -307,6 +310,7 @@ export class HistoricalLayers {
         'borders-zone',
         'borders-selected',
         'borders-labels',
+        'baseline-under',
         'baseline-fill',
         'baseline-sea',
         'baseline-line',
@@ -545,6 +549,14 @@ export class HistoricalLayers {
       },
       'coastline',
     );
+    // Under a lighter (uncertain) fill, plain land, so it reads as a paler color rather than letting
+    // the "no data" hatch show through: there is data there, only its dates are uncertain. Up close,
+    // a border that takes in coastal waters gets it under its land part only.
+    const uncertain: ExpressionSpecification = ['all', ACTIVE, UNCERTAIN];
+    const under = { type: 'fill', source: 'borders', paint: { 'fill-color': COLORS.land } } as const;
+    map.addLayer({ ...under, id: 'borders-under', 'source-layer': index.layer, maxzoom: COAST_ZOOM, filter: uncertain }, 'borders-fill');
+    map.addLayer({ ...under, id: 'borders-under-inland', 'source-layer': index.layer, minzoom: COAST_ZOOM, filter: ['all', uncertain, ['!=', ['get', 'coast'], 1]] }, 'borders-fill');
+    map.addLayer({ ...under, id: 'borders-land-under', 'source-layer': 'land', minzoom: COAST_ZOOM, filter: uncertain }, 'borders-fill');
     // Up close, the land part of each border that takes in coastal waters, filled over the tint.
     map.addLayer(
       {
@@ -628,6 +640,11 @@ export class HistoricalLayers {
       map.addLayer(
         { id: 'baseline-fill', type: 'fill', source: 'baseline', 'source-layer': baseline.layer, filter: ACTIVE, paint: { 'fill-color': colorMatch(PALETTE), 'fill-opacity': FILL_OPACITY } },
         'borders-fill',
+      );
+      // Plain land under its lighter fills too, as for the default map (the sea covers it up close).
+      map.addLayer(
+        { id: 'baseline-under', type: 'fill', source: 'baseline', 'source-layer': baseline.layer, filter: ['all', ACTIVE, UNCERTAIN], paint: { 'fill-color': COLORS.land } },
+        'baseline-fill',
       );
       const coastLayer = index.extra?.coast?.layer;
       if (coastLayer && map.getSource('coast')) {

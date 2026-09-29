@@ -177,6 +177,69 @@ export function assignColors(items: { polity: string; box: Box; s0: number; e0: 
 }
 
 /**
+ * Records ready for assignColors: each shape's grid squares (which shapes touch), worked out once
+ * per shape, however many records use it.
+ */
+function colorItems(records: readonly { polity: string; shape: ShapeFeature; box: Box; s0: number; e1: number }[]) {
+  const cellsOf = new Map<string, Set<number>>();
+  const cells = (shape: ShapeFeature) => {
+    const id = shape.properties.id;
+    if (!cellsOf.has(id)) cellsOf.set(id, shapeCells(asMultiPolygon(shape.geometry)));
+    return cellsOf.get(id)!;
+  };
+  return records.map((r) => ({ polity: r.polity, box: r.box, s0: r.s0, e0: r.e1, cells: cells(r.shape) }));
+}
+
+/**
+ * One set of colors for the default map and the baseline, so a state keeps
+ * its color where OpenHistoricalMap's area ends and Cliopatria's borders take over: a Cliopatria
+ * polity that its reviewed crosswalk matches to one of ours (same-state) takes that polity's color.
+ * Neighbours are worked out from what each layer draws (the default map during its imports' years,
+ * the baseline outside them), so the same pairs are told apart as when each layer had its own.
+ */
+export function mapColors(ds: Dataset): Map<string, number> {
+  // Polities colored alike: each matched Cliopatria polity with ours (only the second opinion's own
+  // crosswalk; CShapes' links a unit to several of our states, which must keep their own colors).
+  const parent = new Map<string, string>();
+  const find = (p: string): string => {
+    let root = p;
+    while (parent.has(root)) root = parent.get(root)!;
+    return root;
+  };
+  for (const { file, value } of ds.crosswalks) {
+    if (!isSecondOpinion(file)) continue;
+    for (const entry of value) {
+      for (const m of entry.matches) {
+        if (m.kind !== 'same-state') continue;
+        const [a, b] = [find(m.polity), find(entry.unit)];
+        if (a !== b) parent.set(b, a);
+      }
+    }
+  }
+  const coverage = defaultCoverage(ds);
+  const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
+  const records = [
+    { data: splitAtCoverage(ds, onDefaultMap, coverage, 'during'), include: onDefaultMap },
+    { data: splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), include: isSecondOpinion },
+  ].flatMap(({ data, include }) => {
+    const pieces = new Map(data.shapes.map(({ value }) => [value.properties.id, value]));
+    return data.assertions
+      .filter(({ file }) => include(file))
+      .flatMap(({ value }) => value)
+      .filter((a): a is Assertion & { shape: string } => TERRITORIAL_RELATIONS.includes(a.relation) && !!a.shape && (pieces.has(a.shape) || shapes.has(a.shape)))
+      .map((a) => {
+        const shape = pieces.get(a.shape) ?? shapes.get(a.shape)!;
+        const { s0, e1 } = dayRanges(a.start, a.end);
+        return { polity: find(a.subject), shape, box: bounds(shape.geometry), s0, e1 };
+      });
+  });
+  const byGroup = assignColors(colorItems(records));
+  const colors = new Map<string, number>();
+  for (const { value } of ds.assertions) for (const a of value) if (byGroup.has(find(a.subject))) colors.set(a.subject, byGroup.get(find(a.subject))!);
+  return colors;
+}
+
+/**
  * Whether an assertions file belongs on the default map (the de facto view): our own data and
  * OpenHistoricalMap. Every other import is its own layer, never mixed into this one: each source
  * ships separately, and some (CShapes) have license terms that keep them apart.
@@ -293,9 +356,9 @@ function buildLabels(
 /** The import folder an assertions file belongs to ("data/imports/<name>"), if any. */
 const folderOf = (file: string) => /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
 
-export function buildBorders(ds: Dataset, outlines?: OutlineContext) {
+export function buildBorders(ds: Dataset, outlines?: OutlineContext, colors?: ReadonlyMap<string, number>) {
   // Only during the years its imports cover: outside them, the baseline (Phase 5, decision 2).
-  return buildBorderLayer(splitAtCoverage(ds, onDefaultMap, defaultCoverage(ds), 'during'), onDefaultMap, undefined, outlines, true, true);
+  return buildBorderLayer(splitAtCoverage(ds, onDefaultMap, defaultCoverage(ds), 'during'), onDefaultMap, undefined, outlines, true, true, undefined, colors);
 }
 
 /**
@@ -335,9 +398,9 @@ export function buildSecondOpinion(ds: Dataset, outlines?: OutlineContext) {
  * filled and named. Its fills aren't cut at the coast (decision 11): the map draws the sea over
  * them up close.
  */
-export function buildBaseline(ds: Dataset, outlines?: OutlineContext) {
+export function buildBaseline(ds: Dataset, outlines?: OutlineContext, colors?: ReadonlyMap<string, number>) {
   const coverage = defaultCoverage(ds);
-  return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true);
+  return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true, undefined, colors);
 }
 
 /** The outline context with the coverage boxes' edges as cuts too. */
@@ -356,6 +419,8 @@ function buildBorderLayer(
   cutAtCoast = false,
   withLabels = false,
   labelExtra: (shape: ShapeFeature) => Record<string, string> = () => ({}),
+  // Colors worked out across layers (mapColors); without them, the layer colors its own polities.
+  givenColors?: ReadonlyMap<string, number>,
 ) {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
   const territorial = ds.assertions
@@ -367,14 +432,7 @@ function buildBorderLayer(
     const shape = shapes.get(a.shape)!;
     return { assertion: a, folder, shape, box: bounds(shape.geometry), ...dayRanges(a.start, a.end) };
   });
-  // Which shapes touch: worked out once per shape, however many records use it.
-  const cellsOf = new Map<string, Set<number>>();
-  const cells = (shape: ShapeFeature) => {
-    const id = shape.properties.id;
-    if (!cellsOf.has(id)) cellsOf.set(id, shapeCells(asMultiPolygon(shape.geometry)));
-    return cellsOf.get(id)!;
-  };
-  const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1, cells: cells(i.shape) })));
+  const colors = givenColors ?? assignColors(colorItems(items.map((i) => ({ polity: i.assertion.subject, shape: i.shape, box: i.box, s0: i.s0, e1: i.e1 }))));
 
   // Fills that stop at the coast (the default map only): each shape's land part, worked out once
   // per shape. Shapes with next to no coastal waters have none, and are filled whole.
@@ -1264,10 +1322,13 @@ function main(): void {
   // Natural Earth's land, for the border lines (which leave out stretches at sea) and land areas.
   const land = loadLand(ds);
   const outlines: OutlineContext = { areas: importAreas(ds), land: land ? new LandDistance(land.all()) : undefined, landPolygons: land };
-  const borders = buildBorders(ds, outlines);
+  // One set of colors for the default map and the baseline, so a state keeps its color where one
+  // gives way to the other.
+  const colors = mapColors(ds);
+  const borders = buildBorders(ds, outlines, colors);
   const dejure = buildDejure(ds, outlines);
   const second = buildSecondOpinion(ds, outlines);
-  const baseline = buildBaseline(ds, outlines);
+  const baseline = buildBaseline(ds, outlines, colors);
   const edges = buildEdges(ds, outlines.land);
   writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);

@@ -374,6 +374,13 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     reviewed (East Asia 1900–1950). 4 of CShapes' 710 rows are skipped and listed in its
     manifest: Danzig and West Irian (owner codes 0 and 1, above) and Morocco 1904–1912, for
     which CShapes gives no status.
+  - **Colors, fixed after the maintainer's first look (2026-09-29):** a state had two colors, one
+    on each side of the edge of OpenHistoricalMap's area (Russia green inside, pink outside),
+    because each layer colored its own polities. The default map and the baseline are now colored
+    together, and a Cliopatria polity matched to ours in the reviewed crosswalk takes its color.
+    And a lighter fill (a record whose start or end is known only to the month or year, which is
+    every Cliopatria row near its ends) let the "no data" hatch show through, as if there were no
+    data; plain land now lies under it, so it's just paler.
   - **Both builds and the deploy passed;** the live site is worldwide. The Cliopatria deploy took
     about 7 minutes, most of it the data build.
 

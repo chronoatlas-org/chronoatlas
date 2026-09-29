@@ -19,6 +19,7 @@ import {
   onDefaultMap,
   eraItems,
   forEra,
+  mapColors,
   shapeCells,
   splitAtCoverage,
 } from './build-data.ts';
@@ -210,6 +211,41 @@ describe('assignColors', () => {
     expect(colors.get('empire')).not.toBe(colors.get('b'));
     // c has no neighbours, so it takes the first color, whatever the empire has.
     expect(colors.get('c')).toBe(0);
+  });
+});
+
+describe('mapColors', () => {
+  // Made-up Testland polities and squares in a row, each touching the next: ours (the default map),
+  // then two of Cliopatria's (the baseline), and a neighbour of ours.
+  const cite = [{ source: 'test-source', locator: 'p. 1' }];
+  const shape = (id: string, x: number) => ({
+    file: id,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: [[[x, 0], [x + 1, 0], [x + 1, 1], [x, 1], [x, 0]]] } },
+  });
+  const record = (subject: string) => ({ id: subject, relation: 'controls' as const, subject, shape: subject, start: '1901', end: 'ongoing', sources: cite });
+  const ds: Dataset = {
+    sources: [], polities: [], events: [], figures: [], coverage: [], imports: [], problems: [],
+    shapes: [shape('neighbour', -1), shape('testland', 0), shape('cliopatria-testland', 1), shape('cliopatria-rival', 2)],
+    assertions: [
+      { file: 'data/assertions/test.yaml', value: [record('neighbour'), record('testland')] },
+      { file: 'data/imports/cliopatria/assertions.yaml', value: [record('cliopatria-testland'), record('cliopatria-rival')] },
+    ],
+    crosswalks: [
+      { file: 'data/imports/cliopatria/polity-crosswalk.yaml', value: [{ unit: 'cliopatria-testland', matches: [{ polity: 'testland', kind: 'same-state' }] }] },
+      // A legal source's unit matched to two of our states, which still need colors of their own.
+      { file: 'data/imports/test-legal/polity-crosswalk.yaml', value: [{ unit: 'unit-a', matches: [{ polity: 'testland', kind: 'same-state' }, { polity: 'neighbour', kind: 'same-state' }] }] },
+    ],
+  };
+
+  it('gives a Cliopatria polity matched to ours the same color, so it keeps it across the edge', () => {
+    const colors = mapColors(ds);
+    expect(colors.get('cliopatria-testland')).toBe(colors.get('testland'));
+    expect(colors.get('cliopatria-rival')).not.toBe(colors.get('cliopatria-testland'));
+  });
+
+  it('keeps neighbours apart even when another source links them to one unit', () => {
+    const colors = mapColors(ds);
+    expect(colors.get('neighbour')).not.toBe(colors.get('testland'));
   });
 });
 

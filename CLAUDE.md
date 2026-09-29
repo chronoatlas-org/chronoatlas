@@ -254,7 +254,13 @@ with an effort setting for each step. The ones that affect everyday work:
     reads it as Cliopatria. The legend entry shows only when `tiles.json` has `extra.baseline`.
   - **Colors** (`assignColors`) pair polities whose shapes have corners in a shared half-degree
     square at the same time (`shapeCells`), not whose bounding boxes overlap: worldwide, the boxes
-    of large empires overlap nearly everything, and neighbours ended up alike.
+    of large empires overlap nearly everything, and neighbours ended up alike. `mapColors` colors
+    the default map and the baseline together, and a Cliopatria polity its reviewed crosswalk matches
+    (same-state) takes our polity's color, so a state keeps its color across the edge of
+    OpenHistoricalMap's area (2026-09-29, at the maintainer's request).
+  - **Lighter fills** (uncertain dates) have plain land under them (`borders-under`,
+    `baseline-under`, …), so they read as a paler color, never with the "no data" hatch showing
+    through.
 - **Tiles are split into eras** (about 6 MB of shapes, fills and lines, each; decision 10),
   following the data, with a change index per era; empty tiles aren't written (MapLibre draws
   nothing for a missing tile, measured in step 2). Every tile set is split the same way.
