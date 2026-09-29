@@ -155,14 +155,20 @@ export function borderLines(shape: MultiPolygon, box: Box | undefined, land: Lan
           }
           const count = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / PIECE_DEGREES));
           const at = (t: number): Position => (t === 0 ? a : t === count ? b : [a[0] + ((b[0] - a[0]) * t) / count, a[1] + ((b[1] - a[1]) * t) / count]);
+          // Kept pieces in a row are one straight stretch: only where it starts and stops become
+          // points, so the lines are no bigger than the shape's own outline.
+          let keptBefore = false;
           for (let k = 0; k < count; k++) {
             const [p, q] = [at(k), at(k + 1)];
             if (!inland(p, q, land, inlandKm)) {
               flush();
+              keptBefore = false;
               continue;
             }
             if (current.length === 0) current.push(p);
-            current.push(q);
+            if (keptBefore) current[current.length - 1] = q;
+            else current.push(q);
+            keptBefore = true;
           }
           continue;
         }

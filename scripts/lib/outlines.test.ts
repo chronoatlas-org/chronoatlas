@@ -49,6 +49,8 @@ describe('borderLines', () => {
     const lines = borderLines(west, undefined, land, [], 3);
     const points = lines.flat();
     expect(lines).toHaveLength(1);
+    // One straight stretch: its two ends only, not a point for every piece tested.
+    expect(lines[0]).toHaveLength(2);
     // Only the line across the island at 10.5°E, stopping about 3 km short of each coast.
     expect(points.every(([x]) => x === 10.5)).toBe(true);
     const ys = points.map(([, y]) => y);
