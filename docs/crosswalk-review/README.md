@@ -28,5 +28,7 @@ in the data yet.
 
 ## Reviews
 
-- [Europe 1914–1950](europe-1914-1950.md): suggestions ready, waiting for the maintainers (Phase 5
-  step 8).
+- [Europe 1914–1950](europe-1914-1950.md) (Phase 5 step 8): **all 75 suggested links accepted**
+  by the maintainers on 2026-09-29 and added to the crosswalk. Still to decide before contested
+  areas are shown there: whether to link anything from "Look closer", and which region and years
+  to mark as reviewed.

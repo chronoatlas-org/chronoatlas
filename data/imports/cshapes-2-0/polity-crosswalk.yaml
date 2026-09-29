@@ -1,6 +1,8 @@
-# Which of our polities (data/polities/, drawn from OpenHistoricalMap) goes with each CShapes unit.
-# HAND-WRITTEN and reviewed like any data change: the import script never overwrites it. It lives
-# in this folder because it is derived from CShapes' coding (CC BY-NC-SA 4.0).
+# Which of our polities (data/polities/, drawn from OpenHistoricalMap) goes with each CShapes unit,
+# and, where Cliopatria is the map (outside OpenHistoricalMap's area and years; Phase 5 step 8),
+# which of Cliopatria's polities. HAND-WRITTEN and reviewed like any data change: the import script
+# never overwrites it. It lives in this folder because it is derived from CShapes' coding
+# (CC BY-NC-SA 4.0); Cliopatria's polities are only named here, by their IDs.
 #
 # Why it exists: CShapes follows a state through changes of regime under one code (710 is China
 # under the Qing, the Republic, and the People's Republic), while our polities are split by
@@ -37,6 +39,9 @@
     - polity: united-states-army-military-government-in-korea
       kind: dependency
       why: CShapes codes southern Korea (732) as occupied by the United States from 1945-08-15 to 1948-08-14.
+    - polity: cliopatria-united-states-of-america
+      kind: dependency
+      why: Cliopatria's "United States of America" held 60% of CShapes' "German Federal Republic", "Iceland" (a dependency of "United States of America"), and 52% of it lay there (1 July, 1942–1949). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
 
 - unit: cshapes-200 # United Kingdom
   matches:
@@ -54,6 +59,18 @@
       kind: dependency
       until: 1947-08-15
       why: CShapes codes Bhutan (760) as a protectorate of the United Kingdom until 1947-08-14.
+    - polity: cliopatria-british-africa
+      kind: dependency
+      why: Cliopatria's "British Africa" held 97% of CShapes' "Iraq" (a dependency of "United Kingdom"), and 59% of it lay there (1 July, 1920–1932). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-british-colonial-empire
+      kind: dependency
+      why: Cliopatria's "British Colonial Empire" held 80% of CShapes' "Iraq" (a dependency of "United Kingdom"), and 56% of it lay there (1 July, 1920–1922). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-kingdom-of-great-britain
+      kind: same-state
+      why: Cliopatria's "Kingdom of Great Britain" held 98% of CShapes' "United Kingdom" (its own unit), and 79% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-kingdom-of-great-britain
+      kind: dependency
+      why: Cliopatria's "Kingdom of Great Britain" held 99% of CShapes' "Malta", "Cyprus" (a dependency of "United Kingdom"), and 3% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
 
 - unit: cshapes-220 # France
   matches:
@@ -63,6 +80,18 @@
     - polity: indochinese-federation
       kind: dependency
       why: CShapes codes Cambodia (811), Laos (812), and Vietnam (815) as colonies of France until 1953–54.
+    - polity: cliopatria-french-africa
+      kind: dependency
+      why: Cliopatria's "French Africa" held 98% of CShapes' "Morocco", "Algeria", "Tunisia" (a dependency of "France"), and 97% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-french-fourth-republic
+      kind: same-state
+      why: Cliopatria's "French Fourth Republic" held 99% of CShapes' "France" (its own unit), and 89% of it lay there (1 July, 1945–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-french-mandate-for-syria-and-lebanon
+      kind: dependency
+      why: Cliopatria's "French Mandate for Syria and Lebanon" held 99% of CShapes' "Syria", "Lebanon" (a dependency of "France"), and 94% of it lay there (1 July, 1920–1945). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-french-third-republic
+      kind: same-state
+      why: Cliopatria's "French Third Republic" held 97% of CShapes' "France" (its own unit), and 96% of it lay there (1 July, 1914–1940). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
 
 - unit: cshapes-365 # Russia (Soviet Union)
   matches:
@@ -77,6 +106,18 @@
     - polity: soviet-civil-administration
       kind: dependency
       why: CShapes codes northern Korea (731) as occupied by the Soviet Union from 1945-08-15 to 1948-09-08.
+    - polity: cliopatria-republics-of-the-soviet-union
+      kind: same-state
+      why: Cliopatria's "Republics of the Soviet Union" held 95% of CShapes' "Russia (Soviet Union)" (its own unit), and 99% of it lay there (1 July, 1920–1922). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-russian-empire
+      kind: same-state
+      why: Cliopatria's "Russian Empire" held 97% of CShapes' "Russia (Soviet Union)" (its own unit), and 97% of it lay there (1 July, 1914–1917). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-union-of-soviet-socialist-republics
+      kind: same-state
+      why: Cliopatria's "Union of Soviet Socialist Republics" held 94% of CShapes' "Russia (Soviet Union)" (its own unit), and 93% of it lay there (1 July, 1922–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-union-of-soviet-socialist-republics
+      kind: dependency
+      why: Cliopatria's "Union of Soviet Socialist Republics" held 86% of CShapes' "German Democratic Republic" (a dependency of "Russia (Soviet Union)"), and 1% of it lay there (1 July, 1945–1949). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
 
 - unit: cshapes-700 # Afghanistan
   matches:
@@ -188,3 +229,302 @@
   matches:
     - polity: philippines
       kind: same-state
+
+# Europe 1914–1950 (Phase 5 step 8): where Cliopatria is the map, its polities are matched
+# directly. Suggested by `npm run suggest-crosswalk` (docs/crosswalk-review/europe-1914-1950.md)
+# and accepted by the maintainers on 2026-09-29: all 75 suggested links. Its "Look closer" list
+# (breakaway states, rival governments, occupation zones, occupiers of other states' units) is
+# left unmatched on purpose, so the build shows them as contested.
+- unit: cshapes-205 # Ireland
+  matches:
+    - polity: cliopatria-eire
+      kind: same-state
+      why: Cliopatria's "Éire" held 97% of CShapes' "Ireland" (its own unit), and 90% of it lay there (1 July, 1938–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-irish-free-state
+      kind: same-state
+      why: Cliopatria's "Irish Free State" held 97% of CShapes' "Ireland" (its own unit), and 90% of it lay there (1 July, 1922–1938). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-210 # Netherlands
+  matches:
+    - polity: cliopatria-netherlands
+      kind: same-state
+      why: Cliopatria's "Netherlands" held 93% of CShapes' "Netherlands" (its own unit), and 84% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-211 # Belgium
+  matches:
+    - polity: cliopatria-kingdom-of-belgium
+      kind: same-state
+      why: Cliopatria's "Kingdom of Belgium" held 95% of CShapes' "Belgium" (its own unit), and 90% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-212 # Luxembourg
+  matches:
+    - polity: cliopatria-luxembourg
+      kind: same-state
+      why: Cliopatria's "Luxembourg" held 82% of CShapes' "Luxembourg" (its own unit), and 90% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-225 # Switzerland
+  matches:
+    - polity: cliopatria-swiss-confederation
+      kind: same-state
+      why: Cliopatria's "Swiss Confederation" held 94% of CShapes' "Switzerland" (its own unit), and 96% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-230 # Spain
+  matches:
+    - polity: cliopatria-francoist-spain
+      kind: same-state
+      why: Cliopatria's "Francoist Spain" held 98% of CShapes' "Spain" (its own unit), and 96% of it lay there (1 July, 1939–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-francoist-spain
+      kind: dependency
+      why: Cliopatria's "Francoist Spain" held 59% of CShapes' "cshapes-602" (a dependency of "Spain"), and 3% of it lay there (1 July, 1939–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-kingdom-of-spain
+      kind: same-state
+      why: Cliopatria's "Kingdom of Spain" held 98% of CShapes' "Spain" (its own unit), and 96% of it lay there (1 July, 1914–1932). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-second-spanish-republic
+      kind: same-state
+      why: Cliopatria's "Second Spanish Republic" held 72% of CShapes' "Spain" (its own unit), and 95% of it lay there (1 July, 1932–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-second-spanish-republic
+      kind: dependency
+      why: Cliopatria's "Second Spanish Republic" held 59% of CShapes' "cshapes-602" (a dependency of "Spain"), and 4% of it lay there (1 July, 1932–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-spanish-nationalists
+      kind: same-state
+      why: Cliopatria's "Spanish Nationalists" held 51% of CShapes' "Spain" (its own unit), and 98% of it lay there (1 July, 1936–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-235 # Portugal
+  matches:
+    - polity: cliopatria-estado-novo
+      kind: same-state
+      why: Cliopatria's "Estado Novo" held 98% of CShapes' "Portugal" (its own unit), and 94% of it lay there (1 July, 1926–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-portuguese-republic
+      kind: same-state
+      why: Cliopatria's "Portuguese Republic" held 98% of CShapes' "Portugal" (its own unit), and 94% of it lay there (1 July, 1914–1926). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-255 # Germany (Prussia)
+  matches:
+    - polity: cliopatria-german-empire
+      kind: same-state
+      why: Cliopatria's "German Empire" held 98% of CShapes' "Germany (Prussia)" (its own unit), and 63% of it lay there (1 July, 1914–1920). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-nazi-germany
+      kind: same-state
+      why: Cliopatria's "Nazi Germany" held 99% of CShapes' "Germany (Prussia)" (its own unit), and 27% of it lay there (1 July, 1936–1944). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-weimar-republic
+      kind: same-state
+      why: Cliopatria's "Weimar Republic" held 94% of CShapes' "Germany (Prussia)" (its own unit), and 95% of it lay there (1 July, 1920–1936). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-260 # German Federal Republic
+  matches:
+    - polity: cliopatria-federal-republic-of-germany
+      kind: same-state
+      why: Cliopatria's "Federal Republic of Germany" held 95% of CShapes' "German Federal Republic" (its own unit), and 96% of it lay there (1 July, 1950–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-265 # German Democratic Republic
+  matches:
+    - polity: cliopatria-german-democratic-republic
+      kind: same-state
+      why: Cliopatria's "German Democratic Republic" held 95% of CShapes' "German Democratic Republic" (its own unit), and 46% of it lay there (1 July, 1950–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-290 # Poland
+  matches:
+    - polity: cliopatria-second-polish-republic
+      kind: same-state
+      why: Cliopatria's "Second Polish Republic" held 93% of CShapes' "Poland" (its own unit), and 95% of it lay there (1 July, 1919–1940). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-300 # Austria-Hungary
+  matches:
+    - polity: cliopatria-austria-hungary
+      kind: same-state
+      why: Cliopatria's "Austria-Hungary" held 93% of CShapes' "Austria-Hungary" (its own unit), and 75% of it lay there (1 July, 1914–1918). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-austria-hungary
+      kind: dependency
+      why: Cliopatria's "Austria-Hungary" held 55% of CShapes' "Serbia", "Montenegro" (a dependency of "Austria-Hungary"), and 5% of it lay there (1 July, 1916–1918). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-305 # Austria
+  matches:
+    - polity: cliopatria-republic-of-austria
+      kind: same-state
+      why: Cliopatria's "Republic of Austria" held 92% of CShapes' "Austria" (its own unit), and 96% of it lay there (1 July, 1919–1938). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-second-republic-of-austria
+      kind: same-state
+      why: Cliopatria's "Second Republic of Austria" held 88% of CShapes' "Austria" (its own unit), and 96% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-310 # Hungary
+  matches:
+    - polity: cliopatria-hungarian-people-s-republic
+      kind: same-state
+      why: Cliopatria's "Hungarian People's Republic" held 97% of CShapes' "Hungary" (its own unit), and 98% of it lay there (1 July, 1950–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-hungarian-republic
+      kind: same-state
+      why: Cliopatria's "Hungarian Republic" held 92% of CShapes' "Hungary" (its own unit), and 85% of it lay there (1 July, 1919–1944). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-hungary
+      kind: same-state
+      why: Cliopatria's "Hungary" held 97% of CShapes' "Hungary" (its own unit), and 98% of it lay there (1 July, 1947–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-315 # Czechoslovakia
+  matches:
+    - polity: cliopatria-czechoslovakia
+      kind: same-state
+      why: Cliopatria's "Czechoslovakia" held 95% of CShapes' "Czechoslovakia" (its own unit), and 95% of it lay there (1 July, 1919–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-325 # Italy/Sardinia
+  matches:
+    - polity: cliopatria-kingdom-of-italy
+      kind: same-state
+      why: Cliopatria's "Kingdom of Italy" held 94% of CShapes' "Italy/Sardinia" (its own unit), and 89% of it lay there (1 July, 1914–1946). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-republic-of-italy
+      kind: same-state
+      why: Cliopatria's "Republic of Italy" held 94% of CShapes' "Italy/Sardinia" (its own unit), and 98% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-339 # Albania
+  matches:
+    - polity: cliopatria-albania
+      kind: same-state
+      why: Cliopatria's "Albania" held 78% of CShapes' "Albania" (its own unit), and 96% of it lay there (1 July, 1914–1946). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-people-s-socialist-republic-of-albania
+      kind: same-state
+      why: Cliopatria's "People's Socialist Republic of Albania" held 93% of CShapes' "Albania" (its own unit), and 96% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-340 # Serbia
+  matches:
+    - polity: cliopatria-serbs
+      kind: same-state
+      why: Cliopatria's "Serbs" held 94% of CShapes' "Serbia" (its own unit), and 77% of it lay there (1 July, 1914–1915). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-341 # Montenegro
+  matches:
+    - polity: cliopatria-montenegro
+      kind: same-state
+      why: Cliopatria's "Montenegro" held 83% of CShapes' "Montenegro" (its own unit), and 62% of it lay there (1 July, 1914–1915). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-345 # Yugoslavia
+  matches:
+    - polity: cliopatria-socialist-federal-republic-of-yugoslavia
+      kind: same-state
+      why: Cliopatria's "Socialist Federal Republic of Yugoslavia" held 97% of CShapes' "Yugoslavia" (its own unit), and 98% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-yugoslavia
+      kind: same-state
+      why: Cliopatria's "Yugoslavia" held 95% of CShapes' "Yugoslavia" (its own unit), and 97% of it lay there (1 July, 1919–1946). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-350 # Greece
+  matches:
+    - polity: cliopatria-first-hellenic-republic
+      kind: same-state
+      why: Cliopatria's "First Hellenic Republic" held 84% of CShapes' "Greece" (its own unit), and 85% of it lay there (1 July, 1914–1941). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-kingdom-of-greece
+      kind: same-state
+      why: Cliopatria's "Kingdom of Greece" held 79% of CShapes' "Greece" (its own unit), and 91% of it lay there (1 July, 1945–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-355 # Bulgaria
+  matches:
+    - polity: cliopatria-kingdom-of-bulgaria
+      kind: same-state
+      why: Cliopatria's "Kingdom of Bulgaria" held 97% of CShapes' "Bulgaria" (its own unit), and 98% of it lay there (1 July, 1947–1948). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-people-s-republic-of-bulgaria
+      kind: same-state
+      why: Cliopatria's "People's Republic of Bulgaria" held 97% of CShapes' "Bulgaria" (its own unit), and 98% of it lay there (1 July, 1948–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-principality-of-bulgaria
+      kind: same-state
+      why: Cliopatria's "Principality of Bulgaria" held 96% of CShapes' "Bulgaria" (its own unit), and 87% of it lay there (1 July, 1914–1945). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-360 # Rumania
+  matches:
+    - polity: cliopatria-kingdom-of-romania
+      kind: same-state
+      why: Cliopatria's "Kingdom of Romania" held 95% of CShapes' "Rumania" (its own unit), and 92% of it lay there (1 July, 1919–1948). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-socialist-republic-of-romania
+      kind: same-state
+      why: Cliopatria's "Socialist Republic of Romania" held 99% of CShapes' "Rumania" (its own unit), and 98% of it lay there (1 July, 1948–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-united-principalities-of-moldavia-and-wallachia
+      kind: same-state
+      why: Cliopatria's "United Principalities of Moldavia and Wallachia" held 96% of CShapes' "Rumania" (its own unit), and 91% of it lay there (1 July, 1914–1917). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-366 # Estonia
+  matches:
+    - polity: cliopatria-estonia
+      kind: same-state
+      why: Cliopatria's "Estonia" held 89% of CShapes' "Estonia" (its own unit), and 87% of it lay there (1 July, 1919–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-367 # Latvia
+  matches:
+    - polity: cliopatria-republic-of-latvia
+      kind: same-state
+      why: Cliopatria's "Republic of Latvia" held 96% of CShapes' "Latvia" (its own unit), and 89% of it lay there (1 July, 1920–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-368 # Lithuania
+  matches:
+    - polity: cliopatria-kingdom-of-lithuania
+      kind: same-state
+      why: Cliopatria's "Kingdom of Lithuania" held 92% of CShapes' "Lithuania" (its own unit), and 85% of it lay there (1 July, 1919–1939). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-375 # Finland
+  matches:
+    - polity: cliopatria-republic-of-finland
+      kind: same-state
+      why: Cliopatria's "Republic of Finland" held 96% of CShapes' "Finland" (its own unit), and 95% of it lay there (1 July, 1918–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-380 # Sweden
+  matches:
+    - polity: cliopatria-kingdom-of-sweden
+      kind: same-state
+      why: Cliopatria's "Kingdom of Sweden" held 99% of CShapes' "Sweden" (its own unit), and 96% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-385 # Norway
+  matches:
+    - polity: cliopatria-kingdom-of-norway
+      kind: same-state
+      why: Cliopatria's "Kingdom of Norway" held 97% of CShapes' "Norway" (its own unit), and 89% of it lay there (1 July, 1914–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-390 # Denmark
+  matches:
+    - polity: cliopatria-denmark
+      kind: same-state
+      why: Cliopatria's "Denmark" held 95% of CShapes' "Denmark" (its own unit), and 58% of it lay there (1 July, 1945–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-denmark-norway
+      kind: same-state
+      why: Cliopatria's "Denmark-Norway" held 94% of CShapes' "Denmark" (its own unit), and 45% of it lay there (1 July, 1914–1940). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-denmark-norway
+      kind: dependency
+      why: Cliopatria's "Denmark-Norway" held 98% of CShapes' "Iceland" (a dependency of "Denmark"), and 36% of it lay there (1 July, 1914–1922). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-kingdom-of-iceland
+      kind: dependency
+      why: Cliopatria's "Kingdom of Iceland" held 98% of CShapes' "Iceland" (a dependency of "Denmark"), and 90% of it lay there (1 July, 1918–1940). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-395 # Iceland
+  matches:
+    - polity: cliopatria-republic-of-iceland
+      kind: same-state
+      why: Cliopatria's "Republic of Iceland" held 98% of CShapes' "Iceland" (its own unit), and 90% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-630 # Iran (Persia)
+  matches:
+    - polity: cliopatria-pahlavi-dynasty
+      kind: same-state
+      why: Cliopatria's "Pahlavi Dynasty" held 95% of CShapes' "Iran (Persia)" (its own unit), and 97% of it lay there (1 July, 1924–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-qajar-dynasty
+      kind: same-state
+      why: Cliopatria's "Qajar Dynasty" held 78% of CShapes' "Iran (Persia)" (its own unit), and 97% of it lay there (1 July, 1914–1924). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-640 # Turkey (Ottoman Empire)
+  matches:
+    - polity: cliopatria-ottoman-empire
+      kind: same-state
+      why: Cliopatria's "Ottoman Empire" held 91% of CShapes' "Turkey (Ottoman Empire)" (its own unit), and 99% of it lay there (1 July, 1914–1924). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+    - polity: cliopatria-republic-of-turkey
+      kind: same-state
+      why: Cliopatria's "Republic of Turkey" held 97% of CShapes' "Turkey (Ottoman Empire)" (its own unit), and 99% of it lay there (1 July, 1924–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-645 # Iraq
+  matches:
+    - polity: cliopatria-kingdom-of-iraq
+      kind: same-state
+      why: Cliopatria's "Kingdom of Iraq" held 98% of CShapes' "Iraq" (its own unit), and 94% of it lay there (1 July, 1933–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-652 # Syria
+  matches:
+    - polity: cliopatria-second-syrian-republic
+      kind: same-state
+      why: Cliopatria's "Second Syrian Republic" held 99% of CShapes' "Syria" (its own unit), and 98% of it lay there (1 July, 1946–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.
+
+- unit: cshapes-660 # Lebanon
+  matches:
+    - polity: cliopatria-lebanon
+      kind: same-state
+      why: Cliopatria's "Lebanon" held 91% of CShapes' "Lebanon" (its own unit), and 86% of it lay there (1 July, 1945–1950). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on 2026-09-29.

@@ -296,7 +296,8 @@ with an effort setting for each step. The ones that affect everyday work:
     most of one of its main holder's units; breakaway states, rival governments, occupation zones,
     and occupiers of other states' units go under "Look closer", never suggested. `--trial` lists
     the contested areas if every suggestion were accepted. Reports and how to review them are in
-    `docs/crosswalk-review/`; Europe 1914–1950 waits for the maintainers' review.
+    `docs/crosswalk-review/`. Europe 1914–1950: all 75 suggested links accepted (2026-09-29) and
+    in the crosswalk; its reviewed region and years are still to be decided.
   - The CShapes import skips dependencies whose owner code isn't a state in CShapes (codes 0 and
     1: Danzig 1919–1938, West Irian 1962–63) and lists them in its manifest; what those codes
     stand for is for the maintainers to check in the codebook.
