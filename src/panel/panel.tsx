@@ -44,13 +44,13 @@ import { getLocale, t } from '../i18n/index.ts';
 import { dataUrl } from '../map/historical.ts';
 import { borderReportUrl } from '../url/report.ts';
 import type { TimelineEvent } from '../timeline/events.ts';
-import { describeEvent, describeNearby, describeSpot, describeTerritory, otherPolitiesAtSpot } from './model.ts';
+import { describeEvent, describeNearby, describeSpot, describeTerritory, nearbyEras, otherPolitiesAtSpot } from './model.ts';
 import type {
-  BorderChange,
   Credit,
   CurrentEntry,
   EventFile,
   EventView,
+  NearbyFile,
   NearbyView,
   PolityFile,
   SourceLine,
@@ -299,6 +299,14 @@ function Territory({ view, alsoHere, spot, reportUrl, onGoToDay, onSelectOther }
         {view.missing && <p class="panel-missing">{view.missing}</p>}
         {spot && <Spot view={spot} onSelect={onSelectOther} />}
         {view.smallTerritory && <p class="panel-missing">{view.smallTerritory}</p>}
+        {view.wikipedia && (
+          <p class="panel-report">
+            <a href={view.wikipedia} target="_blank" rel="noopener">
+              {t('panel.wikipedia')}
+            </a>{' '}
+            <span class="panel-report-note">{t('panel.wikipediaNote')}</span>
+          </p>
+        )}
         <p class="panel-report">
           <a href={reportUrl()} target="_blank" rel="noopener" onPointerDown={refreshReportLink} onFocus={refreshReportLink}>
             {t('panel.report')}
@@ -489,6 +497,8 @@ export interface PanelOptions {
   onSelectEvent: (id: string) => void;
   /** The days at the timeline's left and right edges (the "around this date" window). */
   visibleRange: () => [number, number];
+  /** The eras from tiles.json, each with its "around this date" file, or null until they've loaded. */
+  eras: () => readonly { start: number; end: number; nearby?: string }[] | null;
 }
 
 type FileState = PolityFile | EventFile | 'loading' | 'failed';
@@ -501,8 +511,8 @@ export class TerritoryPanel {
   private readonly container: HTMLElement;
   private readonly options: PanelOptions;
   private sources: SourcesFile['sources'] | null = null;
-  /** public/data/changes.json, loaded the first time "around this date" opens. */
-  private changes: BorderChange[] | 'loading' | null = null;
+  /** Each era's "around this date" file (changes/<version>.json) by version, loaded as needed. */
+  private readonly nearby = new Map<string, NearbyFile | 'loading' | 'failed'>();
   /** The timeline's events (from main.ts), for "around this date". */
   private events: TimelineEvent[] = [];
   /** Loaded files by path (see pathOf). */
@@ -561,8 +571,10 @@ export class TerritoryPanel {
     }
     this.selection = selection;
     this.focusPending = focus && selection !== null;
-    if (selection?.kind === 'nearby') this.loadChanges();
-    else if (selection) this.loadIfNeeded(pathOf(selection));
+    if (selection?.kind === 'nearby') {
+      // A file that failed to load is tried again when the list is opened again.
+      for (const [version, state] of this.nearby) if (state === 'failed') this.nearby.delete(version);
+    } else if (selection) this.loadIfNeeded(pathOf(selection));
     this.draw();
   }
 
@@ -577,19 +589,21 @@ export class TerritoryPanel {
     this.draw();
   }
 
-  private loadChanges(): void {
-    if (this.changes !== null) return;
-    this.changes = 'loading';
-    fetch(dataUrl('changes.json'))
-      .then((r) => r.json() as Promise<{ changes: BorderChange[] }>)
-      .then((file) => {
-        this.changes = file.changes;
-        this.draw();
+  /** Loads an era's "around this date" file, once. */
+  private loadNearby(version: string): void {
+    if (this.nearby.has(version)) return;
+    this.nearby.set(version, 'loading');
+    fetch(dataUrl(`changes/${version}.json`))
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json() as Promise<NearbyFile>;
       })
+      .then((file) => this.nearby.set(version, file))
       .catch((error) => {
-        console.error('Could not load changes.json', error);
-        this.changes = null; // opening it again retries
-      });
+        console.error(`Could not load changes/${version}.json`, error);
+        this.nearby.set(version, 'failed'); // left out of the list until it's opened again
+      })
+      .finally(() => this.draw());
   }
 
   setDay(day: number): void {
@@ -666,11 +680,30 @@ export class TerritoryPanel {
     };
 
     if (selection.kind === 'nearby') {
-      if (!Array.isArray(this.changes) || !this.sources) {
+      // Only the eras near the day that could hold one of the changes listed (nearbyEras).
+      const eras = this.options.eras();
+      const range = this.options.visibleRange();
+      const fileOf = (version: string | undefined) => {
+        const state = version ? this.nearby.get(version) : undefined;
+        return typeof state === 'object' ? state : undefined;
+      };
+      const needed = eras
+        ? nearbyEras(eras, this.day, range, (i) => {
+            const version = eras[i].nearby;
+            const state = version ? this.nearby.get(version) : 'failed';
+            return state === 'failed' ? [] : fileOf(version)?.changes;
+          })
+        : null;
+      for (const i of needed?.missing ?? []) this.loadNearby(eras![i].nearby!);
+      if (!needed || needed.missing.length > 0 || !this.sources) {
         this.show(`loading ${this.sheet}`, <Shell title={t('panel.loading')} {...shell}>{null}</Shell>);
       } else {
-        const view = describeNearby(this.day, this.options.visibleRange(), this.events, this.changes, this.sources, polityNames, locale);
-        for (const change of view.changes) this.loadIfNeeded(`polities/${change.polity}`); // for their names
+        // Names from the era files, which carry those of the polities they list.
+        const nearbyNames = (id: string) => {
+          for (const state of this.nearby.values()) if (typeof state === 'object' && state.names[id]) return state.names[id];
+          return polityNames(id);
+        };
+        const view = describeNearby(this.day, range, this.events, needed.changes, this.sources, nearbyNames, locale);
         this.show(
           `${this.sheet} ${JSON.stringify(view)}`,
           <Shell title={view.title} summary={view.window} {...shell}>

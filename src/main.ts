@@ -95,6 +95,9 @@ const eventSelection = (id: string): Selection => ({ kind: 'event', id });
 const selectionFrom = (state: ViewState): Selection | null =>
   state.ev ? eventSelection(state.ev) : state.sel ? territorySelection(state.sel) : null;
 
+// The map's eras, for the panel's "around this date"; set once the map layers exist (below), which
+// are created after the panel.
+let tileEras: () => ReturnType<HistoricalLayers['eras']> = () => null;
 const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, {
   onClose: () => select(null, 'close'),
   onGoToDay: (day) => timeline.setDay(clampDay(day)),
@@ -107,6 +110,7 @@ const panel = new TerritoryPanel(document.getElementById('panel')!, initialDay, 
   viewLink: () => `${location.origin}${location.pathname}${currentHash()}`,
   onSelectEvent: (id) => select(eventSelection(id), 'click'),
   visibleRange: () => timeline.visibleRange(),
+  eras: () => tileEras(),
 });
 let spotClicks = 0;
 const historical = new HistoricalLayers(map, initialDay, {
@@ -118,6 +122,8 @@ const historical = new HistoricalLayers(map, initialDay, {
   onBaseline: (present) => {
     document.querySelector<HTMLElement>('.legend-baseline-item')!.hidden = !present;
   },
+  // "Around this date" can load its files once the eras are known.
+  onEras: () => panel.refresh(),
   onSelect: (polities, spot) => {
     panel.setSpot(polities);
     select(territorySelection(polities[0]), 'click');
@@ -131,6 +137,7 @@ const historical = new HistoricalLayers(map, initialDay, {
       .catch((error) => console.error('Could not look up the sources at the clicked spot', error));
   },
 });
+tileEras = () => historical.eras();
 
 /**
  * Selects a territory or an event, or nothing (null). `how` says where the change came from:

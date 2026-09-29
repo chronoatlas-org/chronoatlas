@@ -20,6 +20,7 @@ import {
   eraItems,
   forEra,
   mapColors,
+  nearbyFile,
   shapeCells,
   splitAtCoverage,
 } from './build-data.ts';
@@ -103,12 +104,29 @@ describe('buildPolityFiles', () => {
 
   it('lists every territorial start and end by day, skipping open ends and non-territorial links', () => {
     const { changes } = buildChanges(ds);
+    // "early" ends the day "late" begins (same polity, relation, and source): one border change.
     expect(changes.map((c) => [c.record, c.kind, c.date])).toEqual([
       ['early', 'start', '1901-05-12'],
-      ['early', 'end', '1910'],
-      ['late', 'start', '1910'],
+      ['late', 'change', '1910'],
     ]);
     expect(changes[0]).toMatchObject({ day: civilToJdn(1901, 5, 12), polity: 'testland', relation: 'controls', source: cite[0] });
+  });
+
+  it('keeps an end and a start apart unless the same polity, relation, and source change that day', () => {
+    const other = { ...ds, assertions: ds.assertions.map(({ file, value }) => ({ file, value: value.map((a) => (a.id === 'late' ? { ...a, subject: 'quietland' } : a)) })) };
+    expect(buildChanges(other).changes.map((c) => [c.record, c.kind])).toEqual([
+      ['early', 'start'],
+      ['late', 'start'], // the same day, sorted by polity: quietland before testland
+      ['early', 'end'],
+    ]);
+  });
+
+  it('writes an era\'s changes with the names of their polities, and nothing from other eras', () => {
+    const { changes } = buildChanges(ds);
+    const file = nearbyFile(ds, changes, { start: civilToJdn(1905, 1, 1), end: civilToJdn(1920, 1, 1) });
+    expect(file.changes.map((c) => c.record)).toEqual(['late']);
+    expect(Object.keys(file.names)).toEqual(['testland']);
+    expect(file.names.testland[0]).toMatchObject({ text: expect.any(String), lang: expect.any(String) });
   });
 
   it('includes the names of the other polities its records mention, and only those', () => {
@@ -439,6 +457,22 @@ describe('the crosswalk in polity files', () => {
 
   it('records the areas of territorial records', () => {
     expect(files.get('testland')!.records.find((r) => r.id === 't-home')!.km2).toBeGreaterThan(49_000);
+  });
+
+  it('gives a unit the Wikidata ID of the one polity it is the same state as, for the Wikipedia link', () => {
+    // A made-up ID for Testland; unit-b is matched to two polities with different (made-up) IDs.
+    const withIds: Dataset = {
+      ...ds,
+      polities: ds.polities.map((p) => ({ ...p, value: { ...p.value, ...({ testland: { wikidata: 'Q1234567' }, rival: { wikidata: 'Q7654321' } } as Record<string, object>)[p.value.id] } })),
+      crosswalks: [{ file: 'data/imports/test-legal/polity-crosswalk.yaml', value: [
+        { unit: 'unit-a', matches: [{ polity: 'testland', kind: 'same-state' as const }] },
+        { unit: 'unit-b', matches: [{ polity: 'testland', kind: 'same-state' as const }, { polity: 'rival', kind: 'same-state' as const }] },
+      ] }],
+    };
+    const byId = new Map(buildPolityFiles(withIds).map((f) => [f.id, f]));
+    expect(byId.get('unit-a')!.wikidata).toBe('Q1234567');
+    expect(byId.get('unit-b')!.wikidata).toBeUndefined();
+    expect(byId.get('colony-office')!.wikidata).toBeUndefined();
   });
 });
 

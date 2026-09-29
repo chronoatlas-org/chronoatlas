@@ -14,7 +14,7 @@
 //   public/data/events.json          every event's dates, importance, title, and place, for the
 //                          timeline's markers and the map's pulse
 //   public/data/events/<id>.json     one event in full (summary, sources, effects), for the panel
-//   public/data/changes.json         every day a border starts or ends, with its polity and source
+//   public/data/changes/<v>.json     each era's border changes, with their polities' names
 //   public/data/dejure-tiles/<version>/…      CShapes' legally recognized borders, its own layer
 //   public/data/second-tiles/<version>/…      Cliopatria's borders, the "second opinion" outlines
 //   public/data/differ-tiles/<version>/…      where the default map and the second opinion
@@ -54,7 +54,7 @@ import { validateDataset } from './lib/validate-data.ts';
 import { TERRITORIAL_RELATIONS } from './lib/types.ts';
 import type { Assertion, Citation, Polity, PolityName, Relation, ShapeFeature } from './lib/types.ts';
 import type { AtlasName } from '../src/map/names.ts';
-import type { BorderChange, ContestedEntry, EventFile, FigureEntry, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
+import type { BorderChange, ContestedEntry, EventFile, FigureEntry, NearbyFile, PolityFile, PolityRecord, SourcesFile } from '../src/panel/model.ts';
 import { DEFAULT_IMPORTANCE, eventDays } from '../src/timeline/events.ts';
 import type { TimelineEvent } from '../src/timeline/events.ts';
 
@@ -1006,9 +1006,11 @@ export function buildEventFiles(ds: Dataset): EventFile[] {
 }
 
 /**
- * public/data/changes.json: every day a territorial record starts or ends, with its polity, the
- * date as written, and its source, sorted by day. The "around this date" list reads it. (The
- * change index in tiles.json has the days only.)
+ * Every day a territorial record starts or ends, with its polity, the date as written, and its
+ * source, sorted by day, for "around this date" (the change index in tiles.json has the days only).
+ * A record that ends on the day the next record of the same polity, relation, and source begins is
+ * one entry, `change` (with the new record): its border changed. Otherwise each of Cliopatria's
+ * yearly rows would be listed twice, as an end and a start.
  */
 export function buildChanges(ds: Dataset): { changes: BorderChange[] } {
   const changes: BorderChange[] = [];
@@ -1019,8 +1021,33 @@ export function buildChanges(ds: Dataset): { changes: BorderChange[] } {
     changes.push({ day: s0, kind: 'start', date: a.start, ...common });
     if (e0 < FAR_FUTURE) changes.push({ day: e0, kind: 'end', date: a.end, ...common });
   }
-  changes.sort((x, y) => x.day - y.day || x.polity.localeCompare(y.polity) || x.record.localeCompare(y.record));
-  return { changes };
+  // Pair each end with a start of the same polity, relation, and source on the same day.
+  const key = (c: BorderChange) => `${c.day} ${c.polity} ${c.relation} ${c.source.source}`;
+  const starts = new Map<string, BorderChange[]>();
+  for (const c of changes) if (c.kind === 'start') starts.set(key(c), [...(starts.get(key(c)) ?? []), c]);
+  const paired = new Set<BorderChange>();
+  const merged: BorderChange[] = [];
+  for (const c of changes) {
+    if (c.kind !== 'end') continue;
+    const next = starts.get(key(c))?.find((s) => !paired.has(s));
+    if (!next) continue;
+    paired.add(c).add(next);
+    merged.push({ ...next, kind: 'change' });
+  }
+  const result = [...changes.filter((c) => !paired.has(c)), ...merged];
+  result.sort((x, y) => x.day - y.day || x.polity.localeCompare(y.polity) || x.record.localeCompare(y.record));
+  return { changes: result };
+}
+
+/**
+ * public/data/changes/<version>.json, one per era (Phase 5 step 6): that era's changes (from
+ * buildChanges), and the names of the polities they're about, so "around this date" loads one small
+ * file for the era in view rather than every change, and no polity file just for a name.
+ */
+export function nearbyFile(ds: Dataset, changes: readonly BorderChange[], era: Era): NearbyFile {
+  const inside = changes.filter((c) => c.day >= era.start && c.day < era.end);
+  const polities = new Map(ds.polities.map(({ value }) => [value.id, value]));
+  return { changes: inside, names: namesFor(new Set(inside.map((c) => c.polity)), polities) };
 }
 
 /** public/data/sources.json: each source's title and address, shared by all polity files. */
@@ -1242,9 +1269,14 @@ export function buildPolityFiles(
     others.delete('');
     const related = namesFor(others, polities);
 
+    // A unit of an import without an ID of its own takes the one of our polity its reviewed
+    // crosswalk matches (same-state), for the link to Wikipedia; none when it matches several with
+    // different IDs (a CShapes unit spanning several of our states).
+    const matched = new Set(links.filter((l) => l.unit === p.id && l.kind === 'same-state').map((l) => polities.get(l.polity)?.wikidata));
+    const wikidata = p.wikidata ?? (matched.size === 1 ? [...matched][0] : undefined);
     return {
       id: p.id,
-      ...(p.wikidata ? { wikidata: p.wikidata } : {}),
+      ...(wikidata ? { wikidata } : {}),
       names: p.names.map((n) => ({
         text: n.text,
         lang: n.lang,
@@ -1393,11 +1425,22 @@ function main(): void {
     ...timed.flatMap((set) => [set.collection, ...Object.values(set.extraLayers ?? {}).map((l) => ('collection' in l ? l.collection : l))].flatMap((c) => c.features)),
     ...edges.features,
   ];
-  const eraIndex = eras.map((era) => ({
-    start: era.start,
-    end: era.end,
-    changes: changeDays(forEra({ type: 'FeatureCollection', features: allTimed }, era)).filter((day) => day > era.start && day < era.end),
-  }));
+  // And each era's "around this date" file (`nearby`, named by a fingerprint of its contents).
+  const { changes } = buildChanges(ds);
+  mkdirSync(join(OUT_DIR, 'changes'));
+  let nearbyBytes = 0;
+  const eraIndex = eras.map((era) => {
+    const json = JSON.stringify(nearbyFile(ds, changes, era));
+    const nearby = createHash('sha256').update(json).digest('hex').slice(0, 12);
+    writeFileSync(join(OUT_DIR, 'changes', `${nearby}.json`), json);
+    nearbyBytes += json.length;
+    return {
+      start: era.start,
+      end: era.end,
+      changes: changeDays(forEra({ type: 'FeatureCollection', features: allTimed }, era)).filter((day) => day > era.start && day < era.end),
+      nearby,
+    };
+  });
   const extra = Object.fromEntries([
     ...timed.slice(1).map((set, i) => [
       set.key,
@@ -1427,7 +1470,6 @@ function main(): void {
   for (const c of differ) differPairs.set(`${c.facto} vs ${c.jure}`, Math.max(differPairs.get(`${c.facto} vs ${c.jure}`) ?? 0, c.km2));
   console.log(`Sources differ (largest area per pair): ${[...differPairs].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v.toLocaleString('en')} km²`).join('; ') || 'none'}`);
   writeFileSync(join(OUT_DIR, 'sources.json'), JSON.stringify(buildSources(ds)));
-  writeFileSync(join(OUT_DIR, 'changes.json'), JSON.stringify(buildChanges(ds)));
   writeFileSync(join(OUT_DIR, 'events.json'), JSON.stringify(buildEvents(ds)));
   mkdirSync(join(OUT_DIR, 'events'));
   for (const file of buildEventFiles(ds)) writeFileSync(join(OUT_DIR, 'events', `${file.id}.json`), JSON.stringify(file));
@@ -1444,7 +1486,7 @@ function main(): void {
       `${second.collection.features.length} second-opinion, ${baseline.collection.features.length} baseline, ` +
       `${contested.length} contested, in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}, empty tiles left out) in ${eras.length} era${eras.length === 1 ? '' : 's'}, ` +
-      `${eraIndex.reduce((n, e) => n + e.changes.length, 0)} change days, ` +
+      `${eraIndex.reduce((n, e) => n + e.changes.length, 0)} change days (${changes.length} changes listed, ${(nearbyBytes / 1e6).toFixed(1)} MB by era), ` +
       `${ds.polities.length} polity files (${(polityBytes / 1e3).toFixed(0)} KB), ${ds.events.length} events.`,
   );
 }

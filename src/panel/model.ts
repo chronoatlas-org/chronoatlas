@@ -150,17 +150,63 @@ export interface EventFile {
   related?: Record<string, AtlasName[]>;
 }
 
-/** One entry of public/data/changes.json: a territorial record starting or ending. */
+/**
+ * One entry of an era's public/data/changes/<version>.json: a territorial record starting or
+ * ending, or (`change`) ending on the day the next record of the same polity begins.
+ */
 export interface BorderChange {
-  /** The first day it applied (start), or the first day it no longer applied (end). */
+  /** The first day it applied (start, change), or the first day it no longer applied (end). */
   day: number;
-  kind: 'start' | 'end';
+  kind: 'start' | 'end' | 'change';
   /** The date as written in the data (EDTF), for its precision. */
   date: string;
   polity: string;
   record: string;
   relation: string;
   source: Citation;
+}
+
+/** public/data/changes/<version>.json: one era's changes, and the names of their polities. */
+export interface NearbyFile {
+  changes: BorderChange[];
+  names: Record<string, AtlasName[]>;
+}
+
+/**
+ * Which eras "around this date" needs, nearest the day first: the eras the window [left, right]
+ * touches, but only as far out as could still hold one of the `limit` changes nearest the day.
+ * `changesOf` gives an era's changes once its file has loaded. `missing` is the next era to load
+ * (one at a time, nearest first, since the nearer ones may make it unneeded); when it's empty,
+ * `changes` is everything the list can show.
+ */
+export function nearbyEras(
+  eras: readonly { start: number; end: number }[],
+  day: number,
+  [left, right]: [number, number],
+  changesOf: (era: number) => readonly BorderChange[] | undefined,
+  limit = 25,
+): { missing: number[]; changes: BorderChange[] } {
+  const distance = (i: number) => {
+    const from = Math.max(eras[i].start, left);
+    const to = Math.min(eras[i].end - 1, right);
+    return day < from ? from - day : day > to ? day - to : 0;
+  };
+  const touched = eras.map((_, i) => i).filter((i) => eras[i].start <= right && eras[i].end > left);
+  touched.sort((a, b) => distance(a) - distance(b) || a - b);
+  const missing: number[] = [];
+  const found: BorderChange[] = [];
+  for (const i of touched) {
+    // Enough already: the `limit` nearest found are all closer than anything in this era.
+    const near = found.map((c) => Math.abs(c.day - day)).sort((a, b) => a - b);
+    if (near.length >= limit && near[limit - 1] <= distance(i)) break;
+    const changes = changesOf(i);
+    if (!changes) {
+      missing.push(i);
+      break;
+    }
+    found.push(...changes.filter((c) => c.day >= left && c.day <= right));
+  }
+  return { missing, changes: found };
 }
 
 /**
@@ -269,6 +315,20 @@ export interface TerritoryView {
   smallTerritory?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
+  /** The address of the polity's Wikipedia article (wikipediaLink), when its file has a Wikidata ID. */
+  wikipedia?: string;
+}
+
+/**
+ * The address of the Wikipedia article for a Wikidata item, in the reader's language: Wikidata's
+ * own "go to the linked article" page, which opens Wikidata's page for the item when there's no
+ * article in that language. Nothing is fetched to build it. Undefined for anything that isn't a
+ * Wikidata item ID, since the ID comes from outside data.
+ */
+export function wikipediaLink(wikidata: string, locale: string): string | undefined {
+  if (!/^Q[1-9][0-9]*$/.test(wikidata)) return undefined;
+  const lang = locale.split('-')[0].toLowerCase();
+  return `https://www.wikidata.org/wiki/Special:GoToLinkedPage/${/^[a-z]{2,3}$/.test(lang) ? lang : 'en'}wiki/${wikidata}`;
 }
 
 /** "What each source says at the spot you clicked": one group per source layer. */
@@ -697,6 +757,7 @@ export function describeTerritory(
     differ,
     figures: figureLines,
     ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
+    ...(file.wikidata && wikipediaLink(file.wikidata, locale) ? { wikipedia: wikipediaLink(file.wikidata, locale) } : {}),
     credits: creditsFor(
       [
         ...file.records.flatMap((r) => r.sources),
@@ -822,7 +883,7 @@ export function describeNearby(
         key: `${c.record}-${c.kind}`,
         polity: c.polity,
         name: pickNames(namesOf(c.polity) ?? [], c.day, locale)?.primary ?? c.polity,
-        label: t(c.kind === 'start' ? 'nearby.recordStarts' : 'nearby.recordEnds', { relation }),
+        label: t(c.kind === 'start' ? 'nearby.recordStarts' : c.kind === 'change' ? 'nearby.recordChanges' : 'nearby.recordEnds', { relation }),
         date: describeDate(c.date),
         day: c.day,
         sources: sourceLines([c.source], sources),

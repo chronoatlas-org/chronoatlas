@@ -53,7 +53,7 @@ interface TileIndex {
    * The eras the tiles are split into (Phase 5, decision 10), in order and covering every day, each
    * with its change index: the days on which something starts or ends inside it.
    */
-  eras: { start: number; end: number; changes: number[] }[];
+  eras: TileEra[];
   /** The default map's tiles for each era (a fingerprint of their contents), in the eras' order. */
   versions: string[];
   /**
@@ -80,6 +80,14 @@ const TIMED_SOURCES = [
 /** Which borders the map shows: as administered (de facto) or as legally recognized (de jure). */
 export type BorderView = 'facto' | 'jure';
 
+/** An era in tiles.json: its days, its change index, and its "around this date" file (changes/<nearby>.json). */
+export interface TileEra {
+  start: number;
+  end: number;
+  changes: number[];
+  nearby?: string;
+}
+
 export interface HistoricalOptions {
   /**
    * Called when someone clicks a territory, with every polity recorded at that spot (the one
@@ -94,6 +102,8 @@ export interface HistoricalOptions {
   onPrecision?: (kinds: string[]) => void;
   /** Called once the borders are on the map, saying whether the baseline (Cliopatria) is among them. */
   onBaseline?: (present: boolean) => void;
+  /** Called once tiles.json has loaded, so what reads the eras (the panel's "around this date") can. */
+  onEras?: () => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -291,6 +301,11 @@ export class HistoricalLayers {
     this.showDay();
   }
 
+  /** The eras from tiles.json, or null until it has loaded. */
+  eras(): readonly TileEra[] | null {
+    return this.index?.eras ?? null;
+  }
+
   /** Shows the borders as administered ('facto') or as legally recognized ('jure'). */
   setView(view: BorderView): void {
     this.view = view;
@@ -472,6 +487,7 @@ export class HistoricalLayers {
   private addLayers(index: TileIndex): void {
     const map = this.map;
     this.index = index;
+    this.options.onEras?.();
     this.era = eraOf(index.eras, this.day);
     this.changes = index.eras[this.era].changes;
     map.addImage('no-data-hatch', hatchPattern(), { pixelRatio: 2 });

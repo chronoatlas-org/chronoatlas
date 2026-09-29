@@ -91,6 +91,9 @@ export const en = {
   'panel.recognizedBy': 'Recognized by {list}, according to the source.',
   'panel.report': 'Report a problem with this border',
   'panel.reportNote': 'Opens a form on GitHub, which needs a free GitHub account.',
+  // A link to the polity's Wikipedia article (by its Wikidata ID); nothing from it is shown here.
+  'panel.wikipedia': 'Read about it on Wikipedia',
+  'panel.wikipediaNote': 'An outside site, written by others; this map hasn’t checked what it says.',
   'panel.eventLabel': 'Event',
   'panel.date': 'Date',
   'panel.locationWithin': 'Place: within about {km} km of the point marked on the map.',
@@ -114,6 +117,8 @@ export const en = {
   'nearby.noChanges': 'No border changes recorded in this period.',
   'nearby.recordStarts': 'Begins: {relation}',
   'nearby.recordEnds': 'Ends: {relation}',
+  // One record ends as the next record of the same polity begins: its border changed.
+  'nearby.recordChanges': 'Border changes: {relation}',
   'nearby.goTo': 'Go to {date}',
   'panel.inEffect': 'in effect on this date',
   'panel.goTo': 'Go to its start',

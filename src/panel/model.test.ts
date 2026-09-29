@@ -2,7 +2,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../dates/index.ts';
-import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeSpot, describeTerritory, languageName, otherPolitiesAtSpot, sourceLink } from './model.ts';
+import { describeDate, describeEvent, describeEventDate, describeNearby, describePeriod, describeSpot, describeTerritory, languageName, nearbyEras, otherPolitiesAtSpot, sourceLink, wikipediaLink } from './model.ts';
 import type { BorderChange, EventFile, PolityFile, PolityRecord, SourcesFile, SpotSet } from './model.ts';
 
 const sources: SourcesFile['sources'] = {
@@ -285,6 +285,32 @@ describe('describeNearby', () => {
     expect(v.title).toBe('Around 1 January 1905');
     expect(v.window).toBe('From 1 January 1900 to 1 January 1910 (the part of the timeline in view), nearest first.');
   });
+
+  it('words a record giving way to the next one of the same polity as a border change', () => {
+    const changed = describeNearby(day(1905, 1, 1), [day(1900, 1, 1), day(1910, 1, 1)], [], [{ ...change(day(1903, 1, 1), 'start', '1903'), kind: 'change' }], sources, namesOf, 'en');
+    expect(changed.changes[0].label).toBe('Border changes: Administered (de facto)');
+  });
+});
+
+describe('nearbyEras', () => {
+  // Made-up eras of 10 days each, and changes on made-up days.
+  const eras = [{ start: 0, end: 10 }, { start: 10, end: 20 }, { start: 20, end: 30 }, { start: 30, end: 40 }];
+  const at = (...days: number[]) => days.map((d) => ({ day: d, kind: 'start' as const, date: '', polity: 'testland', record: `r${d}`, relation: 'controls', source: { source: 'test-source', locator: '' } }));
+  const loaded = new Map<number, BorderChange[]>([[1, at(12, 15, 18)], [2, at(21, 29)], [0, at(1)]]);
+
+  it('asks for the era holding the day first, then the nearest others the window touches', () => {
+    expect(nearbyEras(eras, 15, [5, 35], () => undefined).missing).toEqual([1]);
+    const next = nearbyEras(eras, 15, [5, 35], (i) => (i === 1 ? loaded.get(1) : undefined));
+    expect(next.missing).toEqual([2]); // day 20 is nearer than day 9
+  });
+
+  it('stops once the nearest changes found are closer than any other era, and keeps to the window', () => {
+    const enough = nearbyEras(eras, 15, [5, 35], (i) => loaded.get(i), 2);
+    expect(enough.missing).toEqual([]);
+    expect(enough.changes.map((c) => c.day)).toEqual([12, 15, 18]);
+    const all = nearbyEras(eras, 15, [5, 25], (i) => loaded.get(i) ?? []);
+    expect(all.changes.map((c) => c.day).sort((a, b) => a - b)).toEqual([12, 15, 18, 21]);
+  });
 });
 
 describe('describeTerritory: other sources', () => {
@@ -338,6 +364,24 @@ describe('describeTerritory: other sources', () => {
     expect(describeTerritory(tiny, sources, day(1902, 1, 1), 'en').smallTerritory).toMatch(/under 10,000 km²/);
     const large: PolityFile = { ...testland, records: [record('a', 'controls', '1901', 'ongoing', { km2: 50_000 })] };
     expect(describeTerritory(large, sources, day(1902, 1, 1), 'en').smallTerritory).toBeUndefined();
+  });
+});
+
+describe('wikipediaLink', () => {
+  it('links a Wikidata ID to its article in the reader\'s language, through Wikidata', () => {
+    // A made-up ID.
+    expect(wikipediaLink('Q1234567', 'en')).toBe('https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/Q1234567');
+    expect(wikipediaLink('Q1234567', 'zh-Hant')).toBe('https://www.wikidata.org/wiki/Special:GoToLinkedPage/zhwiki/Q1234567');
+  });
+
+  it('gives no link for anything that isn\'t a Wikidata item ID', () => {
+    expect(wikipediaLink('Q12/../x', 'en')).toBeUndefined();
+    expect(wikipediaLink('', 'en')).toBeUndefined();
+  });
+
+  it('is in the territory view only when the file has an ID', () => {
+    expect(describeTerritory({ ...testland, wikidata: 'Q1234567' }, sources, day(1902, 1, 1), 'en').wikipedia).toBe(wikipediaLink('Q1234567', 'en'));
+    expect(describeTerritory({ ...testland, wikidata: undefined }, sources, day(1902, 1, 1), 'en').wikipedia).toBeUndefined();
   });
 });
 

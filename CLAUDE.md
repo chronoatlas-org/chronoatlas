@@ -335,8 +335,12 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   - `events.json`: every event's day range, importance, title, and place, for the timeline's
     markers and the map's pulse;
   - `events/<id>.json`: one event in full (summary, sources, place, effects), for the panel;
-  - `changes.json`: every day a territorial record starts or ends, with its polity and source,
-    for "Around this date" (it will need splitting by period for the worldwide map);
+  - `changes/<version>.json`, one per era (listed as `nearby` in `tiles.json`'s `eras`; Phase 5
+    step 6): every day a territorial record starts or ends in that era, with its polity, source,
+    and the names of its polities, for "Around this date". A record ending the day the next one of
+    the same polity, relation, and source begins is one entry, `change` ("Border changes"). The
+    panel loads the era holding the day first, and others only while they could hold one of the 25
+    nearest changes (`nearbyEras`, model.ts);
   - `polities/<id>.json`: one polity's names, every record that mentions it, and its figures
     (land areas), for the territory panel. A visitor downloads only the ones they open, which is what lets this scale
     worldwide.
@@ -394,6 +398,9 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   - The build measures the land inside each default-map polity's borders, using Natural Earth's
     1:10m land (`ne_10m_land.geojson`). Only the build uses that file; the site never loads it.
     The results go into polity files as `figures` (`basis: computed-from-shape`).
+  - **Cliopatria's polities** get the area Cliopatria gives for each row's shape (its `Area`,
+    `cliopatria_area_km2`; Phase 5 decision 7) instead, one figure per record with `computedBy`
+    set to the source. The panel calls it "Area" (not "Land area") and says it isn't ours.
   - There's one figure per polity, relation, and stretch of time in which the same records
     apply. Several records at once are measured over their union, so overlaps count once.
     Different relations are never added together.
@@ -467,6 +474,12 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
     counts a linked record as current only inside its link's window.
   - The map's view switch (`HistoricalLayers.setView`: 'facto' or 'jure') is recorded in the
     address as `v=jure`.
+  - **Wikipedia link** (Phase 5 step 6, at the maintainers' request): "Read about it on Wikipedia"
+    from the polity file's `wikidata`, through Wikidata's `Special:GoToLinkedPage/<lang>wiki/Q…`
+    (`wikipediaLink`, model.ts), marked as an outside site the map hasn't checked. A unit of an
+    import takes the ID of the one polity its reviewed crosswalk says is the same state. Only a
+    link: nothing from Wikipedia goes into our data. Cliopatria's own `Wikipedia` column waits on
+    Phase 5 question 14.
   - The panel shows a `Selection`: `{ kind: 'polity' | 'event' | 'nearby', id }`. 'nearby'
     ("Around this date") lists what's in the timeline's visible range, so the panel redraws
     when the timeline zooms (`onZoom`). When an event's file
