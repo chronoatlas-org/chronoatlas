@@ -1,7 +1,7 @@
 # Phase 6 plan: a map that is smooth, close-up, and pleasant to watch
 
 > **Status: DRAFT, not approved.** Written 2026-09-29 for the maintainers to review. Nothing here
-> is built. Each question in [section 10](#10-questions-for-the-maintainers) has a recommended
+> is built. Each question in [section 11](#11-questions-for-the-maintainers) has a recommended
 > answer; "approve with the recommendations" answers them all. More requests may be added before
 > approval.
 
@@ -29,11 +29,12 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 6. [Smooth changes of era, and going to a date](#6-smooth-changes-of-era-and-going-to-a-date)
 7. [Names for water](#7-names-for-water)
 8. [Flags](#8-flags)
-9. [Stretch: your local area, over time](#9-stretch-your-local-area-over-time)
-10. [Questions for the maintainers](#10-questions-for-the-maintainers)
-11. [Order of work](#11-order-of-work)
-12. [Keeping the scope in check](#12-keeping-the-scope-in-check)
-13. [Decisions](#13-decisions)
+9. [Report a problem by drawing](#9-report-a-problem-by-drawing)
+10. [Stretch: your local area, over time](#10-stretch-your-local-area-over-time)
+11. [Questions for the maintainers](#11-questions-for-the-maintainers)
+12. [Order of work](#12-order-of-work)
+13. [Keeping the scope in check](#13-keeping-the-scope-in-check)
+14. [Decisions](#14-decisions)
 
 ---
 
@@ -64,9 +65,10 @@ anything is changed.
 | Lighter on the GPU/CPU | **Yes**, most likely | We can't measure a graphics card in our cloud environment; the maintainers' check on real machines is part of step 2 and step 3. |
 | Smooth loading across big jumps | **Yes** | It costs more memory and bandwidth (two eras held at once, neighbours prefetched). Bounded by the caps in section 6. |
 | Borders line up close in | **Partly** | We can reduce our own simplification and draw the base map in matching detail. We can't make a source more precise than it is: Cliopatria's shapes are approximate, and OpenHistoricalMap's are only as detailed as its tracing. |
-| A detailed view of my local area (not street level) | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) a "local area" card: which states held the place over time, and events near it (section 9). |
+| A detailed view of my local area (not street level) | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) a "local area" card: which states held the place over time, and events near it (section 10). |
 | Fill all the way to the ocean | **Yes, without changing the rule, but it's a decision** | The gap is mostly Cliopatria's coarse resolution, not a claim that nobody held the land. An approximate margin, drawn only in the build and flagged as such, keeps rule 1 (section 5, option B); it still draws colour where no source did, so it is the maintainers' call. See question 3. |
 | Go-to-date box | **Yes** | Depends on the smooth-era work. Very long jumps (thousands of years) will skip time quickly, not play every year. |
+| Drawing the wrong border in the report button | **Yes, as a sketch** | A static site can't accept a submission itself; the sketch travels in the pre-filled issue. It is a pointer for a contributor to trace upstream in OpenHistoricalMap from the cited source, never data on its own (section 9). |
 | Names for oceans, rivers, lakes | **Yes** | Present-day names only, attributed. Some are disputed (the sea between Korea and Japan, the Persian/Arabian Gulf, others): see section 7. |
 | Flags | **Yes, for a subset** | Flags are modern. Most polities before about 1800 had none, or none anyone recorded; flags need a source with dates, and their images carry licenses. Default is "no flag on record". |
 | History of a spot | **Yes, as a stretch** | Built from the same records as the panel: approximate where the sources are. |
@@ -202,7 +204,39 @@ almost no GPU. Step 2 fixes the real numbers.
 - **Contributors** can propose a flag through the same review path as other data: an issue form
   (source, dates, image page) and the data-change summary shows the image and license.
 
-## 9. Stretch: your local area, over time
+## 9. Report a problem by drawing
+
+**Idea (from the maintainers):** in the "Report a problem with this border" flow, the visitor
+draws the line they think is wrong, or where they think it should be, and adds a source. It makes
+reporting far easier than describing a border in words.
+
+**What stays the same.** Border lines are fixed upstream in OpenHistoricalMap and re-imported,
+never hand-edited here, and geometry may only be traced from public-domain or openly licensed
+maps ([CONTRIBUTING.md](../CONTRIBUTING.md#copyright-and-tracing)). So a sketch is **a pointer,
+not data**: it shows a contributor or reviewer exactly where the problem is; the fix is then
+traced in OpenHistoricalMap from the cited source.
+
+**How it could work (a static site has no server, so it uses what already exists):**
+
+- A "Draw the problem" mode on the map: click points to draw a line or a small area, marked as
+  "the border as drawn now" or "where I think it should be", with undo and clear. Keyboard
+  and touch friendly.
+- The sketch is simplified to a few points, written as a small GeoJSON block, and put in the
+  pre-filled issue form (a new field beside the existing ones, with a stable `id`, added to
+  `scripts/issue-forms.test.ts`). A web address holds only a few thousand characters, so a long
+  sketch falls back to "Copy sketch" for pasting into the form.
+- The form keeps its existing checks: a source with a locator, and confirmation that the sketch is
+  the visitor's own and not traced from a copyrighted map or online map service.
+- The issue also carries the date, the polity, and a link to open OpenHistoricalMap at the spot
+  (whether OpenHistoricalMap's address can carry the date is checked in step 2).
+- A reviewer sees the sketch next to the source. The data-change summary is unchanged, because
+  nothing enters `data/` from a sketch.
+
+**Limits.** GitHub needs an account to file an issue, and we won't add our own accounts or a
+server (rule 6). A sketch is only as good as the source cited, and only a person tracing it in
+OpenHistoricalMap makes it data. *Recommended: yes, as a sketch that never becomes data itself.*
+
+## 10. Stretch: your local area, over time
 
 The idea: a visitor from a small town wants to see what happened *around them*, in detail, without
 needing street-level borders (which no source has for most times). They click a place, or search
@@ -220,18 +254,18 @@ populated places (public domain, bundled, no online service, so it stays free to
 towns and cities, not small villages. An online geocoder is out, because of the no-services rule.
 
 It is a **stretch** because it depends on the detail work (section 5) and on speed (section 4).
-It is only started if steps 2–7 leave room, and it can be a Phase 7 headline instead.
+It is only started if steps 2–9 leave room, and it can be a Phase 7 headline instead.
 
-## 10. Questions for the maintainers
+## 11. Questions for the maintainers
 
-1. **Approve the order and cut lines** in sections 11 and 12? *Recommended: yes.*
+1. **Approve the order and cut lines** in sections 12 and 13? *Recommended: yes.*
 2. **Performance target:** scrub and zoom at 30 frames a second or better on an older
    integrated-graphics laptop and a mid-range phone; idle map near zero. *Recommended: yes; refined
    by the step 2 numbers.*
 3. **Coast gaps** (section 5): A (restyle only), B (a flagged, build-only approximate margin
    where one polity's shape stops short of the coast by less than the source's resolution), or C
    (snap in the data, not recommended). B draws colour where no source did, though it asserts
-   nothing. *Recommended: B, with A as the fallback.*
+   nothing. *Recommended: B, with A as the fallback. The maintainers lean toward B (2026-09-29).*
 4. **Disputed water names:** show both names, attributed, from a short hand-written, cited list?
    Which waters go on it first, and which sources are acceptable (an international hydrographic
    body, national mapping agencies, both sides' governments)? *Recommended: yes; the maintainers
@@ -240,16 +274,18 @@ It is only started if steps 2–7 leave room, and it can be a Phase 7 headline i
    hosted, "No flag on record" as the default, starting with our own polities)? *Recommended: yes.*
 6. **Lighter map setting:** a header toggle plus automatic on reduced motion or low power?
    *Recommended: yes.*
-7. **Your local area** (section 9): keep it as a stretch inside Phase 6, or make it the headline of
+7. **Your local area** (section 10): keep it as a stretch inside Phase 6, or make it the headline of
    Phase 7? And is search over Natural Earth's larger towns and cities, plus clicking the map,
-   enough to start? *Recommended: Phase 7 headline, unless steps 2–7 finish early; yes to the
+   enough to start? *Recommended: Phase 7 headline, unless steps 2–9 finish early; yes to the
    search.*
 8. **Data-saver behaviour:** no background prefetch when the browser reports a data-saver
    connection? *Recommended: yes.*
-9. **New requests** the maintainers add before approval are placed in the order in section 11 by
+9. **Report by drawing** (section 9): a sketch in the issue as a pointer, never imported as data,
+   with the copyright confirmation? *Recommended: yes.*
+10. **New requests** the maintainers add before approval are placed in the order in section 12 by
    the same rule: measure first, then what changes tile size or speed, then what adds on top.
 
-## 11. Order of work
+## 12. Order of work
 
 Small steps, each committed, explained, and checked, as in earlier phases. The order follows one
 rule: **measure first, then change what everything else depends on (speed, tile detail), then
@@ -263,20 +299,21 @@ add features on top**, so nothing is built twice.
 | 4 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3), with the check of how Cliopatria's shapes were made. | high |
 | 5 | **Smooth era changes:** keep old tiles until new ones are ready, prefetch neighbours, blend. | high |
 | 6 | **Go to a date:** the box, travel animation, address, and phone layout. | medium |
-| 7 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
-| 8 | **Flags:** the import folder and manifest, the panel line and image, the issue form, and the first set for our own polities. | high |
-| 9 | **Stretch, only if room: your local area, over time.** | high |
-| 10 | **Tidy:** a phone and low-end check of the finished map, the docs, the README, `CREDITS.md`, and the roadmap. | medium |
+| 7 | **Report by drawing:** the sketch mode, the new issue-form field, and the reviewer guide's steps for reading a sketch. | medium |
+| 8 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
+| 9 | **Flags:** the import folder and manifest, the panel line and image, the issue form, and the first set for our own polities. | high |
+| 10 | **Stretch, only if room: your local area, over time.** | high |
+| 11 | **Tidy:** a phone and low-end check of the finished map, the docs, the README, `CREDITS.md`, and the roadmap. | medium |
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing.
 Steps 3–6 each end with a repeat of step 2's measures, so speed can't quietly get worse.
 
-## 12. Keeping the scope in check
+## 13. Keeping the scope in check
 
 The vision is large on purpose. These are the levers, in the order to reach for them:
 
 1. **Cut lines.** If the phase runs long, cut from the bottom of the table. **6a** is steps 1–6
-   (fast, close-up, smooth, and a date box: the visitor experience). **6b** is steps 7–10 (water,
+   (fast, close-up, smooth, and a date box: the visitor experience). **6b** is steps 7–11 (drawing a report, water,
    flags, spot history, tidy). Shipping 6a alone is a complete phase.
 2. **Measure before building.** Step 2 exists so a big idea is sized before it's started; a step
    whose measurement is bad is brought back, not pushed through.
@@ -293,6 +330,6 @@ The vision is large on purpose. These are the levers, in the order to reach for 
    archive, a second free host, a small paid one) are a maintainers' decision that touches ground
    rule 6, made with measurements, not in a hurry.
 
-## 13. Decisions
+## 14. Decisions
 
 *None yet. Recorded here when the maintainers approve the plan.*
