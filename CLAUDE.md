@@ -266,6 +266,14 @@ with an effort setting for each step. The ones that affect everyday work:
   nothing for a missing tile, measured in step 2). Every tile set is split the same way.
 - **Coasts:** Cliopatria's fills aren't cut at the coast; the detailed sea and coastline are drawn
   over them from zoom 4. OpenHistoricalMap keeps its exact cut (`coastCut`).
+  - The coast tiles cover the imports' areas together, which is the world since Cliopatria's is.
+  - **Cliopatria's border lines are land borders only** (Phase 5 step 7): `borderLines(…,
+    inlandKm)` keeps the stretches on land more than `COARSE_INLAND_KM` (3 km) from the coast,
+    tested in pieces of about 2 km. Its coarse edges along a coast made a rough second coastline
+    beside the real one, and straight lines from island to island. OpenHistoricalMap's precise
+    lines keep the usual rule (dropped only more than 2 km out to sea).
+  - Where Cliopatria's coarse shape stops short of the real coast, the land between shows the
+    "no data" hatch: land its borders don't include, so it's left as a gap, never filled in.
 - **Cliopatria IDs:** `cliopatria-<name>-<year>`, `…-<year>bce` for BCE rows, and `-2`, `-3`, … for
   further rows with the same name and first year (decision 12).
 - **CShapes covers the world** (1886–2019), still isolated. **Contested areas** are computed only

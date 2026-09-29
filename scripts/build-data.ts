@@ -262,7 +262,15 @@ export interface OutlineContext {
   land?: LandDistance;
   /** The land polygons themselves, to cut the default map's fills at the coast. */
   landPolygons?: LandIndex;
+  /** For coarse shapes: keep only land borders, this far (km) from the coast (see borderLines). */
+  inlandKm?: number;
 }
+
+/**
+ * How far from the coast a coarse shape's border line must be to be drawn (Phase 5 step 7):
+ * Cliopatria's edges along a coast wander a few kilometres from Natural Earth's coastline.
+ */
+export const COARSE_INLAND_KM = 3;
 
 /**
  * How precise a border line is, as the tiles carry it (only when it's not a plain line): 1 for an
@@ -403,9 +411,12 @@ export function buildBaseline(ds: Dataset, outlines?: OutlineContext, colors?: R
   return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true, undefined, colors);
 }
 
-/** The outline context with the coverage boxes' edges as cuts too. */
+/**
+ * The outline context for Cliopatria's layers: the coverage boxes' edges as cuts too, and only
+ * land borders drawn, since its shapes are coarse along the coasts (Phase 5 step 7).
+ */
 const cutAt = (outlines: OutlineContext | undefined, coverage: readonly ReviewedScope[]): OutlineContext | undefined =>
-  outlines && { ...outlines, cuts: [...(outlines.cuts ?? []), ...coverage.map((c) => c.box)] };
+  outlines && { ...outlines, cuts: [...(outlines.cuts ?? []), ...coverage.map((c) => c.box)], inlandKm: COARSE_INLAND_KM };
 
 /**
  * One source's borders: the fills (`collection`), and the lines (`lines`) drawn apart from them,
@@ -487,7 +498,7 @@ function buildBorderLayer(
       let coordinates = outlineOf.get(key);
       if (!coordinates) {
         const area = folder ? outlines?.areas.get(folder) : undefined;
-        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts);
+        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts, outlines?.inlandKm);
         outlineOf.set(key, coordinates);
       }
       if (coordinates.length === 0) return [];
