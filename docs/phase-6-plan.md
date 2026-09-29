@@ -14,6 +14,8 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 - **it holds up close**: borders and coasts line up as far in as the sources can honestly support,
   and the map says so where they can't;
 - **you can type a date and travel to it**, watching the map change on the way;
+- **a first-time visitor knows what to do:** a play button, a short "start here", search by name,
+  and a lens that shows how sure each part of the map is;
 - **water has names** (oceans, seas, lakes, rivers), attributed like every other name;
 - **a polity can show its flag**, where a source records one for that period;
 - **stretch goal:** a "local area" card for any place: which states held it over time, and the
@@ -29,7 +31,7 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 6. [Smooth changes of era, and going to a date](#6-smooth-changes-of-era-and-going-to-a-date)
 7. [Names for water](#7-names-for-water)
 8. [Flags](#8-flags)
-9. [Report a problem by drawing](#9-report-a-problem-by-drawing)
+9. [First-time visitor features](#9-first-time-visitor-features)
 10. [Stretch: your local area, over time](#10-stretch-your-local-area-over-time)
 11. [Questions for the maintainers](#11-questions-for-the-maintainers)
 12. [Order of work](#12-order-of-work)
@@ -68,7 +70,8 @@ anything is changed.
 | A detailed view of my local area (not street level) | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) a "local area" card: which states held the place over time, and events near it (section 10). |
 | Fill all the way to the ocean | **Yes, without changing the rule, but it's a decision** | The gap is mostly Cliopatria's coarse resolution, not a claim that nobody held the land. An approximate margin, drawn only in the build and flagged as such, keeps rule 1 (section 5, option B); it still draws colour where no source did, so it is the maintainers' call. See question 3. |
 | Go-to-date box | **Yes** | Depends on the smooth-era work. Very long jumps (thousands of years) will skip time quickly, not play every year. |
-| Drawing the wrong border in the report button | **Yes, as a sketch** | A static site can't accept a submission itself; the sketch travels in the pre-filled issue. It is a pointer for a contributor to trace upstream in OpenHistoricalMap from the cited source, never data on its own (section 9). |
+| Play button, "start here", search by name | **Yes** | Stories can only use what the data already has (sourced events); the first ones may be few (section 9). |
+| A lens that shows how sure the map is | **Yes** | Today it can show date precision and each source's resolution; edge precision fills in only as real data records it (section 9). |
 | Names for oceans, rivers, lakes | **Yes** | Present-day names only, attributed. Some are disputed (the sea between Korea and Japan, the Persian/Arabian Gulf, others): see section 7. |
 | Flags | **Yes, for a subset** | Flags are modern. Most polities before about 1800 had none, or none anyone recorded; flags need a source with dates, and their images carry licenses. Default is "no flag on record". |
 | History of a spot | **Yes, as a stretch** | Built from the same records as the panel: approximate where the sources are. |
@@ -204,37 +207,43 @@ almost no GPU. Step 2 fixes the real numbers.
 - **Contributors** can propose a flag through the same review path as other data: an issue form
   (source, dates, image page) and the data-change summary shows the image and license.
 
-## 9. Report a problem by drawing
+## 9. First-time visitor features
 
-**Idea (from the maintainers):** in the "Report a problem with this border" flow, the visitor
-draws the line they think is wrong, or where they think it should be, and adds a source. It makes
-reporting far easier than describing a border in words.
+What a person needs in their first minute, in the order they meet it. The first three are in this
+phase; the rest are candidates for Phase 7 (question 9).
 
-**What stays the same.** Border lines are fixed upstream in OpenHistoricalMap and re-imported,
-never hand-edited here, and geometry may only be traced from public-domain or openly licensed
-maps ([CONTRIBUTING.md](../CONTRIBUTING.md#copyright-and-tracing)). So a sketch is **a pointer,
-not data**: it shows a contributor or reviewer exactly where the problem is; the fix is then
-traced in OpenHistoricalMap from the cited source.
+**In this phase**
 
-**How it could work (a static site has no server, so it uses what already exists):**
+- **A play button and a "start here" (step 7).** The timeline can already advance at a set speed
+  (measured in Phase 1); this makes playing the obvious first action, from a good opening view.
+  "Start here" offers two or three short stories that set the date, place and speed for you and
+  show an event's sourced summary as they go. Stories are built only from events already in the
+  data, with wording from their cited sources; if there are too few, the first ones are short and
+  more wait on the data track. No fake events (project rule). The same step adds the basics a new
+  visitor looks for: an About page (what this is, where the data comes from, that it is run by
+  one maintainer, that it was built with AI help and every claim is sourced), a Contribute page
+  that links the existing report link and issue forms, and a preview image and title for shared
+  links (one generic preview: a static site can't make a different one for each date and place).
+- **Search by name (step 8).** Type "Kingdom of Sardinia" or an event's name, and the map goes to
+  its years and area. The build writes a small name index (with each name's language and script),
+  loaded only when the search box is used. Place search over Natural Earth's towns and cities can
+  share the same box later (section 10).
+- **"How sure are we?" lens (step 9).** A toggle that colours the map by the precision of what is
+  shown: how exact the dates are (day, month, year, approximate, from our EDTF dates) and how
+  detailed the source is (each source's resolution). Edge precision (treaty line, approximate,
+  frontier zone) is added as sources record it; today every import says `unknown`, and the lens
+  says so rather than pretend. Like every other style here it doesn't rely on colour alone:
+  patterns and text labels go with it. It turns the project's honesty into something a visitor
+  can see.
 
-- A "Draw the problem" mode on the map: click points to draw a line or a small area, marked as
-  "the border as drawn now" or "where I think it should be", with undo and clear. Keyboard
-  and touch friendly.
-- The sketch is simplified to a few points, written as a small GeoJSON block, and put in the
-  pre-filled issue form (a new field beside the existing ones, with a stable `id`, added to
-  `scripts/issue-forms.test.ts`). A web address holds only a few thousand characters, so a long
-  sketch falls back to "Copy sketch" for pasting into the form.
-- The form keeps its existing checks: a source with a locator, and confirmation that the sketch is
-  the visitor's own and not traced from a copyrighted map or online map service.
-- The issue also carries the date, the polity, and a link to open OpenHistoricalMap at the spot
-  (whether OpenHistoricalMap's address can carry the date is checked in step 2).
-- A reviewer sees the sketch next to the source. The data-change summary is unchanged, because
-  nothing enters `data/` from a sketch.
+**Candidates for Phase 7** (each independent, none started)
 
-**Limits.** GitHub needs an account to file an issue, and we won't add our own accounts or a
-server (rule 6). A sketch is only as good as the source cited, and only a person tracing it in
-OpenHistoricalMap makes it data. *Recommended: yes, as a sketch that never becomes data itself.*
+- **Compare two dates**, side by side or with a slider: the most shareable view, and useful for
+  research.
+- **"Cite this view":** a citation with date, place, sources and link, in common formats.
+- **Embed:** an iframe of a chosen date and place for teachers and writers.
+- **Clip export:** a short recording of the timeline playing, credits included.
+- **Data downloads** for researchers, per source, each under its own license.
 
 ## 10. Stretch: your local area, over time
 
@@ -254,7 +263,7 @@ populated places (public domain, bundled, no online service, so it stays free to
 towns and cities, not small villages. An online geocoder is out, because of the no-services rule.
 
 It is a **stretch** because it depends on the detail work (section 5) and on speed (section 4).
-It is only started if steps 2–9 leave room, and it can be a Phase 7 headline instead.
+It is only started if steps 2–11 leave room, and it can be a Phase 7 headline instead.
 
 ## 11. Questions for the maintainers
 
@@ -276,12 +285,13 @@ It is only started if steps 2–9 leave room, and it can be a Phase 7 headline i
    *Recommended: yes.*
 7. **Your local area** (section 10): keep it as a stretch inside Phase 6, or make it the headline of
    Phase 7? And is search over Natural Earth's larger towns and cities, plus clicking the map,
-   enough to start? *Recommended: Phase 7 headline, unless steps 2–9 finish early; yes to the
+   enough to start? *Recommended: Phase 7 headline, unless steps 2–11 finish early; yes to the
    search.*
 8. **Data-saver behaviour:** no background prefetch when the browser reports a data-saver
    connection? *Recommended: yes.*
-9. **Report by drawing** (section 9): a sketch in the issue as a pointer, never imported as data,
-   with the copyright confirmation? *Recommended: yes.*
+9. **First-time visitor features** (section 9): play button and "start here", search by name, and
+   the lens in this phase; compare, cite, embed, clip export and downloads in Phase 7? *Recommended:
+   yes.*
 10. **New requests** the maintainers add before approval are placed in the order in section 12 by
    the same rule: measure first, then what changes tile size or speed, then what adds on top.
 
@@ -299,11 +309,13 @@ add features on top**, so nothing is built twice.
 | 4 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3), with the check of how Cliopatria's shapes were made. | high |
 | 5 | **Smooth era changes:** keep old tiles until new ones are ready, prefetch neighbours, blend. | high |
 | 6 | **Go to a date:** the box, travel animation, address, and phone layout. | medium |
-| 7 | **Report by drawing:** the sketch mode, the new issue-form field, and the reviewer guide's steps for reading a sketch. | medium |
-| 8 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
-| 9 | **Flags:** the import folder and manifest, the panel line and image, the issue form, and the first set for our own polities. | high |
-| 10 | **Stretch, only if room: your local area, over time.** | high |
-| 11 | **Tidy:** a phone and low-end check of the finished map, the docs, the README, `CREDITS.md`, and the roadmap. | medium |
+| 7 | **Welcome:** the play button, "start here" (stories from existing sourced events), the About and Contribute pages, and the share preview. | medium |
+| 8 | **Search by name:** the name index and the search box. | medium |
+| 9 | **The "how sure are we?" lens.** | medium |
+| 10 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
+| 11 | **Flags:** the import folder and manifest, the panel line and image, the issue form, and the first set for our own polities. | high |
+| 12 | **Stretch, only if room: your local area, over time.** | high |
+| 13 | **Tidy and launch check:** a phone and low-end check of the finished map, an accessibility pass (keyboard, screen reader, contrast), loading, empty and error states, the docs, the README, `CREDITS.md`, and the roadmap. | medium |
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing.
 Steps 3–6 each end with a repeat of step 2's measures, so speed can't quietly get worse.
@@ -312,9 +324,9 @@ Steps 3–6 each end with a repeat of step 2's measures, so speed can't quietly 
 
 The vision is large on purpose. These are the levers, in the order to reach for them:
 
-1. **Cut lines.** If the phase runs long, cut from the bottom of the table. **6a** is steps 1–6
-   (fast, close-up, smooth, and a date box: the visitor experience). **6b** is steps 7–11 (drawing a report, water,
-   flags, spot history, tidy). Shipping 6a alone is a complete phase.
+1. **Cut lines.** If the phase runs long, cut from the bottom of the table. **6a** is steps 1–7
+   (fast, close-up, smooth, a date box, and a welcome: the visitor experience). **6b** is steps 8–13
+   (search, the lens, water, flags, your local area, tidy). Shipping 6a alone is a complete phase.
 2. **Measure before building.** Step 2 exists so a big idea is sized before it's started; a step
    whose measurement is bad is brought back, not pushed through.
 3. **One step in flight,** each shippable on its own, so the live site is never left half-changed.
@@ -332,4 +344,7 @@ The vision is large on purpose. These are the levers, in the order to reach for 
 
 ## 14. Decisions
 
-*None yet. Recorded here when the maintainers approve the plan.*
+*Recorded here when the maintainers approve the plan.* Settled before approval (2026-09-29):
+
+- **Coast gaps:** the maintainers lean toward option B (a flagged, build-only approximate margin).
+- **Report by drawing:** considered and not added; the existing "Report a problem" link is enough.
