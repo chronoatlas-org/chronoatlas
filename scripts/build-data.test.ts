@@ -1,3 +1,4 @@
+import { readdirSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
 import {
@@ -336,9 +337,12 @@ describe('the default map', () => {
 
 describe('the edge of imported data', () => {
   it('draws one edge for imports that share an area and years, only in those years', () => {
-    // The real manifests: OpenHistoricalMap, CShapes, and Cliopatria all cover 10–55°N,
-    // 73–150°E, 1900–1950. Without land to check, the whole edge is drawn.
-    const edges = buildEdges(loadDataset());
+    // The real manifests (all the edge needs, so the worldwide shapes aren't loaded): only the
+    // default map's import, OpenHistoricalMap, gets an edge, at 10–55°N, 73–150°E, 1900–1950.
+    // Without land to check, the whole edge is drawn.
+    const imports = readdirSync(new URL('../data/imports/', import.meta.url)).map((name) => `data/imports/${name}`);
+    const manifestsOnly: Dataset = { sources: [], polities: [], assertions: [], events: [], figures: [], coverage: [], shapes: [], crosswalks: [], imports, problems: [] };
+    const edges = buildEdges(manifestsOnly);
     expect(edges.features).toHaveLength(1);
     expect(edges.features[0].properties).toMatchObject({ s0: civilToJdn(1900, 1, 1), e0: civilToJdn(1951, 1, 1) });
   });
@@ -413,7 +417,8 @@ describe('reference test: Manchuria in 1937 (the real imported data)', () => {
     expect(areas).toHaveLength(1);
     expect(areas[0]).toMatchObject({ facto: 'manchukuo', factoRelation: 'administers', jure: 'cshapes-710', jureRelation: 'sovereign' });
     expect(areas[0].km2).toBeGreaterThan(1_000_000);
-  });
+    // Reading the whole worldwide dataset takes a few seconds, more than a test's usual 5.
+  }, 60_000);
 });
 
 describe('land areas', () => {
