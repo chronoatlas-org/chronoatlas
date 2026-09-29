@@ -1,31 +1,40 @@
 // Suggests crosswalk links for one region and period (Phase 5 step 8), for a maintainer to review:
-// which of CShapes' holders held each of Cliopatria's polities there, as the same state or as a
-// dependency. It writes a report (Markdown, with YAML ready to paste into
-// data/imports/cshapes-2-0/polity-crosswalk.yaml after review) and changes nothing in data/.
+// which of CShapes' holders held each of the map's polities there, as the same state or as a
+// dependency. It writes a report (Markdown, with YAML ready to paste into the crosswalk after
+// review) and changes nothing in data/.
 //
 // Usage:
-//   npm run suggest-crosswalk -- --region=W,S,E,N --years=FROM,TO [--out=suggestions.md] [--trial]
+//   npm run suggest-crosswalk -- --region=W,S,E,N --years=FROM,TO [--map=cliopatria] [--with=cshapes]
+//                                [--out=suggestions.md] [--trial]
 // For example, Europe 1914–1950:
 //   npm run suggest-crosswalk -- --region=-25,34,45,72 --years=1914,1950 --out=europe.md --trial
 // (Write --region=… with "=", since a west edge like -25 would otherwise read as an option.)
 //
-// With --trial, the report also lists the contested areas the map would show there if every
-// suggestion were accepted and the region marked as reviewed: what the review is deciding.
+//   --map    whose polities to link: cliopatria (the default; where it's the baseline) or
+//            openhistoricalmap (our own polities, the default map).
+//   --with   what to link them to: cshapes (the default; the legal borders, for contested areas,
+//            in data/imports/cshapes-2-0/polity-crosswalk.yaml) or cliopatria (its polities, for
+//            "sources differ", in data/imports/cliopatria/polity-crosswalk.yaml; only with
+//            --map=openhistoricalmap).
 //
-// How: on 1 July of every year in the period, each Cliopatria row inside the region is compared
-// with each CShapes row, and the area they share is added up per polity and unit (CShapes names
-// the state holding each unit: a colony's record is its owner's). Where a polity held most of a
-// unit (inside the region, over the days sampled), its holder is suggested: as the same state for
-// the holder's own unit, as a dependency otherwise (scripts/lib/suggest.ts). A polity that only
-// lay inside a unit without holding most of it (a breakaway state, rival government, or occupation
-// zone) is never suggested, but listed for a closer look. Polities the crosswalk already links
-// are left out.
+// With --trial, the report also lists the contested areas (or, --with=cliopatria, the "sources
+// differ" areas) the map would show there if every suggestion were accepted and the region marked
+// as reviewed: what the review is deciding.
+//
+// How: on 1 July of every year in the period, each of the map's rows inside the region is compared
+// with each row on the other side, and the area they share is added up per polity and unit (CShapes
+// names the state holding each unit: a colony's record is its owner's; a Cliopatria polity is its
+// own unit). Where a polity held most of a unit (inside the region, over the days sampled), its
+// holder is suggested: as the same state for the holder's own unit, as a dependency otherwise
+// (scripts/lib/suggest.ts). A polity that only lay inside a unit without holding most of it (a
+// breakaway state, rival government, or occupation zone) is never suggested, but listed for a
+// closer look. Polities the crosswalk already links are left out.
 
 import { writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import polygonClipping from 'polygon-clipping';
 import { civilToJdn, jdnToCivil } from '../src/dates/index.ts';
-import { buildContested, crosswalkLinks, dayRanges, isDejure, isSecondOpinion } from './build-data.ts';
+import { buildContested, buildDiffer, crosswalkLinks, dayRanges, isDejure, isSecondOpinion, onDefaultMap } from './build-data.ts';
 import { loadDataset } from './lib/data.ts';
 import { areaKm2, cleanMultiPolygon } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
@@ -42,8 +51,20 @@ const { values } = parseArgs({
     years: { type: 'string' },
     out: { type: 'string' },
     trial: { type: 'boolean' },
+    map: { type: 'string', default: 'cliopatria' },
+    with: { type: 'string', default: 'cshapes' },
   },
 });
+const map = values.map === 'openhistoricalmap' ? 'openhistoricalmap' : values.map === 'cliopatria' ? 'cliopatria' : undefined;
+const other = values.with === 'cliopatria' ? 'cliopatria' : values.with === 'cshapes' ? 'cshapes' : undefined;
+if (!map || !other || (other === 'cliopatria' && map !== 'openhistoricalmap')) {
+  console.error('Give --map=cliopatria or openhistoricalmap, and --with=cshapes or (with --map=openhistoricalmap) cliopatria.');
+  process.exit(1);
+}
+/** Where the links go, and the reviewed scopes beside them. */
+const folder = other === 'cshapes' ? 'data/imports/cshapes-2-0' : 'data/imports/cliopatria';
+const MAP_NAME = { cliopatria: 'Cliopatria', openhistoricalmap: 'OpenHistoricalMap' }[map];
+const OTHER_NAME = { cshapes: 'CShapes', cliopatria: 'Cliopatria' }[other];
 const numbers = (text: string | undefined, count: number, what: string) => {
   const parts = (text ?? '').split(',').map(Number);
   if (parts.length !== count || parts.some((n) => !Number.isFinite(n))) {
@@ -85,9 +106,10 @@ const rows = (include: (file: string) => boolean, relations: string[]): Row[] =>
       return { id: a.id, holder: a.subject, shape: a.shape!, s0, e0: e1, box: boundingBox(asMulti(shape.geometry)), unit, home: code === undefined || code === owner };
     })
     .filter((r) => overlapsBox(r.box, region));
-const linked = new Set(crosswalkLinks(ds).map((l) => l.polity));
-const polityRows = rows(isSecondOpinion, ['controls']).filter((r) => !linked.has(r.holder));
-const legalRows = rows(isDejure, ['sovereign', 'occupies']);
+// Polities this crosswalk already links are left out.
+const linked = new Set(crosswalkLinks({ ...ds, crosswalks: ds.crosswalks.filter(({ file }) => file.startsWith(`${folder}/`)) }).map((l) => l.polity));
+const polityRows = (map === 'cliopatria' ? rows(isSecondOpinion, ['controls']) : rows(onDefaultMap, ['administers', 'controls'])).filter((r) => !linked.has(r.holder));
+const legalRows = other === 'cshapes' ? rows(isDejure, ['sovereign', 'occupies']) : rows(isSecondOpinion, ['controls']);
 
 const frame: MultiPolygon = [[[[region[0], region[1]], [region[2], region[1]], [region[2], region[3]], [region[0], region[3]], [region[0], region[1]]]]];
 const inRegion = new Map<string, MultiPolygon>();
@@ -140,14 +162,16 @@ const percent = (share: number) => `${Math.round(share * 100)}%`;
 const lines: string[] = [
   `# Crosswalk suggestions: ${region.join(', ')} (west, south, east, north), ${fromYear}–${toYear}`,
   '',
+  `${MAP_NAME}'s polities, linked to ${OTHER_NAME}'s ${other === 'cshapes' ? 'units' : 'polities'}.`,
+  '',
   'Written by `npm run suggest-crosswalk`. **Suggestions only:** each link needs a maintainer\'s review',
-  'before it goes into `data/imports/cshapes-2-0/polity-crosswalk.yaml` (Phase 5 decision 6). The share is',
-  'on 1 July of each year sampled, inside the region: "Held" is how much of the CShapes unit(s) the Cliopatria',
+  `before it goes into \`${folder}/polity-crosswalk.yaml\` (Phase 5 decision 6). The share is`,
+  `on 1 July of each year sampled, inside the region: "Held" is how much of the ${OTHER_NAME} unit(s) the ${MAP_NAME}`,
   'polity held, and "Share" how much of the polity lay inside them.',
   '',
   `## Suggested links (${suggestions.length})`,
   '',
-  '| CShapes holder | Cliopatria polity | Kind | Units | Held | Share | Years |',
+  `| ${OTHER_NAME} holder | ${MAP_NAME} polity | Kind | Units | Held | Share | Years |`,
   '|---|---|---|---|---|---|---|',
   ...suggestions.map(
     (s) =>
@@ -169,13 +193,17 @@ const lines: string[] = [
   '**Holding most of another state\'s unit:** possibly an occupation or annexation, or a year of transition',
   '(Cliopatria\'s rows are yearly).',
   '',
+  ...(other === 'cliopatria' ? ['(With Cliopatria\'s polities, each is its own unit, so this list stays empty.)', ''] : []),
+  '',
   ...inside
     .filter((i) => i.why === 'beyond')
     .map((i) => `- ${names.get(i.polity) ?? i.polity} (\`${i.polity}\`): held ${percent(i.held)} of ${names.get(i.unit) ?? i.unit} (\`${i.unit}\`, held by \`${i.holder}\`), ${percent(i.share)} of its own territory`),
   '',
   `## No unit held mostly (${unmatched.length})`,
   '',
-  'These would show as contested wherever they overlap a CShapes unit, once the region is reviewed.',
+  other === 'cshapes'
+    ? 'These would show as contested wherever they overlap a CShapes unit, once the region is reviewed.'
+    : 'These would show as "sources differ" wherever they overlap a Cliopatria polity, once the region is reviewed.',
   '',
   ...unmatched.map((u) => `- ${names.get(u.polity) ?? u.polity} (\`${u.polity}\`): held at most ${percent(u.best)} of any unit`),
   '',
@@ -190,7 +218,7 @@ const lines: string[] = [
       .flatMap((s) => [
         `    - polity: ${s.polity}`,
         `      kind: ${s.kind}`,
-        `      why: ${JSON.stringify(`Cliopatria's "${names.get(s.polity) ?? s.polity}" held ${percent(s.held)} of CShapes' ${s.units.map((u) => `"${names.get(u) ?? u}"`).join(', ')} (${s.kind === 'same-state' ? 'its own unit' : `a dependency of "${names.get(holder) ?? holder}"`}), and ${percent(s.share)} of it lay there (1 July, ${yearOf(s.first)}–${yearOf(s.last)}). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on <date>.`)}`,
+        `      why: ${JSON.stringify(`${MAP_NAME}'s "${names.get(s.polity) ?? s.polity}" held ${percent(s.held)} of ${OTHER_NAME}'s ${s.units.map((u) => `"${names.get(u) ?? u}"`).join(', ')} (${s.kind === 'same-state' ? 'its own unit' : `a dependency of "${names.get(holder) ?? holder}"`}), and ${percent(s.share)} of it lay there (1 July, ${yearOf(s.first)}–${yearOf(s.last)}). Suggested by npm run suggest-crosswalk; reviewed by the maintainers on <date>.`)}`,
       ]),
   ]),
   '```',
@@ -204,16 +232,18 @@ if (values.trial) {
   }));
   const trial = {
     ...ds,
-    crosswalks: [...ds.crosswalks, { file: 'data/imports/cshapes-2-0/polity-crosswalk.yaml', value: entries }],
+    crosswalks: [...ds.crosswalks, { file: `${folder}/polity-crosswalk.yaml`, value: entries }],
     crosswalkScopes: [
       ...(ds.crosswalkScopes ?? []),
       {
-        file: 'data/imports/cshapes-2-0/crosswalk-reviewed.yaml',
-        value: [{ area: { west: region[0], south: region[1], east: region[2], north: region[3] }, from: String(fromYear), until: String(toYear + 1), reviewed: '2000-01-01' }],
+        file: `${folder}/crosswalk-reviewed.yaml`,
+        value: [{ area: { west: region[0], south: region[1], east: region[2], north: region[3] }, from: String(fromYear), until: String(toYear + 1), reviewed: '2000-01-01', map }],
       },
     ],
   };
-  const inside = buildContested(trial).filter((a) => overlapsBox(boundingBox(a.geometry), region) && a.e0 > civilToJdn(fromYear, 1, 1) && a.s0 < civilToJdn(toYear + 1, 1, 1));
+  const inside = (other === 'cshapes' ? buildContested(trial) : buildDiffer(trial)).filter(
+    (a) => a.factoSource === map && overlapsBox(boundingBox(a.geometry), region) && a.e0 > civilToJdn(fromYear, 1, 1) && a.s0 < civilToJdn(toYear + 1, 1, 1),
+  );
   const pairs = new Map<string, { km2: number; first: number; last: number; maybe: boolean }>();
   for (const a of inside) {
     const key = `${a.facto}|${a.jure}`;
@@ -221,12 +251,23 @@ if (values.trial) {
     pairs.set(key, { km2: Math.max(p.km2, a.km2), first: Math.min(p.first, a.s0), last: Math.max(p.last, a.e0), maybe: p.maybe && !!a.maybe });
   }
   lines.push(
-    `## Trial: contested areas if every suggestion were accepted (${pairs.size} pairs)`,
-    '',
-    'Administered per Cliopatria, legally recognized as another state\'s per CShapes, at least 10,000 km² and',
-    '10 km wide. The largest area of each pair; "possibly" where only uncertain (year-only) dates make it so.',
-    '',
-    '| Administered by (Cliopatria) | Legally (CShapes) | Largest area | Years |',
+    ...(other === 'cshapes'
+      ? [
+          `## Trial: contested areas if every suggestion were accepted (${pairs.size} pairs)`,
+          '',
+          `Administered per ${MAP_NAME}, legally recognized as another state's per CShapes, at least 10,000 km²${map === 'cliopatria' ? ' and\n10 km wide' : ''}.`,
+          'The largest area of each pair; "possibly" where only uncertain (month- or year-only) dates make it so.',
+          '',
+          `| Administered by (${MAP_NAME}) | Legally (CShapes) | Largest area | Years |`,
+        ]
+      : [
+          `## Trial: "sources differ" if every suggestion were accepted (${pairs.size} pairs)`,
+          '',
+          'Held per OpenHistoricalMap, by another polity per Cliopatria, at least 1,000 km² and 10 km wide.',
+          'The largest area of each pair; "possibly" where only uncertain (month- or year-only) dates make it so.',
+          '',
+          '| OpenHistoricalMap | Cliopatria | Largest area | Years |',
+        ]),
     '|---|---|---|---|',
     ...[...pairs]
       .sort((a, b) => b[1].km2 - a[1].km2)

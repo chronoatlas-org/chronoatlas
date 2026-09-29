@@ -24,6 +24,11 @@
       "from": { "$ref": "common.schema.json#/$defs/edtf", "description": "First day reviewed." },
       "until": { "$ref": "common.schema.json#/$defs/edtf", "description": "First day no longer reviewed." },
       "reviewed": { "$ref": "common.schema.json#/$defs/edtf", "description": "When the review was done." },
+      "map": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$",
+        "description": "The source ID of the administered borders the links were reviewed against (openhistoricalmap, or cliopatria where it's the map). The scope counts only for that source's records; without it, for every source's. A crosswalk reviewed against one map says nothing about another's polities."
+      },
       "notes": { "type": "string", "description": "What was reviewed, and where the review is recorded." }
     }
   }

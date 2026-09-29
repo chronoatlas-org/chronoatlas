@@ -192,19 +192,23 @@ export interface ReviewedScope {
   box: Box;
   d0: number;
   d1: number;
+  /** Only for the administered records of this source (the map it was reviewed against); absent: all. */
+  map?: string;
 }
 
 /**
  * Keeps only the parts of contested areas inside the places and years where the crosswalk has
  * been reviewed (Phase 5 decision 6): elsewhere, a difference may only mean that no one has said
  * yet which units are the same state. Each area is cut to each scope's box and days; the pieces
- * keep their area's fields, with the area and ID of the piece.
+ * keep their area's fields, with the area and ID of the piece. A scope with a `map` counts only for
+ * areas whose administered side comes from that source.
  */
 export function withinScopes(areas: readonly ContestedArea[], scopes: readonly ReviewedScope[]): ContestedArea[] {
   const kept: ContestedArea[] = [];
   for (const area of areas) {
     const [w, s, e, n] = boundingBox(area.geometry);
     scopes.forEach((scope, i) => {
+      if (scope.map !== undefined && scope.map !== area.factoSource) return;
       const s0 = Math.max(area.s0, scope.d0);
       const e0 = Math.min(area.e0, scope.d1);
       if (s0 >= e0) return;

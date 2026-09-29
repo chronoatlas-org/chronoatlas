@@ -3,10 +3,16 @@
 # (Phase 5 decision 6); elsewhere, a difference may only mean that nobody has said yet which
 # units are the same state. Add a scope only after reviewing the crosswalk for that area and
 # those years, in a pull request of its own. Format: schemas/crosswalk-reviewed.schema.json.
+#
+# `map` names the administered borders a scope was reviewed against: a review of the links to
+# Cliopatria's polities says nothing about OpenHistoricalMap's (added 2026-09-29, before
+# OpenHistoricalMap's Europe import, so that Europe reads "Not yet checked" rather than showing
+# false disputes until its links are reviewed).
 - area: { south: 10, west: 73, north: 55, east: 150 }
   from: "1900"
   until: "1951"
   reviewed: 2026-09-27
+  map: openhistoricalmap
   notes: >-
     The East Asia showcase: the crosswalk was written and reviewed for the CShapes units imported
     for this area and these years in Phase 2 (contested areas, step 9), and says on what evidence
@@ -15,6 +21,7 @@
   from: "1914"
   until: "1945"
   reviewed: 2026-09-29
+  map: cliopatria
   notes: >-
     Europe, the North African coast, and the Levant, 1914–1944, where Cliopatria is the map:
     reviewed with npm run suggest-crosswalk (docs/crosswalk-review/europe-1914-1950.md). The

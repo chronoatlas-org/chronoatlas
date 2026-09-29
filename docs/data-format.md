@@ -121,13 +121,17 @@ everything derived from it in its own folder, `data/imports/<name>/`:
 - **Where the crosswalk has been reviewed**, `data/imports/<name>/crosswalk-reviewed.yaml`, is
   hand-written too. Contested areas are computed only inside these places and years (Phase 5
   decision 6), so add a scope only after reviewing the crosswalk for it, in a pull request of its
-  own. Scopes shouldn't overlap:
+  own. Scopes shouldn't overlap. `map` says which administered borders the links were reviewed
+  against: a review of the links to one source's polities says nothing about another's. The
+  CShapes crosswalk's scopes limit contested areas; the Cliopatria crosswalk's limit "sources
+  differ":
 
 ```yaml
 - area: { south: 10, west: 20, north: 30, east: 40 }   # a box, in degrees
   from: "1901"                  # first day reviewed
   until: "1951"                 # first day no longer reviewed
   reviewed: 2026-01-01          # when the review was done
+  map: openhistoricalmap        # optional: only for this source's records (or cliopatria)
   notes: What was reviewed, and where the review is recorded.
 ```
 

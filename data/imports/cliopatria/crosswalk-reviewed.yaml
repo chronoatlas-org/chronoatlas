@@ -1,0 +1,18 @@
+# Hand-written: where and when the maintainers have reviewed polity-crosswalk.yaml, the links
+# between Cliopatria's polities and ours. "Sources differ" is shown only inside these scopes;
+# elsewhere, a difference may only mean that nobody has said yet which polities are the same.
+# Add a scope only after reviewing the crosswalk for that area and those years, in a pull request
+# of its own. Format: schemas/crosswalk-reviewed.schema.json.
+#
+# `map` names the administered borders the links were reviewed against (ours, from
+# OpenHistoricalMap).
+- area: { south: 10, west: 73, north: 55, east: 150 }
+  from: "1900"
+  until: "1951"
+  reviewed: 2026-09-28
+  map: openhistoricalmap
+  notes: >-
+    The East Asia showcase: the crosswalk was written and reviewed for the polities of this area
+    and these years in Phase 3 (the compare view, step 7; decision 14 on the Kuomintang), and says
+    on what evidence for each link. Written down as a scope on 2026-09-29, before
+    OpenHistoricalMap's Europe import, whose polities no link names yet.

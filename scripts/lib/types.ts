@@ -134,6 +134,12 @@ export interface CrosswalkScope {
   from: string;
   until: string;
   reviewed: string;
+  /**
+   * The source of the administered borders the links were reviewed against (openhistoricalmap, or
+   * cliopatria where it's the map): the scope counts only for that source's records. Absent means
+   * every source's.
+   */
+  map?: string;
   notes?: string;
 }
 

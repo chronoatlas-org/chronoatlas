@@ -283,8 +283,16 @@ with an effort setting for each step. The ones that affect everyday work:
   accepted without a maintainer's review.
   - The reviewed places and years are listed in a hand-written `crosswalk-reviewed.yaml` beside
     the crosswalk (schema `crosswalk-reviewed.schema.json`); `buildContested` cuts contested
-    areas to them with `withinScopes` (`scripts/lib/contested.ts`). CShapes' lists East Asia
-    1900–1950 only. A hand-made test dataset without `crosswalkScopes` isn't limited.
+    areas to them with `withinScopes` (`scripts/lib/contested.ts`). A hand-made test dataset
+    without `crosswalkScopes` isn't limited.
+  - **A scope's `map`** (2026-09-29, before OpenHistoricalMap's Europe import) names the
+    administered borders its links were reviewed against: CShapes' East Asia scope is
+    `openhistoricalmap`, its Europe scope `cliopatria`. It counts only for that source's records
+    (contested areas, and the panel's "Not yet checked"), so a new OpenHistoricalMap region reads
+    "Not yet checked" until its own links are reviewed, rather than showing false disputes.
+  - **"Sources differ" is limited the same way,** by `data/imports/cliopatria/crosswalk-reviewed.yaml`
+    (East Asia 1900–1950, against OpenHistoricalMap): elsewhere a polity would "differ" from its
+    unlinked Cliopatria twin.
   - **Where Cliopatria is the map** (Phase 5 step 8), `buildContested` compares its baseline
     pieces with CShapes too, with the 10 km width rule of "sources differ", comparing only
     records that touch a reviewed scope. So a crosswalk may match units to Cliopatria's polities
@@ -296,7 +304,9 @@ with an effort setting for each step. The ones that affect everyday work:
     (`scripts/lib/suggest.ts`, tested). It suggests a link only where a Cliopatria polity held
     most of one of its main holder's units; breakaway states, rival governments, occupation zones,
     and occupiers of other states' units go under "Look closer", never suggested. `--trial` lists
-    the contested areas if every suggestion were accepted. Reports and how to review them are in
+    the contested areas if every suggestion were accepted. `--map=openhistoricalmap` suggests links
+    for our own polities instead of Cliopatria's, and with `--with=cliopatria` links to
+    Cliopatria's polities (for "sources differ"). Reports and how to review them are in
     `docs/crosswalk-review/`. **Europe** (25°W–45°E, 34–72°N) is reviewed for 1914–1944
     (2026-09-29: the 75 suggested links, plus Vichy France and the Russian Republic); 1945–1950
     waits for Cliopatria's postwar gaps. Areas cut by a scope's edge below 10,000 km² are dropped.
@@ -385,7 +395,11 @@ some environments, so the "Measure OpenHistoricalMap's coverage" workflow runs i
 - **`end` is exclusive:** it's the first day a statement no longer applied, or `ongoing`, or
   `unknown`. Convert sources that give the *last* day. CShapes' `gwedate` is inclusive, so add
   one day.
-- **OpenHistoricalMap import:** admin_level=2 boundaries become `administers` assertions. How
+- **OpenHistoricalMap import:** admin_level=2 boundaries become `administers` assertions, from
+  the areas in its `CONFIG.areas` (East Asia and, since 2026-09-29, Europe 25°W–45°E, 34–72°N,
+  both 1900–1950), recorded in the manifest as `settings.areas`; the build reads either that or
+  an older single `settings.bbox` (`importSettings`). A relation reaching two areas is kept once,
+  trimmed to both. How
   contributors trace a border in OHM so this import reads it is in `docs/tracing-guide.md`; keep
   it in step with `scripts/import-ohm.ts`. The query filters on plain `start_date`, so a relation
   with only `start_date:edtf` is never downloaded. Every

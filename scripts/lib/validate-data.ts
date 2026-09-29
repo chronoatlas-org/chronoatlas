@@ -256,6 +256,7 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
       if (start && stop && start.earliest >= stop.earliest) report(file, `${label} ends before it starts`);
       const a = scope.area;
       if (a && (a.south >= a.north || a.west >= a.east)) report(file, `${label}: its area is empty (south must be below north, and west of east)`);
+      if (scope.map !== undefined && !sources.has(scope.map)) report(file, `${label}: map "${scope.map}" is not a known source`);
     }
   }
 

@@ -1,14 +1,15 @@
-// Imports country-level boundaries from OpenHistoricalMap (OHM) for the East Asia showcase.
+// Imports country-level boundaries from OpenHistoricalMap (OHM) for the areas in CONFIG (East
+// Asia since Phase 1, and Europe since 2026-09-29).
 //
 // Run with:  npm run import:ohm              (downloads fresh data from OHM)
 //            npm run import:ohm -- --offline  (re-processes the last download in raw/)
 //
 // What it does, in order:
-//   1. Asks OHM's Overpass API for admin_level=2 boundary relations in the import area that
-//      overlap 1900–1950, with every border line and point listed once.
+//   1. Asks OHM's Overpass API for admin_level=2 boundary relations in each import area that
+//      overlap its years, with every border line and point listed once.
 //   2. Simplifies each border line once (so neighbours stay exactly aligned), then assembles each
 //      relation's lines into polygons.
-//   3. Trims the polygons to the import area and rounds coordinates.
+//   3. Trims the polygons to the import areas they belong to and rounds coordinates.
 //   4. Groups relations into polities (by Wikidata ID, otherwise English name) and writes:
 //        data/imports/openhistoricalmap/shapes/*.geojson   one shape per OHM relation
 //        data/imports/openhistoricalmap/assertions.yaml    who administered which shape, when
@@ -34,7 +35,7 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import polygonClipping from 'polygon-clipping';
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
-import { EdtfError, parseEdtfDate } from '../src/dates/index.ts';
+import { civilToJdn, EdtfError, parseEdtfDate } from '../src/dates/index.ts';
 import { DATA_DIR } from './lib/data.ts';
 import {
   assembleRings,
@@ -47,11 +48,18 @@ import type { MultiPolygon, Position } from './lib/geometry.ts';
 import type { Assertion, Polity, PolityName } from './lib/types.ts';
 
 const CONFIG = {
-  /** Import area: south, west, north, east (degrees). */
-  bbox: { south: 10, west: 73, north: 55, east: 150 },
-  /** Keep relations that overlap these years. */
-  fromYear: 1900,
-  toYear: 1950,
+  /**
+   * Import areas, each a box (south, west, north, east, in degrees) and the years whose relations
+   * it keeps. The map shows OpenHistoricalMap only inside these, during their years, where the
+   * import is taken as complete; elsewhere Cliopatria is the baseline (Phase 5). Boxes shouldn't
+   * overlap. A relation that crosses from one area into another is kept in both.
+   */
+  areas: [
+    { name: 'East Asia', bbox: { south: 10, west: 73, north: 55, east: 150 }, fromYear: 1900, toYear: 1950 },
+    // Added 2026-09-29, after Phase 5 (decision 15): the same box as the reviewed Europe scope in
+    // data/imports/cshapes-2-0/crosswalk-reviewed.yaml, and East Asia's years.
+    { name: 'Europe', bbox: { south: 34, west: -25, north: 72, east: 45 }, fromYear: 1900, toYear: 1950 },
+  ],
   adminLevel: '2',
   /** Douglas–Peucker tolerance in degrees (0.005° is about 500 m). */
   simplifyTolerance: 0.005,
@@ -64,9 +72,13 @@ const SOURCE_ID = 'openhistoricalmap';
 const OUT = join(DATA_DIR, 'imports', 'openhistoricalmap');
 const RAW_FILE = join(OUT, 'raw', 'overpass.json');
 
-const { south, west, north, east } = CONFIG.bbox;
+/** One area's relations: in its box, overlapping its years. */
+const areaQuery = ({ bbox: { south, west, north, east }, fromYear, toYear }: (typeof CONFIG.areas)[number]) =>
+  `  relation["boundary"="administrative"]["admin_level"="${CONFIG.adminLevel}"](${south},${west},${north},${east})(if: t["start_date"] < "${toYear + 1}" && (!is_tag("end_date") || t["end_date"] > "${fromYear}"));`;
 const QUERY = `[out:json][timeout:900];
-relation["boundary"="administrative"]["admin_level"="${CONFIG.adminLevel}"](${south},${west},${north},${east})(if: t["start_date"] < "${CONFIG.toYear + 1}" && (!is_tag("end_date") || t["end_date"] > "${CONFIG.fromYear}"));
+(
+${CONFIG.areas.map(areaQuery).join('\n')}
+);
 out meta;
 way(r);
 out skel qt;
@@ -153,7 +165,27 @@ async function main(): Promise<void> {
     return line;
   };
 
-  const box: MultiPolygon = [[[[west, south], [east, south], [east, north], [west, north], [west, south]]]];
+  const areaDays = CONFIG.areas.map(({ bbox: { south, west, north, east }, fromYear, toYear }) => ({
+    frame: [[[west, south], [east, south], [east, north], [west, north], [west, south]]] as MultiPolygon[number],
+    box: [west, south, east, north],
+    d0: civilToJdn(fromYear, 1, 1),
+    d1: civilToJdn(toYear + 1, 1, 1),
+  }));
+  /**
+   * What a relation is trimmed to: the areas whose box it reaches and whose years it overlaps (or,
+   * if its dates match none, which Overpass's rougher text comparison can let through, every area
+   * its box reaches, as when there was one area).
+   */
+  const frameFor = (rings: Position[][], start: string, end: string): MultiPolygon => {
+    const xs = rings.flat().map(([x]) => x);
+    const ys = rings.flat().map(([, y]) => y);
+    const [w, s, e, n] = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+    const reached = areaDays.filter(({ box: [bw, bs, be, bn] }) => w < be && e > bw && s < bn && n > bs);
+    const s0 = parseEdtfDate(start).earliest;
+    const e1 = end === 'ongoing' ? Infinity : parseEdtfDate(end).latest + 1;
+    const inYears = reached.filter(({ d0, d1 }) => s0 < d1 && e1 > d0);
+    return (inYears.length > 0 ? inYears : reached).map(({ frame }) => frame);
+  };
   const skipped: { relation: number; name: string; reason: string }[] = [];
   const kept: { relation: OsmRelation; geometry: MultiPolygon; start: string; end: string; key: string }[] = [];
 
@@ -205,14 +237,19 @@ async function main(): Promise<void> {
     }
     let geometry: MultiPolygon;
     try {
-      const clipped = polygonClipping.intersection(buildMultiPolygon(outers, inners) as any, box as any);
+      const frames = frameFor(outers, start, end);
+      if (frames.length === 0) {
+        skip('outside every import area');
+        continue;
+      }
+      const clipped = polygonClipping.intersection(buildMultiPolygon(outers, inners) as any, frames as any);
       geometry = cleanMultiPolygon(clipped as MultiPolygon, CONFIG.coordinateDecimals);
     } catch (error) {
       skip(`geometry could not be clipped: ${(error as Error).message}`);
       continue;
     }
     if (geometry.length === 0) {
-      skip('nothing left inside the import area after trimming and simplifying');
+      skip('nothing left inside the import areas after trimming and simplifying');
       continue;
     }
     const key = tags.wikidata ? `wikidata:${tags.wikidata}` : `name:${tags['name:en'] ?? tags.name ?? relation.id}`;
@@ -339,7 +376,7 @@ async function main(): Promise<void> {
       polities:
         'Relations are grouped into one polity by their Wikidata ID, or by English name when there is none. Polity IDs are permanent and recorded in polity-ids.json.',
       names: 'The name and name:<language> tags of each relation are copied, with the dates of the relations that carry them. Tagged "name" without a language is recorded as lang "und" (the local name).',
-      geometry: `Each OHM way is simplified once (Douglas–Peucker, ${CONFIG.simplifyTolerance}°), so shared borders stay aligned; rings are then assembled, trimmed to the import area, and rounded to ${CONFIG.coordinateDecimals} decimal places. Edge precision is "unknown" because OHM doesn't record it.`,
+      geometry: `Each OHM way is simplified once (Douglas–Peucker, ${CONFIG.simplifyTolerance}°), so shared borders stay aligned; rings are then assembled, trimmed to the import areas whose box they reach and whose years they overlap, and rounded to ${CONFIG.coordinateDecimals} decimal places. Edge precision is "unknown" because OHM doesn't record it.`,
       coverage:
         'No coverage is asserted: OHM does not claim to be complete, so land with no imported boundary is shown as "no data", never as "no state".',
       bce: 'This import contains no BCE dates. OHM\'s convention for negative years has not been verified yet.',

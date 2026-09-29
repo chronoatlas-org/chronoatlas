@@ -1,4 +1,6 @@
-import { readdirSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
 import {
@@ -7,6 +9,7 @@ import {
   buildChanges,
   buildContested,
   buildCoast,
+  buildDiffer,
   buildEdges,
   buildEventFiles,
   buildEvents,
@@ -305,7 +308,7 @@ describe('the default map', () => {
           { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [{ id: 'cut-1', relation: 'administers', subject: 'testland', shape: 'cut', start: '1901', end: '1905', sources: cite }] },
         ],
       },
-      { areas: new Map([['data/imports/openhistoricalmap', [-10, -10, 1, 10]]]) },
+      { areas: new Map([['data/imports/openhistoricalmap', [[-10, -10, 1, 10]]]]) },
     );
     expect(lines.features).toHaveLength(1);
     expect(lines.features[0].properties).toEqual({ id: 'cut-1', polity: 'testland', s0: civilToJdn(1901, 1, 1), e0: civilToJdn(1905, 1, 1), e1: civilToJdn(1905, 12, 31) });
@@ -390,15 +393,36 @@ describe('the default map', () => {
 });
 
 describe('the edge of imported data', () => {
-  it('draws one edge for imports that share an area and years, only in those years', () => {
+  it('draws an edge for each of the default map\'s areas, only in its years', () => {
     // The real manifests (all the edge needs, so the worldwide shapes aren't loaded): only the
-    // default map's import, OpenHistoricalMap, gets an edge, at 10–55°N, 73–150°E, 1900–1950.
-    // Without land to check, the whole edge is drawn.
+    // default map's import, OpenHistoricalMap, gets edges, one for each of its areas (East Asia,
+    // and Europe once imported), in 1900–1950. Without land to check, the whole edge is drawn.
     const imports = readdirSync(new URL('../data/imports/', import.meta.url)).map((name) => `data/imports/${name}`);
     const manifestsOnly: Dataset = { sources: [], polities: [], assertions: [], events: [], figures: [], coverage: [], shapes: [], crosswalks: [], imports, problems: [] };
+    const settings = JSON.parse(readFileSync(new URL('../data/imports/openhistoricalmap/manifest.json', import.meta.url), 'utf8')).settings;
     const edges = buildEdges(manifestsOnly);
-    expect(edges.features).toHaveLength(1);
-    expect(edges.features[0].properties).toMatchObject({ s0: civilToJdn(1900, 1, 1), e0: civilToJdn(1951, 1, 1) });
+    expect(edges.features).toHaveLength(settings.areas?.length ?? 1);
+    for (const edge of edges.features) {
+      expect(edge.properties).toMatchObject({ folder: 'data/imports/openhistoricalmap', s0: civilToJdn(1900, 1, 1), e0: civilToJdn(1951, 1, 1) });
+    }
+  });
+
+  it('reads several areas from a manifest', () => {
+    // A made-up import folder with two Testland areas.
+    const root = mkdtempSync(join(tmpdir(), 'chronoatlas-areas-'));
+    mkdirSync(join(root, 'data/imports/openhistoricalmap'), { recursive: true });
+    const areas = [
+      { name: 'Testland', bbox: { south: 0, west: 0, north: 1, east: 1 }, fromYear: 1900, toYear: 1950 },
+      { name: 'Otherland', bbox: { south: 5, west: 5, north: 6, east: 6 }, fromYear: 1920, toYear: 1930 },
+    ];
+    writeFileSync(join(root, 'data/imports/openhistoricalmap/manifest.json'), JSON.stringify({ settings: { areas } }));
+    const ds: Dataset = { sources: [], polities: [], assertions: [], events: [], figures: [], coverage: [], shapes: [], crosswalks: [], imports: ['data/imports/openhistoricalmap'], problems: [], root };
+    const edges = buildEdges(ds);
+    expect(edges.features.map((f) => [f.properties?.s0, f.properties?.e0])).toEqual([
+      [civilToJdn(1900, 1, 1), civilToJdn(1951, 1, 1)],
+      [civilToJdn(1920, 1, 1), civilToJdn(1931, 1, 1)],
+    ]);
+    rmSync(root, { recursive: true, force: true });
   });
 });
 
@@ -515,6 +539,18 @@ describe('contested areas where Cliopatria is the map (Phase 5 step 8)', () => {
     expect(buildContested(ds([], false))).toEqual([]);
   });
 
+  it('counts a scope reviewed against another map as unreviewed, for contested areas and the panel', () => {
+    const other = ds([]);
+    Object.assign(other.crosswalkScopes![0].value[0], { map: 'openhistoricalmap' });
+    expect(buildContested(other)).toEqual([]);
+    const same = ds([]);
+    Object.assign(same.crosswalkScopes![0].value[0], { map: 'cliopatria' });
+    expect(buildContested(same).length).toBeGreaterThan(0);
+    const polity = (id: string) => ({ file: `data/imports/cliopatria/polities/${id}.yaml`, value: { id, names: [{ text: id, lang: 'en', sources: cite('test-source') }] } });
+    const files = buildPolityFiles({ ...other, polities: [polity('cliopatria-testland')] });
+    expect(files.find((f) => f.id === 'cliopatria-testland')!.records.map((r) => r.legal)).toEqual(['unchecked']);
+  });
+
   it('marks the records the map draws that no reviewed crosswalk covers, for the panel', () => {
     const polity = (id: string, file: string) => ({ file, value: { id, names: [{ text: id, lang: 'en', sources: cite('test-source') }] } });
     const withPolities = (d: Dataset): Dataset => ({
@@ -528,6 +564,33 @@ describe('contested areas where Cliopatria is the map (Phase 5 step 8)', () => {
     const part = ds([]);
     part.crosswalkScopes![0].value[0].area.east = 1;
     expect(legal(part)['cliopatria-testland']).toEqual(['partly']);
+  });
+});
+
+describe('sources differ, where the second opinion\'s crosswalk has been reviewed', () => {
+  // A made-up Testland square (about 49,000 km²), held by different polities in the two sources.
+  const cite = (source: string) => [{ source, locator: 'row' }];
+  const square = (id: string) => ({
+    file: id,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: [[[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]] } },
+  });
+  const ds = (scopes?: { map?: string }[]): Dataset => ({
+    sources: [], polities: [], events: [], figures: [], coverage: [], imports: [], problems: [], crosswalks: [],
+    shapes: [square('ohm-a'), square('clio-a')],
+    assertions: [
+      { file: 'data/imports/openhistoricalmap/assertions.yaml', value: [{ id: 'ohm-a', relation: 'administers', subject: 'testland', shape: 'ohm-a', start: '1920-01-01', end: '1930-01-01', sources: cite('openhistoricalmap') }] },
+      { file: 'data/imports/cliopatria/assertions.yaml', value: [{ id: 'clio-a', relation: 'controls', subject: 'cliopatria-testland', shape: 'clio-a', start: '1920-01-01', end: '1930-01-01', sources: cite('cliopatria') }] },
+    ],
+    ...(scopes
+      ? { crosswalkScopes: [{ file: 'data/imports/cliopatria/crosswalk-reviewed.yaml', value: scopes.map((s) => ({ area: { west: -1, south: -1, east: 5, north: 5 }, from: '1920', until: '1931', reviewed: '2026-09-29', ...s })) }] }
+      : {}),
+  });
+
+  it('shows a difference only inside a scope reviewed against the default map', () => {
+    expect(buildDiffer(ds())).toHaveLength(1); // made by hand without scopes: reviewed everywhere
+    expect(buildDiffer(ds([]))).toEqual([]);
+    expect(buildDiffer(ds([{ map: 'openhistoricalmap' }]))).toHaveLength(1);
+    expect(buildDiffer(ds([{ map: 'someone-else' }]))).toEqual([]);
   });
 });
 
@@ -579,7 +642,7 @@ describe('land areas', () => {
   };
   const land = new LandIndex([{ type: 'Polygon', coordinates: rect(0, 0, 1, 2) }, { type: 'Polygon', coordinates: rect(8, 0, 10, 2) }], [-10, -10, 20, 20]);
   const landSource = { source: 'land-test-source', locator: 'sheet 1' };
-  const areas = computeAreas(ds, land, new Map([['data/imports/openhistoricalmap', [-10, -10, 10, 10]]]), landSource);
+  const areas = computeAreas(ds, land, new Map([['data/imports/openhistoricalmap', [[-10, -10, 10, 10]]]]), landSource);
   const administered = areas.get('testland')!.filter((f) => f.relation === 'administers');
   const near = (a: number, b: number) => expect(Math.abs(a / b - 1)).toBeLessThan(0.005); // 3 significant figures
 
@@ -737,6 +800,17 @@ describe('splitAtCoverage', () => {
 
   it('keeps whole shapes only during the coverage, for the default map', () => {
     expect(records(splitAtCoverage(ds, include, [scope], 'during'))).toEqual([['1900-01-01', '1951-01-01', 'sq']]);
+  });
+
+  it('keeps a shape once when it reaches two areas, and only in the years of the areas it reaches', () => {
+    const next = { box: [-3, -1, 2, 5] as [number, number, number, number], d0: civilToJdn(1900, 1, 1), d1: civilToJdn(1951, 1, 1) };
+    expect(records(splitAtCoverage(ds, include, [scope, next], 'during'))).toEqual([['1900-01-01', '1951-01-01', 'sq']]);
+    // An area the square doesn't reach, with other years, doesn't add them.
+    const far = { box: [20, 20, 30, 30] as [number, number, number, number], d0: civilToJdn(1951, 1, 1), d1: civilToJdn(1960, 1, 1) };
+    expect(records(splitAtCoverage(ds, include, [scope, far], 'during'))).toEqual([['1900-01-01', '1951-01-01', 'sq']]);
+    // Areas it reaches with years that follow on are one stretch.
+    const later = { ...next, d0: civilToJdn(1951, 1, 1), d1: civilToJdn(1955, 1, 1) };
+    expect(records(splitAtCoverage(ds, include, [scope, later], 'during'))).toEqual([['1900-01-01', '1955-01-01', 'sq']]);
   });
 
   it('leaves dates as written when they fall inside the coverage', () => {

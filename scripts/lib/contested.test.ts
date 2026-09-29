@@ -123,4 +123,10 @@ describe('withinScopes', () => {
     expect(withinScopes([area], [{ box: [-1, -1, 5, 5], d0: 300, d1: 400 }])).toEqual([]);
     expect(withinScopes([area], [])).toEqual([]);
   });
+
+  it('counts a scope reviewed against one map only for that source’s areas', () => {
+    const scope = { box: [-1, -1, 5, 5] as [number, number, number, number], d0: 0, d1: 1000 };
+    expect(withinScopes([area], [{ ...scope, map: 'test-source' }])).toEqual([area]);
+    expect(withinScopes([area], [{ ...scope, map: 'other-source' }])).toEqual([]);
+  });
 });

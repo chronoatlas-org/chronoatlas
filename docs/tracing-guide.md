@@ -5,7 +5,7 @@ This guide explains how to trace a country's border from a dated, public-domain 
 and it appears on chronoatlas. The tracing happens in OHM, not in this repository. We then
 import OHM's data (see [why borders are drawn in OHM](architecture.md#where-borders-are-drawn)).
 
-It's written for our current import: country borders in East Asia, 1900–1950. Where OHM's own
+It's written for our current import: country borders in East Asia and Europe, 1900–1950. Where OHM's own
 documentation covers a step, this guide links to it. OHM's pages are the authority on OHM; this
 guide only adds what our importer needs.
 
@@ -217,7 +217,8 @@ This is what `scripts/import-ohm.ts` actually does, with the settings recorded i
 `data/imports/openhistoricalmap/manifest.json`:
 
 - **Which relations:** relations tagged `boundary=administrative` and `admin_level=2` that touch
-  the area **10–55°N, 73–150°E**, with a `start_date` before 1951 and either no `end_date` or one
+  one of the import's areas, **10–55°N, 73–150°E** (East Asia) or **34–72°N, 25°W–45°E**
+  (Europe, added 2026-09-29), with a `start_date` before 1951 and either no `end_date` or one
   after 1900.
 - **Dates:** `start_date:edtf` and `end_date:edtf` when present, otherwise `start_date` and
   `end_date`. No `end_date` means "ongoing". A date our date library can't read (such as a season)
@@ -228,7 +229,7 @@ This is what `scripts/import-ohm.ts` actually does, with the settings recorded i
   ([OHM website copyright text](https://github.com/OpenHistoricalMap/ohm-website/blob/staging/config/locales/en.yml)).
 - **Geometry:** the relation's `outer`, `inner`, and unlabelled ways. They must join into closed
   rings, or the relation is skipped. Lines are simplified to about 500 m, trimmed to the import
-  area, and rounded to about 11 m.
+  areas they reach, and rounded to about 11 m.
 - **Names:** `name` (recorded as the local name) and every `name:<language>` tag.
 - **Grouping:** by `wikidata`, otherwise `name:en`, otherwise `name` (see above). Polity IDs, once
   given, are permanent (`polity-ids.json`).

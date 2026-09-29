@@ -253,7 +253,7 @@ export function onDefaultMap(file: string): boolean {
  * lines leave out its edges) and, when available, the land (the lines leave out stretches at sea).
  */
 export interface OutlineContext {
-  areas: ReadonlyMap<string, Box>;
+  areas: ReadonlyMap<string, readonly Box[]>;
   /**
    * More boxes whose edges are cuts, not borders, for every line in the layer: the edge of
    * OpenHistoricalMap's area, where Cliopatria's baseline and second opinion are cut (Phase 5).
@@ -497,8 +497,9 @@ function buildBorderLayer(
       const key = `${a.shape} ${folder ?? ''}`;
       let coordinates = outlineOf.get(key);
       if (!coordinates) {
-        const area = folder ? outlines?.areas.get(folder) : undefined;
-        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts, outlines?.inlandKm);
+        // The edges of the import's areas are cuts, not borders, like the extra `cuts`.
+        const areas = (folder ? outlines?.areas.get(folder) : undefined) ?? [];
+        coordinates = borderLines(asMultiPolygon(shape.geometry), undefined, outlines?.land, [...areas, ...(outlines?.cuts ?? [])], outlines?.inlandKm);
         outlineOf.set(key, coordinates);
       }
       if (coordinates.length === 0) return [];
@@ -563,7 +564,8 @@ function timedShapes(ds: Dataset, include: (file: string) => boolean, relations:
 export function defaultCoverage(ds: Dataset): ReviewedScope[] {
   return [...importSettings(ds)]
     .filter(([folder]) => onDefaultMap(`${folder}/`))
-    .map(([, { box, fromYear, toYear }]) => ({
+    .flatMap(([, areas]) => areas)
+    .map(({ box, fromYear, toYear }) => ({
       box,
       d0: fromYear !== undefined ? civilToJdn(fromYear, 1, 1) : -FAR_FUTURE,
       d1: toYear !== undefined ? civilToJdn(toYear + 1, 1, 1) : FAR_FUTURE,
@@ -640,9 +642,23 @@ export function splitAtCoverage(ds: Dataset, include: (file: string) => boolean,
     if (!include(file) || !Array.isArray(value)) return { file, value };
     const pieces = value.flatMap((a): Assertion[] => {
       if (!a.shape || !shapes.has(a.shape) || !TERRITORIAL_RELATIONS.includes(a.relation)) return mode === 'inside' ? [] : [a];
-      // Inside and during: a piece for each scope (they don't overlap). Outside: every scope is
-      // taken away in turn.
-      if (mode !== 'outside') return scopes.flatMap((scope) => splitOne(file, a, scope));
+      // Inside: a piece for each scope (they don't overlap). During: a piece for each stretch of
+      // days of the scopes its shape reaches (all of them, if it reaches none), merged where they
+      // overlap, so a shape crossing from one area into another isn't kept twice. Outside: every
+      // scope is taken away in turn.
+      if (mode === 'inside') return scopes.flatMap((scope) => splitOne(file, a, scope));
+      if (mode === 'during') {
+        const shape = shapes.get(a.shape)!;
+        const reached = scopes.filter(({ box }) => touches(shape, box));
+        const spans = (reached.length > 0 ? reached : scopes).map(({ d0, d1 }) => [d0, d1]).sort((x, y) => x[0] - y[0]);
+        const merged: number[][] = [];
+        for (const [d0, d1] of spans) {
+          const last = merged[merged.length - 1];
+          if (last && d0 <= last[1]) last[1] = Math.max(last[1], d1);
+          else merged.push([d0, d1]);
+        }
+        return merged.flatMap(([d0, d1]) => splitOne(file, a, { box: scopes[0].box, d0, d1 }));
+      }
       let parts: Assertion[] = [a];
       for (const scope of scopes) parts = parts.flatMap((p) => splitOne(file, p, scope));
       return parts;
@@ -708,21 +724,38 @@ function describeArea([w, s, e, n]: Box): string {
   return `${lat(s)}–${lat(n)}, ${lon(w)}–${lon(e)}`;
 }
 
-/** Each import folder's settings from its manifest: its area (settings.bbox) and years. */
-function importSettings(ds: Dataset): Map<string, { box: Box; fromYear?: number; toYear?: number }> {
-  const settings = new Map<string, { box: Box; fromYear?: number; toYear?: number }>();
+/** One area an import covers: a box, and the years it was imported for (open when not given). */
+interface ImportArea {
+  box: Box;
+  fromYear?: number;
+  toYear?: number;
+}
+
+/**
+ * Each import folder's areas, from its manifest's settings: `areas` (a list, each with a `bbox` and
+ * years; OpenHistoricalMap since it covers East Asia and Europe), or one `bbox` with `fromYear` and
+ * `toYear` (the other imports, and older manifests).
+ */
+function importSettings(ds: Dataset): Map<string, ImportArea[]> {
+  type Bbox = { south: number; west: number; north: number; east: number };
+  const boxOf = (b: Bbox): Box => [b.west, b.south, b.east, b.north];
+  const settings = new Map<string, ImportArea[]>();
   for (const folder of ds.imports) {
     const file = join(ds.root ?? ROOT, folder, 'manifest.json');
     if (!existsSync(file)) continue;
     const s = JSON.parse(readFileSync(file, 'utf8')).settings;
-    if (s?.bbox) settings.set(folder, { box: [s.bbox.west, s.bbox.south, s.bbox.east, s.bbox.north], fromYear: s.fromYear, toYear: s.toYear });
+    if (Array.isArray(s?.areas)) {
+      settings.set(folder, s.areas.map((a: { bbox: Bbox; fromYear?: number; toYear?: number }) => ({ box: boxOf(a.bbox), fromYear: a.fromYear, toYear: a.toYear })));
+    } else if (s?.bbox) {
+      settings.set(folder, [{ box: boxOf(s.bbox), fromYear: s.fromYear, toYear: s.toYear }]);
+    }
   }
   return settings;
 }
 
-/** Each import folder's area, from the settings.bbox its manifest records. */
-function importAreas(ds: Dataset): Map<string, Box> {
-  return new Map([...importSettings(ds)].map(([folder, { box }]) => [folder, box]));
+/** Each import folder's areas, as boxes (see importSettings). */
+function importAreas(ds: Dataset): Map<string, Box[]> {
+  return new Map([...importSettings(ds)].map(([folder, areas]) => [folder, areas.map(({ box }) => box)]));
 }
 
 /**
@@ -730,7 +763,7 @@ function importAreas(ds: Dataset): Map<string, Box> {
  * are well inside it), or undefined when there are no areas or no land file.
  */
 export function loadLand(ds: Dataset): LandIndex | undefined {
-  const areas = [...importAreas(ds).values()];
+  const areas = [...importAreas(ds).values()].flat();
   if (areas.length === 0 || !existsSync(LAND_FILE)) return undefined;
   const extent: Box = [
     Math.min(...areas.map((a) => a[0])) - 1,
@@ -752,7 +785,8 @@ export function buildEdges(ds: Dataset, land?: LandDistance): GeoJSON.FeatureCol
   const features: GeoJSON.Feature[] = [];
   // Only the default map's imports: the others cover the whole world since Phase 5, and beyond the
   // default map's area the map continues with the baseline, not "no data".
-  for (const [folder, { box, fromYear, toYear }] of [...importSettings(ds)].filter(([f]) => onDefaultMap(`${f}/`))) {
+  const areas = [...importSettings(ds)].filter(([f]) => onDefaultMap(`${f}/`)).flatMap(([folder, list]) => list.map((area) => ({ folder, ...area })));
+  for (const { folder, box, fromYear, toYear } of areas) {
     const s0 = fromYear !== undefined ? parseEdtfDate(String(fromYear).padStart(4, '0')).earliest : -FAR_FUTURE;
     const e0 = toYear !== undefined ? parseEdtfDate(String(toYear + 1).padStart(4, '0')).earliest : FAR_FUTURE;
     const key = `${box.join(',')} ${s0} ${e0}`;
@@ -774,13 +808,13 @@ export function buildEdges(ds: Dataset, land?: LandDistance): GeoJSON.FeatureCol
 export function computeAreas(
   ds: Dataset,
   land: LandIndex,
-  areas: ReadonlyMap<string, Box>,
+  areas: ReadonlyMap<string, readonly Box[]>,
   landSource: Citation,
 ): Map<string, AreaFigure[]> {
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
   interface Item {
     a: Assertion & { shape: string };
-    area?: Box;
+    area?: readonly Box[];
     s0: number;
     e0: number;
   }
@@ -806,11 +840,13 @@ export function computeAreas(
     if (!m) {
       const geometries = ids.map((id) => shapes.get(id)!);
       const all = geometries.length === 1 ? geometries[0] : (polygonClipping.union(...(geometries as [never])) as MultiPolygon);
-      const cut = items.find((i) => i.area && touchesEdge(shapes.get(i.a.shape)!, i.area));
+      // The areas whose edge cut one of the shapes (one, or several for a shape crossing from one
+      // area into another).
+      const cutBy = [...new Set(items.flatMap((i) => (i.area ?? []).filter((box) => touchesEdge(shapes.get(i.a.shape)!, box)).map(describeArea)))];
       m = {
         landKm2: roughly(areaKm2(landPart(all, land))),
         totalKm2: roughly(areaKm2(all)),
-        ...(cut ? { partOf: describeArea(cut.area!) } : {}),
+        ...(cutBy.length > 0 ? { partOf: cutBy.join('; ') } : {}),
       };
       measured.set(ids.join(' '), m);
     }
@@ -875,15 +911,17 @@ export function buildContested(ds: Dataset): ContestedArea[] {
   // Only where the de jure source's crosswalk has been reviewed (Phase 5 decision 6). A dataset
   // made by hand (in tests) that doesn't say is taken as reviewed everywhere.
   const scopes = ds.crosswalkScopes ? reviewedScopes(ds, isDejure) : undefined;
-  const inScope = (t: TimedShape) =>
-    !scopes || scopes.some(({ box: [w, s, e, n], d0, d1 }) => t.s0 < d1 && t.e0 > d0 && t.box[0] < e && t.box[2] > w && t.box[1] < n && t.box[3] > s);
-  const dejure = timedShapes(ds, isDejure, ['sovereign', 'occupies']).filter(inScope);
+  // A scope reviewed against one map (its `map`) counts only for that source's records.
+  const inScope = (t: TimedShape, source?: string) =>
+    !scopes ||
+    scopes.some(({ box: [w, s, e, n], d0, d1, map }) => (source === undefined || map === undefined || map === source) && t.s0 < d1 && t.e0 > d0 && t.box[0] < e && t.box[2] > w && t.box[1] < n && t.box[3] > s);
+  const dejure = timedShapes(ds, isDejure, ['sovereign', 'occupies']).filter((t) => inScope(t));
   // What the map shows as administered: the default map where and when its imports hold data, and
   // Cliopatria (the baseline) elsewhere (Phase 5 step 8). Cliopatria's coarse lines wander a few
   // kilometres, so its thin strips don't count, as for "sources differ".
   const coverage = defaultCoverage(ds);
-  const defaultMap = timedShapes(splitAtCoverage(ds, onDefaultMap, coverage, 'during'), onDefaultMap, ['administers', 'controls', 'occupies']).filter(inScope);
-  const baseline = timedShapes(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, ['controls']).filter(inScope);
+  const defaultMap = timedShapes(splitAtCoverage(ds, onDefaultMap, coverage, 'during'), onDefaultMap, ['administers', 'controls', 'occupies']).filter((t) => inScope(t, t.source));
+  const baseline = timedShapes(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, ['controls']).filter((t) => inScope(t, t.source));
   const areas = [
     ...computeContested(defaultMap, dejure, byUnit),
     ...computeContested(baseline, dejure, byUnit, MIN_DISAGREEMENT_KM2, DIFFER_MIN_WIDTH_KM),
@@ -902,6 +940,7 @@ export function reviewedScopes(ds: Dataset, include: (file: string) => boolean):
       box: [scope.area.west, scope.area.south, scope.area.east, scope.area.north] as Box,
       d0: parseEdtfDate(scope.from).earliest,
       d1: parseEdtfDate(scope.until).earliest,
+      ...(scope.map ? { map: scope.map } : {}),
     }));
 }
 
@@ -931,7 +970,11 @@ export function buildDiffer(ds: Dataset): ContestedArea[] {
   );
   // Only where both are on the map: inside the default map's imports' area and years (Phase 5).
   const coverage = defaultCoverage(ds);
-  return coverage.length > 0 ? withinScopes(areas, coverage) : areas;
+  const onMap = coverage.length > 0 ? withinScopes(areas, coverage) : areas;
+  // And only where the second opinion's crosswalk has been reviewed (its crosswalk-reviewed.yaml),
+  // as for contested areas: elsewhere a polity would "differ" from its own unlinked twin. A dataset
+  // made by hand (in tests) that doesn't say is taken as reviewed everywhere.
+  return ds.crosswalkScopes ? withinScopes(onMap, reviewedScopes(ds, isSecondOpinion)) : onMap;
 }
 
 /** The contested areas as a layer: only what the map needs (who, and when). */
@@ -1168,7 +1211,8 @@ export function buildPolityFiles(
     const geometry = shapes.get(a.shape);
     if (!geometry) return undefined;
     const [w, s, e, n] = boundingBox(geometry);
-    const touching = scopes.filter(({ box, d0, d1 }) => d0 < until && d1 > from && box[0] < e && box[2] > w && box[1] < n && box[3] > s);
+    const source = a.sources[0]?.source;
+    const touching = scopes.filter(({ box, d0, d1, map }) => (map === undefined || map === source) && d0 < until && d1 > from && box[0] < e && box[2] > w && box[1] < n && box[3] > s);
     if (touching.length === 0) return 'unchecked';
     const whole = touching.some(({ box, d0, d1 }) => d0 <= from && d1 >= until && box[0] <= w && box[2] >= e && box[1] <= s && box[3] >= n);
     return whole ? undefined : 'partly';
@@ -1479,7 +1523,7 @@ function main(): void {
     eras.map((era) => writeTiles(set.dir, set.layer, forEra(set.collection, era), set.bounds, extraForEra(set.extraLayers, era))),
   );
   // The base map up close, over the imports' areas (all of them together). It doesn't change with time.
-  const areaList = [...importAreas(ds).values()];
+  const areaList = [...importAreas(ds).values()].flat();
   const coastBox: Box | undefined = areaList.length
     ? [Math.min(...areaList.map((a) => a[0])), Math.min(...areaList.map((a) => a[1])), Math.max(...areaList.map((a) => a[2])), Math.max(...areaList.map((a) => a[3]))]
     : undefined;
