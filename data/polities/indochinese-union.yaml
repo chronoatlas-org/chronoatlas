@@ -3,112 +3,112 @@ names:
   - text: Indochinesische Union
     lang: de
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Ινδοκινέζικη Ένωση
     lang: el
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Indochinese Union
     lang: en
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Unión Indochina
     lang: es
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Union indochinoise
     lang: fr
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: インドシナ連邦
     lang: ja
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: 인도차이나 연합
     lang: ko
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Indosina Francica
     lang: la
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Unie van Indochina
     lang: nl
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Indochiny Francuskie
     lang: pl
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Union Indochinoise
     lang: und
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: Liên bang Đông Dương
     lang: vi
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: 聯邦東洋
     lang: vi-Hani
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: 印度支那聯邦
     lang: zh
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: 印度支那联邦
     lang: zh-Hans
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509
   - text: 印度支那聯邦
     lang: zh-Hant
     start: "1893"
-    end: 1941-05-08
+    end: 1941-05-09
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2745674, 2920530, 2948946, 2948947
+        locator: name tags on relations 2745674, 2920530, 2948946, 2948947, 2961509

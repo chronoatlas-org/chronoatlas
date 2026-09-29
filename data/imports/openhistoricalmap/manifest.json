@@ -4,12 +4,12 @@
   "license": "CC0 1.0 (public domain dedication); see LICENSE.md",
   "endpoint": "https://overpass-api.openhistoricalmap.org/api/interpreter",
   "query": "[out:json][timeout:900];\nrelation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"](10,73,55,150)(if: t[\"start_date\"] < \"1951\" && (!is_tag(\"end_date\") || t[\"end_date\"] > \"1900\"));\nout meta;\nway(r);\nout skel qt;\nnode(w);\nout skel qt;",
-  "retrieved": "2026-09-27T09:01:11.178Z",
-  "data_as_of": "2026-09-27T08:47:42Z",
+  "retrieved": "2026-09-28T21:29:08.135Z",
+  "data_as_of": "2026-09-28T21:20:00Z",
   "raw_download": {
     "file": "raw/overpass.json (not committed)",
-    "bytes": 106279067,
-    "sha256": "cc600c6cfe45e8cd45c286681933b758e6c58566e0e1adbb6d0f0761b9d58d33"
+    "bytes": 106345386,
+    "sha256": "6403fa211f0c4a6ad733c18d545561833a7267692f4b562e3c8f39c59c624137"
   },
   "settings": {
     "bbox": {
@@ -25,8 +25,8 @@
     "coordinateDecimals": 4
   },
   "counts": {
-    "relations_downloaded": 162,
-    "imported": 162,
+    "relations_downloaded": 167,
+    "imported": 167,
     "skipped": 0,
     "polities": 62
   },
