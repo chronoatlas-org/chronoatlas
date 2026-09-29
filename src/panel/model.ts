@@ -709,27 +709,37 @@ export function describeTerritory(
     });
   }
 
+  // One line per other holder: records known only to the year overlap for a whole year (the old
+  // one may still apply, the new one may already), so the same disagreement can come from two
+  // pairs of records at once. Different areas become a range.
+  const perHolder = (entries: readonly ContestedEntry[]) => {
+    const groups = new Map<string, { entry: ContestedEntry; km2: number[] }>();
+    for (const c of entries.filter((c) => c.s0 <= day && day < c.e0)) {
+      const key = [c.side, c.other, c.relation, c.source, !!c.maybe].join('|');
+      const group = groups.get(key) ?? { entry: c, km2: [] };
+      group.km2.push(c.km2);
+      groups.set(key, group);
+    }
+    return [...groups.values()].map(({ entry, km2 }) => {
+      const [low, high] = [number(Math.min(...km2)), number(Math.max(...km2))];
+      return {
+        entry,
+        params: {
+          source: sources[entry.source]?.title ?? entry.source,
+          name: nameOf(entry.other),
+          holds: HOLDS_KEYS[entry.relation] ? t(HOLDS_KEYS[entry.relation]) : entry.relation,
+          km2: low === high ? low : t('figure.range', { low, high }),
+        },
+      };
+    });
+  };
   // Where the sources disagree over this territory today, attributed to the other side's source.
   const disputes = (file.contested ?? []).filter((c) => c.s0 <= day && day < c.e0);
-  const contested = disputes.map((c) =>
-    t(c.maybe ? 'panel.contestedMaybe' : c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', {
-      source: sources[c.source]?.title ?? c.source,
-      name: nameOf(c.other),
-      holds: HOLDS_KEYS[c.relation] ? t(HOLDS_KEYS[c.relation]) : c.relation,
-      km2: number(c.km2),
-    }),
+  const contested = perHolder(disputes).map(({ entry: c, params }) =>
+    t(c.maybe ? 'panel.contestedMaybe' : c.side === 'facto' ? 'panel.contestedFacto' : 'panel.contestedJure', params),
   );
   // Where the second opinion names someone else: a difference between sources, not a dispute.
-  const differ = (file.differ ?? [])
-    .filter((c) => c.s0 <= day && day < c.e0)
-    .map((c) =>
-      t(c.maybe ? 'panel.differMaybe' : 'panel.differ', {
-        source: sources[c.source]?.title ?? c.source,
-        name: nameOf(c.other),
-        holds: HOLDS_KEYS[c.relation] ? t(HOLDS_KEYS[c.relation]) : c.relation,
-        km2: number(c.km2),
-      }),
-    );
+  const differ = perHolder(file.differ ?? []).map(({ entry: c, params }) => t(c.maybe ? 'panel.differMaybe' : 'panel.differ', params));
 
   // Figures. A computed figure applies while its record does. For sourced figures, show the
   // estimate nearest to this date, with its own date, rather than invent an in-between value.

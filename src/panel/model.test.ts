@@ -410,6 +410,19 @@ describe('wikipediaLink', () => {
   });
 });
 
+describe('describeTerritory: one contested line per holder', () => {
+  // Two made-up yearly records overlapping for a year, each contested with the same unit.
+  const entry = (km2: number) => ({ side: 'facto' as const, other: 'otherland', relation: 'sovereign', source: 'test-source', s0: day(1902, 1, 1), e0: day(1903, 1, 1), maybe: true, km2 });
+
+  it('says it once, with a range where the areas differ', () => {
+    const lines = (a: number, b: number) => describeTerritory({ ...testland, contested: [entry(a), entry(b)] }, sources, day(1902, 6, 1), 'en').contested;
+    expect(lines(30_000, 30_000)).toHaveLength(1);
+    const [both] = lines(190_000, 390_000);
+    expect(lines(190_000, 390_000)).toHaveLength(1);
+    expect(both).toMatch(/about 190,000 to 390,000 km²/);
+  });
+});
+
 describe('describeTerritory: checked against legal borders', () => {
   const with_ = (legal: PolityRecord['legal'][]) => ({
     ...testland,
