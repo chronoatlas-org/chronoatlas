@@ -241,6 +241,20 @@ with an effort setting for each step. The ones that affect everyday work:
 - **Cliopatria is the baseline** outside OpenHistoricalMap's area and years: filled, on its own
   layer and tile set (never mixed with another license in one file), credited whenever shown,
   and described as approximate and yearly. Inside the area it stays the second opinion.
+  - **How (step 5):** `defaultCoverage` (each default-map import's box and years, from its
+    manifest) and `splitAtCoverage` (`scripts/build-data.ts`, tested) cut the records: Cliopatria
+    outside becomes `baseline-tiles` (`buildBaseline`, with names), inside stays `second-tiles`,
+    and OpenHistoricalMap is drawn only during its years (its import is complete only for them).
+    Pieces keep their record IDs; cut shapes get build-only IDs (`<shape>~out`, `~in`). The line
+    builder treats the coverage box's edges as cuts (`OutlineContext.cuts`). "Sources differ" is
+    cut to the coverage too, and `edges.json` has only the default map's imports.
+  - **The map:** `baseline-fill` (under `borders-fill`), `baseline-sea` (Natural Earth's sea over
+    it from zoom 4, decision 11), `baseline-line` (softer), `baseline-selected`,
+    `baseline-labels`; part of the administered view; clickable; "What each source says here"
+    reads it as Cliopatria. The legend entry shows only when `tiles.json` has `extra.baseline`.
+  - **Colors** (`assignColors`) pair polities whose shapes have corners in a shared half-degree
+    square at the same time (`shapeCells`), not whose bounding boxes overlap: worldwide, the boxes
+    of large empires overlap nearly everything, and neighbours ended up alike.
 - **Tiles are split into eras** (about 6 MB of shapes, fills and lines, each; decision 10),
   following the data, with a change index per era; empty tiles aren't written (MapLibre draws
   nothing for a missing tile, measured in step 2). Every tile set is split the same way.

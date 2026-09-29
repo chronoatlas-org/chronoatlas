@@ -72,6 +72,7 @@ const TIMED_SOURCES = [
   ['borders', 'tiles'],
   ['dejure', 'dejure-tiles'],
   ['second', 'second-tiles'],
+  ['baseline', 'baseline-tiles'],
   ['contested', 'contested-tiles'],
   ['differ', 'differ-tiles'],
 ] as const;
@@ -91,6 +92,8 @@ export interface HistoricalOptions {
    * so the legend explains only what the map can show.
    */
   onPrecision?: (kinds: string[]) => void;
+  /** Called once the borders are on the map, saying whether the baseline (Cliopatria) is among them. */
+  onBaseline?: (present: boolean) => void;
 }
 
 const DAY: ExpressionSpecification = ['global-state', 'day'];
@@ -295,7 +298,23 @@ export class HistoricalLayers {
     const show = (ids: string[], visible: boolean) => {
       for (const id of ids) if (this.map.getLayer(id)) this.map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
     };
-    show(['borders-fill', 'borders-land', 'borders-line', 'borders-line-approximate', 'borders-zone', 'borders-selected', 'borders-labels'], view === 'facto');
+    show(
+      [
+        'borders-fill',
+        'borders-land',
+        'borders-line',
+        'borders-line-approximate',
+        'borders-zone',
+        'borders-selected',
+        'borders-labels',
+        'baseline-fill',
+        'baseline-sea',
+        'baseline-line',
+        'baseline-selected',
+        'baseline-labels',
+      ],
+      view === 'facto',
+    );
     show(['dejure-fill', 'dejure-line', 'dejure-line-dependent', 'dejure-selected', 'dejure-labels'], view === 'jure');
     this.showDiffer();
   }
@@ -373,10 +392,12 @@ export class HistoricalLayers {
       { set: 'facto', dir: 'tiles', version: index.versions[era], layer: index.layer, bounds: index.bounds, sources: index.sources },
       ...(index.extra?.dejure?.versions ? [{ set: 'jure' as const, ...index.extra.dejure, version: index.extra.dejure.versions[era] }] : []),
       ...(index.extra?.second?.versions ? [{ set: 'second' as const, ...index.extra.second, version: index.extra.second.versions[era] }] : []),
+      // Cliopatria outside the default map's area: the same source as the second opinion.
+      ...(index.extra?.baseline?.versions ? [{ set: 'second' as const, ...index.extra.baseline, version: index.extra.baseline.versions[era] }] : []),
     ];
     const z = index.maxzoom;
     const { x, y, px, py } = tileAt(lng, lat, z);
-    return Promise.all(
+    const found = await Promise.all(
       layers.map(async ({ set, dir, version, layer, bounds, sources }) => {
         const [w, s, e, n] = bounds;
         const inside = lng >= w && lng <= e && lat >= s && lat <= n;
@@ -396,6 +417,14 @@ export class HistoricalLayers {
         return { set, sources: sources ?? [], records };
       }),
     );
+    // One entry per source: the second opinion and the baseline are both Cliopatria.
+    const bySet = new Map<SpotSet['set'], SpotSet>();
+    for (const entry of found) {
+      const known = bySet.get(entry.set);
+      if (!known) bySet.set(entry.set, entry);
+      else bySet.set(entry.set, { set: entry.set, sources: [...new Set([...known.sources, ...entry.sources])], records: [...known.records, ...entry.records] });
+    }
+    return [...bySet.values()];
   }
 
   private spotTile(url: string): Promise<Uint8Array | null> {
@@ -581,6 +610,47 @@ export class HistoricalLayers {
         'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4.5],
       },
     });
+
+    // The baseline (Phase 5, decision 2): Cliopatria's borders wherever the default map has no
+    // import, filled like it, under it, with softer lines (its borders are yearly and approximate).
+    // Up close, the detailed sea is drawn over it, so its fills stop at the coast (decision 11).
+    const baseline = index.extra?.baseline;
+    if (baseline?.versions) {
+      map.addSource('baseline', {
+        type: 'vector',
+        tiles: tileUrls(baseline.dir, baseline.versions[this.era]),
+        minzoom: index.minzoom,
+        maxzoom: index.maxzoom,
+        bounds: baseline.bounds,
+        attribution:
+          '<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Borders elsewhere: Cliopatria (CC BY 4.0)</a>',
+      });
+      map.addLayer(
+        { id: 'baseline-fill', type: 'fill', source: 'baseline', 'source-layer': baseline.layer, filter: ACTIVE, paint: { 'fill-color': colorMatch(PALETTE), 'fill-opacity': FILL_OPACITY } },
+        'borders-fill',
+      );
+      const coastLayer = index.extra?.coast?.layer;
+      if (coastLayer && map.getSource('coast')) {
+        map.addLayer(
+          { id: 'baseline-sea', type: 'fill', source: 'coast', 'source-layer': coastLayer, minzoom: COAST_ZOOM, filter: ['==', ['get', 'kind'], 'sea'], paint: { 'fill-color': COLORS.water } },
+          'borders-fill',
+        );
+      }
+      map.addLayer(
+        { id: 'baseline-line', type: 'line', source: 'baseline', 'source-layer': LINES, filter: ACTIVE, paint: { 'line-color': '#5b5146', 'line-opacity': 0.6, 'line-width': lineWidth } },
+        'borders-line',
+      );
+      map.addLayer({
+        id: 'baseline-selected',
+        type: 'line',
+        source: 'baseline',
+        'source-layer': LINES,
+        filter: ['all', ACTIVE, ['==', ['get', 'polity'], ['global-state', 'selected']]],
+        paint: { 'line-color': '#1f2328', 'line-width': ['interpolate', ['linear'], ['zoom'], 2, 2, 6, 3, 10, 4.5] },
+      });
+      map.addLayer(nameLayer('baseline-labels', 'baseline', 'labels'));
+    }
+    this.options.onBaseline?.(!!baseline?.versions);
 
     // The de jure view (CShapes), hidden until chosen. Colonies, protectorates, and occupied units
     // (`dep`) get a lighter tint of the color of the state CShapes records as holding them, and
@@ -845,6 +915,14 @@ export class HistoricalLayers {
     });
     map.on('mouseenter', 'borders-fill', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'borders-fill', () => (map.getCanvas().style.cursor = ''));
+    if (map.getLayer('baseline-fill')) {
+      map.on('click', 'baseline-fill', (event) => {
+        const polities = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];
+        if (polities.length > 0) this.options.onSelect(polities, [event.lngLat.lng, event.lngLat.lat]);
+      });
+      map.on('mouseenter', 'baseline-fill', () => (map.getCanvas().style.cursor = 'pointer'));
+      map.on('mouseleave', 'baseline-fill', () => (map.getCanvas().style.cursor = ''));
+    }
     if (this.hasDejure) {
       map.on('click', 'dejure-fill', (event) => {
         const holders = [...new Set((event.features ?? []).map((feature) => String(feature.properties.polity)))];

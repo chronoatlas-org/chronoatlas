@@ -33,14 +33,15 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { parseEdtfDate } from '../src/dates/index.ts';
+import { civilToJdn, parseEdtfDate } from '../src/dates/index.ts';
+import { formatDayForUrl } from '../src/url/state.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
-import type { Dataset } from './lib/data.ts';
+import type { Dataset, Loaded } from './lib/data.ts';
 import { boundingBox, computeContested, withinScopes } from './lib/contested.ts';
 import { chooseEras, inEra } from './lib/eras.ts';
 import type { Era, EraItem } from './lib/eras.ts';
 import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
-import { areaKm2, simplifyLine } from './lib/geometry.ts';
+import { areaKm2, cleanMultiPolygon, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon } from './lib/geometry.ts';
 import polygonClipping from 'polygon-clipping';
 import { LandIndex, landPart, touchesEdge } from './lib/land.ts';
@@ -103,25 +104,63 @@ function bounds(geometry: ShapeFeature['geometry']): Box {
   return box;
 }
 
+/** About half a degree: shapes with corners in the same square of this size count as touching. */
+const CELL_DEGREES = 0.5;
+
+/** The grid squares a shape's corners fall in (as numbers), to find which shapes touch. */
+export function shapeCells(shape: MultiPolygon): Set<number> {
+  const cells = new Set<number>();
+  for (const polygon of shape) {
+    for (const ring of polygon) {
+      for (const [x, y] of ring) cells.add((Math.floor(x / CELL_DEGREES) + 2000) * 10_000 + (Math.floor(y / CELL_DEGREES) + 2000));
+    }
+  }
+  return cells;
+}
+
 /**
  * Picks a fill color for each polity so that polities which might touch get different colors.
- * "Might touch" means their shapes' bounding boxes overlap during overlapping periods, which is a
- * cautious approximation. Colors are assigned greedily, most-connected polities first.
+ * "Might touch" means that, during overlapping periods, their shapes have corners in a shared grid
+ * square (`cells`, from shapeCells); for items without cells, that their bounding boxes overlap,
+ * which is cruder: worldwide, large empires' boxes overlap nearly everything, and the eight colors
+ * ran out (Phase 5). Colors are assigned greedily, most-connected polities first.
  */
-export function assignColors(items: { polity: string; box: Box; s0: number; e0: number }[]): Map<string, number> {
+export function assignColors(items: { polity: string; box: Box; s0: number; e0: number; cells?: ReadonlySet<number> }[]): Map<string, number> {
   const neighbours = new Map<string, Set<string>>();
   for (const item of items) neighbours.set(item.polity, neighbours.get(item.polity) ?? new Set());
-  for (let i = 0; i < items.length; i++) {
-    for (let j = i + 1; j < items.length; j++) {
-      const a = items[i];
-      const b = items[j];
-      if (a.polity === b.polity) continue;
+  const link = (a: string, b: string) => {
+    if (a === b) return;
+    neighbours.get(a)!.add(b);
+    neighbours.get(b)!.add(a);
+  };
+  // Shared grid squares: in each square, sweep through time, pairing only what overlaps in time.
+  const byCell = new Map<number, (typeof items)[number][]>();
+  for (const item of items) {
+    for (const cell of item.cells ?? []) {
+      const list = byCell.get(cell);
+      if (list) list.push(item);
+      else byCell.set(cell, [item]);
+    }
+  }
+  for (const list of byCell.values()) {
+    if (list.length < 2) continue;
+    list.sort((a, b) => a.s0 - b.s0);
+    let active: (typeof items)[number][] = [];
+    for (const item of list) {
+      active = active.filter((other) => other.e0 > item.s0);
+      for (const other of active) link(item.polity, other.polity);
+      active.push(item);
+    }
+  }
+  // Bounding boxes, for items without cells.
+  const withoutCells = items.filter((i) => !i.cells);
+  for (let i = 0; i < withoutCells.length; i++) {
+    for (let j = i + 1; j < withoutCells.length; j++) {
+      const a = withoutCells[i];
+      const b = withoutCells[j];
       const overlapInTime = a.s0 < b.e0 && b.s0 < a.e0;
       const overlapInSpace = a.box[0] <= b.box[2] && b.box[0] <= a.box[2] && a.box[1] <= b.box[3] && b.box[1] <= a.box[3];
-      if (overlapInTime && overlapInSpace) {
-        neighbours.get(a.polity)!.add(b.polity);
-        neighbours.get(b.polity)!.add(a.polity);
-      }
+      if (overlapInTime && overlapInSpace) link(a.polity, b.polity);
     }
   }
   const colors = new Map<string, number>();
@@ -152,6 +191,11 @@ export function onDefaultMap(file: string): boolean {
  */
 export interface OutlineContext {
   areas: ReadonlyMap<string, Box>;
+  /**
+   * More boxes whose edges are cuts, not borders, for every line in the layer: the edge of
+   * OpenHistoricalMap's area, where Cliopatria's baseline and second opinion are cut (Phase 5).
+   */
+  cuts?: readonly Box[];
   land?: LandDistance;
   /** The land polygons themselves, to cut the default map's fills at the coast. */
   landPolygons?: LandIndex;
@@ -250,7 +294,8 @@ function buildLabels(
 const folderOf = (file: string) => /^(data\/imports\/[^/]+)\//.exec(file)?.[1];
 
 export function buildBorders(ds: Dataset, outlines?: OutlineContext) {
-  return buildBorderLayer(ds, onDefaultMap, undefined, outlines, true, true);
+  // Only during the years its imports cover: outside them, the baseline (Phase 5, decision 2).
+  return buildBorderLayer(splitAtCoverage(ds, onDefaultMap, defaultCoverage(ds), 'during'), onDefaultMap, undefined, outlines, true, true);
 }
 
 /**
@@ -280,8 +325,24 @@ export function buildDejure(ds: Dataset, outlines?: OutlineContext) {
 
 /** The "second opinion" layer: Cliopatria's borders, drawn as outlines over the default map. */
 export function buildSecondOpinion(ds: Dataset, outlines?: OutlineContext) {
-  return buildBorderLayer(ds, isSecondOpinion, undefined, outlines);
+  // Beside the default map only: inside its imports' area and years (Phase 5, decision 2).
+  const coverage = defaultCoverage(ds);
+  return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'inside'), isSecondOpinion, undefined, cutAt(outlines, coverage));
 }
+
+/**
+ * The baseline (Phase 5, decision 2): Cliopatria's borders wherever the default map has no import,
+ * filled and named. Its fills aren't cut at the coast (decision 11): the map draws the sea over
+ * them up close.
+ */
+export function buildBaseline(ds: Dataset, outlines?: OutlineContext) {
+  const coverage = defaultCoverage(ds);
+  return buildBorderLayer(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, undefined, cutAt(outlines, coverage), false, true);
+}
+
+/** The outline context with the coverage boxes' edges as cuts too. */
+const cutAt = (outlines: OutlineContext | undefined, coverage: readonly ReviewedScope[]): OutlineContext | undefined =>
+  outlines && { ...outlines, cuts: [...(outlines.cuts ?? []), ...coverage.map((c) => c.box)] };
 
 /**
  * One source's borders: the fills (`collection`), and the lines (`lines`) drawn apart from them,
@@ -306,7 +367,14 @@ function buildBorderLayer(
     const shape = shapes.get(a.shape)!;
     return { assertion: a, folder, shape, box: bounds(shape.geometry), ...dayRanges(a.start, a.end) };
   });
-  const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1 })));
+  // Which shapes touch: worked out once per shape, however many records use it.
+  const cellsOf = new Map<string, Set<number>>();
+  const cells = (shape: ShapeFeature) => {
+    const id = shape.properties.id;
+    if (!cellsOf.has(id)) cellsOf.set(id, shapeCells(asMultiPolygon(shape.geometry)));
+    return cellsOf.get(id)!;
+  };
+  const colors = assignColors(items.map((i) => ({ polity: i.assertion.subject, box: i.box, s0: i.s0, e0: i.e1, cells: cells(i.shape) })));
 
   // Fills that stop at the coast (the default map only): each shape's land part, worked out once
   // per shape. Shapes with next to no coastal waters have none, and are filled whole.
@@ -361,7 +429,7 @@ function buildBorderLayer(
       let coordinates = outlineOf.get(key);
       if (!coordinates) {
         const area = folder ? outlines?.areas.get(folder) : undefined;
-        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land);
+        coordinates = borderLines(asMultiPolygon(shape.geometry), area, outlines?.land, outlines?.cuts);
         outlineOf.set(key, coordinates);
       }
       if (coordinates.length === 0) return [];
@@ -416,6 +484,103 @@ function timedShapes(ds: Dataset, include: (file: string) => boolean, relations:
       const certain = { ...(s1 > s0 ? { c0: s1 } : {}), ...(e1 > e0 ? { c1: e0 } : {}) };
       return { record: a.id, holder: a.subject, relation: a.relation, source: a.sources[0].source, s0, e0: e1, ...certain, shape: a.shape!, geometry, box: boundingBox(geometry) };
     });
+}
+
+/**
+ * Where and when the default map's imports hold their data: each default-map import's area and
+ * years (from its manifest's settings), as boxes and days [d0, d1). Outside these, Cliopatria is
+ * the baseline (Phase 5, decision 2).
+ */
+export function defaultCoverage(ds: Dataset): ReviewedScope[] {
+  return [...importSettings(ds)]
+    .filter(([folder]) => onDefaultMap(`${folder}/`))
+    .map(([, { box, fromYear, toYear }]) => ({
+      box,
+      d0: fromYear !== undefined ? civilToJdn(fromYear, 1, 1) : -FAR_FUTURE,
+      d1: toYear !== undefined ? civilToJdn(toYear + 1, 1, 1) : FAR_FUTURE,
+    }));
+}
+
+/**
+ * A copy of the dataset in which the territorial records of the files `include` accepts are cut at
+ * the edges of the coverage scopes:
+ *   - 'outside' keeps what lies outside every scope: the days before and after a scope whole, and
+ *     during it the part of the shape outside its box (Cliopatria's baseline);
+ *   - 'inside' keeps only the part inside a scope's box during its days (Cliopatria's second
+ *     opinion, beside OpenHistoricalMap);
+ *   - 'during' keeps whole shapes, but only during the scopes' days (OpenHistoricalMap, whose import
+ *     is complete only for its years).
+ * Each piece keeps its record's ID, and its dates stay as written except where a scope cuts them
+ * (then the cut's day, which is exact). Cut shapes get IDs of their own ("<shape>~out", "~in"),
+ * which exist only in the build. With no scopes, 'outside' and 'during' keep everything and
+ * 'inside' nothing.
+ */
+export function splitAtCoverage(ds: Dataset, include: (file: string) => boolean, scopes: readonly ReviewedScope[], mode: 'outside' | 'inside' | 'during'): Dataset {
+  if (scopes.length === 0) return mode === 'inside' ? { ...ds, assertions: ds.assertions.filter(({ file }) => !include(file)) } : ds;
+  const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, value]));
+  const cutShapes = new Map<string, Loaded<ShapeFeature>>();
+  const cut = (shape: ShapeFeature, file: string, box: Box, how: 'out' | 'in'): string | undefined => {
+    const id = `${shape.properties.id}~${how}`;
+    if (!cutShapes.has(id)) {
+      const geometry = asMultiPolygon(shape.geometry);
+      const [w, s, e, n] = box;
+      const frame = [[[[w, s], [e, s], [e, n], [w, n], [w, s]]]];
+      const clipped = how === 'out' ? polygonClipping.difference(geometry as never, frame as never) : polygonClipping.intersection(geometry as never, frame as never);
+      const result = cleanMultiPolygon(clipped as MultiPolygon, 4);
+      if (result.length === 0) return undefined;
+      cutShapes.set(id, { file, value: { ...shape, properties: { ...shape.properties, id }, geometry: { type: 'MultiPolygon', coordinates: result } } });
+    }
+    return id;
+  };
+  const touches = (shape: ShapeFeature, [w, s, e, n]: Box) => {
+    const [bw, bs, be, bn] = bounds(shape.geometry);
+    return bw < e && be > w && bs < n && bn > s;
+  };
+  const within = (shape: ShapeFeature, [w, s, e, n]: Box) => {
+    const [bw, bs, be, bn] = bounds(shape.geometry);
+    return bw >= w && be <= e && bs >= s && bn <= n;
+  };
+  /** A day as EDTF (1901-05-12; -0040-01-01 for 41 BCE). */
+  const edtfDay = (jdn: number) => formatDayForUrl(jdn);
+
+  /** One record cut at one scope, keeping what `mode` asks for. */
+  const splitOne = (file: string, p: Assertion, { box, d0, d1 }: ReviewedScope): Assertion[] => {
+    const piece = shapes.get(p.shape!) ?? cutShapes.get(p.shape!)?.value;
+    if (!piece) return [];
+    const { s0, e1 } = dayRanges(p.start, p.end);
+    const before = s0 < d0 ? { ...p, end: e1 <= d0 ? p.end : edtfDay(d0) } : undefined;
+    const during = s0 < d1 && e1 > d0 ? { ...p, start: s0 >= d0 ? p.start : edtfDay(d0), end: e1 <= d1 ? p.end : edtfDay(d1) } : undefined;
+    const after = e1 > d1 ? { ...p, start: s0 >= d1 ? p.start : edtfDay(d1) } : undefined;
+    if (mode === 'during') return during ? [during] : [];
+    if (mode === 'inside') {
+      if (!during || !touches(piece, box)) return [];
+      if (within(piece, box)) return [during];
+      const id = cut(piece, file, box, 'in');
+      return id ? [{ ...during, shape: id }] : [];
+    }
+    const kept: Assertion[] = [...(before ? [before] : []), ...(after ? [after] : [])];
+    if (during && !touches(piece, box)) kept.push(during);
+    else if (during && !within(piece, box)) {
+      const id = cut(piece, file, box, 'out');
+      if (id) kept.push({ ...during, shape: id });
+    }
+    return kept;
+  };
+
+  const assertions = ds.assertions.map(({ file, value }) => {
+    if (!include(file) || !Array.isArray(value)) return { file, value };
+    const pieces = value.flatMap((a): Assertion[] => {
+      if (!a.shape || !shapes.has(a.shape) || !TERRITORIAL_RELATIONS.includes(a.relation)) return mode === 'inside' ? [] : [a];
+      // Inside and during: a piece for each scope (they don't overlap). Outside: every scope is
+      // taken away in turn.
+      if (mode !== 'outside') return scopes.flatMap((scope) => splitOne(file, a, scope));
+      let parts: Assertion[] = [a];
+      for (const scope of scopes) parts = parts.flatMap((p) => splitOne(file, p, scope));
+      return parts;
+    });
+    return { file, value: pieces };
+  });
+  return { ...ds, assertions, shapes: [...ds.shapes, ...cutShapes.values()] };
 }
 
 export interface CrosswalkLink extends Link {
@@ -516,7 +681,9 @@ export function loadLand(ds: Dataset): LandIndex | undefined {
 export function buildEdges(ds: Dataset, land?: LandDistance): GeoJSON.FeatureCollection {
   const seen = new Set<string>();
   const features: GeoJSON.Feature[] = [];
-  for (const [folder, { box, fromYear, toYear }] of importSettings(ds)) {
+  // Only the default map's imports: the others cover the whole world since Phase 5, and beyond the
+  // default map's area the map continues with the baseline, not "no data".
+  for (const [folder, { box, fromYear, toYear }] of [...importSettings(ds)].filter(([f]) => onDefaultMap(`${f}/`))) {
     const s0 = fromYear !== undefined ? parseEdtfDate(String(fromYear).padStart(4, '0')).earliest : -FAR_FUTURE;
     const e0 = toYear !== undefined ? parseEdtfDate(String(toYear + 1).padStart(4, '0')).earliest : FAR_FUTURE;
     const key = `${box.join(',')} ${s0} ${e0}`;
@@ -675,13 +842,16 @@ export const DIFFER_MIN_WIDTH_KM = 10;
 export function buildDiffer(ds: Dataset): ContestedArea[] {
   const byUnit = new Map<string, Link[]>();
   for (const link of crosswalkLinks(ds)) byUnit.set(link.unit, [...(byUnit.get(link.unit) ?? []), link]);
-  return computeContested(
+  const areas = computeContested(
     timedShapes(ds, onDefaultMap, ['administers', 'controls', 'occupies']),
     timedShapes(ds, isSecondOpinion, ['controls']),
     byUnit,
     DIFFER_MIN_KM2,
     DIFFER_MIN_WIDTH_KM,
   );
+  // Only where both are on the map: inside the default map's imports' area and years (Phase 5).
+  const coverage = defaultCoverage(ds);
+  return coverage.length > 0 ? withinScopes(areas, coverage) : areas;
 }
 
 /** The contested areas as a layer: only what the map needs (who, and when). */
@@ -1097,6 +1267,7 @@ function main(): void {
   const borders = buildBorders(ds, outlines);
   const dejure = buildDejure(ds, outlines);
   const second = buildSecondOpinion(ds, outlines);
+  const baseline = buildBaseline(ds, outlines);
   const edges = buildEdges(ds, outlines.land);
   writeFileSync(join(OUT_DIR, 'edges.json'), JSON.stringify(edges));
   const contested = buildContested(ds);
@@ -1112,6 +1283,10 @@ function main(): void {
     { key: 'borders', dir: 'tiles', layer: TILE_LAYER, collection: borders.collection, bounds: borders.bounds, sources: borders.sources, extraLayers: { lines: borders.lines, labels: borders.labels, land: { collection: borders.land, minZoom: COAST_MIN_ZOOM } } },
     { key: 'dejure', dir: 'dejure-tiles', layer: 'dejure', collection: dejure.collection, bounds: dejure.bounds, sources: dejure.sources, extraLayers: { lines: dejure.lines, labels: dejure.labels } },
     { key: 'second', dir: 'second-tiles', layer: 'second', collection: second.collection, bounds: second.bounds, sources: second.sources, extraLayers: { lines: second.lines } },
+    // The baseline only when there's something outside the default map's imports (Phase 5).
+    ...(baseline.collection.features.length > 0
+      ? [{ key: 'baseline', dir: 'baseline-tiles', layer: 'baseline', collection: baseline.collection, bounds: baseline.bounds, sources: baseline.sources, extraLayers: { lines: baseline.lines, labels: baseline.labels } }]
+      : []),
     { key: 'contested', dir: 'contested-tiles', layer: 'contested', collection: contestedLayer.collection, bounds: contestedLayer.bounds, extraLayers: { labels: contestedLayer.labels } },
     { key: 'differ', dir: 'differ-tiles', layer: 'differ', collection: differLayer.collection, bounds: differLayer.bounds, extraLayers: { labels: differLayer.labels } },
   ];
@@ -1182,7 +1357,7 @@ function main(): void {
   }
   console.log(
     `Built public/data: ${borders.collection.features.length} border features, ${dejure.collection.features.length} de jure, ` +
-      `${second.collection.features.length} second-opinion, ` +
+      `${second.collection.features.length} second-opinion, ${baseline.collection.features.length} baseline, ` +
       `${contested.length} contested, in ${tileCount} tiles ` +
       `(${(tileBytes / 1e6).toFixed(1)} MB, zoom 0–${TILE_MAX_ZOOM}, empty tiles left out) in ${eras.length} era${eras.length === 1 ? '' : 's'}, ` +
       `${eraIndex.reduce((n, e) => n + e.changes.length, 0)} change days, ` +

@@ -114,7 +114,7 @@ export function alongBoxEdge([x1, y1]: Position, [x2, y2]: Position, [w, s, e, n
  * when `land` is given, without the stretches at sea. A stretch counts as at sea when its middle
  * and one of its ends are both farther than SEA_DISTANCE_KM from land.
  */
-export function borderLines(shape: MultiPolygon, box: Box | undefined, land: LandDistance | undefined): Position[][] {
+export function borderLines(shape: MultiPolygon, box: Box | undefined, land: LandDistance | undefined, cuts: readonly Box[] = []): Position[][] {
   const lines: Position[][] = [];
   for (const polygon of shape) {
     for (const ring of polygon) {
@@ -127,7 +127,7 @@ export function borderLines(shape: MultiPolygon, box: Box | undefined, land: Lan
       for (let i = 1; i < ring.length; i++) {
         const a = ring[i - 1];
         const b = ring[i];
-        const cut = box !== undefined && alongBoxEdge(a, b, box);
+        const cut = (box !== undefined && alongBoxEdge(a, b, box)) || cuts.some((c) => alongBoxEdge(a, b, c));
         const atSea =
           !cut &&
           land !== undefined &&

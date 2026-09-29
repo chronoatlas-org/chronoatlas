@@ -334,6 +334,31 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     worldwide tiles it hit the system's limit and stopped; it now ignores `public/data/`. It also
     answered a missing tile with the page itself; it now answers "404" for a missing tile, as
     GitHub Pages does.
+- **Step 5 (2026-09-29): done.** Cliopatria fills the map outside OpenHistoricalMap's area and
+  years, as the baseline (decision 2).
+  - **The build** cuts Cliopatria's records at the edge of OpenHistoricalMap's coverage (East
+    Asia, 1900–1950): outside is the baseline (`baseline-tiles`, filled and named), inside the
+    second opinion (dotted, as before). Records keep their IDs, so the panel finds them.
+    OpenHistoricalMap is drawn only during its import's years, where it is complete; before, it
+    held a few records that started earlier or ran later, beside nothing else. "Sources differ" is
+    cut to the coverage, and the "edge" line is drawn only for OpenHistoricalMap, reworded "Edge of
+    OpenHistoricalMap's area".
+  - **The map** draws the baseline under the default map, with the same colors, softer lines, and
+    names; from zoom 4 the detailed sea is drawn over it, so its fills stop at the coast (decision
+    11). It's clickable, part of the administered view, credited "Borders elsewhere: Cliopatria
+    (CC BY 4.0)", and has its own legend entry. "What each source says here" reads it as
+    Cliopatria. The intro now says where each source's borders come from.
+  - **Colors, fixed on the way:** neighbours were picked by overlapping bounding boxes, and
+    worldwide the boxes of large empires overlap nearly everything, so the eight colors ran out and
+    France and Italy came out alike in 1914. Polities now count as neighbours when their shapes
+    have corners in a shared half-degree square at the same time; the build takes no longer.
+  - **Checked** on the worldwide scratch copy (20 eras, 325 MB, 7.5 minutes): the whole world in
+    1937 and 1500, Europe's coasts in 1914 up close, the edge at 73°E, a click on the French Third
+    Republic (its Cliopatria record in the panel), with no errors. Thin hatched slivers remain along
+    some coasts where Cliopatria's coarse shapes stop short of Natural Earth's coastline: land
+    Cliopatria doesn't cover, shown as "no data".
+  - **Today's data** (before the worldwide imports are merged) gets a baseline of 25 pieces: the
+    years before 1900 and after 1950 of the East Asian Cliopatria rows.
 
 **Left out of Phase 5:**
 

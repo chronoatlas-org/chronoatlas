@@ -6,14 +6,14 @@
 
 export const en = {
   'app.previewNotice':
-    'Early preview: East Asia, 1900–1950. Borders as administered come from OpenHistoricalMap, legal borders from CShapes 2.0. Click a territory for details.',
+    'Early preview. Borders as administered come from OpenHistoricalMap in East Asia, 1900–1950, and from Cliopatria elsewhere; legal borders from CShapes 2.0. Click a territory for details.',
   'app.mapLabel': 'Map',
   'app.title': 'chronoatlas · {date}',
   'legend.title': 'Map key',
   // Words drawn on the map itself.
   'map.contested': 'Contested',
   'map.maybeContested': 'Possibly contested',
-  'map.edge': 'Edge of imported data',
+  'map.edge': 'Edge of OpenHistoricalMap’s area',
   'map.zone': 'Frontier zone',
   'map.differ': 'Sources differ',
   'map.maybeDiffer': 'Sources may differ',
@@ -24,7 +24,9 @@ export const en = {
   'map.status.occupied': 'Occupied by {holder}',
   'map.status.other': 'Held by {holder}',
   'legend.noData': 'No data yet',
-  'legend.edge': 'Edge of imported data',
+  'legend.edge': 'Edge of OpenHistoricalMap’s area: beyond it, the borders are Cliopatria’s',
+  'legend.baseline':
+    'Softer lines beyond that edge: borders per Cliopatria, year by year and approximate (it doesn’t separate control from legal rule)',
   'legend.line': 'Solid line: a border (a treaty or surveyed line, or one whose source doesn’t say how precise it is)',
   'legend.approximate': 'Softened line: an approximate border, per its source',
   'legend.zone': 'Soft band: a frontier zone rather than a line, per its source',

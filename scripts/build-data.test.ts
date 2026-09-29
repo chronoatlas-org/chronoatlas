@@ -18,11 +18,14 @@ import {
   onDefaultMap,
   eraItems,
   forEra,
+  shapeCells,
+  splitAtCoverage,
 } from './build-data.ts';
 import { loadDataset } from './lib/data.ts';
 import { areaKm2 } from './lib/geometry.ts';
 import { LandIndex } from './lib/land.ts';
 import type { Dataset } from './lib/data.ts';
+import type { MultiPolygon } from './lib/geometry.ts';
 
 describe('buildPolityFiles', () => {
   // Made-up polities and sources (Testland), not real ones.
@@ -193,6 +196,19 @@ describe('assignColors', () => {
       { polity: 'b', box: [0, 0, 1, 1], s0: 10, e0: 20 }, // starts when a ends
     ]);
     expect(colors.get('a')).toBe(colors.get('b'));
+  });
+
+  it('with grid squares, counts only shapes that come close as neighbours, not whole bounding boxes', () => {
+    // Made-up Testland shapes: a wide "empire" whose box covers b and c, but which touches only b.
+    const square = (x: number, y: number): MultiPolygon => [[[[x, y], [x + 1, y], [x + 1, y + 1], [x, y + 1], [x, y]]]];
+    const empire: MultiPolygon = [...square(0, 0), ...square(20, 0)];
+    const b = square(1, 0); // shares a corner square with the empire
+    const c = square(10, 0.2); // inside the empire's box, far from its shapes
+    const item = (polity: string, shape: MultiPolygon) => ({ polity, box: [0, 0, 21, 1] as [number, number, number, number], s0: 0, e0: 10, cells: shapeCells(shape) });
+    const colors = assignColors([item('empire', empire), item('b', b), item('c', c)]);
+    expect(colors.get('empire')).not.toBe(colors.get('b'));
+    // c has no neighbours, so it takes the first color, whatever the empire has.
+    expect(colors.get('c')).toBe(0);
   });
 });
 
@@ -513,5 +529,58 @@ describe('eras in the build', () => {
     expect(items[1]).toMatchObject({ set: 'test-tiles', s0: 10, e0: 30 });
     expect(items[2].s0).toBeLessThan(-1e7);
     expect(items[0].bytes).toBeGreaterThan(0);
+  });
+});
+
+describe('splitAtCoverage', () => {
+  // A made-up Testland record from 1890 to 1960, whose square is half inside the coverage box.
+  const cite = [{ source: 'test-source', locator: 'p. 1' }];
+  const file = 'data/imports/test-import/assertions.yaml';
+  const ds: Dataset = {
+    sources: [],
+    polities: [{ file: 'a', value: { id: 'testland', names: [{ text: 'Testland', lang: 'en', sources: cite }] } }],
+    assertions: [{ file, value: [{ id: 'r', relation: 'controls', subject: 'testland', shape: 'sq', start: '1890', end: '1960', sources: cite }] }],
+    events: [],
+    figures: [],
+    coverage: [],
+    shapes: [{ file: 'data/imports/test-import/shapes/sq.geojson', value: { type: 'Feature', properties: { id: 'sq', edge_precision: 'unknown' }, geometry: { type: 'Polygon', coordinates: [[[0, 0], [4, 0], [4, 2], [0, 2], [0, 0]]] } } }],
+    crosswalks: [],
+    imports: [],
+    problems: [],
+  };
+  const scope = { box: [2, -1, 5, 5] as [number, number, number, number], d0: civilToJdn(1900, 1, 1), d1: civilToJdn(1951, 1, 1) };
+  const include = (f: string) => f === file;
+  const records = (d: Dataset) => d.assertions.flatMap(({ value }) => value).map((a) => [a.start, a.end, a.shape]);
+  const shapeOf = (d: Dataset, id: string) => d.shapes.find((x) => x.value.properties.id === id)!.value.geometry.coordinates as number[][][][];
+
+  it('keeps the years outside the coverage whole, and during it the part outside the box', () => {
+    const out = splitAtCoverage(ds, include, [scope], 'outside');
+    expect(records(out)).toEqual([
+      ['1890', '1900-01-01', 'sq'],
+      ['1951-01-01', '1960', 'sq'],
+      ['1900-01-01', '1951-01-01', 'sq~out'],
+    ]);
+    const xs = shapeOf(out, 'sq~out').flat(2).map(([x]) => x);
+    expect(Math.max(...xs)).toBe(2);
+  });
+
+  it('keeps only the part inside the box during the coverage, for the second opinion', () => {
+    const inside = splitAtCoverage(ds, include, [scope], 'inside');
+    expect(records(inside)).toEqual([['1900-01-01', '1951-01-01', 'sq~in']]);
+    expect(Math.min(...shapeOf(inside, 'sq~in').flat(2).map(([x]) => x))).toBe(2);
+  });
+
+  it('keeps whole shapes only during the coverage, for the default map', () => {
+    expect(records(splitAtCoverage(ds, include, [scope], 'during'))).toEqual([['1900-01-01', '1951-01-01', 'sq']]);
+  });
+
+  it('leaves dates as written when they fall inside the coverage', () => {
+    const inYears: Dataset = { ...ds, assertions: [{ file, value: [{ ...ds.assertions[0].value[0], start: '1920', end: '1930' }] }] };
+    expect(records(splitAtCoverage(inYears, include, [scope], 'during'))).toEqual([['1920', '1930', 'sq']]);
+  });
+
+  it('without coverage, keeps everything outside and nothing inside', () => {
+    expect(splitAtCoverage(ds, include, [], 'outside')).toBe(ds);
+    expect(records(splitAtCoverage(ds, include, [], 'inside'))).toEqual([]);
   });
 });

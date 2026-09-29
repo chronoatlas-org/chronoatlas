@@ -226,6 +226,12 @@ sovereign: China (per CShapes)".
 - **How the map filters by date:** the current date is stored in MapLibre's global state and
   used in the layers' `filter`. We measured the alternative of hiding inactive borders with a
   paint expression (opacity), and it was 4–5 times slower, so we use filters.
+- **The baseline (Phase 5, step 5):** outside the default map's imports' area and years
+  (`defaultCoverage`), Cliopatria's borders are drawn filled, from their own tile set
+  (`baseline-tiles`), under the default map, with softer lines and names; up close, Natural
+  Earth's sea is drawn over them. The build cuts Cliopatria's records at the coverage's edge
+  (`splitAtCoverage`): outside is the baseline, inside the second opinion. OpenHistoricalMap is
+  drawn only during its import's years, which is where it is complete.
 - **Eras (Phase 5, decision 10):** the build (`chooseEras`, `scripts/lib/eras.ts`) splits time
   so that each tile set's shapes in an era stay within about 6 MB: boundaries on 1 January, every
   50 years before 1500 and every 10 years from then, as long as the budget allows. A record that

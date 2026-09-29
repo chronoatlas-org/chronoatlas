@@ -273,6 +273,10 @@ body {
   border-top: 1.5px solid #5b5146;
 }
 
+.legend-line-baseline {
+  opacity: 0.6;
+}
+
 .legend-line-approximate {
   border-top-width: 3px;
   filter: blur(1.2px);

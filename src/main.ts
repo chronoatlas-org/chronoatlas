@@ -114,6 +114,10 @@ const historical = new HistoricalLayers(map, initialDay, {
   onPrecision: (kinds) => {
     for (const item of document.querySelectorAll<HTMLElement>('[data-precision]')) item.hidden = !kinds.includes(item.dataset.precision!);
   },
+  // And the baseline's softer lines only when the map has the baseline (Cliopatria).
+  onBaseline: (present) => {
+    document.querySelector<HTMLElement>('.legend-baseline-item')!.hidden = !present;
+  },
   onSelect: (polities, spot) => {
     panel.setSpot(polities);
     select(territorySelection(polities[0]), 'click');
