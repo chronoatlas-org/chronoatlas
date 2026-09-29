@@ -478,9 +478,11 @@ top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:
   - **Wikipedia link** (Phase 5 step 6, at the maintainers' request): "Read about it on Wikipedia"
     from the polity file's `wikidata`, through Wikidata's `Special:GoToLinkedPage/<lang>wiki/Q…`
     (`wikipediaLink`, model.ts), marked as an outside site the map hasn't checked. A unit of an
-    import takes the ID of the one polity its reviewed crosswalk says is the same state. Only a
-    link: nothing from Wikipedia goes into our data. Cliopatria's own `Wikipedia` column waits on
-    Phase 5 question 14.
+    import takes the ID of the one polity its reviewed crosswalk says is the same state. Without
+    an ID, the polity file's `articles` give the English article Cliopatria's `Wikipedia` column
+    links for each row (Phase 5 decision 14, never its Wikidata IDs); the panel links the row's in
+    effect and says "The article Cliopatria links" (`articleLink`). Only a link: nothing from
+    Wikipedia goes into our data.
   - The panel shows a `Selection`: `{ kind: 'polity' | 'event' | 'nearby', id }`. 'nearby'
     ("Around this date") lists what's in the timeline's visible range, so the panel redraws
     when the timeline zooms (`onZoom`). When an event's file

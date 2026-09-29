@@ -462,7 +462,7 @@ Added on 2026-09-29, with the link to Wikipedia the maintainers asked for (secti
 14. **Wikipedia links for Cliopatria's unmatched polities** (about 1,500): use Cliopatria's own
     `Wikipedia` column, worded "as Cliopatria links it", or show links only where our own reviewed
     IDs give one (our polities, and Cliopatria's 26 matched ones)? *Recommended: use Cliopatria's
-    column, attributed.* Its authors chose each article for the row, and it's right where its
+    column, attributed.* **Approved 2026-09-29 (decision 14).** Its authors chose each article for the row, and it's right where its
     Wikidata IDs are wrong (the "Republic of China" rows); without it, the world outside East Asia
     would have almost no links. A wrong one is reported like any other problem, and fixed by a
     note in the build until Cliopatria fixes it upstream.
@@ -503,3 +503,10 @@ proposed changes):
 13. **The re-import button re-runs any pinned import** (OpenHistoricalMap, CShapes, or Cliopatria).
     The pins still hold: an import stops if a file's checksum changes, and a new version is still
     reviewed by hand.
+
+Decided on 2026-09-29 (the maintainers approved question 14):
+
+14. **Wikipedia links for Cliopatria's unmatched polities** come from Cliopatria's own `Wikipedia`
+    column, for the row in effect on the day shown, and say "The article Cliopatria links for
+    this polity". Not from its Wikidata IDs. A polity with a Wikidata ID of ours (or matched to one
+    of ours as the same state) keeps that link.
