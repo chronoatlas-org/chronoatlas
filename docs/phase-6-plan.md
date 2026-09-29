@@ -16,7 +16,8 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 - **you can type a date and travel to it**, watching the map change on the way;
 - **water has names** (oceans, seas, lakes, rivers), attributed like every other name;
 - **a polity can show its flag**, where a source records one for that period;
-- **stretch goal:** click any spot and see which states held it over time ("my town").
+- **stretch goal:** a "local area" card for any place: which states held it over time, and the
+  events near it ("my town").
 
 ## Sections
 
@@ -28,7 +29,7 @@ Phases 1–5 built a map that is honest about its sources and covers the world. 
 6. [Smooth changes of era, and going to a date](#6-smooth-changes-of-era-and-going-to-a-date)
 7. [Names for water](#7-names-for-water)
 8. [Flags](#8-flags)
-9. [Stretch: the history of a spot](#9-stretch-the-history-of-a-spot)
+9. [Stretch: your local area, over time](#9-stretch-your-local-area-over-time)
 10. [Questions for the maintainers](#10-questions-for-the-maintainers)
 11. [Order of work](#11-order-of-work)
 12. [Keeping the scope in check](#12-keeping-the-scope-in-check)
@@ -63,8 +64,8 @@ anything is changed.
 | Lighter on the GPU/CPU | **Yes**, most likely | We can't measure a graphics card in our cloud environment; the maintainers' check on real machines is part of step 2 and step 3. |
 | Smooth loading across big jumps | **Yes** | It costs more memory and bandwidth (two eras held at once, neighbours prefetched). Bounded by the caps in section 6. |
 | Borders line up close in | **Partly** | We can reduce our own simplification and draw the base map in matching detail. We can't make a source more precise than it is: Cliopatria's shapes are approximate, and OpenHistoricalMap's are only as detailed as its tracing. |
-| "Zoom to my street" for any year | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) answer "which states held this spot?" (section 9). |
-| Fill all the way to the ocean | **Yes, but it's a decision** | Filling the gap means assigning land to a polity that no source assigned. Ground rule 1. See question 3. |
+| A detailed view of my local area (not street level) | **Partly** | Street level needs municipal or parcel-level history, which doesn't exist worldwide for most eras. What we can do is (a) go as far as the source supports, (b) say when you've zoomed past it, and (c) a "local area" card: which states held the place over time, and events near it (section 9). |
+| Fill all the way to the ocean | **Yes, without changing the rule, but it's a decision** | The gap is mostly Cliopatria's coarse resolution, not a claim that nobody held the land. An approximate margin, drawn only in the build and flagged as such, keeps rule 1 (section 5, option B); it still draws colour where no source did, so it is the maintainers' call. See question 3. |
 | Go-to-date box | **Yes** | Depends on the smooth-era work. Very long jumps (thousands of years) will skip time quickly, not play every year. |
 | Names for oceans, rivers, lakes | **Yes** | Present-day names only, attributed. Some are disputed (the sea between Korea and Japan, the Persian/Arabian Gulf, others): see section 7. |
 | Flags | **Yes, for a subset** | Flags are modern. Most polities before about 1800 had none, or none anyone recorded; flags need a source with dates, and their images carry licenses. Default is "no flag on record". |
@@ -114,10 +115,23 @@ almost no GPU. Step 2 fixes the real numbers.
    ("Cliopatria's borders are approximate, about X km"), and lines are drawn softer, using the edge
    precision styles that already exist but have had no real data (approximate line, frontier
    zone). That turns a limitation into information.
-5. **Coasts, question 3.** Options: keep the honest gap but restyle it so it reads as "the source
-   stops short of the coast here", or fill coastal gaps narrower than a set width and mark the
-   fill as approximate. *Recommended: restyle now (no invented land); fill only if the maintainers
-   decide to, and never silently.*
+5. **Coasts, question 3.** The hatch today covers two different things: a source shape that stops
+   a few kilometres short of a precise coast (its own resolution; Cliopatria's edges are
+   stair-stepped in places), and land the source really doesn't cover. They should look different.
+   - **A. Restyle only.** The gap reads as "the source stops short of the coast here", unfilled.
+   - **B. An approximate margin.** A strip is drawn in the neighbouring polity's colour, paler and
+     patterned, with its own legend entry ("coastal margin, approximate"), only where it is
+     narrower than the source's resolution, touches exactly one polity, and no other record
+     covers it. Where two polities meet at the coast, or the gap is wide, the hatch stays. It
+     exists only in the build's tiles, never in `data/`; areas and figures still come from the
+     source shapes, and the panel says the margin isn't part of the record. It doesn't change
+     the rule (nothing is asserted), but it draws colour where no source did.
+   - **C. Snap the shapes to the coast in the data.** Not recommended: it writes an assumption
+     into the dataset.
+   - Before choosing, step 2 checks how Cliopatria's authors say the shapes were made (if the
+     coarse edge is their own tracing resolution, B restores their intent) and measures how
+     much of today's hatch is narrow margin and how much is real gap.
+   *Recommended: B, with A as the fallback; the maintainers decide.*
 
 ## 6. Smooth changes of era, and going to a date
 
@@ -188,13 +202,22 @@ almost no GPU. Step 2 fixes the real numbers.
 - **Contributors** can propose a flag through the same review path as other data: an issue form
   (source, dates, image page) and the data-change summary shows the image and license.
 
-## 9. Stretch: the history of a spot
+## 9. Stretch: your local area, over time
 
-The idea behind "how many nations held the town I live in": click anywhere, and a panel lists the
-states that held that spot across time, per source, each with its dates and citation. It doesn't
-need street-perfect borders: it reuses the tile reading the panel already has (`recordsAt`) across
-all eras, and it says "near a border" when the spot is within the source's uncertainty of one, so
-a town on a frontier isn't given a false answer. It answers the question a lot of visitors bring.
+The idea: a visitor from a small town wants to see what happened *around them*, in detail, without
+needing street-level borders (which no source has for most times). They click a place, or search
+for one, and a "local area" card shows:
+
+- **which states held the place over time,** per source, with dates and citations (reusing the
+  tile reading the panel already has, `recordsAt`, across all eras), and "near a border" when the
+  spot is within the source's uncertainty of one, so a town on a frontier isn't given a false
+  answer;
+- **events near the place,** not only near the date (events already carry a place);
+- the map zoomed to the area, at the most detail its sources support (section 5).
+
+**Finding a place.** Clicking the map works everywhere. Search would use Natural Earth's
+populated places (public domain, bundled, no online service, so it stays free to run); that finds
+towns and cities, not small villages. An online geocoder is out, because of the no-services rule.
 
 It is a **stretch** because it depends on the detail work (section 5) and on speed (section 4).
 It is only started if steps 2–7 leave room, and it can be a Phase 7 headline instead.
@@ -205,9 +228,10 @@ It is only started if steps 2–7 leave room, and it can be a Phase 7 headline i
 2. **Performance target:** scrub and zoom at 30 frames a second or better on an older
    integrated-graphics laptop and a mid-range phone; idle map near zero. *Recommended: yes; refined
    by the step 2 numbers.*
-3. **Coast gaps:** (a) restyle the "source stops short of the coast" gap and leave it unfilled;
-   (b) also fill coastal gaps narrower than a set width, marked as approximate. (b) means
-   assigning land no source assigned. *Recommended: (a).*
+3. **Coast gaps** (section 5): A (restyle only), B (a flagged, build-only approximate margin
+   where one polity's shape stops short of the coast by less than the source's resolution), or C
+   (snap in the data, not recommended). B draws colour where no source did, though it asserts
+   nothing. *Recommended: B, with A as the fallback.*
 4. **Disputed water names:** show both names, attributed, from a short hand-written, cited list?
    Which waters go on it first, and which sources are acceptable (an international hydrographic
    body, national mapping agencies, both sides' governments)? *Recommended: yes; the maintainers
@@ -216,8 +240,10 @@ It is only started if steps 2–7 leave room, and it can be a Phase 7 headline i
    hosted, "No flag on record" as the default, starting with our own polities)? *Recommended: yes.*
 6. **Lighter map setting:** a header toggle plus automatic on reduced motion or low power?
    *Recommended: yes.*
-7. **The history of a spot:** keep it as a stretch inside Phase 6, or make it the headline of
-   Phase 7? *Recommended: Phase 7 headline, unless steps 2–7 finish early.*
+7. **Your local area** (section 9): keep it as a stretch inside Phase 6, or make it the headline of
+   Phase 7? And is search over Natural Earth's larger towns and cities, plus clicking the map,
+   enough to start? *Recommended: Phase 7 headline, unless steps 2–7 finish early; yes to the
+   search.*
 8. **Data-saver behaviour:** no background prefetch when the browser reports a data-saver
    connection? *Recommended: yes.*
 9. **New requests** the maintainers add before approval are placed in the order in section 11 by
@@ -234,12 +260,12 @@ add features on top**, so nothing is built twice.
 | 1 | Record Phase 5 closed and the Phase 6 decisions (docs only). | low |
 | 2 | **Measure before building:** profile the map (frames, layers, idle use), measure the alignment errors of section 5, check Natural Earth's water names and the flag sources (Commons licenses, a sample of Wikidata's flag statements). Results may change this plan; any change comes back to the maintainers. | high |
 | 3 | **Performance pass:** the fixes measured to matter, the lighter-map setting, and an idle-repaint check. Repeat the measures. | high |
-| 4 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3). | high |
+| 4 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3), with the check of how Cliopatria's shapes were made. | high |
 | 5 | **Smooth era changes:** keep old tiles until new ones are ready, prefetch neighbours, blend. | high |
 | 6 | **Go to a date:** the box, travel animation, address, and phone layout. | medium |
 | 7 | **Water names:** the layers, the disputed-names list and its sources, and the legend and credits. | medium |
 | 8 | **Flags:** the import folder and manifest, the panel line and image, the issue form, and the first set for our own polities. | high |
-| 9 | **Stretch, only if room: the history of a spot.** | high |
+| 9 | **Stretch, only if room: your local area, over time.** | high |
 | 10 | **Tidy:** a phone and low-end check of the finished map, the docs, the README, `CREDITS.md`, and the roadmap. | medium |
 
 Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the build passing.
