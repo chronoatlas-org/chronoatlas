@@ -357,8 +357,8 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     Republic (its Cliopatria record in the panel), with no errors. Thin hatched slivers remain along
     some coasts where Cliopatria's coarse shapes stop short of Natural Earth's coastline: land
     Cliopatria doesn't cover, shown as "no data".
-  - **Today's data** (before the worldwide imports are merged) gets a baseline of 25 pieces: the
-    years before 1900 and after 1950 of the East Asian Cliopatria rows.
+  - **The data then on main** (before the worldwide imports were merged) got a baseline of 25
+    pieces: the years before 1900 and after 1950 of the East Asian Cliopatria rows.
 - **Worldwide data merged (2026-09-29).** Both imports were regenerated on the current main with
   the "Re-import a dataset" button, checked (build, validation, and the posted summary), and
   brought onto main by fast-forward; the earlier pull requests, made from an older main, were
@@ -368,6 +368,14 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
     Its only effect on today's views: 10 "sources differ" entries in 1900 grew or appeared,
     because Cliopatria's rows that end "in 1900" (year only) now exist and stay on the map until
     the last day they could have ended (Phase 3 decision 1), beside the rows starting in 1900.
+  - **CShapes** (pull request 41): 638 records, 638 borders, and 167 polities added, 38 borders
+    changed (no longer cut to East Asia), all inside `data/imports/cshapes-2-0/` (16 MB).
+    Contested areas are unchanged, because they're computed only where the crosswalk has been
+    reviewed (East Asia 1900–1950). 4 of CShapes' 710 rows are skipped and listed in its
+    manifest: Danzig and West Irian (owner codes 0 and 1, above) and Morocco 1904–1912, for
+    which CShapes gives no status.
+  - **Both builds and the deploy passed;** the live site is worldwide. The Cliopatria deploy took
+    about 7 minutes, most of it the data build.
 
 **Left out of Phase 5:**
 
