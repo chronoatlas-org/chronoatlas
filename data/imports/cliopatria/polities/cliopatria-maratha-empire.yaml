@@ -1,0 +1,8 @@
+id: cliopatria-maratha-empire
+names:
+  - text: Maratha Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Maratha Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

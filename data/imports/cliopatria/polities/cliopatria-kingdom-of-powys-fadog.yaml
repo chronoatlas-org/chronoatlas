@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-powys-fadog
+names:
+  - text: Kingdom of Powys Fadog
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Powys Fadog"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-english-colonial-empire-1609","edge_precision":"unknown","cliopatria_name":"English Colonial Empire","cliopatria_from_year":1609,"cliopatria_to_year":1611,"cliopatria_area_km2":1563,"cliopatria_wikidata":"Q617219","cliopatria_wikipedia":"English overseas possessions","cliopatria_seshat_id":"gb_tudor_stuart","cliopatria_member_of":"(Kingdom of England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-77.1943,37.3838],
+[-77.0655,37.2549],
+[-76.6507,37.1904],
+[-76.6758,37.2549],
+[-76.4672,37.3193],
+[-76.6991,37.5128],
+[-77.0113,37.5128],
+[-77.0383,37.3838],
+[-77.1943,37.3838]
+]
+],
+[
+[
+[-64.8612,32.3002],
+[-64.6734,32.1717],
+[-64.6909,32.236],
+[-64.6495,32.3645],
+[-64.8612,32.3002]
+]
+]
+]}
+}

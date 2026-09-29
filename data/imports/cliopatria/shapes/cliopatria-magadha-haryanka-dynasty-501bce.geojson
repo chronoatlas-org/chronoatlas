@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-magadha-haryanka-dynasty-501bce","edge_precision":"unknown","cliopatria_name":"Magadha - Haryanka dynasty","cliopatria_from_year":-500,"cliopatria_to_year":-481,"cliopatria_area_km2":33403,"cliopatria_wikidata":"Q12459974","cliopatria_wikipedia":"Haryanka dynasty","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[84.51,25.3579],
+[84.6597,25.3579],
+[84.6384,25.2293],
+[84.7881,25.2293],
+[84.8313,25.0364],
+[85.9656,24.6506],
+[85.9452,24.5221],
+[86.2543,24.5864],
+[86.3834,24.4578],
+[86.8961,24.3935],
+[87.0899,24.2006],
+[87.3886,24.2006],
+[87.7281,24.4578],
+[87.7698,24.7149],
+[87.5349,25.1007],
+[87.1826,25.2293],
+[87.1078,25.2293],
+[86.5642,25.5507],
+[85.4217,25.8722],
+[84.8971,25.8722],
+[84.703,25.615],
+[84.5532,25.615],
+[84.51,25.3579]
+]
+]
+]}
+}

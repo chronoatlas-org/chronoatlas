@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kamarupa-kingdom-0860","edge_precision":"unknown","cliopatria_name":"Kamarupa Kingdom","cliopatria_from_year":860,"cliopatria_to_year":959,"cliopatria_area_km2":92664,"cliopatria_wikidata":"Q1194765","cliopatria_wikipedia":"Kamarupa","cliopatria_seshat_id":"in_kamarupa_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[89.3461,25.5813],
+[90.4683,25.2734],
+[92.3644,25.1789],
+[92.7152,25.0392],
+[93.7752,25.4039],
+[94.2156,25.7854],
+[94.7108,26.5202],
+[95.1686,26.9114],
+[94.452,27.7514],
+[94.1335,27.6456],
+[93.5562,27.1242],
+[92.8794,27.1419],
+[91.705,26.8315],
+[90.7992,26.8315],
+[90.1224,26.3509],
+[89.3461,25.5813]
+]
+]
+]}
+}

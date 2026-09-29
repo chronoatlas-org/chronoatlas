@@ -1,0 +1,40 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-capetian-house-of-anjou-1250","edge_precision":"unknown","cliopatria_name":"Capetian House of Anjou","cliopatria_from_year":1250,"cliopatria_to_year":1259,"cliopatria_area_km2":23104,"cliopatria_wikidata":"Q939200","cliopatria_wikipedia":"Capetian House of Anjou","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.3936,47.0716],
+[-0.8856,46.8743],
+[-0.8904,46.9401],
+[-0.2331,46.9401],
+[-0.2285,46.8743],
+[-0.1464,46.8743],
+[-0.1509,46.9401],
+[0.3421,46.9401],
+[0.3378,47.0058],
+[0.5844,47.0058],
+[0.4893,47.2032],
+[0.7236,47.4006],
+[0.7193,47.4665],
+[1.2964,47.4665],
+[1.1977,47.73],
+[1.2763,47.7959],
+[0.9247,48.1257],
+[0.4368,47.9938],
+[0.3361,48.2578],
+[-0.0001,48.3238],
+[-0.0924,48.4559],
+[-0.6633,48.3238],
+[-0.6682,48.3899],
+[-1,48.3899],
+[-0.9949,48.3238],
+[-1.0726,48.2578],
+[-1.0421,47.8619],
+[-1.2023,47.7959],
+[-1.1618,47.269],
+[-1.3936,47.0716]
+]
+]
+]}
+}

@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-free-city-of-hamburg-1815","edge_precision":"unknown","cliopatria_name":"Free City of Hamburg","cliopatria_from_year":1815,"cliopatria_to_year":1819,"cliopatria_area_km2":858,"cliopatria_wikidata":"Q1055","cliopatria_wikipedia":"Hamburg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.8428,53.5296],
+[10.1872,53.3946],
+[10.3594,53.4621],
+[10.3596,53.5971],
+[10.1873,53.7323],
+[10.0148,53.7323],
+[9.8428,53.5296]
+]
+]
+]}
+}

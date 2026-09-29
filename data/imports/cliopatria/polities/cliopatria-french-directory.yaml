@@ -1,0 +1,8 @@
+id: cliopatria-french-directory
+names:
+  - text: French Directory
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Directory"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-pajana
+names:
+  - text: Kingdom of Pajana
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Pajana"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

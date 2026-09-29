@@ -1,0 +1,8 @@
+id: cliopatria-ilkhanate
+names:
+  - text: Ilkhanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ilkhanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

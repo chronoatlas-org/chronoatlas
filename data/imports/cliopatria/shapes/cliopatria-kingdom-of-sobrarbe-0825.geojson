@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-sobrarbe-0825","edge_precision":"unknown","cliopatria_name":"Kingdom of Sobrarbe","cliopatria_from_year":825,"cliopatria_to_year":829,"cliopatria_area_km2":3584,"cliopatria_wikidata":"Q3572492","cliopatria_wikipedia":"Kingdom of Sobrarbe"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.153,42.5612],
+[-1.1445,42.4312],
+[-0.7486,42.4962],
+[-0.6524,42.2362],
+[-0.4925,42.2362],
+[-0.1884,42.4962],
+[-0.124,42.7563],
+[-0.7735,42.8864],
+[-1.0772,42.6262],
+[-1.073,42.5612],
+[-1.153,42.5612]
+]
+]
+]}
+}

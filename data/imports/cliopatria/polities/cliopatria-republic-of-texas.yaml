@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-texas
+names:
+  - text: Republic of Texas
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Texas"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-empire-of-kanem-1072","edge_precision":"unknown","cliopatria_name":"Empire of Kanem","cliopatria_from_year":1072,"cliopatria_to_year":1374,"cliopatria_area_km2":20167,"cliopatria_wikidata":"Q1139762","cliopatria_wikipedia":"Kanem-Bornu Empire","cliopatria_seshat_id":"td_kanem"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.0613,11.8574],
+[15.2818,11.9217],
+[15.2801,11.7931],
+[15.4266,11.7931],
+[15.425,11.6646],
+[15.786,11.2788],
+[16.2242,11.2146],
+[16.4456,11.3431],
+[16.5188,11.3431],
+[16.6688,11.6003],
+[16.6742,11.986],
+[16.5295,12.1146],
+[16.6046,12.2432],
+[16.4581,12.2432],
+[16.4598,12.3717],
+[16.2426,12.5646],
+[15.9512,12.6932],
+[15.5114,12.6932],
+[15.215,12.436],
+[15.1401,12.3074],
+[15.211,12.1146],
+[15.0636,12.0503],
+[15.0613,11.8574]
+]
+]
+]}
+}

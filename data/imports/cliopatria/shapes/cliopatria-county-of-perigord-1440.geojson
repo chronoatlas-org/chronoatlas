@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-perigord-1440","edge_precision":"unknown","cliopatria_name":"County of Périgord","cliopatria_from_year":1440,"cliopatria_to_year":1452,"cliopatria_area_km2":18221,"cliopatria_wikidata":"Q1947408","cliopatria_wikipedia":"County of Périgord","cliopatria_seshat_id":"fr_valois_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.1781,44.908],
+[-0.0718,44.516],
+[1.0654,44.4507],
+[1.3784,44.6466],
+[1.4487,44.8426],
+[2.101,44.7773],
+[2.1688,45.0388],
+[2.4027,45.235],
+[2.3047,45.5623],
+[0.9038,45.8243],
+[0.8381,45.5623],
+[0.5243,45.3659],
+[0.5324,45.235],
+[0.2236,44.9734],
+[-0.1781,44.908]
+]
+]
+]}
+}

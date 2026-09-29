@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-banten-1529","edge_precision":"unknown","cliopatria_name":"Sultanate of Banten","cliopatria_from_year":1529,"cliopatria_to_year":1555,"cliopatria_area_km2":9894,"cliopatria_wikidata":"Q734867","cliopatria_wikipedia":"Banten Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[105.3749,-6.8503],
+[105.8855,-6.8503],
+[105.8892,-6.9145],
+[106.0351,-6.9145],
+[106.0388,-6.9788],
+[106.1847,-6.9788],
+[106.3158,-6.7217],
+[106.2251,-6.4002],
+[106.5897,-6.4002],
+[106.5725,-6.0788],
+[106.6454,-6.0788],
+[106.6421,-6.0145],
+[105.9064,-5.8859],
+[105.6976,-6.0788],
+[105.7111,-6.336],
+[105.4298,-6.5288],
+[105.3749,-6.8503]
+]
+]
+]}
+}

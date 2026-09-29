@@ -1,0 +1,8 @@
+id: cliopatria-mahan
+names:
+  - text: Mahan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mahan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

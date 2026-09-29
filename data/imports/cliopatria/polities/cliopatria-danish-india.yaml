@@ -1,0 +1,8 @@
+id: cliopatria-danish-india
+names:
+  - text: Danish India
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Danish India"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

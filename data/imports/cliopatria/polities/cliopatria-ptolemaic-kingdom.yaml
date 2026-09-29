@@ -1,0 +1,8 @@
+id: cliopatria-ptolemaic-kingdom
+names:
+  - text: Ptolemaic Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ptolemaic Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

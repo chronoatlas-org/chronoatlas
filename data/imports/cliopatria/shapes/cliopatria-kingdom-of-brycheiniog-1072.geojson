@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-brycheiniog-1072","edge_precision":"unknown","cliopatria_name":"Kingdom of Brycheiniog","cliopatria_from_year":1072,"cliopatria_to_year":1084,"cliopatria_area_km2":3494,"cliopatria_wikidata":"Q954585","cliopatria_wikipedia":"Brycheiniog","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.8915,51.5803],
+[-3.8844,51.5134],
+[-3.7008,51.3797],
+[-3.1147,51.4465],
+[-3.1214,51.5134],
+[-3.3184,51.7811],
+[-2.9004,51.8481],
+[-2.9273,52.1163],
+[-3.7789,52.1163],
+[-3.7574,51.9151],
+[-3.5873,51.9151],
+[-3.5662,51.7142],
+[-3.8915,51.5803]
+]
+]
+]}
+}

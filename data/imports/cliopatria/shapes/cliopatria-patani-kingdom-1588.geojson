@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-patani-kingdom-1588","edge_precision":"unknown","cliopatria_name":"Patani Kingdom","cliopatria_from_year":1588,"cliopatria_to_year":1608,"cliopatria_area_km2":11302,"cliopatria_wikidata":"Q584435","cliopatria_wikipedia":"Patani Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[100.8868,6.2644],
+[101.0938,6.0715],
+[100.998,5.6858],
+[101.14,5.6215],
+[101.4429,5.8144],
+[101.4467,5.8787],
+[101.5925,5.8787],
+[101.5887,5.8144],
+[101.6616,5.8144],
+[101.6578,5.7501],
+[101.8765,5.7501],
+[102.0535,6.2644],
+[102.0575,6.3287],
+[101.7739,6.4573],
+[101.7174,6.7144],
+[101.5111,6.9073],
+[101.1464,6.9073],
+[101.1986,6.5858],
+[100.9716,6.4573],
+[100.8868,6.2644]
+]
+]
+]}
+}

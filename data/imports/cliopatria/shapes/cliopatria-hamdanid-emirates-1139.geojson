@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hamdanid-emirates-1139","edge_precision":"unknown","cliopatria_name":"Hamdanid Emirates","cliopatria_from_year":1139,"cliopatria_to_year":1191,"cliopatria_area_km2":788,"cliopatria_wikidata":"Q837187","cliopatria_wikipedia":"Hamdanid dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[48.1186,41.5869],
+[48.2778,41.5869],
+[48.4774,41.7816],
+[48.3977,41.7816],
+[48.4112,41.8465],
+[48.3315,41.8465],
+[48.345,41.9114],
+[48.2652,41.9114],
+[48.1192,41.9764],
+[48.1319,41.6518],
+[48.1186,41.5869]
+]
+]
+]}
+}

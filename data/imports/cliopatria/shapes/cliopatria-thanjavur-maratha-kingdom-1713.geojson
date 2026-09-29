@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-thanjavur-maratha-kingdom-1713","edge_precision":"unknown","cliopatria_name":"Thanjavur Maratha Kingdom","cliopatria_from_year":1713,"cliopatria_to_year":1737,"cliopatria_area_km2":14610,"cliopatria_wikidata":"Q3530610","cliopatria_wikipedia":"Thanjavur Maratha Kingdom","cliopatria_seshat_id":"in_thanjavur_maratha_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[78.5218,10.8406],
+[78.73,10.7493],
+[78.709,10.3748],
+[78.9823,10.0303],
+[79.0484,9.9636],
+[79.1812,9.8136],
+[79.3308,10.2217],
+[79.8838,10.2294],
+[79.8455,11.3755],
+[79.798,11.4695],
+[79.0031,10.9676],
+[78.542,10.9572],
+[78.5218,10.8406]
+]
+]
+]}
+}

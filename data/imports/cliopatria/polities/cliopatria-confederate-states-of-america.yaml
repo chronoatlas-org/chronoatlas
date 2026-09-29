@@ -1,0 +1,8 @@
+id: cliopatria-confederate-states-of-america
+names:
+  - text: Confederate States of America
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Confederate States of America"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

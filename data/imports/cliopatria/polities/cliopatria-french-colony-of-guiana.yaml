@@ -1,0 +1,8 @@
+id: cliopatria-french-colony-of-guiana
+names:
+  - text: French Colony of Guiana
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Colony of Guiana"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

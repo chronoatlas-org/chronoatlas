@@ -1,0 +1,8 @@
+id: cliopatria-angevin-empire
+names:
+  - text: Angevin Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Angevin Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

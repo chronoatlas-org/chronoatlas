@@ -1,0 +1,8 @@
+id: cliopatria-kazakh-khanate
+names:
+  - text: Kazakh Khanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kazakh Khanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-france
+names:
+  - text: Kingdom of France
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of France"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

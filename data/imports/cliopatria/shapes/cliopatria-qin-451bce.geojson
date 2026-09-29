@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-qin-451bce","edge_precision":"unknown","cliopatria_name":"Qin","cliopatria_from_year":-450,"cliopatria_to_year":-405,"cliopatria_area_km2":46886,"cliopatria_wikidata":"Q1471995","cliopatria_wikipedia":"Qin (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[108.1695,35.5158],
+[108.3497,35.3871],
+[108.2982,35.2584],
+[108.4528,35.2584],
+[108.2477,34.9366],
+[109.2254,34.8723],
+[109.2516,34.7436],
+[109.5091,34.615],
+[109.5862,34.615],
+[110.5884,34.8079],
+[111.0294,35.3227],
+[111.0559,35.3871],
+[111.2303,36.3528],
+[111.4133,36.4172],
+[112.1722,37.2549],
+[112.0942,37.2549],
+[109.6546,36.4816],
+[108.7896,35.7089],
+[108.2215,35.6445],
+[108.1695,35.5158]
+]
+]
+]}
+}

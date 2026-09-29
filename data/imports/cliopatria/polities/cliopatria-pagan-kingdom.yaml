@@ -1,0 +1,8 @@
+id: cliopatria-pagan-kingdom
+names:
+  - text: Pagan Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Pagan Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

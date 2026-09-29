@@ -1,0 +1,8 @@
+id: cliopatria-antigua-and-barbuda
+names:
+  - text: Antigua and Barbuda
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Antigua and Barbuda"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

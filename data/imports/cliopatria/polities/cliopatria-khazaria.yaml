@@ -1,0 +1,8 @@
+id: cliopatria-khazaria
+names:
+  - text: Khazaria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Khazaria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

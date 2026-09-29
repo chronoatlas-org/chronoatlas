@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-beylik-of-aydin-1326","edge_precision":"unknown","cliopatria_name":"Beylik of Aydin","cliopatria_from_year":1326,"cliopatria_to_year":1414,"cliopatria_area_km2":7958,"cliopatria_wikidata":"Q717112","cliopatria_wikipedia":"Aydinids"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[27.1634,37.5773],
+[27.31,37.4483],
+[27.2225,37.3193],
+[27.4612,37.3838],
+[27.5392,37.3838],
+[27.7098,37.5773],
+[27.9489,37.6417],
+[28.027,37.6417],
+[28.2663,37.7062],
+[28.4021,37.4483],
+[28.631,37.3838],
+[28.6361,37.4483],
+[28.7141,37.4483],
+[28.6778,37.9643],
+[28.3755,38.0933],
+[27.5931,38.0933],
+[27.1922,37.9643],
+[27.1777,37.7707],
+[27.2559,37.7707],
+[27.1634,37.5773]
+]
+]
+]}
+}

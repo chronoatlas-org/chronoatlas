@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-norse-0161","edge_precision":"unknown","cliopatria_name":"Norse","cliopatria_from_year":161,"cliopatria_to_year":183,"cliopatria_area_km2":4083,"cliopatria_wikidata":"Q909583","cliopatria_wikipedia":"Norse"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.5754,55.5665],
+[9.5763,55.3618],
+[9.7512,55.3618],
+[9.9264,55.0892],
+[10.711,55.0211],
+[10.7117,55.1573],
+[10.799,55.1573],
+[10.8006,55.43],
+[10.626,55.4983],
+[10.6266,55.6348],
+[9.838,55.6348],
+[9.5754,55.5665]
+]
+]
+]}
+}

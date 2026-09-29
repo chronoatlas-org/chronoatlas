@@ -1,0 +1,8 @@
+id: cliopatria-white-huns
+names:
+  - text: White Huns
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "White Huns"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

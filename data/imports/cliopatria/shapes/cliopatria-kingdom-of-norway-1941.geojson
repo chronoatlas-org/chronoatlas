@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-norway-1941","edge_precision":"unknown","cliopatria_name":"Kingdom of Norway","cliopatria_from_year":1941,"cliopatria_to_year":1944,"cliopatria_area_km2":372,"cliopatria_wikidata":"Q20","cliopatria_wikipedia":"Norway"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-8.6432,71.109],
+[-8.6088,70.9532],
+[-8.3015,70.9532],
+[-8.1133,71.031],
+[-8.1468,71.187],
+[-8.6432,71.109]
+]
+]
+]}
+}

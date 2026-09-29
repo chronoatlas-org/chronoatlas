@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-durrani-empire-1748","edge_precision":"unknown","cliopatria_name":"Durrani Empire","cliopatria_from_year":1748,"cliopatria_to_year":1751,"cliopatria_area_km2":54363,"cliopatria_wikidata":"Q467627","cliopatria_wikipedia":"Durrani Empire","cliopatria_seshat_id":"af_durrani_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[67.5469,33.7789],
+[67.6238,33.7789],
+[67.7423,33.2645],
+[68.1607,33.0716],
+[68.8642,33.1359],
+[69.472,33.4574],
+[69.5008,33.5859],
+[69.9432,33.8432],
+[69.9876,34.0361],
+[70.2482,34.1647],
+[70.2632,34.229],
+[70.5549,34.4863],
+[70.6629,34.9366],
+[70.5094,35.2584],
+[70.5252,35.3227],
+[70.2791,35.5802],
+[69.6916,35.7089],
+[69.6758,35.6445],
+[68.7627,35.3871],
+[68.024,34.8723],
+[67.9796,34.6793],
+[67.6755,34.3577],
+[67.5469,33.7789]
+]
+]
+]}
+}

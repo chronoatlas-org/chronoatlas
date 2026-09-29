@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-free-city-of-danzig-1939","edge_precision":"unknown","cliopatria_name":"Free City of Danzig","cliopatria_from_year":1939,"cliopatria_to_year":1939,"cliopatria_area_km2":2515,"cliopatria_wikidata":"Q216173","cliopatria_wikipedia":"Free City of Danzig"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.2352,54.1384],
+[18.8409,54.1384],
+[19.1671,53.8676],
+[19.355,54.0706],
+[19.3755,54.3417],
+[19.2888,54.3417],
+[18.5181,54.4774],
+[18.5087,54.3417],
+[18.3354,54.3417],
+[18.3308,54.2739],
+[18.2352,54.1384]
+]
+]
+]}
+}

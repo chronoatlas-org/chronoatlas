@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-parma-and-piacenza-1815","edge_precision":"unknown","cliopatria_name":"Duchy of Parma and Piacenza","cliopatria_from_year":1815,"cliopatria_to_year":1847,"cliopatria_area_km2":7460,"cliopatria_wikidata":"Q165040","cliopatria_wikipedia":"Duchy of Parma and Piacenza"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.9946,44.7119],
+[8.9959,44.5813],
+[9.4833,44.3854],
+[9.5642,44.3854],
+[9.5646,44.3201],
+[9.7263,44.3201],
+[9.7267,44.2548],
+[9.8884,44.2548],
+[10.0496,44.3854],
+[10.0489,44.5813],
+[10.2109,44.5813],
+[10.4534,44.9734],
+[9.8028,45.1696],
+[9.3151,45.1696],
+[9.235,45.0388],
+[9.2367,44.8426],
+[8.9946,44.7119]
+]
+]
+]}
+}

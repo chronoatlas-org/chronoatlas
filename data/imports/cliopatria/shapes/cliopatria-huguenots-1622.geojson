@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-huguenots-1622","edge_precision":"unknown","cliopatria_name":"Huguenots","cliopatria_from_year":1622,"cliopatria_to_year":1628,"cliopatria_area_km2":1916,"cliopatria_wikidata":"Q101935","cliopatria_wikipedia":"Huguenots"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.2421,46.1521],
+[-1.2227,45.8898],
+[-1.1411,45.8898],
+[-1.2131,45.7588],
+[-1.0406,45.6278],
+[-1.0359,45.5623],
+[-0.7869,45.4968],
+[-0.7283,45.8243],
+[-0.9968,46.1521],
+[-1.2421,46.1521]
+]
+]
+]}
+}

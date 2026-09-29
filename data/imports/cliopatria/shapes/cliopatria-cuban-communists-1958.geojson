@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cuban-communists-1958","edge_precision":"unknown","cliopatria_name":"Cuban Communists","cliopatria_from_year":1958,"cliopatria_to_year":1959,"cliopatria_area_km2":3227,"cliopatria_wikidata":"Q371402","cliopatria_wikipedia":"Communist Party of Cuba"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-77.0162,20.022],
+[-76.9231,19.8934],
+[-75.8954,19.9577],
+[-75.8213,19.9577],
+[-75.9236,20.1505],
+[-76.526,20.2148],
+[-76.887,20.1505],
+[-77.0162,20.022]
+]
+]
+]}
+}

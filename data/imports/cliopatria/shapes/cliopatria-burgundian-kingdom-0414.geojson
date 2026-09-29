@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-burgundian-kingdom-0414","edge_precision":"unknown","cliopatria_name":"Burgundian Kingdom","cliopatria_from_year":414,"cliopatria_to_year":438,"cliopatria_area_km2":6880,"cliopatria_wikidata":"Q13590051","cliopatria_wikipedia":"Kingdom of the Burgundians","cliopatria_seshat_id":"fr_burgundian_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.1231,48.5881],
+[7.2907,48.522],
+[7.2923,48.4559],
+[7.7085,48.3899],
+[7.7862,48.6542],
+[8.115,48.8527],
+[8.1115,49.0513],
+[8.2759,49.1838],
+[8.3519,49.6479],
+[8.1813,49.8471],
+[7.9312,49.7807],
+[7.8475,49.7807],
+[7.8501,49.6479],
+[7.5241,49.25],
+[7.5298,48.9851],
+[7.2831,48.8527],
+[7.2861,48.7204],
+[7.1231,48.5881]
+]
+]
+]}
+}

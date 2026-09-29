@@ -1,0 +1,8 @@
+id: cliopatria-namayan
+names:
+  - text: Namayan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Namayan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

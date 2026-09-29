@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-osona-1040","edge_precision":"unknown","cliopatria_name":"County of Osona","cliopatria_from_year":1040,"cliopatria_to_year":1055,"cliopatria_area_km2":2217,"cliopatria_wikidata":"Q1541779","cliopatria_wikipedia":"County of Osona"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.209,41.7816],
+[1.6904,41.7167],
+[1.9233,41.8465],
+[2.0828,41.8465],
+[2.4786,41.9114],
+[2.7067,42.1712],
+[2.7866,42.1712],
+[2.7838,42.2362],
+[2.8637,42.2362],
+[2.861,42.3012],
+[2.5412,42.3012],
+[2.1536,42.0413],
+[1.5278,41.7816],
+[1.209,41.7816]
+]
+]
+]}
+}

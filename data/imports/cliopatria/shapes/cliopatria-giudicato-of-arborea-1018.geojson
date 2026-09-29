@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-giudicato-of-arborea-1018","edge_precision":"unknown","cliopatria_name":"Giudicato of Arborea","cliopatria_from_year":1018,"cliopatria_to_year":1065,"cliopatria_area_km2":3855,"cliopatria_wikidata":"Q1241847","cliopatria_wikipedia":"Judicate of Arborea"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.324,40.0317],
+[8.4834,39.9023],
+[8.4074,39.6436],
+[8.4081,39.5789],
+[8.9592,39.6436],
+[9.2717,40.0317],
+[9.1133,40.0964],
+[9.1123,40.2259],
+[8.4015,40.1612],
+[8.4022,40.0964],
+[8.324,40.0317]
+]
+]
+]}
+}

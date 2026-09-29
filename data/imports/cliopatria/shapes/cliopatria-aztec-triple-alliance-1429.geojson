@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-aztec-triple-alliance-1429","edge_precision":"unknown","cliopatria_name":"Aztec Triple Alliance","cliopatria_from_year":1429,"cliopatria_to_year":1439,"cliopatria_area_km2":5759,"cliopatria_wikidata":"Q2608489","cliopatria_wikipedia":"Aztec Empire","cliopatria_seshat_id":"mx_aztec_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-99.2618,19.3148],
+[-99.1408,19.0577],
+[-99.0668,19.0577],
+[-98.9347,18.7362],
+[-98.5765,18.8005],
+[-98.5997,18.9291],
+[-98.4402,18.8648],
+[-98.475,19.0577],
+[-98.2415,18.9934],
+[-98.3738,19.3148],
+[-98.5218,19.3148],
+[-98.8027,19.6362],
+[-99.013,19.5719],
+[-99.1138,19.3148],
+[-99.2618,19.3148]
+]
+]
+]}
+}

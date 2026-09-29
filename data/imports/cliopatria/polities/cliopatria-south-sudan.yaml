@@ -1,0 +1,8 @@
+id: cliopatria-south-sudan
+names:
+  - text: South Sudan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "South Sudan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

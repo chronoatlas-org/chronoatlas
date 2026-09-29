@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-carthage-651bce","edge_precision":"unknown","cliopatria_name":"Carthage","cliopatria_from_year":-650,"cliopatria_to_year":-631,"cliopatria_area_km2":3728,"cliopatria_wikidata":"Q2429397","cliopatria_wikipedia":"Ancient Carthage","cliopatria_seshat_id":"tn_carthage_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.8397,36.7393],
+[10.2295,36.4172],
+[10.2299,36.2884],
+[10.5405,36.224],
+[10.4625,36.4172],
+[11.0062,36.8037],
+[11.0063,36.9971],
+[10.8506,36.9971],
+[10.5396,36.7393],
+[10.2282,36.8682],
+[9.9175,36.7393],
+[9.8397,36.7393]
+]
+],
+[
+[
+[10.228,36.9326],
+[10.2282,36.8682],
+[10.306,36.8682],
+[10.3058,36.9326],
+[10.228,36.9326]
+]
+]
+]}
+}

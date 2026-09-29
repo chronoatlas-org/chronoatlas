@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-salian-franks-0358","edge_precision":"unknown","cliopatria_name":"Salian Franks","cliopatria_from_year":358,"cliopatria_to_year":438,"cliopatria_area_km2":7101,"cliopatria_wikidata":"Q939852","cliopatria_wikipedia":"Salian Franks"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.2691,51.1792],
+[4.6975,51.0457],
+[5.2044,51.0457],
+[5.5376,51.1792],
+[5.5328,51.3128],
+[5.7845,51.3797],
+[5.8624,51.5803],
+[5.5159,51.7811],
+[4.3297,51.7142],
+[4.2691,51.1792]
+]
+]
+]}
+}

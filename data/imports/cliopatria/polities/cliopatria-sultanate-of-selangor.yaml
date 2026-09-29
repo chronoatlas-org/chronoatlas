@@ -1,0 +1,8 @@
+id: cliopatria-sultanate-of-selangor
+names:
+  - text: Sultanate of Selangor
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sultanate of Selangor"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

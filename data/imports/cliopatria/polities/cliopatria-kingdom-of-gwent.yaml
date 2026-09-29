@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-gwent
+names:
+  - text: Kingdom of Gwent
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Gwent"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

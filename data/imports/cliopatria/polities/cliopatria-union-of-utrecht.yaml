@@ -1,0 +1,8 @@
+id: cliopatria-union-of-utrecht
+names:
+  - text: Union of Utrecht
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Union of Utrecht"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

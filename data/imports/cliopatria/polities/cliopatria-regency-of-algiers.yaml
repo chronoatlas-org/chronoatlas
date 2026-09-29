@@ -1,0 +1,8 @@
+id: cliopatria-regency-of-algiers
+names:
+  - text: Regency of Algiers
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Regency of Algiers"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

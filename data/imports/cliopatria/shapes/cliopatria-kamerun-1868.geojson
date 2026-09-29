@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kamerun-1868","edge_precision":"unknown","cliopatria_name":"Kamerun","cliopatria_from_year":1868,"cliopatria_to_year":1869,"cliopatria_area_km2":1898,"cliopatria_wikidata":"Q668294","cliopatria_wikipedia":"Kamerun"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.3425,4.0143],
+[9.5611,4.0143],
+[9.6321,3.8858],
+[9.8515,3.9501],
+[9.8524,4.0143],
+[9.856,4.2715],
+[9.4198,4.3358],
+[9.49,4.1429],
+[9.3443,4.1429],
+[9.3425,4.0143]
+]
+]
+]}
+}

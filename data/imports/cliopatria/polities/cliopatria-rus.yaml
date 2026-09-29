@@ -1,0 +1,8 @@
+id: cliopatria-rus
+names:
+  - text: Rus'
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Rus'"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

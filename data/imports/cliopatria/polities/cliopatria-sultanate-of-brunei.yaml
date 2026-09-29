@@ -1,0 +1,8 @@
+id: cliopatria-sultanate-of-brunei
+names:
+  - text: Sultanate of Brunei
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Sultanate of Brunei"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

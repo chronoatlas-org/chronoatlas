@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-tortosa-1040","edge_precision":"unknown","cliopatria_name":"Taifa of Tortosa","cliopatria_from_year":1040,"cliopatria_to_year":1045,"cliopatria_area_km2":7176,"cliopatria_wikidata":"Q605930","cliopatria_wikipedia":"Taifa of Tortosa","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.0753,40.6792],
+[0.0789,40.6144],
+[0.3923,40.6792],
+[0.3992,40.5496],
+[0.4784,40.5496],
+[0.7093,40.6792],
+[0.6958,40.9384],
+[1.2384,41.1977],
+[1.7121,41.2625],
+[1.7916,41.2625],
+[1.7028,41.4571],
+[1.3845,41.4571],
+[1.3781,41.5869],
+[1.0563,41.6518],
+[1.1293,41.7816],
+[0.9698,41.7816],
+[0.9732,41.7167],
+[0.8936,41.7167],
+[0.665,41.522],
+[0.6719,41.3922],
+[0.4403,41.2625],
+[0.3749,41.0032],
+[0.1439,40.8736],
+[0.0753,40.6792]
+]
+]
+]}
+}

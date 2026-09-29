@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-anhalt-1814","edge_precision":"unknown","cliopatria_name":"Duchy of Anhalt","cliopatria_from_year":1814,"cliopatria_to_year":1819,"cliopatria_area_km2":1552,"cliopatria_wikidata":"Q16550783","cliopatria_wikipedia":"Duchy of Anhalt"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[10.9514,51.5803],
+[11.0363,51.5803],
+[11.376,51.6472],
+[11.3771,51.7811],
+[10.9521,51.7142],
+[10.9514,51.5803]
+]
+],
+[
+[
+[11.4603,51.5803],
+[11.9684,51.5134],
+[12.3095,51.6472],
+[12.3105,51.7142],
+[12.3954,51.7142],
+[12.3975,51.8481],
+[12.1435,51.9151],
+[12.0558,51.7142],
+[11.4603,51.5803]
+]
+]
+]}
+}

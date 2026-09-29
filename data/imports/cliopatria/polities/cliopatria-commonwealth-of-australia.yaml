@@ -1,0 +1,8 @@
+id: cliopatria-commonwealth-of-australia
+names:
+  - text: Commonwealth of Australia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Commonwealth of Australia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

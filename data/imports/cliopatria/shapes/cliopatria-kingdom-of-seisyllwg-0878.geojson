@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-seisyllwg-0878","edge_precision":"unknown","cliopatria_name":"Kingdom of Seisyllwg","cliopatria_from_year":878,"cliopatria_to_year":899,"cliopatria_area_km2":4577,"cliopatria_wikidata":"Q2456191","cliopatria_wikipedia":"Seisyllwg","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-4.5606,52.2505],
+[-4.553,52.1833],
+[-4.5378,52.0492],
+[-4.275,51.9822],
+[-4.2602,51.8481],
+[-4.4152,51.7142],
+[-4.4078,51.6472],
+[-4.3083,51.5134],
+[-3.9763,51.5803],
+[-3.8915,51.5803],
+[-3.6441,51.6472],
+[-3.5732,51.7811],
+[-3.5873,51.9151],
+[-3.7574,51.9151],
+[-3.7789,52.1163],
+[-3.6938,52.1163],
+[-3.7153,52.3176],
+[-3.986,52.4519],
+[-4.0714,52.4519],
+[-4.5606,52.2505]
+]
+]
+]}
+}

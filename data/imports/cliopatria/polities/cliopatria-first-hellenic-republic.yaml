@@ -1,0 +1,8 @@
+id: cliopatria-first-hellenic-republic
+names:
+  - text: First Hellenic Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "First Hellenic Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

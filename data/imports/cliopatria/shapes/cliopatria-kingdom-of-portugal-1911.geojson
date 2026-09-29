@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-portugal-1911","edge_precision":"unknown","cliopatria_name":"Kingdom of Portugal","cliopatria_from_year":1911,"cliopatria_to_year":1911,"cliopatria_area_km2":562,"cliopatria_wikidata":"Q45670","cliopatria_wikipedia":"Kingdom of Portugal"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-23.2819,15.2647],
+[-23.2005,15.0718],
+[-23.127,15.0718],
+[-22.9852,15.2004],
+[-23.064,15.329],
+[-23.2819,15.2647]
+]
+]
+]}
+}

@@ -1,0 +1,36 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-bourbon-1333","edge_precision":"unknown","cliopatria_name":"House of Bourbon","cliopatria_from_year":1333,"cliopatria_to_year":1351,"cliopatria_area_km2":18691,"cliopatria_wikidata":"Q58389","cliopatria_wikipedia":"House of Bourbon","cliopatria_seshat_id":"fr_valois_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.9038,45.8243],
+[2.3047,45.5623],
+[2.536,45.8243],
+[2.6011,46.1521],
+[2.7711,46.0209],
+[3.0131,46.0865],
+[3.2674,45.8898],
+[3.349,45.8898],
+[3.3431,46.0209],
+[3.6699,46.0209],
+[3.6756,45.8898],
+[3.8389,45.8898],
+[4.0784,46.0209],
+[4.073,46.1521],
+[3.7286,46.5459],
+[3.0697,46.6115],
+[2.896,46.8086],
+[2.4033,46.8086],
+[2.3455,46.3489],
+[1.5155,46.5459],
+[0.9417,46.5459],
+[0.9538,46.3489],
+[1.2072,46.2177],
+[1.2149,46.0865],
+[0.9736,46.0209],
+[0.9038,45.8243]
+]
+]
+]}
+}

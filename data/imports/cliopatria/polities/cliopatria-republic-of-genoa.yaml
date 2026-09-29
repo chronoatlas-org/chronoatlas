@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-genoa
+names:
+  - text: Republic of Genoa
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Genoa"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-mempawah-1619","edge_precision":"unknown","cliopatria_name":"Sultanate of Mempawah","cliopatria_from_year":1619,"cliopatria_to_year":1824,"cliopatria_area_km2":2937,"cliopatria_wikidata":"Q19746028","cliopatria_wikipedia":"Mempawah Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[108.7072,0.6714],
+[108.7675,0.2857],
+[108.909,0.1571],
+[109.3559,0.4785],
+[109.3601,0.6071],
+[109.2167,0.6714],
+[109.2188,0.7357],
+[109.0005,0.7357],
+[108.8506,0.6071],
+[108.7072,0.6714]
+]
+]
+]}
+}

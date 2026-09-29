@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-svaneti-1830","edge_precision":"unknown","cliopatria_name":"Principality of Svaneti","cliopatria_from_year":1830,"cliopatria_to_year":1833,"cliopatria_area_km2":2365,"cliopatria_wikidata":"Q2919545","cliopatria_wikipedia":"Principality of Svaneti"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[42.3882,42.9515],
+[42.525,42.8213],
+[43.3389,42.8864],
+[43.2829,43.0165],
+[42.9861,43.1467],
+[42.5161,43.2118],
+[42.4357,43.2118],
+[42.3882,42.9515]
+]
+]
+]}
+}

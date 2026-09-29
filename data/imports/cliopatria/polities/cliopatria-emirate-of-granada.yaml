@@ -1,0 +1,8 @@
+id: cliopatria-emirate-of-granada
+names:
+  - text: Emirate of Granada
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Emirate of Granada"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

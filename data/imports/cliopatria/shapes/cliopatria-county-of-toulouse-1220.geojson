@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-toulouse-1220","edge_precision":"unknown","cliopatria_name":"County of Toulouse","cliopatria_from_year":1220,"cliopatria_to_year":1226,"cliopatria_area_km2":1105,"cliopatria_wikidata":"Q1334322","cliopatria_wikipedia":"County of Toulouse","cliopatria_seshat_id":"fr_capetian_k_2","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.2632,43.7982],
+[1.3543,43.6027],
+[1.4348,43.6027],
+[1.5993,43.5375],
+[1.7536,43.6678],
+[1.747,43.7982],
+[1.4175,43.9286],
+[1.2632,43.7982]
+]
+]
+]}
+}

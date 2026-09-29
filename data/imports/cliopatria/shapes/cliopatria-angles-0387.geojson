@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-angles-0387","edge_precision":"unknown","cliopatria_name":"Angles","cliopatria_from_year":387,"cliopatria_to_year":475,"cliopatria_area_km2":1293,"cliopatria_wikidata":"Q234218","cliopatria_wikipedia":"Angles"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.2301,54.8851],
+[9.3176,54.8171],
+[9.2321,54.6132],
+[9.8404,54.5453],
+[9.9272,54.5453],
+[9.9268,54.8171],
+[9.2301,54.8851]
+]
+]
+]}
+}

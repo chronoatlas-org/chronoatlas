@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-english-colonial-empire-1778","edge_precision":"unknown","cliopatria_name":"English Colonial Empire","cliopatria_from_year":1778,"cliopatria_to_year":1779,"cliopatria_area_km2":819,"cliopatria_wikidata":"Q617219","cliopatria_wikipedia":"English overseas possessions"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[79.8536,10.8931],
+[79.8599,10.6837],
+[79.8703,10.8288],
+[79.8749,10.8931],
+[79.8536,10.8931]
+]
+],
+[
+[
+[80.0993,12.8217],
+[80.3138,12.7575],
+[80.3248,12.886],
+[80.3469,13.1432],
+[80.2003,13.1432],
+[80.0993,12.8217]
+]
+]
+]}
+}

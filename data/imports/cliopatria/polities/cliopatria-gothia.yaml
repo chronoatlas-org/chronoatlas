@@ -1,0 +1,8 @@
+id: cliopatria-gothia
+names:
+  - text: Gothia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Gothia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

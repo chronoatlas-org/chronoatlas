@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hoysala-kingdom-1333","edge_precision":"unknown","cliopatria_name":"Hoysala Kingdom","cliopatria_from_year":1333,"cliopatria_to_year":1343,"cliopatria_area_km2":110803,"cliopatria_wikidata":"Q466581","cliopatria_wikipedia":"Hoysala Kingdom","cliopatria_seshat_id":"in_hoysala_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[74.4576,14.1522],
+[74.591,13.934],
+[74.8141,12.822],
+[75.2048,11.9894],
+[75.619,12.057],
+[75.959,11.949],
+[76.608,11.654],
+[77.047,11.609],
+[77.48,11.857],
+[77.933,12.681],
+[77.871,12.885],
+[78.13,13.358],
+[78.128,14.179],
+[77.058,14.311],
+[76.922,14.543],
+[76.935,15.238],
+[76.718,15.449],
+[76.199,15.307],
+[75.867,15.011],
+[75.237,14.796],
+[74.905,14.452],
+[74.718,14.322],
+[74.4576,14.1522]
+]
+]
+]}
+}

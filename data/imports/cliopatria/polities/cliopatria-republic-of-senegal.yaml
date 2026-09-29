@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-senegal
+names:
+  - text: Republic of Senegal
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Senegal"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-theodoro-1375","edge_precision":"unknown","cliopatria_name":"Principality of Theodoro","cliopatria_from_year":1375,"cliopatria_to_year":1467,"cliopatria_area_km2":700,"cliopatria_wikidata":"Q874954","cliopatria_wikipedia":"Principality of Theodoro"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[33.4577,44.5813],
+[33.5387,44.5813],
+[33.5298,44.516],
+[33.8537,44.516],
+[34.0337,44.6466],
+[33.5564,44.7119],
+[33.5476,44.6466],
+[33.4665,44.6466],
+[33.4577,44.5813]
+]
+],
+[
+[
+[34.0337,44.6466],
+[34.1148,44.6466],
+[34.1239,44.7119],
+[34.0428,44.7119],
+[34.0337,44.6466]
+]
+]
+]}
+}

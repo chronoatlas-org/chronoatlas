@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-lazica
+names:
+  - text: Kingdom of Lazica
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Lazica"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-kuru-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Kuru","cliopatria_from_year":-600,"cliopatria_to_year":-451,"cliopatria_area_km2":5232,"cliopatria_wikidata":"Q1068408","cliopatria_wikipedia":"Kuru Kingdom","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.8065,28.5081],
+[76.9575,28.5081],
+[76.9331,28.3795],
+[77.084,28.3795],
+[77.0599,28.251],
+[77.3615,28.251],
+[77.5612,28.5081],
+[77.7121,28.5081],
+[77.762,28.7652],
+[77.6109,28.7652],
+[77.6362,28.8938],
+[77.4851,28.8938],
+[77.5105,29.0224],
+[77.2965,29.0867],
+[76.9313,28.7652],
+[76.8557,28.7652],
+[76.8065,28.5081]
+]
+]
+]}
+}

@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-lippe-1814","edge_precision":"unknown","cliopatria_name":"Principality of Lippe","cliopatria_from_year":1814,"cliopatria_to_year":1814,"cliopatria_area_km2":807,"cliopatria_wikidata":"Q14551680","cliopatria_wikipedia":"Principality of Lippe"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.4002,52.0492],
+[8.489,51.7811],
+[8.828,51.8481],
+[8.9109,52.0492],
+[8.8258,52.0492],
+[8.825,52.1163],
+[8.7398,52.1163],
+[8.7406,52.0492],
+[8.4002,52.0492]
+]
+]
+]}
+}

@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-terengganu-1727","edge_precision":"unknown","cliopatria_name":"Sultanate of Terengganu","cliopatria_from_year":1727,"cliopatria_to_year":1899,"cliopatria_area_km2":14424,"cliopatria_wikidata":"Q5769444","cliopatria_wikipedia":"Sultan of Terengganu"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[102.2223,5.4287],
+[102.3644,5.3644],
+[102.4887,4.9787],
+[102.7003,4.8501],
+[102.7628,4.6572],
+[102.9085,4.6572],
+[102.8156,4.2715],
+[103.0244,4.0786],
+[103.1701,4.0786],
+[103.2527,4.2715],
+[103.3951,4.2072],
+[103.468,4.2072],
+[103.4746,4.3358],
+[103.4779,4.4001],
+[103.1662,5.3644],
+[102.4752,6.0073],
+[102.4023,6.0073],
+[102.2487,5.8787],
+[102.2223,5.4287]
+]
+]
+]}
+}

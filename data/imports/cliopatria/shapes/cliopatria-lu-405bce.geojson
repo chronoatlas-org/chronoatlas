@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-lu-405bce","edge_precision":"unknown","cliopatria_name":"Lu","cliopatria_from_year":-404,"cliopatria_to_year":-285,"cliopatria_area_km2":8798,"cliopatria_wikidata":"Q555994","cliopatria_wikipedia":"Lu (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[115.6466,36.1596],
+[115.8017,36.1596],
+[115.765,35.902],
+[116.0465,35.8377],
+[115.9616,35.6445],
+[116.0602,35.5158],
+[116.2149,35.5158],
+[116.2856,35.3227],
+[116.5175,35.3227],
+[117.0659,35.5158],
+[116.9678,35.6445],
+[117.0249,35.7733],
+[116.8498,35.902],
+[116.9073,36.0308],
+[116.4998,36.1596],
+[116.4802,36.2884],
+[116.1988,36.3528],
+[116.2279,36.4172],
+[115.6753,36.224],
+[115.6466,36.1596]
+]
+]
+]}
+}

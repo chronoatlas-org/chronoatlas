@@ -1,0 +1,8 @@
+id: cliopatria-british-east-africa
+names:
+  - text: British East Africa
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "British East Africa"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

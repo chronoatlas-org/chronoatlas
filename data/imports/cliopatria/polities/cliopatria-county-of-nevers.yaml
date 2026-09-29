@@ -1,0 +1,8 @@
+id: cliopatria-county-of-nevers
+names:
+  - text: County of Nevers
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Nevers"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-ligurian-republic
+names:
+  - text: Ligurian Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ligurian Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

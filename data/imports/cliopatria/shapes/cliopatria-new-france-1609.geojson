@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-new-france-1609","edge_precision":"unknown","cliopatria_name":"New France","cliopatria_from_year":1609,"cliopatria_to_year":1611,"cliopatria_area_km2":2509,"cliopatria_wikidata":"Q170604","cliopatria_wikipedia":"New France","cliopatria_seshat_id":"fr_bourbon_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-71.6249,47.0716],
+[-71.5712,46.8086],
+[-71.4553,46.7429],
+[-71.1271,46.7429],
+[-71.1607,46.8086],
+[-71.0786,46.8086],
+[-70.9479,46.8743],
+[-71.0154,47.0058],
+[-71.33,47.1374],
+[-71.6249,47.0716]
+]
+],
+[
+[
+[-65.7744,44.7773],
+[-65.6853,44.5813],
+[-65.2803,44.5813],
+[-65.5094,44.908],
+[-65.7231,44.8426],
+[-65.6933,44.7773],
+[-65.7744,44.7773]
+]
+]
+]}
+}

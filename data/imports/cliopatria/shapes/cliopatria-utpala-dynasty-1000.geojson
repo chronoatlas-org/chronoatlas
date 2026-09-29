@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-utpala-dynasty-1000","edge_precision":"unknown","cliopatria_name":"Utpala Dynasty","cliopatria_from_year":1000,"cliopatria_to_year":1002,"cliopatria_area_km2":175379,"cliopatria_wikidata":"Q1617123","cliopatria_wikipedia":"Utpala dynasty","cliopatria_seshat_id":"in_utpala_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[70.9612,36.9176],
+[70.9782,35.8852],
+[71.6122,35.4775],
+[72.3886,35.4532],
+[73.1848,34.9979],
+[73.7968,34.8177],
+[74.9216,34.667],
+[75.6333,33.7616],
+[76.8177,33.3635],
+[77.3452,35.2624],
+[77.3353,35.6273],
+[77.2855,36.1675],
+[77.2724,37.0034],
+[75.3704,37.2749],
+[74.823,37.52],
+[73.0713,37.7328],
+[71.9366,37.7486],
+[71.6281,37.5594],
+[71.1205,37.3065],
+[70.9612,36.9176]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-huguenots
+names:
+  - text: Huguenots
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Huguenots"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

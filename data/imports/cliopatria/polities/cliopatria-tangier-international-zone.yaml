@@ -1,0 +1,8 @@
+id: cliopatria-tangier-international-zone
+names:
+  - text: Tangier International Zone
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tangier International Zone"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

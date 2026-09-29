@@ -1,0 +1,8 @@
+id: cliopatria-min
+names:
+  - text: Min
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Min"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

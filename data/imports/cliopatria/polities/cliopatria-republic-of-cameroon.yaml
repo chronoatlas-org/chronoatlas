@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-cameroon
+names:
+  - text: Republic of Cameroon
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Cameroon"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

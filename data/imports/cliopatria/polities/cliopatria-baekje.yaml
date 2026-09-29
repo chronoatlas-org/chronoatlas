@@ -1,0 +1,8 @@
+id: cliopatria-baekje
+names:
+  - text: Baekje
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Baekje"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

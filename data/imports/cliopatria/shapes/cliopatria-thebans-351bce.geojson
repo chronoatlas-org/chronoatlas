@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-thebans-351bce","edge_precision":"unknown","cliopatria_name":"Thebans","cliopatria_from_year":-350,"cliopatria_to_year":-338,"cliopatria_area_km2":5165,"cliopatria_wikidata":"Q7777597","cliopatria_wikipedia":"Theban"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[21.9939,38.7389],
+[22.5396,38.6743],
+[22.6036,38.416],
+[22.682,38.416],
+[22.9881,38.2869],
+[22.9808,38.1578],
+[23.1447,38.2869],
+[23.3013,38.2869],
+[23.2975,38.2224],
+[23.4617,38.3515],
+[23.6967,38.3515],
+[23.6261,38.4806],
+[23.3126,38.4806],
+[22.9393,38.8034],
+[22.9431,38.868],
+[22.5505,38.868],
+[22.1685,39.0618],
+[22.0078,38.9972],
+[21.9939,38.7389]
+]
+]
+]}
+}

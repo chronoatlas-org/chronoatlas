@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-benevento-1072","edge_precision":"unknown","cliopatria_name":"Duchy of Benevento","cliopatria_from_year":1072,"cliopatria_to_year":1084,"cliopatria_area_km2":11899,"cliopatria_wikidata":"Q267816","cliopatria_wikipedia":"Duchy of Benevento"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[13.9542,41.3274],
+[14.2658,41.0032],
+[15.377,41.0032],
+[15.3127,41.5869],
+[15.4754,41.7167],
+[15.401,41.9114],
+[15.3212,41.9114],
+[15.165,42.0413],
+[14.924,41.9764],
+[14.7674,42.1063],
+[14.6876,42.1063],
+[14.3654,41.9764],
+[14.1208,41.7167],
+[13.9615,41.7167],
+[14.0386,41.5869],
+[13.9542,41.3274]
+]
+]
+]}
+}

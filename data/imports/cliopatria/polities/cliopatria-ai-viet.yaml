@@ -1,0 +1,8 @@
+id: cliopatria-ai-viet
+names:
+  - text: Đại Việt
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Đại Việt"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

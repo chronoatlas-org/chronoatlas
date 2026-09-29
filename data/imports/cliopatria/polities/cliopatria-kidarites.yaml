@@ -1,0 +1,8 @@
+id: cliopatria-kidarites
+names:
+  - text: Kidarites
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kidarites"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

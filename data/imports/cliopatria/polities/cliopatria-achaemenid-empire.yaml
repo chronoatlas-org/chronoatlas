@@ -1,0 +1,8 @@
+id: cliopatria-achaemenid-empire
+names:
+  - text: Achaemenid Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Achaemenid Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

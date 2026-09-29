@@ -1,0 +1,8 @@
+id: cliopatria-saxe-altenburg
+names:
+  - text: Saxe-Altenburg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Saxe-Altenburg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

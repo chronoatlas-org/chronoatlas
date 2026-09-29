@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-nanzan-1314","edge_precision":"unknown","cliopatria_name":"Nanzan","cliopatria_from_year":1314,"cliopatria_to_year":1394,"cliopatria_area_km2":321,"cliopatria_wikidata":"Q55522","cliopatria_wikipedia":"Nanzan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[127.5927,26.0651],
+[127.8176,26.0651],
+[127.8539,26.1937],
+[127.6289,26.1937],
+[127.5927,26.0651]
+]
+]
+]}
+}

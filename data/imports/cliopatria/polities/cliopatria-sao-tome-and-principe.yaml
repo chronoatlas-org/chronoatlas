@@ -1,0 +1,8 @@
+id: cliopatria-sao-tome-and-principe
+names:
+  - text: São Tomé and Príncipe
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "São Tomé and Príncipe"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

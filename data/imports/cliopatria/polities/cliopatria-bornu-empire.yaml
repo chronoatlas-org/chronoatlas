@@ -1,0 +1,8 @@
+id: cliopatria-bornu-empire
+names:
+  - text: Bornu Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Bornu Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

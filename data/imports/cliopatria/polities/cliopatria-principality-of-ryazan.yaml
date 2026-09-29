@@ -1,0 +1,8 @@
+id: cliopatria-principality-of-ryazan
+names:
+  - text: Principality of Ryazan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Principality of Ryazan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

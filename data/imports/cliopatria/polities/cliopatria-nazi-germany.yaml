@@ -1,0 +1,8 @@
+id: cliopatria-nazi-germany
+names:
+  - text: Nazi Germany
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Nazi Germany"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

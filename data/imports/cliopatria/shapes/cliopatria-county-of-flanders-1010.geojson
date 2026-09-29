@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-flanders-1010","edge_precision":"unknown","cliopatria_name":"County of Flanders","cliopatria_from_year":1010,"cliopatria_to_year":1151,"cliopatria_area_km2":17591,"cliopatria_wikidata":"Q157070","cliopatria_wikipedia":"County of Flanders","cliopatria_seshat_id":"fr_capetian_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4334,50.5789],
+[1.7785,50.4457],
+[1.7827,50.3791],
+[2.5544,50.113],
+[3.7293,50.113],
+[3.5383,50.5789],
+[4.0342,50.7788],
+[4.1031,51.1124],
+[3.2543,51.1792],
+[3.1591,51.3797],
+[3.0744,51.3797],
+[2.5778,51.1792],
+[1.6562,51.0457],
+[1.496,50.9122],
+[1.4334,50.5789]
+]
+]
+]}
+}

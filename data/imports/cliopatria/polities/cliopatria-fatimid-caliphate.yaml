@@ -1,0 +1,8 @@
+id: cliopatria-fatimid-caliphate
+names:
+  - text: Fatimid Caliphate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Fatimid Caliphate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

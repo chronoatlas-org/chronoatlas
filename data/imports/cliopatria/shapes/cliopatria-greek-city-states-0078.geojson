@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-greek-city-states-0078","edge_precision":"unknown","cliopatria_name":"Greek City-States","cliopatria_from_year":78,"cliopatria_to_year":83,"cliopatria_area_km2":602,"cliopatria_wikidata":"Q148837","cliopatria_wikipedia":"Polis"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[24.491,40.8088],
+[24.5513,40.5496],
+[24.7936,40.6144],
+[24.8081,40.8088],
+[24.491,40.8088]
+]
+]
+]}
+}

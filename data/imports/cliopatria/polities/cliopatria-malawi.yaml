@@ -1,0 +1,8 @@
+id: cliopatria-malawi
+names:
+  - text: Malawi
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Malawi"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

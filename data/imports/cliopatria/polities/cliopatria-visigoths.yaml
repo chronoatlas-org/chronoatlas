@@ -1,0 +1,8 @@
+id: cliopatria-visigoths
+names:
+  - text: Visigoths
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Visigoths"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

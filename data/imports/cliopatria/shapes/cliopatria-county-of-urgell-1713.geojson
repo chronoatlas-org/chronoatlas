@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-urgell-1713","edge_precision":"unknown","cliopatria_name":"County of Urgell","cliopatria_from_year":1713,"cliopatria_to_year":1733,"cliopatria_area_km2":333,"cliopatria_wikidata":"Q1514510","cliopatria_wikipedia":"County of Urgell"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.4855,42.6262],
+[1.4888,42.5612],
+[1.5754,42.4312],
+[1.8091,42.5612],
+[1.729,42.5612],
+[1.7258,42.6262],
+[1.4855,42.6262]
+]
+]
+]}
+}

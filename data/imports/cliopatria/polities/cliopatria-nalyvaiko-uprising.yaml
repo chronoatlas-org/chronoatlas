@@ -1,0 +1,8 @@
+id: cliopatria-nalyvaiko-uprising
+names:
+  - text: Nalyvaiko Uprising
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Nalyvaiko Uprising"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

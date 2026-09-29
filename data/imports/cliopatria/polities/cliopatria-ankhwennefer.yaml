@@ -1,0 +1,8 @@
+id: cliopatria-ankhwennefer
+names:
+  - text: Ankhwennefer
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ankhwennefer"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

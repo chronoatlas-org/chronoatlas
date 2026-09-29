@@ -1,0 +1,8 @@
+id: cliopatria-emirate-of-cordoba
+names:
+  - text: Emirate of Córdoba
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Emirate of Córdoba"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

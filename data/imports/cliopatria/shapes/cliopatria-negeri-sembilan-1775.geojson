@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-negeri-sembilan-1775","edge_precision":"unknown","cliopatria_name":"Negeri Sembilan","cliopatria_from_year":1775,"cliopatria_to_year":1872,"cliopatria_area_km2":6245,"cliopatria_wikidata":"Q213893","cliopatria_wikipedia":"Negeri Sembilan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[101.7108,2.4072],
+[101.7836,2.4072],
+[101.781,2.3429],
+[101.8538,2.3429],
+[101.8512,2.2786],
+[102.4337,2.2786],
+[102.5845,2.4072],
+[102.6707,2.7286],
+[102.3906,2.9857],
+[102.1021,3.05],
+[102.0965,2.9215],
+[102.0237,2.9215],
+[102.0209,2.8572],
+[101.7161,2.5357],
+[101.7108,2.4072]
+]
+]
+]}
+}

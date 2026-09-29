@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-champa-1475","edge_precision":"unknown","cliopatria_name":"Chámpa","cliopatria_from_year":1475,"cliopatria_to_year":1539,"cliopatria_area_km2":7970,"cliopatria_wikidata":"Q216786","cliopatria_wikipedia":"Champa"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[108.6352,11.6646],
+[108.8147,11.2788],
+[108.8879,11.2788],
+[109.2141,11.6003],
+[109.2911,12.3074],
+[109.2178,12.3074],
+[109.3203,12.5646],
+[109.1885,12.6932],
+[109.0345,12.6289],
+[108.9612,12.6289],
+[108.866,12.436],
+[108.7194,12.436],
+[108.6352,11.6646]
+]
+]
+]}
+}

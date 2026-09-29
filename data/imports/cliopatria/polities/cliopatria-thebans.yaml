@@ -1,0 +1,8 @@
+id: cliopatria-thebans
+names:
+  - text: Thebans
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Thebans"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

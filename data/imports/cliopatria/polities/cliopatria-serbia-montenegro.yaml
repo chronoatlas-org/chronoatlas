@@ -1,0 +1,8 @@
+id: cliopatria-serbia-montenegro
+names:
+  - text: Serbia-Montenegro
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Serbia-Montenegro"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

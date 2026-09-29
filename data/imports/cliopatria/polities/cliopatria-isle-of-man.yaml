@@ -1,0 +1,8 @@
+id: cliopatria-isle-of-man
+names:
+  - text: Isle of Man
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Isle of Man"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

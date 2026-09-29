@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-aragon-0911","edge_precision":"unknown","cliopatria_name":"County of Aragon","cliopatria_from_year":911,"cliopatria_to_year":921,"cliopatria_area_km2":3584,"cliopatria_wikidata":"Q1235737","cliopatria_wikipedia":"County of Aragon"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.153,42.5612],
+[-1.1445,42.4312],
+[-0.7486,42.4962],
+[-0.6524,42.2362],
+[-0.4925,42.2362],
+[-0.1884,42.4962],
+[-0.124,42.7563],
+[-0.7735,42.8864],
+[-1.0772,42.6262],
+[-1.073,42.5612],
+[-1.153,42.5612]
+]
+]
+]}
+}

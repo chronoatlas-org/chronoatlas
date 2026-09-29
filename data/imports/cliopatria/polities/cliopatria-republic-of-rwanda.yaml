@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-rwanda
+names:
+  - text: Republic of Rwanda
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Rwanda"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

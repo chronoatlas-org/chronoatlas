@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-east-anglia-0866","edge_precision":"unknown","cliopatria_name":"Kingdom of East Anglia","cliopatria_from_year":866,"cliopatria_to_year":869,"cliopatria_area_km2":10445,"cliopatria_wikidata":"Q837998","cliopatria_wikipedia":"Kingdom of East Anglia","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.1176,52.3847],
+[0.3292,51.8481],
+[0.8487,51.7142],
+[0.8439,51.7811],
+[1.1837,51.7811],
+[1.1698,51.9822],
+[1.425,51.9822],
+[1.5863,52.1163],
+[1.6537,52.3847],
+[1.739,52.3847],
+[1.7168,52.7208],
+[1.3559,52.99],
+[0.4933,53.0574],
+[0.4985,52.99],
+[0.7757,52.7208],
+[0.7051,52.5191],
+[0.1176,52.3847]
+]
+]
+]}
+}

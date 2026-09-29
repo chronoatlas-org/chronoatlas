@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-scotland
+names:
+  - text: Kingdom of Scotland
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Scotland"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

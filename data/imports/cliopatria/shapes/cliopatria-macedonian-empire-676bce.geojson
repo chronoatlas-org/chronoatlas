@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-macedonian-empire-676bce","edge_precision":"unknown","cliopatria_name":"Macedonian Empire","cliopatria_from_year":-675,"cliopatria_to_year":-551,"cliopatria_area_km2":2706,"cliopatria_wikidata":"Q83958","cliopatria_wikipedia":"Macedonia (ancient kingdom)","cliopatria_member_of":"(Macedonian Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[22.0096,40.4201],
+[22.0772,40.2259],
+[22.2392,40.2906],
+[22.4608,40.0317],
+[22.6977,40.0317],
+[22.5437,40.0964],
+[22.6589,40.6792],
+[22.025,40.6792],
+[22.0887,40.4201],
+[22.0096,40.4201]
+]
+]
+]}
+}

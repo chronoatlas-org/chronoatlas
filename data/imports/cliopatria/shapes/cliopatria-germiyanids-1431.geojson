@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-germiyanids-1431","edge_precision":"unknown","cliopatria_name":"Germiyanids","cliopatria_from_year":1431,"cliopatria_to_year":1439,"cliopatria_area_km2":5011,"cliopatria_wikidata":"Q1324889","cliopatria_wikipedia":"Germiyanids"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[32.6706,40.2259],
+[32.7496,40.2259],
+[32.7423,40.1612],
+[32.7777,39.7729],
+[33.5665,39.7729],
+[33.7696,40.1612],
+[33.1675,40.4201],
+[32.7644,40.3554],
+[32.757,40.2906],
+[32.6779,40.2906],
+[32.6706,40.2259]
+]
+]
+]}
+}

@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saint-kitts-1967","edge_precision":"unknown","cliopatria_name":"Saint Kitts","cliopatria_from_year":1967,"cliopatria_to_year":2023,"cliopatria_area_km2":501,"cliopatria_wikidata":"Q204989","cliopatria_wikipedia":"Saint Kitts"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-64.8902,17.8362],
+[-64.8826,17.7719],
+[-64.8675,17.6433],
+[-64.5798,17.7076],
+[-64.6688,17.8362],
+[-64.8902,17.8362]
+]
+]
+]}
+}

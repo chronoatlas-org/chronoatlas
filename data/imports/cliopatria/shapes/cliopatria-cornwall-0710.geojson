@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cornwall-0710","edge_precision":"unknown","cliopatria_name":"Cornwall","cliopatria_from_year":710,"cliopatria_to_year":935,"cliopatria_area_km2":4538,"cliopatria_wikidata":"Q23148","cliopatria_wikipedia":"Cornwall","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.7686,50.246],
+[-5.7456,50.0465],
+[-5.1511,49.98],
+[-4.9287,50.246],
+[-4.3548,50.3791],
+[-4.2707,50.3791],
+[-4.3061,50.7121],
+[-4.6578,50.8455],
+[-4.7422,50.8455],
+[-4.8812,50.5789],
+[-5.1338,50.5789],
+[-5.2796,50.3791],
+[-5.6006,50.246],
+[-5.7686,50.246]
+]
+]
+]}
+}

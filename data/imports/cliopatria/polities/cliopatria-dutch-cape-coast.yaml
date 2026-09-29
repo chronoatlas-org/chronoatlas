@@ -1,0 +1,8 @@
+id: cliopatria-dutch-cape-coast
+names:
+  - text: Dutch Cape Coast
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Dutch Cape Coast"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

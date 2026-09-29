@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zheng-384bce","edge_precision":"unknown","cliopatria_name":"Zheng","cliopatria_from_year":-383,"cliopatria_to_year":-367,"cliopatria_area_km2":10449,"cliopatria_wikidata":"Q197598","cliopatria_wikipedia":"Zheng (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[113.1339,34.8079],
+[113.2881,34.8079],
+[113.2859,34.615],
+[113.3629,34.615],
+[113.6738,34.8079],
+[114.4721,34.8723],
+[114.9939,35.194],
+[115.1319,35.5158],
+[114.9833,35.7089],
+[114.7511,35.7089],
+[114.3033,35.3871],
+[113.5301,35.3871],
+[113.2642,34.9366],
+[113.2376,34.8723],
+[113.1339,34.8079]
+]
+]
+]}
+}

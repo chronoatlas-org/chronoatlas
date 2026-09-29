@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-bima-1885","edge_precision":"unknown","cliopatria_name":"Sultanate of Bima","cliopatria_from_year":1885,"cliopatria_to_year":1889,"cliopatria_area_km2":7659,"cliopatria_wikidata":"Q2817348","cliopatria_wikipedia":"Bima Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[119.2088,-8.5217],
+[119.292,-8.6503],
+[119.365,-8.6503],
+[119.506,-8.586],
+[119.4177,-8.3932],
+[119.2717,-8.3932],
+[119.2088,-8.5217]
+]
+],
+[
+[
+[119.4433,-8.7146],
+[119.4537,-8.8432],
+[120.6224,-8.8432],
+[120.8153,-8.5217],
+[120.8,-8.3289],
+[120.727,-8.3289],
+[120.0649,-8.2646],
+[120.0019,-8.3932],
+[119.6469,-8.5217],
+[119.6572,-8.6503],
+[119.4433,-8.7146]
+]
+]
+]}
+}

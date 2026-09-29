@@ -1,0 +1,8 @@
+id: cliopatria-first-french-empire
+names:
+  - text: First French Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "First French Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

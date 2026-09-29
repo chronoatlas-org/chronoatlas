@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-raciborz-1294","edge_precision":"unknown","cliopatria_name":"Duchy of Racibórz","cliopatria_from_year":1294,"cliopatria_to_year":1304,"cliopatria_area_km2":3362,"cliopatria_wikidata":"Q700117","cliopatria_wikipedia":"Duchy of Racibórz","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.0754,50.0465],
+[18.6512,49.8471],
+[18.8,49.5152],
+[19.1304,49.4489],
+[19.3889,49.5816],
+[19.397,49.7143],
+[19.3133,49.7143],
+[19.3173,49.7807],
+[19.2336,49.7807],
+[19.2416,49.9136],
+[19.1578,49.9136],
+[19.1658,50.0465],
+[18.1628,50.113],
+[18.0789,50.113],
+[18.0754,50.0465]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-eastern-wu
+names:
+  - text: Eastern Wu
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Eastern Wu"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

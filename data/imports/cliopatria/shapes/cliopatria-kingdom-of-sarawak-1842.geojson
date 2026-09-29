@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-sarawak-1842","edge_precision":"unknown","cliopatria_name":"Kingdom of Sarawak","cliopatria_from_year":1842,"cliopatria_to_year":1858,"cliopatria_area_km2":4894,"cliopatria_wikidata":"Q1658411","cliopatria_wikipedia":"Raj of Sarawak"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[109.4825,1.9571],
+[109.6129,1.5714],
+[109.6857,1.5714],
+[110.0423,1.3786],
+[110.3335,1.3786],
+[110.3311,1.3143],
+[110.5495,1.3143],
+[110.5471,1.25],
+[110.6199,1.25],
+[110.7776,1.5714],
+[110.4864,1.5714],
+[110.2781,1.8286],
+[109.9818,1.7],
+[109.6255,1.8929],
+[109.6307,2.0214],
+[109.4851,2.0214],
+[109.4825,1.9571]
+]
+]
+]}
+}

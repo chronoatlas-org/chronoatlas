@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-second-bulgarian-empire-1385","edge_precision":"unknown","cliopatria_name":"Second Bulgarian Empire","cliopatria_from_year":1385,"cliopatria_to_year":1394,"cliopatria_area_km2":41224,"cliopatria_wikidata":"Q420759","cliopatria_wikipedia":"Second Bulgarian Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[22.9005,43.0816],
+[23.6839,42.8213],
+[23.9047,42.5612],
+[24.1449,42.5612],
+[24.215,42.4312],
+[24.6898,42.3662],
+[25.9749,42.4312],
+[26.3982,42.6912],
+[26.5584,42.6912],
+[26.6267,42.5612],
+[27.4397,42.6912],
+[27.4605,43.733],
+[27.7415,44.1243],
+[26.6106,44.1243],
+[26.114,43.9938],
+[25.8486,43.733],
+[25.4343,43.6027],
+[24.7954,43.6678],
+[24.2604,43.0165],
+[23.453,42.9515],
+[23.3068,43.1467],
+[22.9098,43.2118],
+[22.9005,43.0816]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-palestinians
+names:
+  - text: Palestinians
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Palestinians"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

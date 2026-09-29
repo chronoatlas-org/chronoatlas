@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-drutsk-1111","edge_precision":"unknown","cliopatria_name":"Principality of Drutsk","cliopatria_from_year":1111,"cliopatria_to_year":1240,"cliopatria_area_km2":20023,"cliopatria_wikidata":"Q2596884","cliopatria_wikipedia":"Principality of Drutsk"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[28.4989,53.3271],
+[29.5098,53.1922],
+[29.7675,53.1922],
+[29.9604,53.3271],
+[30.2835,53.7323],
+[30.2945,53.7999],
+[30.3919,53.8676],
+[30.4818,54.4095],
+[30.4064,54.4774],
+[30.8116,54.8171],
+[30.8351,54.9531],
+[29.4633,55.0892],
+[29.0392,54.6132],
+[28.4989,53.3271]
+]
+]
+]}
+}

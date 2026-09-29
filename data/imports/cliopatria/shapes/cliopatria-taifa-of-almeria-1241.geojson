@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-almeria-1241","edge_precision":"unknown","cliopatria_name":"Taifa of Almería","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":1503,"cliopatria_wikidata":"Q2580032","cliopatria_wikipedia":"Taifa of Almería","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.2896,38.0288],
+[-2.2817,37.8998],
+[-2.1216,37.8352],
+[-1.939,37.3838],
+[-1.7794,37.3193],
+[-1.6235,37.3193],
+[-1.7087,37.4483],
+[-1.6344,37.5128],
+[-1.7124,37.5128],
+[-1.7161,37.5773],
+[-2.2113,38.0288],
+[-2.2896,38.0288]
+]
+]
+]}
+}

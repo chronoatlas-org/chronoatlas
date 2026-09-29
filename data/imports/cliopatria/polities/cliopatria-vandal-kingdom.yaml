@@ -1,0 +1,8 @@
+id: cliopatria-vandal-kingdom
+names:
+  - text: Vandal Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Vandal Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

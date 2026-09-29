@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-romania
+names:
+  - text: Kingdom of Romania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Romania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

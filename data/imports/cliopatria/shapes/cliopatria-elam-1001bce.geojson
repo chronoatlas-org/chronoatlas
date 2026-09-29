@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-elam-1001bce","edge_precision":"unknown","cliopatria_name":"Elam","cliopatria_from_year":-1000,"cliopatria_to_year":-901,"cliopatria_area_km2":19288,"cliopatria_wikidata":"Q128904","cliopatria_wikipedia":"Elam","cliopatria_seshat_id":"ir_elam_8"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[47.5909,32.236],
+[47.6419,32.0431],
+[47.9134,31.7861],
+[47.7875,31.4005],
+[48.8114,31.6575],
+[48.82,31.7218],
+[49.1009,32.1074],
+[49.2761,32.8145],
+[49.0464,32.8145],
+[48.9881,32.943],
+[48.6818,32.943],
+[48.5467,33.0716],
+[48.087,33.0716],
+[47.7868,32.5574],
+[47.7437,32.236],
+[47.5909,32.236]
+]
+]
+]}
+}

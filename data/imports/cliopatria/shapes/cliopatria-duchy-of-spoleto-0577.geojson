@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-spoleto-0577","edge_precision":"unknown","cliopatria_name":"Duchy of Spoleto","cliopatria_from_year":577,"cliopatria_to_year":586,"cliopatria_area_km2":15862,"cliopatria_wikidata":"Q2829270","cliopatria_wikipedia":"Duchy of Spoleto"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.3807,42.9515],
+[12.4609,42.9515],
+[12.6144,42.3662],
+[13.4057,41.8465],
+[13.7247,41.8465],
+[13.727,41.9764],
+[13.7282,42.0413],
+[13.808,42.0413],
+[13.8952,42.4312],
+[13.8188,42.6262],
+[13.6598,42.6912],
+[13.5888,43.2118],
+[13.1124,43.6027],
+[12.7098,43.6027],
+[12.5472,43.4723],
+[12.3807,42.9515]
+]
+]
+]}
+}

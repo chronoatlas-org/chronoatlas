@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-sophene-111bce","edge_precision":"unknown","cliopatria_name":"Kingdom of Sophene","cliopatria_from_year":-110,"cliopatria_to_year":-88,"cliopatria_area_km2":16750,"cliopatria_wikidata":"Q2626105","cliopatria_wikipedia":"Kingdom of Sophene"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[38.8136,38.9326],
+[39.1102,38.8034],
+[39.2496,38.6743],
+[39.2322,38.5451],
+[39.3803,38.4806],
+[40.5201,38.2224],
+[40.514,38.7389],
+[40.6576,39.1911],
+[40.5097,39.2557],
+[40.4784,39.5789],
+[39.848,39.5789],
+[39.7506,39.4496],
+[39.2085,39.5143],
+[38.9542,39.385],
+[38.8136,38.9326]
+]
+]
+]}
+}

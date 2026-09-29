@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-roman-republic-501bce","edge_precision":"unknown","cliopatria_name":"Roman Republic","cliopatria_from_year":-500,"cliopatria_to_year":-481,"cliopatria_area_km2":238,"cliopatria_wikidata":"Q175881","cliopatria_wikipedia":"Roman Republic","cliopatria_seshat_id":"it_roman_rep_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[11.9725,42.1063],
+[12.3718,42.1063],
+[12.3725,42.1712],
+[11.9731,42.1712],
+[11.9725,42.1063]
+]
+]
+]}
+}

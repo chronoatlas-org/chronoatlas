@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-bohemia
+names:
+  - text: Kingdom of Bohemia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Bohemia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-first-sealand-dynasty-1701bce","edge_precision":"unknown","cliopatria_name":"First Sealand Dynasty","cliopatria_from_year":-1700,"cliopatria_to_year":-1601,"cliopatria_area_km2":8320,"cliopatria_wikidata":"Q7440601","cliopatria_wikipedia":"First Sealand dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[46.5832,30.2436],
+[46.6151,29.858],
+[46.8497,29.9223],
+[47.0552,29.7294],
+[47.1455,29.858],
+[47.1529,29.9223],
+[47.4709,30.0508],
+[47.4101,30.1794],
+[47.4935,30.2436],
+[48.1237,30.4364],
+[48.0635,30.565],
+[47.4482,30.5007],
+[47.4792,30.7578],
+[46.6205,30.565],
+[46.5832,30.2436]
+]
+]
+]}
+}

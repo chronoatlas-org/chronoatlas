@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-prussia
+names:
+  - text: Duchy of Prussia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Prussia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

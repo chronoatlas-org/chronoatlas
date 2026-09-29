@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-bamana-empire-1820","edge_precision":"unknown","cliopatria_name":"Bamana Empire","cliopatria_from_year":1820,"cliopatria_to_year":1821,"cliopatria_area_km2":10722,"cliopatria_wikidata":"Q762084","cliopatria_wikipedia":"Bamana Empire","cliopatria_seshat_id":"ml_bamana_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.8875,16.4861],
+[-3.8823,16.1647],
+[-3.733,16.0361],
+[-3.6594,16.0361],
+[-3.1422,15.9076],
+[-2.6279,15.9718],
+[-2.5597,16.3576],
+[-2.6333,16.3576],
+[-2.6371,16.6147],
+[-2.8601,16.7433],
+[-3.376,16.7433],
+[-3.7423,16.6147],
+[-3.8875,16.4861]
+]
+]
+]}
+}

@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-mahdids-1475","edge_precision":"unknown","cliopatria_name":"Mahdids","cliopatria_from_year":1475,"cliopatria_to_year":1501,"cliopatria_area_km2":4396,"cliopatria_wikidata":"Q1884830","cliopatria_wikipedia":"Mahdids"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[58.2718,23.4291],
+[58.4034,23.2363],
+[58.4779,23.2363],
+[58.5409,23.1077],
+[58.9076,23.0434],
+[59.045,22.9148],
+[59.2742,22.9791],
+[58.8115,23.622],
+[58.2895,23.622],
+[58.2718,23.4291]
+]
+]
+]}
+}

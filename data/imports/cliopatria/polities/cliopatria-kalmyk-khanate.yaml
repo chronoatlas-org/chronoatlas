@@ -1,0 +1,8 @@
+id: cliopatria-kalmyk-khanate
+names:
+  - text: Kalmyk Khanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kalmyk Khanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

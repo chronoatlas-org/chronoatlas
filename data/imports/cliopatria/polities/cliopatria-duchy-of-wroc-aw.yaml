@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-wroc-aw
+names:
+  - text: Duchy of Wrocław
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Wrocław"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

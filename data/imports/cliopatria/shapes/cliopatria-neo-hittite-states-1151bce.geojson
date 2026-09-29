@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-neo-hittite-states-1151bce","edge_precision":"unknown","cliopatria_name":"Neo-Hittite states","cliopatria_from_year":-1150,"cliopatria_to_year":-1001,"cliopatria_area_km2":24444,"cliopatria_wikidata":"Q770281","cliopatria_wikipedia":"Neo-Hittite states","cliopatria_seshat_id":"tr_neo_hittite_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.7919,36.3099],
+[35.9681,36.0175],
+[36.3903,35.8974],
+[37.0522,36.1756],
+[38.2794,37.1812],
+[38.6032,37.6357],
+[38.0803,38.1289],
+[37.6163,37.6244],
+[36.8799,37.1832],
+[36.1585,36.8407],
+[36.1307,36.6072],
+[35.7919,36.3099]
+]
+]
+]}
+}

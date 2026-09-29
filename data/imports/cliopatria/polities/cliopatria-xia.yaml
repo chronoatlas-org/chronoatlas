@@ -1,0 +1,8 @@
+id: cliopatria-xia
+names:
+  - text: Xia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Xia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

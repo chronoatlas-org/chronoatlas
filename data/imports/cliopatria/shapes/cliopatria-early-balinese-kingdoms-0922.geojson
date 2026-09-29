@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-early-balinese-kingdoms-0922","edge_precision":"unknown","cliopatria_name":"Early Balinese Kingdoms","cliopatria_from_year":922,"cliopatria_to_year":1009,"cliopatria_area_km2":7748,"cliopatria_wikidata":"Q12491027","cliopatria_wikipedia":"Bali Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.283,-8.0717],
+[114.3017,-8.3289],
+[114.8273,-8.5217],
+[114.9832,-8.6503],
+[114.9201,-8.7789],
+[115.0032,-8.9075],
+[115.0763,-8.9075],
+[115.3434,-8.586],
+[115.6305,-8.5217],
+[115.6112,-8.2646],
+[115.305,-8.0717],
+[114.283,-8.0717]
+]
+]
+]}
+}

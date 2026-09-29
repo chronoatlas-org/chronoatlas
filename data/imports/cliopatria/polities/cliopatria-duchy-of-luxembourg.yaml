@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-luxembourg
+names:
+  - text: Duchy of Luxembourg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Luxembourg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

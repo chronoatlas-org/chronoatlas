@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-orange-1564","edge_precision":"unknown","cliopatria_name":"Principality of Orange","cliopatria_from_year":1564,"cliopatria_to_year":1571,"cliopatria_area_km2":141,"cliopatria_wikidata":"Q2281221","cliopatria_wikipedia":"Principality of Orange"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.7997,44.1243],
+[5.0399,44.1896],
+[4.9569,44.2548],
+[4.8761,44.2548],
+[4.7997,44.1243]
+]
+]
+]}
+}

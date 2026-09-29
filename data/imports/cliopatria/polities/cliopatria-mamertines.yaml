@@ -1,0 +1,8 @@
+id: cliopatria-mamertines
+names:
+  - text: Mamertines
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mamertines"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

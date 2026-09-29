@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-kasi-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Kāśī","cliopatria_from_year":-600,"cliopatria_to_year":-481,"cliopatria_area_km2":5040,"cliopatria_wikidata":"Q12660335","cliopatria_wikipedia":"Kāśī (kingdom)","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[82.3393,25.3579],
+[82.489,25.3579],
+[82.5975,25.1007],
+[82.8968,25.1007],
+[82.9173,25.2293],
+[83.2375,25.3579],
+[83.28,25.615],
+[83.0019,25.7436],
+[83.0236,25.8722],
+[82.7238,25.8722],
+[82.531,25.615],
+[82.4561,25.615],
+[82.3393,25.3579]
+]
+]
+]}
+}

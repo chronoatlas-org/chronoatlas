@@ -1,0 +1,8 @@
+id: cliopatria-county-of-portugal
+names:
+  - text: County of Portugal
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Portugal"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

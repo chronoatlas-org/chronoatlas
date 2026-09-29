@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-guria-1468","edge_precision":"unknown","cliopatria_name":"Principality of Guria","cliopatria_from_year":1468,"cliopatria_to_year":1506,"cliopatria_area_km2":4180,"cliopatria_wikidata":"Q2195101","cliopatria_wikipedia":"Principality of Guria"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[41.5783,41.522],
+[41.9652,41.4571],
+[42.067,41.5869],
+[42.6244,41.5869],
+[42.6585,41.7816],
+[42.3853,42.0413],
+[41.7579,42.1063],
+[41.7467,42.0413],
+[41.8153,41.9764],
+[41.702,41.7816],
+[41.6909,41.7167],
+[41.6799,41.6518],
+[41.6002,41.6518],
+[41.5783,41.522]
+]
+]
+]}
+}

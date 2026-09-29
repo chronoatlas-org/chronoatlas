@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-aquitaine-1431","edge_precision":"unknown","cliopatria_name":"Duchy of Aquitaine","cliopatria_from_year":1431,"cliopatria_to_year":1439,"cliopatria_area_km2":9742,"cliopatria_wikidata":"Q7703611","cliopatria_wikipedia":"Duchy of Aquitaine","cliopatria_seshat_id":"fr_valois_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.7685,45.3659],
+[1.1867,45.1696],
+[1.1979,44.9734],
+[1.3675,44.8426],
+[1.7766,44.7773],
+[2.101,44.7773],
+[2.1688,45.0388],
+[2.4027,45.235],
+[2.3047,45.5623],
+[0.9038,45.8243],
+[0.7685,45.3659]
+]
+]
+]}
+}

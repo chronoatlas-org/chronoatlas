@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-volga-bulgaria-0674","edge_precision":"unknown","cliopatria_name":"Volga Bulgaria","cliopatria_from_year":674,"cliopatria_to_year":681,"cliopatria_area_km2":4158,"cliopatria_wikidata":"Q185488","cliopatria_wikipedia":"Volga Bulgaria"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.4114,52.7208],
+[44.5825,52.7208],
+[44.5466,52.5863],
+[44.7175,52.5863],
+[44.5962,52.4519],
+[44.8524,52.4519],
+[44.8165,52.3176],
+[44.9871,52.3176],
+[44.9513,52.1833],
+[45.207,52.1833],
+[45.4013,52.5863],
+[45.3158,52.5863],
+[45.4268,52.99],
+[44.4837,52.99],
+[44.4114,52.7208]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-kediri-kingdom
+names:
+  - text: Kediri Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kediri Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-qasim-khanate
+names:
+  - text: Qasim Khanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Qasim Khanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-electorate-of-brandenburg
+names:
+  - text: Electorate of Brandenburg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Electorate of Brandenburg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-babylonia-1801bce","edge_precision":"unknown","cliopatria_name":"Babylonia","cliopatria_from_year":-1800,"cliopatria_to_year":-1761,"cliopatria_area_km2":7833,"cliopatria_wikidata":"Q47690","cliopatria_wikipedia":"Babylonia","cliopatria_seshat_id":"iq_babylonia_1"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[44.001,32.236],
+[44.3907,32.3002],
+[44.3751,32.1717],
+[44.5201,32.1074],
+[44.5279,32.1717],
+[44.665,32.0431],
+[44.894,32.0431],
+[44.9097,32.1717],
+[44.986,32.1717],
+[45.2391,32.3645],
+[45.2551,32.4931],
+[44.6069,32.8145],
+[44.579,33.2002],
+[44.5023,33.2002],
+[44.1636,32.943],
+[44.2163,32.7502],
+[44.0632,32.7502],
+[44.0851,32.3002],
+[44.001,32.236]
+]
+]
+]}
+}

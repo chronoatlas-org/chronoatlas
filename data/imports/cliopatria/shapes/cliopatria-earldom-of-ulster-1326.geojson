@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-earldom-of-ulster-1326","edge_precision":"unknown","cliopatria_name":"Earldom of Ulster","cliopatria_from_year":1326,"cliopatria_to_year":1332,"cliopatria_area_km2":2333,"cliopatria_wikidata":"Q19872858","cliopatria_wikipedia":"Earldom of Ulster","cliopatria_seshat_id":"gb_england_plantagenet","cliopatria_member_of":"(Kingdom of England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-6.1904,54.9531],
+[-6.1536,54.6811],
+[-6.0667,54.6811],
+[-6.0304,54.4095],
+[-5.6659,54.2739],
+[-5.4233,54.4095],
+[-5.4407,54.5453],
+[-5.842,54.9531],
+[-6.1904,54.9531]
+]
+]
+]}
+}

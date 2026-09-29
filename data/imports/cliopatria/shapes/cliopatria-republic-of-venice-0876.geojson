@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-venice-0876","edge_precision":"unknown","cliopatria_name":"Republic of Venice","cliopatria_from_year":876,"cliopatria_to_year":877,"cliopatria_area_km2":2664,"cliopatria_wikidata":"Q4948","cliopatria_wikipedia":"Republic of Venice"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[11.9989,45.3659],
+[12.1617,45.3659],
+[12.1622,45.4313],
+[12.8168,45.6933],
+[13.0605,45.6278],
+[13.0614,45.6933],
+[12.9816,45.8243],
+[12.7367,45.8243],
+[12.1644,45.6933],
+[12.0004,45.5623],
+[11.9989,45.3659]
+]
+],
+[
+[
+[13.5473,45.4968],
+[13.7021,45.0388],
+[13.7833,45.0388],
+[13.7809,44.908],
+[13.9432,44.908],
+[13.9457,45.0388],
+[13.6288,45.4968],
+[13.5473,45.4968]
+]
+]
+]}
+}

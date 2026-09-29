@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-aquitaine
+names:
+  - text: Duchy of Aquitaine
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Aquitaine"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

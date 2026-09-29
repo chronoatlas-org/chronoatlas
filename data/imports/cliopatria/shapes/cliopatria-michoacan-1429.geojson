@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-michoacan-1429","edge_precision":"unknown","cliopatria_name":"Michoacán","cliopatria_from_year":1429,"cliopatria_to_year":1439,"cliopatria_area_km2":17531,"cliopatria_wikidata":"Q79861","cliopatria_wikipedia":"Michoacán"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-101.4012,18.4791],
+[-101.1795,18.4791],
+[-100.9851,18.2219],
+[-100.4173,18.3505],
+[-100.4289,18.4148],
+[-100.4873,18.7362],
+[-100.289,18.8648],
+[-100.3983,19.0577],
+[-100.3244,19.0577],
+[-100.2957,19.7005],
+[-100.5661,19.9577],
+[-101.0228,20.022],
+[-101.1588,19.9577],
+[-101.2584,19.7005],
+[-101.2622,18.9291],
+[-101.3361,18.9291],
+[-101.4012,18.4791]
+]
+]
+]}
+}

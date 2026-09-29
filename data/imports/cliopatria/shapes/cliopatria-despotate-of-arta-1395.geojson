@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-despotate-of-arta-1395","edge_precision":"unknown","cliopatria_name":"Despotate of Arta","cliopatria_from_year":1395,"cliopatria_to_year":1401,"cliopatria_area_km2":10917,"cliopatria_wikidata":"Q2331954","cliopatria_wikipedia":"Despotate of Arta"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.6028,39.1911],
+[20.911,39.0618],
+[20.7414,38.8034],
+[20.9737,38.7389],
+[21.118,38.4806],
+[21.1964,38.4806],
+[21.5818,38.3515],
+[21.9768,38.416],
+[22.0552,38.416],
+[21.9904,38.6743],
+[22.0689,38.6743],
+[22.1685,39.0618],
+[21.7213,39.5143],
+[21.396,39.3203],
+[20.6877,39.3203],
+[20.6845,39.2557],
+[20.6028,39.1911]
+]
+]
+]}
+}

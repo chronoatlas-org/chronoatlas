@@ -1,0 +1,8 @@
+id: cliopatria-perdiccas
+names:
+  - text: Perdiccas
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Perdiccas"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kalabhra-dynasty-0592","edge_precision":"unknown","cliopatria_name":"Kalabhra Dynasty","cliopatria_from_year":592,"cliopatria_to_year":601,"cliopatria_area_km2":61508,"cliopatria_wikidata":"Q2572901","cliopatria_wikipedia":"Kalabhra dynasty","cliopatria_seshat_id":"in_kalabhra_dyn"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.045,10.509],
+[76.276,10.053],
+[76.2845,10.0093],
+[76.521,10.5363],
+[77.0424,10.9516],
+[78.096,10.9395],
+[78.7206,10.7782],
+[79.8426,10.9426],
+[79.761,11.667],
+[80.154,12.46],
+[79.726,12.81],
+[79.2,12.893],
+[78.761,12.763],
+[77.948,12.173],
+[77.759,12.123],
+[77.245,12.28],
+[77.065,12.209],
+[77.06,11.547],
+[76.95,11.336],
+[76.045,10.509]
+]
+]
+]}
+}

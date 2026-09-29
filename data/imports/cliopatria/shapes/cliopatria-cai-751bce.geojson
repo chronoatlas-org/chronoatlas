@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cai-751bce","edge_precision":"unknown","cliopatria_name":"Cai","cliopatria_from_year":-750,"cliopatria_to_year":-481,"cliopatria_area_km2":3733,"cliopatria_wikidata":"Q1025803","cliopatria_wikipedia":"Cai (state)","cliopatria_member_of":"(Spring and Autumn States)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[113.0284,34.5506],
+[113.3874,34.4863],
+[113.5908,34.229],
+[113.9266,34.4863],
+[113.9531,34.5506],
+[113.7509,34.8079],
+[113.6738,34.8079],
+[113.3414,34.9366],
+[113.2642,34.9366],
+[113.2376,34.8723],
+[113.1604,34.8723],
+[113.1339,34.8079],
+[113.0567,34.8079],
+[113.0303,34.7436],
+[113.0284,34.5506]
+]
+]
+]}
+}

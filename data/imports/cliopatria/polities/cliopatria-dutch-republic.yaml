@@ -1,0 +1,8 @@
+id: cliopatria-dutch-republic
+names:
+  - text: Dutch Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Dutch Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

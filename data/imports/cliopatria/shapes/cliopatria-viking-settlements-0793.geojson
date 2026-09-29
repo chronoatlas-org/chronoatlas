@@ -1,0 +1,36 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-viking-settlements-0793","edge_precision":"unknown","cliopatria_name":"Viking settlements","cliopatria_from_year":793,"cliopatria_to_year":799,"cliopatria_area_km2":5712,"cliopatria_wikidata":"Q12567","cliopatria_wikipedia":"Vikings","cliopatria_seshat_id":"no_viking_settlements"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.0068,54.2739],
+[12.1744,53.9352],
+[12.2608,53.9352],
+[12.6941,54.0029],
+[12.7864,54.2739],
+[12.6998,54.2739],
+[12.7027,54.4095],
+[12.7894,54.4095],
+[12.4438,54.4774],
+[12.0934,54.2739],
+[12.0068,54.2739]
+]
+],
+[
+[
+[30.8375,59.7846],
+[31.0826,59.6445],
+[31.9,59.6445],
+[32.1224,60.2761],
+[31.863,60.3465],
+[31.8192,60.1355],
+[31.4542,60.1355],
+[31.4685,60.2058],
+[31.3772,60.2058],
+[30.998,60.1355],
+[30.8375,59.7846]
+]
+]
+]}
+}

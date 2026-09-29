@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saint-vincent-1969","edge_precision":"unknown","cliopatria_name":"Saint Vincent","cliopatria_from_year":1969,"cliopatria_to_year":2023,"cliopatria_area_km2":565,"cliopatria_wikidata":"Q757","cliopatria_wikipedia":"Saint Vincent and the Grenadines"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-61.2813,13.336],
+[-61.1933,13.1432],
+[-61.1884,13.0789],
+[-61.0466,13.1432],
+[-61.0662,13.4003],
+[-61.2813,13.336]
+]
+]
+]}
+}

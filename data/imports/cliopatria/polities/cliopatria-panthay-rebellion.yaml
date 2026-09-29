@@ -1,0 +1,8 @@
+id: cliopatria-panthay-rebellion
+names:
+  - text: Panthay Rebellion
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Panthay Rebellion"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

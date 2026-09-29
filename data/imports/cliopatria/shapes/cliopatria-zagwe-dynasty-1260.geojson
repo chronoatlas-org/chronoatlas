@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zagwe-dynasty-1260","edge_precision":"unknown","cliopatria_name":"Zagwe dynasty","cliopatria_from_year":1260,"cliopatria_to_year":1271,"cliopatria_area_km2":14454,"cliopatria_wikidata":"Q140446","cliopatria_wikipedia":"Zagwe kingdom","cliopatria_seshat_id":"et_zagwe"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[38.0781,12.436],
+[38.1349,11.986],
+[38.4942,11.7931],
+[38.9335,11.7931],
+[39.3777,11.9217],
+[39.6047,12.1146],
+[39.6878,12.3717],
+[39.4046,12.6289],
+[39.4096,12.7575],
+[39.1872,12.6932],
+[39.0456,12.8217],
+[38.7524,12.8217],
+[38.2247,12.436],
+[38.0781,12.436]
+]
+]
+]}
+}

@@ -1,0 +1,37 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-negroponte-1206","edge_precision":"unknown","cliopatria_name":"Negroponte","cliopatria_from_year":1206,"cliopatria_to_year":1209,"cliopatria_area_km2":2178,"cliopatria_wikidata":"Q247067","cliopatria_wikipedia":"Negroponte"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[23.0254,38.9326],
+[23.3318,38.8034],
+[23.4928,38.868],
+[23.4142,38.868],
+[23.3435,38.9972],
+[23.0331,39.0618],
+[23.0254,38.9326]
+]
+],
+[
+[
+[23.4849,38.7389],
+[23.5634,38.7389],
+[23.5673,38.8034],
+[23.4888,38.8034],
+[23.4849,38.7389]
+]
+],
+[
+[
+[23.5634,38.7389],
+[23.6261,38.4806],
+[24.0884,38.3515],
+[24.1587,38.2224],
+[24.1789,38.5451],
+[23.7988,38.7389],
+[23.5634,38.7389]
+]
+]
+]}
+}

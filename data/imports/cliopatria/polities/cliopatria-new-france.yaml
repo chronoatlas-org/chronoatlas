@@ -1,0 +1,8 @@
+id: cliopatria-new-france
+names:
+  - text: New France
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "New France"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

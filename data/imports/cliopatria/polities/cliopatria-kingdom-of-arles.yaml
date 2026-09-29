@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-arles
+names:
+  - text: Kingdom of Arles
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Arles"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

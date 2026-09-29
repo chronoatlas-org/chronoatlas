@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-lower-burgundy-0882","edge_precision":"unknown","cliopatria_name":"Lower Burgundy","cliopatria_from_year":882,"cliopatria_to_year":883,"cliopatria_area_km2":4408,"cliopatria_wikidata":"Q33242","cliopatria_wikipedia":"Lower Burgundy"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.2652,45.4313],
+[4.2678,45.3659],
+[4.443,45.0388],
+[4.6054,45.0388],
+[4.6102,44.908],
+[4.9348,44.908],
+[4.9303,45.0388],
+[5.0927,45.0388],
+[5.0883,45.1696],
+[5.2509,45.1696],
+[5.2422,45.4313],
+[4.9119,45.5623],
+[4.9072,45.6933],
+[4.5811,45.6933],
+[4.586,45.5623],
+[4.2652,45.4313]
+]
+]
+]}
+}

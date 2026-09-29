@@ -1,0 +1,8 @@
+id: cliopatria-gaza-hamas
+names:
+  - text: Gaza/Hamas
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Gaza/Hamas"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

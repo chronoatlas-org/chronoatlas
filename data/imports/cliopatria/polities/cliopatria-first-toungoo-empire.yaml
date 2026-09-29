@@ -1,0 +1,8 @@
+id: cliopatria-first-toungoo-empire
+names:
+  - text: First Toungoo Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "First Toungoo Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

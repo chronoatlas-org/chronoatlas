@@ -1,0 +1,8 @@
+id: cliopatria-frisia
+names:
+  - text: Frisia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Frisia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

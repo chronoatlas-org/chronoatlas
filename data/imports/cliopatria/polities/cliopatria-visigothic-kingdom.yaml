@@ -1,0 +1,8 @@
+id: cliopatria-visigothic-kingdom
+names:
+  - text: Visigothic Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Visigothic Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

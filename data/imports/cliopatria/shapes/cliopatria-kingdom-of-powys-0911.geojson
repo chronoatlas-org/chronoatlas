@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-powys-0911","edge_precision":"unknown","cliopatria_name":"Kingdom of Powys","cliopatria_from_year":911,"cliopatria_to_year":921,"cliopatria_area_km2":4316,"cliopatria_wikidata":"Q769782","cliopatria_wikipedia":"Kingdom of Powys","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.986,52.4519],
+[-3.7153,52.3176],
+[-3.6938,52.1163],
+[-2.9273,52.1163],
+[-2.8692,52.3847],
+[-3.0399,52.3847],
+[-3.1391,52.5191],
+[-3.0746,52.7208],
+[-3.2741,52.99],
+[-3.6171,52.99],
+[-3.6955,52.9227],
+[-3.5735,52.5863],
+[-3.7444,52.5863],
+[-3.7371,52.5191],
+[-3.908,52.5191],
+[-3.9006,52.4519],
+[-3.986,52.4519]
+]
+]
+]}
+}

@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tver-1333","edge_precision":"unknown","cliopatria_name":"Tver","cliopatria_from_year":1333,"cliopatria_to_year":1343,"cliopatria_area_km2":7080,"cliopatria_wikidata":"Q2288","cliopatria_wikipedia":"Tver"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.8566,56.7998],
+[36.1064,56.7311],
+[36.315,56.8686],
+[36.6692,56.8686],
+[36.8064,57.0751],
+[37.0725,57.0751],
+[37.2831,57.2129],
+[37.7992,57.144],
+[37.8467,57.6962],
+[37.7574,57.6962],
+[37.7746,57.7654],
+[37.2559,57.8346],
+[37.2054,57.6271],
+[36.5485,57.4889],
+[36.0554,57.2819],
+[35.8566,56.7998]
+]
+]
+]}
+}

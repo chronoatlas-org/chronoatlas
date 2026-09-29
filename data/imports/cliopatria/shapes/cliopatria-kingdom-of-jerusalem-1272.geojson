@@ -1,0 +1,38 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-jerusalem-1272","edge_precision":"unknown","cliopatria_name":"Kingdom of Jerusalem","cliopatria_from_year":1272,"cliopatria_to_year":1284,"cliopatria_area_km2":2114,"cliopatria_wikidata":"Q55502","cliopatria_wikipedia":"Kingdom of Jerusalem","cliopatria_seshat_id":"il_jerusalem_k_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.0275,32.6859],
+[35.3393,32.7502],
+[35.3568,32.943],
+[35.2803,32.943],
+[35.2861,33.0073],
+[35.0563,33.0073],
+[35.0275,32.6859]
+]
+],
+[
+[
+[35.3038,33.2002],
+[35.6104,33.2002],
+[35.6285,33.3931],
+[35.4044,33.4574],
+[35.3984,33.3931],
+[35.3217,33.3931],
+[35.3038,33.2002]
+]
+],
+[
+[
+[35.4286,33.7146],
+[35.742,33.7789],
+[35.8189,33.7789],
+[35.7545,33.9075],
+[35.447,33.9075],
+[35.4286,33.7146]
+]
+]
+]}
+}

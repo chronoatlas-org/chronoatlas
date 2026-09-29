@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-cordoba-1147","edge_precision":"unknown","cliopatria_name":"Taifa of Córdoba","cliopatria_from_year":1147,"cliopatria_to_year":1151,"cliopatria_area_km2":15122,"cliopatria_wikidata":"Q2285679","cliopatria_wikipedia":"Taifa of Córdoba","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.4376,38.2869],
+[-5.423,38.0933],
+[-5.1835,38.0288],
+[-5.0911,37.8352],
+[-4.7739,37.7707],
+[-4.7647,37.6417],
+[-3.273,37.5128],
+[-3.2812,37.6417],
+[-3.4458,37.7707],
+[-3.4585,37.9643],
+[-3.0227,38.4806],
+[-4.3459,38.3515],
+[-4.7518,38.5451],
+[-5.4376,38.2869]
+]
+]
+]}
+}

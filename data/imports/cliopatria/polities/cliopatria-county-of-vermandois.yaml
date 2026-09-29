@@ -1,0 +1,8 @@
+id: cliopatria-county-of-vermandois
+names:
+  - text: County of Vermandois
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Vermandois"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

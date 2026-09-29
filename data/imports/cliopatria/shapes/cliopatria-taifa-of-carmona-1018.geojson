@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-carmona-1018","edge_precision":"unknown","cliopatria_name":"Taifa of Carmona","cliopatria_from_year":1018,"cliopatria_to_year":1027,"cliopatria_area_km2":10964,"cliopatria_wikidata":"Q2668584","cliopatria_wikipedia":"Taifa of Carmona","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.8874,38.0288],
+[-5.7507,37.2549],
+[-5.4342,37.1904],
+[-5.2645,36.9971],
+[-4.486,36.9971],
+[-4.2568,37.0615],
+[-4.4301,37.3193],
+[-4.4345,37.3838],
+[-4.673,37.4483],
+[-4.7739,37.7707],
+[-5.0911,37.8352],
+[-5.2665,38.0933],
+[-5.8142,38.0933],
+[-5.8874,38.0288]
+]
+]
+]}
+}

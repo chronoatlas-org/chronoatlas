@@ -1,0 +1,8 @@
+id: cliopatria-electorate-of-hesse
+names:
+  - text: Electorate of Hesse
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Electorate of Hesse"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

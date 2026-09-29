@@ -1,0 +1,8 @@
+id: cliopatria-first-spanish-republic
+names:
+  - text: First Spanish Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "First Spanish Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

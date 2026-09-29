@@ -1,0 +1,32 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-molossians-171bce","edge_precision":"unknown","cliopatria_name":"Molossians","cliopatria_from_year":-170,"cliopatria_to_year":-165,"cliopatria_area_km2":4708,"cliopatria_wikidata":"Q827399","cliopatria_wikipedia":"Molossians"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[20.0701,39.5789],
+[20.1489,39.5789],
+[20.1519,39.6436],
+[20.0731,39.6436],
+[20.0701,39.5789]
+]
+],
+[
+[
+[20.0761,39.7083],
+[20.155,39.7083],
+[20.1519,39.6436],
+[20.2307,39.6436],
+[20.2246,39.5143],
+[20.3034,39.5143],
+[20.3003,39.4496],
+[20.8483,39.385],
+[21.0944,39.5789],
+[20.8056,40.0964],
+[20.5686,40.0964],
+[20.2463,39.967],
+[20.0761,39.7083]
+]
+]
+]}
+}

@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-micronesia-1987","edge_precision":"unknown","cliopatria_name":"Micronesia","cliopatria_from_year":1987,"cliopatria_to_year":2023,"cliopatria_area_km2":373,"cliopatria_wikidata":"Q3359409","cliopatria_wikipedia":"Micronesia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[158.0389,6.843],
+[158.2641,6.9073],
+[158.1976,6.9716],
+[158.1246,6.9716],
+[158.0389,6.843]
+]
+],
+[
+[
+[158.0993,6.7144],
+[158.2452,6.7144],
+[158.1785,6.7787],
+[158.1848,6.843],
+[158.0993,6.7144]
+]
+],
+[
+[
+[158.2514,6.7787],
+[158.3244,6.7787],
+[158.3371,6.9073],
+[158.2641,6.9073],
+[158.2514,6.7787]
+]
+]
+]}
+}

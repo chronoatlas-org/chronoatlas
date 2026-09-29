@@ -1,0 +1,8 @@
+id: cliopatria-saint-lucia
+names:
+  - text: Saint Lucia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Saint Lucia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

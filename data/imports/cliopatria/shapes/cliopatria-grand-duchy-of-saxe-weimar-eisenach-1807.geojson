@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-grand-duchy-of-saxe-weimar-eisenach-1807","edge_precision":"unknown","cliopatria_name":"Grand Duchy of Saxe-Weimar-Eisenach","cliopatria_from_year":1807,"cliopatria_to_year":1808,"cliopatria_area_km2":1145,"cliopatria_wikidata":"Q155570","cliopatria_wikipedia":"Saxe-Weimar-Eisenach"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.7674,50.8455],
+[10.105,50.7788],
+[10.4423,50.9122],
+[10.4423,50.9789],
+[10.3578,50.9789],
+[10.3578,51.1124],
+[10.1887,51.1124],
+[10.1886,51.1792],
+[10.0195,51.1792],
+[9.9359,50.9122],
+[9.7674,50.8455]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-french-consulate
+names:
+  - text: French Consulate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Consulate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

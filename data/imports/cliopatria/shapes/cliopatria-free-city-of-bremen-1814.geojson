@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-free-city-of-bremen-1814","edge_precision":"unknown","cliopatria_name":"Free City of Bremen","cliopatria_from_year":1814,"cliopatria_to_year":1819,"cliopatria_area_km2":345,"cliopatria_wikidata":"Q474779","cliopatria_wikipedia":"History of Bremen (city)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.4706,53.1248],
+[8.4733,52.9227],
+[8.7304,52.9227],
+[8.7296,52.99],
+[8.6422,53.1248],
+[8.4706,53.1248]
+]
+]
+]}
+}

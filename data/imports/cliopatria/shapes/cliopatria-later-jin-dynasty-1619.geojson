@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-later-jin-dynasty-1619","edge_precision":"unknown","cliopatria_name":"Later Jin Dynasty","cliopatria_from_year":1619,"cliopatria_to_year":1621,"cliopatria_area_km2":50291,"cliopatria_wikidata":"Q1062546","cliopatria_wikipedia":"Later Jin (1616-1636)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[125.2371,41.6518],
+[125.5136,41.4571],
+[128.0473,42.3012],
+[128.8294,42.7563],
+[128.8731,42.8213],
+[129.3699,43.0816],
+[130.0141,43.6678],
+[130.368,44.0591],
+[130.2175,44.1896],
+[130.2635,44.2548],
+[129.7434,44.3201],
+[128.3222,43.6678],
+[127.9111,43.5375],
+[127.5528,43.6027],
+[126.3503,42.8864],
+[125.9442,42.7563],
+[125.2877,42.2362],
+[125.4031,42.0413],
+[125.2371,41.6518]
+]
+]
+]}
+}

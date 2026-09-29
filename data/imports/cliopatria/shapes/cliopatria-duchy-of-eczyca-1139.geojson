@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-eczyca-1139","edge_precision":"unknown","cliopatria_name":"Duchy of Łęczyca","cliopatria_from_year":1139,"cliopatria_to_year":1146,"cliopatria_area_km2":8761,"cliopatria_wikidata":"Q970940","cliopatria_wikipedia":"Łęczyca Voivodeship","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.0355,51.9822],
+[19.2056,51.9822],
+[19.3574,51.7142],
+[19.6923,51.6472],
+[20.172,51.246],
+[20.585,51.1124],
+[20.6696,51.1124],
+[20.6797,51.246],
+[20.9598,51.5803],
+[20.7106,51.6472],
+[20.7211,51.7811],
+[20.5616,51.9151],
+[20.3065,51.9151],
+[20.0663,52.1163],
+[20.0764,52.2505],
+[19.6502,52.2505],
+[19.4039,52.3847],
+[19.1433,52.3176],
+[19.0355,51.9822]
+]
+]
+]}
+}

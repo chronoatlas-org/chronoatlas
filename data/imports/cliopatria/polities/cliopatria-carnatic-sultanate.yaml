@@ -1,0 +1,8 @@
+id: cliopatria-carnatic-sultanate
+names:
+  - text: Carnatic Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Carnatic Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

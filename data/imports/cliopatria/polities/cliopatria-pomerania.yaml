@@ -1,0 +1,8 @@
+id: cliopatria-pomerania
+names:
+  - text: Pomerania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Pomerania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-vatsa-601bce","edge_precision":"unknown","cliopatria_name":"Janapada of Vatsa","cliopatria_from_year":-600,"cliopatria_to_year":-481,"cliopatria_area_km2":4015,"cliopatria_wikidata":"Q1331184","cliopatria_wikipedia":"Vatsa","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[81.6105,25.9365],
+[81.6854,25.9365],
+[81.6533,25.7436],
+[81.8153,25.3579],
+[81.8902,25.3579],
+[82.1355,25.4864],
+[82.1565,25.615],
+[82.3063,25.615],
+[82.3491,25.8722],
+[82.071,26.0008],
+[82.093,26.1294],
+[81.793,26.1294],
+[81.7712,26.0008],
+[81.6213,26.0008],
+[81.6105,25.9365]
+]
+]
+]}
+}

@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-empire-of-thessalonica-1241","edge_precision":"unknown","cliopatria_name":"Empire of Thessalonica","cliopatria_from_year":1241,"cliopatria_to_year":1249,"cliopatria_area_km2":7594,"cliopatria_wikidata":"Q623151","cliopatria_wikipedia":"Empire of Thessalonica"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[22.1004,40.6144],
+[22.1679,40.4201],
+[22.247,40.4201],
+[22.5595,40.3554],
+[22.5716,40.5496],
+[22.8925,40.6144],
+[22.9592,40.4201],
+[23.7374,40.2259],
+[23.8386,40.5496],
+[23.6846,40.6144],
+[23.698,40.8088],
+[23.0722,40.9384],
+[22.5127,40.8736],
+[22.4334,40.8736],
+[22.1004,40.6144]
+]
+],
+[
+[
+[24.491,40.8088],
+[24.5513,40.5496],
+[24.7936,40.6144],
+[24.8081,40.8088],
+[24.491,40.8088]
+]
+]
+]}
+}

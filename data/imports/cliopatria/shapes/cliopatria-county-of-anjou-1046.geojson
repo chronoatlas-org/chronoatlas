@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-anjou-1046","edge_precision":"unknown","cliopatria_name":"County of Anjou","cliopatria_from_year":1046,"cliopatria_to_year":1055,"cliopatria_area_km2":13114,"cliopatria_wikidata":"Q2991084","cliopatria_wikipedia":"County of Anjou","cliopatria_seshat_id":"fr_capetian_k_1","cliopatria_member_of":"(Kingdom of France)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.3885,47.0058],
+[-1.0499,46.8743],
+[-0.1464,46.8743],
+[0.7446,47.0716],
+[1.1718,46.8086],
+[1.25,46.8743],
+[1.3321,46.8743],
+[1.2964,47.4665],
+[1.1315,47.4665],
+[-1.187,47.5982],
+[-1.1618,47.269],
+[-1.3214,47.2032],
+[-1.3885,47.0058]
+]
+]
+]}
+}

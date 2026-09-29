@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-aceh-1949","edge_precision":"unknown","cliopatria_name":"Sultanate of Aceh","cliopatria_from_year":1949,"cliopatria_to_year":1949,"cliopatria_area_km2":42209,"cliopatria_wikidata":"Q1061057","cliopatria_wikipedia":"Aceh Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[95.0655,5.1715],
+[95.1979,4.9144],
+[96.101,4.0143],
+[96.1738,4.0143],
+[97.1269,4.1429],
+[97.6186,3.7572],
+[97.7643,3.7572],
+[98.0042,4.2072],
+[98.2259,4.2715],
+[98.2387,4.5286],
+[98.0234,4.5929],
+[97.8281,5.0429],
+[97.474,5.2358],
+[97.4775,5.3001],
+[96.235,5.2358],
+[95.6035,5.6858],
+[95.239,5.6858],
+[95.0861,5.5572],
+[95.0655,5.1715]
+]
+]
+]}
+}

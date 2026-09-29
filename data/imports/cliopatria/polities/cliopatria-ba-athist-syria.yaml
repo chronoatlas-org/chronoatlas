@@ -1,0 +1,8 @@
+id: cliopatria-ba-athist-syria
+names:
+  - text: Ba'athist Syria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ba'athist Syria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-koknese-1206","edge_precision":"unknown","cliopatria_name":"Principality of Koknese","cliopatria_from_year":1206,"cliopatria_to_year":1209,"cliopatria_area_km2":2288,"cliopatria_wikidata":"Q2502248","cliopatria_wikipedia":"Principality of Koknese"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[24.5814,56.525],
+[24.9785,56.1821],
+[25.4186,56.1821],
+[25.6131,56.3191],
+[25.6223,56.3877],
+[25.446,56.3877],
+[25.1292,56.6623],
+[24.864,56.6623],
+[24.8729,56.7311],
+[24.5988,56.6623],
+[24.5814,56.525]
+]
+]
+]}
+}

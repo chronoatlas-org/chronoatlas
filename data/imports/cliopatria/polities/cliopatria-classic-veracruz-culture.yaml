@@ -1,0 +1,8 @@
+id: cliopatria-classic-veracruz-culture
+names:
+  - text: Classic Veracruz Culture
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Classic Veracruz Culture"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

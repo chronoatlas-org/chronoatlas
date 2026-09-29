@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-sussex
+names:
+  - text: Kingdom of Sussex
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Sussex"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

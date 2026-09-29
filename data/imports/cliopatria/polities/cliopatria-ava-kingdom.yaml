@@ -1,0 +1,8 @@
+id: cliopatria-ava-kingdom
+names:
+  - text: Ava Kingdom
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Ava Kingdom"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

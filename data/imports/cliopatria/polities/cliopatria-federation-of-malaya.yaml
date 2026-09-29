@@ -1,0 +1,8 @@
+id: cliopatria-federation-of-malaya
+names:
+  - text: Federation of Malaya
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Federation of Malaya"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

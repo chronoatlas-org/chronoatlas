@@ -1,0 +1,8 @@
+id: cliopatria-free-city-of-lubeck
+names:
+  - text: Free City of Lübeck
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Free City of Lübeck"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

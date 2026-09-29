@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-san-marino-1799","edge_precision":"unknown","cliopatria_name":"Republic of San Marino","cliopatria_from_year":1799,"cliopatria_to_year":1799,"cliopatria_area_km2":47,"cliopatria_wikidata":"Q238","cliopatria_wikipedia":"San Marino"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.5502,43.733],
+[12.6308,43.733],
+[12.6316,43.7982],
+[12.5509,43.7982],
+[12.5502,43.733]
+]
+]
+]}
+}

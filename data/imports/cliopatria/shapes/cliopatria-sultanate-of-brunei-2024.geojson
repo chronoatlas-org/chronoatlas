@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-brunei-2024","edge_precision":"unknown","cliopatria_name":"Sultanate of Brunei","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":7272,"cliopatria_wikidata":"Q887803","cliopatria_wikipedia":"Bruneian Sultanate (1368-1888)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.0457,4.4644],
+[114.4614,4.0786],
+[114.6799,4.0786],
+[114.7563,4.1429],
+[114.7162,4.7215],
+[114.8696,4.8501],
+[115.0115,4.7858],
+[114.9892,4.4001],
+[115.2806,4.4001],
+[115.1688,4.9787],
+[115.0959,4.9787],
+[114.7354,5.0429],
+[114.2753,4.6572],
+[114.0567,4.6572],
+[114.0457,4.4644]
+]
+]
+]}
+}

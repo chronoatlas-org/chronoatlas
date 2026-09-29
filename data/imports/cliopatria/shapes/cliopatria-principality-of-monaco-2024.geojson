@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-monaco-2024","edge_precision":"unknown","cliopatria_name":"Principality of Monaco","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":94,"cliopatria_wikidata":"Q235","cliopatria_wikipedia":"Monaco"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.1502,43.733],
+[7.1528,43.6027],
+[7.2334,43.6027],
+[7.2308,43.733],
+[7.1502,43.733]
+]
+]
+]}
+}

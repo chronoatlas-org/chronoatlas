@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-mecklenburg
+names:
+  - text: Duchy of Mecklenburg
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Mecklenburg"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

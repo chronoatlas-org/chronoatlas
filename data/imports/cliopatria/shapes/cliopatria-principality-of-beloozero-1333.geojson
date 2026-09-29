@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-beloozero-1333","edge_precision":"unknown","cliopatria_name":"Principality of Beloozero","cliopatria_from_year":1333,"cliopatria_to_year":1343,"cliopatria_area_km2":10010,"cliopatria_wikidata":"Q1967380","cliopatria_wikipedia":"Principality of Beloozero"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[37.2571,60.3465],
+[37.3485,60.3465],
+[37.3667,60.0653],
+[37.5308,59.995],
+[37.4943,59.8547],
+[37.6581,59.7846],
+[37.6943,59.5745],
+[38.0574,59.5745],
+[38.039,59.5045],
+[38.1297,59.5045],
+[38.5487,59.7145],
+[38.8696,60.5577],
+[38.5611,60.7693],
+[38.3775,60.7693],
+[38.3243,60.9105],
+[37.2945,60.8399],
+[37.2571,60.3465]
+]
+]
+]}
+}

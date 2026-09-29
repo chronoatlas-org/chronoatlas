@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-grand-principality-of-moscow-1294","edge_precision":"unknown","cliopatria_name":"Grand Principality of Moscow","cliopatria_from_year":1294,"cliopatria_to_year":1304,"cliopatria_area_km2":10206,"cliopatria_wikidata":"Q170770","cliopatria_wikipedia":"Principality of Moscow","cliopatria_seshat_id":"ru_moskva_mongolian_period"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[36.3917,56.0451],
+[36.6455,55.2255],
+[37.0821,55.2255],
+[37.0976,55.2936],
+[37.185,55.2936],
+[37.8125,55.3618],
+[37.8445,55.4983],
+[38.4024,55.6348],
+[38.4354,55.7715],
+[38.2764,55.8398],
+[38.3095,55.9766],
+[38.1668,56.1136],
+[37.8477,56.2506],
+[37.3192,56.2506],
+[37.111,56.1136],
+[36.3917,56.0451]
+]
+]
+]}
+}

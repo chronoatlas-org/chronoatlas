@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-zululand-1895","edge_precision":"unknown","cliopatria_name":"Zululand","cliopatria_from_year":1895,"cliopatria_to_year":1897,"cliopatria_area_km2":25066,"cliopatria_wikidata":"Q13558877","cliopatria_wikipedia":"Zululand"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[30.1235,-28.0011],
+[30.1378,-28.2582],
+[30.4617,-28.6439],
+[31.1529,-28.8368],
+[31.4714,-29.0939],
+[31.547,-29.0939],
+[32.0594,-28.8368],
+[32.1349,-28.8368],
+[32.198,-28.6439],
+[32.3449,-28.5797],
+[32.396,-28.1939],
+[32.392,-28.1297],
+[32.3088,-28.0011],
+[31.6909,-27.7439],
+[31.8158,-27.2939],
+[31.4433,-27.3582],
+[31.2355,-27.6796],
+[30.1235,-28.0011]
+]
+]
+]}
+}

@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ahi-republic-1352","edge_precision":"unknown","cliopatria_name":"Ahi Republic","cliopatria_from_year":1352,"cliopatria_to_year":1362,"cliopatria_area_km2":4421,"cliopatria_wikidata":"Q400290","cliopatria_wikipedia":"Ahis"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[31.804,39.5143],
+[32.0403,39.5143],
+[32.0267,39.385],
+[32.1841,39.385],
+[32.1705,39.2557],
+[32.4852,39.2557],
+[32.499,39.385],
+[32.6565,39.385],
+[32.7132,39.9023],
+[32.5554,39.9023],
+[32.5697,40.0317],
+[32.2538,40.0317],
+[32.2397,39.9023],
+[32.0818,39.9023],
+[32.0748,39.8376],
+[31.9101,39.7729],
+[31.804,39.5143]
+]
+]
+]}
+}

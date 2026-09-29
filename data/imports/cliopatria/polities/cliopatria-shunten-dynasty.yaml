@@ -1,0 +1,8 @@
+id: cliopatria-shunten-dynasty
+names:
+  - text: Shunten Dynasty
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Shunten Dynasty"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

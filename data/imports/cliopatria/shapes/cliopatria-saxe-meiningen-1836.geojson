@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saxe-meiningen-1836","edge_precision":"unknown","cliopatria_name":"Saxe-Meiningen","cliopatria_from_year":1836,"cliopatria_to_year":1839,"cliopatria_area_km2":1193,"cliopatria_wikidata":"Q157710","cliopatria_wikipedia":"Saxe-Meiningen"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.9364,50.7788],
+[10.0215,50.5122],
+[10.1898,50.5122],
+[10.19,50.4457],
+[10.4424,50.3791],
+[10.4423,50.6455],
+[10.1892,50.8455],
+[10.1048,50.8455],
+[9.9364,50.7788]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-babylonia
+names:
+  - text: Babylonia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Babylonia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

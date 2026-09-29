@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-palau-1996","edge_precision":"unknown","cliopatria_name":"Palau","cliopatria_from_year":1996,"cliopatria_to_year":2023,"cliopatria_area_km2":659,"cliopatria_wikidata":"Q695","cliopatria_wikipedia":"Palau"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[134.3766,7.3573],
+[134.4496,7.3573],
+[134.4439,7.293],
+[134.5955,7.3573],
+[134.6188,7.6145],
+[134.394,7.5502],
+[134.3766,7.3573]
+]
+]
+]}
+}

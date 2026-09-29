@@ -1,0 +1,8 @@
+id: cliopatria-morocco
+names:
+  - text: Morocco
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Morocco"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

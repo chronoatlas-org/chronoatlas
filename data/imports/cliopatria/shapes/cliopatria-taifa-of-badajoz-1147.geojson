@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-badajoz-1147","edge_precision":"unknown","cliopatria_name":"Taifa of Badajoz","cliopatria_from_year":1147,"cliopatria_to_year":1151,"cliopatria_area_km2":4454,"cliopatria_wikidata":"Q276841","cliopatria_wikipedia":"Taifa of Badajoz","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-8.1347,38.6743],
+[-8.0332,38.416],
+[-7.4736,38.2869],
+[-7.4847,38.416],
+[-7.2551,38.4806],
+[-7.137,38.9326],
+[-7.614,38.9972],
+[-7.6811,38.868],
+[-7.9167,38.868],
+[-8.1347,38.6743]
+]
+]
+]}
+}

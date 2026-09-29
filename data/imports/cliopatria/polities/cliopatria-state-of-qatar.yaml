@@ -1,0 +1,8 @@
+id: cliopatria-state-of-qatar
+names:
+  - text: State of Qatar
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "State of Qatar"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-rugiland-0476","edge_precision":"unknown","cliopatria_name":"Rugiland","cliopatria_from_year":476,"cliopatria_to_year":479,"cliopatria_area_km2":14571,"cliopatria_wikidata":"Q872644","cliopatria_wikipedia":"Rugiland"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[13.6825,48.522],
+[14.2576,48.2578],
+[16.9093,48.2578],
+[16.8369,48.522],
+[16.9199,48.522],
+[16.928,48.7204],
+[16.6839,48.8527],
+[16.0991,48.7865],
+[15.1923,49.0513],
+[14.9424,49.0513],
+[14.682,48.6542],
+[14.1005,48.6542],
+[14.0202,48.7865],
+[13.6889,48.8527],
+[13.6825,48.522]
+]
+]
+]}
+}

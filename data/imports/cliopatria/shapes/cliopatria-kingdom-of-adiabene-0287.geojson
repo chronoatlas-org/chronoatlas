@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-adiabene-0287","edge_precision":"unknown","cliopatria_name":"Kingdom of Adiabene","cliopatria_from_year":287,"cliopatria_to_year":366,"cliopatria_area_km2":13288,"cliopatria_wikidata":"Q149747","cliopatria_wikipedia":"Adiabene"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[41.1691,37.2549],
+[41.247,37.2549],
+[41.2124,36.9971],
+[41.6711,36.3528],
+[42.629,36.546],
+[42.6556,36.7393],
+[42.6317,37.126],
+[42.7096,37.126],
+[42.7647,37.5128],
+[41.2645,37.3838],
+[41.1691,37.2549]
+]
+]
+]}
+}

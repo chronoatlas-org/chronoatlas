@@ -1,0 +1,8 @@
+id: cliopatria-hungarian-nationalists
+names:
+  - text: Hungarian Nationalists
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Hungarian Nationalists"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-morgannwg-0540","edge_precision":"unknown","cliopatria_name":"Kingdom of Morgannwg","cliopatria_from_year":540,"cliopatria_to_year":946,"cliopatria_area_km2":1488,"cliopatria_wikidata":"Q13131807","cliopatria_wikipedia":"Kingdom of Morgannwg","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.8915,51.5803],
+[-3.8844,51.5134],
+[-3.7008,51.3797],
+[-3.2842,51.4465],
+[-3.1147,51.4465],
+[-3.1282,51.5803],
+[-3.3047,51.6472],
+[-3.3184,51.7811],
+[-3.5732,51.7811],
+[-3.6441,51.6472],
+[-3.8915,51.5803]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-mysore
+names:
+  - text: Kingdom of Mysore
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Mysore"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

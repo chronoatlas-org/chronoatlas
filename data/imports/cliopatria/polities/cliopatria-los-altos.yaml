@@ -1,0 +1,8 @@
+id: cliopatria-los-altos
+names:
+  - text: Los Altos
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Los Altos"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-french-africa
+names:
+  - text: French Africa
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "French Africa"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

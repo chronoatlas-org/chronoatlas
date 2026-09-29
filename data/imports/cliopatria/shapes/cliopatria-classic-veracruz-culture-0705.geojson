@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-classic-veracruz-culture-0705","edge_precision":"unknown","cliopatria_name":"Classic Veracruz Culture","cliopatria_from_year":705,"cliopatria_to_year":1110,"cliopatria_area_km2":18504,"cliopatria_wikidata":"Q2379418","cliopatria_wikipedia":"Classic Veracruz culture"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-97.3534,20.2148],
+[-97.244,20.022],
+[-97.2595,19.7005],
+[-97.0648,19.4434],
+[-97.1041,19.2505],
+[-96.8247,18.9291],
+[-96.6827,18.5434],
+[-95.8697,18.5434],
+[-95.8809,18.6076],
+[-95.807,18.6076],
+[-95.7893,18.9291],
+[-96.2506,19.4434],
+[-96.2968,19.7005],
+[-96.7098,20.3434],
+[-96.8699,20.4077],
+[-97.1546,20.3434],
+[-97.131,20.2148],
+[-97.3534,20.2148]
+]
+]
+]}
+}

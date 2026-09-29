@@ -1,0 +1,8 @@
+id: cliopatria-itza-mayans
+names:
+  - text: Itza Mayans
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Itza Mayans"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

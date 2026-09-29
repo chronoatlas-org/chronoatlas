@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-earldom-of-desmond-1422","edge_precision":"unknown","cliopatria_name":"Earldom of Desmond","cliopatria_from_year":1422,"cliopatria_to_year":1452,"cliopatria_area_km2":6858,"cliopatria_wikidata":"Q2991012","cliopatria_wikipedia":"Earl of Desmond","cliopatria_seshat_id":"gb_england_plantagenet","cliopatria_member_of":"(Kingdom of England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-8.5308,52.5863],
+[-7.9135,52.4519],
+[-7.8282,52.4519],
+[-7.3067,52.3847],
+[-7.1092,52.1833],
+[-6.8535,52.1833],
+[-7.0013,52.6535],
+[-7.0868,52.6535],
+[-7.0651,53.1248],
+[-7.5896,53.1922],
+[-7.6469,52.99],
+[-8.1809,53.1248],
+[-8.2937,52.7208],
+[-8.5308,52.5863]
+]
+]
+]}
+}

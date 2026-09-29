@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-bytom-1285","edge_precision":"unknown","cliopatria_name":"Duchy of Bytom","cliopatria_from_year":1285,"cliopatria_to_year":1293,"cliopatria_area_km2":2040,"cliopatria_wikidata":"Q682001","cliopatria_wikipedia":"Duchy of Bytom","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.1628,50.113],
+[19.1658,50.0465],
+[19.182,50.3125],
+[19.1861,50.3791],
+[19.1021,50.3791],
+[19.1061,50.4457],
+[19.022,50.4457],
+[18.8459,50.3125],
+[18.3417,50.3125],
+[18.17,50.246],
+[18.1628,50.113]
+]
+]
+]}
+}

@@ -1,0 +1,26 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-berga-1188","edge_precision":"unknown","cliopatria_name":"County of Berga","cliopatria_from_year":1188,"cliopatria_to_year":1209,"cliopatria_area_km2":8771,"cliopatria_wikidata":"Q15487","cliopatria_wikipedia":"Berga"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[1.1293,41.7816],
+[1.8467,41.7816],
+[2.0828,41.8465],
+[2.2274,42.1712],
+[2.861,42.3012],
+[2.8582,42.3662],
+[3.0927,42.4962],
+[2.9933,42.9515],
+[2.9905,43.0165],
+[2.5921,42.9515],
+[2.5178,42.8213],
+[2.043,42.6912],
+[1.8123,42.4962],
+[1.7481,42.1712],
+[1.3651,41.8465],
+[1.1293,41.7816]
+]
+]
+]}
+}

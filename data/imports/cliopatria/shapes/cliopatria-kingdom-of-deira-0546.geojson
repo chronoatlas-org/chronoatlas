@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-deira-0546","edge_precision":"unknown","cliopatria_name":"Kingdom of Deira","cliopatria_from_year":546,"cliopatria_to_year":554,"cliopatria_area_km2":13580,"cliopatria_wikidata":"Q506008","cliopatria_wikipedia":"Deira","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.187,54.1384],
+[-2.1264,53.5296],
+[-2.0403,53.5296],
+[-1.7023,53.5971],
+[-1.3328,53.3271],
+[-1.1609,53.3271],
+[-1.0931,53.5296],
+[-0.8348,53.5296],
+[-0.6802,53.7323],
+[-0.249,53.7323],
+[-0.2433,53.6647],
+[0.0153,53.6647],
+[0.0043,53.7999],
+[-0.082,53.7999],
+[-0.0933,53.9352],
+[-0.1796,53.9352],
+[-0.2024,54.2061],
+[-0.3814,54.2739],
+[-0.3931,54.4095],
+[-0.6714,54.6132],
+[-1.199,54.6811],
+[-1.286,54.6811],
+[-1.36,54.5453],
+[-1.9475,54.3417],
+[-2.187,54.1384]
+]
+]
+]}
+}

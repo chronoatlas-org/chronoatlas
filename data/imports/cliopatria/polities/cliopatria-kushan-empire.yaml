@@ -1,0 +1,8 @@
+id: cliopatria-kushan-empire
+names:
+  - text: Kushan Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kushan Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

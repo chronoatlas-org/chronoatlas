@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-bone-1857","edge_precision":"unknown","cliopatria_name":"Sultanate of Bone","cliopatria_from_year":1857,"cliopatria_to_year":1858,"cliopatria_area_km2":1983,"cliopatria_wikidata":"Q43292","cliopatria_wikipedia":"Sultan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[119.9187,-4.7931],
+[119.9383,-5.1788],
+[120.0875,-5.2431],
+[120.2332,-5.2431],
+[120.2767,-4.6645],
+[119.9187,-4.7931]
+]
+]
+]}
+}

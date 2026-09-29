@@ -1,0 +1,8 @@
+id: cliopatria-eastern-roman-empire
+names:
+  - text: Eastern Roman Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Eastern Roman Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

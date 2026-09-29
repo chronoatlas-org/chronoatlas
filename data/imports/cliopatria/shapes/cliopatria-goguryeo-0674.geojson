@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-goguryeo-0674","edge_precision":"unknown","cliopatria_name":"Goguryeo","cliopatria_from_year":674,"cliopatria_to_year":681,"cliopatria_area_km2":148,"cliopatria_wikidata":"Q28370","cliopatria_wikipedia":"Goguryeo"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[125.231,37.6417],
+[125.4988,37.7062],
+[125.4543,37.7707],
+[125.3762,37.7707],
+[125.231,37.6417]
+]
+]
+]}
+}

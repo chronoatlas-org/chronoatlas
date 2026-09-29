@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-croatia
+names:
+  - text: Republic of Croatia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Croatia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-janapada-of-matsya-451bce","edge_precision":"unknown","cliopatria_name":"Janapada of Matsya","cliopatria_from_year":-450,"cliopatria_to_year":-405,"cliopatria_area_km2":5220,"cliopatria_wikidata":"Q2665398","cliopatria_wikipedia":"Matsya (tribe)","cliopatria_seshat_id":"in_mahajanapada","cliopatria_member_of":"(Mahajanapadas)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[75.6826,27.2866],
+[75.833,27.2866],
+[75.9398,27.0295],
+[76.2404,27.0295],
+[76.2622,27.158],
+[76.5851,27.2866],
+[76.63,27.5438],
+[76.3517,27.6724],
+[76.3862,27.8652],
+[76.1602,27.8652],
+[75.8774,27.5438],
+[75.7269,27.5438],
+[75.7158,27.4795],
+[75.6826,27.2866]
+]
+]
+]}
+}

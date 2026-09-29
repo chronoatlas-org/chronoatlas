@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-new-netherland-1800","edge_precision":"unknown","cliopatria_name":"New Netherland","cliopatria_from_year":1800,"cliopatria_to_year":1802,"cliopatria_area_km2":334,"cliopatria_wikidata":"Q382593","cliopatria_wikipedia":"New Netherland"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-63.1635,18.2219],
+[-63.1409,18.0291],
+[-62.9194,18.0291],
+[-62.9269,18.0933],
+[-63.1635,18.2219]
+]
+]
+]}
+}

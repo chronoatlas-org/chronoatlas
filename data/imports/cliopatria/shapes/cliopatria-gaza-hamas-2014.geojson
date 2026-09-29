@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-gaza-hamas-2014","edge_precision":"unknown","cliopatria_name":"Gaza/Hamas","cliopatria_from_year":2014,"cliopatria_to_year":2023,"cliopatria_area_km2":77,"cliopatria_wikidata":"Q5588642","cliopatria_wikipedia":"Governance of the Gaza Strip"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[34.3024,31.3362],
+[34.4547,31.3362],
+[34.389,31.4647],
+[34.3838,31.4005],
+[34.3024,31.3362]
+]
+]
+]}
+}

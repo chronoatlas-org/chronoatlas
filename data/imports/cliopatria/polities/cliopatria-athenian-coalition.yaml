@@ -1,0 +1,8 @@
+id: cliopatria-athenian-coalition
+names:
+  - text: Athenian Coalition
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Athenian Coalition"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-gwynedd-0626","edge_precision":"unknown","cliopatria_name":"Kingdom of Gwynedd","cliopatria_from_year":626,"cliopatria_to_year":632,"cliopatria_area_km2":7245,"cliopatria_wikidata":"Q816814","cliopatria_wikipedia":"Kingdom of Gwynedd","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-4.8095,52.9227],
+[-4.7937,52.7881],
+[-4.2953,52.9227],
+[-4.1718,52.5863],
+[-4.1642,52.5191],
+[-4.1567,52.4519],
+[-3.986,52.4519],
+[-3.5735,52.5863],
+[-3.6955,52.9227],
+[-3.6171,52.99],
+[-2.8454,52.99],
+[-2.8873,53.3946],
+[-3.3247,53.4621],
+[-4.0839,53.3271],
+[-4.8095,52.9227]
+]
+]
+]}
+}

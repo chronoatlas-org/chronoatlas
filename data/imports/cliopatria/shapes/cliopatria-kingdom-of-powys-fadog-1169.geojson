@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-powys-fadog-1169","edge_precision":"unknown","cliopatria_name":"Kingdom of Powys Fadog","cliopatria_from_year":1169,"cliopatria_to_year":1209,"cliopatria_area_km2":1337,"cliopatria_wikidata":"Q2564694","cliopatria_wikipedia":"Powys Fadog","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.6098,52.9227],
+[-3.3384,52.7881],
+[-3.1742,52.8554],
+[-3.2741,52.99],
+[-3.1955,53.0574],
+[-2.8524,53.0574],
+[-2.8593,53.1248],
+[-2.9451,53.1248],
+[-2.9522,53.1922],
+[-3.038,53.1922],
+[-3.0451,53.2596],
+[-3.217,53.2596],
+[-3.546,53.1248],
+[-3.6098,52.9227]
+]
+]
+]}
+}

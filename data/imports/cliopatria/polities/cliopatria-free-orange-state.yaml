@@ -1,0 +1,8 @@
+id: cliopatria-free-orange-state
+names:
+  - text: Free Orange State
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Free Orange State"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

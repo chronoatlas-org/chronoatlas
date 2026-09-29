@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-raciborz
+names:
+  - text: Duchy of Racibórz
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Racibórz"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

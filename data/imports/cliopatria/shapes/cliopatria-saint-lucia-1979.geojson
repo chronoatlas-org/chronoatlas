@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saint-lucia-1979","edge_precision":"unknown","cliopatria_name":"Saint Lucia","cliopatria_from_year":1979,"cliopatria_to_year":2023,"cliopatria_area_km2":791,"cliopatria_wikidata":"Q760","cliopatria_wikipedia":"Saint Lucia"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-61.0443,14.0432],
+[-60.9396,13.6575],
+[-60.798,13.7218],
+[-60.8135,13.9146],
+[-60.8241,14.0432],
+[-61.0443,14.0432]
+]
+]
+]}
+}

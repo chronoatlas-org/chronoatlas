@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-amalfi-0960","edge_precision":"unknown","cliopatria_name":"Republic of Amalfi","cliopatria_from_year":960,"cliopatria_to_year":1027,"cliopatria_area_km2":96,"cliopatria_wikidata":"Q686312","cliopatria_wikipedia":"Duchy of Amalfi"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[14.4971,40.6792],
+[14.6556,40.6792],
+[14.657,40.744],
+[14.4985,40.744],
+[14.4971,40.6792]
+]
+]
+]}
+}

@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-swiss-confederation-1333","edge_precision":"unknown","cliopatria_name":"Swiss Confederation","cliopatria_from_year":1333,"cliopatria_to_year":1351,"cliopatria_area_km2":3861,"cliopatria_wikidata":"Q39","cliopatria_wikipedia":"Switzerland","cliopatria_seshat_id":"ch_swiss_conf_1","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.8121,47.3348],
+[7.8184,47.0058],
+[8.3137,46.8743],
+[8.3999,46.6115],
+[8.5639,46.6115],
+[8.7235,46.9401],
+[8.8878,46.9401],
+[8.8837,47.269],
+[8.3907,47.2032],
+[8.3052,47.4006],
+[8.1427,47.269],
+[7.8121,47.3348]
+]
+]
+]}
+}

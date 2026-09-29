@@ -1,0 +1,8 @@
+id: cliopatria-grand-duchy-of-lithuania
+names:
+  - text: Grand Duchy of Lithuania
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Grand Duchy of Lithuania"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

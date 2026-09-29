@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-house-of-luxembourg-1395","edge_precision":"unknown","cliopatria_name":"House of Luxembourg","cliopatria_from_year":1395,"cliopatria_to_year":1406,"cliopatria_area_km2":10211,"cliopatria_wikidata":"Q122293","cliopatria_wikipedia":"House of Luxembourg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[5.0822,49.8471],
+[5.2546,49.7143],
+[5.3529,49.3163],
+[5.6867,49.3163],
+[5.5963,49.5152],
+[5.9284,49.5816],
+[6.0184,49.3826],
+[5.8536,49.3163],
+[5.858,49.1838],
+[6.1081,49.1838],
+[6.3563,49.25],
+[6.2649,49.5152],
+[6.3484,49.5152],
+[6.3405,49.7807],
+[6.5861,49.98],
+[6.4966,50.1795],
+[6.0747,50.246],
+[6.4029,50.5122],
+[6.1504,50.5122],
+[5.9864,50.3791],
+[5.4796,50.4457],
+[5.1482,50.3125],
+[5.0822,49.8471]
+]
+]
+]}
+}

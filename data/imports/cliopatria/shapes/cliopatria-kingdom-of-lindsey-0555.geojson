@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-lindsey-0555","edge_precision":"unknown","cliopatria_name":"Kingdom of Lindsey","cliopatria_from_year":555,"cliopatria_to_year":611,"cliopatria_area_km2":3933,"cliopatria_wikidata":"Q886986","cliopatria_wikipedia":"Kingdom of Lindsey"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.8348,53.5296],
+[-0.8229,53.3946],
+[-0.7369,53.3946],
+[-0.731,53.3271],
+[-0.2899,53.1922],
+[0.0751,52.9227],
+[0.0698,52.99],
+[0.3165,53.1248],
+[0.2953,53.3946],
+[0.0208,53.5971],
+[0.0153,53.6647],
+[-0.6802,53.7323],
+[-0.7546,53.5971],
+[-0.7487,53.5296],
+[-0.8348,53.5296]
+]
+]
+]}
+}

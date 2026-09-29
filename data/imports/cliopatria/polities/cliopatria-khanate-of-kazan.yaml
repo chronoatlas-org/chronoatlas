@@ -1,0 +1,8 @@
+id: cliopatria-khanate-of-kazan
+names:
+  - text: Khanate of Kazan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Khanate of Kazan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

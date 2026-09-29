@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-monaco-1939","edge_precision":"unknown","cliopatria_name":"Kingdom of Monaco","cliopatria_from_year":1939,"cliopatria_to_year":1939,"cliopatria_area_km2":47,"cliopatria_wikidata":"Q235","cliopatria_wikipedia":"Monaco"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.1502,43.733],
+[7.1515,43.6678],
+[7.2321,43.6678],
+[7.2308,43.733],
+[7.1502,43.733]
+]
+]
+]}
+}

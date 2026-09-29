@@ -1,0 +1,8 @@
+id: cliopatria-michoacan
+names:
+  - text: Michoacán
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Michoacán"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

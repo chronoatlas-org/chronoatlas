@@ -1,0 +1,8 @@
+id: cliopatria-county-of-vexin
+names:
+  - text: County of Vexin
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Vexin"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

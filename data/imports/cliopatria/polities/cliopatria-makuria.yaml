@@ -1,0 +1,8 @@
+id: cliopatria-makuria
+names:
+  - text: Makuria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Makuria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

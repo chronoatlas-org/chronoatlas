@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-sobrarbe
+names:
+  - text: Kingdom of Sobrarbe
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Sobrarbe"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

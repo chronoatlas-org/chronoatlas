@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-algeciras-1085","edge_precision":"unknown","cliopatria_name":"Taifa of Algeciras","cliopatria_from_year":1085,"cliopatria_to_year":1093,"cliopatria_area_km2":3718,"cliopatria_wikidata":"Q1183407","cliopatria_wikipedia":"Taifa of Algeciras","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-4.8663,36.8682],
+[-4.7665,36.546],
+[-4.6888,36.546],
+[-4.4686,36.7393],
+[-3.9285,36.8037],
+[-3.9327,36.8682],
+[-3.859,36.9326],
+[-4.0968,36.9971],
+[-4.4301,37.3193],
+[-4.5081,37.3193],
+[-4.8663,36.8682]
+]
+]
+]}
+}

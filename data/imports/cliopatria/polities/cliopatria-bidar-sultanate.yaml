@@ -1,0 +1,8 @@
+id: cliopatria-bidar-sultanate
+names:
+  - text: Bidar Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Bidar Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

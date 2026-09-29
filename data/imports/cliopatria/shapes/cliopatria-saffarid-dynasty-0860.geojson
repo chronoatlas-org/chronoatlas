@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saffarid-dynasty-0860","edge_precision":"unknown","cliopatria_name":"Saffarid Dynasty","cliopatria_from_year":860,"cliopatria_to_year":865,"cliopatria_area_km2":4860,"cliopatria_wikidata":"Q45310","cliopatria_wikipedia":"Saffarid dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[61.6575,31.0148],
+[61.8096,31.0148],
+[61.9396,30.8863],
+[61.9177,30.7578],
+[62.2217,30.7578],
+[62.2437,30.8863],
+[62.5702,31.0148],
+[62.6154,31.2719],
+[62.3336,31.4005],
+[62.3565,31.529],
+[62.0517,31.529],
+[62.029,31.4005],
+[61.7019,31.2719],
+[61.6907,31.2076],
+[61.6575,31.0148]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-county-of-touraine
+names:
+  - text: County of Touraine
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Touraine"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

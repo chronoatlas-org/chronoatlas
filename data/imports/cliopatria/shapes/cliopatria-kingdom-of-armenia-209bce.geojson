@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-armenia-209bce","edge_precision":"unknown","cliopatria_name":"Kingdom of Armenia","cliopatria_from_year":-208,"cliopatria_to_year":-207,"cliopatria_area_km2":269,"cliopatria_wikidata":"Q208404","cliopatria_wikipedia":"Kingdom of Armenia (antiquity)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[47.4645,38.5451],
+[47.5429,38.5451],
+[47.5317,38.4806],
+[47.6101,38.4806],
+[47.711,38.6097],
+[47.6439,38.6743],
+[47.4757,38.6097],
+[47.4645,38.5451]
+]
+]
+]}
+}

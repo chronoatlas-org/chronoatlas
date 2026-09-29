@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-albania-1919","edge_precision":"unknown","cliopatria_name":"Albania","cliopatria_from_year":1919,"cliopatria_to_year":1919,"cliopatria_area_km2":5420,"cliopatria_wikidata":"Q222","cliopatria_wikipedia":"Albania"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.6265,40.2259],
+[19.9305,39.967],
+[20.0094,39.967],
+[19.9184,39.7083],
+[20.155,39.7083],
+[20.6509,40.1612],
+[20.7434,40.4201],
+[19.8792,40.5496],
+[19.6356,40.4201],
+[19.6265,40.2259]
+]
+]
+]}
+}

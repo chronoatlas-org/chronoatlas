@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-hokuzan-1314","edge_precision":"unknown","cliopatria_name":"Hokuzan","cliopatria_from_year":1314,"cliopatria_to_year":1414,"cliopatria_area_km2":1278,"cliopatria_wikidata":"Q55523","cliopatria_wikipedia":"Hokuzan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[127.8526,26.4508],
+[127.9277,26.4508],
+[127.9091,26.3865],
+[128.2654,26.5794],
+[128.4168,26.8366],
+[127.9279,26.708],
+[127.8526,26.4508]
+]
+]
+]}
+}

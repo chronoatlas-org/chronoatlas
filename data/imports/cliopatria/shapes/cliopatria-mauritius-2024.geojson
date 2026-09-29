@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-mauritius-2024","edge_precision":"unknown","cliopatria_name":"Mauritius","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":2480,"cliopatria_wikidata":"Q1027","cliopatria_wikipedia":"Mauritius"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[57.1793,-20.3506],
+[57.1943,-20.5435],
+[57.5651,-20.5435],
+[57.6241,-20.3506],
+[57.6982,-20.3506],
+[57.673,-20.0292],
+[57.4457,-19.9649],
+[57.1793,-20.3506]
+]
+]
+]}
+}

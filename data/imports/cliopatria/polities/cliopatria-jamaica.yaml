@@ -1,0 +1,8 @@
+id: cliopatria-jamaica
+names:
+  - text: Jamaica
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Jamaica"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

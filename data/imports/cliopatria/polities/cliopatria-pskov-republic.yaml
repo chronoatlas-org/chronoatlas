@@ -1,0 +1,8 @@
+id: cliopatria-pskov-republic
+names:
+  - text: Pskov Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Pskov Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

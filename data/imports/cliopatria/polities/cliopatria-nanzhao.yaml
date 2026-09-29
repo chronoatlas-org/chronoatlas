@@ -1,0 +1,8 @@
+id: cliopatria-nanzhao
+names:
+  - text: Nanzhao
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Nanzhao"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

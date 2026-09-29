@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultan-of-yogyakarta-1828","edge_precision":"unknown","cliopatria_name":"Sultan of Yogyakarta","cliopatria_from_year":1828,"cliopatria_to_year":1829,"cliopatria_area_km2":4063,"cliopatria_wikidata":"Q1050326","cliopatria_wikipedia":"Hamengkubuwono"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[109.8985,-8.0074],
+[110.7194,-8.2646],
+[110.7924,-8.2646],
+[110.6926,-7.8789],
+[110.6197,-7.8789],
+[110.3835,-7.6217],
+[110.0958,-7.686],
+[110.0229,-7.686],
+[109.8985,-8.0074]
+]
+]
+]}
+}

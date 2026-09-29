@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-centralist-mexico-1846","edge_precision":"unknown","cliopatria_name":"Centralist Mexico","cliopatria_from_year":1846,"cliopatria_to_year":1847,"cliopatria_area_km2":639,"cliopatria_wikidata":"Q5062192","cliopatria_wikipedia":"Centralist Republic of Mexico"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-117.3909,33.2002],
+[-117.329,33.0716],
+[-117.0991,33.0716],
+[-117.2832,33.1359],
+[-117.3142,33.2002],
+[-117.3909,33.2002]
+]
+],
+[
+[
+[-97.7787,24.5221],
+[-97.7343,24.3292],
+[-97.5103,24.3292],
+[-97.5546,24.5221],
+[-97.7787,24.5221]
+]
+]
+]}
+}

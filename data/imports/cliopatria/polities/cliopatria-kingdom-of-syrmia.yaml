@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-syrmia
+names:
+  - text: Kingdom of Syrmia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Syrmia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-bavaria
+names:
+  - text: Kingdom of Bavaria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Bavaria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

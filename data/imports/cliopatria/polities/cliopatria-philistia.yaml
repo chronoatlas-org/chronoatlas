@@ -1,0 +1,8 @@
+id: cliopatria-philistia
+names:
+  - text: Philistia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Philistia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

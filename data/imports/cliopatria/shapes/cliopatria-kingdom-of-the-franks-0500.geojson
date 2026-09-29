@@ -1,0 +1,41 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-the-franks-0500","edge_precision":"unknown","cliopatria_name":"Kingdom of the Franks","cliopatria_from_year":500,"cliopatria_to_year":509,"cliopatria_area_km2":28612,"cliopatria_wikidata":"Q146246","cliopatria_wikipedia":"Francia","cliopatria_seshat_id":"fr_merovingian_emp_1","cliopatria_member_of":"(Merovingian Empire);(Kingdom of the Franks)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[4.2387,49.98],
+[4.3225,49.98],
+[4.432,49.3826],
+[4.782,48.9851],
+[5.4505,48.9189],
+[5.4411,49.1838],
+[5.7612,49.5816],
+[6.1833,49.4489],
+[6.3484,49.5152],
+[6.3425,49.7143],
+[6.4262,49.7143],
+[6.169,49.9136],
+[6.0768,50.1795],
+[6.4048,50.4457],
+[6.7413,50.4457],
+[6.8219,50.5789],
+[6.9903,50.5789],
+[7.1539,50.7788],
+[7.1491,50.9789],
+[6.7124,51.5134],
+[6.2038,51.5134],
+[5.9604,51.1792],
+[5.9735,50.7788],
+[5.8913,50.7121],
+[5.0486,50.7121],
+[4.9696,50.5789],
+[4.6356,50.5122],
+[4.6412,50.3791],
+[4.4788,50.246],
+[4.3108,50.246],
+[4.2387,49.98]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-cisalpine-republic
+names:
+  - text: Cisalpine Republic
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Cisalpine Republic"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

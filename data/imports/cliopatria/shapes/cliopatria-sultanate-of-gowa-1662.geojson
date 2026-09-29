@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-gowa-1662","edge_precision":"unknown","cliopatria_name":"Sultanate of Gowa","cliopatria_from_year":1662,"cliopatria_to_year":1669,"cliopatria_area_km2":2613,"cliopatria_wikidata":"Q1408641","cliopatria_wikipedia":"Sultanate of Gowa"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[119.2062,-5.1145],
+[119.3066,-5.6288],
+[119.4524,-5.6288],
+[119.4453,-5.5002],
+[119.657,-5.3716],
+[119.5608,-4.9216],
+[119.4879,-4.9216],
+[119.4086,-4.7931],
+[119.3486,-5.0502],
+[119.2062,-5.1145]
+]
+]
+]}
+}

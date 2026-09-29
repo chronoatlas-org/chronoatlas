@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-visigothic-kingdom-0426","edge_precision":"unknown","cliopatria_name":"Visigothic Kingdom","cliopatria_from_year":426,"cliopatria_to_year":454,"cliopatria_area_km2":35099,"cliopatria_wikidata":"Q126936","cliopatria_wikipedia":"Visigothic Kingdom","cliopatria_seshat_id":"es_visigothic_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-1.2518,46.2833],
+[-1.2227,45.8898],
+[-1.1411,45.8898],
+[-1.2131,45.7588],
+[-1.0453,45.6933],
+[-1.0312,45.4968],
+[-1.1894,45.4313],
+[-1.2238,44.7773],
+[-1.2192,44.7119],
+[-1.0616,44.7773],
+[0.2957,43.7982],
+[1.1234,43.4072],
+[1.5993,43.5375],
+[1.9016,43.9286],
+[1.8883,44.1896],
+[1.551,44.4507],
+[1.3892,44.4507],
+[0.5364,45.1696],
+[0.3738,45.1696],
+[-0.2299,45.6933],
+[-0.393,45.6933],
+[-1.0881,46.2833],
+[-1.2518,46.2833]
+]
+]
+]}
+}

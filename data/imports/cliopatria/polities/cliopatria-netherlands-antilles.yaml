@@ -1,0 +1,8 @@
+id: cliopatria-netherlands-antilles
+names:
+  - text: Netherlands Antilles
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Netherlands Antilles"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

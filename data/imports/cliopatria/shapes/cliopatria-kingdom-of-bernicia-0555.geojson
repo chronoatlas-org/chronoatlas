@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-bernicia-0555","edge_precision":"unknown","cliopatria_name":"Kingdom of Bernicia","cliopatria_from_year":555,"cliopatria_to_year":611,"cliopatria_area_km2":10359,"cliopatria_wikidata":"Q623751","cliopatria_wikipedia":"Bernicia","cliopatria_seshat_id":"gb_anglo_saxon_1","cliopatria_member_of":"(Anglo-Saxon England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.0884,56.0451],
+[-2.9623,55.7031],
+[-2.772,55.5665],
+[-2.6549,55.2936],
+[-2.473,55.2255],
+[-2.3501,54.8851],
+[-2.0546,54.5453],
+[-1.36,54.5453],
+[-1.3664,54.6132],
+[-1.2795,54.6132],
+[-1.2988,54.8171],
+[-1.486,54.9531],
+[-1.5192,55.2936],
+[-1.6065,55.2936],
+[-1.7348,55.7031],
+[-2.385,56.0451],
+[-3.0884,56.0451]
+]
+]
+]}
+}

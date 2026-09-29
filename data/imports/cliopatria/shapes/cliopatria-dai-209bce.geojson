@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-dai-209bce","edge_precision":"unknown","cliopatria_name":"Dai","cliopatria_from_year":-208,"cliopatria_to_year":-207,"cliopatria_area_km2":25666,"cliopatria_wikidata":"Q5349053","cliopatria_wikipedia":"Eighteen Kingdoms","cliopatria_member_of":"(Eighteen Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.8591,36.9971],
+[115.141,36.9326],
+[115.1115,36.8682],
+[116.2008,36.8682],
+[116.2605,36.9971],
+[116.6147,37.2549],
+[117.2298,38.6743],
+[116.7002,38.868],
+[115.4535,38.0933],
+[114.8591,36.9971]
+]
+]
+]}
+}

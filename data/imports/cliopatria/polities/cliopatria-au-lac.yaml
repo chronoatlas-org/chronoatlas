@@ -1,0 +1,8 @@
+id: cliopatria-au-lac
+names:
+  - text: Âu Lạc
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Âu Lạc"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

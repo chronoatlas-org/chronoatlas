@@ -1,0 +1,8 @@
+id: cliopatria-shan-states
+names:
+  - text: Shan States
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Shan States"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

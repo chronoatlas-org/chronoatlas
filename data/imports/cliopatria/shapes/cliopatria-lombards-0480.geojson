@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-lombards-0480","edge_precision":"unknown","cliopatria_name":"Lombards","cliopatria_from_year":480,"cliopatria_to_year":489,"cliopatria_area_km2":6727,"cliopatria_wikidata":"Q130900","cliopatria_wikipedia":"Lombards"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.5615,55.9766],
+[12.908,55.7715],
+[12.9031,55.5665],
+[12.7264,55.4983],
+[12.8108,55.3618],
+[13.5996,55.43],
+[13.6871,55.43],
+[14.2969,55.3618],
+[14.2287,55.9082],
+[14.319,55.9766],
+[12.5644,56.1136],
+[12.5615,55.9766]
+]
+]
+]}
+}

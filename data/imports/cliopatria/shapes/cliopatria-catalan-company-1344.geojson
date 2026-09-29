@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-catalan-company-1344","edge_precision":"unknown","cliopatria_name":"Catalan Company","cliopatria_from_year":1344,"cliopatria_to_year":1351,"cliopatria_area_km2":10150,"cliopatria_wikidata":"Q1501196","cliopatria_wikipedia":"Catalan Company"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[21.9904,38.6743],
+[22.0552,38.416],
+[22.6036,38.416],
+[22.9881,38.2869],
+[23.0445,37.8998],
+[23.3646,38.0288],
+[23.4428,38.0288],
+[23.9786,37.8352],
+[24.0844,38.2869],
+[23.7045,38.4806],
+[23.3126,38.4806],
+[22.9393,38.8034],
+[22.9431,38.868],
+[22.1614,38.9326],
+[21.9904,38.6743]
+]
+]
+]}
+}

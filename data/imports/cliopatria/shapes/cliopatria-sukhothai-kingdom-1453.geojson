@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sukhothai-kingdom-1453","edge_precision":"unknown","cliopatria_name":"Sukhothai Kingdom","cliopatria_from_year":1453,"cliopatria_to_year":1458,"cliopatria_area_km2":223,"cliopatria_wikidata":"Q863279","cliopatria_wikipedia":"Sukhothai Kingdom"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[97.9835,17.9648],
+[98.1123,17.8362],
+[98.1217,17.9005],
+[98.205,17.9648],
+[98.1406,18.0291],
+[97.9835,17.9648]
+]
+]
+]}
+}

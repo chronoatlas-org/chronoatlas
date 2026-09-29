@@ -1,0 +1,8 @@
+id: cliopatria-electorate-of-trier
+names:
+  - text: Electorate of Trier
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Electorate of Trier"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

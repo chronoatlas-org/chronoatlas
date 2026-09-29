@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-bengal-1344","edge_precision":"unknown","cliopatria_name":"Sultanate of Bengal","cliopatria_from_year":1344,"cliopatria_to_year":1351,"cliopatria_area_km2":5059,"cliopatria_wikidata":"Q4083686","cliopatria_wikipedia":"Bengal Sultanate","cliopatria_seshat_id":"bd_bengal_sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[87.6203,24.7149],
+[87.7698,24.7149],
+[87.8775,24.4578],
+[88.1763,24.4578],
+[88.1972,24.5864],
+[88.5172,24.7149],
+[88.5603,24.9721],
+[88.283,25.1007],
+[88.3051,25.2293],
+[88.0058,25.2293],
+[87.8124,24.9721],
+[87.7377,24.9721],
+[87.6203,24.7149]
+]
+]
+]}
+}

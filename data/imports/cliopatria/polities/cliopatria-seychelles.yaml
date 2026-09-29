@@ -1,0 +1,8 @@
+id: cliopatria-seychelles
+names:
+  - text: Seychelles
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Seychelles"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,25 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-jawor-1305","edge_precision":"unknown","cliopatria_name":"Duchy of Jawor","cliopatria_from_year":1305,"cliopatria_to_year":1313,"cliopatria_area_km2":3585,"cliopatria_wikidata":"Q561204","cliopatria_wikipedia":"Duchy of Jawor","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Kingdom of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.529,51.5134],
+[15.6932,51.3797],
+[15.6801,51.0457],
+[15.9309,50.9789],
+[15.9229,50.7788],
+[16.0861,50.6455],
+[16.423,50.6455],
+[16.5219,50.9789],
+[16.3618,51.1792],
+[15.8571,51.246],
+[15.9556,51.5803],
+[15.8708,51.5803],
+[15.8736,51.6472],
+[15.5342,51.6472],
+[15.529,51.5134]
+]
+]
+]}
+}

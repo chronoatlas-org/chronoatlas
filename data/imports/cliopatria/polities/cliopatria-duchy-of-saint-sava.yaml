@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-saint-sava
+names:
+  - text: Duchy of Saint Sava
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Saint Sava"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

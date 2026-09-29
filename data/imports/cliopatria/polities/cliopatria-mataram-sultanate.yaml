@@ -1,0 +1,8 @@
+id: cliopatria-mataram-sultanate
+names:
+  - text: Mataram Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Mataram Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

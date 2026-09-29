@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-inca-empire-1440","edge_precision":"unknown","cliopatria_name":"Inca Empire","cliopatria_from_year":1440,"cliopatria_to_year":1449,"cliopatria_area_km2":8783,"cliopatria_wikidata":"Q28573","cliopatria_wikipedia":"Inca Empire","cliopatria_seshat_id":"pe_inca_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-73.0742,-13.3433],
+[-72.8062,-13.6005],
+[-72.8925,-13.729],
+[-72.6788,-13.7933],
+[-72.5518,-13.9862],
+[-72.5584,-14.0505],
+[-72.1179,-14.0505],
+[-71.9579,-13.9219],
+[-71.932,-13.6647],
+[-72.4627,-13.0862],
+[-72.97,-13.0219],
+[-73.0742,-13.3433]
+]
+]
+]}
+}

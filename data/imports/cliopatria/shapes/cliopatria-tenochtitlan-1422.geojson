@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-tenochtitlan-1422","edge_precision":"unknown","cliopatria_name":"Tenochtitlan","cliopatria_from_year":1422,"cliopatria_to_year":1428,"cliopatria_area_km2":2493,"cliopatria_wikidata":"Q13695","cliopatria_wikipedia":"Tenochtitlan","cliopatria_seshat_id":"mx_basin_of_mexico_10"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-98.9272,19.5077],
+[-98.736,18.8648],
+[-98.6621,18.8648],
+[-98.4011,19.0577],
+[-98.4478,19.3148],
+[-98.5218,19.3148],
+[-98.7169,19.5719],
+[-98.8531,19.5077],
+[-98.9272,19.5077]
+]
+]
+]}
+}

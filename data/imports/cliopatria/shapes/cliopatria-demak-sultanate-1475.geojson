@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-demak-sultanate-1475","edge_precision":"unknown","cliopatria_name":"Demak Sultanate","cliopatria_from_year":1475,"cliopatria_to_year":1518,"cliopatria_area_km2":7452,"cliopatria_wikidata":"Q49322","cliopatria_wikipedia":"Demak Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[110.3351,-6.8503],
+[110.339,-6.9145],
+[110.9384,-7.1717],
+[111.5101,-6.9788],
+[111.5022,-6.8503],
+[111.6442,-6.786],
+[111.6404,-6.7217],
+[111.4869,-6.5931],
+[111.0531,-6.6574],
+[110.8923,-6.4002],
+[110.6006,-6.4002],
+[110.3351,-6.8503]
+]
+]
+]}
+}

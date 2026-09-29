@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kelantan-1762","edge_precision":"unknown","cliopatria_name":"Kelantan","cliopatria_from_year":1762,"cliopatria_to_year":1889,"cliopatria_area_km2":8268,"cliopatria_wikidata":"Q185944","cliopatria_wikipedia":"Kelantan"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[101.5343,4.8501],
+[101.6072,4.8501],
+[101.6107,4.9144],
+[101.6836,4.9144],
+[101.687,4.9787],
+[102.4887,4.9787],
+[102.3644,5.3644],
+[102.2223,5.4287],
+[102.2487,5.8787],
+[102.4023,6.0073],
+[102.4062,6.0715],
+[102.1264,6.2644],
+[102.0535,6.2644],
+[101.8765,5.7501],
+[101.7307,5.7501],
+[101.7777,5.3001],
+[101.5483,5.1072],
+[101.5343,4.8501]
+]
+]
+]}
+}

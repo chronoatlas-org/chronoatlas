@@ -1,0 +1,8 @@
+id: cliopatria-byeonhan
+names:
+  - text: Byeonhan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Byeonhan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

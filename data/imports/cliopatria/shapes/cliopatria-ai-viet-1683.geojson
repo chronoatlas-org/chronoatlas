@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-ai-viet-1683","edge_precision":"unknown","cliopatria_name":"Đại Việt","cliopatria_from_year":1683,"cliopatria_to_year":1793,"cliopatria_area_km2":3549,"cliopatria_wikidata":"Q1317991","cliopatria_wikipedia":"Đại Việt"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[108.6217,11.536],
+[108.7614,11.4717],
+[108.8147,11.2788],
+[108.8879,11.2788],
+[109.2278,11.7289],
+[109.2347,11.7931],
+[109.0882,11.7931],
+[108.764,12.1789],
+[108.6907,12.1789],
+[108.6696,11.986],
+[108.6217,11.536]
+]
+]
+]}
+}

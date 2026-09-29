@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-janggala
+names:
+  - text: Kingdom of Janggala
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Janggala"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

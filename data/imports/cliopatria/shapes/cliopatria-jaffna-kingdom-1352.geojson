@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-jaffna-kingdom-1352","edge_precision":"unknown","cliopatria_name":"Jaffna kingdom","cliopatria_from_year":1352,"cliopatria_to_year":1587,"cliopatria_area_km2":11785,"cliopatria_wikidata":"Q1311219","cliopatria_wikipedia":"Jaffna kingdom","cliopatria_seshat_id":"sl_jaffa_k"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[79.6988,9.1149],
+[79.9338,8.8811],
+[81.1684,8.4935],
+[81.2554,8.548],
+[80.7873,9.326],
+[80.2343,9.8366],
+[80.005,9.8325],
+[79.7455,9.6368],
+[79.7955,9.5677],
+[80.1427,9.5219],
+[79.9697,9.2827],
+[80.0346,9.0507],
+[79.6988,9.1149]
+]
+]
+]}
+}

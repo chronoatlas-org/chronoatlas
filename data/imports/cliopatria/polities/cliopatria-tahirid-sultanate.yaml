@@ -1,0 +1,8 @@
+id: cliopatria-tahirid-sultanate
+names:
+  - text: Tahirid Sultanate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tahirid Sultanate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

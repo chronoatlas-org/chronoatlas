@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-panama
+names:
+  - text: Republic of Panama
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Panama"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

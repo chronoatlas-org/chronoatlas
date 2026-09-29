@@ -1,0 +1,35 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-granada-1066","edge_precision":"unknown","cliopatria_name":"Taifa of Granada","cliopatria_from_year":1066,"cliopatria_to_year":1071,"cliopatria_area_km2":24579,"cliopatria_wikidata":"Q205708","cliopatria_wikipedia":"Taifa of Granada","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-5.0952,36.8037],
+[-5.0728,36.4816],
+[-4.9952,36.4816],
+[-4.6888,36.546],
+[-4.4686,36.7393],
+[-3.1506,36.8037],
+[-3.0967,37.1904],
+[-2.8709,37.3193],
+[-2.9771,37.7707],
+[-2.8371,38.0288],
+[-2.5282,38.0933],
+[-2.4619,38.2869],
+[-2.6308,38.4806],
+[-4.4242,38.3515],
+[-4.1622,37.9643],
+[-4.1489,37.7707],
+[-3.9839,37.6417],
+[-3.9709,37.4483],
+[-4.4345,37.3838],
+[-4.2568,37.0615],
+[-4.486,36.9971],
+[-4.7974,36.9971],
+[-4.793,36.9326],
+[-4.9486,36.9326],
+[-5.0952,36.8037]
+]
+]
+]}
+}

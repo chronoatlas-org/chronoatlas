@@ -1,0 +1,34 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-cappadocia-219bce","edge_precision":"unknown","cliopatria_name":"Kingdom of Cappadocia","cliopatria_from_year":-218,"cliopatria_to_year":-213,"cliopatria_area_km2":67860,"cliopatria_wikidata":"Q29654286","cliopatria_wikipedia":"Kingdom of Cappadocia","cliopatria_seshat_id":"tr_cappadocia_2"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[33.5872,38.5451],
+[33.6685,37.8352],
+[34.8266,37.7062],
+[34.9687,37.5773],
+[35.6712,37.5773],
+[35.9981,37.7062],
+[36.3481,38.0288],
+[37.1146,37.8998],
+[37.3184,38.2869],
+[38.1262,38.4806],
+[38.8136,38.9326],
+[38.8223,38.9972],
+[38.7437,38.9972],
+[38.7525,39.0618],
+[37.8607,39.4496],
+[36.9326,39.5789],
+[35.4354,39.5789],
+[35.2937,39.7083],
+[34.8284,39.7729],
+[34.7263,39.5789],
+[34.7667,39.2557],
+[34.4787,38.8034],
+[33.6796,38.6743],
+[33.5872,38.5451]
+]
+]
+]}
+}

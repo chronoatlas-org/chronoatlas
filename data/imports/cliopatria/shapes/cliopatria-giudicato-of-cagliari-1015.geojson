@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-giudicato-of-cagliari-1015","edge_precision":"unknown","cliopatria_name":"Giudicato of Cagliari","cliopatria_from_year":1015,"cliopatria_to_year":1017,"cliopatria_area_km2":2647,"cliopatria_wikidata":"Q2297073","cliopatria_wikipedia":"Judicate of Cagliari"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.7227,39.6436],
+[8.7259,39.3203],
+[8.8833,39.3203],
+[8.9608,39.4496],
+[9.355,39.385],
+[9.4305,39.9023],
+[9.3507,40.0317],
+[9.2717,40.0317],
+[8.9592,39.6436],
+[8.7227,39.6436]
+]
+]
+]}
+}

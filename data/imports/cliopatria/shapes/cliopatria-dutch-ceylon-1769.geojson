@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-dutch-ceylon-1769","edge_precision":"unknown","cliopatria_name":"Dutch Ceylon","cliopatria_from_year":1769,"cliopatria_to_year":1793,"cliopatria_area_km2":28880,"cliopatria_wikidata":"Q1841483","cliopatria_wikipedia":"Dutch Ceylon","cliopatria_seshat_id":"nl_dutch_emp_1","cliopatria_member_of":"(Dutch Republic)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[79.8807,7.5502],
+[79.9465,7.4216],
+[80.3808,7.3573],
+[80.2903,7.0359],
+[80.3462,6.7144],
+[81.1418,6.5858],
+[81.666,6.843],
+[81.534,7.1002],
+[81.5446,7.293],
+[81.3329,7.4216],
+[81.2052,7.743],
+[81.3008,8.1288],
+[80.8743,8.3216],
+[80.9018,8.7716],
+[80.5248,8.5788],
+[80.0136,8.5788],
+[79.8807,7.5502]
+]
+]
+]}
+}

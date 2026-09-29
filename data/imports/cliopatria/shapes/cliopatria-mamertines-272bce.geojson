@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-mamertines-272bce","edge_precision":"unknown","cliopatria_name":"Mamertines","cliopatria_from_year":-271,"cliopatria_to_year":-265,"cliopatria_area_km2":934,"cliopatria_wikidata":"Q1164281","cliopatria_wikipedia":"Mamertines"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[15.0764,38.1578],
+[15.1496,37.8998],
+[15.3059,37.8998],
+[15.3086,38.0288],
+[15.3868,38.0288],
+[15.3895,38.1578],
+[15.6243,38.1578],
+[15.6271,38.2869],
+[15.0764,38.1578]
+]
+]
+]}
+}

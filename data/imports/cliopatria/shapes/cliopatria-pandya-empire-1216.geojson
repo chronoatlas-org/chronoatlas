@@ -1,0 +1,21 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-pandya-empire-1216","edge_precision":"unknown","cliopatria_name":"Pandya Empire","cliopatria_from_year":1216,"cliopatria_to_year":1219,"cliopatria_area_km2":25319,"cliopatria_wikidata":"Q844910","cliopatria_wikipedia":"Pandya Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[76.9869,9.9414],
+[77.0624,9.3703],
+[77.2567,9.0501],
+[77.687,8.7902],
+[78.5471,9.3281],
+[78.9504,9.8403],
+[78.964,10.0063],
+[78.3877,10.2206],
+[77.7215,10.3698],
+[77.1533,10.2765],
+[76.9869,9.9414]
+]
+]
+]}
+}

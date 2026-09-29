@@ -1,0 +1,8 @@
+id: cliopatria-breton-kingdoms
+names:
+  - text: Breton Kingdoms
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Breton Kingdoms"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

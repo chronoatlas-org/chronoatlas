@@ -1,0 +1,8 @@
+id: cliopatria-western-yan
+names:
+  - text: Western Yan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Western Yan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

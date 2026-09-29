@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-saadi-sultanate-1670","edge_precision":"unknown","cliopatria_name":"Saadi Sultanate","cliopatria_from_year":1670,"cliopatria_to_year":1737,"cliopatria_area_km2":679,"cliopatria_wikidata":"Q1136188","cliopatria_wikipedia":"Saadi Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-6.0423,29.7937],
+[-5.9564,29.6009],
+[-5.8806,29.6009],
+[-5.5944,29.9223],
+[-5.8184,29.858],
+[-5.8942,29.858],
+[-6.0423,29.7937]
+]
+]
+]}
+}

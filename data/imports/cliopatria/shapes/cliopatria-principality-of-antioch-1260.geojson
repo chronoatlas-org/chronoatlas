@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-antioch-1260","edge_precision":"unknown","cliopatria_name":"Principality of Antioch","cliopatria_from_year":1260,"cliopatria_to_year":1271,"cliopatria_area_km2":5558,"cliopatria_wikidata":"Q235030","cliopatria_wikipedia":"Principality of Antioch"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.8417,36.2884],
+[35.9194,36.2884],
+[35.9901,36.224],
+[35.8582,35.7089],
+[35.8516,35.6445],
+[36.4139,35.8377],
+[36.6108,36.224],
+[36.6679,36.7393],
+[36.5196,36.8037],
+[36.272,36.6749],
+[36.2649,36.6105],
+[35.8417,36.2884]
+]
+]
+]}
+}

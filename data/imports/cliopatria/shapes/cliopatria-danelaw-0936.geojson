@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-danelaw-0936","edge_precision":"unknown","cliopatria_name":"Danelaw","cliopatria_from_year":936,"cliopatria_to_year":946,"cliopatria_area_km2":16771,"cliopatria_wikidata":"Q339271","cliopatria_wikipedia":"Danelaw","cliopatria_seshat_id":"gb_anglo_saxon_2","cliopatria_member_of":"(Kingdom of England)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.6767,54.6811],
+[-2.648,54.4095],
+[-2.5613,54.4095],
+[-2.5543,54.3417],
+[-1.9939,53.9352],
+[-1.8681,53.5296],
+[-1.4126,53.2596],
+[-0.9889,53.3271],
+[-0.9269,53.5971],
+[-0.7665,53.7323],
+[0.0153,53.6647],
+[0.0043,53.7999],
+[-0.082,53.7999],
+[-0.0933,53.9352],
+[-0.1796,53.9352],
+[-0.2024,54.2061],
+[-0.5786,54.5453],
+[-1.199,54.6811],
+[-2.6767,54.6811]
+]
+]
+]}
+}

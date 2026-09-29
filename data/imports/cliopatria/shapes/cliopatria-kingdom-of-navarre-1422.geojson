@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-navarre-1422","edge_precision":"unknown","cliopatria_name":"Kingdom of Navarre","cliopatria_from_year":1422,"cliopatria_to_year":1428,"cliopatria_area_km2":10051,"cliopatria_wikidata":"Q200262","cliopatria_wikipedia":"Kingdom of Navarre"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-2.2031,42.6912],
+[-2.0199,42.3662],
+[-1.7756,42.3012],
+[-1.8288,41.9114],
+[-1.43,41.9114],
+[-1.4428,42.1063],
+[-1.3888,42.4962],
+[-0.8579,42.9515],
+[-0.8706,43.1467],
+[-1.0443,43.3421],
+[-1.8484,43.3421],
+[-1.8391,43.2118],
+[-2.2031,42.6912]
+]
+]
+]}
+}

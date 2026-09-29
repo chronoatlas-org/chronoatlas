@@ -1,0 +1,8 @@
+id: cliopatria-duchy-of-courland
+names:
+  - text: Duchy of Courland
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Duchy of Courland"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

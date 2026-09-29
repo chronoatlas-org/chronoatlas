@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-sultanate-of-sulu-1459","edge_precision":"unknown","cliopatria_name":"Sultanate of Sulu","cliopatria_from_year":1459,"cliopatria_to_year":1506,"cliopatria_area_km2":1777,"cliopatria_wikidata":"Q422065","cliopatria_wikipedia":"Sultanate of Sulu"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[121.7563,6.4573],
+[121.9703,6.393],
+[122.0432,6.393],
+[122.1938,6.4573],
+[122.2862,6.7144],
+[121.8535,6.7787],
+[121.7563,6.4573]
+]
+]
+]}
+}

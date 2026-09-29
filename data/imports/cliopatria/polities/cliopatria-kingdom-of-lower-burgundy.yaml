@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-lower-burgundy
+names:
+  - text: Kingdom of Lower Burgundy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Lower Burgundy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

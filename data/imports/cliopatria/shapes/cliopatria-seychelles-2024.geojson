@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-seychelles-2024","edge_precision":"unknown","cliopatria_name":"Seychelles","cliopatria_from_year":2024,"cliopatria_to_year":2024,"cliopatria_area_km2":259,"cliopatria_wikidata":"Q1042","cliopatria_wikipedia":"Seychelles"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[55.2077,-4.6002],
+[55.4304,-4.7931],
+[55.429,-4.7288],
+[55.4263,-4.6002],
+[55.2077,-4.6002]
+]
+]
+]}
+}

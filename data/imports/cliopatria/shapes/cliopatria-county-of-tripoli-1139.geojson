@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-tripoli-1139","edge_precision":"unknown","cliopatria_name":"County of Tripoli","cliopatria_from_year":1139,"cliopatria_to_year":1187,"cliopatria_area_km2":5962,"cliopatria_wikidata":"Q272033","cliopatria_wikipedia":"County of Tripoli"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[35.53,33.9718],
+[35.8251,33.8432],
+[35.8313,33.9075],
+[36.5882,34.5506],
+[36.6214,34.8723],
+[36.165,34.9366],
+[36.2688,35.194],
+[35.9597,35.194],
+[35.94,35.001],
+[36.0488,34.5506],
+[35.7921,34.2933],
+[35.6445,34.3577],
+[35.6838,33.9718],
+[35.53,33.9718]
+]
+]
+]}
+}

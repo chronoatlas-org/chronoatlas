@@ -1,0 +1,8 @@
+id: cliopatria-haudenosaunee
+names:
+  - text: Haudenosaunee
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Haudenosaunee"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

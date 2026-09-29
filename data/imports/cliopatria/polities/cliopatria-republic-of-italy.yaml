@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-italy
+names:
+  - text: Republic of Italy
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Italy"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-sudan
+names:
+  - text: Republic of Sudan
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Sudan"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

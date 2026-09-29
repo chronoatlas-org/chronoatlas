@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-oldenburg-1814","edge_precision":"unknown","cliopatria_name":"Duchy of Oldenburg","cliopatria_from_year":1814,"cliopatria_to_year":1819,"cliopatria_area_km2":4436,"cliopatria_wikidata":"Q697084","cliopatria_wikipedia":"Duchy of Oldenburg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[7.5293,52.99],
+[7.7878,52.9227],
+[7.9639,52.6535],
+[8.1338,52.7208],
+[8.1316,52.8554],
+[8.4733,52.9227],
+[8.4706,53.1248],
+[8.3809,53.3946],
+[8.4669,53.3946],
+[8.4641,53.5971],
+[8.377,53.6647],
+[8.2046,53.6647],
+[8.2057,53.5971],
+[8.1195,53.5971],
+[8.1206,53.5296],
+[7.7762,53.5296],
+[7.6954,53.2596],
+[7.6095,53.2596],
+[7.5293,52.99]
+]
+]
+]}
+}

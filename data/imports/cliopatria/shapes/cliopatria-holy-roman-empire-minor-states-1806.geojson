@@ -1,0 +1,41 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-holy-roman-empire-minor-states-1806","edge_precision":"unknown","cliopatria_name":"Holy Roman Empire Minor States","cliopatria_from_year":1806,"cliopatria_to_year":1806,"cliopatria_area_km2":4249,"cliopatria_wikidata":"Q12548","cliopatria_wikipedia":"Holy Roman Empire","cliopatria_seshat_id":"de_empire_minor_2","cliopatria_member_of":"(Holy Roman Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[9.1668,51.9822],
+[9.1691,51.7142],
+[9.3389,51.7142],
+[9.5079,51.8481],
+[10.1029,51.7811],
+[10.1027,51.9151],
+[10.1878,51.9151],
+[10.5278,51.8481],
+[10.782,51.6472],
+[10.9521,51.7142],
+[10.868,51.9151],
+[10.5279,51.9151],
+[10.1875,52.1833],
+[9.5911,52.1833],
+[9.6766,52.1163],
+[9.5922,51.9822],
+[9.1668,51.9822]
+]
+],
+[
+[
+[10.1874,52.3847],
+[10.1875,52.2505],
+[10.358,52.1833],
+[10.6137,52.2505],
+[10.699,52.2505],
+[10.8698,52.3176],
+[10.8708,52.5191],
+[10.6145,52.5191],
+[10.6994,52.3847],
+[10.1874,52.3847]
+]
+]
+]}
+}

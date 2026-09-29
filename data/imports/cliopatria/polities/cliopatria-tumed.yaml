@@ -1,0 +1,8 @@
+id: cliopatria-tumed
+names:
+  - text: Tümed
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tümed"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

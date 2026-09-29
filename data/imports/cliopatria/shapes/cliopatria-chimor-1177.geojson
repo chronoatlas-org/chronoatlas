@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-chimor-1177","edge_precision":"unknown","cliopatria_name":"Chimor","cliopatria_from_year":1177,"cliopatria_to_year":1187,"cliopatria_area_km2":2661,"cliopatria_wikidata":"Q581741","cliopatria_wikipedia":"Chimor"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-79.4556,-7.9432],
+[-78.9762,-8.4575],
+[-78.8141,-8.2003],
+[-79.0215,-8.0074],
+[-79.0792,-7.7503],
+[-79.2982,-7.7503],
+[-79.302,-7.8146],
+[-79.4479,-7.8146],
+[-79.4556,-7.9432]
+]
+]
+]}
+}

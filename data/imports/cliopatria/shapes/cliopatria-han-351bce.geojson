@@ -1,0 +1,29 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-han-351bce","edge_precision":"unknown","cliopatria_name":"Han","cliopatria_from_year":-350,"cliopatria_to_year":-338,"cliopatria_area_km2":23008,"cliopatria_wikidata":"Q1968654","cliopatria_wikipedia":"Han (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[110.5884,34.8079],
+[111.359,34.615],
+[113.44,34.615],
+[113.6738,34.8079],
+[114.4721,34.8723],
+[114.499,34.9366],
+[114.476,35.0653],
+[114.2714,35.1297],
+[113.4758,35.2584],
+[113.4218,35.1297],
+[112.186,35.1297],
+[112.3199,35.4514],
+[112.9386,35.4514],
+[112.9157,35.5802],
+[111.9871,35.5802],
+[111.8559,35.4514],
+[111.0825,35.4514],
+[111.0559,35.3871],
+[110.5884,34.8079]
+]
+]
+]}
+}

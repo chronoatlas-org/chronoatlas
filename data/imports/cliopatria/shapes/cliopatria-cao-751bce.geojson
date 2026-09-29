@@ -1,0 +1,18 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-cao-751bce","edge_precision":"unknown","cliopatria_name":"Cao","cliopatria_from_year":-750,"cliopatria_to_year":-481,"cliopatria_area_km2":3840,"cliopatria_wikidata":"Q204077","cliopatria_wikipedia":"Cao (state)","cliopatria_member_of":"(Spring and Autumn States)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.3759,35.194],
+[114.499,34.9366],
+[115.2311,35.3871],
+[114.9554,35.6445],
+[115.0114,35.7733],
+[114.8565,35.7733],
+[114.4081,35.4514],
+[114.3759,35.194]
+]
+]
+]}
+}

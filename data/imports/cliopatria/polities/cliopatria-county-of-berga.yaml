@@ -1,0 +1,8 @@
+id: cliopatria-county-of-berga
+names:
+  - text: County of Berga
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "County of Berga"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

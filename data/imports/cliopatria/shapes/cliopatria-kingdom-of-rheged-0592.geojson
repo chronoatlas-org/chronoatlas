@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-rheged-0592","edge_precision":"unknown","cliopatria_name":"Kingdom of Rheged","cliopatria_from_year":592,"cliopatria_to_year":616,"cliopatria_area_km2":11637,"cliopatria_wikidata":"Q633573","cliopatria_wikipedia":"Rheged","cliopatria_seshat_id":"gb_brythonic_k","cliopatria_member_of":"(Brythonic Kingdoms)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-3.7042,54.5453],
+[-3.6174,54.5453],
+[-3.5868,54.2739],
+[-3.3194,54.2061],
+[-3.3045,54.0706],
+[-2.9658,54.1384],
+[-3.196,53.8676],
+[-3.0952,53.7323],
+[-3.1525,53.4621],
+[-2.8873,53.3946],
+[-2.8803,53.3271],
+[-2.2852,53.3946],
+[-2.1264,53.5296],
+[-2.1802,54.0706],
+[-2.2667,54.0706],
+[-2.3879,54.4095],
+[-2.6113,54.8851],
+[-3.4026,54.9531],
+[-3.395,54.8851],
+[-3.6484,54.8171],
+[-3.7042,54.5453]
+]
+]
+]}
+}

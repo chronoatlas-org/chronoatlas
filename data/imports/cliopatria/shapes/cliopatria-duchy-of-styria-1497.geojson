@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-styria-1497","edge_precision":"unknown","cliopatria_name":"Duchy of Styria","cliopatria_from_year":1497,"cliopatria_to_year":1501,"cliopatria_area_km2":2004,"cliopatria_wikidata":"Q580447","cliopatria_wikipedia":"Duchy of Styria"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[13.308,45.8243],
+[13.3896,45.8243],
+[13.3886,45.7588],
+[13.6333,45.7588],
+[13.5561,46.0209],
+[13.8854,46.1521],
+[13.8878,46.2833],
+[13.7253,46.3489],
+[13.7276,46.4802],
+[13.5638,46.4802],
+[13.3978,46.3489],
+[13.4765,46.1521],
+[13.312,46.0865],
+[13.308,45.8243]
+]
+]
+]}
+}

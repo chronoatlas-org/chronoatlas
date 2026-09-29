@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-livonian-brothers-of-the-sword-1202","edge_precision":"unknown","cliopatria_name":"Livonian Brothers of the Sword","cliopatria_from_year":1202,"cliopatria_to_year":1205,"cliopatria_area_km2":2355,"cliopatria_wikidata":"Q157605","cliopatria_wikipedia":"Livonian Brothers of the Sword"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[23.3772,56.7998],
+[23.98,56.6623],
+[23.9082,56.7998],
+[24.0852,56.7998],
+[24.4741,57.0751],
+[24.314,57.2129],
+[24.3315,57.3509],
+[23.8531,57.0751],
+[23.4094,57.0751],
+[23.49,57.0063],
+[23.3772,56.7998]
+]
+],
+[
+[
+[24.4566,56.9374],
+[24.5452,56.9374],
+[24.554,57.0063],
+[24.4653,57.0063],
+[24.4566,56.9374]
+]
+]
+]}
+}

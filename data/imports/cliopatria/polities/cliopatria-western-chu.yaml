@@ -1,0 +1,8 @@
+id: cliopatria-western-chu
+names:
+  - text: Western Chu
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Western Chu"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

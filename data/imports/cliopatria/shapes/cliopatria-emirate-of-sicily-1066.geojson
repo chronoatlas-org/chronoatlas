@@ -1,0 +1,30 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-emirate-of-sicily-1066","edge_precision":"unknown","cliopatria_name":"Emirate of Sicily","cliopatria_from_year":1066,"cliopatria_to_year":1071,"cliopatria_area_km2":19967,"cliopatria_wikidata":"Q118780154","cliopatria_wikipedia":"Emirate of Sicily"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[12.4905,37.7062],
+[13.192,37.5773],
+[13.5784,37.2549],
+[14.2779,37.126],
+[14.661,36.7393],
+[15.0498,36.7393],
+[15.2139,37.1904],
+[15.0592,37.2549],
+[15.0653,37.5773],
+[14.9872,37.5773],
+[14.9933,37.8998],
+[14.6046,38.0288],
+[14.5264,38.0288],
+[13.6652,37.9643],
+[13.3547,38.1578],
+[13.1199,38.1578],
+[13.0404,38.0288],
+[12.6498,38.0933],
+[12.4919,37.8998],
+[12.4905,37.7062]
+]
+]
+]}
+}

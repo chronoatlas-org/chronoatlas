@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-almohad-caliphate-1250","edge_precision":"unknown","cliopatria_name":"Almohad Caliphate","cliopatria_from_year":1250,"cliopatria_to_year":1259,"cliopatria_area_km2":1199,"cliopatria_wikidata":"Q199688","cliopatria_wikipedia":"Almohad Caliphate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-0.6678,38.416],
+[-0.4328,38.416],
+[-0.4362,38.4806],
+[-0.3578,38.4806],
+[-0.3612,38.5451],
+[-0.2828,38.5451],
+[-0.2179,38.8034],
+[-0.4534,38.8034],
+[-0.6069,38.7389],
+[-0.6678,38.416]
+]
+]
+]}
+}

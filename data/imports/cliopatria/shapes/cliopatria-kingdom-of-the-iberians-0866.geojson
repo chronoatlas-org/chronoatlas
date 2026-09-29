@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-kingdom-of-the-iberians-0866","edge_precision":"unknown","cliopatria_name":"Kingdom of the Iberians","cliopatria_from_year":866,"cliopatria_to_year":885,"cliopatria_area_km2":24208,"cliopatria_wikidata":"Q154816","cliopatria_wikipedia":"Kingdom of the Iberians"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[40.3686,40.4201],
+[40.5269,40.4201],
+[40.586,40.2906],
+[41.8305,40.1612],
+[42.6168,40.6144],
+[43.1031,40.6792],
+[43.1475,40.9384],
+[43.567,41.068],
+[43.1926,41.1977],
+[42.8633,41.5869],
+[42.6244,41.5869],
+[42.4426,41.4571],
+[41.5783,41.522],
+[41.5674,41.4571],
+[41.4082,41.4571],
+[41.3974,41.3922],
+[41.3178,41.3922],
+[41.3071,41.3274],
+[41.2276,41.3274],
+[41.2643,41.068],
+[40.5776,40.744],
+[40.3887,40.5496],
+[40.3686,40.4201]
+]
+]
+]}
+}

@@ -1,0 +1,27 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-bijapur-sultanate-1670","edge_precision":"unknown","cliopatria_name":"Bijapur Sultanate","cliopatria_from_year":1670,"cliopatria_to_year":1676,"cliopatria_area_km2":39590,"cliopatria_wikidata":"Q83821","cliopatria_wikipedia":"Adil Shahi dynasty","cliopatria_seshat_id":"in_bijapur_sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[74.3598,17.3219],
+[74.7948,16.5504],
+[74.7749,16.3576],
+[75.8262,16.5504],
+[75.9135,16.679],
+[76.987,17.0647],
+[76.994,17.129],
+[77.8338,17.3862],
+[77.9076,17.3862],
+[78.0396,17.9005],
+[76.9394,17.9648],
+[75.7226,17.6433],
+[74.7771,17.7719],
+[74.6894,17.6433],
+[74.468,17.6433],
+[74.3666,17.3862],
+[74.3598,17.3219]
+]
+]
+]}
+}

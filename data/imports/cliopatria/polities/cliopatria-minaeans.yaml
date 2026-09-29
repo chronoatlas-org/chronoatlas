@@ -1,0 +1,8 @@
+id: cliopatria-minaeans
+names:
+  - text: Minaeans
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Minaeans"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

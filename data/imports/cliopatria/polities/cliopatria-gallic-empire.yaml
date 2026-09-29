@@ -1,0 +1,8 @@
+id: cliopatria-gallic-empire
+names:
+  - text: Gallic Empire
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Gallic Empire"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

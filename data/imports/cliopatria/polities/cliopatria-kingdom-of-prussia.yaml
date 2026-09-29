@@ -1,0 +1,8 @@
+id: cliopatria-kingdom-of-prussia
+names:
+  - text: Kingdom of Prussia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Kingdom of Prussia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

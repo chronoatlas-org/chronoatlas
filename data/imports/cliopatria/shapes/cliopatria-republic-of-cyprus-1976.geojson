@@ -1,0 +1,23 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-cyprus-1976","edge_precision":"unknown","cliopatria_name":"Republic of Cyprus","cliopatria_from_year":1976,"cliopatria_to_year":2023,"cliopatria_area_km2":7122,"cliopatria_wikidata":"Q229","cliopatria_wikipedia":"Cyprus"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[32.2458,35.1297],
+[32.2951,34.8079],
+[33.0436,34.5506],
+[33.1321,34.6793],
+[33.5234,34.7436],
+[33.6954,34.9366],
+[34.0873,35.001],
+[34.0283,35.194],
+[33.4103,35.194],
+[32.9294,35.001],
+[32.7149,35.194],
+[32.5604,35.194],
+[32.2458,35.1297]
+]
+]
+]}
+}

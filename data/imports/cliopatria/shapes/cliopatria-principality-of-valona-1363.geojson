@@ -1,0 +1,43 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-valona-1363","edge_precision":"unknown","cliopatria_name":"Principality of Valona","cliopatria_from_year":1363,"cliopatria_to_year":1374,"cliopatria_area_km2":750,"cliopatria_wikidata":"Q7245121","cliopatria_wikipedia":"Principality of Valona"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.2516,40.6792],
+[19.3279,40.6144],
+[19.4131,40.744],
+[19.2545,40.744],
+[19.2516,40.6792]
+]
+],
+[
+[
+[19.4071,40.6144],
+[19.4863,40.6144],
+[19.4893,40.6792],
+[19.4101,40.6792],
+[19.4071,40.6144]
+]
+],
+[
+[
+[19.4714,40.2906],
+[19.5504,40.2906],
+[19.6417,40.5496],
+[19.4863,40.6144],
+[19.4773,40.4201],
+[19.4714,40.2906]
+]
+],
+[
+[
+[19.7578,39.6436],
+[19.9125,39.5789],
+[19.9214,39.7729],
+[19.7637,39.7729],
+[19.7578,39.6436]
+]
+]
+]}
+}

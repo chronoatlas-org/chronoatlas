@@ -1,0 +1,16 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-spanish-empire-1877","edge_precision":"unknown","cliopatria_name":"Spanish Empire","cliopatria_from_year":1877,"cliopatria_to_year":1879,"cliopatria_area_km2":373,"cliopatria_wikidata":"Q80702","cliopatria_wikipedia":"History of Spain (1808–1874)","cliopatria_seshat_id":"es_spanish_emp_3","cliopatria_member_of":"(Spanish Empire)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[125.5889,6.9716],
+[125.8026,6.9073],
+[125.8077,6.9716],
+[125.7452,7.1002],
+[125.5993,7.1002],
+[125.5889,6.9716]
+]
+]
+]}
+}

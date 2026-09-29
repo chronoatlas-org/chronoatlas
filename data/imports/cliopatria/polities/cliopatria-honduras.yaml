@@ -1,0 +1,8 @@
+id: cliopatria-honduras
+names:
+  - text: Honduras
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Honduras"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

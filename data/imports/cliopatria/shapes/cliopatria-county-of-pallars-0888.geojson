@@ -1,0 +1,20 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-county-of-pallars-0888","edge_precision":"unknown","cliopatria_name":"County of Pallars","cliopatria_from_year":888,"cliopatria_to_year":989,"cliopatria_area_km2":4850,"cliopatria_wikidata":"Q1541787","cliopatria_wikipedia":"County of Pallars"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[0.601,42.6912],
+[0.6883,42.5612],
+[0.6369,42.0413],
+[0.7237,41.9114],
+[1.1226,41.9114],
+[1.1091,42.1712],
+[1.4855,42.6262],
+[1.0747,42.8213],
+[0.6738,42.8213],
+[0.601,42.6912]
+]
+]
+]}
+}

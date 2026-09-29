@@ -1,0 +1,8 @@
+id: cliopatria-umayyad-caliphate
+names:
+  - text: Umayyad Caliphate
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Umayyad Caliphate"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-peru
+names:
+  - text: Republic of Peru
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Peru"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

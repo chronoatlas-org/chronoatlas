@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-principality-of-waldeck-and-pyrmont-1807","edge_precision":"unknown","cliopatria_name":"Principality of Waldeck and Pyrmont","cliopatria_from_year":1807,"cliopatria_to_year":1813,"cliopatria_area_km2":943,"cliopatria_wikidata":"Q165763","cliopatria_wikipedia":"Principality of Waldeck and Pyrmont"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.4079,51.5134],
+[8.4118,51.246],
+[8.581,51.246],
+[8.5801,51.3128],
+[8.6648,51.3128],
+[8.6665,51.1792],
+[8.8341,51.3128],
+[8.831,51.5803],
+[8.4079,51.5134]
+]
+]
+]}
+}

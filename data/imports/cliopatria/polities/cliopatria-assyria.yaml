@@ -1,0 +1,8 @@
+id: cliopatria-assyria
+names:
+  - text: Assyria
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Assyria"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

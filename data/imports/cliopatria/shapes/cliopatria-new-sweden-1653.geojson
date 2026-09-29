@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-new-sweden-1653","edge_precision":"unknown","cliopatria_name":"New Sweden","cliopatria_from_year":1653,"cliopatria_to_year":1658,"cliopatria_area_km2":2841,"cliopatria_wikidata":"Q322187","cliopatria_wikipedia":"New Sweden"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-75.8587,39.8376],
+[-75.7468,39.5789],
+[-75.479,39.3203],
+[-75.137,39.2557],
+[-75.3528,39.5789],
+[-75.274,39.5789],
+[-75.2785,39.7729],
+[-75.1207,39.7729],
+[-75.2047,39.967],
+[-75.5205,39.967],
+[-75.4923,39.9023],
+[-75.8587,39.8376]
+]
+]
+]}
+}

@@ -1,0 +1,19 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-taifa-of-saltes-and-huelva-1015","edge_precision":"unknown","cliopatria_name":"Taifa of Saltés and Huelva","cliopatria_from_year":1015,"cliopatria_to_year":1017,"cliopatria_area_km2":4223,"cliopatria_wikidata":"Q2081763","cliopatria_wikipedia":"Taifa of Saltés and Huelva","cliopatria_seshat_id":"es_taifas","cliopatria_member_of":"(Taifas of Iberia)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[-7.7315,37.6417],
+[-7.7099,37.3838],
+[-7.4653,37.2549],
+[-6.7588,37.1904],
+[-6.6232,37.4483],
+[-6.9456,37.5773],
+[-6.9508,37.6417],
+[-7.5862,37.7707],
+[-7.7315,37.6417]
+]
+]
+]}
+}

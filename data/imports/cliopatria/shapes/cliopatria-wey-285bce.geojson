@@ -1,0 +1,17 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-wey-285bce","edge_precision":"unknown","cliopatria_name":"Wey","cliopatria_from_year":-284,"cliopatria_to_year":-257,"cliopatria_area_km2":5678,"cliopatria_wikidata":"Q1147897","cliopatria_wikipedia":"Wey (state)","cliopatria_member_of":"(Warring States China)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[114.5815,36.0308],
+[114.8285,35.7089],
+[115.6179,36.0952],
+[115.6067,36.4172],
+[115.3639,36.7393],
+[114.6098,36.0952],
+[114.5815,36.0308]
+]
+]
+]}
+}

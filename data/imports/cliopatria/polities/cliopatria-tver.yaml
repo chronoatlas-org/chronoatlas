@@ -1,0 +1,8 @@
+id: cliopatria-tver
+names:
+  - text: Tver
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Tver"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

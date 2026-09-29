@@ -1,0 +1,28 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-kuyavia-1188","edge_precision":"unknown","cliopatria_name":"Duchy of Kuyavia","cliopatria_from_year":1188,"cliopatria_to_year":1201,"cliopatria_area_km2":6844,"cliopatria_wikidata":"Q11750543","cliopatria_wikipedia":"Duchy of Kuyavia","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[18.2641,53.2596],
+[18.3326,52.99],
+[18.6622,52.7881],
+[18.6533,52.6535],
+[19.6215,51.8481],
+[19.8716,51.7811],
+[20.2215,51.9151],
+[20.2316,52.0492],
+[20.1465,52.0492],
+[20.0764,52.2505],
+[19.4844,52.3176],
+[19.423,52.6535],
+[19.0996,52.9227],
+[18.9282,52.9227],
+[18.6892,53.1922],
+[18.5174,53.1922],
+[18.5263,53.3271],
+[18.2641,53.2596]
+]
+]
+]}
+}

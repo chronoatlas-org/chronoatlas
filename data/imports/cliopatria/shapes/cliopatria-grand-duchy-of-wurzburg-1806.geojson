@@ -1,0 +1,24 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-grand-duchy-of-wurzburg-1806","edge_precision":"unknown","cliopatria_name":"Grand Duchy of Würzburg","cliopatria_from_year":1806,"cliopatria_to_year":1806,"cliopatria_area_km2":2783,"cliopatria_wikidata":"Q698089","cliopatria_wikipedia":"Grand Duchy of Würzburg"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[8.6874,49.5816],
+[8.771,49.5816],
+[8.7727,49.4489],
+[9.0233,49.4489],
+[9.272,49.6479],
+[9.3522,50.0465],
+[9.3516,50.113],
+[9.2677,50.113],
+[9.2671,50.1795],
+[9.1832,50.1795],
+[8.9328,50.0465],
+[8.7642,50.113],
+[8.7659,49.98],
+[8.6874,49.5816]
+]
+]
+]}
+}

@@ -1,0 +1,8 @@
+id: cliopatria-trucial-states
+names:
+  - text: Trucial States
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Trucial States"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

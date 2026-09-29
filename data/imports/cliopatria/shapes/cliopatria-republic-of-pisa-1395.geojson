@@ -1,0 +1,31 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-republic-of-pisa-1395","edge_precision":"unknown","cliopatria_name":"Republic of Pisa","cliopatria_from_year":1395,"cliopatria_to_year":1401,"cliopatria_area_km2":2548,"cliopatria_wikidata":"Q1365493","cliopatria_wikipedia":"Republic of Pisa"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[10.1343,42.8864],
+[10.2148,42.6912],
+[10.4552,42.6912],
+[10.4551,42.8864],
+[10.1343,42.8864]
+]
+],
+[
+[
+[10.2125,43.9286],
+[10.2126,43.8634],
+[10.2933,43.8634],
+[10.2934,43.7982],
+[10.2936,43.6678],
+[10.4548,43.4723],
+[10.5353,43.0816],
+[10.776,42.9515],
+[10.7764,43.2118],
+[10.6157,43.3421],
+[10.6965,43.7982],
+[10.2125,43.9286]
+]
+]
+]}
+}

@@ -1,0 +1,15 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-byzantine-empire-1468","edge_precision":"unknown","cliopatria_name":"Byzantine Empire","cliopatria_from_year":1468,"cliopatria_to_year":1474,"cliopatria_area_km2":800,"cliopatria_wikidata":"Q112039853","cliopatria_wikipedia":"Byzantine Empire"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[24.9739,39.8376],
+[25.4473,39.8376],
+[25.4619,40.0317],
+[25.067,40.0317],
+[24.9739,39.8376]
+]
+]
+]}
+}

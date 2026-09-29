@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-cyprus
+names:
+  - text: Republic of Cyprus
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Cyprus"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

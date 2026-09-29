@@ -1,0 +1,8 @@
+id: cliopatria-republic-of-slovenia
+names:
+  - text: Republic of Slovenia
+    lang: en
+    sources:
+      - source: cliopatria
+        locator: Name "Republic of Slovenia"
+notes: A polity as Cliopatria (Seshat Global History Databank) maps it.

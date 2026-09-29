@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-late-pallava-empire-0283","edge_precision":"unknown","cliopatria_name":"Late Pallava Empire","cliopatria_from_year":283,"cliopatria_to_year":305,"cliopatria_area_km2":50996,"cliopatria_wikidata":"Q466803","cliopatria_wikipedia":"Pallava dynasty"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[77.34,14.8778],
+[78.2986,14.3142],
+[80.3385,13.2779],
+[80.1316,14.1753],
+[80.2068,14.6304],
+[80.0608,15.145],
+[80.2039,15.6119],
+[79.6832,15.8447],
+[79.0163,15.9443],
+[78.7921,15.7173],
+[78.2088,15.5628],
+[77.34,14.8778]
+]
+]
+]}
+}

@@ -1,0 +1,33 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-gupta-empire-0324","edge_precision":"unknown","cliopatria_name":"Gupta Empire","cliopatria_from_year":324,"cliopatria_to_year":346,"cliopatria_area_km2":145222,"cliopatria_wikidata":"Q11774","cliopatria_wikipedia":"Gupta Empire","cliopatria_seshat_id":"in_gupta_emp"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[81.5805,25.2936],
+[82.1638,24.7149],
+[82.3881,24.7149],
+[82.7228,24.4578],
+[83.694,24.4578],
+[84.626,24.2006],
+[86.856,24.1363],
+[87.8672,24.3935],
+[88.1224,24.5864],
+[88.3845,25.6793],
+[88.1829,25.8079],
+[88.1551,26.0651],
+[85.9807,26.0651],
+[85.254,26.1937],
+[85.0522,26.3222],
+[84.9772,26.3222],
+[84.4002,26.4508],
+[83.1549,27.0295],
+[82.8543,27.0295],
+[82.4198,26.708],
+[81.9103,25.9365],
+[81.6533,25.7436],
+[81.5805,25.2936]
+]
+]
+]}
+}

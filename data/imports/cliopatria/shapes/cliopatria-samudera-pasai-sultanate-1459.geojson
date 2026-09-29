@@ -1,0 +1,22 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-samudera-pasai-sultanate-1459","edge_precision":"unknown","cliopatria_name":"Samudera Pasai Sultanate","cliopatria_from_year":1459,"cliopatria_to_year":1515,"cliopatria_area_km2":8675,"cliopatria_wikidata":"Q3284315","cliopatria_wikipedia":"Samudera Pasai Sultanate"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[95.5999,5.6215],
+[95.652,5.2358],
+[95.8604,5.0429],
+[96.7912,4.7215],
+[97.0098,4.7215],
+[97.1621,4.8501],
+[97.235,4.8501],
+[97.4011,5.2358],
+[96.235,5.2358],
+[95.9504,5.3644],
+[95.7457,5.6215],
+[95.5999,5.6215]
+]
+]
+]}
+}

@@ -1,0 +1,36 @@
+{
+"type": "Feature",
+"properties": {"id":"cliopatria-duchy-of-masovia-1279","edge_precision":"unknown","cliopatria_name":"Duchy of Masovia","cliopatria_from_year":1279,"cliopatria_to_year":1304,"cliopatria_area_km2":31317,"cliopatria_wikidata":"Q2361927","cliopatria_wikipedia":"Duchy of Masovia","cliopatria_seshat_id":"pl_piast_dyn_2","cliopatria_member_of":"(Duchies of Poland)"},
+"geometry": {"type": "MultiPolygon", "coordinates": [
+[
+[
+[19.0996,52.9227],
+[19.423,52.6535],
+[19.4844,52.3176],
+[20.0764,52.2505],
+[20.0663,52.1163],
+[20.3065,51.9151],
+[20.5616,51.9151],
+[20.7211,51.7811],
+[20.7106,51.6472],
+[20.9598,51.5803],
+[22.1042,52.0492],
+[22.2929,52.2505],
+[22.4224,52.7208],
+[22.3432,52.7881],
+[22.4288,52.7881],
+[22.6462,53.2596],
+[22.3025,53.2596],
+[22.4942,53.4621],
+[22.4214,53.5971],
+[21.2894,53.4621],
+[20.9277,53.2596],
+[20.67,53.2596],
+[20.3958,53.0574],
+[19.7248,53.2596],
+[19.6288,53.1248],
+[19.0996,52.9227]
+]
+]
+]}
+}
