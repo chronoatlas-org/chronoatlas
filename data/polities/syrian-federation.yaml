@@ -1,0 +1,149 @@
+id: syrian-federation
+names:
+  - text: الاتحاد السور
+    lang: ar
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Suriya Federasiyası
+    lang: az
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Federació Siriana
+    lang: ca
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Syrische Föderation
+    lang: de
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Syrian Federation
+    lang: en
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Federación Siria
+    lang: es
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: فدراسیون سوریه
+    lang: fa
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Fédération syrienne
+    lang: fr
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: הפדרציה הסורית
+    lang: he
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Սիրիական Դաշնություն
+    lang: hy
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Federasi Suriah
+    lang: id
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Federazione siriana
+    lang: it
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: シリア連邦
+    lang: ja
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: 시리아 연방
+    lang: ko
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Syrische Federatie
+    lang: nl
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Сирийская федерация
+    lang: ru
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: สหพันธรัฐซีเรีย
+    lang: th
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Suriye Federasyonu
+    lang: tr
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: Fédération syrienne
+    lang: und
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: سوری وفاق
+    lang: ur
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020
+  - text: 敘利亞聯邦
+    lang: zh
+    start: 1922-06-28
+    end: 1925-01-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863992, 2864020

@@ -1,0 +1,38 @@
+id: military-administration-in-belgium-and-northern-france
+wikidata: Q18701358
+names:
+  - text: Militärverwaltung in Belgien und Nordfrankreich
+    lang: de
+    start: 1940-06-25
+    end: 1944-07-18
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748553
+  - text: Military Administration in Belgium and Northern France
+    lang: en
+    start: 1940-06-25
+    end: 1944-07-18
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748553
+  - text: Administration militaire de la Belgique et du Nord de la France
+    lang: fr
+    start: 1940-06-25
+    end: 1944-07-18
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748553
+  - text: 벨기에 북프랑스 군정청
+    lang: ko
+    start: 1940-06-25
+    end: 1944-07-18
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748553
+  - text: Militärverwaltung in Belgien und Nordfrankreich
+    lang: und
+    start: 1940-06-25
+    end: 1944-07-18
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2748553

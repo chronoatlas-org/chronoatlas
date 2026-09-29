@@ -1,0 +1,304 @@
+id: kingdom-of-portugal
+wikidata: Q45670
+names:
+  - text: Reino de Portugal
+    lang: an
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reinu de Portugal
+    lang: ast
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portuqaliya krallığı
+    lang: az
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Каралеўства Партугалія
+    lang: be
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Кралство Португалия
+    lang: bg
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Regne de Portugal
+    lang: ca
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugalské království
+    lang: cs
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kongeriget Portugal
+    lang: da
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Königreich Portugal
+    lang: de
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kingdom of Portugal
+    lang: en
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reĝlando Portugalio
+    lang: eo
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reino de Portugal
+    lang: es
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugali kuningriik
+    lang: et
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugalgo Erresuma
+    lang: eu
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugalin kuningaskunta
+    lang: fi
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Royaume de Portugal
+    lang: fr
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Ríocht na Portaingéile
+    lang: ga
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reino de Portugal
+    lang: gl
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kraljevina Portugal
+    lang: hr
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugál Királyság
+    lang: hu
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kerajaan Portugal
+    lang: id
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Regno del Portogallo
+    lang: it
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: 포르투갈 왕국
+    lang: ko
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Regnum Portugalliae
+    lang: la
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugāles Karaliste
+    lang: lv
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kerajaan Beraja Portugal
+    lang: ms
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reino de Pertual
+    lang: mwl
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Koninkrijk Portugal
+    lang: nl
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kongedømet Portugal
+    lang: nn
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reialme de Portugal
+    lang: oc
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Królestwo Portugalii
+    lang: pl
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reino de Portugal
+    lang: pt
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Regatul Portugaliei
+    lang: ro
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Королевство Португалия
+    lang: ru
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kinrick o Portugal
+    lang: sco
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugalské kráľovstvo
+    lang: sk
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Краљевина Португалија
+    lang: sr
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Kungariket Portugal
+    lang: sv
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portugaliýa korollygy
+    lang: tk
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Portekiz Krallığı
+    lang: tr
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Португальське королівство
+    lang: uk
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Reino de Portugal
+    lang: und
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467
+  - text: Regno del Portogało
+    lang: vec
+    start: 1834-05-26
+    end: "1910"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2959467

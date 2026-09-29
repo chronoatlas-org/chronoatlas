@@ -1,0 +1,199 @@
+id: klaipeda-region
+wikidata: Q161334
+names:
+  - text: منطقة كلايبيدا
+    lang: ar
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Клайпедскі край
+    lang: be
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Мемелска област
+    lang: bg
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Territori de Memel
+    lang: ca
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Klaipėda-regionens historie
+    lang: da
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Klaipėda Region
+    lang: en
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memel-regiono
+    lang: eo
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Territorio de Memel
+    lang: es
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memeli piirkond
+    lang: et
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: منطقه کلایپدا
+    lang: fa
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memelin mandaattihallintoalue
+    lang: fi
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Territoire de Memel
+    lang: fr
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Territorio de Memel
+    lang: gl
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memel-vidék
+    lang: hu
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Wilayah Klaipėda
+    lang: id
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Territorio di Memel
+    lang: it
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: メーメル領域
+    lang: ja
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: კლაიპედის მხარე
+    lang: ka
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: 메멜 지역
+    lang: ko
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memellandj
+    lang: li
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Klaipėdos kraštas
+    lang: lt
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Klaipēdas apgabals
+    lang: lv
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Kraj Kłajpedzki
+    lang: pl
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Território de Memel
+    lang: pt
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Клайпедский край
+    lang: ru
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Клайпедський край
+    lang: uk
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: Memelland
+    lang: und
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476
+  - text: 克萊佩達地區
+    lang: zh
+    start: 1920-01-10
+    end: 1923-01-19
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2691476

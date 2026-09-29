@@ -1,0 +1,654 @@
+id: german-reich
+wikidata: Q43287
+names:
+  - text: Duitse Keiserryk
+    lang: af
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Imperio Alemán
+    lang: an
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: الرايخ الألماني
+    lang: ar
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Almaniya imperiyası
+    lang: az
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германия империяһы
+    lang: ba
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германскі рэйх
+    lang: be
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германска империя
+    lang: bg
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: জার্মান সাম্রাজ্য
+    lang: bn
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Impalaeriezh alaman
+    lang: br
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Njemačko Carstvo
+    lang: bs
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Imperi Alemany
+    lang: ca
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Лоьмсойн шуре
+    lang: ce
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Německá říše
+    lang: cs
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Ymerodraeth yr Almaen
+    lang: cy
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Tyske Rige
+    lang: da
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Deutsches Reich
+    lang: de
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Γερμανικό Ράιχ
+    lang: el
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: German Reich
+    lang: en
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Germana Regno
+    lang: eo
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich alemán
+    lang: es
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Saksa Riik
+    lang: et
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Alemaniar Inperioa
+    lang: eu
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: رایش آلمان
+    lang: fa
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Saksan valtakunta
+    lang: fi
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich allemand
+    lang: fr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Sjiisk Keiserrik
+    lang: frr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Dútske Ryk
+    lang: fy
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Impireacht na Gearmáine
+    lang: ga
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Impireachd na Gearmailte
+    lang: gd
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Imperio Alemán
+    lang: gl
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: הרייך הגרמני
+    lang: he
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: जर्मन राइख
+    lang: hi
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Njemačko Carstvo
+    lang: hr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Anpi Alman
+    lang: ht
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Német Birodalom
+    lang: hu
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Գերմանական կայսրություն
+    lang: hy
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich Jerman
+    lang: id
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Germanian Imperio
+    lang: io
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Þýska keisaradæmið
+    lang: is
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich tedesco
+    lang: it
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ドイツ国
+    lang: ja
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: გერმანიის იმპერია
+    lang: ka
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Герман рейхі
+    lang: kk
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ចក្រភពអាល្លឺម៉ង់
+    lang: km
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: 독일국
+    lang: ko
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Împeratoriya Almanî
+    lang: ku
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Imperium Germanicum
+    lang: la
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Däitscht Räich
+    lang: lb
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Dütsj Kezerriek
+    lang: li
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ຈັກກະວັດເຢຍລະມັນ
+    lang: lo
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Vokietijos reichas
+    lang: lt
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Deutsches Reich
+    lang: lv
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Empira Alemàna
+    lang: mg
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германско Царство
+    lang: mk
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германы эзэнт гүрэн
+    lang: mn
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: जर्मन साम्राज्य
+    lang: mr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich Jerman
+    lang: ms
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ဂျာမန် အင်ပါယာ
+    lang: my
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Deutsches Reich
+    lang: nb
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Düütsch Kaiserriek
+    lang: nds
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: जर्मनेली साम्राज्य
+    lang: ne
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Duitse Rijk
+    lang: nl
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Det tyske keisardømet
+    lang: nn
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Empèri Alemand
+    lang: oc
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Dietschlendsch Rikj
+    lang: pdt
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Cesarstwo Niemieckie
+    lang: pl
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: جرمن سترواکي
+    lang: ps
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reich Alemão
+    lang: pt
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Reichul German
+    lang: ro
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Германский рейх
+    lang: ru
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Impèriu tedescu
+    lang: sc
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ජර්මන් අධිරාජ්‍යය
+    lang: si
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Nemecká ríša
+    lang: sk
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Nemško cesarstvo
+    lang: sl
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Rajhu Gjerman
+    lang: sq
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Њемачки рајх
+    lang: sr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Tyska riket
+    lang: sv
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Dola la Ujerumani
+    lang: sw
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ஜெர்மன் ரெய்க்
+    lang: ta
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: జర్మనీ సామ్రాజ్యం
+    lang: te
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Имперотурии Олмон
+    lang: tg
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: ไรช์เยอรมัน
+    lang: th
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: German imperiýasy
+    lang: tk
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Imperyong Aleman
+    lang: tl
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Alman Reich
+    lang: tr
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Алман империясе
+    lang: tt
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Німецька імперія
+    lang: uk
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Deutsches Reich
+    lang: und
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: جرمن سلطنت
+    lang: ur
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Germaniya imperiyasi
+    lang: uz
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Đế quốc Đức
+    lang: vi
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: Ilẹ̀ Ọbalúayé Jẹ́mánì
+    lang: yo
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425
+  - text: 德意志国
+    lang: zh
+    start: 1890-07-01
+    end: 1918-11-11
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692425

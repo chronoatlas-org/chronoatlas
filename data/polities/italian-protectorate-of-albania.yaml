@@ -1,0 +1,94 @@
+id: italian-protectorate-of-albania
+wikidata: Q1448131
+names:
+  - text: Königreich Albanien (1939-1941)
+    lang: de
+    start: 1939-04-12
+    end: 1941-06-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855615
+  - text: Königreich Albanien (1941-1943)
+    lang: de
+    start: 1941-06-07
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695459
+  - text: Italian protectorate of Albania
+    lang: en
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: Royaume albanais
+    lang: fr
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: Protettorato Italiano del Regno d'Albania (1939-1941)
+    lang: it
+    start: 1939-04-12
+    end: 1941-06-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855615
+  - text: Protettorato Italiano del Regno d'Albania (1941-1943)
+    lang: it
+    start: 1941-06-07
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695459
+  - text: アルバニア王国
+    lang: ja
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: 알바니아 왕국
+    lang: ko
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: Italjeenisch schutzlaunt von Albanien
+    lang: pdt
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: Mbretënia e Shqipërisë (1939-1941)
+    lang: sq
+    start: 1939-04-12
+    end: 1941-06-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855615
+  - text: Mbretënia e Shqipërisë (1941-1943)
+    lang: sq
+    start: 1941-06-07
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695459
+  - text: Protettorato Italiano del Regno d'Albania
+    lang: und
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615
+  - text: 阿尔巴尼亚王国
+    lang: zh
+    start: 1939-04-12
+    end: 1943-09-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2695459, 2855615

@@ -1,0 +1,283 @@
+id: kingdom-of-iceland
+wikidata: Q62567
+names:
+  - text: مملكة آيسلندا
+    lang: ar
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: İslandiya krallığı
+    lang: az
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Каралеўства Ісландыя
+    lang: be
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Кралство Исландия
+    lang: bg
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Regne d'Islàndia
+    lang: ca
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Islandské království
+    lang: cs
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kongeriget Island
+    lang: da
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Königreich Island
+    lang: de
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Βασίλειο της Ισλανδίας
+    lang: el
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kingdom of Iceland
+    lang: en
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Reĝlando Islando
+    lang: eo
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Reino de Islandia
+    lang: es
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Islandi Kuningriik
+    lang: et
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: پادشاهی ایسلند
+    lang: fa
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Islannin kuningaskunta
+    lang: fi
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Royaume d'Islande
+    lang: fr
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Reino de Islandia
+    lang: gl
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: ממלכת איסלנד
+    lang: he
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Izlandi Királyság
+    lang: hu
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kerajaan Islandia
+    lang: id
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Konungsríkið Ísland
+    lang: is
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Regno d'Islanda
+    lang: it
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: アイスランド王国
+    lang: ja
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: 아이슬란드 왕국
+    lang: ko
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Islandijos karalystė
+    lang: lt
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Кралство Исланд
+    lang: mk
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kongeriket Island
+    lang: nb
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Koninkrijk IJsland
+    lang: nl
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kongeriket Island
+    lang: no
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Reialme d'Islàndia
+    lang: oc
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Królestwo Islandii
+    lang: pl
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Reino da Islândia
+    lang: pt
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Regatul Islandei
+    lang: ro
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Королевство Исландия
+    lang: ru
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Kungariket Island
+    lang: sv
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: İzlanda Krallığı
+    lang: tr
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Королівство Ісландія
+    lang: uk
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: Konungsríkið Ísland
+    lang: und
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: مملکت آئس لینڈ
+    lang: ur
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981
+  - text: 冰島王國
+    lang: zh
+    start: "1918"
+    end: 1944-06-16
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2801981

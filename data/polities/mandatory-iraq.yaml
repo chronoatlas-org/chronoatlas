@@ -1,0 +1,248 @@
+id: mandatory-iraq
+wikidata: Q146720
+names:
+  - text: الانتداب البريطاني على العراق
+    lang: ar
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandatu británicu de Mesopotamia
+    lang: ast
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Каралеўства Ірак пад мандатам Вялікабрытаніі
+    lang: be
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: ব্রিটিশ কর্তৃত্বের অধীনে ইরাক
+    lang: bn
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Britansko mandatno područje u Mezopotamiji
+    lang: bs
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandat britànic de Mesopotàmia
+    lang: ca
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Irácké království pod britskou správou
+    lang: cs
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandatområdet i Mesopotamien
+    lang: da
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Britisches Mandat Mesopotamien
+    lang: de
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandatory Iraq
+    lang: en
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Britmandata Mezopotamio
+    lang: eo
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandato británico de Mesopotamia
+    lang: es
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: قیمومت بریتانیا بر عراق
+    lang: fa
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandat britannique de Mésopotamie
+    lang: fr
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: עיראק המנדטורית
+    lang: he
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandat Britania atas Mesopotamia
+    lang: id
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandato britannico della Mesopotamia
+    lang: it
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: イギリス委任統治領メソポタミア
+    lang: ja
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: 이라크 위임통치령
+    lang: ko
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandaya Brîtanî ya Iraqê
+    lang: ku
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Britu Irākas mandātteritorija
+    lang: lv
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mesopotamiamandatet
+    lang: nb
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Brits Mandaat Mesopotamië
+    lang: nl
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mesopotamiamandatet
+    lang: no
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Brytyjski Mandat Mezopotamii
+    lang: pl
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandato Britânico da Mesopotâmia
+    lang: pt
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Месопотамия (мандатная территория)
+    lang: ru
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandatna Mezopotamija
+    lang: sh
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Brittiska mandatet för Mesopotamien
+    lang: sv
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: อิรักในอาณัติ
+    lang: th
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Irak Mandası
+    lang: tr
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Британський мандат у Месопотамії
+    lang: uk
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: Mandatory Iraq
+    lang: und
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: مملکت عراق (تعہدی انتظامیہ)
+    lang: ur
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465
+  - text: 美索不達米亞託管地
+    lang: zh
+    start: 1920-08-10
+    end: 1932-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2839465

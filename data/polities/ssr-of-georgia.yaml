@@ -1,0 +1,52 @@
+id: ssr-of-georgia
+wikidata: Q130229
+names:
+  - text: SSR Georgien
+    lang: de
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: SSR of Georgia
+    lang: en
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: საქართველოს სსრ
+    lang: ka
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: 그루지야 소비에트 사회주의 공화국
+    lang: ko
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: ССР Грузии
+    lang: ru
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: СРР Грузії
+    lang: uk
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084
+  - text: ССР Грузии
+    lang: und
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698084

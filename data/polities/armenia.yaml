@@ -1,0 +1,1808 @@
+id: armenia
+names:
+  - text: Ермантәыла
+    lang: ab
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armènia
+    lang: ace
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армение
+    lang: ady
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: af
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: als
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: አርመኒያ
+    lang: am
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arminiya
+    lang: ami
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: an
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ang
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: أرمينيا
+    lang: ar
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ast
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: av
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Xayastana
+    lang: avk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermənistan
+    lang: az
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Әрмәнстан
+    lang: ba
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménia
+    lang: ban
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: bar
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armienėjė
+    lang: bat-smg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenya
+    lang: bcl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Арменія
+    lang: be
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Lemènder
+    lang: bew
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: bg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: आर्मीनिया
+    lang: bh
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Amenia
+    lang: bi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: আর্মেনিয়া
+    lang: bn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ཨར་མེ་ནི་ཡ།
+    lang: bo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: br
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenija
+    lang: bs
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армени
+    lang: bxr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armènia
+    lang: ca
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: cbk-zam
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: cdo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрмалойчоь
+    lang: ce
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenya
+    lang: ceb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ch
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: co
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenistan
+    lang: crh
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménie
+    lang: cs
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenijô
+    lang: csb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армєнїꙗ
+    lang: cu
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрмени
+    lang: cv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: cy
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: da
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: dag
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: de
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenıstan
+    lang: diq
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeńska
+    lang: dsb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: dtp
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: އަރުމީނިއާ
+    lang: dv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ཨར་མི་ནི་ཡ
+    lang: dz
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ee
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Αρμενία
+    lang: el
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armègna
+    lang: eml
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: en
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenio
+    lang: eo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: es
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeenia
+    lang: et
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: eu
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeña
+    lang: ext
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ارمنستان
+    lang: fa
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armaaniya
+    lang: ff
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: fi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeeniä
+    lang: fiu-vro
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: fo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménie
+    lang: fr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armènia
+    lang: frp
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeenien
+    lang: frr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenie
+    lang: fur
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeenje
+    lang: fy
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: An Airméin
+    lang: ga
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenistan
+    lang: gag
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arméni
+    lang: gcr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Airmeinia
+    lang: gd
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: gl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ayméña
+    lang: gn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: gor
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: 𐌰𐍂𐌼𐌴𐌽𐌾𐌰
+    lang: got
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: gpe
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: આર્મેનિયા
+    lang: gu
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Yn Armeain
+    lang: gv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeniya
+    lang: ha
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: hak
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ʻĀmēnia
+    lang: haw
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ארמניה
+    lang: he
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: आर्मीनिया
+    lang: hi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: hif
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenija
+    lang: hr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenska
+    lang: hsb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ameni
+    lang: ht
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Örményország
+    lang: hu
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Հայաստան
+    lang: hy
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ia
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: iba
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: id
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ie
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ilo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрмалойче
+    lang: inh
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: io
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenía
+    lang: is
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: it
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: アルメニア
+    lang: ja
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Aamiinia
+    lang: jam
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armèni
+    lang: jv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: სომხეთი
+    lang: ka
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeniya
+    lang: kaa
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arminya
+    lang: kab
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ермэлые
+    lang: kbd
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenii
+    lang: kbp
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: A̱ri̱meniya
+    lang: kcg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: kg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: kge
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ki
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: kk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: អាមេនី
+    lang: km
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ಆರ್ಮೇನಿಯ
+    lang: kn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: 아르메니아
+    lang: ko
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрмения
+    lang: krc
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: آرمینیا
+    lang: ks
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenistan
+    lang: ku
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: kv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeni
+    lang: kw
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: ky
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: la
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: lad
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: lb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрменистан
+    lang: lez
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Haiastan
+    lang: lfn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: lg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: li
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: lij
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: lld
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: lmo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeni
+    lang: ln
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ປະເທດອາກເມນີ
+    lang: lo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armėnija
+    lang: lt
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeneja
+    lang: ltg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armēnija
+    lang: lv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: mad
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: map-bms
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: mdf
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: mg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армений
+    lang: mhr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Āmenia
+    lang: mi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: min
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ерменија
+    lang: mk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: അർമേനിയ
+    lang: ml
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армени
+    lang: mn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: आर्मेनिया
+    lang: mr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армени
+    lang: mrj
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ms
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenja
+    lang: mt
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménia
+    lang: mwl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: အာမေးနီးယားနိုင်ငံ
+    lang: my
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения Мастор
+    lang: myv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: nap
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: nb
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: nds
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: nds-nl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: आर्मेनिया
+    lang: ne
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: nl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: nn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: no
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: nov
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: nso
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Dziłkʼi Dah Názʼéelii Dineʼé Bikéyah
+    lang: nv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ny
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: oc
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armienii
+    lang: olo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeeniyaa
+    lang: om
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ଆର୍ମେନିଆ
+    lang: or
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Сомих
+    lang: os
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ਆਰਮੀਨੀਆ
+    lang: pa
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Hayastan
+    lang: pag
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: pam
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: pap
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménie
+    lang: pcd
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeni
+    lang: pdc
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: pl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: pms
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Αρμενία
+    lang: pnt
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ارمنستان
+    lang: ps
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménia
+    lang: pt
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Hayasuyu
+    lang: qu
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: rm
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ro
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arminii
+    lang: roa-rup
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: ru
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Арменія
+    lang: rue
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arumeniya
+    lang: rw
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: आर्मीनिया
+    lang: sa
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Эрмээнийэ
+    lang: sah
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armènia
+    lang: sc
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: scn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeinie
+    lang: sco
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: آرمينيا
+    lang: sd
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: se
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenïi
+    lang: sg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenija / Арменија
+    lang: sh
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Арменија
+    lang: sh-Cyrl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenija
+    lang: sh-Latn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arminya
+    lang: shi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ආර්මේනියාව
+    lang: si
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménsko
+    lang: sk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenija
+    lang: sl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Amenia
+    lang: sm
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: smn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arumeniya
+    lang: sn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armiiniya
+    lang: so
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: sq
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Јерменија
+    lang: sr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Jermenija
+    lang: sr-Latn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenikondre
+    lang: srn
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: I-Arimeniya
+    lang: ss
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: stq
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménia
+    lang: su
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenien
+    lang: sv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: sw
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armynijŏ
+    lang: szl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: szy
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ஆர்மீனியா
+    lang: ta
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: tay
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ఆర్మేనియా
+    lang: te
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arménia
+    lang: tet
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Арманистон
+    lang: tg
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ประเทศอาร์มีเนีย
+    lang: th
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenistan
+    lang: tk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenya
+    lang: tl
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Erməniston
+    lang: tly
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ʻAmēnia
+    lang: to
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ma Aja
+    lang: tok
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Amenia
+    lang: tpi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Ermenistan
+    lang: tr
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: trv
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: ts
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Әрмәнстан
+    lang: tt
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: tum
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Aminia
+    lang: tw
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Āmenia
+    lang: ty
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Армения
+    lang: udm
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ئەرمېنىيە
+    lang: ug
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Вірменія
+    lang: uk
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Հայաստան
+    lang: und
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: آرمینیا
+    lang: ur
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armaniston
+    lang: uz
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armènia
+    lang: vec
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenii
+    lang: vep
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: vi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: vls
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Larmeniyän
+    lang: vo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Årmeneye
+    lang: wa
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenya
+    lang: war
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armeeni
+    lang: wo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: ארמעניע
+    lang: yi
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Arméníà
+    lang: yo
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: za
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenië
+    lang: zea
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: 亞美尼亞
+    lang: zh
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116
+  - text: Armenia
+    lang: zh-min-nan
+    start: 1918-05-28
+    end: 1920-08-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2698116

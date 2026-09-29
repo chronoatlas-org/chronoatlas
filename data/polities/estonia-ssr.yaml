@@ -1,0 +1,150 @@
+id: estonia-ssr
+wikidata: Q130280
+names:
+  - text: RSS Estonia
+    lang: br
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estiske SSR
+    lang: da
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estnische SSR
+    lang: de
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estonia SSR
+    lang: en
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: RSS Estonia
+    lang: es
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Eesti NSV
+    lang: et
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: RSS Estonie
+    lang: fr
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: RSS Estone
+    lang: it
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: ესტონეთის საბჭოთა სოციალისტური რესპუბლიკა
+    lang: ka
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: 에스토니아 소비에트 사회주의 공화국
+    lang: ko
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estijos TSR
+    lang: lt
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Igaunijas PSR
+    lang: lv
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: एस्टोनियन सोव्हिएत साम्यवादी गणराज्य
+    lang: mr
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Эстонская ССР
+    lang: ru
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estniska SSR
+    lang: sv
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: สาธารณรัฐสังคมนิยมโซเวียตเอสโตเนีย
+    lang: th
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Estonya SSC
+    lang: tr
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Eesti NSV
+    lang: und
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: استونیائی سوویت اشتراکی جمہوریہ
+    lang: ur
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: Cộng hòa Xã hội chủ nghĩa Xô viết Estonia
+    lang: vi
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790
+  - text: 爱沙尼亚苏维埃社会主义共和国
+    lang: zh
+    start: 1940-07-21
+    end: 1940-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694790

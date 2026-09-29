@@ -1,0 +1,374 @@
+id: free-city-of-danzig
+wikidata: Q216173
+names:
+  - text: Vrye stad Danzig
+    lang: af
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: مدينة دانتسيغ الحرة
+    lang: ar
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Вольны горад Данцыг
+    lang: be
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Свободен град Данциг
+    lang: bg
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Kêr dieub Danzig
+    lang: br
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Ciutat Lliure de Danzig
+    lang: ca
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Svobodné město Gdaňsk
+    lang: cs
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Dinas Rydd Danzig
+    lang: cy
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Fristaden Danzig
+    lang: da
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Freie Stadt Danzig
+    lang: de
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Ελεύθερη Πόλη του Ντάντσιχ
+    lang: el
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Free City of Danzig
+    lang: en
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Libera Urbo Dancigo
+    lang: eo
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Ciudad Libre de Dánzig
+    lang: es
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Danzigi vabalinn
+    lang: et
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Danzig Hiri Askea
+    lang: eu
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: ایالت آزاد گدانسک
+    lang: fa
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Danzigin vapaakaupunki
+    lang: fi
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Ville libre de Dantzig
+    lang: fr
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Cidade Libre de Danzig
+    lang: gl
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: העיר החופשית דנציג
+    lang: he
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Slobodni Grad Danzig
+    lang: hr
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Danzig Szabad Város
+    lang: hu
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Ազատ քաղաք Դանցիգ
+    lang: hy
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Kota Merdeka Danzig
+    lang: id
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Città Libera di Danzica
+    lang: it
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: 自由都市ダンツィヒ
+    lang: ja
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: თავისუფალი ქალაქი დანციგი
+    lang: ka
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: 단치히 자유시
+    lang: ko
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Urbs Libera Gedania
+    lang: la
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Laisvasis Dancigo miestas
+    lang: lt
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Dancigas brīvpilsēta
+    lang: lv
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Слободен град Данциг
+    lang: mk
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: ഫ്രീ സിറ്റി ഓഫ് ഡാൻസിഗ്
+    lang: ml
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: डान्झिगचे स्वतंत्र शहर
+    lang: mr
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Kota Bebas Danzig
+    lang: ms
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Fristaden Danzig
+    lang: nb
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Vrije stad Danzig
+    lang: nl
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Wolne Miasto Gdańsk
+    lang: pl
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Cidade Livre de Danzigue
+    lang: pt
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Orașul Liber Danzig
+    lang: ro
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Вольный город Данциг
+    lang: ru
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Slobodné mesto Gdansk
+    lang: sk
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Svobodno mesto Danzig
+    lang: sl
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Слободан град Данциг
+    lang: sr
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Fria staden Danzig
+    lang: sv
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: เสรีนครดันท์ซิช
+    lang: th
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Danzig Serbest Şehri
+    lang: tr
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Вільне місто Данциг
+    lang: uk
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Freie Stadt Danzig
+    lang: und
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: آزاد شہر دانزیگ
+    lang: ur
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: Thành phố tự do Danzig
+    lang: vi
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571
+  - text: 但澤自由市
+    lang: zh
+    start: 1920-11-15
+    end: 1939-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2691478, 2696571

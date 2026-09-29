@@ -1,0 +1,689 @@
+id: liechtenstein
+wikidata: Q347
+names:
+  - text: Лихтенштеин
+    lang: ab
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Leohtenstan
+    lang: ang
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liectensteina
+    lang: avk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lixtenşteyn
+    lang: az
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: ba
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liachtnstoa
+    lang: bar
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtenšteins
+    lang: bat-smg
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Ліхтэнштэйн
+    lang: be
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenstèn
+    lang: bew
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенщайн
+    lang: bg
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštajn
+    lang: bs
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: bxr
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: ce
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenşteyn
+    lang: crh
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtenštejnsko
+    lang: cs
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтєнщаинъ
+    lang: cu
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: cv
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtenstein
+    lang: de
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtensteinska
+    lang: dsb
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Λίχτενσταϊν
+    lang: el
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liĥtenŝtejno
+    lang: eo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liktinstein
+    lang: fo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lychtenstein
+    lang: fy
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtinstéin
+    lang: ga
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenşteyn
+    lang: gag
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechytenteĩ
+    lang: gn
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Likenekaina
+    lang: haw
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštajn
+    lang: hr
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtènstayn
+    lang: ht
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liktenstain
+    lang: jam
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: lixtenctain
+    lang: jbo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lixtenshteyn
+    lang: kaa
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтэнштейн
+    lang: kbd
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lisitɛnsɩtayɩnɩ
+    lang: kbp
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: kk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: 리히텐슈타인
+    lang: ko
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштайн
+    lang: koi
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: krc
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: kv
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: ky
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtenstenum
+    lang: la
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: lez
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lictenstain
+    lang: lfn
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtenšteinas
+    lang: lt
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liktenšteins
+    lang: ltg
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenšteina
+    lang: lv
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтэнштайн
+    lang: mdf
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liktenstaina
+    lang: mg
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: mhr
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Rīkeneteina
+    lang: mi
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштајн
+    lang: mk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштайн
+    lang: mn
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн Мастор
+    lang: myv
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtensteen
+    lang: nds
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Tséłgaii Bineʼadziihii
+    lang: nv
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštein
+    lang: olo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liikteenistaayin
+    lang: om
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: os
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liyestenstayn
+    lang: pag
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Λιχτενστάιν
+    lang: pnt
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: ru
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштайн
+    lang: rue
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liyeshitensiteyine
+    lang: rw
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштайн
+    lang: sah
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: لڪتنسٽائن
+    lang: sd
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštajn
+    lang: sh
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lichtenštajnsko
+    lang: sk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštajn
+    lang: sl
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Likitenisitaini
+    lang: sm
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Rishenistayini
+    lang: sn
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lekhtanishtayn
+    lang: so
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenshtajni
+    lang: sq
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштајн
+    lang: sr
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtensteinkondre
+    lang: srn
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: ILeshestani
+    lang: ss
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtenstéin
+    lang: su
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Listenstaina
+    lang: tet
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштайн
+    lang: tg
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenşteýn
+    lang: tk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lixtenštejn
+    lang: tly
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Likitenisitaini
+    lang: to
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: ma Lisensan
+    lang: tok
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenştayn
+    lang: tr
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: tt
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейн
+    lang: udm
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Ліхтенштейн
+    lang: uk
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtenstein
+    lang: und
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lixtenshteyn
+    lang: uz
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Łiechtenstein
+    lang: vec
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lihtenštein
+    lang: vep
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtnstein
+    lang: vls
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Ligtänstän
+    lang: vo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Lîchtenstinne
+    lang: wa
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Лихтенштейна Нутг
+    lang: xal
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Likhtensteyin
+    lang: xh
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Líktẹ́nstáìnì
+    lang: yo
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechenstein
+    lang: zea
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467
+  - text: Liechtenstein
+    lang: zh-min-nan
+    start: 1806-07-12
+    end: 1960-03-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2746467

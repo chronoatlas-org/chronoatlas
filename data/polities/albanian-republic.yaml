@@ -1,0 +1,297 @@
+id: albanian-republic
+wikidata: Q1923781
+names:
+  - text: الجمهورية الألبانية
+    lang: ar
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albánská republika
+    lang: cs
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albanische Republik
+    lang: de
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Αλβανική Δημοκρατία
+    lang: el
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albanian Republic
+    lang: en
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albana Respubliko
+    lang: eo
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Tercera República Albanesa
+    lang: es
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albaania vabariik
+    lang: et
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: République albanaise
+    lang: fr
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: הרפובליקה האלבנית
+    lang: he
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Republik Albania
+    lang: id
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Repubblica albanese
+    lang: it
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: アルバニア共和国
+    lang: ja
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: ალბანეთის რესპუბლიკა
+    lang: ka
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: 알바니아 공화국
+    lang: ko
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Albanese Republiek (1925-1928)
+    lang: nl
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Albanese Republiek
+    lang: nl
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Albanien
+    lang: pdt
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Republika Albanii (1925-1928)
+    lang: pl
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Republika Albanii
+    lang: pl
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: República Albanesa (1925-1928)
+    lang: pt
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: República Albanesa
+    lang: pt
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Republica Albaneză (1925-1928)
+    lang: ro
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Republica Albaneză
+    lang: ro
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Албанская республика (1925-1928)
+    lang: ru
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Албанская республика
+    lang: ru
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Albánska republika (1925-1928)
+    lang: sk
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Albánska republika
+    lang: sk
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Republika Shqiptare (1925-1928)
+    lang: sq
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Republika Shqiptare
+    lang: sq
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Албанска република (1925-1928)
+    lang: sr
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Албанска република
+    lang: sr
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Albanska republiken (1925-1928)
+    lang: sv
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Albanska republiken
+    lang: sv
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Arnavutluk Cumhuriyeti (1925-1928)
+    lang: tr
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Arnavutluk Cumhuriyeti
+    lang: tr
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Албанська республіка (1925-1928)
+    lang: uk
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Албанська республіка
+    lang: uk
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: Republika Shqiptare
+    lang: und
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839
+  - text: Cộng hòa Albania (1925-1928)
+    lang: vi
+    start: 1925-01-31
+    end: 1926-07-26
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2885839
+  - text: Cộng hòa Albania
+    lang: vi
+    start: 1926-07-26
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800555
+  - text: 阿尔巴尼亚共和国
+    lang: zh
+    start: 1925-01-31
+    end: 1928-09-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800555, 2885839

@@ -1,0 +1,829 @@
+id: isle-of-man
+wikidata: Q9676
+names:
+  - text: Pulo Man
+    lang: ace
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: af
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isla de Man
+    lang: an
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Manīeġ
+    lang: ang
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Islla de Man
+    lang: ast
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Men adası
+    lang: az
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн Утрауы
+    lang: ba
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Nusa Man
+    lang: ban
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isla nin Man
+    lang: bcl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Востраў Мэн
+    lang: be
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulo Man
+    lang: bew
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ман
+    lang: bg
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Manav
+    lang: br
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ostrvo Man
+    lang: bs
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Illa de Man
+    lang: ca
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man Dō̤
+    lang: cdo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulo sa Mans
+    lang: ceb
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: cs
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн утравĕ
+    lang: cv
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ynys Manaw
+    lang: cy
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Insel Man
+    lang: de
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Adey Mani
+    lang: diq
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: dsb
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Νήσος του Μαν
+    lang: el
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isle of Man
+    lang: en
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Manksinsulo
+    lang: eo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isla de Man
+    lang: es
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: et
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: eu
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: ext
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: جزیره من
+    lang: fa
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Mansaari
+    lang: fi
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Mann
+    lang: fo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Île de Man
+    lang: fr
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ila de Man
+    lang: frp
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Eilun Man
+    lang: frr
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: fy
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Oileán Mhanann
+    lang: ga
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Eilean Mhanainn
+    lang: gd
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Illa de Man
+    lang: gl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ellan Vannin
+    lang: gv
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man Tó
+    lang: hak
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: האי מאן
+    lang: he
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: आइल ऑफ़ मैन
+    lang: hi
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Otok Man
+    lang: hr
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: hsb
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man-sziget
+    lang: hu
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Insula de Man
+    lang: ia
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulau Man
+    lang: id
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Insulo Man
+    lang: io
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Mön
+    lang: is
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isola di Man
+    lang: it
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: マン島
+    lang: ja
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulo Man
+    lang: jv
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Men atawı
+    lang: kaa
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Tigzirt n Man
+    lang: kab
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн аралы
+    lang: kk
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: 맨섬
+    lang: ko
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ynys Manow
+    lang: kw
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн аралы
+    lang: ky
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Monapia
+    lang: la
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Insel Man
+    lang: lb
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: li
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Izoa de Man
+    lang: lij
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isula de Man
+    lang: lmo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Esanga ya Man
+    lang: ln
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Meno sala
+    lang: lt
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Menas Sala
+    lang: lv
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Nosin'i Man
+    lang: mg
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Motu o Mana
+    lang: mi
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ман
+    lang: mk
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulau Man
+    lang: ms
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: nds-nl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Eiland Man
+    lang: nl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Øya Man
+    lang: nn
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: no
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isle de Man
+    lang: nov
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Île dé Man
+    lang: nrm
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Illa de Man
+    lang: oc
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Manninsuari
+    lang: olo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн
+    lang: os
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Wyspa Man
+    lang: pl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ìsola ëd Man
+    lang: pms
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ilha de Man
+    lang: pt
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man wat'a
+    lang: qu
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Insula Man
+    lang: ro
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Остров Мэн
+    lang: ru
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Остров Мен
+    lang: rue
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ikirwa cya Man
+    lang: rw
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ìsula de Man
+    lang: sc
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ìsula di Man
+    lang: scn
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isle o Man
+    lang: sco
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Mannin
+    lang: se
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: sh
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ostrov Man
+    lang: sk
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: sl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ishulli i Manit
+    lang: sq
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Острво Мен
+    lang: sr
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man
+    lang: stq
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulo Man
+    lang: su
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Kisiwa cha Man
+    lang: sw
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: மாண் தீவு
+    lang: ta
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: ไอล์ออฟแมน
+    lang: th
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man Adasy
+    lang: tk
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Pulo ng Man
+    lang: tl
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: ma Manin
+    lang: tok
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Man Adası
+    lang: tr
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Мэн утравы
+    lang: tt
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Острів Мен
+    lang: uk
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isle of Man
+    lang: und
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Men oroli
+    lang: uz
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Ìzoła de Man
+    lang: vec
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Đảo Man
+    lang: vi
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Eyland Man
+    lang: vls
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Isla han Man
+    lang: war
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Erékùṣù ilẹ̀ Man
+    lang: yo
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: Eiland Man
+    lang: zea
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293
+  - text: 马恩岛
+    lang: zh
+    start: 1333-08-09
+    end: 1987-05-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2693293

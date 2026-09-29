@@ -1,0 +1,402 @@
+id: kingdom-of-yugoslavia
+wikidata: Q191077
+names:
+  - text: Reinu de Yugoslavia
+    lang: ast
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Yuqoslaviya krallığı
+    lang: az
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Югославия короллеге
+    lang: ba
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Каралеўства Югаславія
+    lang: be
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Кралство Югославия
+    lang: bg
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija
+    lang: bs
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Království Jugoslávie
+    lang: cs
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kongeriget Jugoslavien
+    lang: da
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Königreich Jugoslawien
+    lang: de
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Βασίλειο της Γιουγκοσλαβίας
+    lang: el
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kingdom of Yugoslavia
+    lang: en
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regno Jugoslavio
+    lang: eo
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Reino de Yugoslavia
+    lang: es
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Jugoslaavia Kuningriik
+    lang: et
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Jugoslaviako Erresuma
+    lang: eu
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Jugoslavian kuningaskunta
+    lang: fi
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Royaume de Yougoslavie
+    lang: fr
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Reino de Iugoslavia
+    lang: gl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija
+    lang: hr
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Jugoszláv Királyság
+    lang: hu
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regno de Yugoslavia
+    lang: ia
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kerajaan Yugoslavia
+    lang: id
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regno di Jugoslavia
+    lang: it
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Югославия патшалығы
+    lang: kk
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: 유고슬라비아
+    lang: ko
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Keyaniya Yûgoslavyayê
+    lang: ku
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regnum Iugoslaviae
+    lang: la
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Jugoslavijos karalystė
+    lang: lt
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Dienvidslāvijas Karaliste
+    lang: lv
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Кралство Југославија
+    lang: mk
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Югославын хаант улс
+    lang: mn
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kerajaan Yugoslavia
+    lang: ms
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Koninkrijk Joegoslavië
+    lang: nl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kongeriket Jugoslavia
+    lang: no
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Królestwo Jugosławii
+    lang: pl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Reino da Iugoslávia
+    lang: pt
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Yuquslawya qhapaq llaqta
+    lang: qu
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regatul Iugoslaviei
+    lang: ro
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Королевство Югославия
+    lang: ru
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Кральовство Югославия
+    lang: rue
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Rennu de Jugoslàvia
+    lang: sc
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija / Краљевина Југославија
+    lang: sh
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Краљевина Југославија
+    lang: sh-Cyrl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija
+    lang: sh-Latn
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Juhoslovanské kráľovstvo
+    lang: sk
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija
+    lang: sl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Mbretëria Jugosllave
+    lang: sq
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Краљевина Југославија
+    lang: sr
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija
+    lang: sr-Latn
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kungariket Jugoslavien
+    lang: sv
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kaharian ng Yugoslavia
+    lang: tl
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Yugoslavya Krallığı
+    lang: tr
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Югославия корольлеге
+    lang: tt
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Королівство Югославія
+    lang: uk
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Kraljevina Jugoslavija / Краљевина Југославија
+    lang: und
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Yugoslaviya qirolligi
+    lang: uz
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831
+  - text: Regno de Jugoslàvia
+    lang: vec
+    start: 1929-10-03
+    end: 1941-04-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2747831

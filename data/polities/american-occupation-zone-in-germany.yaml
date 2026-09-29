@@ -1,0 +1,45 @@
+id: american-occupation-zone-in-germany
+wikidata: Q55304
+names:
+  - text: Amerikanische Besatzungszone (1945 08-09)
+    lang: de
+    start: 1945-08-01
+    end: 1945-09-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855433
+  - text: Amerikanische Besatzungszone (1945-1949)
+    lang: de
+    start: 1945-09-17
+    end: 1949-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2852492
+  - text: American occupation zone in Germany
+    lang: en
+    start: 1945-08-01
+    end: 1949-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852492, 2855433
+  - text: Zona de ocupación estadounidense
+    lang: es
+    start: 1945-08-01
+    end: 1949-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852492, 2855433
+  - text: 미국 점령하의 독일
+    lang: ko
+    start: 1945-08-01
+    end: 1949-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852492, 2855433
+  - text: American occupation zone in Germany
+    lang: und
+    start: 1945-08-01
+    end: 1949-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2852492, 2855433

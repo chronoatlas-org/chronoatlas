@@ -1,0 +1,773 @@
+id: czechoslovak-republic
+wikidata: Q2454585
+names:
+  - text: Tsjeggo-Slowakye
+    lang: af
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakei
+    lang: als
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: an
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslofacland
+    lang: ang
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: ast
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Çexoslovakiya
+    lang: az
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: ba
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakei
+    lang: bar
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsekoslobakya
+    lang: bcl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чэхаславакія
+    lang: be
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: bg
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tchekoslovakia
+    lang: br
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čehoslovačka
+    lang: bs
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Txecoslovàquia
+    lang: ca
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехийн-Словакийн пачхьалкх
+    lang: ce
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Československá republika
+    lang: cs
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословаки
+    lang: cv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsiecoslofacia
+    lang: cy
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tjekkoslovakiet
+    lang: da
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakische Republik
+    lang: de
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Çekoslowakya
+    lang: diq
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Českosłowakska
+    lang: dsb
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Τσεχοσλοβακία
+    lang: el
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovak Republic
+    lang: en
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Ĉeĥoslovakio
+    lang: eo
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: es
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tšehhoslovakkia
+    lang: et
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Txekoslovakia
+    lang: eu
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: ext
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tšekkoslovakia
+    lang: fi
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsehhoslovakkia
+    lang: fiu-vro
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tchécoslovaquie
+    lang: fr
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tch·ècoslovaquie
+    lang: frp
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakei
+    lang: frr
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovachie
+    lang: fur
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjechoslowakije
+    lang: fy
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: An tSeicslóvaic
+    lang: ga
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: An t-Seic-Slòbhac
+    lang: gd
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: gl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Yn Çheckoslovack
+    lang: gv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čehoslovačka
+    lang: hr
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čěskosłowakska
+    lang: hsb
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Csehszlovákia
+    lang: hu
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovachia
+    lang: ia
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cekoslowakia
+    lang: id
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tchecoslovakia
+    lang: ie
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Chekoslovakia
+    lang: io
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tékkóslóvakía
+    lang: is
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovacchia
+    lang: it
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cékoslowakie
+    lang: jv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: kk
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: 체코슬로바키아 공화국
+    lang: ko
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: krc
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Çekoslovakya
+    lang: ku
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: kv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: ky
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cechoslovacia
+    lang: la
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Chekoslovakia
+    lang: lad
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakei
+    lang: lb
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjecho-Slowakije
+    lang: li
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovacchia
+    lang: lij
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovacchia
+    lang: lmo
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čekoslovakija
+    lang: lt
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čehoslovākija
+    lang: lv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsekôslôvakia
+    lang: mg
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословачка
+    lang: mk
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословак
+    lang: mn
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakia
+    lang: ms
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjecho-Slowakije
+    lang: nl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjekkoslovakia
+    lang: nn
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjekkoslovakia
+    lang: no
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslovaquia
+    lang: oc
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословаки
+    lang: os
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tchécoslovakie
+    lang: pcd
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechosłowacja
+    lang: pl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovachia
+    lang: pms
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Checoslováquia
+    lang: pt
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Chikusluwakya
+    lang: qu
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cehoslovacia
+    lang: ro
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: ru
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакія
+    lang: rue
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tzecoslovàchia
+    lang: sc
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovacchia
+    lang: scn
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakie
+    lang: sco
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čehoslovačka
+    lang: sh
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Česko-Slovensko
+    lang: sk
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Češkoslovaška
+    lang: sl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Çekosllovakia
+    lang: sq
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословачка
+    lang: sr
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tschechoslowakäi
+    lang: stq
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tjeckoslovakien
+    lang: sv
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Chekoslovakia
+    lang: sw
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: tg
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakia
+    lang: tl
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cexoslovakijə
+    lang: tly
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: ma Sekolowenko
+    lang: tok
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Çekoslovakya
+    lang: tr
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословакия
+    lang: tt
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakia
+    lang: tum
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Чехословаччина
+    lang: uk
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Československá republika
+    lang: und
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: چیکو سلوواکیہ
+    lang: ur
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Chexoslovakiya
+    lang: uz
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Cecoslovàchia
+    lang: vec
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Čehoslovakii
+    lang: vep
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tiệp Khắc
+    lang: vi
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Tsjechoslovakeye
+    lang: vls
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakia
+    lang: war
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Czechoslovakia
+    lang: yo
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767
+  - text: Československo
+    lang: zh-min-nan
+    start: 1945-05-08
+    end: 1948-05-09
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692766, 2692767

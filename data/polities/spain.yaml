@@ -1,0 +1,52 @@
+id: spain
+wikidata: Q29
+names:
+  - text: Spanien
+    lang: de
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: Spain
+    lang: en
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: España
+    lang: es
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: 스페인
+    lang: ko
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: Spanje
+    lang: nl
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: Spanien
+    lang: pdt
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762
+  - text: España
+    lang: und
+    start: 1899-04-11
+    end: 1956-04-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2860345, 2860408, 2860484, 2860485, 2860486, 2860487, 2862761, 2862762

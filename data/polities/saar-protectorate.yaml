@@ -1,0 +1,276 @@
+id: saar-protectorate
+wikidata: Q310293
+names:
+  - text: Protectoráu del Sarre
+    lang: ast
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saar Protektoratı
+    lang: az
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Пратэктарат Саар
+    lang: be
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarski protektorat
+    lang: bs-Latn
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Sarre
+    lang: ca
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Sársko
+    lang: cs
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarland
+    lang: de
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Προτεκτοράτο του Σάαρλαντ
+    lang: el
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saar Protectorate
+    lang: en
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protectorado del Sarre
+    lang: es
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Sarre
+    lang: eu
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarin protektoraatti
+    lang: fi
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Sarre
+    lang: fr
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: An tSárlainn
+    lang: ga
+    start: 1947-06-08
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511
+  - text: Protectorado de Sarre
+    lang: gl
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarski protektorat
+    lang: hr
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protektorat Saar
+    lang: id
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protettorato della Saar
+    lang: it
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: 자를란트
+    lang: ko
+    start: 1946-08-01
+    end: 1947-06-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2690512
+  - text: 자르 보호령
+    lang: ko
+    start: 1947-06-08
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511
+  - text: Zāras protektorāts
+    lang: lv
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protectoraat Saarland
+    lang: nl
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarland
+    lang: no
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protektorat Saary
+    lang: pl
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protetorado de Sarre
+    lang: pt
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saar
+    lang: ro
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Протекторат Саар
+    lang: ru
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Саарски протекторат / Saarski protektorat
+    lang: sh
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Саарски протекторат
+    lang: sh-Cyrl
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarski protektorat
+    lang: sh-Latn
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protektorát Sársko
+    lang: sk
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Protektorat Saar
+    lang: sl
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Саарски протекторат
+    lang: sr
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarski protektorat
+    lang: sr-Latn
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saar
+    lang: sv
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saar Protektorası
+    lang: tr
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Саар
+    lang: uk
+    start: 1946-08-01
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511, 2690512
+  - text: Saarland
+    lang: und
+    start: 1946-08-01
+    end: 1947-06-07
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2690512
+  - text: Saarprotektorat
+    lang: und
+    start: 1947-06-08
+    end: 1956-12-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2690510, 2690511

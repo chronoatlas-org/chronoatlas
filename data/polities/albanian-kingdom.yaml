@@ -1,0 +1,59 @@
+id: albanian-kingdom
+wikidata: Q1048340
+names:
+  - text: Königreich Albanien
+    lang: de
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Albanian Kingdom
+    lang: en
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Royaume albanais
+    lang: fr
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Regno d'Albania
+    lang: it
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: 알바니아 왕국
+    lang: ko
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Albanienrikj
+    lang: pdt
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Mbretnija Shqiptare
+    lang: sq
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554
+  - text: Mbretnija Shqiptare
+    lang: und
+    start: 1928-09-01
+    end: 1939-04-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800554

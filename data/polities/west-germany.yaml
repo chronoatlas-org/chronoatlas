@@ -1,0 +1,626 @@
+id: west-germany
+wikidata: Q713750
+names:
+  - text: Wes-Duitsland
+    lang: af
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Alemanya Occidental
+    lang: an
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Westþeodscland
+    lang: ang
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: República Federal d'Alemaña
+    lang: ast
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Almaniya Federativ Respublikası
+    lang: az
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Jerman Kauh
+    lang: ban
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Федэратыўная Рэспубліка Германіі
+    lang: be
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Западна Германия
+    lang: bg
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Republik Kevreadel Alamagn
+    lang: br
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zapadna Njemačka
+    lang: bs
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Alemanya Occidental
+    lang: ca
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Západní Německo
+    lang: cs
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Gorllewin yr Almaen
+    lang: cy
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vesttyskland
+    lang: da
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Bundesrepublik Deutschland
+    lang: de
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Δυτική Γερμανία
+    lang: el
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: West Germany
+    lang: en
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Okcidenta Germanio
+    lang: eo
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Alemania Occidental
+    lang: es
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Lääne-Saksamaa
+    lang: et
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Mendebaldeko Alemania
+    lang: eu
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Länsi-Saksa
+    lang: fi
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vesturtýskland
+    lang: fo
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Allemagne de l'Ouest
+    lang: fr
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: West-Dútslân
+    lang: fy
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: An Ghearmáin Thiar
+    lang: ga
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: A' Ghearmailt an Iar
+    lang: gd
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: República Federal Alemá
+    lang: gl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Yn Ghermaan Heear
+    lang: gv
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Yammacin Jamus
+    lang: ha
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zapadna Njemačka
+    lang: hr
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Nyugat-Németország
+    lang: hu
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germania Occidental
+    lang: ia
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Jerman Barat
+    lang: id
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: West-Germania
+    lang: io
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vestur-Þýskaland
+    lang: is
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germania Ovest
+    lang: it
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Jerman Kulon
+    lang: jv
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: 서독
+    lang: ko
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Almanyaya Rojava
+    lang: ku
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Res publica foederata Germaniae
+    lang: la
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Wes-Duitsland
+    lang: li
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Repubbrica Federâ de Germania
+    lang: lij
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germania dl Vest
+    lang: lld
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germania Ovest
+    lang: lmo
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vakarų Vokietija
+    lang: lt
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Rietumvācija
+    lang: lv
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Западна Германија
+    lang: mk
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Баруун Герман
+    lang: mn
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Jerman Barat
+    lang: ms
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: West-Duutslaand
+    lang: nds-nl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Bondsrepubliek Duitsland
+    lang: nl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vest-Tyskland
+    lang: nn
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Vest-Tyskland
+    lang: no
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Alemanha de l'Oèst
+    lang: oc
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Ныгуылæн Герман
+    lang: os
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Niemcy Zachodnie
+    lang: pl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Alemanha Ocidental
+    lang: pt
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Kunti Alimanya
+    lang: qu
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germania de Vest
+    lang: ro
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Федеративная Республика Германии
+    lang: ru
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Сполкова републіка Нїмецько
+    lang: rue
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Repùblica Federale Tedesca
+    lang: sc
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Girmania Ovest
+    lang: scn
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zapadna Njemačka / Западна Немачка
+    lang: sh
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Западна Немачка
+    lang: sh-Cyrl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zapadna Njemačka
+    lang: sh-Latn
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Západné Nemecko
+    lang: sk
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zvezna republika Nemčija
+    lang: sl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Gjermania Perëndimore
+    lang: sq
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Западна Немачка
+    lang: sr
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zapadna Njemačka
+    lang: sr-Latn
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Wääst-Düütsklound
+    lang: stq
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Västtyskland
+    lang: sv
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Ujerumani Magharibi
+    lang: sw
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Ҷумҳурии Федеролии Олмон
+    lang: tg
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Kanlurang Alemanya
+    lang: tl
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Həšinyštə Almanijə
+    lang: tly
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Batı Almanya
+    lang: tr
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Германия Федератив Республикасы
+    lang: tt
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Федеративна Республіка Німеччина
+    lang: uk
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Bundesrepublik Deutschland
+    lang: und
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Germaniya Federativ Respublikasi
+    lang: uz
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Zermània Òvest
+    lang: vec
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Tây Đức
+    lang: vi
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Almagne do Coûtchant
+    lang: wa
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Katundan Alemanya
+    lang: war
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Ìwọ̀orùn Jẹ́mánì
+    lang: yo
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237
+  - text: Sai-tek
+    lang: zh-min-nan
+    start: 1949-05-23
+    end: 1952-03-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2692237

@@ -1,0 +1,143 @@
+id: syrian-republic
+wikidata: Q26234937
+names:
+  - text: اَلْجُمْهُورِيَّةُ ٱلْسُوْرِيَّة
+    lang: ar
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: Първа сирийска република
+    lang: bg
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: República Siriana
+    lang: ca
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: Syrian Republic
+    lang: en
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: República de Siria
+    lang: es
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: جمهوری نخست سوریه
+    lang: fa
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: République syrienne
+    lang: fr
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: הרפובליקה הסורית הראשונה
+    lang: he
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: Սիրիայի առաջին հանրապետություն
+    lang: hy
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: Repubblica Siriana
+    lang: it
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: シリア共和国
+    lang: ja
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: 시리아 공화국
+    lang: ko
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: Sīrijas Republika
+    lang: lv
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: República Síria
+    lang: pt
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: Сирийская республика
+    lang: ru
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: สาธารณรัฐซีเรียที่ 1
+    lang: th
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: Birinci Suriye Cumhuriyeti
+    lang: tr
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: République syrienne
+    lang: und
+    start: 1930-05-14
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2863988, 2863989, 2863990, 2864014, 2879261
+  - text: پہلی سوری جمہوریہ
+    lang: ur
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014
+  - text: 敘利亞共和國
+    lang: zh
+    start: 1949-02-24
+    end: 1958-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864014

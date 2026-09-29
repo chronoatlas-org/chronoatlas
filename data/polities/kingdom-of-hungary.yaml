@@ -1,0 +1,164 @@
+id: kingdom-of-hungary
+wikidata: Q600018
+names:
+  - text: مملكة المجر
+    lang: ar
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Regne d'Hongria
+    lang: ca
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Königreich Ungarn
+    lang: de
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Βασίλειο της Ουγγαρίας
+    lang: el
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Kingdom of Hungary
+    lang: en
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Reino de Hungría
+    lang: es
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Hungariako Erresuma
+    lang: eu
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Royaume de Hongrie
+    lang: fr
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Reino de Hungría
+    lang: gl
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Magyar Királyság
+    lang: hu
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Regno d'Ungheria
+    lang: it
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: ハンガリー王国
+    lang: ja
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: 헝가리 왕국
+    lang: ko
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Regnum Hungariae
+    lang: la
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Koninkrijk Hongarije
+    lang: nl
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Królestwo Węgier
+    lang: pl
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Reino da Hungria
+    lang: pt
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Королевство Венгрия
+    lang: ru
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Kraljevina Ogrska
+    lang: sl
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Macaristan Krallığı
+    lang: tr
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: Угорське королівство
+    lang: uk
+    start: 1921-11-10
+    end: 1938-11-02
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2695633
+  - text: Magyar Királyság
+    lang: und
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873
+  - text: 匈牙利王国
+    lang: zh
+    start: 1921-07-26
+    end: "1944"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692359, 2693462, 2695633, 2747817, 2747871, 2747872, 2747873

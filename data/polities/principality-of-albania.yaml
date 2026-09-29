@@ -1,0 +1,66 @@
+id: principality-of-albania
+wikidata: Q187035
+names:
+  - text: Principality of Albania
+    lang: en
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800556, 2855613
+  - text: Albania indipendente
+    lang: it
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855613
+  - text: アルバニア独立国
+    lang: ja
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855613
+  - text: 알바니아 독립국
+    lang: ko
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855613
+  - text: 알바니아 공국
+    lang: ko
+    start: 1918-11-24
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2800556
+  - text: Principatus Albaniae
+    lang: la
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855613
+  - text: Principata e Shqipërisë
+    lang: sq
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800556, 2855613
+  - text: Principata e Shqipërisë
+    lang: und
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2800556, 2855613
+  - text: 阿爾巴尼亞獨立國
+    lang: zh
+    start: 1914-02-21
+    end: 1925-01-31
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2855613

@@ -1,0 +1,164 @@
+id: italian-islands-of-the-aegean
+wikidata: Q555185
+names:
+  - text: جزر إيجه الإيطالية
+    lang: ar
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italské egejské ostrovy
+    lang: cs
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italienische Ägäis-Inseln
+    lang: de
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Ἰταλικαὶ Νῆσοι Αἰγαίου Πελάγους
+    lang: el
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italian Islands of the Aegean
+    lang: en
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italaj Egeaj Insuloj
+    lang: eo
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Dodecaneso italiano
+    lang: es
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italian Dodekanesia
+    lang: fi
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Dodécanèse italien
+    lang: fr
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: האיים האיטלקיים בים האגאי
+    lang: he
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Kepulauan Aegea Italia
+    lang: id
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Isole Italiane dell'Egeo
+    lang: it
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: イタリア領エーゲ海諸島
+    lang: ja
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: 이탈리아령 에게해 제도
+    lang: ko
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Provincia Rhodiaca
+    lang: la
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Italijos Egėjo salos
+    lang: lt
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Kepulauan Aegea Itali
+    lang: ms
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Ilhas Italianas do Egeu
+    lang: pt
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Итальянские острова Эгейского моря
+    lang: ru
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Ege'deki İtalyan Adaları
+    lang: tr
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: Isole italiane dell'Egeo
+    lang: und
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371
+  - text: German occupation of the Dodecanese
+    lang: und
+    start: 1943-09-11
+    end: 1945-05-08
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2920370
+  - text: 意属爱琴海群岛
+    lang: zh
+    start: 1912-04-27
+    end: 1947-02-10
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2830316, 2920369, 2920371

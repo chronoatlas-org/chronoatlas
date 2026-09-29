@@ -1,0 +1,143 @@
+id: tangier-international-zone
+wikidata: Q3497642
+names:
+  - text: منطقة طنجة الدولية
+    lang: ar
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Takad Etrebroadel Tanger
+    lang: br
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zona internacional de Tànger
+    lang: ca
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Internationale Zone von Tanger
+    lang: de
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Internacia Zono de Tanĝero
+    lang: eo
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zona Internacional de Tánger
+    lang: es
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Tangerreko Nazioarteko Eskualdea
+    lang: eu
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zone internationale de Tanger
+    lang: fr
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Yankin duniya na Tangier
+    lang: ha
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zona Internasional Tangier
+    lang: id
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zona internazionale di Tangeri
+    lang: it
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: タンジェ国際管理地域
+    lang: ja
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: 탕헤르 국제관리구역
+    lang: ko
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Internationale Zone van Tanger
+    lang: nl
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Zona Internacional de Tânger
+    lang: pt
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Международная зона Танжер
+    lang: ru
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Міжнародна зона Танжер
+    lang: uk
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: Tangier International Zone
+    lang: und
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: طنجہ بین الاقوامی علاقہ
+    lang: ur
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366
+  - text: 丹吉爾國際區
+    lang: zh
+    start: 1925-06-01
+    end: 1956-10-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2848365, 2848366

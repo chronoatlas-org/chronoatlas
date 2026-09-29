@@ -3,337 +3,337 @@ wikidata: Q129286
 names:
   - text: الراج البريطاني
     lang: ar
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ब्रिटिश राज
     lang: bh
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ব্রিটিশ ভারত
     lang: bn
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britská Indie
     lang: cs
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britisk Indien
     lang: da
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britisch-Indien
     lang: de
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Βρετανικές Ινδίες
     lang: el
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: British Raj
     lang: en
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: India británica
     lang: es
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Briti India
     lang: et
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: راج بریتانیا
     lang: fa
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Brittiläinen Intia
     lang: fi
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Raj britannique
     lang: fr
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: הראג' הבריטי
     lang: he
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ब्रिटिश राज
     lang: hi
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Brit India
     lang: hu
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Բրիտանական Հնդկաստան
     lang: hy
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Raj Britania Raya
     lang: id
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Impero anglo-indiano
     lang: it
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: イギリス領インド帝国
     lang: ja
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: 영국령 인도 제국
     lang: ko
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britų Indija
     lang: lt
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ബ്രിട്ടീഷ് രാജ്
     lang: ml
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ब्रिटिश राज
     lang: mr
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ဗြိတိသျှရာဇ
     lang: my
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ब्रिटिस राज
     lang: ne
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Brits-Indië
     lang: nl
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britisk India
     lang: no
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: ਬਰਤਾਨਵੀ ਰਾਜ
     lang: pa
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Indie Brytyjskie
     lang: pl
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: برطانوی راج
     lang: pnb
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: برېتانوي هند
     lang: ps
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Índia britânica
     lang: pt
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: India Britanică
     lang: ro
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Британская Индия
     lang: ru
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britská India
     lang: sk
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britanska Indija
     lang: sl
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Британска Индија
     lang: sr
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Brittiska Indien
     lang: sv
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: பிரித்தானியாவின் இந்தியப் பேரரசு
     lang: ta
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: భారతదేశంలో బ్రిటిషు పాలన
     lang: te
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: บริติชราช
     lang: th
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Britanya Hindistanı
     lang: tr
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Британська Індія
     lang: uk
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: British Raj
     lang: und
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: برطانوی راج
     lang: ur
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: Raj thuộc Anh
     lang: vi
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654
   - text: 英属印度
     lang: zh
-    start: "1891"
+    start: 1893-11-12
     end: 1947-08-14
     sources:
       - source: openhistoricalmap
-        locator: name tags on relations 2848216, 2848483, 2923715, 2961101
+        locator: name tags on relations 2848216, 2848483, 2961101, 2961653, 2961654

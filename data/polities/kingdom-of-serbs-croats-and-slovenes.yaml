@@ -1,0 +1,346 @@
+id: kingdom-of-serbs-croats-and-slovenes
+wikidata: Q15102440
+names:
+  - text: Reinu de los Serbios, Croates y Eslovenos
+    lang: ast
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Каралеўствам сербаў, харватаў і славенцаў
+    lang: be
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Каралеўства Сербаў, Харватаў і Славенцаў
+    lang: be-tarask
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Кралство на сърби, хървати и словенци
+    lang: bg
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca
+    lang: bs
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regne dels Serbis, Croats i Eslovens
+    lang: ca
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca
+    lang: cnr
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Království Srbů, Chorvatů a Slovinců
+    lang: cs
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kongeriget af Serbere, Kroater og Slovenere
+    lang: da
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Königreich der Serben, Kroaten und Slowenen
+    lang: de
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Βασίλειο των Σέρβων, Κροατών και Σλοβένων
+    lang: el
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kingdom of Serbs, Croats and Slovenes
+    lang: en
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Reĝlando de serboj, kroatoj kaj slovenoj
+    lang: eo
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Reino de los Serbios, Croatas y Eslovenos
+    lang: es
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Serblaste, Horvaatide ja Sloveenide Kuningriik
+    lang: et
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Serbien, kroaattien ja sloveenien kuningaskunta
+    lang: fi
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Royaume des Serbes, Croates et Slovènes
+    lang: fr
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Reino dos Serbios, Croatas e Eslovenos
+    lang: gl
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca
+    lang: hr
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Szerb-Horvát-Szlovén Királyság
+    lang: hu
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regno dei Serbi, Croati e Sloveni
+    lang: it
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: 슬로벤인 크로아트인 세르브인 왕국
+    lang: ko
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Серблилени, хорватлыланы эмда словенлилени короллугъу
+    lang: krc
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regnum Serborum Croatarumque et Slovenorum
+    lang: la
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regn di Serb, di Croat e di Sloven
+    lang: lmo
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Serbų, kroatų ir slovėnų karalyste
+    lang: lt
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Serbu, horvātu un slovēņu karaliste
+    lang: lv
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Кралство на Србите, Хрватите и Словенците
+    lang: mk
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kongeriket av serbere, kroater og slovenere
+    lang: nb
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Koninkrijk der Serven, Kroaten en Slovenen
+    lang: nl
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kongeriket av serbarar, kroatarar og slovenarar
+    lang: nn
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kongeriket av serbere, kroater og slovenere
+    lang: no
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Królestwo Serbów, Chorwatów i Słoweńców
+    lang: pl
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regatul Sârbilor, Croaților și Slovenilor
+    lang: ro
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Королевство сербов, хорватов и словенцев
+    lang: ru
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Кральовство Сербох, Хорватох и Словенцьох
+    lang: rue
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Rennu de sos Serbos, de sos Croatos e de sos Islovenos
+    lang: sc
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca / Краљевина Срба, Хрвата и Словенаца
+    lang: sh
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Краљевина Срба, Хрвата и Словенаца
+    lang: sh-Cyrl
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca
+    lang: sh-Latn
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kráľovstvo Srbov, Chorvátov a Slovincov
+    lang: sk
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srbov, Hrvatov in Slovencev
+    lang: sl
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Mbretëria e Serbëve, Kroatëve dhe Sllovenëve
+    lang: sq
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Краљевина Срба, Хрвата и Словенаца
+    lang: sr
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca
+    lang: sr-Latn
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Serbernas, kroaternas och slovenernas kungarike
+    lang: sv
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Королівство Сербів, Хорватів і Словенців
+    lang: uk
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Kraljevina Srba, Hrvata i Slovenaca / Краљевина Срба, Хрвата и Словенаца
+    lang: und
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838
+  - text: Regno dei Serbi, Croati e Sloveni
+    lang: vec
+    start: 1920-11-12
+    end: 1929-10-03
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2693463, 2747828, 2858752, 2885838

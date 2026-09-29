@@ -1,0 +1,45 @@
+id: transcaucasian-dfr
+wikidata: Q330756
+names:
+  - text: زاقافقاسیه دئموْکراتیک فئدئراتیو رئثپۇبلیکاثؽ
+    lang: az
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459
+  - text: Transcaucasian DFR
+    lang: en
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459
+  - text: Անդրկովկասյան Դեմոկրատական Ֆեդերատիվ Հանրապետություն
+    lang: hy
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459
+  - text: ამიერკავკასიის დემოკრატიული ფედერაციული რესპუბლიკა
+    lang: ka
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459
+  - text: Закавказская демократическая федеративная республика
+    lang: ru
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459
+  - text: Закавказская демократическая федеративная республика
+    lang: und
+    start: 1918-04-22
+    end: 1918-05-28
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2957454, 2957459

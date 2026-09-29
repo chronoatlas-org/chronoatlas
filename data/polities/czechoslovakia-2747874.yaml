@@ -1,0 +1,38 @@
+id: czechoslovakia-2747874
+wikidata: Q2010024
+names:
+  - text: Československá republika
+    lang: cs
+    start: 1938-09-30
+    end: 1939-03-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747874, 2857482
+  - text: Tschechoslowakei
+    lang: de
+    start: 1938-09-30
+    end: 1939-03-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747874, 2857482
+  - text: Czechoslovakia
+    lang: en
+    start: 1938-09-30
+    end: 1939-03-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747874, 2857482
+  - text: 체코슬로바키아
+    lang: ko
+    start: 1938-09-30
+    end: 1939-03-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747874, 2857482
+  - text: Československá republika
+    lang: und
+    start: 1938-09-30
+    end: 1939-03-14
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2747874, 2857482

@@ -1,0 +1,17 @@
+id: government-of-south-russia
+wikidata: Q2030442
+names:
+  - text: Government of South Russia
+    lang: en
+    start: 1920-04-04
+    end: 1920-11-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2854270
+  - text: Правительство Юга России
+    lang: und
+    start: 1920-04-04
+    end: 1920-11-17
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2854270

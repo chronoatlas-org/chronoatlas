@@ -1,0 +1,38 @@
+id: persia
+wikidata: Q63158027
+names:
+  - text: Persien
+    lang: de
+    start: 1828-02-22
+    end: "1935"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694889
+  - text: Persia
+    lang: en
+    start: 1828-02-22
+    end: "1935"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694889
+  - text: Persia
+    lang: es
+    start: 1828-02-22
+    end: "1935"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694889
+  - text: 페르시아
+    lang: ko
+    start: 1828-02-22
+    end: "1935"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694889
+  - text: Iran
+    lang: und
+    start: 1828-02-22
+    end: "1935"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2694889

@@ -1,0 +1,241 @@
+id: hatay-state
+wikidata: Q146761
+names:
+  - text: Staat van Hatay
+    lang: af
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: دولة حطاي
+    lang: ar
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatay dövləti
+    lang: az
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Държава Хатай
+    lang: bg
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Estat de Hatay
+    lang: ca
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Republik Hatay
+    lang: de
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatay State
+    lang: en
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Estado de Hatay
+    lang: es
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: دولت ختای
+    lang: fa
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatayn valtio
+    lang: fi
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: État du Hatay
+    lang: fr
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Estado de Hatay
+    lang: gl
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: מדינת האטיי
+    lang: he
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Republik Hatay
+    lang: id
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Repubblica di Hatay
+    lang: it
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: ハタイ国
+    lang: ja
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: 하타이 공화국
+    lang: ko
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Dewleta Xetayê
+    lang: ku
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatajaus valstybė
+    lang: lt
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hataja
+    lang: lv
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Republiek Hatay
+    lang: nl
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Хатайы паддзахад
+    lang: os
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Państwo Hatay
+    lang: pl
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: República do Hatay
+    lang: pt
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Государство Хатай
+    lang: ru
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Staten Hatay
+    lang: sv
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hataý döwleti
+    lang: tk
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatay Devleti
+    lang: tr
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Держава Хатай
+    lang: uk
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatay Devleti
+    lang: und
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: ریاست ہتای
+    lang: ur
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Hatay davlati
+    lang: uz
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: Cộng hòa Hatay
+    lang: vi
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001
+  - text: 哈塔伊国
+    lang: zh
+    start: 1938-09-02
+    end: 1939-06-29
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2864001

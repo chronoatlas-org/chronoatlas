@@ -1,0 +1,248 @@
+id: state-of-greater-lebanon
+wikidata: Q130842
+names:
+  - text: الانتداب الفرنسي على لبنان
+    lang: ar
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Böyük Livan
+    lang: az
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Вялікі Ліван
+    lang: be
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Голям Ливан
+    lang: bg
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Mandat francès del Líban
+    lang: ca
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Velký Libanon
+    lang: cs
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Großlibanon
+    lang: de
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Μείζων Λίβανος
+    lang: el
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: State of Greater Lebanon
+    lang: en
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Lebanese Republic
+    lang: en
+    start: 1926-05-23
+    end: 1943-11-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831358
+  - text: Granda Libano
+    lang: eo
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Gran Líbano
+    lang: es
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Libano Handia
+    lang: eu
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: لبنان بزرگ
+    lang: fa
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Grand Liban
+    lang: fr
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: לבנון הגדולה
+    lang: he
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Nagy-Libanon
+    lang: hu
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Lebanon Raya
+    lang: id
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Grande Libano
+    lang: it
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: 大レバノン国
+    lang: ja
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: 대레바논국
+    lang: ko
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: 레바논 공화국
+    lang: ko
+    start: 1926-05-23
+    end: 1943-11-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831358
+  - text: Didysis Libanas
+    lang: lt
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Lielā Libāna
+    lang: lv
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Groot-Libanon
+    lang: nl
+    start: 1920-09-01
+    end: 1943-11-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2831357, 2831358
+  - text: Wielki Liban
+    lang: pl
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Grande Líbano
+    lang: pt
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Великий Ливан
+    lang: ru
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Büyük Lübnan
+    lang: tr
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Великий Ліван
+    lang: uk
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: État du Grand Liban
+    lang: und
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: République Libanaise
+    lang: und
+    start: 1926-05-23
+    end: 1943-11-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831358
+  - text: عظیم لبنان
+    lang: ur
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: Đại Liban
+    lang: vi
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357
+  - text: 大黎巴嫩國
+    lang: zh
+    start: 1920-09-01
+    end: 1926-05-23
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2831357

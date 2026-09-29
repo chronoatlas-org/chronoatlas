@@ -1,0 +1,262 @@
+id: french-settlements-in-india
+wikidata: Q646374
+names:
+  - text: الهند الفرنسية
+    lang: ar
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: ফৰাচী ভাৰত
+    lang: as
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Френска Индия
+    lang: bg
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: ফরাসি ভারত
+    lang: bn
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Índia Francesa
+    lang: ca
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Francouzská Indie
+    lang: cs
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Französisch-Indien
+    lang: de
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: French Settlements in India
+    lang: en
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Franca Hindio
+    lang: eo
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: India francesa
+    lang: es
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Frantziar India
+    lang: eu
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: هند فرانسه
+    lang: fa
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Ranskan Intia
+    lang: fi
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Établissements français dans l'Inde
+    lang: fr
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: הודו הצרפתית
+    lang: he
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: फ्रांसीसी भारत
+    lang: hi
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Francia India
+    lang: hu
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Ֆրանսիական Հնդկաստան
+    lang: hy
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: India Prancis
+    lang: id
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Insediamenti francesi in India
+    lang: it
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: フランス領インド
+    lang: ja
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: 프랑스령 인도
+    lang: ko
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: ഫ്രഞ്ച് ഇന്ത്യ
+    lang: ml
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: फ्रेंच भारत
+    lang: mr
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Frans-Indië
+    lang: nl
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Indie Francuskie
+    lang: pl
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Índia Francesa
+    lang: pt
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Французская Индия
+    lang: ru
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: India Franceze
+    lang: sq
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: பிரெஞ்சு இந்தியா
+    lang: ta
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: ఫ్రెంచి భారతదేశం
+    lang: te
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Fransız Hindistanı
+    lang: tr
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Французька Індія
+    lang: uk
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Établissements français dans l'Inde
+    lang: und
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: فرانسیسی ہندوستان
+    lang: ur
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: Ấn Độ thuộc Pháp
+    lang: vi
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649
+  - text: 法屬印度
+    lang: zh
+    start: "1816"
+    end: 1954-11-01
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2961643, 2961649

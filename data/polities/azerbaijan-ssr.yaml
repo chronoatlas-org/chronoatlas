@@ -1,0 +1,65 @@
+id: azerbaijan-ssr
+names:
+  - text: Азәрбајҹан ССР
+    lang: az
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: Aserbaidschanische SSR
+    lang: de
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: Azerbaijan SSR
+    lang: en
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: RSS de Azerbaiyán
+    lang: es
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: RSS de Azerbaidján
+    lang: gl
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: 아제르바이잔 소비에트 사회주의 공화국
+    lang: ko
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: Азербайджанская ССР
+    lang: ru
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: Азербайджанська СРР
+    lang: uk
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988
+  - text: Азербайджанская ССР
+    lang: und
+    start: 1921-10-13
+    end: 1922-03-12
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2697988

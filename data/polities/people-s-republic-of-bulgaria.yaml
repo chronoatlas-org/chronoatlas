@@ -1,0 +1,374 @@
+id: people-s-republic-of-bulgaria
+wikidata: Q121932
+names:
+  - text: جمهورية بلغاريا الشعبية
+    lang: ar
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: República Popular de Bulgaria
+    lang: ast
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народная Рэспубліка Балгарыя
+    lang: be
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народна република България
+    lang: bg
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: República Popular de Bulgària
+    lang: ca
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulharská lidová republika
+    lang: cs
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Folkerepublikken Bulgarien
+    lang: da
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Volksrepublik Bulgarien
+    lang: de
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Λαϊκή Δημοκρατία της Βουλγαρίας
+    lang: el
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: People's Republic of Bulgaria
+    lang: en
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Popola Respubliko Bulgario
+    lang: eo
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: República Popular de Bulgaria
+    lang: es
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulgaaria Rahvavabariik
+    lang: et
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: جمهوری خلق بلغارستان
+    lang: fa
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulgarian kansantasavalta
+    lang: fi
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: République populaire de Bulgarie
+    lang: fr
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: הרפובליקה העממית של בולגריה
+    lang: he
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Narodna Republika Bugarska
+    lang: hr
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bolgár Népköztársaság
+    lang: hu
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Republik Rakyat Bulgaria
+    lang: id
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Repubblica Popolare di Bulgaria
+    lang: it
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: ブルガリア人民共和国
+    lang: ja
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: ბულგარეთის სახალხო რესპუბლიკა
+    lang: ka
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: 불가리아 인민공화국
+    lang: ko
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: ສາທາລະນະລັດປະຊາຊົນບັນແກເລຍ
+    lang: lo
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulgārijas Tautas Republika
+    lang: lv
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народна Република Бугарија
+    lang: mk
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Republik Rakyat Bulgaria
+    lang: ms
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Folkerepublikken Bulgaria
+    lang: nb
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Volksrepubliek Bulgarije
+    lang: nl
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Folkerepublikken Bulgaria
+    lang: no
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Болгарийы Адæмон Республикæ
+    lang: os
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Ludowa Republika Bułgarii
+    lang: pl
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: República Popular da Bulgária
+    lang: pt
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Republica Populară Bulgaria
+    lang: ro
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народная Республика Болгария
+    lang: ru
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Булгарьска людова републіка
+    lang: rue
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Repùblica Populare de Bulgaria
+    lang: sc
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Narodna Republika Bugarska
+    lang: sh
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulharská ľudová republika
+    lang: sk
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Republika Popullore e Bullgarisë
+    lang: sq
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народна Република Бугарска
+    lang: sr
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Folkrepubliken Bulgarien
+    lang: sv
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: สาธารณรัฐประชาชนบัลแกเรีย
+    lang: th
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Republikang Bayan ng Bulgarya
+    lang: tl
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bulgaristan Halk Cumhuriyeti
+    lang: tr
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Болгария Халык Җөмһүрияте
+    lang: tt
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народна Республіка Болгарія
+    lang: uk
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Народна република България
+    lang: und
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: عوامی جمہوریہ بلغاریہ
+    lang: ur
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Bolgariya Xalq Respublikasi
+    lang: uz
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: Cộng hòa Nhân dân Bulgaria
+    lang: vi
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876
+  - text: 保加利亞人民共和國
+    lang: zh
+    start: 1946-09-15
+    end: 1990-11-15
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2848876

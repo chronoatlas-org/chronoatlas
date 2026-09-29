@@ -1,0 +1,31 @@
+id: state-of-turkey
+wikidata: Q2949827
+names:
+  - text: State of Turkey
+    lang: en
+    start: 1922-11-01
+    end: 1924-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2958039
+  - text: ترکیه دولتی
+    lang: ota
+    start: 1922-11-01
+    end: 1924-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2958039
+  - text: Türkiye Devleti
+    lang: ota-Latn
+    start: 1922-11-01
+    end: 1924-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2958039
+  - text: ترکیه دولتی
+    lang: und
+    start: 1922-11-01
+    end: 1924-08-06
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2958039

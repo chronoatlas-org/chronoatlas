@@ -1,0 +1,486 @@
+id: kingdom-of-romania
+wikidata: Q218
+names:
+  - text: Königreich Rumänien
+    lang: als
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: مملكة رومانيا
+    lang: ar
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Reinu de Rumanía
+    lang: ast
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumıniya krallığı
+    lang: az
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Румыния короллеге
+    lang: ba
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Каралеўства Румынія
+    lang: be
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Кралство Румъния
+    lang: bg
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kraljevina Rumunija
+    lang: bs
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regne de Romania
+    lang: ca
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kraljevina Rumunija
+    lang: cnr
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumunské království
+    lang: cs
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kongeriget Rumænien
+    lang: da
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Königreich Rumänien
+    lang: de
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Βασίλειο της Ρουμανίας
+    lang: el
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kingdom of Romania
+    lang: en
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Reĝlando Rumanio
+    lang: eo
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Reino de Rumania
+    lang: es
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumeenia Kuningriik
+    lang: et
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Errumaniako Erresuma
+    lang: eu
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: پادشاهی رومانی
+    lang: fa
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Romanian kuningaskunta
+    lang: fi
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Royaume de Roumanie
+    lang: fr
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Ríocht na Rómáine
+    lang: ga
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rìoghachd Romàinia
+    lang: gd
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Reino de Romanía
+    lang: gl
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: ממלכת רומניה
+    lang: he
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kraljevina Rumunjska
+    lang: hr
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Román Királyság
+    lang: hu
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Ռումինիայի թագավորություն
+    lang: hy
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kerajaan Rumania
+    lang: id
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rejio Rumania
+    lang: io
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regno di Romania
+    lang: it
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: ルーマニア王国
+    lang: ja
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: რუმინეთის სამეფო
+    lang: ka
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: A̱byintyok Romaniya
+    lang: kcg
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: 루마니아 왕국
+    lang: ko
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Keyaniya Romanyayê
+    lang: ku
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regno de Romania
+    lang: lij
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumunijos karalystė
+    lang: lt
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumānijas Karaliste
+    lang: lv
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Кралство Романија
+    lang: mk
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kerajaan Beraja Romania
+    lang: ms
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kongedømmet Romania
+    lang: nb
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Koninkrijk Roemenië
+    lang: nl
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kongedømet Romania
+    lang: nn
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kongedømmet Romania
+    lang: no
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Królestwo Rumunii
+    lang: pl
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: د رومانیا پاچاهي
+    lang: ps
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Reino da Romênia
+    lang: pt
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regatul României
+    lang: ro
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Королевство Румынія
+    lang: ru
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Королевство Румыния
+    lang: ru-luna1918
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Королевство Румынія
+    lang: ru-petr1708
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regnu de Romania
+    lang: sc
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Краљевина Румунија
+    lang: sh-Cyrl
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kraljevina Rumunija
+    lang: sh-Latn
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Rumunské kráľovstvo
+    lang: sk
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Mbretëria e Rumanisë
+    lang: sq
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Краљевина Румунија
+    lang: sr
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kraljevina Rumunija
+    lang: sr-Latn
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Kungariket Rumänien
+    lang: sv
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: రొమేనియా రాజ్యం
+    lang: te
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: ราชอาณาจักรโรมาเนีย
+    lang: th
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Romanya Krallığı
+    lang: tr
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Румунське королівство
+    lang: uk
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Regatul României
+    lang: und
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: مملکت رومانیہ
+    lang: ur
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: Vương quốc România
+    lang: vi
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260
+  - text: 羅馬尼亞王國
+    lang: zh
+    start: 1881-03-14
+    end: "1918"
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relations 2692219, 2693260

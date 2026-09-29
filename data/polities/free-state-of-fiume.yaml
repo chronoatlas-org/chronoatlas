@@ -1,0 +1,269 @@
+id: free-state-of-fiume
+wikidata: Q548114
+names:
+  - text: Azad Fiume Dövləti
+    lang: az
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Свободен град Фиуме
+    lang: bg
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Slobodna Država Rijeka
+    lang: bs
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Estat Lliure de Fiume
+    lang: ca
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiume
+    lang: cs
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Freistaat Fiume
+    lang: de
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Ελεύθερο Κράτος του Φιούμε
+    lang: el
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Free State of Fiume
+    lang: en
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Estado Libre de Fiume
+    lang: es
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiume Vaba Riik
+    lang: et
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiumeko Estatu Askea
+    lang: eu
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiumen vapaavaltio
+    lang: fi
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: État libre de Fiume
+    lang: fr
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Estado Libre de Fiume
+    lang: gl
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Slobodna Država Rijeka
+    lang: hr
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiumei Szabadállam
+    lang: hu
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Stato libere de Fiume
+    lang: ia
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Negara Bebas Fiume
+    lang: id
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Stato Libero di Fiume
+    lang: it
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: フィウーメ自由国
+    lang: ja
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: 피우메 자유국
+    lang: ko
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Civitas Libera Fluminensis
+    lang: la
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Laisvoji Fjumės valstybė
+    lang: lt
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Слободна Држава Риека
+    lang: mk
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Negara Bebas Fiume
+    lang: ms
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fristaten Fiume
+    lang: nb
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Vrijstaat Fiume
+    lang: nl
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Wolne Miasto Fiume
+    lang: pl
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Estado Livre de Fiume
+    lang: pt
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Statul Liber Fiume
+    lang: ro
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Свободный город Фиуме
+    lang: ru
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Reška država
+    lang: sl
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Слободна Држава Ријека
+    lang: sr
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fristaten Fiume
+    lang: sv
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Fiume Özgür Devleti
+    lang: tr
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Вільна держава Фіуме
+    lang: uk
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: Stato Libero di Fiume
+    lang: und
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
+  - text: 阜姆自由邦
+    lang: zh
+    start: 1920-12-30
+    end: 1924-02-22
+    sources:
+      - source: openhistoricalmap
+        locator: name tags on relation 2696321
