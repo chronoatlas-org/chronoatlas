@@ -157,6 +157,10 @@ export const en = {
   'figure.computed':
     'Computed by chronoatlas: the area inside this border and inside Natural Earth’s present-day coastline (1:10m; lakes count as land), measured on the globe. Approximate: coastlines have changed since, for example through land reclamation, and the figure is rounded to 2 significant figures.',
   'figure.presentDay': 'Counted within present-day borders ({detail}), not this polity’s own territory.',
+  // An area a source gives for its own shape (Cliopatria's `Area`), not measured by chronoatlas.
+  'figure.area': 'Area',
+  'figure.computedBy':
+    'As {source} gives it for this record, from its own shape; not measured by chronoatlas, so it may count land and water differently from the land areas measured here. Rounded to 2 significant figures.',
   'figure.asOf': 'The nearest estimate to this date: {date}.',
   // A de jure unit's record, linked by the crosswalk (see data/imports/cshapes-2-0/).
   'panel.heldAs': '{relation}, as “{name}”',

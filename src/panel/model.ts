@@ -108,6 +108,8 @@ export interface FigureEntry {
   partOf?: string;
   /** Coastal waters inside the border that the land area leaves out, in km². */
   waterKm2?: number;
+  /** The source that computed it from its own shape (Cliopatria's `Area`), when not chronoatlas. */
+  computedBy?: string;
   sources: Citation[];
   notes?: string;
 }
@@ -655,7 +657,8 @@ export function describeTerritory(
     if (f.records && f.records.length > 1 && f.records.some(unsure)) notes.push(t('figure.uncertain'));
     if (f.partOf) notes.push(t('figure.partOf', { area: f.partOf }));
     if (f.waterKm2) notes.push(t('figure.water', { value: number(f.waterKm2) }));
-    if (f.basis === 'computed-from-shape') notes.push(t('figure.computed'));
+    if (f.computedBy) notes.push(t('figure.computedBy', { source: sources[f.computedBy]?.title ?? f.computedBy }));
+    else if (f.basis === 'computed-from-shape') notes.push(t('figure.computed'));
     if (f.basis === 'present-day-borders') notes.push(t('figure.presentDay', { detail: f.basisDetail ?? '' }));
     if (f.date) notes.push(t('figure.asOf', { date: describeEventDate(f.date) }));
     if (f.notes) notes.push(f.notes);
@@ -663,7 +666,8 @@ export function describeTerritory(
       f.value !== undefined ? number(f.value) : f.low !== undefined && f.high !== undefined ? t('figure.range', { low: number(f.low), high: number(f.high) }) : '';
     figureLines.push({
       id: `${f.metric}-${f.relation ?? ''}-${f.date ?? f.s0}`,
-      label: FIGURE_KEYS[f.metric] ? t(FIGURE_KEYS[f.metric]) : f.metric,
+      // A source's own area isn't our land-only measurement, so it's just "Area".
+      label: f.computedBy && f.metric === 'area-km2' ? t('figure.area') : FIGURE_KEYS[f.metric] ? t(FIGURE_KEYS[f.metric]) : f.metric,
       value: f.metric === 'area-km2' ? t('figure.areaValue', { value: amount }) : t('figure.approximately', { value: amount }),
       notes,
       sources: sourceLines(f.sources, sources),

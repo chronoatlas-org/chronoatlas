@@ -545,6 +545,23 @@ describe('land areas', () => {
     expect(first.sources).toEqual([...cite, landSource]);
     expect(first.waterKm2).toBeGreaterThan(20_000); // the sea half of "coastal", left out of the land area
   });
+
+  it('adds the area a source gives for its own shape (Cliopatria’s Area), per record and credited to it', () => {
+    // A made-up Testland row with the area its (made-up) source gives, and no measurement of ours.
+    const row = { id: 'row', relation: 'controls' as const, subject: 'testland', shape: 'given', start: '1901', end: '1903', sources: [{ source: 'cliopatria', locator: '"Testland", 1901 to 1902' }] };
+    const withGiven: Dataset = {
+      ...ds,
+      assertions: [{ file: 'data/imports/cliopatria/assertions.yaml', value: [row] }],
+      shapes: [{ file: 'given', value: { type: 'Feature', properties: { id: 'given', edge_precision: 'unknown', cliopatria_area_km2: 123_456 }, geometry: { type: 'Polygon', coordinates: [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]] } } }],
+    };
+    const [file] = buildPolityFiles(withGiven);
+    expect(file.figures).toEqual([
+      {
+        metric: 'area-km2', value: 123_000, basis: 'computed-from-shape', computedBy: 'cliopatria',
+        s0: civilToJdn(1901, 1, 1), e0: civilToJdn(1903, 1, 1), relation: 'controls', records: ['row'], sources: row.sources,
+      },
+    ]);
+  });
 });
 
 describe('eras in the build', () => {

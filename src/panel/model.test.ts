@@ -368,6 +368,19 @@ describe('describeTerritory: figures', () => {
     expect(describeTerritory(withFigures, sources, day(1906, 1, 1), 'en').figures.map((f) => f.label)).not.toContain('Land area');
   });
 
+  it('shows an area a source gives for its own shape as that source’s, not as our land area', () => {
+    const given: PolityFile = {
+      ...testland,
+      figures: [{ metric: 'area-km2', value: 321_000, basis: 'computed-from-shape', computedBy: 'test-source', s0: day(1901, 1, 1), e0: day(1902, 1, 1), relation: 'controls', records: ['a'], sources: cite }],
+    };
+    const [area] = describeTerritory(given, sources, day(1901, 6, 1), 'en').figures;
+    expect(area.label).toBe('Area');
+    expect(area.value).toBe('about 320,000 km²');
+    const notes = area.notes.join(' ');
+    expect(notes).toMatch(new RegExp(`As ${sources['test-source'].title} gives it for this record, from its own shape; not measured by chronoatlas`));
+    expect(notes).not.toMatch(/present-day coastline/);
+  });
+
   it('warns when a combined area includes a record that may not apply on the date', () => {
     // Record "a" starts in "1901", known only to the year.
     const [area] = describeTerritory(withFigures, sources, day(1901, 6, 1), 'en').figures;

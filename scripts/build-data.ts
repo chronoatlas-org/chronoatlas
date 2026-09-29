@@ -1096,6 +1096,10 @@ export function buildPolityFiles(
   const shapes = new Map(ds.shapes.map(({ value }) => [value.properties.id, asMultiPolygon(value.geometry)]));
   const km2 = new Map([...shapes].map(([id, geometry]) => [id, areaKm2(geometry)]));
   const edges = new Map(ds.shapes.map(({ value }) => [value.properties.id, value.properties.edge_precision]));
+  // The area Cliopatria gives for each of its shapes (its `Area` column), in km².
+  const givenAreas = new Map(
+    ds.shapes.flatMap(({ value }) => (typeof value.properties.cliopatria_area_km2 === 'number' ? [[value.properties.id, value.properties.cliopatria_area_km2] as const] : [])),
+  );
   const links = crosswalkLinks(ds);
 
   /** Whether two territorial records share land (at least CShapes' 10,000 km²) on the same days. */
@@ -1190,6 +1194,25 @@ export function buildPolityFiles(
         // Coastal waters inside the border, when they're more than a sliver.
         ...(water >= f.totalKm2 * 0.01 ? { waterKm2: water } : {}),
         sources: f.sources,
+      });
+    }
+    // Areas a source gives for its own shapes (Cliopatria's `Area`, Phase 5 decision 7), instead of
+    // measuring its 12,000 rows on every build: one per record, for the days it certainly covers
+    // (a yearly row's years), credited to the record's source.
+    for (const a of mentions.get(p.id) ?? []) {
+      const given = a.subject === p.id && a.shape ? givenAreas.get(a.shape) : undefined;
+      if (given === undefined || !TERRITORIAL_RELATIONS.includes(a.relation)) continue;
+      const { s0, e0 } = dayRanges(a.start, a.end);
+      figures.push({
+        metric: 'area-km2',
+        value: roughly(given),
+        basis: 'computed-from-shape',
+        computedBy: a.sources[0].source,
+        s0,
+        e0,
+        relation: a.relation,
+        records: [a.id],
+        sources: [a.sources[0]],
       });
     }
     for (const f of ds.figures.flatMap(({ value }) => value).filter((f) => f.polity === p.id)) {
