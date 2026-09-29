@@ -92,6 +92,11 @@ export const en = {
   'panel.report': 'Report a problem with this border',
   'panel.reportNote': 'Opens a form on GitHub, which needs a free GitHub account.',
   // A link to the polity's Wikipedia article (by its Wikidata ID); nothing from it is shown here.
+  // Contested areas are worked out only where the maintainers have reviewed the crosswalk (Phase 5 step 8).
+  'panel.notChecked':
+    'Not yet checked against legal borders here: contested areas are worked out only where the maintainers have reviewed which states in each source are the same, so none being shown doesn’t mean none existed.',
+  'panel.partlyChecked':
+    'Checked against legal borders only in part: contested areas are worked out only where the maintainers have reviewed which states in each source are the same, so some may not be shown.',
   'panel.wikipedia': 'Read about it on Wikipedia',
   'panel.wikipediaNote': 'An outside site, written by others; this map hasn’t checked what it says.',
   // When the article is the one a source links (Cliopatria's Wikipedia column), not our Wikidata ID.

@@ -94,6 +94,25 @@ describe('validateDataset', () => {
     expect(text).toMatch(/ends before it starts/);
   });
 
+  it('lets a crosswalk match a baseline\'s polity (Cliopatria\'s), but not another import\'s', () => {
+    const polity = (id: string): Polity => ({ id, names: [{ text: id, lang: 'en', sources: [{ source: 'test-atlas', locator: 'p. 3' }] }] });
+    const base = dataset();
+    const ds = dataset({
+      polities: [
+        ...base.polities,
+        { file: 'data/imports/test-import/polities/test-unit-1.yaml', value: polity('test-unit-1') },
+        { file: 'data/imports/cliopatria/polities/cliopatria-testland.yaml', value: polity('cliopatria-testland') },
+        { file: 'data/imports/other-import/polities/other-unit.yaml', value: polity('other-unit') },
+      ],
+      crosswalks: [
+        { file: 'data/imports/test-import/polity-crosswalk.yaml', value: [{ unit: 'test-unit-1', matches: [{ polity: 'cliopatria-testland', kind: 'same-state' }] }] },
+      ],
+    });
+    expect(validateDataset(ds, { fileExists: () => true })).toEqual([]);
+    ds.crosswalks[0].value[0].matches.push({ polity: 'other-unit', kind: 'same-state' });
+    expect(messages(ds)).toMatch(/polity "other-unit" should be one of ours \(data\/polities\/\) or a baseline's/);
+  });
+
   it('accepts a valid dataset', () => {
     expect(validateDataset(dataset(), { fileExists: () => true })).toEqual([]);
   });

@@ -9,7 +9,7 @@
 //   7. a polity record inside an import folder (data/imports/<name>/polities/) is only used by
 //      that folder's own records, so nothing derived from that source leaks outside it;
 //   8. a crosswalk (data/imports/<name>/polity-crosswalk.yaml) links that folder's units to our
-//      own polities, with dates that parse.
+//      own polities, or to a baseline's (Cliopatria's, BASELINE_FOLDERS), with dates that parse.
 //   9. a crosswalk's reviewed scopes (crosswalk-reviewed.yaml beside it) have dates that parse and
 //      a box that isn't empty.
 
@@ -19,7 +19,7 @@ import { Ajv2020 } from 'ajv/dist/2020.js';
 import type { ValidateFunction } from 'ajv/dist/2020.js';
 import { EdtfError, parseEdtf, parseEdtfDate } from '../../src/dates/index.ts';
 import type { HistoricalDate } from '../../src/dates/index.ts';
-import { ROOT } from './data.ts';
+import { BASELINE_FOLDERS, ROOT } from './data.ts';
 import type { Dataset, Loaded, Problem } from './data.ts';
 import { END_KEYWORDS } from './types.ts';
 import type { Citation } from './types.ts';
@@ -223,7 +223,8 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
   for (const { file, value: f } of list(ds.figures)) mustStayHome(file, f.polity);
 
   // 8. Crosswalks: each unit is a polity of the crosswalk's own folder, and each match is one of
-  // our polities (data/polities/), with dates that parse and don't run backwards.
+  // our polities (data/polities/) or of a baseline folder other than its own (Cliopatria, where
+  // the map has no data of ours; Phase 5 step 8), with dates that parse and don't run backwards.
   for (const { file, value } of ds.crosswalks) {
     const folder = file.slice(0, file.lastIndexOf('/'));
     for (const entry of Array.isArray(value) ? value : []) {
@@ -231,7 +232,12 @@ export function validateDataset(ds: Dataset, options: ValidateOptions = {}): Pro
       else if (homeFolder.get(entry.unit) !== folder) report(file, `unit "${entry.unit}" is not a polity of ${folder}`);
       for (const match of entry.matches ?? []) {
         if (!polities.has(match.polity)) report(file, `polity "${match.polity}" does not exist`);
-        else if (homeFolder.has(match.polity)) report(file, `polity "${match.polity}" should be one of ours (data/polities/), not an import's`);
+        else if (homeFolder.has(match.polity)) {
+          const home = homeFolder.get(match.polity)!;
+          if (home === folder || !BASELINE_FOLDERS.includes(home)) {
+            report(file, `polity "${match.polity}" should be one of ours (data/polities/) or a baseline's (${BASELINE_FOLDERS.join(', ')}), not ${home === folder ? 'this folder\'s own' : `${home}'s`}`);
+          }
+        }
         const start = match.from === undefined ? null : date(file, `match ${entry.unit} → ${match.polity} from`, match.from);
         const stop = match.until === undefined ? null : date(file, `match ${entry.unit} → ${match.polity} until`, match.until);
         if (start && stop && start.earliest >= stop.earliest) report(file, `match ${entry.unit} → ${match.polity} ends before it starts`);

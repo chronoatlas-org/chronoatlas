@@ -750,8 +750,11 @@ export class HistoricalLayers {
         minzoom: index.minzoom,
         maxzoom: index.maxzoom,
         bounds: contested.bounds,
-        attribution:
-          'Contested areas: computed from OpenHistoricalMap and <a href="https://icr.ethz.ch/data/cshapes/">CShapes 2.0 (CC BY-NC-SA 4.0)</a>',
+        // Credits every source they were computed from: Cliopatria too, where it's the map (step 8).
+        attribution: `Contested areas: computed from ${[
+          'OpenHistoricalMap',
+          ...(contested.sources?.includes('cliopatria') ? ['<a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria (CC BY 4.0)</a>'] : []),
+        ].join(', ')} and <a href="https://icr.ethz.ch/data/cshapes/">CShapes 2.0 (CC BY-NC-SA 4.0)</a>`,
       });
       map.addLayer(
         {
