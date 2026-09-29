@@ -174,6 +174,26 @@ Worldwide, from 1886 to 2019, that's hundreds of units in each source, too many 
   (question 7):* show Cliopatria's own `Area` for its rows, as a figure from Cliopatria
   (`computed-from-shape`, credited to Cliopatria), and keep our own measurement for
   OpenHistoricalMap's polities. The panel already says who measured a figure and how.
+- **A link to Wikipedia** (added 2026-09-29, at the maintainers' request): the territory panel links
+  each polity to its Wikipedia article, so a visitor can read about it at once. It's a link only:
+  nothing from Wikipedia is copied into our data (its text is CC BY-SA), and the panel says it
+  leads to an outside site, written by others, that this map hasn't checked (ground rule 4).
+  - **Where the link comes from** (never guessed from a name):
+    - **Our polities** (from OpenHistoricalMap; 48 of 62 have one): their Wikidata ID, a
+      cross-reference as the approved decisions allow. The link is Wikidata's "go to the linked
+      article" address (`https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/Q…`), which
+      opens the article in the visitor's language when there is one (and later in the site's
+      language), and Wikidata's page when there's none. No API, key, or server is involved.
+    - **Cliopatria's polities matched to ours** in its reviewed crosswalk: our polity's link.
+    - **Cliopatria's other polities** (about 1,500): Cliopatria's own `Wikipedia` column, the
+      article its authors cite for the row, with "Wikipedia article, as Cliopatria links it". Not
+      its Wikidata IDs, which are wrong for some rows: its "Republic of China" carries Q148 (the
+      People's Republic), while its Wikipedia column correctly names "Republic of China
+      (1912-1949)". This is question 14.
+    - **CShapes' units:** through its crosswalk only (CShapes has no Wikipedia column).
+    - **No link** where none of these gives one: the panel just doesn't show it.
+  - **Where it goes:** in the polity files (one field per polity), not in the tiles, so it costs
+    nothing on the map. Events that have a Wikidata ID can get the same link later.
 - **"Around this date":** `changes.json` is split by era, like the tiles, and loaded for the era in
   view.
 - **Coasts:** the detailed coast (Natural Earth 1:10m, from zoom 4) extends worldwide. Whether
@@ -236,7 +256,7 @@ recommended effort setting.
 | 3 | **Import Cliopatria worldwide, all years,** and **CShapes worldwide** (settings changes to the two imports, reviewed with the data-change summary). | medium |
 | 4 | **Era tile sets** in the build, and era switching on the map, with a change index per era. | high |
 | 5 | **The baseline layer:** Cliopatria filled outside OpenHistoricalMap's area, with its legend entry, credit, panel wording, and the reworded edge line. | high |
-| 6 | **Panel and data files by era:** "Around this date" per era, Cliopatria's own areas as figures, polity files. | medium |
+| 6 | **Panel and data files by era:** "Around this date" per era, Cliopatria's own areas as figures, polity files, and the link to Wikipedia (section 7; added 2026-09-29). | medium |
 | 7 | **Coasts worldwide,** as measured in step 2. | medium |
 | 8 | **Contested areas region by region:** the suggestion tool, "Not yet checked against legal borders here", and the first region's crosswalk review (with the maintainers). | high |
 | 9 | **OpenHistoricalMap's coverage by region** (a one-off workflow run), recorded in data-sources.md. | low |
@@ -418,6 +438,18 @@ Each has a recommended answer. "Approve with the recommendations" answers them a
    yes.*
 9. **Translations** only with a native speaker's review, starting with whichever of Chinese,
    Japanese, and Korean has a volunteer first? *Recommended: yes.*
+
+Added on 2026-09-29, with the link to Wikipedia the maintainers asked for (section 7):
+
+14. **Wikipedia links for Cliopatria's unmatched polities** (about 1,500): use Cliopatria's own
+    `Wikipedia` column, worded "as Cliopatria links it", or show links only where our own reviewed
+    IDs give one (our polities, and Cliopatria's 26 matched ones)? *Recommended: use Cliopatria's
+    column, attributed.* Its authors chose each article for the row, and it's right where its
+    Wikidata IDs are wrong (the "Republic of China" rows); without it, the world outside East Asia
+    would have almost no links. A wrong one is reported like any other problem, and fixed by a
+    note in the build until Cliopatria fixes it upstream.
+
+(Questions 10–13 were step 2's proposed changes, decided as decisions 10–13 below.)
 
 ## 12. Decisions (2026-09-28)
 
