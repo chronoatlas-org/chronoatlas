@@ -429,9 +429,14 @@ It is only started if steps 2–15 leave room, and it can be a Phase 7 headline 
    yes.*
 10. **The interface** (section 10): mockups first (step 3), tried with a few people, then one
    build (step 7), with light, dark and high-contrast themes and a self-hosted open-license UI
-   font? And the display name: **ChronoAtlas** (my recommendation), Chronoatlas, Chrono Atlas, or
-   the current lowercase? Addresses and the repository keep `chronoatlas` whatever is displayed.
-   *Recommended: yes.*
+   font? *Recommended: yes.*
+    **The name.** The current name is very close to an existing commercial site
+    (`chronoatlas.nl`), so a rename before any launch or marketing is planned. A hyphen or a
+    capital letter doesn't separate them. Candidates are checked (existing sites and products,
+    GitHub, domains, trademark registers) before anything is renamed; addresses and the repository
+    keep `chronoatlas` until then. Renaming is the maintainers' outward-facing step. *Recommended:
+    rename, choosing a distinctive word and using a plain description ("borders through time,
+    with sources") as the tagline.*
 11. **The launch showcase** (section 11): China 1937–45 after the interface work, Southeast Asia
    measured but not imported in this phase? *Recommended: yes.*
 12. **New requests** the maintainers add before approval are placed in the order in section 14 by
@@ -447,7 +452,7 @@ layout), then add features on top**, so nothing is built twice.
 |---|---|---|
 | 1 | Record Phase 5 closed and the Phase 6 decisions (docs only). | low |
 | 2 | **Measure before building:** profile the map (frames, layers, idle use), measure the alignment errors of section 5, check Natural Earth's water names and the flag sources (Commons licenses, a sample of Wikidata's flag statements). Results may change this plan; any change comes back to the maintainers. | high |
-| 3 | **Design direction (no code):** two or three mockups of the redesigned interface (section 10) on real screenshots, desktop and phone, a wordmark and the display name; tried with a few people; the maintainers choose. | medium |
+| 3 | **Design direction (no code):** two or three mockups of the redesigned interface (section 10) on real screenshots, desktop and phone, a wordmark and the display name (after the name check, question 10); tried with a few people; the maintainers choose. | medium |
 | 4 | **Performance pass:** the fixes measured to matter, the lighter-map setting, and an idle-repaint check. Repeat the measures. | high |
 | 5 | **Detail and coasts:** the matching base map, less simplification where sources are finer, the source-resolution note, and the coast-gap decision (question 3), with the check of how Cliopatria's shapes were made. | high |
 | 6 | **Smooth era changes:** keep old tiles until new ones are ready, prefetch neighbours, blend. | high |
@@ -494,5 +499,7 @@ The vision is large on purpose. These are the levers, in the order to reach for 
 - **Coast gaps:** the maintainers lean toward option B (a flagged, build-only approximate margin).
 - **Launch showcase after the interface work:** China 1937–45 is shown once the interface and
   visitor features are done, and the interface is redesigned before they are built into it.
+- **Name:** the current name collides with an existing commercial site, so a rename is planned;
+  the choice waits for the name check (question 10).
 - **No scripted stories:** the map is the storyteller; events are chosen by what the map needs.
 - **Report by drawing:** considered and not added; the existing "Report a problem" link is enough.
