@@ -284,6 +284,19 @@ with an effort setting for each step. The ones that affect everyday work:
     the crosswalk (schema `crosswalk-reviewed.schema.json`); `buildContested` cuts contested
     areas to them with `withinScopes` (`scripts/lib/contested.ts`). CShapes' lists East Asia
     1900–1950 only. A hand-made test dataset without `crosswalkScopes` isn't limited.
+  - **Where Cliopatria is the map** (Phase 5 step 8), `buildContested` compares its baseline
+    pieces with CShapes too, with the 10 km width rule of "sources differ", comparing only
+    records that touch a reviewed scope. So a crosswalk may match units to Cliopatria's polities
+    (`BASELINE_FOLDERS` in `scripts/lib/data.ts`; the validator's check 8). Polity files mark a
+    map record outside the reviewed scopes, in years CShapes covers, `legal: 'unchecked'` or
+    `'partly'`, and the panel says "Not yet checked against legal borders here" (or "only in
+    part").
+  - **Suggestions:** `npm run suggest-crosswalk -- --region=W,S,E,N --years=FROM,TO --out=… --trial`
+    (`scripts/lib/suggest.ts`, tested). It suggests a link only where a Cliopatria polity held
+    most of one of its main holder's units; breakaway states, rival governments, occupation zones,
+    and occupiers of other states' units go under "Look closer", never suggested. `--trial` lists
+    the contested areas if every suggestion were accepted. Reports and how to review them are in
+    `docs/crosswalk-review/`; Europe 1914–1950 waits for the maintainers' review.
   - The CShapes import skips dependencies whose owner code isn't a state in CShapes (codes 0 and
     1: Danzig 1919–1938, West Irian 1962–63) and lists them in its manifest; what those codes
     stand for is for the maintainers to check in the codebook.
@@ -314,7 +327,8 @@ LTS, and the GitHub CLI are installed.
 **Commands** (see the README table): `npm install`, `npm run dev` (http://localhost:5173),
 `npm run build`, `npm run preview`, `npm run typecheck`, `npm test`, `npm run test:watch`,
 `npm run validate`, `npm run summarize-changes` (compares `data/` with `origin/main`; options at the
-top of the script), `npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
+top of the script), `npm run suggest-crosswalk` (options at the top of the script),
+`npm run build-data`, `npm run import:ohm`, `npm run import:cshapes`, and
 `npm run import:cliopatria` (add `-- --offline` to reprocess the last download),
 `npm run import:natural-earth`.
 

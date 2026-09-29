@@ -37,7 +37,7 @@ import { civilToJdn, parseEdtfDate } from '../src/dates/index.ts';
 import { formatDayForUrl } from '../src/url/state.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset, Loaded } from './lib/data.ts';
-import { boundingBox, computeContested, withinScopes } from './lib/contested.ts';
+import { boundingBox, computeContested, MIN_DISAGREEMENT_KM2, withinScopes } from './lib/contested.ts';
 import { chooseEras, inEra } from './lib/eras.ts';
 import type { Era, EraItem } from './lib/eras.ts';
 import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
@@ -872,14 +872,23 @@ export function buildAreas(ds: Dataset, land = loadLand(ds)): Map<string, AreaFi
 export function buildContested(ds: Dataset): ContestedArea[] {
   const byUnit = new Map<string, Link[]>();
   for (const link of crosswalkLinks(ds)) byUnit.set(link.unit, [...(byUnit.get(link.unit) ?? []), link]);
-  const areas = computeContested(
-    timedShapes(ds, onDefaultMap, ['administers', 'controls', 'occupies']),
-    timedShapes(ds, isDejure, ['sovereign', 'occupies']),
-    byUnit,
-  );
   // Only where the de jure source's crosswalk has been reviewed (Phase 5 decision 6). A dataset
   // made by hand (in tests) that doesn't say is taken as reviewed everywhere.
-  return ds.crosswalkScopes ? withinScopes(areas, reviewedScopes(ds, isDejure)) : areas;
+  const scopes = ds.crosswalkScopes ? reviewedScopes(ds, isDejure) : undefined;
+  const inScope = (t: TimedShape) =>
+    !scopes || scopes.some(({ box: [w, s, e, n], d0, d1 }) => t.s0 < d1 && t.e0 > d0 && t.box[0] < e && t.box[2] > w && t.box[1] < n && t.box[3] > s);
+  const dejure = timedShapes(ds, isDejure, ['sovereign', 'occupies']).filter(inScope);
+  // What the map shows as administered: the default map where and when its imports hold data, and
+  // Cliopatria (the baseline) elsewhere (Phase 5 step 8). Cliopatria's coarse lines wander a few
+  // kilometres, so its thin strips don't count, as for "sources differ".
+  const coverage = defaultCoverage(ds);
+  const defaultMap = timedShapes(splitAtCoverage(ds, onDefaultMap, coverage, 'during'), onDefaultMap, ['administers', 'controls', 'occupies']).filter(inScope);
+  const baseline = timedShapes(splitAtCoverage(ds, isSecondOpinion, coverage, 'outside'), isSecondOpinion, ['controls']).filter(inScope);
+  const areas = [
+    ...computeContested(defaultMap, dejure, byUnit),
+    ...computeContested(baseline, dejure, byUnit, MIN_DISAGREEMENT_KM2, DIFFER_MIN_WIDTH_KM),
+  ];
+  return scopes ? withinScopes(areas, scopes) : areas;
 }
 
 /** The reviewed scopes (crosswalk-reviewed.yaml) of the import folders `include` accepts, as boxes and days. */
@@ -1140,6 +1149,28 @@ export function buildPolityFiles(
     ds.shapes.flatMap(({ value }) => (typeof value.properties.cliopatria_area_km2 === 'number' ? [[value.properties.id, value.properties.cliopatria_area_km2] as const] : [])),
   );
   const links = crosswalkLinks(ds);
+  // Which records the map draws as administered were checked against legal borders (Phase 5 step
+  // 8): only where a crosswalk has been reviewed, and only in the years a legal source covers. A
+  // dataset made by hand (in tests) that doesn't say is taken as reviewed everywhere.
+  const scopes = ds.crosswalkScopes ? reviewedScopes(ds, isDejure) : undefined;
+  const legalDays = ds.assertions.filter(({ file }) => isDejure(file)).flatMap(({ value }) => value).map((a) => dayRanges(a.start, a.end));
+  const legalFrom = Math.min(...legalDays.map((d) => d.s0));
+  const legalUntil = Math.max(...legalDays.map((d) => d.e1));
+  const mapFile = new Map(ds.assertions.filter(({ file }) => onDefaultMap(file) || isSecondOpinion(file)).flatMap(({ file, value }) => value.map((a) => [a.id, file] as const)));
+  const legalCheck = (a: Assertion): PolityRecord['legal'] => {
+    if (!scopes || !a.shape || !mapFile.has(a.id) || !TERRITORIAL_RELATIONS.includes(a.relation)) return undefined;
+    const { s0, e1 } = dayRanges(a.start, a.end);
+    const from = Math.max(s0, legalFrom);
+    const until = Math.min(e1, legalUntil);
+    if (from >= until) return undefined; // no legal source for these years: nothing to check against
+    const geometry = shapes.get(a.shape);
+    if (!geometry) return undefined;
+    const [w, s, e, n] = boundingBox(geometry);
+    const touching = scopes.filter(({ box, d0, d1 }) => d0 < until && d1 > from && box[0] < e && box[2] > w && box[1] < n && box[3] > s);
+    if (touching.length === 0) return 'unchecked';
+    const whole = touching.some(({ box, d0, d1 }) => d0 <= from && d1 >= until && box[0] <= w && box[2] >= e && box[1] <= s && box[3] >= n);
+    return whole ? undefined : 'partly';
+  };
   // The Wikipedia article Cliopatria links for each of its records (its `Wikipedia` column).
   const articleOf = new Map<string, string>();
   for (const a of ds.assertions.flatMap(({ value }) => value)) {
@@ -1157,7 +1188,11 @@ export function buildPolityFiles(
   };
 
   return ds.polities.map(({ value: p }) => {
-    const own = (mentions.get(p.id) ?? []).map((a) => assertionRecord(a, km2, edges));
+    const own = (mentions.get(p.id) ?? []).map((a) => {
+      const record = assertionRecord(a, km2, edges);
+      const legal = a.subject === p.id ? legalCheck(a) : undefined;
+      return legal ? { ...record, legal } : record;
+    });
 
     // Records of the de jure units the crosswalk links to this polity. A same-state link brings
     // all of the unit's records; a dependency link only those that share land with this polity's
@@ -1433,7 +1468,8 @@ function main(): void {
     ...(baseline.collection.features.length > 0
       ? [{ key: 'baseline', dir: 'baseline-tiles', layer: 'baseline', collection: baseline.collection, bounds: baseline.bounds, sources: baseline.sources, extraLayers: { lines: baseline.lines, labels: baseline.labels } }]
       : []),
-    { key: 'contested', dir: 'contested-tiles', layer: 'contested', collection: contestedLayer.collection, bounds: contestedLayer.bounds, extraLayers: { labels: contestedLayer.labels } },
+    // `sources`: every source the contested areas were computed from, for the map's credit.
+    { key: 'contested', dir: 'contested-tiles', layer: 'contested', collection: contestedLayer.collection, bounds: contestedLayer.bounds, sources: [...new Set(contested.flatMap((a) => [a.factoSource, a.jureSource]))].sort(), extraLayers: { labels: contestedLayer.labels } },
     { key: 'differ', dir: 'differ-tiles', layer: 'differ', collection: differLayer.collection, bounds: differLayer.bounds, extraLayers: { labels: differLayer.labels } },
   ];
   const eras = chooseEras(timed.flatMap(eraItems), FAR_FUTURE);

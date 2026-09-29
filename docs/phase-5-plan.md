@@ -445,6 +445,25 @@ Every step keeps `npm run typecheck`, `npm test`, `npm run validate`, and the bu
   - **Checked** in the browser: Italy in 117 CE, the Aegean in 1500, Europe in 1914, the edge at
     73°E in 1937, all without errors.
 
+- **Step 8 (2026-09-29): the tools are done; Europe 1914–1950 waits for the maintainers' review.**
+  - **Contested areas where Cliopatria is the map:** the build now also compares Cliopatria's
+    baseline with CShapes, inside the reviewed places and years, with the 10 km width rule of
+    "sources differ". A crosswalk may now link CShapes' units to Cliopatria's polities (the
+    validator allows that, and nothing else outside our own). Today's 109 contested areas (East
+    Asia) are unchanged; the map credits Cliopatria once it contributes any.
+  - **"Not yet checked against legal borders here"** (or "only in part") in the panel, for a
+    territory outside the reviewed places and years, in years CShapes covers.
+  - **The suggestion tool** (`npm run suggest-crosswalk`) samples 1 July of each year. A first
+    version suggested any polity lying inside a unit, which would have linked the Independent
+    State of Croatia to Yugoslavia and Georgia to Russia, and missed Nazi Germany. It now suggests
+    a link only where a polity held most of one of its main holder's units, and lists breakaway
+    states, rival governments, occupation zones, and occupiers of other states' units under "Look
+    closer", never suggested. `--trial` lists the contested areas every suggestion would leave.
+  - **Europe 1914–1950** ([the report](crosswalk-review/europe-1914-1950.md), about 3 minutes):
+    75 suggested links, 45 to look at closer, and a trial of 124 contested pairs (the two World
+    Wars' occupations, the Soviet annexations of 1940, Vichy France, the Independent State of
+    Croatia; and some that point at a gap, such as Cliopatria having no postwar Poland).
+
 **Left out of Phase 5:**
 
 - **A search box** ("find a territory"): useful on a world map, but it needs a name index for

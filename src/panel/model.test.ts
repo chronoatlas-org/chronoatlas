@@ -410,6 +410,21 @@ describe('wikipediaLink', () => {
   });
 });
 
+describe('describeTerritory: checked against legal borders', () => {
+  const with_ = (legal: PolityRecord['legal'][]) => ({
+    ...testland,
+    records: [record('a', 'controls', '1901', '1905-05-12', { legal: legal[0] }), record('e', 'controls', '1901', '1905-05-12', { legal: legal[1] })],
+  });
+  const note = (legal: PolityRecord['legal'][]) => describeTerritory(with_(legal), sources, day(1903, 1, 1), 'en').notChecked;
+
+  it('says when none of the territory has been checked, or only part of it', () => {
+    expect(note(['unchecked', 'unchecked'])).toMatch(/^Not yet checked against legal borders here/);
+    expect(note(['unchecked', undefined])).toMatch(/^Checked against legal borders only in part/);
+    expect(note(['partly', 'partly'])).toMatch(/^Checked against legal borders only in part/);
+    expect(note([undefined, undefined])).toBeUndefined();
+  });
+});
+
 describe('describeTerritory: figures', () => {
   const cite = [{ source: 'test-source', locator: 'map 1' }];
   const withFigures: PolityFile = {

@@ -60,6 +60,12 @@ export interface PolityRecord {
   /** How precise the shape's border is: treaty-line, approximate-line, frontier-zone, or unknown. */
   edge?: string;
   /**
+   * For a record the map draws as administered, in years a legal source covers: whether it lies
+   * outside every place and period whose crosswalk has been reviewed (`unchecked`), or partly
+   * outside (`partly`), so contested areas can't be (all) worked out for it (Phase 5 step 8).
+   */
+  legal?: 'unchecked' | 'partly';
+  /**
    * Set on a de jure unit's record that the crosswalk links to this polity: the unit's ID, the
    * kind of link, and when the link applies (day numbers, m1 exclusive; open when missing).
    */
@@ -318,6 +324,8 @@ export interface TerritoryView {
   figures: FigureLine[];
   /** Said when our only legal-borders source can't cover a territory this small. */
   smallTerritory?: string;
+  /** Said when this territory hasn't (all) been checked against legal borders for contested areas. */
+  notChecked?: string;
   /** Every source this view cites, with its credit. */
   credits: Credit[];
   /** The address of the polity's Wikipedia article, from its Wikidata ID or a source's `articles`. */
@@ -769,6 +777,11 @@ export function describeTerritory(
   // the reader wondering why the legal side is missing.
   const legal = own.some((r) => r.sources.some((s) => s.source === LEGAL_SOURCE));
   const small = own.length > 0 && !legal && own.every((r) => r.km2 !== undefined && r.km2 < LEGAL_SOURCE_MIN_KM2);
+  // Contested areas are worked out only where the crosswalk has been reviewed: say so where it
+  // hasn't, so no contested area isn't read as "not contested".
+  const unchecked = own.filter((r) => !r.via && r.legal);
+  const notChecked =
+    unchecked.length === 0 ? undefined : t(unchecked.every((r) => r.legal === 'unchecked') && unchecked.length === own.filter((r) => !r.via).length ? 'panel.notChecked' : 'panel.partlyChecked');
 
   const names = pickNames(file.names, day, locale);
   const name = names?.primary ?? file.id;
@@ -788,6 +801,7 @@ export function describeTerritory(
     differ,
     figures: figureLines,
     ...(small ? { smallTerritory: t('panel.smallTerritory') } : {}),
+    ...(notChecked ? { notChecked } : {}),
     ...wikipediaFor(file, sources, day, locale),
     credits: creditsFor(
       [

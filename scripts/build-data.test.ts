@@ -476,6 +476,55 @@ describe('the crosswalk in polity files', () => {
   });
 });
 
+describe('contested areas where Cliopatria is the map (Phase 5 step 8)', () => {
+  // Made-up Testland units and squares (about 49,000 km² each), not real places or states.
+  const cite = (source: string) => [{ source, locator: 'row' }];
+  const square = (id: string, x: number) => ({
+    file: id,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: [[[x, 0], [x + 2, 0], [x + 2, 2], [x, 2], [x, 0]]] } },
+  });
+  const record = (id: string, subject: string, relation: 'controls' | 'sovereign', source: string) => ({ id, relation, subject, shape: id, start: '1920', end: '1930', sources: cite(source) });
+  const ds = (matches: { polity: string; kind: 'same-state' }[], reviewed = true): Dataset => ({
+    sources: [], polities: [], events: [], figures: [], coverage: [], imports: [], problems: [],
+    shapes: [square('clio-a', 0), square('clio-b', 10), square('legal-a', 0), square('legal-b', 10)],
+    assertions: [
+      { file: 'data/imports/cliopatria/assertions.yaml', value: [record('clio-a', 'cliopatria-testland', 'controls', 'cliopatria'), record('clio-b', 'cliopatria-rival', 'controls', 'cliopatria')] },
+      { file: 'data/imports/cshapes-2-0/assertions.yaml', value: [record('legal-a', 'cshapes-1', 'sovereign', 'cshapes-2-0'), record('legal-b', 'cshapes-2', 'sovereign', 'cshapes-2-0')] },
+    ],
+    crosswalks: [{ file: 'data/imports/cshapes-2-0/polity-crosswalk.yaml', value: [{ unit: 'cshapes-1', matches }] }],
+    // Reviewed for the first square only (x 0–5) in 1920–1930, or nowhere.
+    crosswalkScopes: [{ file: 'data/imports/cshapes-2-0/crosswalk-reviewed.yaml', value: reviewed ? [{ area: { west: -1, south: -1, east: 5, north: 5 }, from: '1920', until: '1931', reviewed: '2026-09-29' }] : [] }],
+  });
+
+  it('is contested where Cliopatria\'s holder isn\'t linked to the legal unit, inside the reviewed scope only', () => {
+    const areas = buildContested(ds([]));
+    // One area, split where its year-only dates make it only possibly contested.
+    expect([...new Set(areas.map((a) => `${a.facto} ${a.jure}`))]).toEqual(['cliopatria-testland cshapes-1']);
+    expect(areas.filter((a) => !a.maybe)).toHaveLength(1);
+    expect(areas[0].km2).toBeGreaterThan(40_000);
+  });
+
+  it('isn\'t contested once the crosswalk says they are the same state, nor anywhere unreviewed', () => {
+    expect(buildContested(ds([{ polity: 'cliopatria-testland', kind: 'same-state' }]))).toEqual([]);
+    expect(buildContested(ds([], false))).toEqual([]);
+  });
+
+  it('marks the records the map draws that no reviewed crosswalk covers, for the panel', () => {
+    const polity = (id: string, file: string) => ({ file, value: { id, names: [{ text: id, lang: 'en', sources: cite('test-source') }] } });
+    const withPolities = (d: Dataset): Dataset => ({
+      ...d,
+      polities: [polity('cliopatria-testland', 'data/imports/cliopatria/polities/a.yaml'), polity('cliopatria-rival', 'data/imports/cliopatria/polities/b.yaml')],
+    });
+    const legal = (d: Dataset) => Object.fromEntries(buildPolityFiles(withPolities(d)).map((f) => [f.id, f.records.map((r) => r.legal)]));
+    // The first square is inside the reviewed area and years; the second isn't.
+    expect(legal(ds([]))).toEqual({ 'cliopatria-testland': [undefined], 'cliopatria-rival': ['unchecked'] });
+    // A reviewed area covering only part of a square: partly checked.
+    const part = ds([]);
+    part.crosswalkScopes![0].value[0].area.east = 1;
+    expect(legal(part)['cliopatria-testland']).toEqual(['partly']);
+  });
+});
+
 describe('reference test: Manchuria in 1937 (the real imported data)', () => {
   it('is contested: Manchukuo administered it per OpenHistoricalMap, China was sovereign per CShapes', () => {
     // Checked against the pinned imports on 2026-09-27, as the Phase 2 plan requires.

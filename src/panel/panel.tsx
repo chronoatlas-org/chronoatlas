@@ -299,6 +299,7 @@ function Territory({ view, alsoHere, spot, reportUrl, onGoToDay, onSelectOther }
         {view.missing && <p class="panel-missing">{view.missing}</p>}
         {spot && <Spot view={spot} onSelect={onSelectOther} />}
         {view.smallTerritory && <p class="panel-missing">{view.smallTerritory}</p>}
+        {view.notChecked && <p class="panel-missing">{view.notChecked}</p>}
         {view.wikipedia && (
           <p class="panel-report">
             <a href={view.wikipedia} target="_blank" rel="noopener">

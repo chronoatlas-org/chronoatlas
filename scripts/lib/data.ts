@@ -20,6 +20,13 @@ import type {
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const DATA_DIR = join(ROOT, 'data');
 
+/**
+ * Import folders whose polities the map draws as administered where our own data ends (the
+ * baseline, Phase 5): another source's crosswalk may match its units to them, so contested areas
+ * can be worked out there (Phase 5 step 8).
+ */
+export const BASELINE_FOLDERS = ['data/imports/cliopatria'];
+
 export interface Loaded<T> {
   /** Path relative to the folder holding data/ (the repository root), with forward slashes. */
   file: string;
