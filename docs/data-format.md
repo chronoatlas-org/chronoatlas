@@ -22,6 +22,8 @@ a source.
   | `1932?` | uncertain |
   | `193X` | the 1930s |
   | `-0220` | 221 BCE (year `0000` is 1 BCE) |
+  | `[1932-03-01..1932-03-03]` | one of these days, not known which (also `[1932,1933]`) |
+  | `1932-03-01T06:00:00+01:00` | that day, as written; the time is dropped |
 
   Dates use the proleptic Gregorian calendar. If your source gives a date in another calendar,
   convert it and put the original wording in the citation's `note`.

@@ -95,6 +95,27 @@ describe('parseEdtfDate: level 1', () => {
   });
 });
 
+describe('parseEdtfDate: times of day and sets (added 2026-09-29)', () => {
+  // The examples are the EDTF specification's own.
+  it('keeps the day of a date with a time, as written in its own time zone', () => {
+    const day = parseEdtfDate('2004-01-01');
+    for (const text of ['2004-01-01T10:10:10', '2004-01-01T10:10:10Z', '2004-01-01T10:10:10+05:00', '2004-01-01T23:59:59-08']) {
+      expect(parseEdtfDate(text)).toMatchObject({ edtf: text, earliest: day.earliest, latest: day.latest, precision: 'day', uncertain: false });
+    }
+  });
+
+  it('reads "one of a set" as the range from its first to its last date, uncertain', () => {
+    const set = parseEdtfDate('[1667,1668,1670..1672]');
+    expect(set).toMatchObject({ precision: 'year', uncertain: true, oneOf: true, yearStart: 1667, yearEnd: 1672 });
+    expect(set.earliest).toBe(civilToJdn(1667, 1, 1));
+    expect(set.latest).toBe(civilToJdn(1672, 12, 31));
+    const days = parseEdtfDate('[1760-12-03..1760-12-05]');
+    expect([days.earliest, days.latest]).toEqual([civilToJdn(1760, 12, 3), civilToJdn(1760, 12, 5)]);
+    expect(days).toMatchObject({ precision: 'day', uncertain: true, oneOf: true });
+    expect(days.day).toBeUndefined();
+  });
+});
+
 describe('parseEdtfDate: invalid input', () => {
   const invalid: [string, RegExp][] = [
     ['', /expected a form/],
@@ -105,7 +126,14 @@ describe('parseEdtfDate: invalid input', () => {
     ['1985-13', /month 13 does not exist/],
     ['1985-02-30', /day 30 does not exist/],
     ['2001-21', /seasons are not supported/],
-    ['1985-04-12T10:00', /times of day are not supported/],
+    ['1985-04-12T10:00', /hh:mm:ss/], // EDTF requires seconds
+    ['1985-04T10:00:00', /hh:mm:ss/], // and a whole date
+    ['1985-04-12T25:00:00', /hh:mm:ss/],
+    ['[1667,1668', /must end with "\]"/],
+    ['[1667,,1668]', /empty member/],
+    ['[..1760-12-03]', /needs both ends/],
+    ['[1672..1667]', /ends before it starts/],
+    ['{1667,1668}', /"all of" sets/],
     ['198X-04', /cannot have a month or day/],
     ['1985-XX-12', /a day needs a known month/],
     ['1985/1986', /interval, not a single date/],

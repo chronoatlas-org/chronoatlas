@@ -11,12 +11,18 @@
 //   1984?  2004-06~  2004-06-11%           uncertain (?), approximate (~), both (%)
 //   201X   20XX   2004-XX   1985-04-XX     unspecified digits, from the right only
 //   1964/2008   1985-04-12/..   /1985      intervals, with open (..) or unknown (empty) ends
+//   1949-04-23T06:00:00+01:00              a date with a time of day (level 0): the day as written,
+//                                          in its own time zone; the time is dropped, because
+//                                          historical dates in this project are whole days
+//   [1908-10-04..1908-10-06]  [1667,1668]  "one of a set" (level 2): one of these days, not known
+//                                          which, so a range from the first to the last, uncertain
+//                                          (added 2026-09-29, for OpenHistoricalMap's tags)
 //
 // Not supported yet, and rejected with a clear error:
 //   - Seasons (2001-21). Level 1 doesn't define which months a season covers or which hemisphere
 //     it refers to. Use a month interval such as 1938-03/1938-05.
-//   - Times of day (1985-04-12T10:00). Historical dates in this project are whole days.
-//   - Level 2 features (qualifiers on single components, sets, and so on).
+//   - Other level 2 features ("all of" sets in braces, open ends in a set, qualifiers on single
+//     components, and so on).
 //
 // "Approximate" and "uncertain" are recorded as flags. They do NOT widen the range, because EDTF
 // doesn't say by how much. Whoever displays the date decides how to show the flag.
@@ -45,6 +51,8 @@ export interface HistoricalDate {
   month?: number;
   /** Present only when the day is known. */
   day?: number;
+  /** Set for "one of a set" ([a..b], [a,b]): one day from `earliest` to `latest`, not known which. */
+  oneOf?: true;
 }
 
 /** An interval end that EDTF marks as open ("..", continues indefinitely). */
@@ -92,8 +100,15 @@ const PRECISION_BY_UNSPECIFIED_YEAR_DIGITS: DatePrecision[] = [
 /** Parses a single EDTF date (not an interval). Throws EdtfError if the text isn't valid. */
 export function parseEdtfDate(text: string): HistoricalDate {
   if (text.includes('/')) throw new EdtfError(text, 'this is an interval, not a single date');
+  if (text.startsWith('[')) return parseOneOf(text);
+  if (text.startsWith('{')) throw new EdtfError(text, '"all of" sets ({…}) are not supported; give one date');
   if (text.includes('T')) {
-    throw new EdtfError(text, 'times of day are not supported; give the date only (YYYY-MM-DD)');
+    const time = DATE_TIME_PATTERN.exec(text);
+    if (!time?.groups) {
+      throw new EdtfError(text, 'a time of day must be written YYYY-MM-DDThh:mm:ss, optionally with Z or a time zone such as +01:00');
+    }
+    // The day as written, in its own time zone: the time itself is dropped.
+    return { ...parseEdtfDate(time.groups.date), edtf: text };
   }
 
   const match = DATE_PATTERN.exec(text);
@@ -192,6 +207,49 @@ export function parseEdtfDate(text: string): HistoricalDate {
   }
   const jdn = civilToJdn(y, m, d);
   return { ...base, earliest: jdn, latest: jdn, precision: 'day', month: m, day: d };
+}
+
+/** EDTF level 0's date and time: a full date, then hh:mm:ss, then Z or a time zone, or neither. */
+const DATE_TIME_PATTERN = /^(?<date>-?\d{4}-\d{2}-\d{2})T([01]\d|2[0-3]):[0-5]\d:[0-5]\d(Z|[+-]([01]\d|2[0-3])(:?[0-5]\d)?)?$/;
+
+/**
+ * "One of a set" (EDTF level 2): [a, b, c] or [a..b], or both, such as [1667, 1668, 1670..1672].
+ * One of these dates, not known which: the range from the first to the last, marked uncertain.
+ * Ranges must have both ends ("..1760" would have no first day).
+ */
+function parseOneOf(text: string): HistoricalDate {
+  if (!text.endsWith(']')) throw new EdtfError(text, 'a set starting with "[" must end with "]"');
+  const members = text.slice(1, -1).split(',').map((member) => member.trim());
+  if (members.some((member) => member === '')) throw new EdtfError(text, 'a set has an empty member');
+  const dates = members.flatMap((member) => {
+    if (!member.includes('..')) return [parseEdtfDate(member)];
+    const [from, to] = member.split('..');
+    if (from === '' || to === '') throw new EdtfError(text, 'a range in a set needs both ends (such as 1908-10-04..1908-10-06)');
+    const range = [parseEdtfDate(from), parseEdtfDate(to)];
+    if (range[0].earliest > range[1].latest) throw new EdtfError(text, `the range ${member} ends before it starts`);
+    return range;
+  });
+  if (dates.some((d) => d.oneOf)) throw new EdtfError(text, 'a set cannot contain another set');
+  // One date only: that date, not uncertain at all.
+  if (dates.length === 1) return { ...dates[0], edtf: text };
+  const earliest = Math.min(...dates.map((d) => d.earliest));
+  const latest = Math.max(...dates.map((d) => d.latest));
+  const precisions: DatePrecision[] = ['day', 'month', 'year', 'decade', 'century', 'millennium'];
+  const precision = precisions[Math.max(...dates.map((d) => precisions.indexOf(d.precision)))];
+  const yearStart = Math.min(...dates.map((d) => d.yearStart));
+  const yearEnd = Math.max(...dates.map((d) => d.yearEnd));
+  return {
+    kind: 'date',
+    edtf: text,
+    earliest,
+    latest,
+    precision,
+    uncertain: true,
+    approximate: dates.some((d) => d.approximate),
+    yearStart,
+    yearEnd,
+    oneOf: true,
+  };
 }
 
 /** Parses an EDTF interval such as "1937-07/1938-10" or "1945-08-17/..". */

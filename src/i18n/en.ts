@@ -26,7 +26,7 @@ export const en = {
   'legend.noData': 'No data yet',
   'legend.edge': 'Edge of OpenHistoricalMap’s area: beyond it, the borders are Cliopatria’s',
   'legend.baseline':
-    'Softer lines beyond that edge: borders per Cliopatria, year by year and approximate (it doesn’t separate control from legal rule)',
+    'Softer lines beyond that edge, and where OpenHistoricalMap has no border yet: borders per Cliopatria, year by year and approximate (it doesn’t separate control from legal rule)',
   'legend.line': 'Solid line: a border (a treaty or surveyed line, or one whose source doesn’t say how precise it is)',
   'legend.approximate': 'Softened line: an approximate border, per its source',
   'legend.zone': 'Soft band: a frontier zone rather than a line, per its source',
@@ -247,6 +247,8 @@ export const en = {
   'date.yearRangeBce': '{start}–{end} BCE',
   'date.approximate': 'c. {date}',
   'date.uncertain': '{date}?',
+  // A date that is one of several, not known which (EDTF's "one of a set"), such as "4 October 1908 to 6 October 1908, not known which".
+  'date.oneOf': '{start} to {end}, not known which',
   'date.interval': '{start} – {end}',
   'date.intervalOnwards': '{start} onwards',
   'date.intervalUntil': 'until {end}',

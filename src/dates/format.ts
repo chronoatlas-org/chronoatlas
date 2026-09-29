@@ -47,6 +47,18 @@ export function formatDay(jdn: number): string {
 }
 
 export function formatDate(date: HistoricalDate): string {
+  // One of a set: the first and last it could be, at the set's precision ("not known which" says
+  // it's uncertain, so no "?").
+  if (date.oneOf && date.earliest !== date.latest) {
+    const end = (jdn: number) => {
+      const { year, month, day } = jdnToCivil(jdn);
+      if (date.precision === 'day') return formatDayMonthYear(day, month, year);
+      if (date.precision === 'month') return t('date.monthYear', { month: monthName(month), year: formatYear(year) });
+      return formatYear(year);
+    };
+    const text = t('date.oneOf', { start: end(date.earliest), end: end(date.latest) });
+    return date.approximate ? t('date.approximate', { date: text }) : text;
+  }
   let text: string;
   if (date.day !== undefined && date.month !== undefined) {
     text = formatDayMonthYear(date.day, date.month, date.yearStart);

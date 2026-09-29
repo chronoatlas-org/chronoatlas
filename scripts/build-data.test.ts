@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
 import {
   assignColors,
+  baselineData,
   buildBorders,
   buildChanges,
   buildContested,
@@ -757,6 +758,43 @@ describe('eras in the build', () => {
     expect(items[1]).toMatchObject({ set: 'test-tiles', s0: 10, e0: 30 });
     expect(items[2].s0).toBeLessThan(-1e7);
     expect(items[0].bytes).toBeGreaterThan(0);
+  });
+});
+
+describe('baselineData: gaps in the default map (2026-09-29)', () => {
+  // Made-up Testland squares (2° is about 49,000 km²), not real places.
+  const cite = (source: string) => [{ source, locator: 'row' }];
+  const square = (id: string, x0: number, x1: number, file: string) => ({
+    file,
+    value: { type: 'Feature' as const, properties: { id, edge_precision: 'unknown' }, geometry: { type: 'Polygon' as const, coordinates: [[[x0, 0], [x1, 0], [x1, 2], [x0, 2], [x0, 0]]] } },
+  });
+  const ohmFile = 'data/imports/openhistoricalmap/assertions.yaml';
+  const clioFile = 'data/imports/cliopatria/assertions.yaml';
+  const ds = (clioEast: number): Dataset => ({
+    sources: [], polities: [], events: [], figures: [], coverage: [], imports: [], problems: [], crosswalks: [],
+    shapes: [square('ohm-a', 0, 2, 'data/imports/openhistoricalmap/shapes/ohm-a.geojson'), square('clio-a', 0, clioEast, 'data/imports/cliopatria/shapes/clio-a.geojson')],
+    assertions: [
+      { file: ohmFile, value: [{ id: 'ohm-a', relation: 'administers', subject: 'testland', shape: 'ohm-a', start: '1900-01-01', end: '1920-01-01', sources: cite('openhistoricalmap') }] },
+      { file: clioFile, value: [{ id: 'clio-a', relation: 'controls', subject: 'cliopatria-testland', shape: 'clio-a', start: '1890-01-01', end: '1960-01-01', sources: cite('cliopatria') }] },
+    ],
+  });
+  const scope = { box: [-1, -1, 10, 10] as [number, number, number, number], d0: civilToJdn(1900, 1, 1), d1: civilToJdn(1951, 1, 1) };
+  const baseline = (d: Dataset) => baselineData(d, [scope]).assertions.filter(({ file }) => file === clioFile).flatMap(({ value }) => value).map((a) => [a.start, a.end, a.shape]);
+
+  it('fills the days the default map has no record with the baseline, beside the years outside', () => {
+    expect(baseline(ds(2))).toEqual([
+      ['1890-01-01', '1900-01-01', 'clio-a'],
+      ['1951-01-01', '1960-01-01', 'clio-a'],
+      ['1920-01-01', '1951-01-01', `clio-a~gap${civilToJdn(1920, 1, 1)}`],
+    ]);
+  });
+
+  it('leaves out strips too thin to be a real gap', () => {
+    // Cliopatria's square reaches 0.05° (about 5 km) past the default map's: no piece in
+    // 1900–1920, only the whole square once the default map has nothing.
+    expect(baseline(ds(2.05)).filter(([, , shape]) => shape!.includes('~gap'))).toEqual([['1920-01-01', '1951-01-01', `clio-a~gap${civilToJdn(1920, 1, 1)}`]]);
+    // Half a degree (about 55 km) past it is a real gap, all along.
+    expect(baseline(ds(2.5)).filter(([, , shape]) => shape!.includes('~gap')).map(([start]) => start)).toEqual(['1900-01-01', '1920-01-01']);
   });
 });
 
