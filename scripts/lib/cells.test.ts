@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { shapeCellSet, uncoveredCount } from './cells.ts';
+import { CoverCount, shapeCellSet, uncoveredCount } from './cells.ts';
 import type { MultiPolygon } from './geometry.ts';
 
 // Made-up Testland squares, not real places.
@@ -19,6 +19,23 @@ describe('shapeCellSet', () => {
     const holed: MultiPolygon = [[...square(0, 0, 1), ...square(0.2, 0.2, 0.5)]];
     expect(shapeCellSet(holed).size).toBe(75);
     expect(shapeCellSet([square(0, 0, 1), square(5, 5, 1)]).size).toBe(200);
+  });
+});
+
+describe('CoverCount', () => {
+  it('follows covers as they come and go', () => {
+    const counter = new CoverCount(shapeCellSet([square(0, 0, 1)]));
+    const west = counter.overlap(shapeCellSet([square(-1, 0, 1.5)])); // the western half
+    const whole = counter.overlap(shapeCellSet([square(-5, -5, 10)]));
+    expect(counter.uncovered).toBe(100);
+    counter.add(west);
+    expect(counter.uncovered).toBe(50);
+    counter.add(whole);
+    expect(counter.uncovered).toBe(0);
+    counter.remove(west);
+    expect(counter.uncovered).toBe(0);
+    counter.remove(whole);
+    expect(counter.uncovered).toBe(100);
   });
 });
 

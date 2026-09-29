@@ -40,6 +40,42 @@ export function shapeCellSet(shape: MultiPolygon, size = CELL_DEGREES): Set<numb
   return cells;
 }
 
+/**
+ * How many of one shape's cells are left uncovered while other shapes come and go: each cover is
+ * counted once when it's added and once when it's removed, not again for every stretch of days.
+ */
+export class CoverCount {
+  private readonly index = new Map<number, number>();
+  private readonly counts: Uint16Array;
+  /** Cells no cover now has. */
+  uncovered: number;
+
+  constructor(cells: ReadonlySet<number>) {
+    for (const cell of cells) this.index.set(cell, this.index.size);
+    this.counts = new Uint16Array(cells.size);
+    this.uncovered = cells.size;
+  }
+
+  /** Which of the shape's cells a cover has (as positions, for add and remove). */
+  overlap(cover: ReadonlySet<number>): number[] {
+    const found: number[] = [];
+    if (cover.size < this.index.size) {
+      for (const cell of cover) if (this.index.has(cell)) found.push(this.index.get(cell)!);
+    } else {
+      for (const [cell, position] of this.index) if (cover.has(cell)) found.push(position);
+    }
+    return found;
+  }
+
+  add(positions: readonly number[]): void {
+    for (const p of positions) if (this.counts[p]++ === 0) this.uncovered--;
+  }
+
+  remove(positions: readonly number[]): void {
+    for (const p of positions) if (--this.counts[p] === 0) this.uncovered++;
+  }
+}
+
 /** How many of `cells` none of `covers` has. */
 export function uncoveredCount(cells: ReadonlySet<number>, covers: readonly ReadonlySet<number>[]): number {
   let count = 0;

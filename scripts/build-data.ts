@@ -38,7 +38,7 @@ import { formatDayForUrl } from '../src/url/state.ts';
 import { loadDataset, ROOT } from './lib/data.ts';
 import type { Dataset, Loaded } from './lib/data.ts';
 import { boundingBox, computeContested, meanWidthKm, MIN_DISAGREEMENT_KM2, withinScopes } from './lib/contested.ts';
-import { shapeCellSet, uncoveredCount } from './lib/cells.ts';
+import { CoverCount, shapeCellSet } from './lib/cells.ts';
 import { chooseEras, inEra } from './lib/eras.ts';
 import type { Era, EraItem } from './lib/eras.ts';
 import type { ContestedArea, Link, ReviewedScope, TimedShape } from './lib/contested.ts';
@@ -737,16 +737,29 @@ function computeBaseline(ds: Dataset, scopes: readonly ReviewedScope[]): Dataset
       const near = drawn.filter((d) => d.s0 < e1 && d.e0 > s0 && overlaps(d.box, box));
       // The stretches of days in which the same default-map records apply.
       const days = [...new Set([s0, e1, ...near.flatMap((d) => [d.s0, d.e0]).filter((d) => d > s0 && d < e1)])].sort((x, y) => x - y);
+      // First by grid cells (about 10 km), which is quick: a piece large and wide enough to show
+      // holds at least a few cell centres. The count follows the default map's records as they
+      // come and go. The exact cut only where the cells find a gap, once for each set of records.
+      const counter = new CoverCount(cellsOf(a.shape!, geometry));
+      const overlapOf = new Map(near.map((d) => [d, counter.overlap(cellsOf(d.shape, d.geometry))]));
+      const exact = new Map<string, MultiPolygon>();
+      let active = new Set<TimedShape>();
       let last: { assertion: Assertion; key: string } | undefined;
       for (let k = 0; k + 1 < days.length; k++) {
         const [d0, d1] = [days[k], days[k + 1]];
         const cover = near.filter((d) => d.s0 <= d0 && d.e0 >= d1);
-        // First by grid cells (about 10 km), which is quick: a piece large and wide enough to show
-        // holds at least a few cell centres. The exact cut only where the cells find some.
-        const quickGap = uncoveredCount(cellsOf(a.shape!, geometry), cover.map((d) => cellsOf(d.shape, d.geometry))) >= GAP_MIN_CELLS;
-        const gap = !quickGap
-          ? []
-          : gapPieces(cover.length === 0 ? geometry : polygonClipping.difference(geometry as never, ...(cover.map((d) => d.geometry) as never[])));
+        const next = new Set(cover);
+        for (const d of active) if (!next.has(d)) counter.remove(overlapOf.get(d)!);
+        for (const d of next) if (!active.has(d)) counter.add(overlapOf.get(d)!);
+        active = next;
+        let gap: MultiPolygon = [];
+        if (counter.uncovered >= GAP_MIN_CELLS) {
+          const covers = cover.map((d) => d.record).join(' ');
+          if (!exact.has(covers)) {
+            exact.set(covers, gapPieces(cover.length === 0 ? geometry : polygonClipping.difference(geometry as never, ...(cover.map((d) => d.geometry) as never[]))));
+          }
+          gap = exact.get(covers)!;
+        }
         if (gap.length === 0) {
           last = undefined;
           continue;
