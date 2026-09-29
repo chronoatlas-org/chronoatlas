@@ -33,3 +33,7 @@ in the data yet.
   Republic (with Russia) from "Look closer", and marked 25°W–45°E, 34–72°N, **1914–1944** as
   reviewed. 1945–1950 is left unchecked: Cliopatria has no postwar Poland, and Hungary, Bulgaria,
   and Czechoslovakia are missing in 1945–1947, which would show as false disputes.
+- [Europe 1900–1950, OpenHistoricalMap](europe-openhistoricalmap-1900-1950.md) (2026-09-29, after
+  OpenHistoricalMap's Europe import), **waiting for the maintainers' review:** 92 suggested links
+  from OpenHistoricalMap's polities to CShapes' units, with notes on the ones to look at first, and
+  the gaps in OpenHistoricalMap's Europe data.
