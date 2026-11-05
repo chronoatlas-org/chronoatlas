@@ -1,0 +1,13 @@
+[
+  {
+    "replaces": "2014",
+    "date": "2011-07-09",
+    "end": ["cliopatria-republic-of-sudan-1992"],
+    "start": ["cliopatria-republic-of-sudan-2014", "cliopatria-south-sudan-2014"],
+    "citation": {
+      "source": "dos-guidance-bulletin-30",
+      "locator": "p. 1, Background and §1(a) (independence); pp. 1–2, §§2–3 (boundary and Abyei)"
+    },
+    "notes": "Cliopatria supplies the shape and original year range. Its rows do not distinguish territorial control from legal sovereignty. ChronoAtlas dates the split to July 9, 2011, following Guidance Bulletin No. 30, which describes Abyei as disputed."
+  }
+]

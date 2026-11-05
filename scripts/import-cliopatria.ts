@@ -27,6 +27,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, wri
 import { join } from 'node:path';
 import polygonClipping from 'polygon-clipping';
 import { stringify as stringifyYaml } from 'yaml';
+import dateTransitions from '../data/imports/cliopatria/date-transitions.json' with { type: 'json' };
 import { DATA_DIR } from './lib/data.ts';
 import { cleanMultiPolygon, formatFeature, simplifyLine } from './lib/geometry.ts';
 import type { MultiPolygon, Position } from './lib/geometry.ts';
@@ -156,12 +157,42 @@ async function main(): Promise<void> {
   rows.sort((a, b) => a.name.localeCompare(b.name) || a.from - b.from);
 
   const unitId = (name: string) => `cliopatria-${slugify(name)}`;
-  rmSync(join(OUT, 'shapes'), { recursive: true, force: true });
-  mkdirSync(join(OUT, 'shapes'), { recursive: true });
-  const assertions: Assertion[] = [];
-  const units = new Map<string, string>();
   // IDs are permanent: <unit>-<year> (…-41bce before 1 CE), numbered when a name and first year repeat.
   const ids = numberDuplicates(rows.map((row) => rowId(unitId(row.name), row.from)));
+  const assertions = rows.map((row, i): Assertion => {
+    const id = ids[i];
+    const ongoing = row.to === lastYear;
+    return {
+      id,
+      relation: 'controls',
+      subject: unitId(row.name),
+      shape: id,
+      start: edtfYear(row.from),
+      // Cliopatria's years are inclusive; our end is the first year it no longer applied.
+      end: ongoing ? 'ongoing' : edtfYear(row.to + 1),
+      sources: [{ source: SOURCE_ID, locator: `"${row.name}", ${row.from} to ${row.to}` }],
+      notes: `Cliopatria maps territory year by year: this row covers the whole years ${row.from} to ${row.to}${ongoing ? ', the last year in the data' : ''}. It doesn't distinguish control from legal sovereignty.`,
+    };
+  });
+  // Check all original endpoints before replacing any generated files.
+  const byId = new Map(assertions.map((a) => [a.id, a]));
+  for (const transition of dateTransitions) {
+    for (const endpoint of ['end', 'start'] as const) {
+      for (const id of transition[endpoint]) {
+        const assertion = byId.get(id);
+        if (!assertion || assertion[endpoint] !== transition.replaces) {
+          throw new Error(`Review date-transitions.json: expected ${id} ${endpoint} to be ${transition.replaces}.`);
+        }
+        assertion[endpoint] = transition.date;
+        assertion.sources.push({ ...transition.citation });
+        assertion.notes = transition.notes;
+      }
+    }
+  }
+
+  rmSync(join(OUT, 'shapes'), { recursive: true, force: true });
+  mkdirSync(join(OUT, 'shapes'), { recursive: true });
+  const units = new Map<string, string>();
   for (const [i, row] of rows.entries()) {
     const id = ids[i];
     units.set(unitId(row.name), row.name);
@@ -183,18 +214,6 @@ async function main(): Promise<void> {
         row.geometry,
       ),
     );
-    const ongoing = row.to === lastYear;
-    assertions.push({
-      id,
-      relation: 'controls',
-      subject: unitId(row.name),
-      shape: id,
-      start: edtfYear(row.from),
-      // Cliopatria's years are inclusive; our end is the first year it no longer applied.
-      end: ongoing ? 'ongoing' : edtfYear(row.to + 1),
-      sources: [{ source: SOURCE_ID, locator: `"${row.name}", ${row.from} to ${row.to}` }],
-      notes: `Cliopatria maps territory year by year: this row covers the whole years ${row.from} to ${row.to}${ongoing ? ', the last year in the data' : ''}. It doesn't distinguish control from legal sovereignty.`,
-    });
   }
   writeFileSync(
     join(OUT, 'assertions.yaml'),
@@ -250,7 +269,7 @@ async function main(): Promise<void> {
       subjects:
         'Assertions name Cliopatria\'s own polities (cliopatria-<name>), with records in polities/ that stay in this folder. They are not matched to our polities by Wikidata ID, because some of Cliopatria\'s IDs are wrong for this period: its "Republic of China" rows carry Q148 (the People\'s Republic of China) and its "Republic of Korea" row carries Q423 (North Korea). The hand-written polity-crosswalk.yaml links them to our polities, and says on what evidence.',
       dates:
-        'FromYear and ToYear are whole years, inclusive (per Cliopatria\'s README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as "ongoing".',
+        'FromYear and ToYear are whole years, inclusive (per Cliopatria\'s README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as "ongoing". Sourced exceptions in date-transitions.json change assertion endpoints only; shape IDs and original years are preserved.',
       bce: 'Cliopatria\'s README says negative years are BCE, but not whether year 0 exists. Its data has one: six rows end in year 0, and each is followed by a row of the same polity starting in year 1 (checked 2026-09-28). So its years are read as astronomical, as EDTF\'s are: -40 is 41 BCE. IDs use the BCE year a reader sees (…-41bce).',
       geometry: `Each ring is simplified (Douglas–Peucker, ${CONFIG.simplifyTolerance}°), trimmed to the import area, and rounded to ${CONFIG.coordinateDecimals} decimal places. Edge precision is "unknown". Cliopatria's own area (km², equal-area projection) is kept in each shape's properties.`,
       puppet_states:

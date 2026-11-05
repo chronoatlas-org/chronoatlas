@@ -25,7 +25,8 @@ The data is provided as is, without warranties, as the license states.
 
 ## What we changed
 
-We selected the POLITY rows for East Asia (10–55°N, 73–150°E) that overlap 1900–1950, and skipped
-grouping rows. We simplified, trimmed, and rounded their borders, converted their years to our
-date format, and restated each row as a "controls" statement with notes.
+We selected the worldwide POLITY rows and skipped grouping rows. We simplified, trimmed, and
+rounded their borders, converted their years to our date format, and restated each row as a
+"controls" statement with notes. For the Sudan split, we changed the transition date using
+the source in [date-transitions.json](date-transitions.json), retaining Cliopatria’s geometry.
 [`manifest.json`](manifest.json) lists every change and decision.

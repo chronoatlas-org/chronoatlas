@@ -1082,7 +1082,11 @@ export function buildChanges(ds: Dataset): { changes: BorderChange[] } {
   for (const a of ds.assertions.flatMap(({ value }) => value)) {
     if (!TERRITORIAL_RELATIONS.includes(a.relation)) continue;
     const { s0, e0 } = dayRanges(a.start, a.end);
-    const common = { polity: a.subject, record: a.id, relation: a.relation, source: a.sources[0] };
+    const [source, ...additionalSources] = a.sources;
+    const common = {
+      polity: a.subject, record: a.id, relation: a.relation, source,
+      ...(additionalSources.length ? { additionalSources } : {}),
+    };
     changes.push({ day: s0, kind: 'start', date: a.start, ...common });
     if (e0 < FAR_FUTURE) changes.push({ day: e0, kind: 'end', date: a.end, ...common });
   }

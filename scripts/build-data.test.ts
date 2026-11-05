@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { civilToJdn } from '../src/dates/index.ts';
+import { describeNearby } from '../src/panel/model.ts';
 import {
   assignColors,
   buildBorders,
@@ -113,6 +114,24 @@ describe('buildPolityFiles', () => {
       ['late', 'change', '1910'],
     ]);
     expect(changes[0]).toMatchObject({ day: civilToJdn(1901, 5, 12), polity: 'testland', relation: 'controls', source: cite[0] });
+  });
+
+  it('shows the sources for both the shape and the date of a paired border change', () => {
+    const bulletin = { source: 'bulletin', locator: 'p. 1' };
+    const records = ds.assertions[0].value.map((a) => ({
+      ...a, sources: a.id === 'late' ? [...a.sources, bulletin] : a.sources,
+    }));
+    const data = { ...ds, assertions: [{ file: 'd', value: records }] };
+    const day = civilToJdn(1910, 1, 1);
+    const file = nearbyFile(data, buildChanges(data).changes, { start: day, end: day + 1 });
+    const sources = {
+      'test-source': { title: 'Border dataset' },
+      bulletin: { title: 'Gazette', url: 'https://example.org/gazette' },
+    };
+    const view = describeNearby(day, [day, day], [], file.changes, sources, (id) => file.names[id], 'en');
+    expect(view.changes.map((c) => c.key)).toEqual(['late-change']);
+    expect(view.changes[0].sources.map((s) => s.text)).toEqual(['Border dataset, p. 1', 'Gazette, p. 1']);
+    expect(view.credits).toEqual([sources['test-source'], sources.bulletin]);
   });
 
   it('keeps an end and a start apart unless the same polity, relation, and source change that day', () => {
