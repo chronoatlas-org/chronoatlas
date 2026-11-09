@@ -5,7 +5,7 @@
   "repository": "https://github.com/Seshat-Global-History-Databank/cliopatria",
   "version": "v0.2.0",
   "commit": "ad28a691b7c07c1fca89d0e0636d324667d2a258",
-  "retrieved": "2026-09-29T01:00:13.806Z",
+  "retrieved": "2026-11-05T23:02:27.646Z",
   "download": {
     "url": "https://raw.githubusercontent.com/Seshat-Global-History-Databank/cliopatria/ad28a691b7c07c1fca89d0e0636d324667d2a258/cliopatria.geojson.zip",
     "file": "raw/cliopatria.geojson.zip (not committed)",
@@ -37,7 +37,7 @@
     "relation": "Rows become \"controls\" assertions: Cliopatria maps the territory each polity held and does not separate control from legal sovereignty (maintainer decision, 2026-09-27). Each assertion says so in its notes.",
     "rows": "Only POLITY rows are imported. Grouping rows (a name in parentheses with a Components list, such as \"(British Empire)\") are skipped, because the rows they group already cover their land. RELATION rows are skipped too, and counted.",
     "subjects": "Assertions name Cliopatria's own polities (cliopatria-<name>), with records in polities/ that stay in this folder. They are not matched to our polities by Wikidata ID, because some of Cliopatria's IDs are wrong for this period: its \"Republic of China\" rows carry Q148 (the People's Republic of China) and its \"Republic of Korea\" row carries Q423 (North Korea). The hand-written polity-crosswalk.yaml links them to our polities, and says on what evidence.",
-    "dates": "FromYear and ToYear are whole years, inclusive (per Cliopatria's README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as \"ongoing\".",
+    "dates": "FromYear and ToYear are whole years, inclusive (per Cliopatria's README). The start is FromYear, with year precision; the end is ToYear + 1, the first year the row no longer applied. A row that runs to the last year in the data is imported as \"ongoing\". Sourced exceptions in date-transitions.json change assertion endpoints only; shape IDs and original years are preserved.",
     "bce": "Cliopatria's README says negative years are BCE, but not whether year 0 exists. Its data has one: six rows end in year 0, and each is followed by a row of the same polity starting in year 1 (checked 2026-09-28). So its years are read as astronomical, as EDTF's are: -40 is 41 BCE. IDs use the BCE year a reader sees (…-41bce).",
     "geometry": "Each ring is simplified (Douglas–Peucker, 0.005°), trimmed to the import area, and rounded to 4 decimal places. Edge precision is \"unknown\". Cliopatria's own area (km², equal-area projection) is kept in each shape's properties.",
     "puppet_states": "Cliopatria folds some governments into their patrons (for example, there is no separate Manchukuo; its land is inside the Empire of Japan). That is Cliopatria's view, shown attributed, not an error to correct.",

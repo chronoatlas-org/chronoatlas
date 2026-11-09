@@ -10,6 +10,7 @@ area, and as a "second opinion" inside it. **CC BY 4.0: see [LICENSE.md](LICENSE
 |---|---|
 | `shapes/cliopatria-<name>-<year>.geojson` (`…-<n>bce` before 1 CE) | One shape per Cliopatria row (simplified and trimmed; see the manifest). Its properties keep Cliopatria's own values: name, years, area, Wikidata, Wikipedia, and Seshat IDs. |
 | `assertions.yaml` | "According to Cliopatria, <polity> controlled <shape> from <year> to <year>", with notes |
+| `date-transitions.json` | Sourced corrections to when existing shapes change. The import checks the original endpoint (`replaces`) before applying the correction to all listed assertions. |
 | `polities/cliopatria-<name>.yaml` | Cliopatria's own polities, with their Cliopatria names. They stay in this folder. |
 | `polity-crosswalk.yaml` | **Hand-written, and reviewed like any data change.** Which of our polities is the same as each Cliopatria polity, and the evidence for it. |
 | `manifest.json` | The pinned download with its checksum, every interpretation decision, and every row skipped |
@@ -19,6 +20,10 @@ area, and as a "second opinion" inside it. **CC BY 4.0: see [LICENSE.md](LICENSE
 
 - **Whole years only.** Each row covers whole years, inclusive. Our end date is the year after its
   last year, so a change shows as happening "some time in" that year.
+  For Sudan, the import uses July 9, 2011 for the transition from the 1992–2013 unified shape
+  to the two separate 2014 shapes. The date comes from [Guidance Bulletin No. 30](https://data.geodata.state.gov/guidance/DoS_Bulletin_30-South-Sudan-Sudan-2011.pdf),
+  p. 1, Background. Both countries retain Cliopatria’s geometry, including its depiction of Abyei
+  (see bulletin §§2–3).
 - **"Held", not "ruled legally".** It doesn't separate control from legal sovereignty, so its rows
   become `controls` statements.
 - **Puppet states are folded into their patrons.** There is no separate Manchukuo; its land is
